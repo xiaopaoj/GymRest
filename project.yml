@@ -1,0 +1,61 @@
+name: GymRest
+options:
+  bundleIdPrefix: dev.gymrest
+  deploymentTarget:
+    iOS: "26.0"
+settings:
+  base:
+    SWIFT_VERSION: "6.0"
+    TARGETED_DEVICE_FAMILY: "1"
+    CODE_SIGNING_ALLOWED: NO
+    MARKETING_VERSION: "0.1.0"
+    CURRENT_PROJECT_VERSION: "1"
+targets:
+  GymRest:
+    type: application
+    platform: iOS
+    sources: [GymRest, Shared]
+    info:
+      path: build/plists/GymRest-Info.plist
+      properties:
+        CFBundleDisplayName: GymRest
+        NSAlarmKitUsageDescription: 用于在训练组间休息结束时发出系统提醒。
+        NSSupportsLiveActivities: true
+        UILaunchScreen: {}
+    settings:
+      base:
+        PRODUCT_BUNDLE_IDENTIFIER: dev.gymrest.personal
+    dependencies:
+      - target: GymRestWidgets
+        embed: true
+  GymRestWidgets:
+    type: app-extension
+    platform: iOS
+    sources: [GymRestWidgets, Shared]
+    info:
+      path: build/plists/GymRestWidgets-Info.plist
+      properties:
+        CFBundleDisplayName: GymRest Timer
+        NSExtension:
+          NSExtensionPointIdentifier: com.apple.widgetkit-extension
+    settings:
+      base:
+        PRODUCT_BUNDLE_IDENTIFIER: dev.gymrest.personal.widgets
+        APPLICATION_EXTENSION_API_ONLY: YES
+        SKIP_INSTALL: YES
+  GymRestTests:
+    type: bundle.unit-test
+    platform: iOS
+    sources: [GymRestTests]
+    settings:
+      base:
+        GENERATE_INFOPLIST_FILE: YES
+    dependencies:
+      - target: GymRest
+schemes:
+  GymRest:
+    build:
+      targets:
+        GymRest: all
+    test:
+      targets: [GymRestTests]

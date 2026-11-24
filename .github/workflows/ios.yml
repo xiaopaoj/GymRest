@@ -1,0 +1,37 @@
+name: iOS 26 validation and unsigned IPA
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+  pull_request:
+permissions:
+  contents: read
+concurrency:
+  group: ios-${{ github.ref }}
+  cancel-in-progress: true
+jobs:
+  build:
+    runs-on: macos-26
+    timeout-minutes: 45
+    steps:
+      - uses: actions/checkout@v4
+      - name: Install XcodeGen
+        run: brew list xcodegen >/dev/null 2>&1 || brew install xcodegen
+      - name: Build, test, and package
+        run: bash scripts/ci.sh
+      - name: Upload unsigned IPA
+        uses: actions/upload-artifact@v4
+        with:
+          name: GymRest-unsigned
+          path: build/GymRest-unsigned.ipa
+          if-no-files-found: error
+      - name: Upload logs and test results
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: GymRest-diagnostics
+          path: |
+            build/build.log
+            build/*.xcresult
+            build/devices.json
+          if-no-files-found: warn
