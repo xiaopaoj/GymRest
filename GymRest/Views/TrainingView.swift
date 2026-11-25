@@ -5,6 +5,7 @@ struct TrainingView: View {
     @Bindable var controller: TrainingController
     @Environment(\.dismiss) private var dismiss
     @State private var navigation: String?
+    @State private var choosingAlternative = false
     var body: some View {
         NavigationStack {
             ScrollView {
@@ -14,7 +15,7 @@ struct TrainingView: View {
                             Image(systemName: "checkmark.circle.fill").font(.system(size: 72)).foregroundStyle(.green)
                             Text("训练完成").font(.largeTitle.bold())
                             Text("\(session.planName) · 已完成 \(session.completedSets) 组")
-                            Text("不保留历史训练记录").foregroundStyle(.secondary)
+                            Text(controller.error == nil ? "已保存到训练记录" : "记录保存遇到问题，请保留页面并重试").foregroundStyle(.secondary)
                             Button("返回计划") { Task { await controller.end(); if controller.error == nil { dismiss() } } }
                                 .buttonStyle(.borderedProminent).controlSize(.large)
                         }.frame(maxWidth: .infinity).padding(.top, 80)
@@ -25,10 +26,19 @@ struct TrainingView: View {
                             Text("已完成 \(session.completedSets)/\(session.totalSets) 组 · 动作 \(session.index + 1)/\(session.exercises.count)")
                                 .font(.subheadline).foregroundStyle(.secondary)
                             Text(session.current.name).font(.largeTitle.bold())
+                            if !(session.originalExercises ?? session.exercises)[session.index].alternatives.isEmpty {
+                                Button { choosingAlternative = true } label: { Label("器械被占用？切换替代动作", systemImage: "arrow.triangle.swap") }
+                                    .disabled(session.phase != .training)
+                                if session.phase != .training { Text("休息结束或跳过后可切换。").font(.caption).foregroundStyle(.secondary) }
+                            }
                             Text("第 \(min(session.current.sets, session.completed[session.index] + (session.phase == .training ? 1 : 0))) / \(session.current.sets) 组")
                                 .font(.title2)
                             Text("预设休息 \(session.current.restSeconds) 秒 · 下一动作：\(session.nextName)")
                                 .foregroundStyle(.secondary)
+                            if session.phase == .training {
+                                Text("本组后休息 \(session.current.rest(afterSet: session.completed[session.index] + 1)) 秒")
+                                    .font(.subheadline).foregroundStyle(.orange)
+                            }
                             if session.phase == .resting || session.phase == .paused {
                                 TimelineView(.periodic(from: .now, by: 1)) { timeline in
                                     let left = Int(ceil(session.secondsLeft(at: timeline.date)))
@@ -77,6 +87,15 @@ struct TrainingView: View {
                 ToolbarItem(placement: .topBarTrailing) { Button("结束", role: .destructive) { navigation = "end" } }
             }
             .disabled(controller.busy)
+            .confirmationDialog("选择本组训练动作", isPresented: $choosingAlternative) {
+                if let session = controller.session {
+                    let original = (session.originalExercises ?? session.exercises)[session.index]
+                    Button(original.name + "（原动作）") { Task { await controller.selectAlternative(nil) } }
+                    ForEach(original.alternatives) { alternative in
+                        Button(alternative.name + " · \(alternative.restSeconds)秒休息") { Task { await controller.selectAlternative(alternative.id) } }
+                    }
+                }
+            } message: { Text("已完成组数和实际动作记录保留；接下来的组使用所选动作及其休息时间。") }
             .confirmationDialog("确认操作", isPresented: Binding(get: { navigation != nil }, set: { if !$0 { navigation = nil } })) {
                 Button(navigation == "end" ? "提前结束训练" : navigation == "previous" ? "返回上一动作并重新计组" : "跳过当前动作", role: .destructive) {
                     let action = navigation; navigation = nil

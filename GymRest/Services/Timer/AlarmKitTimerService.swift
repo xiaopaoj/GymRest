@@ -9,14 +9,15 @@ final class AlarmKitTimerService: TimerService {
     func authorize() async throws {
         guard try await AlarmManager.shared.requestAuthorization() == .authorized else { throw TimerFailure.denied }
     }
-    func start(id: UUID, seconds: Int) async throws {
+    func start(id: UUID, seconds: Int, context: RestContext?) async throws {
+        if AlarmManager.shared.authorizationState == .notDetermined { try await authorize() }
         guard AlarmManager.shared.authorizationState == .authorized else { throw TimerFailure.denied }
         // Remove all alarms belonging to this application before replacement.
         for alarm in try AlarmManager.shared.alarms { try AlarmManager.shared.cancel(id: alarm.id) }
         let presentation = AlarmPresentation(
             alert: .init(title: "休息结束", stopButton: .init(text: "停止", textColor: .white, systemImageName: "stop.fill")),
             countdown: .init(title: "组间休息"))
-        let attributes = AlarmAttributes(presentation: presentation, metadata: RestMetadata(), tintColor: .orange)
+        let attributes = AlarmAttributes(presentation: presentation, metadata: RestMetadata(context: context), tintColor: .orange)
         _ = try await AlarmManager.shared.schedule(id: id, configuration: .timer(duration: TimeInterval(seconds), attributes: attributes))
     }
     func cancel(id: UUID) async throws {

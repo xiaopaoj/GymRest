@@ -34,7 +34,9 @@ struct PlanEditor: View {
                         }.padding(.vertical, 5)
                     }.swipeActions(edge: .leading) {
                         Button("复制") {
-                            var copy = exercise; copy.id = UUID(); copy.name = String(copy.name.prefix(97)) + " 副本"
+                            var copy = exercise; copy.id = UUID()
+                            for i in copy.alternatives.indices { copy.alternatives[i].id = UUID() }
+                            copy.name = String(copy.name.prefix(97)) + " 副本"
                             exercises.append(copy); saveExercises()
                         }.tint(.blue)
                     }
@@ -82,6 +84,7 @@ struct ExerciseEditor: View {
     @Environment(\.dismiss) private var dismiss
     @State var exercise: ExerciseSpec
     @State private var seconds = ""
+    @State private var editingAlternative: ExerciseAlternative?
     @State private var error: String?
     let onSave: (ExerciseSpec) -> Void
     private let presets = [30, 45, 60, 90, 120, 150, 180, 240, 300]
@@ -101,8 +104,37 @@ struct ExerciseEditor: View {
                     }
                     Toggle("最后一组后也休息", isOn: $exercise.restAfterLastSet)
                 }
+                Section("替代动作（可选）") {
+                    ForEach(exercise.alternatives) { alternative in
+                        Button { editingAlternative = alternative } label: {
+                            LabeledContent(alternative.name, value: "\(alternative.restSeconds) 秒")
+                        }
+                    }.onDelete { exercise.alternatives.remove(atOffsets: $0) }
+                    Button("添加替代动作") { editingAlternative = ExerciseAlternative(name: "", restSeconds: exercise.restSeconds) }
+                    Text("替代动作共用本动作组数及末组休息开关，休息秒数独立。训练时可切换，已完成的组不会丢失。")
+                        .font(.footnote).foregroundStyle(.secondary)
+                }
+                Section {
+                    DisclosureGroup("按组覆盖休息（可选）") {
+                        Text("未启用的组使用默认秒数。末组仍由“最后一组后也休息”开关决定是否计时。")
+                            .font(.footnote).foregroundStyle(.secondary)
+                        ForEach(1...exercise.sets, id: \.self) { set in
+                            Toggle("第 \(set) 组后", isOn: Binding(
+                                get: { exercise.restOverrides[set] != nil },
+                                set: { enabled in exercise.restOverrides[set] = enabled ? exercise.restSeconds : nil }))
+                            if exercise.restOverrides[set] != nil {
+                                TextField("秒数", value: Binding(
+                                    get: { exercise.restOverrides[set] ?? exercise.restSeconds },
+                                    set: { exercise.restOverrides[set] = $0 }), format: .number)
+                                    .keyboardType(.numberPad)
+                            }
+                        }
+                    }
+                }
                 if let error { Text(error).foregroundStyle(.red) }
             }
+            .onChange(of: exercise.sets) { _, count in exercise.restOverrides = exercise.restOverrides.filter { $0.key <= count }
+                for i in exercise.alternatives.indices { exercise.alternatives[i].restOverrides = exercise.alternatives[i].restOverrides.filter { $0.key <= count } } }
             .navigationTitle(exercise.name.isEmpty ? "添加动作" : "编辑动作")
             .toolbar {
                 ToolbarItem(placement: .cancellationAction) { Button("取消") { dismiss() } }
@@ -113,6 +145,49 @@ struct ExerciseEditor: View {
                     catch { self.error = error.localizedDescription }
                 } }
             }.onAppear { seconds = String(exercise.restSeconds) }
+            .sheet(item: $editingAlternative) { alternative in
+                AlternativeEditor(alternative: alternative, sets: exercise.sets) { result in
+                    if let i = exercise.alternatives.firstIndex(where: { $0.id == result.id }) { exercise.alternatives[i] = result }
+                    else { exercise.alternatives.append(result) }
+                }
+            }
+        }
+    }
+}
+
+struct AlternativeEditor: View {
+    @Environment(\.dismiss) private var dismiss
+    @State var alternative: ExerciseAlternative
+    let sets: Int
+    let save: (ExerciseAlternative) -> Void
+    @State private var seconds = ""
+    @State private var error: String?
+    var body: some View {
+        NavigationStack {
+            Form {
+                TextField("替代动作名称", text: $alternative.name)
+                LabeledContent("共用训练组数", value: "\(sets) 组")
+                TextField("独立休息秒数", text: $seconds).keyboardType(.numberPad)
+                DisclosureGroup("按组覆盖休息（可选）") {
+                    ForEach(1...sets, id: \.self) { set in
+                        Toggle("第 \(set) 组后", isOn: Binding(get: { alternative.restOverrides[set] != nil }, set: { alternative.restOverrides[set] = $0 ? alternative.restSeconds : nil }))
+                        if alternative.restOverrides[set] != nil {
+                            TextField("秒数", value: Binding(get: { alternative.restOverrides[set] ?? alternative.restSeconds }, set: { alternative.restOverrides[set] = $0 }), format: .number).keyboardType(.numberPad)
+                        }
+                    }
+                }
+                if let error { Text(error).foregroundStyle(.red) }
+            }
+            .navigationTitle("替代动作")
+            .toolbar {
+                ToolbarItem(placement: .cancellationAction) { Button("取消") { dismiss() } }
+                ToolbarItem(placement: .confirmationAction) { Button("保存") {
+                    alternative.name = alternative.name.trimmingCharacters(in: .whitespacesAndNewlines)
+                    alternative.restSeconds = Int(seconds) ?? 0
+                    do { try alternative.validate(sets: sets); save(alternative); dismiss() }
+                    catch { self.error = error.localizedDescription }
+                } }
+            }.onAppear { seconds = String(alternative.restSeconds) }
         }
     }
 }

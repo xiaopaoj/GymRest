@@ -9,13 +9,14 @@ final class LocalNotificationTimerService: TimerService {
     func authorize() async throws {
         guard try await center.requestAuthorization(options: [.alert, .sound]) else { throw TimerFailure.denied }
     }
-    func start(id: UUID, seconds: Int) async throws {
+    func start(id: UUID, seconds: Int, context: RestContext?) async throws {
+        if await center.notificationSettings().authorizationStatus == .notDetermined { try await authorize() }
         let settings = await center.notificationSettings()
         guard settings.authorizationStatus == .authorized || settings.authorizationStatus == .provisional else { throw TimerFailure.denied }
         center.removeAllPendingNotificationRequests()
         let content = UNMutableNotificationContent()
         content.title = "休息结束"
-        content.body = "可以开始下一组训练。"
+        content.body = context?.nextStep ?? "可以开始下一组训练。"
         content.sound = .default
         try await center.add(UNNotificationRequest(identifier: id.uuidString, content: content,
             trigger: UNTimeIntervalNotificationTrigger(timeInterval: TimeInterval(seconds), repeats: false)))

@@ -20,17 +20,37 @@ import SwiftData
     }
     func load() throws -> TrainingSession? {
         guard let record = try context.fetch(FetchDescriptor<ActiveTraining>()).first else { return nil }
-        let session = try JSONDecoder().decode(TrainingSession.self, from: record.payload)
+        var session = try JSONDecoder().decode(TrainingSession.self, from: record.payload)
+        if session.sessionID == nil { session.sessionID = UUID() }
         try session.validate()
         return session
     }
-    func save(_ session: TrainingSession?) throws {
-        let records = try context.fetch(FetchDescriptor<ActiveTraining>())
-        if let session, session.phase != .completed {
-            let data = try JSONEncoder().encode(session)
-            if let record = records.first { record.payload = data }
-            else { context.insert(ActiveTraining(payload: data)) }
-        } else { for record in records { context.delete(record) } }
-        try context.save()
+    private func archive(_ session: TrainingSession, at end: Date) throws {
+        let id = session.sessionID ?? session.planID
+        let records = try context.fetch(FetchDescriptor<TrainingRecord>())
+        guard !records.contains(where: { $0.id == id }) else { return }
+        context.insert(try TrainingRecord(session: session, end: end))
+    }
+    func finish(_ session: TrainingSession?, at date: Date) throws {
+        // Archive and remove the active state in one SwiftData save.
+        do {
+            if let session { try archive(session, at: date) }
+            for record in try context.fetch(FetchDescriptor<ActiveTraining>()) { context.delete(record) }
+            try context.save()
+        } catch { context.rollback(); throw error }
+    }
+    func save(_ session: TrainingSession?, at date: Date = Date()) throws {
+        do {
+            let records = try context.fetch(FetchDescriptor<ActiveTraining>())
+            if let session, session.phase != .completed {
+                let data = try JSONEncoder().encode(session)
+                if let record = records.first { record.payload = data }
+                else { context.insert(ActiveTraining(payload: data)) }
+            } else {
+                if let session { try archive(session, at: date) }
+                for record in records { context.delete(record) }
+            }
+            try context.save()
+        } catch { context.rollback(); throw error }
     }
 }

@@ -1,6 +1,11 @@
 name: iOS 26 validation and unsigned IPA
 on:
   workflow_dispatch:
+    inputs:
+      healthkit:
+        description: Enable optional read-only HealthKit capability (requires supported signing)
+        type: boolean
+        default: true
   push:
     branches: [main]
   pull_request:
@@ -12,7 +17,9 @@ concurrency:
 jobs:
   build:
     runs-on: macos-26
-    timeout-minutes: 45
+    timeout-minutes: 60
+    env:
+      GYMREST_HEALTHKIT: ${{ (github.event_name != 'workflow_dispatch' || inputs.healthkit) && 'true' || 'false' }}
     steps:
       - uses: actions/checkout@v4
       - name: Install XcodeGen
@@ -22,7 +29,7 @@ jobs:
       - name: Upload unsigned IPA
         uses: actions/upload-artifact@v4
         with:
-          name: GymRest-unsigned
+          name: ${{ (github.event_name != 'workflow_dispatch' || inputs.healthkit) && 'GymRest-healthkit-unsigned' || 'GymRest-unsigned' }}
           path: build/GymRest-unsigned.ipa
           if-no-files-found: error
       - name: Upload logs and test results
@@ -33,5 +40,9 @@ jobs:
           path: |
             build/build.log
             build/*.xcresult
+            build/runtimes.json
             build/devices.json
+            build/HealthKit.entitlements
+            build/destinations.log
+            build/xcode-candidates.txt
           if-no-files-found: warn

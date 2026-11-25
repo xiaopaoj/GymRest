@@ -13,6 +13,20 @@ struct LibraryView: View {
     var body: some View {
         NavigationStack {
             List {
+                Section {
+                    HStack(spacing: 16) {
+                        Image(systemName: "timer.circle.fill")
+                            .font(.system(size: 48)).foregroundStyle(.orange)
+                            .accessibilityHidden(true)
+                        VStack(alignment: .leading, spacing: 5) {
+                            Text("专注每一组").font(.title2.bold())
+                            Text("练好，也休息好。")
+                                .font(.subheadline).foregroundStyle(.secondary)
+                        }
+                        Spacer()
+                    }.padding(.vertical, 12)
+                }
+
                 if let session = controller.session {
                     Section {
                         Button { showTraining = true } label: {
@@ -62,6 +76,7 @@ struct LibraryView: View {
             .toolbar {
                 ToolbarItem(placement: .topBarLeading) { EditButton() }
                 ToolbarItemGroup(placement: .topBarTrailing) {
+                    NavigationLink { HistoryView() } label: { Image(systemName: "list.clipboard") }
                     NavigationLink { SettingsView(controller: controller) } label: { Image(systemName: "gearshape") }
                     Button { creating = true } label: { Image(systemName: "plus") }.accessibilityLabel("添加计划")
                 }
@@ -70,6 +85,9 @@ struct LibraryView: View {
                 TextField("计划名称", text: $newName)
                 Button("取消", role: .cancel) { newName = "" }
                 Button("创建") { create() }
+            }
+            .onOpenURL { url in
+                if url.scheme == "gymrest", url.host == "training", controller.session != nil { showTraining = true }
             }
             .fullScreenCover(isPresented: $showTraining) { TrainingView(controller: controller) }
         }
@@ -89,7 +107,10 @@ struct LibraryView: View {
     private func duplicate(_ plan: TrainingPlan) {
         do {
             var exercises = try plan.exercises()
-            for i in exercises.indices { exercises[i].id = UUID() }
+            for i in exercises.indices {
+                exercises[i].id = UUID()
+                for j in exercises[i].alternatives.indices { exercises[i].alternatives[j].id = UUID() }
+            }
             context.insert(try TrainingPlan(name: String(plan.name.prefix(97)) + " 副本", position: (plans.map(\.position).max() ?? -1) + 1, exercises: exercises))
             save()
         } catch { self.error = error.localizedDescription }

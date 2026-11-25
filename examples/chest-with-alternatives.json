@@ -1,0 +1,50 @@
+{
+  "version": 1,
+  "plans": [
+    {
+      "id": "E4E5F4F7-A9F1-4DA4-814D-D1719DF8408D",
+      "name": "胸部训练（含替代动作）",
+      "exercises": [
+        {
+          "id": "4D6BDD2C-0A24-4107-84BE-AB3B5F70B01F",
+          "name": "杠铃卧推",
+          "sets": 4,
+          "restSeconds": 120,
+          "restAfterLastSet": false,
+          "restOverrides": {
+            "3": 150
+          },
+          "alternatives": [
+            {
+              "id": "27CD6E82-7436-4354-B649-48C395747EEB",
+              "name": "哑铃卧推",
+              "restSeconds": 90,
+              "restOverrides": {
+                "3": 120
+              }
+            },
+            {
+              "id": "6E9AD1B1-0DE4-4D55-A980-C2C56084992D",
+              "name": "器械推胸",
+              "restSeconds": 90
+            }
+          ]
+        },
+        {
+          "id": "DF7CBA26-C194-46F0-8364-326BD9385047",
+          "name": "绳索夹胸",
+          "sets": 3,
+          "restSeconds": 60,
+          "restAfterLastSet": false,
+          "alternatives": [
+            {
+              "id": "44924298-4167-4414-B922-DF60C8E73039",
+              "name": "蝴蝶机夹胸",
+              "restSeconds": 60
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

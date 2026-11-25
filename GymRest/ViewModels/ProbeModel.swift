@@ -41,6 +41,8 @@ final class ProbeModel {
             // Save the identifier before scheduling, so a process interruption remains recoverable.
             defaults.set(try JSONEncoder().encode(next), forKey: key); task = next
             try await service.start(id: next.id, seconds: seconds)
+            let registered = RestTask(id: next.id, end: Date().addingTimeInterval(Double(seconds)), backend: next.backend)
+            defaults.set(try JSONEncoder().encode(registered), forKey: key); task = registered
             error = nil
         } catch { self.error = String(reflecting: error) + "\n" + error.localizedDescription }
         await refresh()

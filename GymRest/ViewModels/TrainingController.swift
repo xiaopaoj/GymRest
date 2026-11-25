@@ -8,6 +8,7 @@ import Observation
     private let now: () -> Date
     private let prepare: () async throws -> Void
     private var lastCompletion: Date?
+    private var completionSaved = false
     private(set) var session: TrainingSession?
     var busy = false
     var error: String?
@@ -20,7 +21,10 @@ import Observation
         self.store = store; self.alarm = alarm; self.notification = notification; self.now = now; self.prepare = prepare
         session = try store.load()
     }
-    private func persist() throws { try store.save(session) }
+    private func persist() throws {
+        try store.save(session, at: now())
+        if session?.phase == .completed { completionSaved = true }
+    }
     private func perform(clearErrorOnSuccess: Bool = true, _ action: () async throws -> Void) async {
         guard !busy else { return }
         busy = true; defer { busy = false }
@@ -35,6 +39,8 @@ import Observation
             guard session == nil || session?.phase == .completed else { throw TrainingError.activeSession }
             try await prepare()
             session = try TrainingSession(planID: plan.id, planName: plan.name, exercises: plan.exercises(), fallback: preferences.notificationFallback)
+            completionSaved = false
+            session?.startedAt = now()
             try persist()
         }
     }
@@ -49,7 +55,9 @@ import Observation
         value.remaining = Double(duration); value.restEnd = now().addingTimeInterval(Double(duration))
         value.reminderRegistered = false; session = value
         try persist() // Journal ID before system registration for crash recovery.
-        try await service.start(id: value.timerID!, seconds: duration)
+        try await service.start(id: value.timerID!, seconds: duration, context: value.restContext)
+        // Authorization can keep the scheduling call suspended; do not retain a deadline from before the prompt.
+        session?.restEnd = now().addingTimeInterval(Double(duration))
         session?.reminderRegistered = true
         try persist()
     }
@@ -59,10 +67,16 @@ import Observation
             if let lastCompletion, (0..<0.5).contains(now().timeIntervalSince(lastCompletion)) { return }
             lastCompletion = now()
             guard value.completed[value.index] < value.current.sets else { return }
+            if value.performedNames == nil {
+                value.performedNames = value.exercises.enumerated().map { i, exercise in Array(repeating: exercise.name, count: value.completed[i]) }
+            }
+            let performedIndex = value.index
+            let performedName = value.current.name
+            value.performedNames?[performedIndex].append(performedName)
             value.completed[value.index] += 1
             let needsRest = value.completed[value.index] < value.current.sets || value.current.restAfterLastSet
             if needsRest {
-                value.originalRest = value.current.restSeconds
+                value.originalRest = value.current.rest(afterSet: value.completed[value.index])
                 // Persist the manual completion exactly once, even if permission/registration fails.
                 value.phase = .paused; value.remaining = Double(value.originalRest)
                 session = value; try persist()
@@ -113,6 +127,23 @@ import Observation
             try await schedule(seconds: Double(value.originalRest))
         }
     }
+    func selectAlternative(_ id: UUID?) async {
+        await perform {
+            guard var value = session, value.phase == .training else { return }
+            if value.originalExercises == nil { value.originalExercises = value.exercises }
+            let original = value.originalExercises![value.index]
+            var replacement = original
+            if let id {
+                guard let alternative = original.alternatives.first(where: { $0.id == id }) else { throw TrainingError.invalidExercise }
+                replacement.name = alternative.name
+                replacement.restSeconds = alternative.restSeconds
+                replacement.restOverrides = alternative.restOverrides
+            }
+            // Keep the slot ID and set count; already performed set names remain immutable.
+            value.exercises[value.index] = replacement
+            session = value; try persist()
+        }
+    }
     func navigate(previous: Bool) async {
         await perform {
             guard var value = session, value.phase != .completed else { return }
@@ -121,6 +152,7 @@ import Observation
             if previous {
                 value.index = max(0, value.index - 1)
                 value.completed[value.index] = 0
+                value.performedNames?[value.index] = []
                 value.phase = .training
             } else if value.index + 1 < value.exercises.count {
                 value.index += 1; value.phase = .training
@@ -132,7 +164,9 @@ import Observation
         await perform {
             try await cancelReminder()
             // Only clear memory after persistent deletion succeeds.
-            try store.save(nil); session = nil
+            if completionSaved { try store.save(nil) }
+            else { try store.finish(session, at: now()) }
+            session = nil; completionSaved = false
         }
     }
     func reconcile() async {
