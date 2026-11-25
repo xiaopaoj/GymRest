@@ -1,6 +1,6 @@
 # GymRest 开发规范
 
-- 用户于2026-11-25明确调整顺序：暂缓 SideStore 验证，继续核心 App 开发；免费签名和真机能力仍待验证。
+- 用户于2026-11-25明确调整顺序：暂缓 SideStore 验证，继续核心 App 开发；后续用户已报告部分真机安装/提醒成功，详见 docs/DEVICE_TEST_2026-11-25.md；不能扩大为全部能力通过。
 - 使用现有隔离 checkout，不创建 worktree，除非用户明确要求。
 - Swift 6 / SwiftUI / iOS 26+。优先 Apple 官方框架，禁用音频、定位等后台保活技巧。
 - 计时业务通过 MainActor TimerService 协议隔离。系统计时负责提醒，界面刷新不能驱动提醒或自动完成训练组。
