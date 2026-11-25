@@ -24,6 +24,12 @@ final class LocalNotificationTimerService: TimerService {
         center.removePendingNotificationRequests(withIdentifiers: [id.uuidString])
         center.removeDeliveredNotifications(withIdentifiers: [id.uuidString])
     }
+    func inspect(id: UUID) async throws -> TimerInspection {
+        let pending = await center.pendingNotificationRequests()
+        guard let request = pending.first(where: { $0.identifier == id.uuidString }) else { return .missing }
+        let trigger = request.trigger as? UNTimeIntervalNotificationTrigger
+        return .running(end: trigger?.nextTriggerDate())
+    }
     func status(id: UUID) async throws -> String {
         let pending = await center.pendingNotificationRequests()
         return pending.contains(where: { $0.identifier == id.uuidString }) ? "通知已注册" : "无待发送通知（不代表已响铃）"

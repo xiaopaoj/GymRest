@@ -11,5 +11,5 @@ final class ForegroundNotifications: NSObject, UNUserNotificationCenterDelegate,
 struct GymRestApp: App {
     private let delegate = ForegroundNotifications()
     init() { UNUserNotificationCenter.current().delegate = delegate }
-    var body: some Scene { WindowGroup { ProbeView() } }
+    var body: some Scene { WindowGroup { RootView() } }
 }

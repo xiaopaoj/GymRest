@@ -6,6 +6,13 @@ struct RestTask: Codable, Equatable, Sendable {
     let backend: String
 }
 
+enum TimerInspection: Sendable {
+    case running(end: Date?)
+    case paused(remaining: TimeInterval?)
+    case alerting
+    case missing
+}
+
 @MainActor
 protocol TimerService {
     var name: String { get }
@@ -13,6 +20,7 @@ protocol TimerService {
     func authorize() async throws
     func start(id: UUID, seconds: Int) async throws
     func cancel(id: UUID) async throws
+    func inspect(id: UUID) async throws -> TimerInspection
     func status(id: UUID) async throws -> String
 }
 

@@ -1,19 +1,33 @@
 # GymRest
 
-个人原生 iOS 26+ 健身休息计时器。当前仅实现**阶段一技术验证**，尚无训练计划或训练历史功能。
+轻量原生 iOS 26+ 个人健身组间休息计时器。SwiftUI + SwiftData + AlarmKit，无账号、后端、广告和历史训练记录。
 
-SwiftUI + AlarmKit，独立 WidgetKit Live Activity 扩展；无账号、后端或第三方运行时依赖。提供显式可选的 UserNotifications 降级模式，其无法保证突破静音和专注模式，也不提供 AlarmKit 锁屏倒计时。
+## 当前版本 0.2.0
 
-## 使用
+- 首次创建胸、背、腿、肩、手臂五套可编辑空白计划；支持添加、重命名、删除、复制和排序。
+- 动作独立配置组数、休息秒数、末组后是否休息；支持复制、拖拽排序及快捷秒数。
+- 点击“完成本组”进入休息，默认末组直接切换动作；训练不会自动完成组数。
+- 休息可暂停、继续、跳过、重启及 ±15/30 秒；临时调整不修改计划。
+- 当前训练进度本地保存，恢复时核对系统提醒和 Live Activity 截止时间。
+- 设置默认组数/休息、提醒方式、权限及训练页面常亮；保留独立提醒测试入口。
 
-1. 将本仓库代码推送至 GitHub `main`，或在 Actions 中选择 **iOS 26 validation and unsigned IPA → Run workflow**。
-2. 工作流在 `macos-26` 检查并选择已安装且带 iOS 26 SDK 的 Xcode；缺少 SDK/模拟器时明确失败。
-3. 下载 `GymRest-unsigned` Artifact 并解压得到 `GymRest-unsigned.ipa`。这不是已签名的可直接安装应用。
-4. 按 [SideStore 指南](docs/SIDESTORE.md) 签名安装，在 App 内申请 AlarmKit 权限，测试 30 秒、60 秒、自定义秒数及取消。
-5. 按 [TESTING.md](TESTING.md) 填写真机结果。阶段一通过前不进入完整业务开发。
+用户已决定先开发 App，暂缓 SideStore 验证。签名和系统提醒真机能力仍未确认；JSON 导入导出、指定组覆盖休息及完整体验优化尚未开发。
 
-## 开发
+## 使用流程
 
-macOS + Xcode 26（iOS 26 SDK）+ XcodeGen，执行 `bash scripts/ci.sh`。Swift 6，最低 iOS 26.0。`project.yml` 是工程唯一来源，生成的 Xcode 工程和构建目录不入库。
+1. 编辑计划，添加动作并分别设置组数与休息。
+2. 在设置中申请 AlarmKit 权限，或显式选择本地通知降级并申请通知权限。
+3. 开始训练，每练完一组点击“完成本组”；休息结束后手动开始下一组。
+4. 收起训练页不会结束训练；首页可继续。提前结束会取消系统提醒并删除临时状态。
 
-Linux / Windows 无法编译 Apple SDK；此处源码生成和静态检查不代表 iOS 编译通过。构建日志及 XCTest `.xcresult` 上传至 `GymRest-diagnostics`。免费签名和 AlarmKit 能力未获真机确认；见 [已知限制](KNOWN_ISSUES.md)。
+开始训练时保存计划副本；编辑/删除原计划不影响当前训练。跳过的组不算完成，返回上一动作会重置该动作组数，操作前会确认。
+
+本地通知无法保证突破静音、专注模式，不提供 AlarmKit 锁屏倒计时。暂停通过取消当前系统任务实现，继续时重新注册剩余时间；暂停时不会响铃。
+
+## 构建与安装
+
+GitHub Actions `iOS 26 validation and unsigned IPA` 支持 main 推送、PR 和手动触发。使用 macos-26、iOS 26 SDK 和 XcodeGen。成功后下载 `GymRest-unsigned`，诊断日志和 XCTest 结果在 `GymRest-diagnostics`。
+
+macOS 开发环境可运行 `bash scripts/ci.sh`。Linux / Windows 无法直接编译 Apple SDK。工程由 `project.yml` 生成，构建目录不入库。
+
+[SideStore 指南](docs/SIDESTORE.md) · [测试及验收](TESTING.md) · [开发决策](DEVELOPMENT.md) · [已知限制](KNOWN_ISSUES.md)
