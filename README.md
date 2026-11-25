@@ -1,19 +1,21 @@
 # GymRest
 
-当前工作区正在开发0.5.0：三分化/五分化模板、51项动作目录、训练顺序建议、逐组重量与可选次数，以及同步界面优化。媒体待人工补齐，114项iOS测试待验证；尚未推送。见[本轮说明](docs/TEMPLATES_AND_LOADS.md)。
+当前版本0.5.0 (5)：三分化/五分化模板、51项动作目录、训练顺序建议、逐组重量与可选次数，以及同步界面优化。114项XCTest零失败、Release构建与IPA检查通过；媒体待人工补齐。完整状态见[构建记录](docs/BUILD_VALIDATION_0_5_0.md)。见[本轮说明](docs/TEMPLATES_AND_LOADS.md)。
 
 
-此前0.4.0基线已完成64项iOS测试与Release构建；本轮0.5.0工作区改动尚未构建。计划层级的历史审查见 [界面与使用流程审查](docs/INTERFACE_REVIEW.md)。
+[下载0.5.0 (5)未签名IPA压缩包](https://github.com/xiaopaoj/GymRest/actions/runs/45631277359/artifacts/15031488738)（解压后用SideStore签名安装）。
+
+此前0.4.0基线已完成64项iOS测试与Release构建；本轮0.5.0已独立通过114项iOS测试与Release构建。计划层级的历史审查见 [界面与使用流程审查](docs/INTERFACE_REVIEW.md)。
 
 轻量原生 iOS 26+ 个人健身组间休息计时器。SwiftUI + SwiftData + AlarmKit，无账号、后端或广告，训练计划和记录保存在本机。
 
-## 0.5.0 工作区新增
+## 0.5.0 新增
 
 - 三分化/五分化模板，可选择每周目标、器材、具体动作及重点部位后预览创建。
 - 51项离线动作资料，支持部位/器材筛选、要点与替代选择，保留来源和许可。
 - 顺序建议说明原因，由用户采用；训练中只调整未开始动作。
 - 每组重量、可选次数、单位、负重口径与器械备注；实际记录与计划预设分离，锁屏完成沿用当前组设置。
-- 独立动作间休息、锁屏快捷操作及追加/覆盖导入，仍待本轮Xcode与真机验收。
+- 独立动作间休息、锁屏快捷操作及追加/覆盖导入，已通过本轮Xcode编译与自动化测试，仍待真机验收。
 - 计划JSON version3，旧版兼容；演示及器材图待补充，不宣称素材齐备。
 
 ## 历史 0.3.0 功能记录（不代表最新工作区状态）
@@ -44,7 +46,7 @@
 
 ## 构建与安装
 
-GitHub Actions `iOS 26 validation and unsigned IPA` 支持 main 推送、PR 和手动触发。使用 macos-26、iOS 26 SDK 和 XcodeGen。默认成功后下载 `GymRest-healthkit-unsigned`（手动关闭healthkit时为 `GymRest-unsigned`），诊断日志和 XCTest 结果在 `GymRest-diagnostics`。
+GitHub Actions `iOS 26 validation and unsigned IPA` 支持 main 推送、PR 和手动触发。使用 macos-15-intel、iOS 26 SDK 和 XcodeGen。默认成功后下载 `GymRest-healthkit-unsigned`（手动关闭healthkit时为 `GymRest-unsigned`），诊断日志和 XCTest 结果在 `GymRest-diagnostics`。
 
 macOS 开发环境可运行 `bash scripts/ci.sh`。Linux / Windows 无法直接编译 Apple SDK。先执行 `bash scripts/prepare_icon.sh`，再用 XcodeGen 生成工程。工程由 `project.yml` 生成，构建目录不入库。
 
