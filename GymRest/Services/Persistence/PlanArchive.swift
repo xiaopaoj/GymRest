@@ -29,11 +29,17 @@ struct PlanArchive: Codable {
         }
         for plan in plans {
             if let parent = plan.programID, !parents.contains(where: { $0.id == parent }) { throw ArchiveFailure.invalid("训练日引用了不存在的上层计划。") }
-            guard !plan.name.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty, plan.name.count <= 100,
-                  Set(plan.exercises.flatMap { [$0.id] + $0.alternatives.map(\.id) }).count == plan.exercises.reduce(0, { $0 + 1 + $1.alternatives.count }) else {
+            guard !plan.name.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty, plan.name.count <= 100 else {
                 throw ArchiveFailure.invalid("计划名称不合法或动作ID重复。")
             }
-            for exercise in plan.exercises { try exercise.validate() }
+            var identifiers = Set<UUID>()
+            for exercise in plan.exercises {
+                guard identifiers.insert(exercise.id).inserted else { throw ArchiveFailure.invalid("计划名称不合法或动作ID重复。") }
+                for alternative in exercise.alternatives {
+                    guard identifiers.insert(alternative.id).inserted else { throw ArchiveFailure.invalid("计划名称不合法或动作ID重复。") }
+                }
+                try exercise.validate()
+            }
         }
     }
     static func decode(_ data: Data) throws -> PlanArchive {
@@ -46,8 +52,14 @@ struct PlanArchive: Codable {
         let entries = try plans.map { day in
             Entry(id: day.id, name: day.name, exercises: try day.exercises(), programID: parents.contains(where: { $0.id == day.programID }) ? day.programID : nil)
         }
-        let extended = parents.contains { $0.weeklySessions != nil } || entries.contains { entry in
-            entry.exercises.contains { $0.catalogID != nil || $0.prescription != nil || $0.alternatives.contains { $0.catalogID != nil || $0.prescription != nil } }
+        var extended = parents.contains { $0.weeklySessions != nil }
+        for entry in entries {
+            for exercise in entry.exercises {
+                if exercise.catalogID != nil || exercise.prescription != nil { extended = true }
+                for alternative in exercise.alternatives {
+                    if alternative.catalogID != nil || alternative.prescription != nil { extended = true }
+                }
+            }
         }
         let archive = PlanArchive(version: extended ? 3 : parents.isEmpty ? 1 : 2, plans: entries, programs: parents.isEmpty ? nil : parents)
         try archive.validate()
