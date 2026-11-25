@@ -92,6 +92,6 @@ struct LibraryView: View {
             for i in exercises.indices { exercises[i].id = UUID() }
             context.insert(try TrainingPlan(name: String(plan.name.prefix(97)) + " 副本", position: (plans.map(\.position).max() ?? -1) + 1, exercises: exercises))
             save()
-        } catch { error = error.localizedDescription }
+        } catch { self.error = error.localizedDescription }
     }
 }

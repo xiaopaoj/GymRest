@@ -13,3 +13,7 @@
 - **构建工具**：macos-26 镜像需要 Xcode 26 与 iOS 26 模拟器；缺少时明确失败。Homebrew XcodeGen 版本写入日志，暂未固定版本。
 - **本地通知降级**：不保证突破静音/专注，不提供 AlarmKit 锁屏倒计时，与 AlarmKit 能力不等效。
 - **个人签名**：有效期限、App和扩展数量及刷新规则以 Apple/SideStore 当前规则为准，不保证永久离线安装。
+
+## 已修复，等待 CI 复验
+
+LibraryView 复制计划的 catch 分支错误地对隐式 error 常量赋值，导致 Swift 编译失败；已改为 self.error。此次日志中的测试为构建失败后取消，修复后的编译和测试仍待确认。
