@@ -36,7 +36,7 @@ struct SettingsView: View {
                     .font(.footnote).foregroundStyle(.secondary)
             }
             Section("关于") {
-                LabeledContent("版本", value: "0.3.0")
+                LabeledContent("版本", value: "0.4.0")
                 Text("训练计划与记录仅存本机，无账号和后端。")
             }
             if let error = error ?? controller.error { Text(error).foregroundStyle(.red) }

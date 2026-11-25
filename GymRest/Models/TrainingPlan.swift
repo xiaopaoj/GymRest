@@ -62,6 +62,7 @@ struct ExerciseSpec: Codable, Identifiable, Equatable, Sendable {
 
 // The ordered Codable value array keeps each exercise's configuration independent.
 @Model final class TrainingPlan {
+    var programID: UUID?
     @Attribute(.unique) var id: UUID
     var name: String
     var position: Int
@@ -96,9 +97,10 @@ struct ExerciseSpec: Codable, Identifiable, Equatable, Sendable {
 }
 
 enum TrainingError: LocalizedError {
-    case invalidExercise, emptyPlan, activeSession, missingReminder, invalidSession
+    case invalidExercise, emptyPlan, activeSession, missingReminder, invalidSession, uncalibratedTimer
     var errorDescription: String? {
         switch self {
+        case .uncalibratedTimer: "系统计时已恢复，暂时无法读取截止时间。请稍后刷新，或重新开始当前休息。"
         case .invalidSession: "保存的训练状态不完整。请保留数据并反馈，避免覆盖训练进度。"
         case .invalidExercise: "动作名称不能为空或超过100字，组数须为1–100，休息须为1–86400秒，按组覆盖须对应有效组号。"
         case .emptyPlan: "请先向计划中添加训练动作。"

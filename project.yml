@@ -1,6 +1,7 @@
 name: GymRest
 options:
   bundleIdPrefix: dev.gymrest
+  developmentLanguage: zh-Hans
   deploymentTarget:
     iOS: "26.0"
 settings:
@@ -8,8 +9,8 @@ settings:
     SWIFT_VERSION: "6.0"
     TARGETED_DEVICE_FAMILY: "1"
     CODE_SIGNING_ALLOWED: NO
-    MARKETING_VERSION: "0.3.0"
-    CURRENT_PROJECT_VERSION: "3"
+    MARKETING_VERSION: "0.4.0"
+    CURRENT_PROJECT_VERSION: "4"
 targets:
   GymRest:
     type: application
@@ -23,6 +24,7 @@ targets:
       path: build/plists/GymRest-Info.plist
       properties:
         CFBundleDisplayName: GymRest
+        CFBundleDevelopmentRegion: zh-Hans
         NSAlarmKitUsageDescription: 用于在训练组间休息结束时发出系统提醒。
         NSSupportsLiveActivities: true
         CFBundleURLTypes:

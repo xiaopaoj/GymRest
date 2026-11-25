@@ -6,7 +6,7 @@ import SwiftData
     let store: TrainingStore
     let controller: TrainingController
     init() throws {
-        container = try ModelContainer(for: TrainingPlan.self, LibraryPreferences.self, ActiveTraining.self, TrainingRecord.self)
+        container = try ModelContainer(for: TrainingProgram.self, TrainingPlan.self, LibraryPreferences.self, ActiveTraining.self, TrainingRecord.self)
         store = try TrainingStore(container: container)
         controller = try TrainingController(store: store, prepare: {
             // Transfer reminder ownership from the technical probe to training.

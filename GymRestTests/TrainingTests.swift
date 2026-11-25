@@ -16,7 +16,7 @@ final class TrainingTests: XCTestCase {
         let plan: TrainingPlan
     }
     private func fixture(_ exercises: [ExerciseSpec]) throws -> Fixture {
-        let container = try ModelContainer(for: TrainingPlan.self, LibraryPreferences.self, ActiveTraining.self, TrainingRecord.self,
+        let container = try ModelContainer(for: TrainingProgram.self, TrainingPlan.self, LibraryPreferences.self, ActiveTraining.self, TrainingRecord.self,
             configurations: ModelConfiguration(isStoredInMemoryOnly: true))
         let store = try TrainingStore(container: container)
         let timer = MockTimerService()

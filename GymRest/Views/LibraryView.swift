@@ -2,117 +2,162 @@ import SwiftUI
 import SwiftData
 
 struct LibraryView: View {
-    @Environment(\.modelContext) private var context
-    @Query(sort: \TrainingPlan.position) private var plans: [TrainingPlan]
     @Bindable var controller: TrainingController
-    @State private var creating = false
-    @State private var newName = ""
-    @State private var showTraining = false
-    @State private var error: String?
-
+    @State private var tab = 0
+    @State private var showingTraining = false
     var body: some View {
-        NavigationStack {
-            List {
-                Section {
-                    HStack(spacing: 16) {
-                        Image(systemName: "timer.circle.fill")
-                            .font(.system(size: 48)).foregroundStyle(.orange)
-                            .accessibilityHidden(true)
-                        VStack(alignment: .leading, spacing: 5) {
-                            Text("专注每一组").font(.title2.bold())
-                            Text("练好，也休息好。")
-                                .font(.subheadline).foregroundStyle(.secondary)
-                        }
-                        Spacer()
-                    }.padding(.vertical, 12)
-                }
-
-                if let session = controller.session {
-                    Section {
-                        Button { showTraining = true } label: {
-                            Label("\(session.phase == .completed ? "训练已完成" : "继续训练") · \(session.planName)", systemImage: "play.circle.fill")
-                                .font(.headline).padding(.vertical, 8)
-                        }
-                    }
-                }
-                Section("我的训练计划") {
-                    ForEach(plans) { plan in
-                        VStack(alignment: .leading, spacing: 12) {
-                            NavigationLink { PlanEditor(plan: plan, controller: controller) } label: {
-                                VStack(alignment: .leading, spacing: 6) {
-                                    Text(plan.name).font(.title3.bold())
-                                    if let exercises = try? plan.exercises() {
-                                        Text("\(exercises.count) 个动作 · \(exercises.reduce(0) { $0 + $1.sets }) 组")
-                                            .font(.subheadline).foregroundStyle(.secondary)
-                                    } else { Text("动作数据读取失败，请勿覆盖").foregroundStyle(.red) }
-                                }
-                            }
-                            Button {
-                                Task {
-                                    await controller.start(plan: plan)
-                                    if controller.error == nil { showTraining = true }
-                                }
-                            } label: { Label("开始训练", systemImage: "play.fill").frame(maxWidth: .infinity) }
-                                .buttonStyle(.borderedProminent).disabled(controller.busy || controller.session != nil && controller.session?.phase != .completed)
-                        }.padding(.vertical, 8)
-                            .swipeActions(edge: .leading) { Button("复制") { duplicate(plan) }.tint(.blue) }
-                    }
-                    .onDelete { indices in
-                        for i in indices { context.delete(plans[i]) }
-                        save()
-                    }
-                    .onMove { source, destination in
-                        var ordered = plans; ordered.move(fromOffsets: source, toOffset: destination)
-                        for (i, plan) in ordered.enumerated() { plan.position = i }
-                        save()
-                    }
-                }
-                Section { Text("计划中的每个动作单独设置组数和休息时间。滑动可复制，编辑模式可排序。")
-                        .font(.footnote).foregroundStyle(.secondary) }
-                if let error { Text(error).foregroundStyle(.red) }
-                if let error = controller.error { Text(error).foregroundStyle(.red).textSelection(.enabled) }
-            }
-            .navigationTitle("GymRest")
-            .toolbar {
-                ToolbarItem(placement: .topBarLeading) { EditButton() }
-                ToolbarItemGroup(placement: .topBarTrailing) {
-                    NavigationLink { HistoryView() } label: { Image(systemName: "list.clipboard") }
-                    NavigationLink { SettingsView(controller: controller) } label: { Image(systemName: "gearshape") }
-                    Button { creating = true } label: { Image(systemName: "plus") }.accessibilityLabel("添加计划")
-                }
-            }
-            .alert("新建训练计划", isPresented: $creating) {
-                TextField("计划名称", text: $newName)
-                Button("取消", role: .cancel) { newName = "" }
-                Button("创建") { create() }
-            }
-            .onOpenURL { url in
-                if url.scheme == "gymrest", url.host == "training", controller.session != nil { showTraining = true }
-            }
-            .fullScreenCover(isPresented: $showTraining) { TrainingView(controller: controller) }
+        TabView(selection: $tab) {
+            NavigationStack { ProgramListView(controller: controller, showingTraining: $showingTraining) }
+                .tabItem { Label("计划", systemImage: "square.grid.2x2") }.tag(0)
+            NavigationStack { HistoryView() }.tabItem { Label("记录", systemImage: "clock.arrow.circlepath") }.tag(1)
+            NavigationStack { SettingsView(controller: controller) }.tabItem { Label("设置", systemImage: "gearshape") }.tag(2)
         }
+        .onOpenURL { url in
+            if url.scheme == "gymrest", url.host == "training", controller.session != nil { showingTraining = true }
+        }
+        .fullScreenCover(isPresented: $showingTraining) { TrainingView(controller: controller) }
+        .alert("操作未完成", isPresented: Binding(get: { !showingTraining && controller.error != nil }, set: { if !$0 && !showingTraining { controller.error = nil } })) {
+            Button("知道了") { controller.error = nil }
+        } message: { Text(controller.error ?? "请重试。") }
+    }
+}
+
+struct ProgramListView: View {
+    @Environment(\.modelContext) private var context
+    @Query(sort: \TrainingProgram.position) private var programs: [TrainingProgram]
+    @Query(sort: \TrainingPlan.position) private var days: [TrainingPlan]
+    let controller: TrainingController
+    @Binding var showingTraining: Bool
+    @State private var organizing = false
+    @State private var query = ""
+    @State private var error: String?
+    private var ungrouped: [TrainingPlan] { days.filter { day in !programs.contains(where: { $0.id == day.programID }) } }
+    private func isTemplate(_ program: TrainingProgram) -> Bool {
+        let children = days.filter { $0.programID == program.id }
+        return !children.isEmpty && children.allSatisfy { (try? $0.exercises().isEmpty) == true }
+    }
+    private var primaryPrograms: [TrainingProgram] { programs.filter { !isTemplate($0) } }
+    var body: some View {
+        List {
+            if let session = controller.session {
+                Section {
+                    Button { showingTraining = true } label: {
+                        HStack(spacing: 14) {
+                            Image(systemName: "play.circle.fill").font(.largeTitle)
+                            VStack(alignment: .leading, spacing: 5) {
+                                Text(session.phase == .completed ? "查看训练结果" : "继续本次训练").font(.headline)
+                                Text(session.planName).font(.subheadline).foregroundStyle(.secondary)
+                            }
+                            Spacer(); Image(systemName: "arrow.up.right")
+                        }.padding(.vertical, 8)
+                    }.buttonStyle(.plain).foregroundStyle(.orange)
+                }
+            }
+            Section {
+                ForEach(primaryPrograms.filter { query.isEmpty || $0.name.localizedCaseInsensitiveContains(query) }) { program in
+                    NavigationLink {
+                        ProgramDetailView(program: program, controller: controller, showingTraining: $showingTraining)
+                    } label: { ProgramCard(program: program, days: days.filter { $0.programID == program.id }) }
+                }
+                .onMove { source, destination in
+                    // Sorting is disabled while searching to preserve the full ordering.
+                    var ordered = primaryPrograms; ordered.move(fromOffsets: source, toOffset: destination)
+                    ordered.append(contentsOf: programs.filter { isTemplate($0) })
+                    for (i, value) in ordered.enumerated() { value.position = i }; save()
+                }.moveDisabled(!query.isEmpty)
+            } header: {
+                HStack { Text("我的计划"); Spacer(); Text("\(primaryPrograms.count) 套") }
+            } footer: { Text("选择计划，再选择当天训练。空训练日进入后可添加动作。") }
+            if programs.contains(where: { isTemplate($0) }) {
+                Section {
+                    DisclosureGroup("空白计划与模板") {
+                        ForEach(programs.filter { isTemplate($0) && (query.isEmpty || $0.name.localizedCaseInsensitiveContains(query)) }) { program in
+                            NavigationLink { ProgramDetailView(program: program, controller: controller, showingTraining: $showingTraining) } label: {
+                                ProgramCard(program: program, days: days.filter { $0.programID == program.id })
+                            }
+                        }
+                    }
+                }
+            }
+            if !ungrouped.isEmpty {
+                Section("整理旧版内容") {
+                    Button { organizing = true } label: {
+                        Label("将已有训练归入计划 · \(ungrouped.count) 项", systemImage: "folder.badge.plus")
+                    }
+                    DisclosureGroup("未归类训练") {
+                        ForEach(ungrouped.filter { (try? $0.exercises().isEmpty) != true }) { day in
+                            NavigationLink { DayDetailView(day: day, controller: controller, showingTraining: $showingTraining) } label: { DayRow(day: day, index: nil) }
+                        }
+                    }
+                    DisclosureGroup("旧版空白项目") {
+                        ForEach(ungrouped.filter { (try? $0.exercises().isEmpty) == true }) { day in
+                            NavigationLink { DayDetailView(day: day, controller: controller, showingTraining: $showingTraining) } label: { DayRow(day: day, index: nil) }
+                        }
+                    }
+                }
+            }
+            if programs.isEmpty && ungrouped.isEmpty {
+                ContentUnavailableView("建立你的训练计划", systemImage: "square.grid.2x2", description: Text("例如创建“五分化”，再添加各训练日；也可以导入计划。"))
+            }
+        }
+        .listStyle(.insetGrouped)
+        .navigationTitle("训练计划")
+        .searchable(text: $query, prompt: "搜索计划")
+        .toolbar {
+            ToolbarItem(placement: .topBarLeading) { EditButton().disabled(programs.isEmpty || !query.isEmpty) }
+            ToolbarItem(placement: .topBarTrailing) {
+                Menu {
+                    Button("新建计划", systemImage: "folder.badge.plus") { organizing = true }
+                    NavigationLink("导入计划") { PlanTransferView() }
+                } label: { Image(systemName: "plus") }.accessibilityLabel("添加或导入计划")
+            }
+        }
+        .sheet(isPresented: $organizing) { NavigationStack { OrganizeProgramsView() } }
+        .alert("保存失败", isPresented: Binding(get: { error != nil }, set: { if !$0 { error = nil } })) {
+            Button("知道了") { error = nil }
+        } message: { Text(error ?? "") }
     }
     private func save() {
-        do { try context.save(); error = nil }
-        catch { context.rollback(); self.error = error.localizedDescription }
+        do { try context.save() } catch { context.rollback(); self.error = error.localizedDescription }
     }
-    private func create() {
-        let name = newName.trimmingCharacters(in: .whitespacesAndNewlines)
-        guard !name.isEmpty, name.count <= 100 else { error = "计划名称须为1–100字。"; return }
-        do {
-            context.insert(try TrainingPlan(name: name, position: (plans.map(\.position).max() ?? -1) + 1))
-            save(); newName = ""
-        } catch { self.error = error.localizedDescription }
-    }
-    private func duplicate(_ plan: TrainingPlan) {
-        do {
-            var exercises = try plan.exercises()
-            for i in exercises.indices {
-                exercises[i].id = UUID()
-                for j in exercises[i].alternatives.indices { exercises[i].alternatives[j].id = UUID() }
+}
+
+private struct ProgramCard: View {
+    let program: TrainingProgram
+    let days: [TrainingPlan]
+    var body: some View {
+        HStack(alignment: .top, spacing: 16) {
+            Image(systemName: "square.stack.3d.up.fill")
+                .font(.title2).foregroundStyle(.orange).padding(14)
+                .background(.orange.opacity(0.12), in: RoundedRectangle(cornerRadius: 16))
+            VStack(alignment: .leading, spacing: 8) {
+                Text(program.name).font(.title3.bold()).foregroundStyle(.primary)
+                Text("\(days.count) 个训练日 · \(days.reduce(0) { $0 + ((try? $1.exercises().count) ?? 0) }) 个动作")
+                    .font(.subheadline).foregroundStyle(.secondary)
+                Text(days.prefix(3).map(\.name).joined(separator: " · "))
+                    .font(.caption).foregroundStyle(.secondary).lineLimit(2)
             }
-            context.insert(try TrainingPlan(name: String(plan.name.prefix(97)) + " 副本", position: (plans.map(\.position).max() ?? -1) + 1, exercises: exercises))
-            save()
-        } catch { self.error = error.localizedDescription }
+        }.padding(.vertical, 14)
+    }
+}
+
+struct DayRow: View {
+    let day: TrainingPlan
+    let index: Int?
+    var body: some View {
+        HStack(spacing: 14) {
+            if let index {
+                Text(String(format: "%02d", index + 1)).font(.headline.monospacedDigit())
+                    .foregroundStyle(.orange).frame(width: 38, height: 42)
+                    .background(.orange.opacity(0.1), in: RoundedRectangle(cornerRadius: 10))
+            }
+            VStack(alignment: .leading, spacing: 6) {
+                Text(day.name).font(.headline).foregroundStyle(.primary)
+                if let exercises = try? day.exercises() {
+                    Text(exercises.isEmpty ? "尚未添加动作" : "\(exercises.count) 个动作 · \(exercises.reduce(0) { $0 + $1.sets }) 组")
+                        .font(.subheadline).foregroundStyle(.secondary)
+                } else { Text("数据无法读取，请保留内容").font(.caption).foregroundStyle(.red) }
+            }
+        }.padding(.vertical, 8)
     }
 }

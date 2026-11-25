@@ -10,3 +10,5 @@
 - XcodeGen project.yml 管理主应用和扩展；Bundle ID 必须保持父子关系。
 - 修改后运行适用检查，更新 DEVELOPMENT.md / TESTING.md / KNOWN_ISSUES.md。未执行的编译、测试和真机验收不得写成通过。
 - 不主动 push 或触发远程工作流，除非用户授权；本地 commit 可以按用户要求执行。
+
+- 用户最新要求：开发完成后先审查和检查，保留工作区改动，等待用户再次通知才可提交、推送或触发GitHub Actions；此前推送授权不适用于后续变更。

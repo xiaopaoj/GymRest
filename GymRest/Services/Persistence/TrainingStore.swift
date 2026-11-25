@@ -12,8 +12,11 @@ import SwiftData
         } else {
             preferences = LibraryPreferences()
             context.insert(preferences)
+            let program = TrainingProgram(name: "五分化模板", position: 0)
+            context.insert(program)
             for (position, name) in ["胸部训练", "背部训练", "腿部训练", "肩部训练", "手臂训练"].enumerated() {
-                context.insert(try TrainingPlan(name: name, position: position))
+                let day = try TrainingPlan(name: name, position: position)
+                day.programID = program.id; context.insert(day)
             }
             try context.save()
         }

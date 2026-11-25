@@ -4,7 +4,7 @@ import SwiftData
 
 @MainActor final class DataFeatureTests: XCTestCase {
     private func store() throws -> TrainingStore {
-        let container = try ModelContainer(for: TrainingPlan.self, LibraryPreferences.self, ActiveTraining.self, TrainingRecord.self,
+        let container = try ModelContainer(for: TrainingProgram.self, TrainingPlan.self, LibraryPreferences.self, ActiveTraining.self, TrainingRecord.self,
             configurations: ModelConfiguration(isStoredInMemoryOnly: true))
         return try TrainingStore(container: container)
     }

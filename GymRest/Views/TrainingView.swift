@@ -36,8 +36,13 @@ struct TrainingView: View {
                             Text("预设休息 \(session.current.restSeconds) 秒 · 下一动作：\(session.nextName)")
                                 .foregroundStyle(.secondary)
                             if session.phase == .training {
-                                Text("本组后休息 \(session.current.rest(afterSet: session.completed[session.index] + 1)) 秒")
-                                    .font(.subheadline).foregroundStyle(.orange)
+                                if session.completed[session.index] + 1 == session.current.sets && !session.current.restAfterLastSet {
+                                    Text(session.index + 1 < session.exercises.count ? "本组后直接进入下一动作" : "本组完成后结束训练")
+                                        .font(.subheadline).foregroundStyle(.orange)
+                                } else {
+                                    Text("本组后休息 \(session.current.rest(afterSet: session.completed[session.index] + 1)) 秒")
+                                        .font(.subheadline).foregroundStyle(.orange)
+                                }
                             }
                             if session.phase == .resting || session.phase == .paused {
                                 TimelineView(.periodic(from: .now, by: 1)) { timeline in
@@ -96,15 +101,19 @@ struct TrainingView: View {
                     }
                 }
             } message: { Text("已完成组数和实际动作记录保留；接下来的组使用所选动作及其休息时间。") }
-            .confirmationDialog("确认操作", isPresented: Binding(get: { navigation != nil }, set: { if !$0 { navigation = nil } })) {
-                Button(navigation == "end" ? "提前结束训练" : navigation == "previous" ? "返回上一动作并重新计组" : "跳过当前动作", role: .destructive) {
-                    let action = navigation; navigation = nil
+            .confirmationDialog("确认操作", isPresented: Binding(get: { navigation != nil }, set: { if !$0 { navigation = nil } }), presenting: navigation) { action in
+                Button(action == "end" ? "提前结束训练" : action == "previous" ? "返回上一动作并重新计组" : "跳过当前动作", role: .destructive) {
+                    navigation = nil
                     Task {
                         if action == "end" { await controller.end(); if controller.error == nil { dismiss() } }
                         else { await controller.navigate(previous: action == "previous") }
                     }
                 }
-            } message: { Text("将取消当前系统提醒。跳过的组不会计为已完成；返回上一动作会清零该动作的完成组数。") }
+            } message: { _ in Text("将取消当前系统提醒。跳过的组不会计为已完成；返回上一动作会清零该动作的完成组数。") }
+            .alert("训练操作未完成", isPresented: Binding(get: { controller.error != nil }, set: { if !$0 { controller.error = nil } })) {
+                Button("知道了") { controller.error = nil }
+            } message: { Text(controller.error ?? "") }
+
         }
         .onAppear { UIApplication.shared.isIdleTimerDisabled = controller.preferences.keepScreenOn }
         .onDisappear { UIApplication.shared.isIdleTimerDisabled = false }

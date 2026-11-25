@@ -9,6 +9,9 @@ import Observation
     private let prepare: () async throws -> Void
     private var lastCompletion: Date?
     private var completionSaved = false
+    private var reconciling = false
+    private var revision = 0
+    private var lastSyncError: String?
     private(set) var session: TrainingSession?
     var busy = false
     var error: String?
@@ -26,10 +29,16 @@ import Observation
         if session?.phase == .completed { completionSaved = true }
     }
     private func perform(clearErrorOnSuccess: Bool = true, _ action: () async throws -> Void) async {
-        guard !busy else { return }
+        guard !busy else { error = "操作正在处理中，请稍后重试。"; return }
+        revision += 1
+        if clearErrorOnSuccess { lastSyncError = nil }
         busy = true; defer { busy = false }
         do { try await action(); if clearErrorOnSuccess { error = nil } }
-        catch { self.error = error.localizedDescription + "\n" + String(reflecting: error) }
+        catch {
+            let message = error.localizedDescription + "\n" + String(reflecting: error)
+            if clearErrorOnSuccess || lastSyncError != message { self.error = message }
+            if !clearErrorOnSuccess { lastSyncError = message }
+        }
     }
     func authorize() async {
         await perform { try await service.authorize(); permission = await service.authorization }
@@ -37,11 +46,20 @@ import Observation
     func start(plan: TrainingPlan) async {
         await perform {
             guard session == nil || session?.phase == .completed else { throw TrainingError.activeSession }
+            let exercises = try plan.exercises()
+            guard !exercises.isEmpty else { throw TrainingError.emptyPlan }
             try await prepare()
-            session = try TrainingSession(planID: plan.id, planName: plan.name, exercises: plan.exercises(), fallback: preferences.notificationFallback)
+            let oldSession = session
+            let oldCompletionSaved = completionSaved
+            let oldLastCompletion = lastCompletion
+            session = try TrainingSession(planID: plan.id, planName: plan.name, exercises: exercises, fallback: preferences.notificationFallback)
             completionSaved = false
+            lastCompletion = nil
             session?.startedAt = now()
-            try persist()
+            do { try persist() } catch {
+                session = oldSession; completionSaved = oldCompletionSaved; lastCompletion = oldLastCompletion
+                throw error
+            }
         }
     }
     private func cancelReminder() async throws {
@@ -106,7 +124,7 @@ import Observation
     func resume() async {
         await perform {
             guard let value = session, value.phase == .paused else { return }
-            if value.remaining <= 0 { session?.advanceAfterSet(); try persist() }
+            if value.remaining <= 0 { try await cancelReminder(); session?.advanceAfterSet(); try persist() }
             else { try await schedule(seconds: value.remaining) }
         }
     }
@@ -170,28 +188,41 @@ import Observation
         }
     }
     func reconcile() async {
-        guard !busy else { return }
-        await perform(clearErrorOnSuccess: false) {
-            permission = await service.authorization
-            guard let value = session, value.phase == .resting, let id = value.timerID else { return }
+        guard !busy, !reconciling else { return }
+        reconciling = true; defer { reconciling = false }
+        let observedRevision = revision
+        do {
+            let authorization = await service.authorization
+            guard !busy, observedRevision == revision else { return }
+            permission = authorization
+            guard let value = session, value.phase == .resting || value.phase == .paused, let id = value.timerID else { return }
             let inspection = try await service.inspect(id: id)
-            switch inspection {
-            case .running(let end):
-                session?.reminderRegistered = true
-                if let end { session?.restEnd = end }
-                if session!.secondsLeft(at: now()) <= 0 {
+            guard !busy, observedRevision == revision, session?.timerID == id else { return }
+            await perform(clearErrorOnSuccess: false) {
+                switch inspection {
+                case .running(let end):
+                    if value.phase == .paused && end == nil { throw TrainingError.uncalibratedTimer }
+                    session?.phase = .resting
+                    session?.reminderRegistered = true
+                    if let end { session?.restEnd = end }
+                    if session!.secondsLeft(at: now()) <= 0 {
+                        try await cancelReminder(); session?.advanceAfterSet()
+                    }
+                case .paused(let remaining):
+                    session?.phase = .paused; session?.remaining = remaining ?? value.secondsLeft(at: now())
+                    session?.restEnd = nil
+                case .alerting:
                     try await cancelReminder(); session?.advanceAfterSet()
+                case .missing:
+                    if value.reminderRegistered && value.secondsLeft(at: now()) <= 0 { session?.advanceAfterSet() }
+                    else { throw TrainingError.missingReminder }
                 }
-            case .paused(let remaining):
-                session?.phase = .paused; session?.remaining = remaining ?? value.secondsLeft(at: now())
-                session?.restEnd = nil
-            case .alerting:
-                try await cancelReminder(); session?.advanceAfterSet()
-            case .missing:
-                if value.reminderRegistered && value.secondsLeft(at: now()) <= 0 { session?.advanceAfterSet() }
-                else { throw TrainingError.missingReminder }
+                if session != value { try persist() }
             }
-            if session != value { try persist() }
+        } catch {
+            if observedRevision == revision, lastSyncError != error.localizedDescription {
+                lastSyncError = error.localizedDescription; self.error = error.localizedDescription
+            }
         }
     }
 }

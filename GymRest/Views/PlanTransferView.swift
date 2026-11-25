@@ -5,6 +5,11 @@ import UniformTypeIdentifiers
 struct PlanTransferView: View {
     @Environment(\.modelContext) private var context
     @Query(sort: \TrainingPlan.position) private var plans: [TrainingPlan]
+    @Query(sort: \TrainingProgram.position) private var programs: [TrainingProgram]
+    var targetProgram: TrainingProgram? = nil
+    @State private var chosenProgramID: UUID?
+    @State private var initialized = false
+    @State private var importName = "五分化"
     @State private var importing = false
     @State private var exporting = false
     @State private var document = PlanFile()
@@ -15,11 +20,23 @@ struct PlanTransferView: View {
     @State private var pasteError: String?
     var body: some View {
         Form {
+            Section("导入归属") {
+                if let targetProgram { LabeledContent("归入计划", value: targetProgram.name) }
+                else {
+                    Picker("旧格式训练日归入", selection: $chosenProgramID) {
+                        Text("新建计划").tag(UUID?.none)
+                        ForEach(programs) { program in Text(program.name).tag(Optional(program.id)) }
+                    }
+                    if chosenProgramID == nil { TextField("上层计划名称", text: $importName) }
+                }
+                Text("旧版文件的plans是训练日；导入时放进上层计划。新版文件自带分组则保留其结构。")
+                    .font(.footnote).foregroundStyle(.secondary)
+            }
             Section("计划备份") {
                 Button("粘贴 JSON 文本") { pasteError = nil; pasting = true }
                 Button { importing = true } label: { Label("导入 JSON 计划", systemImage: "square.and.arrow.down") }
                 Button {
-                    do { document = PlanFile(data: try PlanArchive.export(plans: plans)); exporting = true }
+                    do { document = PlanFile(data: try PlanArchive.export(plans: plans, programs: programs)); exporting = true }
                     catch { message = error.localizedDescription }
                 } label: { Label("导出全部计划", systemImage: "square.and.arrow.up") }
                 Text("导入会追加计划并生成新ID，保留原计划、当前训练和训练记录。导出只包含计划，不含健康数据或训练记录。单次导入最大10MB。")
@@ -28,6 +45,11 @@ struct PlanTransferView: View {
             if let message { Section { Text(message).textSelection(.enabled) } }
         }
         .navigationTitle("导入与导出")
+        .onAppear {
+            guard !initialized else { return }; initialized = true
+            let matching = programs.filter { $0.name == "五分化" }
+            if matching.count == 1 { chosenProgramID = matching[0].id }
+        }
         .sheet(isPresented: $pasting) {
             NavigationStack {
                 VStack(alignment: .leading, spacing: 12) {
@@ -43,8 +65,8 @@ struct PlanTransferView: View {
                     ToolbarItem(placement: .confirmationAction) { Button("校验并追加导入") {
                         do {
                             let archive = try PlanArchive.decode(Data(pastedText.utf8))
-                            try archive.append(to: context)
-                            message = "已追加导入 \(archive.plans.count) 套计划。"
+                            try append(archive)
+                            message = "已追加导入 \(archive.plans.count) 个训练日。"
                             pastedText = ""; pasting = false
                         } catch { pasteError = error.localizedDescription }
                     }.disabled(pastedText.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty) }
@@ -67,12 +89,19 @@ struct PlanTransferView: View {
             case .failure(let error): message = "未导出：" + error.localizedDescription
             }
         }
-        .confirmationDialog("追加导入计划？", isPresented: Binding(get: { pending != nil }, set: { if !$0 { pending = nil } })) {
-            Button("导入 \(pending?.plans.count ?? 0) 套计划") {
-                guard let archive = pending else { return }; pending = nil
-                do { try archive.append(to: context); message = "已追加导入 \(archive.plans.count) 套计划。" }
+        .confirmationDialog("追加导入训练日？", isPresented: Binding(get: { pending != nil }, set: { if !$0 { pending = nil } }), presenting: pending) { archive in
+            Button("导入 \(archive.plans.count) 个训练日") {
+                pending = nil
+                do { try append(archive); message = "已追加导入 \(archive.plans.count) 个训练日。" }
                 catch { message = error.localizedDescription }
             }
-        } message: { Text("文件已通过结构、名称、ID、组数及休息秒数校验。导入不覆盖现有内容。") }
+        } message: { _ in Text("文件已通过结构、名称、ID、组数及休息秒数校验。导入不覆盖现有内容。") }
+
     }
+    private func append(_ archive: PlanArchive) throws {
+        // Explicit import into a program flattens into that target; otherwise a grouped file preserves its own hierarchy.
+        let selected = targetProgram ?? ((archive.programs ?? []).isEmpty ? programs.first(where: { $0.id == chosenProgramID }) : nil)
+        try archive.append(to: context, targetProgram: selected, newProgramName: selected == nil ? importName : nil)
+    }
+
 }

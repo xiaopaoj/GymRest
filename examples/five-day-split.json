@@ -1,0 +1,410 @@
+{
+  "version": 2,
+  "plans": [
+    {
+      "id": "E4E5F4F7-A9F1-4DA4-814D-D1719DF8408D",
+      "name": "周一｜胸 + 腹肌",
+      "exercises": [
+        {
+          "id": "4D6BDD2C-0A24-4107-84BE-AB3B5F70B01F",
+          "name": "杠铃平板卧推",
+          "sets": 4,
+          "restSeconds": 120,
+          "restAfterLastSet": false,
+          "alternatives": [
+            {
+              "id": "27CD6E82-7436-4354-B649-48C395747EEB",
+              "name": "史密斯平板卧推",
+              "restSeconds": 120
+            }
+          ]
+        },
+        {
+          "id": "5D7BDD2C-0A24-4107-84BE-AB3B5F70B020",
+          "name": "上斜哑铃卧推",
+          "sets": 4,
+          "restSeconds": 90,
+          "restAfterLastSet": false,
+          "alternatives": [
+            {
+              "id": "37CD6E82-7436-4354-B649-48C395747EEC",
+              "name": "史密斯上斜卧推",
+              "restSeconds": 90
+            }
+          ]
+        },
+        {
+          "id": "6D7BDD2C-0A24-4107-84BE-AB3B5F70B021",
+          "name": "绳索夹胸",
+          "sets": 3,
+          "restSeconds": 60,
+          "restAfterLastSet": false,
+          "alternatives": [
+            {
+              "id": "47CD6E82-7436-4354-B649-48C395747EED",
+              "name": "哑铃飞鸟",
+              "restSeconds": 60
+            }
+          ]
+        },
+        {
+          "id": "7D7BDD2C-0A24-4107-84BE-AB3B5F70B022",
+          "name": "双杠臂屈伸（侧重胸）",
+          "sets": 3,
+          "restSeconds": 60,
+          "restAfterLastSet": false,
+          "alternatives": [
+            {
+              "id": "57CD6E82-7436-4354-B649-48C395747EEE",
+              "name": "器械推胸",
+              "restSeconds": 60
+            }
+          ]
+        },
+        {
+          "id": "8D7BDD2C-0A24-4107-84BE-AB3B5F70B023",
+          "name": "卷腹",
+          "sets": 3,
+          "restSeconds": 40,
+          "restAfterLastSet": false,
+          "alternatives": [
+            {
+              "id": "67CD6E82-7436-4354-B649-48C395747EEF",
+              "name": "仰卧抬腿",
+              "restSeconds": 40
+            }
+          ]
+        }
+      ],
+      "programID": "A4E5F4F7-A9F1-4DA4-814D-D1719DF8408D"
+    },
+    {
+      "id": "F5F6F4F7-A9F1-4DA4-814D-D1719DF8408E",
+      "name": "周二｜背 + 腹肌",
+      "exercises": [
+        {
+          "id": "9D7BDD2C-0A24-4107-84BE-AB3B5F70B024",
+          "name": "引体向上",
+          "sets": 4,
+          "restSeconds": 120,
+          "restAfterLastSet": false,
+          "alternatives": [
+            {
+              "id": "77CD6E82-7436-4354-B649-48C395747EF0",
+              "name": "高位下拉（宽握）",
+              "restSeconds": 120
+            }
+          ]
+        },
+        {
+          "id": "AD7BDD2C-0A24-4107-84BE-AB3B5F70B025",
+          "name": "杠铃俯身划船",
+          "sets": 4,
+          "restSeconds": 120,
+          "restAfterLastSet": false,
+          "alternatives": [
+            {
+              "id": "87CD6E82-7436-4354-B649-48C395747EF1",
+              "name": "哑铃单臂划船",
+              "restSeconds": 90
+            }
+          ]
+        },
+        {
+          "id": "BD7BDD2C-0A24-4107-84BE-AB3B5F70B026",
+          "name": "坐姿绳索划船",
+          "sets": 3,
+          "restSeconds": 90,
+          "restAfterLastSet": false,
+          "alternatives": [
+            {
+              "id": "97CD6E82-7436-4354-B649-48C395747EF2",
+              "name": "T杠划船",
+              "restSeconds": 90
+            }
+          ]
+        },
+        {
+          "id": "CD7BDD2C-0A24-4107-84BE-AB3B5F70B027",
+          "name": "直臂下压",
+          "sets": 3,
+          "restSeconds": 60,
+          "restAfterLastSet": false,
+          "alternatives": [
+            {
+              "id": "A7CD6E82-7436-4354-B649-48C395747EF3",
+              "name": "哑铃直臂后拉",
+              "restSeconds": 60
+            }
+          ]
+        },
+        {
+          "id": "DD7BDD2C-0A24-4107-84BE-AB3B5F70B028",
+          "name": "反向卷腹",
+          "sets": 3,
+          "restSeconds": 40,
+          "restAfterLastSet": false,
+          "alternatives": [
+            {
+              "id": "B7CD6E82-7436-4354-B649-48C395747EF4",
+              "name": "死虫式",
+              "restSeconds": 40
+            }
+          ]
+        }
+      ],
+      "programID": "A4E5F4F7-A9F1-4DA4-814D-D1719DF8408D"
+    },
+    {
+      "id": "06E6F4F7-A9F1-4DA4-814D-D1719DF8408F",
+      "name": "周三｜肩 + 腹肌",
+      "exercises": [
+        {
+          "id": "ED7BDD2C-0A24-4107-84BE-AB3B5F70B029",
+          "name": "杠铃推举",
+          "sets": 4,
+          "restSeconds": 120,
+          "restAfterLastSet": false,
+          "alternatives": [
+            {
+              "id": "C7CD6E82-7436-4354-B649-48C395747EF5",
+              "name": "哑铃坐姿推举",
+              "restSeconds": 90
+            }
+          ]
+        },
+        {
+          "id": "FD7BDD2C-0A24-4107-84BE-AB3B5F70B030",
+          "name": "哑铃侧平举",
+          "sets": 4,
+          "restSeconds": 60,
+          "restAfterLastSet": false,
+          "alternatives": [
+            {
+              "id": "D7CD6E82-7436-4354-B649-48C395747EF6",
+              "name": "绳索侧平举",
+              "restSeconds": 60
+            }
+          ]
+        },
+        {
+          "id": "0D7BDD2C-0A24-4107-84BE-AB3B5F70B031",
+          "name": "俯身哑铃飞鸟（后束）",
+          "sets": 3,
+          "restSeconds": 60,
+          "restAfterLastSet": false,
+          "alternatives": [
+            {
+              "id": "E7CD6E82-7436-4354-B649-48C395747EF7",
+              "name": "面拉",
+              "restSeconds": 60
+            }
+          ]
+        },
+        {
+          "id": "1D7BDD2C-0A24-4107-84BE-AB3B5F70B032",
+          "name": "哑铃前平举",
+          "sets": 3,
+          "restSeconds": 60,
+          "restAfterLastSet": false,
+          "alternatives": [
+            {
+              "id": "F7CD6E82-7436-4354-B649-48C395747EF8",
+              "name": "绳索前平举",
+              "restSeconds": 60
+            }
+          ]
+        },
+        {
+          "id": "2D7BDD2C-0A24-4107-84BE-AB3B5F70B033",
+          "name": "俄罗斯转体",
+          "sets": 3,
+          "restSeconds": 40,
+          "restAfterLastSet": false,
+          "alternatives": [
+            {
+              "id": "08CD6E82-7436-4354-B649-48C395747EF9",
+              "name": "平板支撑",
+              "restSeconds": 40
+            }
+          ]
+        }
+      ],
+      "programID": "A4E5F4F7-A9F1-4DA4-814D-D1719DF8408D"
+    },
+    {
+      "id": "17E6F4F7-A9F1-4DA4-814D-D1719DF84090",
+      "name": "周四｜手臂（二头+三头） + 腹肌",
+      "exercises": [
+        {
+          "id": "3D7BDD2C-0A24-4107-84BE-AB3B5F70B034",
+          "name": "杠铃弯举",
+          "sets": 4,
+          "restSeconds": 60,
+          "restAfterLastSet": false,
+          "alternatives": [
+            {
+              "id": "18CD6E82-7436-4354-B649-48C395747EFA",
+              "name": "哑铃交替弯举",
+              "restSeconds": 60
+            }
+          ]
+        },
+        {
+          "id": "4D7BDD2C-0A24-4107-84BE-AB3B5F70B035",
+          "name": "绳索下压",
+          "sets": 4,
+          "restSeconds": 60,
+          "restAfterLastSet": false,
+          "alternatives": [
+            {
+              "id": "28CD6E82-7436-4354-B649-48C395747EFB",
+              "name": "仰卧臂屈伸",
+              "restSeconds": 60
+            }
+          ]
+        },
+        {
+          "id": "5D7BDD2C-0A24-4107-84BE-AB3B5F70B036",
+          "name": "锤式弯举",
+          "sets": 3,
+          "restSeconds": 60,
+          "restAfterLastSet": false,
+          "alternatives": [
+            {
+              "id": "38CD6E82-7436-4354-B649-48C395747EFC",
+              "name": "器械锤弯举",
+              "restSeconds": 60
+            }
+          ]
+        },
+        {
+          "id": "6D7BDD2C-0A24-4107-84BE-AB3B5F70B037",
+          "name": "窄距俯卧撑",
+          "sets": 3,
+          "restSeconds": 60,
+          "restAfterLastSet": false,
+          "alternatives": [
+            {
+              "id": "48CD6E82-7436-4354-B649-48C395747EFD",
+              "name": "颈后臂屈伸",
+              "restSeconds": 60
+            }
+          ]
+        },
+        {
+          "id": "7D7BDD2C-0A24-4107-84BE-AB3B5F70B038",
+          "name": "登山跑",
+          "sets": 3,
+          "restSeconds": 40,
+          "restAfterLastSet": false,
+          "alternatives": [
+            {
+              "id": "58CD6E82-7436-4354-B649-48C395747EFE",
+              "name": "侧平板支撑（左右）",
+              "restSeconds": 40
+            }
+          ]
+        }
+      ],
+      "programID": "A4E5F4F7-A9F1-4DA4-814D-D1719DF8408D"
+    },
+    {
+      "id": "28E6F4F7-A9F1-4DA4-814D-D1719DF84091",
+      "name": "周五｜腿 + 腹肌",
+      "exercises": [
+        {
+          "id": "8D7BDD2C-0A24-4107-84BE-AB3B5F70B039",
+          "name": "杠铃深蹲",
+          "sets": 4,
+          "restSeconds": 120,
+          "restAfterLastSet": false,
+          "alternatives": [
+            {
+              "id": "68CD6E82-7436-4354-B649-48C395747EFF",
+              "name": "史密斯深蹲",
+              "restSeconds": 120
+            }
+          ]
+        },
+        {
+          "id": "9D7BDD2C-0A24-4107-84BE-AB3B5F70B040",
+          "name": "硬拉",
+          "sets": 4,
+          "restSeconds": 150,
+          "restAfterLastSet": false,
+          "alternatives": [
+            {
+              "id": "78CD6E82-7436-4354-B649-48C395747F00",
+              "name": "罗马尼亚硬拉",
+              "restSeconds": 120
+            }
+          ]
+        },
+        {
+          "id": "AD7BDD2C-0A24-4107-84BE-AB3B5F70B041",
+          "name": "腿举",
+          "sets": 3,
+          "restSeconds": 90,
+          "restAfterLastSet": false,
+          "alternatives": [
+            {
+              "id": "88CD6E82-7436-4354-B649-48C395747F01",
+              "name": "箭步蹲",
+              "restSeconds": 90
+            }
+          ]
+        },
+        {
+          "id": "BD7BDD2C-0A24-4107-84BE-AB3B5F70B042",
+          "name": "腿屈伸",
+          "sets": 3,
+          "restSeconds": 60,
+          "restAfterLastSet": false,
+          "alternatives": [
+            {
+              "id": "98CD6E82-7436-4354-B649-48C395747F02",
+              "name": "自重保加利亚分腿蹲",
+              "restSeconds": 60
+            }
+          ]
+        },
+        {
+          "id": "CD7BDD2C-0A24-4107-84BE-AB3B5F70B043",
+          "name": "腿弯举",
+          "sets": 3,
+          "restSeconds": 60,
+          "restAfterLastSet": false,
+          "alternatives": [
+            {
+              "id": "A8CD6E82-7436-4354-B649-48C395747F03",
+              "name": "哑铃罗马尼亚硬拉（侧重腘绳）",
+              "restSeconds": 60
+            }
+          ]
+        },
+        {
+          "id": "DD7BDD2C-0A24-4107-84BE-AB3B5F70B044",
+          "name": "收腹举腿",
+          "sets": 3,
+          "restSeconds": 40,
+          "restAfterLastSet": false,
+          "alternatives": [
+            {
+              "id": "B8CD6E82-7436-4354-B649-48C395747F04",
+              "name": "交替触脚卷腹",
+              "restSeconds": 40
+            }
+          ]
+        }
+      ],
+      "programID": "A4E5F4F7-A9F1-4DA4-814D-D1719DF8408D"
+    }
+  ],
+  "programs": [
+    {
+      "id": "A4E5F4F7-A9F1-4DA4-814D-D1719DF8408D",
+      "name": "五分化"
+    }
+  ]
+}

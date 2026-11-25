@@ -101,14 +101,13 @@ struct RecordDetailView: View {
             }
         }
         .navigationTitle("训练详情")
-        .confirmationDialog("关联这条运动记录？", isPresented: Binding(get: { selected != nil }, set: { if !$0 { selected = nil } })) {
+        .confirmationDialog("关联这条运动记录？", isPresented: Binding(get: { selected != nil }, set: { if !$0 { selected = nil } }), presenting: selected) { candidate in
             Button("确认关联") {
-                guard let selected else { return }
-                record.workoutID = selected.id.uuidString; record.workoutSource = selected.source
-                record.workoutStart = selected.start; record.workoutEnd = selected.end
+                record.workoutID = candidate.id.uuidString; record.workoutSource = candidate.source
+                record.workoutStart = candidate.start; record.workoutEnd = candidate.end
                 save(); self.selected = nil
             }
-        } message: { Text("仅按时间提供候选，重合不代表一定是同一次训练。不会修改健康App中的原始记录。") }
+        } message: { _ in Text("仅按时间提供候选，重合不代表一定是同一次训练。不会修改健康App中的原始记录。") }
     }
     private func query() async {
         guard let start = record.startedAt else { return }

@@ -12,7 +12,7 @@ struct PlanEditor: View {
     @State private var loaded = false
     var body: some View {
         List {
-            Section("计划名称") {
+            Section("训练日名称") {
                 TextField("名称", text: $name)
                 Button("保存名称") {
                     let value = name.trimmingCharacters(in: .whitespacesAndNewlines)
@@ -51,18 +51,27 @@ struct PlanEditor: View {
                     .font(.footnote).foregroundStyle(.secondary) }
             if let error { Text(error).foregroundStyle(.red) }
         }
-        .navigationTitle("编辑计划")
-        .toolbar { EditButton() }
+        .navigationTitle("编辑训练日")
+        .toolbar { ToolbarItem(placement: .topBarTrailing) { EditButton().disabled(!loaded) } }
+        .alert("保存未完成", isPresented: Binding(get: { error != nil && editing == nil }, set: { if !$0 { error = nil } })) {
+            Button("知道了") { error = nil }
+        } message: { Text(error ?? "") }
         .task {
             guard !loaded else { return }
-            do { exercises = try plan.exercises(); name = plan.name; loaded = true }
+            do {
+                let values = try plan.exercises()
+                for value in values { try value.validate() }
+                exercises = values; name = plan.name; loaded = true
+            }
             catch { self.error = error.localizedDescription }
         }
         .sheet(item: $editing) { exercise in
             ExerciseEditor(exercise: exercise) { value in
-                if let i = exercises.firstIndex(where: { $0.id == value.id }) { exercises[i] = value }
-                else { exercises.append(value) }
-                saveExercises()
+                var candidate = exercises
+                if let i = candidate.firstIndex(where: { $0.id == value.id }) { candidate[i] = value }
+                else { candidate.append(value) }
+                try PlanEditing.save(candidate, to: plan, context: context)
+                exercises = candidate; error = nil
             }
         }
     }
@@ -72,7 +81,7 @@ struct PlanEditor: View {
     }
     private func saveExercises() {
         do {
-            try plan.setExercises(exercises); try context.save(); error = nil
+            try PlanEditing.save(exercises, to: plan, context: context); error = nil
         } catch {
             context.rollback(); self.error = error.localizedDescription
             if let original = try? plan.exercises() { exercises = original }
@@ -86,11 +95,12 @@ struct ExerciseEditor: View {
     @State private var seconds = ""
     @State private var editingAlternative: ExerciseAlternative?
     @State private var error: String?
-    let onSave: (ExerciseSpec) -> Void
+    let onSave: (ExerciseSpec) throws -> Void
     private let presets = [30, 45, 60, 90, 120, 150, 180, 240, 300]
     var body: some View {
         NavigationStack {
             Form {
+                if let error { Section { Text(error).foregroundStyle(.red) } }
                 Section("训练动作") {
                     TextField("动作名称", text: $exercise.name)
                     Stepper("\(exercise.sets) 组", value: $exercise.sets, in: 1...100)
@@ -131,7 +141,6 @@ struct ExerciseEditor: View {
                         }
                     }
                 }
-                if let error { Text(error).foregroundStyle(.red) }
             }
             .onChange(of: exercise.sets) { _, count in exercise.restOverrides = exercise.restOverrides.filter { $0.key <= count }
                 for i in exercise.alternatives.indices { exercise.alternatives[i].restOverrides = exercise.alternatives[i].restOverrides.filter { $0.key <= count } } }
@@ -141,10 +150,14 @@ struct ExerciseEditor: View {
                 ToolbarItem(placement: .confirmationAction) { Button("保存") {
                     exercise.name = exercise.name.trimmingCharacters(in: .whitespacesAndNewlines)
                     exercise.restSeconds = Int(seconds) ?? 0
-                    do { try exercise.validate(); onSave(exercise); dismiss() }
+                    do { try exercise.validate(); try onSave(exercise); dismiss() }
                     catch { self.error = error.localizedDescription }
                 } }
-            }.onAppear { seconds = String(exercise.restSeconds) }
+            }
+            .onAppear { if seconds.isEmpty { seconds = String(exercise.restSeconds) } }
+            .alert("动作未保存", isPresented: Binding(get: { error != nil }, set: { if !$0 { error = nil } })) {
+                Button("继续编辑") { error = nil }
+            } message: { Text(error ?? "") }
             .sheet(item: $editingAlternative) { alternative in
                 AlternativeEditor(alternative: alternative, sets: exercise.sets) { result in
                     if let i = exercise.alternatives.firstIndex(where: { $0.id == result.id }) { exercise.alternatives[i] = result }
