@@ -2,7 +2,8 @@
 set -euo pipefail
 cd "$(dirname "$0")/.."
 mkdir -p build
-exec > >(tee build/build.log) 2>&1
+# Keep tee in the foreground pipeline so diagnostics are fully drained before exit.
+(
 # Prefer the runner's selected Xcode, then the newest compatible installed Xcode.
 python3 - <<'PYTHON' > build/xcode-candidates.txt
 import glob,re,subprocess
@@ -57,3 +58,5 @@ xcodebuild -project GymRest.xcodeproj -scheme GymRest -configuration Release \
   -sdk iphoneos -destination 'generic/platform=iOS' -derivedDataPath DerivedData \
   CODE_SIGNING_ALLOWED=NO CODE_SIGNING_REQUIRED=NO CODE_SIGN_IDENTITY='' build
 python3 scripts/package_ipa.py
+
+) 2>&1 | tee build/build.log

@@ -198,9 +198,10 @@ import Observation
             value.performedNames?[performedIndex].append(performedName)
             let setValues = value.currentSetValues
             try setValues.validate()
-            value.performances?[performedIndex].append(SetPerformance(exerciseName: performedName,
+            let performance = SetPerformance(exerciseName: performedName,
                 catalogID: value.current.catalogID, values: setValues,
-                profileKey: value.current.profileKey(for: setValues), completedAt: now()))
+                profileKey: value.current.profileKey(for: setValues), completedAt: now())
+            value.performances?[performedIndex].append(performance)
             value.completed[value.index] += 1
             if let duration = value.restDuration(afterSet: value.completed[value.index]) {
                 value.originalRest = duration
