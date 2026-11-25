@@ -35,9 +35,16 @@ struct TrainingSession: Codable, Equatable, Sendable {
               remaining.isFinite, remaining >= 0, remaining <= 86400,
               phase == .training || phase == .resting || phase == .paused,
               phase != .resting || (timerID != nil && restEnd != nil) else { throw TrainingError.invalidSession }
+        guard !planName.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty, planName.count <= 100 else { throw TrainingError.invalidSession }
+        if phase == .training {
+            guard completed[index] < current.sets, timerID == nil, restEnd == nil, !reminderRegistered else { throw TrainingError.invalidSession }
+        } else {
+            guard completed[index] > 0, (1...86400).contains(originalRest) else { throw TrainingError.invalidSession }
+        }
         for exercise in exercises { try exercise.validate() }
         if let originalExercises {
-            guard originalExercises.count == exercises.count else { throw TrainingError.invalidSession }
+            guard originalExercises.count == exercises.count,
+                  zip(originalExercises, exercises).allSatisfy({ $0.0.id == $0.1.id && $0.0.sets == $0.1.sets && $0.0.restAfterLastSet == $0.1.restAfterLastSet }) else { throw TrainingError.invalidSession }
             for exercise in originalExercises { try exercise.validate() }
         }
         if let performedNames {

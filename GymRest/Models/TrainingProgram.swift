@@ -32,7 +32,7 @@ import SwiftData
             for day in days where day.programID != parent.id { day.programID = parent.id; day.position = next; next += 1 }
             if let convertBlank { context.delete(convertBlank) }
             try context.save()
-        } catch { context.rollback(); throw error }
+        } catch { context.discardPendingChanges(); throw error }
     }
     static func duplicate(_ program: TrainingProgram, context: ModelContext) throws {
         let days = try context.fetch(FetchDescriptor<TrainingPlan>(sortBy: [SortDescriptor(\TrainingPlan.position)]))
@@ -45,6 +45,6 @@ import SwiftData
         do {
             for day in try context.fetch(FetchDescriptor<TrainingPlan>()) where day.programID == program.id { day.programID = nil }
             context.delete(program); try context.save()
-        } catch { context.rollback(); throw error }
+        } catch { context.discardPendingChanges(); throw error }
     }
 }

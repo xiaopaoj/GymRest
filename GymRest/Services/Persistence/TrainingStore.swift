@@ -30,8 +30,9 @@ import SwiftData
     }
     private func archive(_ session: TrainingSession, at end: Date) throws {
         let id = session.sessionID ?? session.planID
-        let records = try context.fetch(FetchDescriptor<TrainingRecord>())
-        guard !records.contains(where: { $0.id == id }) else { return }
+        var lookup = FetchDescriptor<TrainingRecord>(predicate: #Predicate { $0.id == id })
+        lookup.fetchLimit = 1
+        guard try context.fetch(lookup).isEmpty else { return }
         context.insert(try TrainingRecord(session: session, end: end))
     }
     func finish(_ session: TrainingSession?, at date: Date) throws {
@@ -40,12 +41,13 @@ import SwiftData
             if let session { try archive(session, at: date) }
             for record in try context.fetch(FetchDescriptor<ActiveTraining>()) { context.delete(record) }
             try context.save()
-        } catch { context.rollback(); throw error }
+        } catch { context.discardPendingChanges(); throw error }
     }
     func save(_ session: TrainingSession?, at date: Date = Date()) throws {
         do {
             let records = try context.fetch(FetchDescriptor<ActiveTraining>())
             if let session, session.phase != .completed {
+                try session.validate()
                 let data = try JSONEncoder().encode(session)
                 if let record = records.first { record.payload = data }
                 else { context.insert(ActiveTraining(payload: data)) }
@@ -54,6 +56,6 @@ import SwiftData
                 for record in records { context.delete(record) }
             }
             try context.save()
-        } catch { context.rollback(); throw error }
+        } catch { context.discardPendingChanges(); throw error }
     }
 }

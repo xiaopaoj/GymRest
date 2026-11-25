@@ -5,7 +5,16 @@ import SwiftUI
 @MainActor
 final class AlarmKitTimerService: TimerService {
     let name = "AlarmKit"
-    var authorization: String { get async { String(describing: AlarmManager.shared.authorizationState) } }
+    var authorization: String {
+        get async {
+            switch AlarmManager.shared.authorizationState {
+            case .notDetermined: return "尚未申请"
+            case .denied: return "已拒绝，请到系统设置开启"
+            case .authorized: return "已授权"
+            @unknown default: return "未知状态"
+            }
+        }
+    }
     func authorize() async throws {
         guard try await AlarmManager.shared.requestAuthorization() == .authorized else { throw TimerFailure.denied }
     }

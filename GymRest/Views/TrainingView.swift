@@ -115,7 +115,11 @@ struct TrainingView: View {
             } message: { Text(controller.error ?? "") }
 
         }
-        .onAppear { UIApplication.shared.isIdleTimerDisabled = controller.preferences.keepScreenOn }
+        .onAppear { updateScreenAwake() }
+        .onChange(of: controller.session?.phase) { _, _ in updateScreenAwake() }
         .onDisappear { UIApplication.shared.isIdleTimerDisabled = false }
+    }
+    private func updateScreenAwake() {
+        UIApplication.shared.isIdleTimerDisabled = controller.preferences.keepScreenOn && controller.session != nil && controller.session?.phase != .completed
     }
 }

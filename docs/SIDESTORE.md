@@ -12,3 +12,7 @@
 切勿向仓库、Issues、CI 或聊天提交 Apple ID 密码、配对文件、私钥、证书或令牌。本项目工作流关闭签名，不接收 Apple 签名凭据。
 
 若 AlarmKit 无法授权，先记录原始错误并取消原计时，再显式开启本地通知降级并授权。通知可能被静音、专注模式或系统策略抑制；它不能替代 AlarmKit 的全部系统能力。
+
+## 更新IPA时保留本机记录
+
+升级请保持同一账号和应用身份，以覆盖更新现有GymRest的方式安装，不要先卸载。Bundle ID或签名身份变化可能导致安装成另一个App并使用新容器。当前JSON导出只有计划，不含历史记录；不要把它当作完整备份。详见 [数据升级说明](DATA_UPGRADES.md)。默认HealthKit构建Artifact名为 `GymRest-healthkit-unsigned`，内部IPA仍为 `GymRest-unsigned.ipa`。

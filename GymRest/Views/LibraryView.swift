@@ -31,14 +31,17 @@ struct ProgramListView: View {
     @State private var organizing = false
     @State private var query = ""
     @State private var error: String?
-    private var ungrouped: [TrainingPlan] { days.filter { day in !programs.contains(where: { $0.id == day.programID }) } }
-    private func isTemplate(_ program: TrainingProgram) -> Bool {
-        let children = days.filter { $0.programID == program.id }
-        return !children.isEmpty && children.allSatisfy { (try? $0.exercises().isEmpty) == true }
-    }
-    private var primaryPrograms: [TrainingProgram] { programs.filter { !isTemplate($0) } }
     var body: some View {
+        let overview = TrainingLibraryOverview(programs: programs, days: days)
+        let primaryPrograms = programs.filter { !overview.templateIDs.contains($0.id) }
+        let ungrouped = overview.unassigned
         List {
+            if let issue = controller.recoveryIssue {
+                Section("当前训练需恢复") {
+                    Text(issue).font(.subheadline)
+                    Button("重试恢复训练") { Task { await controller.retryRecovery() } }.disabled(controller.busy)
+                }
+            }
             if let session = controller.session {
                 Section {
                     Button { showingTraining = true } label: {
@@ -57,23 +60,23 @@ struct ProgramListView: View {
                 ForEach(primaryPrograms.filter { query.isEmpty || $0.name.localizedCaseInsensitiveContains(query) }) { program in
                     NavigationLink {
                         ProgramDetailView(program: program, controller: controller, showingTraining: $showingTraining)
-                    } label: { ProgramCard(program: program, days: days.filter { $0.programID == program.id }) }
+                    } label: { ProgramCard(program: program, days: (overview.grouped[program.id] ?? []).compactMap { overview.summaries[$0.id] }) }
                 }
                 .onMove { source, destination in
                     // Sorting is disabled while searching to preserve the full ordering.
                     var ordered = primaryPrograms; ordered.move(fromOffsets: source, toOffset: destination)
-                    ordered.append(contentsOf: programs.filter { isTemplate($0) })
+                    ordered.append(contentsOf: programs.filter { overview.templateIDs.contains($0.id) })
                     for (i, value) in ordered.enumerated() { value.position = i }; save()
                 }.moveDisabled(!query.isEmpty)
             } header: {
                 HStack { Text("我的计划"); Spacer(); Text("\(primaryPrograms.count) 套") }
             } footer: { Text("选择计划，再选择当天训练。空训练日进入后可添加动作。") }
-            if programs.contains(where: { isTemplate($0) }) {
+            if !overview.templateIDs.isEmpty {
                 Section {
                     DisclosureGroup("空白计划与模板") {
-                        ForEach(programs.filter { isTemplate($0) && (query.isEmpty || $0.name.localizedCaseInsensitiveContains(query)) }) { program in
+                        ForEach(programs.filter { overview.templateIDs.contains($0.id) && (query.isEmpty || $0.name.localizedCaseInsensitiveContains(query)) }) { program in
                             NavigationLink { ProgramDetailView(program: program, controller: controller, showingTraining: $showingTraining) } label: {
-                                ProgramCard(program: program, days: days.filter { $0.programID == program.id })
+                                ProgramCard(program: program, days: (overview.grouped[program.id] ?? []).compactMap { overview.summaries[$0.id] })
                             }
                         }
                     }
@@ -118,13 +121,13 @@ struct ProgramListView: View {
         } message: { Text(error ?? "") }
     }
     private func save() {
-        do { try context.save() } catch { context.rollback(); self.error = error.localizedDescription }
+        do { try context.save() } catch { context.discardPendingChanges(); self.error = error.localizedDescription }
     }
 }
 
 private struct ProgramCard: View {
     let program: TrainingProgram
-    let days: [TrainingPlan]
+    let days: [TrainingDaySummary]
     var body: some View {
         HStack(alignment: .top, spacing: 16) {
             Image(systemName: "square.stack.3d.up.fill")
@@ -132,8 +135,11 @@ private struct ProgramCard: View {
                 .background(.orange.opacity(0.12), in: RoundedRectangle(cornerRadius: 16))
             VStack(alignment: .leading, spacing: 8) {
                 Text(program.name).font(.title3.bold()).foregroundStyle(.primary)
-                Text("\(days.count) 个训练日 · \(days.reduce(0) { $0 + ((try? $1.exercises().count) ?? 0) }) 个动作")
+                Text("\(days.count) 个训练日 · \(days.reduce(0) { $0 + ($1.exerciseCount ?? 0) }) 个动作")
                     .font(.subheadline).foregroundStyle(.secondary)
+                if days.contains(where: { $0.exerciseCount == nil }) {
+                    Text("部分训练日数据需检查").font(.caption).foregroundStyle(.red)
+                }
                 Text(days.prefix(3).map(\.name).joined(separator: " · "))
                     .font(.caption).foregroundStyle(.secondary).lineLimit(2)
             }

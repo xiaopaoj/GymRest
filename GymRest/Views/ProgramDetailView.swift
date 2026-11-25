@@ -97,7 +97,7 @@ struct ProgramDetailView: View {
             }
             let copy = try TrainingPlan(name: String(source.name.prefix(97)) + " 副本", position: (days.map(\.position).max() ?? -1) + 1, exercises: exercises)
             copy.programID = program.id; context.insert(copy); try context.save()
-        } catch { context.rollback(); self.error = error.localizedDescription }
+        } catch { context.discardPendingChanges(); self.error = error.localizedDescription }
     }
     private func validName() -> Bool {
         let value = name.trimmingCharacters(in: .whitespacesAndNewlines)
@@ -110,7 +110,7 @@ struct ProgramDetailView: View {
             day.programID = program.id; context.insert(day); save(); showingBlanks = true
         } catch { self.error = error.localizedDescription }
     }
-    private func save() { do { try context.save() } catch { context.rollback(); self.error = error.localizedDescription } }
+    private func save() { do { try context.save() } catch { context.discardPendingChanges(); self.error = error.localizedDescription } }
 }
 
 struct DayDetailView: View {
@@ -159,6 +159,10 @@ struct DayDetailView: View {
         }
         .safeAreaInset(edge: .bottom) {
             VStack(spacing: 8) {
+                if controller.recoveryIssue != nil {
+                    Text("请先从计划首页恢复当前训练；历史记录与计划仍可查看。")
+                        .font(.footnote).foregroundStyle(.secondary)
+                }
                 if exercises?.isEmpty == false {
                     Button {
                         guard !starting else { return }; starting = true
@@ -176,7 +180,7 @@ struct DayDetailView: View {
                     } label: {
                         HStack { if starting { ProgressView() }; Text(starting ? "正在开始…" : "开始训练").font(.headline) }
                             .frame(maxWidth: .infinity).padding(.vertical, 12)
-                    }.buttonStyle(.borderedProminent).disabled(starting || controller.busy)
+                    }.buttonStyle(.borderedProminent).disabled(starting || controller.busy || controller.recoveryIssue != nil)
                 } else if exercises != nil {
                     NavigationLink { PlanEditor(plan: day, controller: controller) } label: {
                         Label("添加训练动作", systemImage: "plus").frame(maxWidth: .infinity).padding(.vertical, 12)

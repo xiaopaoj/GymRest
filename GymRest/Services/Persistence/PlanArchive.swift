@@ -83,7 +83,7 @@ struct PlanArchive: Codable {
             for parent in newParents { context.insert(parent) }
             for plan in additions { context.insert(plan) }
             try context.save()
-        } catch { context.rollback(); throw error }
+        } catch { context.discardPendingChanges(); throw error }
     }
 }
 enum ArchiveFailure: LocalizedError {

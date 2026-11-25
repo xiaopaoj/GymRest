@@ -13,6 +13,7 @@ import Observation
     private var revision = 0
     private var lastSyncError: String?
     private(set) var session: TrainingSession?
+    private(set) var recoveryIssue: String?
     var busy = false
     var error: String?
     var permission = "尚未查询"
@@ -22,14 +23,22 @@ import Observation
 
     init(store: TrainingStore, alarm: any TimerService = AlarmKitTimerService(), notification: any TimerService = LocalNotificationTimerService(), now: @escaping () -> Date = Date.init, prepare: @escaping () async throws -> Void = {}) throws {
         self.store = store; self.alarm = alarm; self.notification = notification; self.now = now; self.prepare = prepare
-        session = try store.load()
+        do { session = try store.load() }
+        catch {
+            // Only isolate snapshot problems. Database I/O failures must still reach the storage error screen.
+            guard error is DecodingError || error is TrainingError else { throw error }
+            let message = "当前训练进度暂时无法恢复，计划和历史记录仍可查看。为避免覆盖进度，暂不能开始新训练。"
+            recoveryIssue = message
+            self.error = message + "\n" + error.localizedDescription
+        }
     }
     private func persist() throws {
         try store.save(session, at: now())
         if session?.phase == .completed { completionSaved = true }
     }
-    private func perform(clearErrorOnSuccess: Bool = true, _ action: () async throws -> Void) async {
+    private func perform(clearErrorOnSuccess: Bool = true, allowRecovery: Bool = false, _ action: () async throws -> Void) async {
         guard !busy else { error = "操作正在处理中，请稍后重试。"; return }
+        guard allowRecovery || recoveryIssue == nil else { error = recoveryIssue; return }
         revision += 1
         if clearErrorOnSuccess { lastSyncError = nil }
         busy = true; defer { busy = false }
@@ -40,8 +49,14 @@ import Observation
             if !clearErrorOnSuccess { lastSyncError = message }
         }
     }
+    func retryRecovery() async {
+        await perform(allowRecovery: true) {
+            let restored = try store.load()
+            session = restored; recoveryIssue = nil
+        }
+    }
     func authorize() async {
-        await perform { try await service.authorize(); permission = await service.authorization }
+        await perform(allowRecovery: true) { try await service.authorize(); permission = await service.authorization }
     }
     func start(plan: TrainingPlan) async {
         await perform {
@@ -188,16 +203,16 @@ import Observation
         }
     }
     func reconcile() async {
-        guard !busy, !reconciling else { return }
+        guard recoveryIssue == nil, !Task.isCancelled, !busy, !reconciling else { return }
         reconciling = true; defer { reconciling = false }
         let observedRevision = revision
         do {
             let authorization = await service.authorization
-            guard !busy, observedRevision == revision else { return }
+            guard !Task.isCancelled, !busy, observedRevision == revision else { return }
             permission = authorization
             guard let value = session, value.phase == .resting || value.phase == .paused, let id = value.timerID else { return }
             let inspection = try await service.inspect(id: id)
-            guard !busy, observedRevision == revision, session?.timerID == id else { return }
+            guard !Task.isCancelled, !busy, observedRevision == revision, session?.timerID == id else { return }
             await perform(clearErrorOnSuccess: false) {
                 switch inspection {
                 case .running(let end):

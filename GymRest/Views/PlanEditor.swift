@@ -77,13 +77,13 @@ struct PlanEditor: View {
     }
     private func save() {
         do { try context.save(); error = nil }
-        catch { context.rollback(); self.error = error.localizedDescription }
+        catch { context.discardPendingChanges(); self.error = error.localizedDescription }
     }
     private func saveExercises() {
         do {
             try PlanEditing.save(exercises, to: plan, context: context); error = nil
         } catch {
-            context.rollback(); self.error = error.localizedDescription
+            context.discardPendingChanges(); self.error = error.localizedDescription
             if let original = try? plan.exercises() { exercises = original }
         }
     }

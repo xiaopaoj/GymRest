@@ -25,7 +25,7 @@ struct HistoryView: View {
             }.onDelete { indices in
                 for i in indices { context.delete(records[i]) }
                 do { try context.save(); error = nil }
-                catch { context.rollback(); self.error = error.localizedDescription }
+                catch { context.discardPendingChanges(); self.error = error.localizedDescription }
             }
             if let error { Text(error).foregroundStyle(.red) }
         }
@@ -43,6 +43,7 @@ struct RecordDetailView: View {
     @State private var busy = false
     @State private var message: String?
     var body: some View {
+        let performedNames = record.performedNamesData.flatMap { try? JSONDecoder().decode([[String]].self, from: $0) }
         List {
             Section("训练概览") {
                 Text(record.planName).font(.title2.bold())
@@ -58,8 +59,7 @@ struct RecordDetailView: View {
                     ForEach(Array(exercises.enumerated()), id: \.element.id) { index, exercise in
                         VStack(alignment: .leading, spacing: 5) {
                             LabeledContent(exercise.name, value: "\(counts[index])/\(exercise.sets) 组")
-                            if let data = record.performedNamesData,
-                               let names = try? JSONDecoder().decode([[String]].self, from: data), names.indices.contains(index) {
+                            if let names = performedNames, names.indices.contains(index) {
                                 ForEach(Array(names[index].enumerated()), id: \.offset) { set, name in
                                     Text("第 \(set + 1) 组 · " + name).font(.caption).foregroundStyle(.secondary)
                                 }
@@ -119,6 +119,6 @@ struct RecordDetailView: View {
     }
     private func save() {
         do { try context.save(); message = nil }
-        catch { context.rollback(); message = error.localizedDescription }
+        catch { context.discardPendingChanges(); message = error.localizedDescription }
     }
 }

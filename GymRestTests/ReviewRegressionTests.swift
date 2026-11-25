@@ -25,6 +25,20 @@ import SwiftData
         XCTAssertEqual(draft[0].name, "哑铃卧推")
         XCTAssertFalse(store.context.hasChanges)
     }
+    func testFailedExerciseEditCanRetryWithoutSavingTheFailedDraft() throws {
+        let store = try store(); let day = try day(in: store)
+        let original = try day.exercises()
+        let failedDraft = [ExerciseSpec(name: "不应保存的动作", restSeconds: 120)]
+        XCTAssertThrowsError(try PlanEditing.save(failedDraft, to: day, context: store.context, beforeCommit: { throw TimerFailure.denied }))
+        XCTAssertEqual(try day.exercises(), original)
+        XCTAssertFalse(store.context.hasChanges)
+        let retry = [ExerciseSpec(name: "重试后的动作", restSeconds: 47)]
+        try PlanEditing.save(retry, to: day, context: store.context)
+        let independent = ModelContext(store.context.container)
+        let restored = try XCTUnwrap(independent.fetch(FetchDescriptor<TrainingPlan>()).first { $0.id == day.id })
+        XCTAssertEqual(try restored.exercises(), retry)
+        XCTAssertFalse(try restored.exercises().contains { $0.name == "不应保存的动作" })
+    }
     func testValidExerciseCommitCanBeReadBack() throws {
         let store = try store(); let day = try day(in: store)
         let values = [ExerciseSpec(name: "哑铃卧推", sets: 4, restSeconds: 120)]
