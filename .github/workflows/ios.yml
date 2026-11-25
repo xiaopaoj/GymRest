@@ -45,4 +45,5 @@ jobs:
             build/HealthKit.entitlements
             build/destinations.log
             build/xcode-candidates.txt
+            GymRest.xcodeproj/project.pbxproj
           if-no-files-found: warn

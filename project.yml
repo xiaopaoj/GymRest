@@ -17,9 +17,7 @@ targets:
     platform: iOS
     sources:
       - path: GymRest
-        excludes: [Resources/Artwork, Resources/ExerciseCatalog.json]
-      - path: GymRest/Resources/ExerciseCatalog.json
-        buildPhase: resources
+        excludes: [Resources/Artwork]
       - path: Shared
       - path: build/Assets.xcassets
     info:
