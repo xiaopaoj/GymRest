@@ -16,7 +16,7 @@ concurrency:
   cancel-in-progress: true
 jobs:
   build:
-    runs-on: macos-15
+    runs-on: macos-15-intel
     timeout-minutes: 60
     env:
       GYMREST_HEALTHKIT: ${{ (github.event_name != 'workflow_dispatch' || inputs.healthkit) && 'true' || 'false' }}
