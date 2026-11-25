@@ -1,0 +1,1870 @@
+{
+  "version": 1,
+  "attribution": "动作名称、基础分类参考wger；中文要点、肌群细分及编排由GymRest整理。逐项保留作者与许可，不能以器械标重直接比较不同设备。",
+  "exercises": [
+    {
+      "id": "barbell-bench",
+      "name": "杠铃卧推",
+      "englishName": "Bench Press",
+      "primary": [
+        "chest"
+      ],
+      "secondary": [
+        "frontDelts",
+        "triceps"
+      ],
+      "pattern": "horizontalPush",
+      "equipment": [
+        "barbell",
+        "bench"
+      ],
+      "loadKind": "total",
+      "compound": true,
+      "sets": 3,
+      "repetitions": 10,
+      "restSeconds": 120,
+      "transitionRestSeconds": 120,
+      "cues": [
+        "保持躯干稳定和腕部对齐。",
+        "在可控、无疼痛的活动范围内推起并缓慢还原。"
+      ],
+      "sourceURL": "https://wger.de/api/v2/exerciseinfo/73/",
+      "sourceAuthor": "sistab2",
+      "licenseURL": "https://creativecommons.org/licenses/by-sa/3.0/deed.en",
+      "media": {
+        "status": "pending",
+        "animationAsset": null,
+        "equipmentAsset": null,
+        "author": null,
+        "licenseURL": null,
+        "sourceURL": null
+      }
+    },
+    {
+      "id": "dumbbell-bench",
+      "name": "哑铃卧推",
+      "englishName": "Benchpress Dumbbells",
+      "primary": [
+        "chest"
+      ],
+      "secondary": [
+        "frontDelts",
+        "triceps"
+      ],
+      "pattern": "horizontalPush",
+      "equipment": [
+        "dumbbell",
+        "bench"
+      ],
+      "loadKind": "perHand",
+      "compound": true,
+      "sets": 3,
+      "repetitions": 10,
+      "restSeconds": 120,
+      "transitionRestSeconds": 120,
+      "cues": [
+        "保持躯干稳定和腕部对齐。",
+        "在可控、无疼痛的活动范围内推起并缓慢还原。"
+      ],
+      "sourceURL": "https://wger.de/api/v2/exerciseinfo/75/",
+      "sourceAuthor": "wger.de",
+      "licenseURL": "https://creativecommons.org/licenses/by-sa/3.0/deed.en",
+      "media": {
+        "status": "pending",
+        "animationAsset": null,
+        "equipmentAsset": null,
+        "author": null,
+        "licenseURL": null,
+        "sourceURL": null
+      }
+    },
+    {
+      "id": "incline-barbell",
+      "name": "上斜杠铃卧推",
+      "englishName": "Incline Bench Press - Barbell",
+      "primary": [
+        "upperChest"
+      ],
+      "secondary": [
+        "frontDelts",
+        "triceps"
+      ],
+      "pattern": "horizontalPush",
+      "equipment": [
+        "barbell",
+        "inclineBench"
+      ],
+      "loadKind": "total",
+      "compound": true,
+      "sets": 3,
+      "repetitions": 10,
+      "restSeconds": 120,
+      "transitionRestSeconds": 120,
+      "cues": [
+        "保持躯干稳定和腕部对齐。",
+        "在可控、无疼痛的活动范围内推起并缓慢还原。"
+      ],
+      "sourceURL": "https://wger.de/api/v2/exerciseinfo/538/",
+      "sourceAuthor": "wger.de",
+      "licenseURL": "https://creativecommons.org/licenses/by-sa/3.0/deed.en",
+      "media": {
+        "status": "pending",
+        "animationAsset": null,
+        "equipmentAsset": null,
+        "author": null,
+        "licenseURL": null,
+        "sourceURL": null
+      }
+    },
+    {
+      "id": "incline-dumbbell",
+      "name": "上斜哑铃卧推",
+      "englishName": "Incline Bench Press - Dumbbell",
+      "primary": [
+        "upperChest"
+      ],
+      "secondary": [
+        "frontDelts",
+        "triceps"
+      ],
+      "pattern": "horizontalPush",
+      "equipment": [
+        "dumbbell",
+        "inclineBench"
+      ],
+      "loadKind": "perHand",
+      "compound": true,
+      "sets": 3,
+      "repetitions": 10,
+      "restSeconds": 120,
+      "transitionRestSeconds": 120,
+      "cues": [
+        "保持躯干稳定和腕部对齐。",
+        "在可控、无疼痛的活动范围内推起并缓慢还原。"
+      ],
+      "sourceURL": "https://wger.de/api/v2/exerciseinfo/537/",
+      "sourceAuthor": "wger.de",
+      "licenseURL": "https://creativecommons.org/licenses/by-sa/3.0/deed.en",
+      "media": {
+        "status": "pending",
+        "animationAsset": null,
+        "equipmentAsset": null,
+        "author": null,
+        "licenseURL": null,
+        "sourceURL": null
+      }
+    },
+    {
+      "id": "machine-chest",
+      "name": "器械推胸",
+      "englishName": "Seated Bench Press",
+      "primary": [
+        "chest"
+      ],
+      "secondary": [
+        "frontDelts",
+        "triceps"
+      ],
+      "pattern": "horizontalPush",
+      "equipment": [
+        "chestMachine"
+      ],
+      "loadKind": "machine",
+      "compound": true,
+      "sets": 3,
+      "repetitions": 10,
+      "restSeconds": 120,
+      "transitionRestSeconds": 120,
+      "cues": [
+        "保持躯干稳定和腕部对齐。",
+        "在可控、无疼痛的活动范围内推起并缓慢还原。"
+      ],
+      "sourceURL": "https://wger.de/api/v2/exerciseinfo/1094/",
+      "sourceAuthor": "colundrum",
+      "licenseURL": "https://creativecommons.org/licenses/by-sa/4.0/deed.en",
+      "media": {
+        "status": "pending",
+        "animationAsset": null,
+        "equipmentAsset": null,
+        "author": null,
+        "licenseURL": null,
+        "sourceURL": null
+      }
+    },
+    {
+      "id": "push-up",
+      "name": "俯卧撑",
+      "englishName": "Push-Up",
+      "primary": [
+        "chest"
+      ],
+      "secondary": [
+        "frontDelts",
+        "triceps",
+        "core"
+      ],
+      "pattern": "horizontalPush",
+      "equipment": [
+        "bodyweight"
+      ],
+      "loadKind": "bodyweight",
+      "compound": true,
+      "sets": 3,
+      "repetitions": 10,
+      "restSeconds": 120,
+      "transitionRestSeconds": 120,
+      "cues": [
+        "保持躯干稳定和腕部对齐。",
+        "在可控、无疼痛的活动范围内推起并缓慢还原。"
+      ],
+      "sourceURL": "https://wger.de/api/v2/exerciseinfo/1551/",
+      "sourceAuthor": "Settebello",
+      "licenseURL": "https://creativecommons.org/licenses/by-sa/4.0/deed.en",
+      "media": {
+        "status": "pending",
+        "animationAsset": null,
+        "equipmentAsset": null,
+        "author": null,
+        "licenseURL": null,
+        "sourceURL": null
+      }
+    },
+    {
+      "id": "cable-fly",
+      "name": "绳索夹胸",
+      "englishName": "Fly With Cable",
+      "primary": [
+        "chest"
+      ],
+      "secondary": [
+        "frontDelts"
+      ],
+      "pattern": "chestFly",
+      "equipment": [
+        "cable"
+      ],
+      "loadKind": "machine",
+      "compound": false,
+      "sets": 3,
+      "repetitions": 12,
+      "restSeconds": 60,
+      "transitionRestSeconds": 120,
+      "cues": [
+        "保持肘部轻屈，在肩部舒适范围内开合。",
+        "避免用过大重量牵拉肩部。"
+      ],
+      "sourceURL": "https://wger.de/api/v2/exerciseinfo/237/",
+      "sourceAuthor": "wger.de",
+      "licenseURL": "https://creativecommons.org/licenses/by-sa/3.0/deed.en",
+      "media": {
+        "status": "pending",
+        "animationAsset": null,
+        "equipmentAsset": null,
+        "author": null,
+        "licenseURL": null,
+        "sourceURL": null
+      }
+    },
+    {
+      "id": "dumbbell-fly",
+      "name": "哑铃飞鸟",
+      "englishName": "Fly With Dumbbells",
+      "primary": [
+        "chest"
+      ],
+      "secondary": [
+        "frontDelts"
+      ],
+      "pattern": "chestFly",
+      "equipment": [
+        "dumbbell",
+        "bench"
+      ],
+      "loadKind": "perHand",
+      "compound": false,
+      "sets": 3,
+      "repetitions": 12,
+      "restSeconds": 60,
+      "transitionRestSeconds": 120,
+      "cues": [
+        "保持肘部轻屈，在肩部舒适范围内开合。",
+        "避免用过大重量牵拉肩部。"
+      ],
+      "sourceURL": "https://wger.de/api/v2/exerciseinfo/238/",
+      "sourceAuthor": "wger.de",
+      "licenseURL": "https://creativecommons.org/licenses/by-sa/3.0/deed.en",
+      "media": {
+        "status": "pending",
+        "animationAsset": null,
+        "equipmentAsset": null,
+        "author": null,
+        "licenseURL": null,
+        "sourceURL": null
+      }
+    },
+    {
+      "id": "pec-deck",
+      "name": "蝴蝶机夹胸",
+      "englishName": "Butterfly",
+      "primary": [
+        "chest"
+      ],
+      "secondary": [
+        "frontDelts"
+      ],
+      "pattern": "chestFly",
+      "equipment": [
+        "pecDeck"
+      ],
+      "loadKind": "machine",
+      "compound": false,
+      "sets": 3,
+      "repetitions": 12,
+      "restSeconds": 60,
+      "transitionRestSeconds": 120,
+      "cues": [
+        "保持肘部轻屈，在肩部舒适范围内开合。",
+        "避免用过大重量牵拉肩部。"
+      ],
+      "sourceURL": "https://wger.de/api/v2/exerciseinfo/135/",
+      "sourceAuthor": "wger.de",
+      "licenseURL": "https://creativecommons.org/licenses/by-sa/3.0/deed.en",
+      "media": {
+        "status": "pending",
+        "animationAsset": null,
+        "equipmentAsset": null,
+        "author": null,
+        "licenseURL": null,
+        "sourceURL": null
+      }
+    },
+    {
+      "id": "barbell-press",
+      "name": "杠铃肩推",
+      "englishName": "Shoulder Press, Barbell",
+      "primary": [
+        "frontDelts"
+      ],
+      "secondary": [
+        "sideDelts",
+        "triceps"
+      ],
+      "pattern": "verticalPush",
+      "equipment": [
+        "barbell"
+      ],
+      "loadKind": "total",
+      "compound": true,
+      "sets": 3,
+      "repetitions": 10,
+      "restSeconds": 120,
+      "transitionRestSeconds": 120,
+      "cues": [
+        "稳定躯干，避免用腰部过度后仰代偿。",
+        "选择可控负荷，将重量推起后缓慢还原。"
+      ],
+      "sourceURL": "https://wger.de/api/v2/exerciseinfo/566/",
+      "sourceAuthor": "wger.de",
+      "licenseURL": "https://creativecommons.org/licenses/by-sa/3.0/deed.en",
+      "media": {
+        "status": "pending",
+        "animationAsset": null,
+        "equipmentAsset": null,
+        "author": null,
+        "licenseURL": null,
+        "sourceURL": null
+      }
+    },
+    {
+      "id": "dumbbell-press",
+      "name": "哑铃肩推",
+      "englishName": "Shoulder Press, Dumbbells",
+      "primary": [
+        "frontDelts"
+      ],
+      "secondary": [
+        "sideDelts",
+        "triceps"
+      ],
+      "pattern": "verticalPush",
+      "equipment": [
+        "dumbbell",
+        "bench"
+      ],
+      "loadKind": "perHand",
+      "compound": true,
+      "sets": 3,
+      "repetitions": 10,
+      "restSeconds": 120,
+      "transitionRestSeconds": 120,
+      "cues": [
+        "稳定躯干，避免用腰部过度后仰代偿。",
+        "选择可控负荷，将重量推起后缓慢还原。"
+      ],
+      "sourceURL": "https://wger.de/api/v2/exerciseinfo/567/",
+      "sourceAuthor": "wger.de",
+      "licenseURL": "https://creativecommons.org/licenses/by-sa/3.0/deed.en",
+      "media": {
+        "status": "pending",
+        "animationAsset": null,
+        "equipmentAsset": null,
+        "author": null,
+        "licenseURL": null,
+        "sourceURL": null
+      }
+    },
+    {
+      "id": "machine-press",
+      "name": "器械肩推",
+      "englishName": "Shoulder Press, on Machine",
+      "primary": [
+        "frontDelts"
+      ],
+      "secondary": [
+        "sideDelts",
+        "triceps"
+      ],
+      "pattern": "verticalPush",
+      "equipment": [
+        "shoulderMachine"
+      ],
+      "loadKind": "machine",
+      "compound": true,
+      "sets": 3,
+      "repetitions": 10,
+      "restSeconds": 120,
+      "transitionRestSeconds": 120,
+      "cues": [
+        "稳定躯干，避免用腰部过度后仰代偿。",
+        "选择可控负荷，将重量推起后缓慢还原。"
+      ],
+      "sourceURL": "https://wger.de/api/v2/exerciseinfo/543/",
+      "sourceAuthor": "wger.de",
+      "licenseURL": "https://creativecommons.org/licenses/by-sa/3.0/deed.en",
+      "media": {
+        "status": "pending",
+        "animationAsset": null,
+        "equipmentAsset": null,
+        "author": null,
+        "licenseURL": null,
+        "sourceURL": null
+      }
+    },
+    {
+      "id": "pike-push-up",
+      "name": "折刀俯卧撑",
+      "englishName": "Pike Push Ups",
+      "primary": [
+        "frontDelts"
+      ],
+      "secondary": [
+        "triceps",
+        "core"
+      ],
+      "pattern": "verticalPush",
+      "equipment": [
+        "bodyweight"
+      ],
+      "loadKind": "bodyweight",
+      "compound": true,
+      "sets": 3,
+      "repetitions": 10,
+      "restSeconds": 120,
+      "transitionRestSeconds": 120,
+      "cues": [
+        "稳定躯干，避免用腰部过度后仰代偿。",
+        "选择可控负荷，将重量推起后缓慢还原。"
+      ],
+      "sourceURL": "https://wger.de/api/v2/exerciseinfo/454/",
+      "sourceAuthor": "Nash",
+      "licenseURL": "https://creativecommons.org/licenses/by-sa/4.0/deed.en",
+      "media": {
+        "status": "pending",
+        "animationAsset": null,
+        "equipmentAsset": null,
+        "author": null,
+        "licenseURL": null,
+        "sourceURL": null
+      }
+    },
+    {
+      "id": "dumbbell-lateral",
+      "name": "哑铃侧平举",
+      "englishName": "Lateral Raises",
+      "primary": [
+        "sideDelts"
+      ],
+      "secondary": [
+        "frontDelts"
+      ],
+      "pattern": "shoulderAbduction",
+      "equipment": [
+        "dumbbell"
+      ],
+      "loadKind": "perHand",
+      "compound": false,
+      "sets": 3,
+      "repetitions": 12,
+      "restSeconds": 60,
+      "transitionRestSeconds": 120,
+      "cues": [
+        "手臂沿舒适角度侧向抬起，肘部轻屈。",
+        "控制下放，避免耸肩或摆动借力。"
+      ],
+      "sourceURL": "https://wger.de/api/v2/exerciseinfo/348/",
+      "sourceAuthor": "wger.de",
+      "licenseURL": "https://creativecommons.org/licenses/by-sa/3.0/deed.en",
+      "media": {
+        "status": "pending",
+        "animationAsset": null,
+        "equipmentAsset": null,
+        "author": null,
+        "licenseURL": null,
+        "sourceURL": null
+      }
+    },
+    {
+      "id": "cable-lateral",
+      "name": "单臂绳索侧平举",
+      "englishName": "Cable Lateral Raises (Single Arm)",
+      "primary": [
+        "sideDelts"
+      ],
+      "secondary": [
+        "frontDelts"
+      ],
+      "pattern": "shoulderAbduction",
+      "equipment": [
+        "cable"
+      ],
+      "loadKind": "machine",
+      "compound": false,
+      "sets": 3,
+      "repetitions": 12,
+      "restSeconds": 60,
+      "transitionRestSeconds": 120,
+      "cues": [
+        "手臂沿舒适角度侧向抬起，肘部轻屈。",
+        "控制下放，避免耸肩或摆动借力。"
+      ],
+      "sourceURL": "https://wger.de/api/v2/exerciseinfo/1378/",
+      "sourceAuthor": "carlos3c",
+      "licenseURL": "https://creativecommons.org/licenses/by-sa/4.0/deed.en",
+      "media": {
+        "status": "pending",
+        "animationAsset": null,
+        "equipmentAsset": null,
+        "author": null,
+        "licenseURL": null,
+        "sourceURL": null
+      }
+    },
+    {
+      "id": "machine-lateral",
+      "name": "器械侧平举",
+      "englishName": "Machine Lateral Raise",
+      "primary": [
+        "sideDelts"
+      ],
+      "secondary": [
+        "frontDelts"
+      ],
+      "pattern": "shoulderAbduction",
+      "equipment": [
+        "lateralMachine"
+      ],
+      "loadKind": "machine",
+      "compound": false,
+      "sets": 3,
+      "repetitions": 12,
+      "restSeconds": 60,
+      "transitionRestSeconds": 120,
+      "cues": [
+        "手臂沿舒适角度侧向抬起，肘部轻屈。",
+        "控制下放，避免耸肩或摆动借力。"
+      ],
+      "sourceURL": "https://wger.de/api/v2/exerciseinfo/1654/",
+      "sourceAuthor": "roneydya",
+      "licenseURL": "https://creativecommons.org/licenses/by-sa/4.0/deed.en",
+      "media": {
+        "status": "pending",
+        "animationAsset": null,
+        "equipmentAsset": null,
+        "author": null,
+        "licenseURL": null,
+        "sourceURL": null
+      }
+    },
+    {
+      "id": "dumbbell-rear",
+      "name": "俯身哑铃反向飞鸟",
+      "englishName": "Bent-over Lateral Raises",
+      "primary": [
+        "rearDelts"
+      ],
+      "secondary": [
+        "upperBack"
+      ],
+      "pattern": "rearFly",
+      "equipment": [
+        "dumbbell"
+      ],
+      "loadKind": "perHand",
+      "compound": false,
+      "sets": 3,
+      "repetitions": 12,
+      "restSeconds": 60,
+      "transitionRestSeconds": 120,
+      "cues": [
+        "稳定躯干，手臂向两侧打开。",
+        "避免耸肩，不用腰部甩动重量。"
+      ],
+      "sourceURL": "https://wger.de/api/v2/exerciseinfo/82/",
+      "sourceAuthor": "apeschel",
+      "licenseURL": "https://creativecommons.org/licenses/by-sa/4.0/deed.en",
+      "media": {
+        "status": "pending",
+        "animationAsset": null,
+        "equipmentAsset": null,
+        "author": null,
+        "licenseURL": null,
+        "sourceURL": null
+      }
+    },
+    {
+      "id": "cable-rear",
+      "name": "绳索反向飞鸟",
+      "englishName": "Cable Rear Delt Fly",
+      "primary": [
+        "rearDelts"
+      ],
+      "secondary": [
+        "upperBack"
+      ],
+      "pattern": "rearFly",
+      "equipment": [
+        "cable"
+      ],
+      "loadKind": "machine",
+      "compound": false,
+      "sets": 3,
+      "repetitions": 12,
+      "restSeconds": 60,
+      "transitionRestSeconds": 120,
+      "cues": [
+        "稳定躯干，手臂向两侧打开。",
+        "避免耸肩，不用腰部甩动重量。"
+      ],
+      "sourceURL": "https://wger.de/api/v2/exerciseinfo/822/",
+      "sourceAuthor": "cshep442",
+      "licenseURL": "https://creativecommons.org/licenses/by-sa/4.0/deed.en",
+      "media": {
+        "status": "pending",
+        "animationAsset": null,
+        "equipmentAsset": null,
+        "author": null,
+        "licenseURL": null,
+        "sourceURL": null
+      }
+    },
+    {
+      "id": "machine-rear",
+      "name": "反向蝴蝶机",
+      "englishName": "Butterfly Reverse",
+      "primary": [
+        "rearDelts"
+      ],
+      "secondary": [
+        "upperBack"
+      ],
+      "pattern": "rearFly",
+      "equipment": [
+        "rearMachine"
+      ],
+      "loadKind": "machine",
+      "compound": false,
+      "sets": 3,
+      "repetitions": 12,
+      "restSeconds": 60,
+      "transitionRestSeconds": 120,
+      "cues": [
+        "稳定躯干，手臂向两侧打开。",
+        "避免耸肩，不用腰部甩动重量。"
+      ],
+      "sourceURL": "https://wger.de/api/v2/exerciseinfo/139/",
+      "sourceAuthor": "wger.de",
+      "licenseURL": "https://creativecommons.org/licenses/by-sa/3.0/deed.en",
+      "media": {
+        "status": "pending",
+        "animationAsset": null,
+        "equipmentAsset": null,
+        "author": null,
+        "licenseURL": null,
+        "sourceURL": null
+      }
+    },
+    {
+      "id": "barbell-row",
+      "name": "杠铃俯身划船",
+      "englishName": "Bent Over Rowing",
+      "primary": [
+        "upperBack",
+        "lats"
+      ],
+      "secondary": [
+        "rearDelts",
+        "biceps",
+        "core"
+      ],
+      "pattern": "horizontalPull",
+      "equipment": [
+        "barbell"
+      ],
+      "loadKind": "total",
+      "compound": true,
+      "sets": 3,
+      "repetitions": 10,
+      "restSeconds": 120,
+      "transitionRestSeconds": 120,
+      "cues": [
+        "保持躯干稳定，拉向身体时控制肩胛与肘部。",
+        "缓慢还原，不用腰部反复摆动借力。"
+      ],
+      "sourceURL": "https://wger.de/api/v2/exerciseinfo/83/",
+      "sourceAuthor": "wger.de",
+      "licenseURL": "https://creativecommons.org/licenses/by-sa/3.0/deed.en",
+      "media": {
+        "status": "pending",
+        "animationAsset": null,
+        "equipmentAsset": null,
+        "author": null,
+        "licenseURL": null,
+        "sourceURL": null
+      }
+    },
+    {
+      "id": "dumbbell-row",
+      "name": "单臂哑铃划船",
+      "englishName": "Bent Over Dumbbell Rows (Single Arm)",
+      "primary": [
+        "lats",
+        "upperBack"
+      ],
+      "secondary": [
+        "biceps",
+        "rearDelts"
+      ],
+      "pattern": "horizontalPull",
+      "equipment": [
+        "dumbbell",
+        "bench"
+      ],
+      "loadKind": "perHand",
+      "compound": true,
+      "sets": 3,
+      "repetitions": 10,
+      "restSeconds": 120,
+      "transitionRestSeconds": 120,
+      "cues": [
+        "保持躯干稳定，拉向身体时控制肩胛与肘部。",
+        "缓慢还原，不用腰部反复摆动借力。"
+      ],
+      "sourceURL": "https://wger.de/api/v2/exerciseinfo/81/",
+      "sourceAuthor": "sebk",
+      "licenseURL": "https://creativecommons.org/licenses/by-sa/4.0/deed.en",
+      "media": {
+        "status": "pending",
+        "animationAsset": null,
+        "equipmentAsset": null,
+        "author": null,
+        "licenseURL": null,
+        "sourceURL": null
+      }
+    },
+    {
+      "id": "cable-row",
+      "name": "坐姿绳索划船",
+      "englishName": "Seated Cable Row",
+      "primary": [
+        "upperBack",
+        "lats"
+      ],
+      "secondary": [
+        "biceps",
+        "rearDelts"
+      ],
+      "pattern": "horizontalPull",
+      "equipment": [
+        "cable"
+      ],
+      "loadKind": "machine",
+      "compound": true,
+      "sets": 3,
+      "repetitions": 10,
+      "restSeconds": 120,
+      "transitionRestSeconds": 120,
+      "cues": [
+        "保持躯干稳定，拉向身体时控制肩胛与肘部。",
+        "缓慢还原，不用腰部反复摆动借力。"
+      ],
+      "sourceURL": "https://wger.de/api/v2/exerciseinfo/1117/",
+      "sourceAuthor": "Franpol",
+      "licenseURL": "https://creativecommons.org/licenses/by-sa/4.0/deed.en",
+      "media": {
+        "status": "pending",
+        "animationAsset": null,
+        "equipmentAsset": null,
+        "author": null,
+        "licenseURL": null,
+        "sourceURL": null
+      }
+    },
+    {
+      "id": "machine-row",
+      "name": "器械坐姿划船",
+      "englishName": "Seated Row (Machine)",
+      "primary": [
+        "upperBack",
+        "lats"
+      ],
+      "secondary": [
+        "biceps",
+        "rearDelts"
+      ],
+      "pattern": "horizontalPull",
+      "equipment": [
+        "rowMachine"
+      ],
+      "loadKind": "machine",
+      "compound": true,
+      "sets": 3,
+      "repetitions": 10,
+      "restSeconds": 120,
+      "transitionRestSeconds": 120,
+      "cues": [
+        "保持躯干稳定，拉向身体时控制肩胛与肘部。",
+        "缓慢还原，不用腰部反复摆动借力。"
+      ],
+      "sourceURL": "https://wger.de/api/v2/exerciseinfo/1725/",
+      "sourceAuthor": "barry",
+      "licenseURL": "https://creativecommons.org/licenses/by-sa/4.0/deed.en",
+      "media": {
+        "status": "pending",
+        "animationAsset": null,
+        "equipmentAsset": null,
+        "author": null,
+        "licenseURL": null,
+        "sourceURL": null
+      }
+    },
+    {
+      "id": "lat-pulldown",
+      "name": "高位下拉",
+      "englishName": "Wide-grip Pulldown",
+      "primary": [
+        "lats"
+      ],
+      "secondary": [
+        "biceps",
+        "upperBack"
+      ],
+      "pattern": "verticalPull",
+      "equipment": [
+        "cable"
+      ],
+      "loadKind": "machine",
+      "compound": true,
+      "sets": 3,
+      "repetitions": 10,
+      "restSeconds": 120,
+      "transitionRestSeconds": 120,
+      "cues": [
+        "先稳定躯干，肘部向下拉。",
+        "避免猛拉和过度摆动，控制还原。"
+      ],
+      "sourceURL": "https://wger.de/api/v2/exerciseinfo/723/",
+      "sourceAuthor": "tuckerm",
+      "licenseURL": "https://creativecommons.org/licenses/by-sa/3.0/deed.en",
+      "media": {
+        "status": "pending",
+        "animationAsset": null,
+        "equipmentAsset": null,
+        "author": null,
+        "licenseURL": null,
+        "sourceURL": null
+      }
+    },
+    {
+      "id": "neutral-pulldown",
+      "name": "对握高位下拉",
+      "englishName": "Neutral Grip Lat Pulldown",
+      "primary": [
+        "lats"
+      ],
+      "secondary": [
+        "biceps",
+        "upperBack"
+      ],
+      "pattern": "verticalPull",
+      "equipment": [
+        "cable"
+      ],
+      "loadKind": "machine",
+      "compound": true,
+      "sets": 3,
+      "repetitions": 10,
+      "restSeconds": 120,
+      "transitionRestSeconds": 120,
+      "cues": [
+        "先稳定躯干，肘部向下拉。",
+        "避免猛拉和过度摆动，控制还原。"
+      ],
+      "sourceURL": "https://wger.de/api/v2/exerciseinfo/1510/",
+      "sourceAuthor": "Expenses7000",
+      "licenseURL": "https://creativecommons.org/licenses/by-sa/4.0/deed.en",
+      "media": {
+        "status": "pending",
+        "animationAsset": null,
+        "equipmentAsset": null,
+        "author": null,
+        "licenseURL": null,
+        "sourceURL": null
+      }
+    },
+    {
+      "id": "pull-up",
+      "name": "引体向上",
+      "englishName": "Pull-ups",
+      "primary": [
+        "lats"
+      ],
+      "secondary": [
+        "biceps",
+        "upperBack",
+        "core"
+      ],
+      "pattern": "verticalPull",
+      "equipment": [
+        "pullupBar"
+      ],
+      "loadKind": "bodyweight",
+      "compound": true,
+      "sets": 3,
+      "repetitions": 10,
+      "restSeconds": 120,
+      "transitionRestSeconds": 120,
+      "cues": [
+        "先稳定躯干，肘部向下拉。",
+        "避免猛拉和过度摆动，控制还原。"
+      ],
+      "sourceURL": "https://wger.de/api/v2/exerciseinfo/475/",
+      "sourceAuthor": "wger.de",
+      "licenseURL": "https://creativecommons.org/licenses/by-sa/3.0/deed.en",
+      "media": {
+        "status": "pending",
+        "animationAsset": null,
+        "equipmentAsset": null,
+        "author": null,
+        "licenseURL": null,
+        "sourceURL": null
+      }
+    },
+    {
+      "id": "assisted-pull-up",
+      "name": "辅助引体向上",
+      "englishName": "Assisted Pull-Up",
+      "primary": [
+        "lats"
+      ],
+      "secondary": [
+        "biceps",
+        "upperBack"
+      ],
+      "pattern": "verticalPull",
+      "equipment": [
+        "assistedPullup"
+      ],
+      "loadKind": "assistance",
+      "compound": true,
+      "sets": 3,
+      "repetitions": 10,
+      "restSeconds": 120,
+      "transitionRestSeconds": 120,
+      "cues": [
+        "先稳定躯干，肘部向下拉。",
+        "避免猛拉和过度摆动，控制还原。"
+      ],
+      "sourceURL": "https://wger.de/api/v2/exerciseinfo/1929/",
+      "sourceAuthor": "amaesc",
+      "licenseURL": "https://creativecommons.org/licenses/by-sa/4.0/deed.en",
+      "media": {
+        "status": "pending",
+        "animationAsset": null,
+        "equipmentAsset": null,
+        "author": null,
+        "licenseURL": null,
+        "sourceURL": null
+      }
+    },
+    {
+      "id": "barbell-curl",
+      "name": "杠铃弯举",
+      "englishName": "Biceps Curls With Barbell",
+      "primary": [
+        "biceps"
+      ],
+      "secondary": [
+        "forearms"
+      ],
+      "pattern": "elbowFlexion",
+      "equipment": [
+        "barbell"
+      ],
+      "loadKind": "total",
+      "compound": false,
+      "sets": 3,
+      "repetitions": 12,
+      "restSeconds": 60,
+      "transitionRestSeconds": 120,
+      "cues": [
+        "尽量保持上臂稳定，屈肘抬起负荷。",
+        "控制还原，避免耸肩或甩动。"
+      ],
+      "sourceURL": "https://wger.de/api/v2/exerciseinfo/91/",
+      "sourceAuthor": "wger.de",
+      "licenseURL": "https://creativecommons.org/licenses/by-sa/3.0/deed.en",
+      "media": {
+        "status": "pending",
+        "animationAsset": null,
+        "equipmentAsset": null,
+        "author": null,
+        "licenseURL": null,
+        "sourceURL": null
+      }
+    },
+    {
+      "id": "dumbbell-curl",
+      "name": "哑铃弯举",
+      "englishName": "Biceps Curls With Dumbbell",
+      "primary": [
+        "biceps"
+      ],
+      "secondary": [
+        "forearms"
+      ],
+      "pattern": "elbowFlexion",
+      "equipment": [
+        "dumbbell"
+      ],
+      "loadKind": "perHand",
+      "compound": false,
+      "sets": 3,
+      "repetitions": 12,
+      "restSeconds": 60,
+      "transitionRestSeconds": 120,
+      "cues": [
+        "尽量保持上臂稳定，屈肘抬起负荷。",
+        "控制还原，避免耸肩或甩动。"
+      ],
+      "sourceURL": "https://wger.de/api/v2/exerciseinfo/92/",
+      "sourceAuthor": "wger.de",
+      "licenseURL": "https://creativecommons.org/licenses/by-sa/3.0/deed.en",
+      "media": {
+        "status": "pending",
+        "animationAsset": null,
+        "equipmentAsset": null,
+        "author": null,
+        "licenseURL": null,
+        "sourceURL": null
+      }
+    },
+    {
+      "id": "cable-curl",
+      "name": "绳索弯举",
+      "englishName": "Biceps Curl With Cable",
+      "primary": [
+        "biceps"
+      ],
+      "secondary": [
+        "forearms"
+      ],
+      "pattern": "elbowFlexion",
+      "equipment": [
+        "cable"
+      ],
+      "loadKind": "machine",
+      "compound": false,
+      "sets": 3,
+      "repetitions": 12,
+      "restSeconds": 60,
+      "transitionRestSeconds": 120,
+      "cues": [
+        "尽量保持上臂稳定，屈肘抬起负荷。",
+        "控制还原，避免耸肩或甩动。"
+      ],
+      "sourceURL": "https://wger.de/api/v2/exerciseinfo/95/",
+      "sourceAuthor": "wger.de",
+      "licenseURL": "https://creativecommons.org/licenses/by-sa/3.0/deed.en",
+      "media": {
+        "status": "pending",
+        "animationAsset": null,
+        "equipmentAsset": null,
+        "author": null,
+        "licenseURL": null,
+        "sourceURL": null
+      }
+    },
+    {
+      "id": "hammer-curl",
+      "name": "哑铃锤式弯举",
+      "englishName": "Hammer Curls",
+      "primary": [
+        "biceps",
+        "forearms"
+      ],
+      "secondary": [],
+      "pattern": "elbowFlexion",
+      "equipment": [
+        "dumbbell"
+      ],
+      "loadKind": "perHand",
+      "compound": false,
+      "sets": 3,
+      "repetitions": 12,
+      "restSeconds": 60,
+      "transitionRestSeconds": 120,
+      "cues": [
+        "尽量保持上臂稳定，屈肘抬起负荷。",
+        "控制还原，避免耸肩或甩动。"
+      ],
+      "sourceURL": "https://wger.de/api/v2/exerciseinfo/272/",
+      "sourceAuthor": "wger.de",
+      "licenseURL": "https://creativecommons.org/licenses/by-sa/3.0/deed.en",
+      "media": {
+        "status": "pending",
+        "animationAsset": null,
+        "equipmentAsset": null,
+        "author": null,
+        "licenseURL": null,
+        "sourceURL": null
+      }
+    },
+    {
+      "id": "triceps-pushdown",
+      "name": "绳索下压",
+      "englishName": "Triceps Pushdown",
+      "primary": [
+        "triceps"
+      ],
+      "secondary": [],
+      "pattern": "elbowExtension",
+      "equipment": [
+        "cable"
+      ],
+      "loadKind": "machine",
+      "compound": false,
+      "sets": 3,
+      "repetitions": 12,
+      "restSeconds": 60,
+      "transitionRestSeconds": 120,
+      "cues": [
+        "保持上臂相对稳定，通过伸肘完成动作。",
+        "避免使用超过肘肩可控范围的负荷。"
+      ],
+      "sourceURL": "https://wger.de/api/v2/exerciseinfo/1185/",
+      "sourceAuthor": "anto.kreegyr",
+      "licenseURL": "https://creativecommons.org/licenses/by-sa/4.0/deed.en",
+      "media": {
+        "status": "pending",
+        "animationAsset": null,
+        "equipmentAsset": null,
+        "author": null,
+        "licenseURL": null,
+        "sourceURL": null
+      }
+    },
+    {
+      "id": "dumbbell-triceps",
+      "name": "哑铃臂屈伸",
+      "englishName": "Dumbbell Triceps Extension",
+      "primary": [
+        "triceps"
+      ],
+      "secondary": [],
+      "pattern": "elbowExtension",
+      "equipment": [
+        "dumbbell"
+      ],
+      "loadKind": "perHand",
+      "compound": false,
+      "sets": 3,
+      "repetitions": 12,
+      "restSeconds": 60,
+      "transitionRestSeconds": 120,
+      "cues": [
+        "保持上臂相对稳定，通过伸肘完成动作。",
+        "避免使用超过肘肩可控范围的负荷。"
+      ],
+      "sourceURL": "https://wger.de/api/v2/exerciseinfo/211/",
+      "sourceAuthor": "tuninx",
+      "licenseURL": "https://creativecommons.org/licenses/by-sa/3.0/deed.en",
+      "media": {
+        "status": "pending",
+        "animationAsset": null,
+        "equipmentAsset": null,
+        "author": null,
+        "licenseURL": null,
+        "sourceURL": null
+      }
+    },
+    {
+      "id": "barbell-triceps",
+      "name": "杠铃臂屈伸",
+      "englishName": "Barbell Triceps Extension",
+      "primary": [
+        "triceps"
+      ],
+      "secondary": [],
+      "pattern": "elbowExtension",
+      "equipment": [
+        "barbell",
+        "bench"
+      ],
+      "loadKind": "total",
+      "compound": false,
+      "sets": 3,
+      "repetitions": 12,
+      "restSeconds": 60,
+      "transitionRestSeconds": 120,
+      "cues": [
+        "保持上臂相对稳定，通过伸肘完成动作。",
+        "避免使用超过肘肩可控范围的负荷。"
+      ],
+      "sourceURL": "https://wger.de/api/v2/exerciseinfo/50/",
+      "sourceAuthor": "sevae",
+      "licenseURL": "https://creativecommons.org/licenses/by-sa/4.0/deed.en",
+      "media": {
+        "status": "pending",
+        "animationAsset": null,
+        "equipmentAsset": null,
+        "author": null,
+        "licenseURL": null,
+        "sourceURL": null
+      }
+    },
+    {
+      "id": "back-squat",
+      "name": "杠铃深蹲",
+      "englishName": "Squats",
+      "primary": [
+        "quads",
+        "glutes"
+      ],
+      "secondary": [
+        "hamstrings",
+        "core"
+      ],
+      "pattern": "squat",
+      "equipment": [
+        "barbell",
+        "rack"
+      ],
+      "loadKind": "total",
+      "compound": true,
+      "sets": 3,
+      "repetitions": 10,
+      "restSeconds": 120,
+      "transitionRestSeconds": 120,
+      "cues": [
+        "脚掌稳定，膝盖随脚尖方向运动。",
+        "在可控范围下蹲，保持躯干稳定后起身。"
+      ],
+      "sourceURL": "https://wger.de/api/v2/exerciseinfo/615/",
+      "sourceAuthor": "wger.de",
+      "licenseURL": "https://creativecommons.org/licenses/by-sa/3.0/deed.en",
+      "media": {
+        "status": "pending",
+        "animationAsset": null,
+        "equipmentAsset": null,
+        "author": null,
+        "licenseURL": null,
+        "sourceURL": null
+      }
+    },
+    {
+      "id": "goblet-squat",
+      "name": "高脚杯深蹲",
+      "englishName": "Dumbbell Goblet Squat",
+      "primary": [
+        "quads",
+        "glutes"
+      ],
+      "secondary": [
+        "core"
+      ],
+      "pattern": "squat",
+      "equipment": [
+        "dumbbell"
+      ],
+      "loadKind": "total",
+      "compound": true,
+      "sets": 3,
+      "repetitions": 10,
+      "restSeconds": 120,
+      "transitionRestSeconds": 120,
+      "cues": [
+        "脚掌稳定，膝盖随脚尖方向运动。",
+        "在可控范围下蹲，保持躯干稳定后起身。"
+      ],
+      "sourceURL": "https://wger.de/api/v2/exerciseinfo/203/",
+      "sourceAuthor": "ataraxie67",
+      "licenseURL": "https://creativecommons.org/licenses/by-sa/4.0/deed.en",
+      "media": {
+        "status": "pending",
+        "animationAsset": null,
+        "equipmentAsset": null,
+        "author": null,
+        "licenseURL": null,
+        "sourceURL": null
+      }
+    },
+    {
+      "id": "leg-press",
+      "name": "腿举",
+      "englishName": "Leg Press",
+      "primary": [
+        "quads",
+        "glutes"
+      ],
+      "secondary": [
+        "hamstrings"
+      ],
+      "pattern": "squat",
+      "equipment": [
+        "legPress"
+      ],
+      "loadKind": "machine",
+      "compound": true,
+      "sets": 3,
+      "repetitions": 10,
+      "restSeconds": 120,
+      "transitionRestSeconds": 120,
+      "cues": [
+        "脚掌稳定，膝盖随脚尖方向运动。",
+        "在可控范围下蹲，保持躯干稳定后起身。"
+      ],
+      "sourceURL": "https://wger.de/api/v2/exerciseinfo/371/",
+      "sourceAuthor": "BFad07",
+      "licenseURL": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "media": {
+        "status": "pending",
+        "animationAsset": null,
+        "equipmentAsset": null,
+        "author": null,
+        "licenseURL": null,
+        "sourceURL": null
+      }
+    },
+    {
+      "id": "bodyweight-squat",
+      "name": "徒手深蹲",
+      "englishName": "Bodyweight Squat HD",
+      "primary": [
+        "quads",
+        "glutes"
+      ],
+      "secondary": [
+        "core"
+      ],
+      "pattern": "squat",
+      "equipment": [
+        "bodyweight"
+      ],
+      "loadKind": "bodyweight",
+      "compound": true,
+      "sets": 3,
+      "repetitions": 10,
+      "restSeconds": 120,
+      "transitionRestSeconds": 120,
+      "cues": [
+        "脚掌稳定，膝盖随脚尖方向运动。",
+        "在可控范围下蹲，保持躯干稳定后起身。"
+      ],
+      "sourceURL": "https://wger.de/api/v2/exerciseinfo/1312/",
+      "sourceAuthor": "admin",
+      "licenseURL": "https://creativecommons.org/licenses/by-sa/4.0/deed.en",
+      "media": {
+        "status": "pending",
+        "animationAsset": null,
+        "equipmentAsset": null,
+        "author": null,
+        "licenseURL": null,
+        "sourceURL": null
+      }
+    },
+    {
+      "id": "barbell-rdl",
+      "name": "杠铃罗马尼亚硬拉",
+      "englishName": "Romanian Deadlift",
+      "primary": [
+        "hamstrings",
+        "glutes"
+      ],
+      "secondary": [
+        "core"
+      ],
+      "pattern": "hinge",
+      "equipment": [
+        "barbell"
+      ],
+      "loadKind": "total",
+      "compound": true,
+      "sets": 3,
+      "repetitions": 10,
+      "restSeconds": 120,
+      "transitionRestSeconds": 120,
+      "cues": [
+        "通过髋部后移完成折叠，保持背部稳定。",
+        "重量靠近身体，避免以腰部弯曲代替髋部运动。"
+      ],
+      "sourceURL": "https://wger.de/api/v2/exerciseinfo/507/",
+      "sourceAuthor": "pjwirth",
+      "licenseURL": "https://creativecommons.org/licenses/by-sa/4.0/deed.en",
+      "media": {
+        "status": "pending",
+        "animationAsset": null,
+        "equipmentAsset": null,
+        "author": null,
+        "licenseURL": null,
+        "sourceURL": null
+      }
+    },
+    {
+      "id": "dumbbell-rdl",
+      "name": "哑铃罗马尼亚硬拉",
+      "englishName": "Dumbbell Romanian Deadlift",
+      "primary": [
+        "hamstrings",
+        "glutes"
+      ],
+      "secondary": [
+        "core"
+      ],
+      "pattern": "hinge",
+      "equipment": [
+        "dumbbell"
+      ],
+      "loadKind": "perHand",
+      "compound": true,
+      "sets": 3,
+      "repetitions": 10,
+      "restSeconds": 120,
+      "transitionRestSeconds": 120,
+      "cues": [
+        "通过髋部后移完成折叠，保持背部稳定。",
+        "重量靠近身体，避免以腰部弯曲代替髋部运动。"
+      ],
+      "sourceURL": "https://wger.de/api/v2/exerciseinfo/1652/",
+      "sourceAuthor": "AlucardEvil40",
+      "licenseURL": "https://creativecommons.org/licenses/by-sa/4.0/deed.en",
+      "media": {
+        "status": "pending",
+        "animationAsset": null,
+        "equipmentAsset": null,
+        "author": null,
+        "licenseURL": null,
+        "sourceURL": null
+      }
+    },
+    {
+      "id": "barbell-hip-thrust",
+      "name": "杠铃臀推",
+      "englishName": "Hip Thrust",
+      "primary": [
+        "glutes"
+      ],
+      "secondary": [
+        "hamstrings",
+        "core"
+      ],
+      "pattern": "hipExtension",
+      "equipment": [
+        "barbell",
+        "bench"
+      ],
+      "loadKind": "total",
+      "compound": true,
+      "sets": 3,
+      "repetitions": 10,
+      "restSeconds": 120,
+      "transitionRestSeconds": 120,
+      "cues": [
+        "稳定上背支撑，收紧腹部。",
+        "通过髋伸展抬起，避免在顶端过度伸腰。"
+      ],
+      "sourceURL": "https://wger.de/api/v2/exerciseinfo/294/",
+      "sourceAuthor": "Bret Contreras",
+      "licenseURL": "https://creativecommons.org/licenses/by-sa/4.0/deed.en",
+      "media": {
+        "status": "pending",
+        "animationAsset": null,
+        "equipmentAsset": null,
+        "author": null,
+        "licenseURL": null,
+        "sourceURL": null
+      }
+    },
+    {
+      "id": "dumbbell-hip-thrust",
+      "name": "哑铃臀推",
+      "englishName": "Dumbbell Hip Thrust",
+      "primary": [
+        "glutes"
+      ],
+      "secondary": [
+        "hamstrings",
+        "core"
+      ],
+      "pattern": "hipExtension",
+      "equipment": [
+        "dumbbell",
+        "bench"
+      ],
+      "loadKind": "total",
+      "compound": true,
+      "sets": 3,
+      "repetitions": 10,
+      "restSeconds": 120,
+      "transitionRestSeconds": 120,
+      "cues": [
+        "稳定上背支撑，收紧腹部。",
+        "通过髋伸展抬起，避免在顶端过度伸腰。"
+      ],
+      "sourceURL": "https://wger.de/api/v2/exerciseinfo/1642/",
+      "sourceAuthor": "AlucardEvil40",
+      "licenseURL": "https://creativecommons.org/licenses/by-sa/4.0/deed.en",
+      "media": {
+        "status": "pending",
+        "animationAsset": null,
+        "equipmentAsset": null,
+        "author": null,
+        "licenseURL": null,
+        "sourceURL": null
+      }
+    },
+    {
+      "id": "seated-leg-curl",
+      "name": "坐姿腿弯举",
+      "englishName": "Leg Curls (sitting)",
+      "primary": [
+        "hamstrings"
+      ],
+      "secondary": [],
+      "pattern": "kneeFlexion",
+      "equipment": [
+        "legCurl"
+      ],
+      "loadKind": "machine",
+      "compound": false,
+      "sets": 3,
+      "repetitions": 12,
+      "restSeconds": 60,
+      "transitionRestSeconds": 120,
+      "cues": [
+        "调整器械轴线与膝关节位置，固定躯干。",
+        "缓慢屈膝与还原，避免反弹。"
+      ],
+      "sourceURL": "https://wger.de/api/v2/exerciseinfo/366/",
+      "sourceAuthor": "wger.de",
+      "licenseURL": "https://creativecommons.org/licenses/by-sa/3.0/deed.en",
+      "media": {
+        "status": "pending",
+        "animationAsset": null,
+        "equipmentAsset": null,
+        "author": null,
+        "licenseURL": null,
+        "sourceURL": null
+      }
+    },
+    {
+      "id": "lying-leg-curl",
+      "name": "俯卧腿弯举",
+      "englishName": "Leg Curls (laying)",
+      "primary": [
+        "hamstrings"
+      ],
+      "secondary": [],
+      "pattern": "kneeFlexion",
+      "equipment": [
+        "legCurl"
+      ],
+      "loadKind": "machine",
+      "compound": false,
+      "sets": 3,
+      "repetitions": 12,
+      "restSeconds": 60,
+      "transitionRestSeconds": 120,
+      "cues": [
+        "调整器械轴线与膝关节位置，固定躯干。",
+        "缓慢屈膝与还原，避免反弹。"
+      ],
+      "sourceURL": "https://wger.de/api/v2/exerciseinfo/365/",
+      "sourceAuthor": "wger.de",
+      "licenseURL": "https://creativecommons.org/licenses/by-sa/3.0/deed.en",
+      "media": {
+        "status": "pending",
+        "animationAsset": null,
+        "equipmentAsset": null,
+        "author": null,
+        "licenseURL": null,
+        "sourceURL": null
+      }
+    },
+    {
+      "id": "leg-extension",
+      "name": "腿屈伸",
+      "englishName": "Leg Extension",
+      "primary": [
+        "quads"
+      ],
+      "secondary": [],
+      "pattern": "kneeExtension",
+      "equipment": [
+        "legExtension"
+      ],
+      "loadKind": "machine",
+      "compound": false,
+      "sets": 3,
+      "repetitions": 12,
+      "restSeconds": 60,
+      "transitionRestSeconds": 120,
+      "cues": [
+        "调整靠背和垫子，保持大腿与躯干稳定。",
+        "控制伸膝与还原，不甩动配重。"
+      ],
+      "sourceURL": "https://wger.de/api/v2/exerciseinfo/369/",
+      "sourceAuthor": "BFad07",
+      "licenseURL": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "media": {
+        "status": "pending",
+        "animationAsset": null,
+        "equipmentAsset": null,
+        "author": null,
+        "licenseURL": null,
+        "sourceURL": null
+      }
+    },
+    {
+      "id": "dumbbell-lunge",
+      "name": "哑铃箭步蹲",
+      "englishName": "Dumbbell Lunges Standing",
+      "primary": [
+        "quads",
+        "glutes"
+      ],
+      "secondary": [
+        "hamstrings",
+        "core"
+      ],
+      "pattern": "lunge",
+      "equipment": [
+        "dumbbell"
+      ],
+      "loadKind": "perHand",
+      "compound": true,
+      "sets": 3,
+      "repetitions": 10,
+      "restSeconds": 120,
+      "transitionRestSeconds": 120,
+      "cues": [
+        "保持前脚稳定，控制步距与平衡。",
+        "两侧分别练习，膝盖随脚尖方向运动。"
+      ],
+      "sourceURL": "https://wger.de/api/v2/exerciseinfo/205/",
+      "sourceAuthor": "wger.de",
+      "licenseURL": "https://creativecommons.org/licenses/by-sa/3.0/deed.en",
+      "media": {
+        "status": "pending",
+        "animationAsset": null,
+        "equipmentAsset": null,
+        "author": null,
+        "licenseURL": null,
+        "sourceURL": null
+      }
+    },
+    {
+      "id": "bodyweight-lunge",
+      "name": "徒手箭步蹲",
+      "englishName": "Bodyweight lunge HD",
+      "primary": [
+        "quads",
+        "glutes"
+      ],
+      "secondary": [
+        "core"
+      ],
+      "pattern": "lunge",
+      "equipment": [
+        "bodyweight"
+      ],
+      "loadKind": "bodyweight",
+      "compound": true,
+      "sets": 3,
+      "repetitions": 10,
+      "restSeconds": 120,
+      "transitionRestSeconds": 120,
+      "cues": [
+        "保持前脚稳定，控制步距与平衡。",
+        "两侧分别练习，膝盖随脚尖方向运动。"
+      ],
+      "sourceURL": "https://wger.de/api/v2/exerciseinfo/1324/",
+      "sourceAuthor": "hektkaso",
+      "licenseURL": "https://creativecommons.org/licenses/by-sa/4.0/deed.en",
+      "media": {
+        "status": "pending",
+        "animationAsset": null,
+        "equipmentAsset": null,
+        "author": null,
+        "licenseURL": null,
+        "sourceURL": null
+      }
+    },
+    {
+      "id": "standing-calf",
+      "name": "站姿提踵",
+      "englishName": "Standing Calf Raises",
+      "primary": [
+        "calves"
+      ],
+      "secondary": [],
+      "pattern": "calfRaise",
+      "equipment": [
+        "bodyweight"
+      ],
+      "loadKind": "bodyweight",
+      "compound": false,
+      "sets": 3,
+      "repetitions": 12,
+      "restSeconds": 60,
+      "transitionRestSeconds": 120,
+      "cues": [
+        "稳定支撑，通过踝关节控制抬起和落下。",
+        "避免弹震，单侧动作记得练习两侧。"
+      ],
+      "sourceURL": "https://wger.de/api/v2/exerciseinfo/622/",
+      "sourceAuthor": "wger.de",
+      "licenseURL": "https://creativecommons.org/licenses/by-sa/3.0/deed.en",
+      "media": {
+        "status": "pending",
+        "animationAsset": null,
+        "equipmentAsset": null,
+        "author": null,
+        "licenseURL": null,
+        "sourceURL": null
+      }
+    },
+    {
+      "id": "dumbbell-calf",
+      "name": "坐姿哑铃提踵",
+      "englishName": "Seated Dumbbell Calf Raise",
+      "primary": [
+        "calves"
+      ],
+      "secondary": [],
+      "pattern": "calfRaise",
+      "equipment": [
+        "dumbbell",
+        "bench"
+      ],
+      "loadKind": "perHand",
+      "compound": false,
+      "sets": 3,
+      "repetitions": 12,
+      "restSeconds": 60,
+      "transitionRestSeconds": 120,
+      "cues": [
+        "坐稳并将哑铃稳定放置在大腿靠近膝部的位置，双脚前掌支撑。",
+        "通过踝关节控制抬起与落下，避免弹震。"
+      ],
+      "sourceURL": "https://wger.de/api/v2/exerciseinfo/1620/",
+      "sourceAuthor": "AlucardEvil40",
+      "licenseURL": "https://creativecommons.org/licenses/by-sa/4.0/deed.en",
+      "media": {
+        "status": "pending",
+        "animationAsset": null,
+        "equipmentAsset": null,
+        "author": null,
+        "licenseURL": null,
+        "sourceURL": null
+      }
+    },
+    {
+      "id": "crunch",
+      "name": "卷腹",
+      "englishName": "Crunches",
+      "primary": [
+        "core"
+      ],
+      "secondary": [],
+      "pattern": "coreFlexion",
+      "equipment": [
+        "mat"
+      ],
+      "loadKind": "bodyweight",
+      "compound": false,
+      "sets": 3,
+      "repetitions": 12,
+      "restSeconds": 60,
+      "transitionRestSeconds": 120,
+      "cues": [
+        "呼气时控制躯干卷起，避免拉拽颈部。",
+        "缓慢还原，不用摆动代替腹部发力。"
+      ],
+      "sourceURL": "https://wger.de/api/v2/exerciseinfo/167/",
+      "sourceAuthor": "wger.de",
+      "licenseURL": "https://creativecommons.org/licenses/by-sa/3.0/deed.en",
+      "media": {
+        "status": "pending",
+        "animationAsset": null,
+        "equipmentAsset": null,
+        "author": null,
+        "licenseURL": null,
+        "sourceURL": null
+      }
+    },
+    {
+      "id": "cable-crunch",
+      "name": "绳索卷腹",
+      "englishName": "Crunches With Cable",
+      "primary": [
+        "core"
+      ],
+      "secondary": [],
+      "pattern": "coreFlexion",
+      "equipment": [
+        "cable"
+      ],
+      "loadKind": "machine",
+      "compound": false,
+      "sets": 3,
+      "repetitions": 12,
+      "restSeconds": 60,
+      "transitionRestSeconds": 120,
+      "cues": [
+        "呼气时控制躯干卷起，避免拉拽颈部。",
+        "缓慢还原，不用摆动代替腹部发力。"
+      ],
+      "sourceURL": "https://wger.de/api/v2/exerciseinfo/173/",
+      "sourceAuthor": "wger.de",
+      "licenseURL": "https://creativecommons.org/licenses/by-sa/3.0/deed.en",
+      "media": {
+        "status": "pending",
+        "animationAsset": null,
+        "equipmentAsset": null,
+        "author": null,
+        "licenseURL": null,
+        "sourceURL": null
+      }
+    }
+  ]
+}

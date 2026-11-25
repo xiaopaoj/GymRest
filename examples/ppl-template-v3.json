@@ -1,0 +1,257 @@
+{
+  "version": 3,
+  "programs": [
+    {
+      "id": "A04D5952-3246-48C3-A5AC-2B2BD64F1684",
+      "name": "三分化 · 推／拉／腿",
+      "weeklySessions": 3
+    }
+  ],
+  "plans": [
+    {
+      "id": "496F3790-D393-417B-8972-D391075D9642",
+      "name": "推 · 胸／肩／三头",
+      "programID": "A04D5952-3246-48C3-A5AC-2B2BD64F1684",
+      "exercises": [
+        {
+          "id": "1B0E5219-E938-4D85-AF8E-1184D8DAE8E2",
+          "name": "杠铃卧推",
+          "sets": 3,
+          "restSeconds": 120,
+          "restAfterLastSet": false,
+          "transitionRestSeconds": 120,
+          "catalogID": "barbell-bench",
+          "prescription": {
+            "weight": null,
+            "repetitions": 10,
+            "unit": "kg",
+            "kind": "total",
+            "equipmentNote": ""
+          }
+        },
+        {
+          "id": "8727FD4D-7338-4A91-AA68-4DAF0EB05D4F",
+          "name": "上斜哑铃卧推",
+          "sets": 3,
+          "restSeconds": 120,
+          "restAfterLastSet": false,
+          "transitionRestSeconds": 120,
+          "catalogID": "incline-dumbbell",
+          "prescription": {
+            "weight": null,
+            "repetitions": 10,
+            "unit": "kg",
+            "kind": "perHand",
+            "equipmentNote": ""
+          }
+        },
+        {
+          "id": "DC1E8CEF-D93D-4EB6-8D82-808FB6D646C2",
+          "name": "哑铃肩推",
+          "sets": 3,
+          "restSeconds": 120,
+          "restAfterLastSet": false,
+          "transitionRestSeconds": 120,
+          "catalogID": "dumbbell-press",
+          "prescription": {
+            "weight": null,
+            "repetitions": 10,
+            "unit": "kg",
+            "kind": "perHand",
+            "equipmentNote": ""
+          }
+        },
+        {
+          "id": "99CC395A-8980-4C9A-977F-27706BAE4356",
+          "name": "哑铃侧平举",
+          "sets": 3,
+          "restSeconds": 60,
+          "restAfterLastSet": false,
+          "transitionRestSeconds": 120,
+          "catalogID": "dumbbell-lateral",
+          "prescription": {
+            "weight": null,
+            "repetitions": 12,
+            "unit": "kg",
+            "kind": "perHand",
+            "equipmentNote": ""
+          }
+        },
+        {
+          "id": "081AB06D-38FD-432F-8168-3B99AAB5FBF3",
+          "name": "绳索下压",
+          "sets": 3,
+          "restSeconds": 60,
+          "restAfterLastSet": false,
+          "transitionRestSeconds": 120,
+          "catalogID": "triceps-pushdown",
+          "prescription": {
+            "weight": null,
+            "repetitions": 12,
+            "unit": "kg",
+            "kind": "machine",
+            "equipmentNote": ""
+          }
+        }
+      ]
+    },
+    {
+      "id": "E9324703-5348-4200-974A-C956E067301B",
+      "name": "拉 · 背／后束／二头",
+      "programID": "A04D5952-3246-48C3-A5AC-2B2BD64F1684",
+      "exercises": [
+        {
+          "id": "3BE5EC58-9151-46CE-A53E-0152FCCD247C",
+          "name": "高位下拉",
+          "sets": 3,
+          "restSeconds": 120,
+          "restAfterLastSet": false,
+          "transitionRestSeconds": 120,
+          "catalogID": "lat-pulldown",
+          "prescription": {
+            "weight": null,
+            "repetitions": 10,
+            "unit": "kg",
+            "kind": "machine",
+            "equipmentNote": ""
+          }
+        },
+        {
+          "id": "E5CC23E1-31FF-477A-A762-0A75CD5E8E16",
+          "name": "坐姿绳索划船",
+          "sets": 3,
+          "restSeconds": 120,
+          "restAfterLastSet": false,
+          "transitionRestSeconds": 120,
+          "catalogID": "cable-row",
+          "prescription": {
+            "weight": null,
+            "repetitions": 10,
+            "unit": "kg",
+            "kind": "machine",
+            "equipmentNote": ""
+          }
+        },
+        {
+          "id": "08146140-86E4-4006-8700-0CF590AE09F7",
+          "name": "俯身哑铃反向飞鸟",
+          "sets": 3,
+          "restSeconds": 60,
+          "restAfterLastSet": false,
+          "transitionRestSeconds": 120,
+          "catalogID": "dumbbell-rear",
+          "prescription": {
+            "weight": null,
+            "repetitions": 12,
+            "unit": "kg",
+            "kind": "perHand",
+            "equipmentNote": ""
+          }
+        },
+        {
+          "id": "7F12409A-A735-414A-B9F4-7F3C279C1533",
+          "name": "哑铃弯举",
+          "sets": 3,
+          "restSeconds": 60,
+          "restAfterLastSet": false,
+          "transitionRestSeconds": 120,
+          "catalogID": "dumbbell-curl",
+          "prescription": {
+            "weight": null,
+            "repetitions": 12,
+            "unit": "kg",
+            "kind": "perHand",
+            "equipmentNote": ""
+          }
+        }
+      ]
+    },
+    {
+      "id": "F53C628E-51BA-415C-8020-239C269CF924",
+      "name": "腿 · 下肢／核心",
+      "programID": "A04D5952-3246-48C3-A5AC-2B2BD64F1684",
+      "exercises": [
+        {
+          "id": "26B296F8-4097-40E7-919B-A625B9590891",
+          "name": "杠铃深蹲",
+          "sets": 3,
+          "restSeconds": 120,
+          "restAfterLastSet": false,
+          "transitionRestSeconds": 120,
+          "catalogID": "back-squat",
+          "prescription": {
+            "weight": null,
+            "repetitions": 10,
+            "unit": "kg",
+            "kind": "total",
+            "equipmentNote": ""
+          }
+        },
+        {
+          "id": "0A244A01-907E-47AD-AE77-25C561F0527A",
+          "name": "杠铃罗马尼亚硬拉",
+          "sets": 3,
+          "restSeconds": 120,
+          "restAfterLastSet": false,
+          "transitionRestSeconds": 120,
+          "catalogID": "barbell-rdl",
+          "prescription": {
+            "weight": null,
+            "repetitions": 10,
+            "unit": "kg",
+            "kind": "total",
+            "equipmentNote": ""
+          }
+        },
+        {
+          "id": "984E8A2B-8F7D-4F68-AE2B-C5C1D177835A",
+          "name": "坐姿腿弯举",
+          "sets": 3,
+          "restSeconds": 60,
+          "restAfterLastSet": false,
+          "transitionRestSeconds": 120,
+          "catalogID": "seated-leg-curl",
+          "prescription": {
+            "weight": null,
+            "repetitions": 12,
+            "unit": "kg",
+            "kind": "machine",
+            "equipmentNote": ""
+          }
+        },
+        {
+          "id": "46B727B7-AA80-40C4-BCBF-2DEF041F6FFF",
+          "name": "站姿提踵",
+          "sets": 3,
+          "restSeconds": 60,
+          "restAfterLastSet": false,
+          "transitionRestSeconds": 120,
+          "catalogID": "standing-calf",
+          "prescription": {
+            "weight": null,
+            "repetitions": 12,
+            "unit": "kg",
+            "kind": "bodyweight",
+            "equipmentNote": ""
+          }
+        },
+        {
+          "id": "058D9900-7B91-49C4-9638-B4943EE9C7C5",
+          "name": "卷腹",
+          "sets": 3,
+          "restSeconds": 60,
+          "restAfterLastSet": false,
+          "transitionRestSeconds": 120,
+          "catalogID": "crunch",
+          "prescription": {
+            "weight": null,
+            "repetitions": 12,
+            "unit": "kg",
+            "kind": "bodyweight",
+            "equipmentNote": ""
+          }
+        }
+      ]
+    }
+  ]
+}

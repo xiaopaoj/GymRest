@@ -17,6 +17,7 @@ enum TimerInspection: Sendable {
 protocol TimerService {
     var name: String { get }
     var authorization: String { get async }
+    var canScheduleInBackground: Bool { get async }
     func authorize() async throws
     func start(id: UUID, seconds: Int, context: RestContext?) async throws
     func cancel(id: UUID) async throws

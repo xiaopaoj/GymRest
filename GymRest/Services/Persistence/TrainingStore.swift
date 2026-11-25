@@ -28,6 +28,28 @@ import SwiftData
         try session.validate()
         return session
     }
+    func lastValues(for exercise: ExerciseSpec, matching profile: SetValues) throws -> SetValues? {
+        let key = exercise.profileKey(for: profile)
+        var lookup = FetchDescriptor<TrainingRecord>(sortBy: [SortDescriptor(\TrainingRecord.endedAt, order: .reverse)])
+        lookup.fetchLimit = 50
+        for record in try context.fetch(lookup) {
+            // Legacy records have no measured loads. A corrupt record remains visible in
+            // history; it must not prevent starting another training session.
+            guard let sets = try? record.performances() else { continue }
+            for set in sets.flatMap({ $0 }).reversed() where set.profileKey == key {
+                if let values = set.values, (try? values.validate()) != nil { return values }
+            }
+        }
+        return nil
+    }
+    func suggestedValues(for exercise: ExerciseSpec) throws -> SetValues {
+        var planned = exercise.prescription ?? SetValues()
+        if let last = try lastValues(for: exercise, matching: planned) {
+            if planned.weight == nil { planned.weight = last.weight }
+            if planned.repetitions == nil { planned.repetitions = last.repetitions }
+        }
+        return planned
+    }
     private func archive(_ session: TrainingSession, at end: Date) throws {
         let id = session.sessionID ?? session.planID
         var lookup = FetchDescriptor<TrainingRecord>(predicate: #Predicate { $0.id == id })

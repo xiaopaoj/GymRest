@@ -1,0 +1,27 @@
+{
+  "version": 1,
+  "plans": [
+    {
+      "id": "37ADC726-4DDB-48B7-B6E8-D9ECA7698F26",
+      "name": "胸背训练（含动作间休息）",
+      "exercises": [
+        {
+          "id": "31B6B873-8003-4A31-8E56-1CC57CFD71B3",
+          "name": "卧推",
+          "sets": 4,
+          "restSeconds": 90,
+          "restAfterLastSet": false,
+          "transitionRestSeconds": 180
+        },
+        {
+          "id": "7F8B843B-D9EB-4A03-88AA-9CC133E07ABE",
+          "name": "划船",
+          "sets": 4,
+          "restSeconds": 60,
+          "restAfterLastSet": false,
+          "transitionRestSeconds": 120
+        }
+      ]
+    }
+  ]
+}

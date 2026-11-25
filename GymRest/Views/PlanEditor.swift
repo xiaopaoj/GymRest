@@ -10,6 +10,9 @@ struct PlanEditor: View {
     @State private var editing: ExerciseSpec?
     @State private var error: String?
     @State private var loaded = false
+    @State private var choosingCatalog = false
+    @State private var ordering = false
+    @State private var chosenExercise: ExerciseSpec?
     var body: some View {
         List {
             Section("训练日名称") {
@@ -26,8 +29,11 @@ struct PlanEditor: View {
                         HStack {
                             VStack(alignment: .leading, spacing: 5) {
                                 Text(exercise.name).foregroundStyle(.primary)
-                                Text("\(exercise.sets) 组 · 休息 \(exercise.restSeconds) 秒")
+                                Text("\(exercise.sets) 组 · 组间 \(exercise.restSeconds) 秒")
                                     .font(.subheadline).foregroundStyle(.secondary)
+                                let transition = exercise.transitionRestSeconds ?? (exercise.restAfterLastSet ? exercise.rest(afterSet: exercise.sets) : 0)
+                                Text(transition > 0 ? "动作间休息 \(transition) 秒" : "动作完成后直接切换")
+                                    .font(.caption).foregroundStyle(.secondary)
                             }
                             Spacer()
                             Image(systemName: "chevron.right").foregroundStyle(.tertiary)
@@ -43,7 +49,10 @@ struct PlanEditor: View {
                 }
                 .onDelete { exercises.remove(atOffsets: $0); saveExercises() }
                 .onMove { exercises.move(fromOffsets: $0, toOffset: $1); saveExercises() }
-                Button { editing = ExerciseSpec(name: "", sets: controller.preferences.defaultSets, restSeconds: controller.preferences.defaultRest) } label: {
+                Button { choosingCatalog = true } label: { Label("从动作库添加", systemImage: "figure.strengthtraining.traditional") }.disabled(!loaded)
+                Button { ordering = true } label: { Label("查看训练顺序建议", systemImage: "arrow.up.arrow.down") }.disabled(!loaded || exercises.count < 2)
+                Button { editing = ExerciseSpec(name: "", sets: controller.preferences.defaultSets, restSeconds: controller.preferences.defaultRest,
+                                               transitionRestSeconds: controller.preferences.defaultRest) } label: {
                     Label("添加动作", systemImage: "plus.circle.fill")
                 }.disabled(!loaded)
             }
@@ -64,6 +73,22 @@ struct PlanEditor: View {
                 exercises = values; name = plan.name; loaded = true
             }
             catch { self.error = error.localizedDescription }
+        }
+        .sheet(isPresented: $choosingCatalog, onDismiss: {
+            if let chosenExercise { editing = chosenExercise; self.chosenExercise = nil }
+        }) {
+            NavigationStack {
+                ExerciseCatalogView { item, catalog in
+                    choosingCatalog = false
+                    chosenExercise = item.spec(alternatives: Array(catalog.alternatives(to: item).prefix(4)))
+                }
+            }
+        }
+        .sheet(isPresented: $ordering) {
+            TrainingOrderView(exercises: exercises) { result in
+                try PlanEditing.save(result, to: plan, context: context)
+                exercises = result
+            }
         }
         .sheet(item: $editing) { exercise in
             ExerciseEditor(exercise: exercise) { value in
@@ -93,6 +118,8 @@ struct ExerciseEditor: View {
     @Environment(\.dismiss) private var dismiss
     @State var exercise: ExerciseSpec
     @State private var seconds = ""
+    @State private var transitionSeconds = ""
+    @State private var editingPrescription = false
     @State private var editingAlternative: ExerciseAlternative?
     @State private var error: String?
     let onSave: (ExerciseSpec) throws -> Void
@@ -105,14 +132,36 @@ struct ExerciseEditor: View {
                     TextField("动作名称", text: $exercise.name)
                     Stepper("\(exercise.sets) 组", value: $exercise.sets, in: 1...100)
                 }
-                Section("独立休息时间") {
-                    TextField("休息秒数", text: $seconds).keyboardType(.numberPad)
+                Section("预设重量与次数") {
+                    Text((exercise.prescription ?? SetValues()).summary).font(.subheadline)
+                    Button("设置预设值") { editingPrescription = true }
+                    Text("预设值供下一次训练使用。训练中可逐组调整，完成时记录实际值。")
+                        .font(.footnote).foregroundStyle(.secondary)
+                }
+                Section("组间休息") {
+                    TextField("组间休息秒数", text: $seconds).keyboardType(.numberPad)
                     LazyVGrid(columns: [GridItem(.adaptive(minimum: 70))]) {
                         ForEach(presets, id: \.self) { value in
                             Button("\(value) 秒") { seconds = String(value) }.buttonStyle(.bordered)
                         }
                     }
-                    Toggle("最后一组后也休息", isOn: $exercise.restAfterLastSet)
+                    Text("同一动作的两组之间使用，可在下方按组覆盖。")
+                        .font(.footnote).foregroundStyle(.secondary)
+                }
+                Section("动作间休息") {
+                    TextField("切换动作前休息秒数（0为直接切换）", text: $transitionSeconds).keyboardType(.numberPad)
+                    LazyVGrid(columns: [GridItem(.adaptive(minimum: 70))]) {
+                        ForEach([0] + presets, id: \.self) { value in
+                            Button(value == 0 ? "不休息" : "\(value) 秒") { transitionSeconds = String(value) }.buttonStyle(.bordered)
+                        }
+                    }
+                    Text("本动作最后一组完成后、下一个动作开始前使用。与组间休息独立；本动作是最后一个动作时不执行。")
+                        .font(.footnote).foregroundStyle(.secondary)
+                }
+                Section("训练结束后") {
+                    Toggle("本动作位于最后时仍休息", isOn: $exercise.restAfterLastSet)
+                    Text("开启后，最后一个动作做完才进行额外休息，使用末组覆盖或组间休息秒数；否则直接结束训练。")
+                        .font(.footnote).foregroundStyle(.secondary)
                 }
                 Section("替代动作（可选）") {
                     ForEach(exercise.alternatives) { alternative in
@@ -121,12 +170,12 @@ struct ExerciseEditor: View {
                         }
                     }.onDelete { exercise.alternatives.remove(atOffsets: $0) }
                     Button("添加替代动作") { editingAlternative = ExerciseAlternative(name: "", restSeconds: exercise.restSeconds) }
-                    Text("替代动作共用本动作组数及末组休息开关，休息秒数独立。训练时可切换，已完成的组不会丢失。")
+                    Text("替代动作共用本动作组数、动作间休息与训练结束后休息开关；组间休息秒数独立。训练时可切换，已完成的组不会丢失。")
                         .font(.footnote).foregroundStyle(.secondary)
                 }
                 Section {
                     DisclosureGroup("按组覆盖休息（可选）") {
-                        Text("未启用的组使用默认秒数。末组仍由“最后一组后也休息”开关决定是否计时。")
+                        Text("未启用的组使用组间休息秒数。动作之间使用上方独立配置；末组覆盖仅在本动作位于最后且开启训练结束后休息时生效。")
                             .font(.footnote).foregroundStyle(.secondary)
                         ForEach(1...exercise.sets, id: \.self) { set in
                             Toggle("第 \(set) 组后", isOn: Binding(
@@ -150,14 +199,23 @@ struct ExerciseEditor: View {
                 ToolbarItem(placement: .confirmationAction) { Button("保存") {
                     exercise.name = exercise.name.trimmingCharacters(in: .whitespacesAndNewlines)
                     exercise.restSeconds = Int(seconds) ?? 0
+                    exercise.transitionRestSeconds = Int(transitionSeconds) ?? -1
                     do { try exercise.validate(); try onSave(exercise); dismiss() }
                     catch { self.error = error.localizedDescription }
                 } }
             }
-            .onAppear { if seconds.isEmpty { seconds = String(exercise.restSeconds) } }
+            .onAppear {
+                if seconds.isEmpty { seconds = String(exercise.restSeconds) }
+                if transitionSeconds.isEmpty {
+                    transitionSeconds = String(exercise.transitionRestSeconds ?? (exercise.restAfterLastSet ? exercise.rest(afterSet: exercise.sets) : 0))
+                }
+            }
             .alert("动作未保存", isPresented: Binding(get: { error != nil }, set: { if !$0 { error = nil } })) {
                 Button("继续编辑") { error = nil }
             } message: { Text(error ?? "") }
+            .sheet(isPresented: $editingPrescription) {
+                SetValuesEditor(values: exercise.prescription ?? SetValues(), title: "动作预设") { exercise.prescription = $0 }
+            }
             .sheet(item: $editingAlternative) { alternative in
                 AlternativeEditor(alternative: alternative, sets: exercise.sets) { result in
                     if let i = exercise.alternatives.firstIndex(where: { $0.id == result.id }) { exercise.alternatives[i] = result }
@@ -175,11 +233,14 @@ struct AlternativeEditor: View {
     let save: (ExerciseAlternative) -> Void
     @State private var seconds = ""
     @State private var error: String?
+    @State private var editingValues = false
     var body: some View {
         NavigationStack {
             Form {
                 TextField("替代动作名称", text: $alternative.name)
                 LabeledContent("共用训练组数", value: "\(sets) 组")
+                Text((alternative.prescription ?? SetValues()).summary).font(.subheadline)
+                Button("设置此替代项的预设重量与次数") { editingValues = true }
                 TextField("独立休息秒数", text: $seconds).keyboardType(.numberPad)
                 DisclosureGroup("按组覆盖休息（可选）") {
                     ForEach(1...sets, id: \.self) { set in
@@ -201,6 +262,9 @@ struct AlternativeEditor: View {
                     catch { self.error = error.localizedDescription }
                 } }
             }.onAppear { seconds = String(alternative.restSeconds) }
+            .sheet(isPresented: $editingValues) {
+                SetValuesEditor(values: alternative.prescription ?? SetValues(), title: "替代动作预设") { alternative.prescription = $0 }
+            }
         }
     }
 }

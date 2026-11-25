@@ -5,8 +5,9 @@ import SwiftData
     @Attribute(.unique) var id: UUID
     var name: String
     var position: Int
-    init(id: UUID = UUID(), name: String, position: Int) {
-        self.id = id; self.name = name; self.position = position
+    var weeklySessions: Int?
+    init(id: UUID = UUID(), name: String, position: Int, weeklySessions: Int? = nil) {
+        self.id = id; self.name = name; self.position = position; self.weeklySessions = weeklySessions
     }
 }
 

@@ -26,6 +26,16 @@ struct ProgramDetailView: View {
                         .font(.subheadline).foregroundStyle(.secondary)
                 }.padding(.vertical, 12)
             }
+            Section("每周安排") {
+                Toggle("设置每周目标", isOn: Binding(get: { program.weeklySessions != nil }, set: { enabled in
+                    program.weeklySessions = enabled ? 3 : nil; save()
+                }))
+                if program.weeklySessions != nil {
+                    Stepper("每周目标 \(program.weeklySessions ?? 3) 次", value: Binding(get: { program.weeklySessions ?? 3 }, set: { program.weeklySessions = $0; save() }), in: 1...7)
+                }
+                Text("按训练日循环，自行安排休息，不固定星期。")
+                    .font(.caption).foregroundStyle(.secondary)
+            }
             Section("选择训练日") {
                 ForEach(Array(populated.enumerated()), id: \.element.id) { index, day in
                     NavigationLink { DayDetailView(day: day, controller: controller, showingTraining: $showingTraining) } label: { DayRow(day: day, index: index) }
@@ -139,7 +149,10 @@ struct DayDetailView: View {
                             Text("\(index + 1)").font(.caption.bold()).foregroundStyle(.secondary).frame(width: 20)
                             VStack(alignment: .leading, spacing: 6) {
                                 Text(exercise.name).font(.headline)
-                                Text("\(exercise.sets) 组 · 休息 \(exercise.restSeconds) 秒").font(.subheadline).foregroundStyle(.secondary)
+                                Text("\(exercise.sets) 组 · 组间休息 \(exercise.restSeconds) 秒").font(.subheadline).foregroundStyle(.secondary)
+                                let transition = exercise.transitionRestSeconds ?? (exercise.restAfterLastSet ? exercise.rest(afterSet: exercise.sets) : 0)
+                                Text(transition > 0 ? "有下一动作时休息 \(transition) 秒" : "动作完成后直接切换")
+                                    .font(.caption).foregroundStyle(.secondary)
                                 if !exercise.alternatives.isEmpty {
                                     Text("可替换：" + exercise.alternatives.map(\.name).joined(separator: "、"))
                                         .font(.caption).foregroundStyle(.secondary)

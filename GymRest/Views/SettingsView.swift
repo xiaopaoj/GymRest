@@ -32,7 +32,11 @@ struct SettingsView: View {
                     .font(.footnote).foregroundStyle(.secondary)
                 LabeledContent("权限状态", value: controller.permission)
                 LabeledContent("系统实时活动", value: ActivityAuthorizationInfo().areActivitiesEnabled ? "允许" : "关闭")
-                Text("AlarmKit休息计时支持锁屏和灵动岛显示；需支持的机型及正确保留扩展。实时活动开关允许不代表系统一定已展示。本地通知降级不提供此能力。")
+                Text("开始训练后显示锁屏训练卡片，可完成本组、暂停或继续休息、加15秒及结束休息。长按灵动岛展开操作；系统可能要求先解锁。首次提醒授权请在App内完成。")
+                    .font(.footnote).foregroundStyle(.secondary)
+                Text("需保留实时活动扩展并允许系统实时活动。通知降级也可使用训练卡片，但提醒仍受通知权限、静音和专注模式限制。")
+                    .font(.footnote).foregroundStyle(.secondary)
+                Text("切换到其他App等待提醒时，点系统提醒的「结束休息」即可准备下一组，再锁屏做组。做完后从训练卡片点「完成本组」。仅锁屏不会计组。")
                     .font(.footnote).foregroundStyle(.secondary)
                 Button("申请当前提醒权限") { Task { await controller.authorize() } }.disabled(controller.busy)
                 if controller.session == nil && controller.recoveryIssue == nil {
@@ -47,7 +51,7 @@ struct SettingsView: View {
                     .font(.footnote).foregroundStyle(.secondary)
             }
             Section("关于") {
-                LabeledContent("版本", value: "0.4.0")
+                LabeledContent("版本", value: "0.5.0")
                 Text("训练计划与记录仅存本机，无账号和后端。")
             }
             if let error = error ?? controller.error { Text(error).foregroundStyle(.red) }

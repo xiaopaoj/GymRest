@@ -6,6 +6,20 @@ struct TrainingView: View {
     @Environment(\.dismiss) private var dismiss
     @State private var navigation: String?
     @State private var choosingAlternative = false
+    private struct ValuesRequest: Identifiable {
+        let id = UUID()
+        let values: SetValues
+        let interactionID: UUID?
+    }
+    private struct OrderRequest: Identifiable {
+        let id = UUID()
+        let exercises: [ExerciseSpec]
+        let interactionID: UUID?
+    }
+    @State private var editingValues: ValuesRequest?
+    @State private var ordering: OrderRequest?
+    @State private var catalog: ExerciseCatalog?
+    @State private var catalogIssue: String?
     var body: some View {
         NavigationStack {
             ScrollView {
@@ -22,10 +36,44 @@ struct TrainingView: View {
                     } else {
                         VStack(alignment: .leading, spacing: 24) {
                             Text(session.planName).font(.headline).foregroundStyle(.secondary)
+                            if let issue = controller.liveActivityIssue {
+                                Text(issue).font(.footnote).foregroundStyle(.secondary)
+                                Button("重试显示锁屏训练卡片") { Task { await controller.refreshLiveActivity() } }
+                            } else {
+                                Text("可在锁屏训练卡片或长按灵动岛后完成本组、控制休息。")
+                                    .font(.footnote).foregroundStyle(.secondary)
+                            }
                             ProgressView(value: Double(session.completedSets), total: Double(session.totalSets))
                             Text("已完成 \(session.completedSets)/\(session.totalSets) 组 · 动作 \(session.index + 1)/\(session.exercises.count)")
                                 .font(.subheadline).foregroundStyle(.secondary)
                             Text(session.current.name).font(.largeTitle.bold())
+                            if let catalog, let item = catalog.item(session.current.catalogID) {
+                                NavigationLink { CatalogExerciseDetail(item: item, catalog: catalog) } label: {
+                                    Label("动作要点、器材与演示", systemImage: "play.rectangle")
+                                }
+                            } else if let catalogIssue { Text(catalogIssue).font(.caption).foregroundStyle(.secondary) }
+                            if session.completed[session.index] < session.current.sets {
+                                VStack(alignment: .leading, spacing: 10) {
+                                    Text(session.phase == .training ? "本组重量与次数" : "下一组重量与次数").font(.headline)
+                                    Text(session.currentSetValues.summary).font(.title3.monospacedDigit())
+                                    if !session.currentSetValues.equipmentNote.isEmpty { Text(session.currentSetValues.equipmentNote).font(.caption) }
+                                    Button("调整本组设置") { editingValues = ValuesRequest(values: session.currentSetValues, interactionID: session.interactionID) }
+                                    Text("预填值在完成本组时记录；未填写的值保持未记录。锁屏完成沿用这里的设置。")
+                                        .font(.caption).foregroundStyle(.secondary)
+                                }.padding().frame(maxWidth: .infinity, alignment: .leading)
+                                    .background(.orange.opacity(0.08), in: RoundedRectangle(cornerRadius: 16))
+                            }
+                            if session.phase == .training && controller.reorderableExercises.count > 1 {
+                                Button("剩余动作的顺序建议") { ordering = OrderRequest(exercises: controller.reorderableExercises, interactionID: session.interactionID) }
+                            }
+                            if let performed = session.performances?[session.index], !performed.isEmpty {
+                                DisclosureGroup("本动作已完成组 · \(performed.count)") {
+                                    ForEach(Array(performed.enumerated()), id: \.offset) { index, set in
+                                        Text("第 \(index + 1) 组 · " + set.exerciseName + " · " + (set.values?.summary ?? "重量与次数未记录"))
+                                            .font(.caption).foregroundStyle(.secondary)
+                                    }
+                                }
+                            }
                             if !(session.originalExercises ?? session.exercises)[session.index].alternatives.isEmpty {
                                 Button { choosingAlternative = true } label: { Label("器械被占用？切换替代动作", systemImage: "arrow.triangle.swap") }
                                     .disabled(session.phase != .training)
@@ -33,18 +81,22 @@ struct TrainingView: View {
                             }
                             Text("第 \(min(session.current.sets, session.completed[session.index] + (session.phase == .training ? 1 : 0))) / \(session.current.sets) 组")
                                 .font(.title2)
-                            Text("预设休息 \(session.current.restSeconds) 秒 · 下一动作：\(session.nextName)")
+                            Text("组间休息 \(session.current.restSeconds) 秒 · 下一动作：\(session.nextName)")
                                 .foregroundStyle(.secondary)
                             if session.phase == .training {
-                                if session.completed[session.index] + 1 == session.current.sets && !session.current.restAfterLastSet {
-                                    Text(session.index + 1 < session.exercises.count ? "本组后直接进入下一动作" : "本组完成后结束训练")
+                                if let duration = session.restDuration(afterSet: session.completed[session.index] + 1) {
+                                    let isTransition = session.completed[session.index] + 1 == session.current.sets && session.index + 1 < session.exercises.count
+                                    Text(isTransition ? "本动作完成后休息 \(duration) 秒，再进入下一动作" : "本组后休息 \(duration) 秒")
                                         .font(.subheadline).foregroundStyle(.orange)
                                 } else {
-                                    Text("本组后休息 \(session.current.rest(afterSet: session.completed[session.index] + 1)) 秒")
+                                    Text(session.index + 1 < session.exercises.count ? "本组后直接进入下一动作" : "本组完成后结束训练")
                                         .font(.subheadline).foregroundStyle(.orange)
                                 }
                             }
                             if session.phase == .resting || session.phase == .paused {
+                                if session.isTransitionRest {
+                                    Text("动作间休息 · 下一动作：\(session.nextName)").font(.headline).foregroundStyle(.orange)
+                                }
                                 TimelineView(.periodic(from: .now, by: 1)) { timeline in
                                     let left = Int(ceil(session.secondsLeft(at: timeline.date)))
                                     Text(String(format: "%02d:%02d", left / 60, left % 60))
@@ -85,6 +137,22 @@ struct TrainingView: View {
                     }
                 }
                 if let error = controller.error { Text(error).foregroundStyle(.red).textSelection(.enabled).padding() }
+            }
+            .sheet(item: $editingValues) { request in
+                SetValuesEditor(values: request.values) { values in
+                    await controller.setValues(values, interactionID: request.interactionID)
+                    if let message = controller.error { throw NSError(domain: "GymRest.SetValues", code: 1, userInfo: [NSLocalizedDescriptionKey: message]) }
+                }
+            }
+            .sheet(item: $ordering) { request in
+                TrainingOrderView(exercises: request.exercises) { values in
+                    await controller.reorderRemaining(values.map(\.id), interactionID: request.interactionID)
+                    if let message = controller.error { throw NSError(domain: "GymRest.Order", code: 1, userInfo: [NSLocalizedDescriptionKey: message]) }
+                }
+            }
+            .task {
+                do { catalog = try ExerciseCatalog.bundled() }
+                catch { catalogIssue = "动作资料暂无法读取，仍可继续训练。" }
             }
             .navigationTitle("当前训练").navigationBarTitleDisplayMode(.inline)
             .toolbar {

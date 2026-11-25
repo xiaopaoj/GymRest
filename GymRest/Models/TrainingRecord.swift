@@ -10,6 +10,7 @@ import SwiftData
     var exerciseData: Data
     var completedData: Data
     var performedNamesData: Data?
+    var performancesData: Data?
     var workoutID: String?
     var workoutSource: String?
     var workoutStart: Date?
@@ -21,6 +22,15 @@ import SwiftData
         exerciseData = try JSONEncoder().encode(session.exercises)
         completedData = try JSONEncoder().encode(session.completed)
         performedNamesData = try session.performedNames.map { try JSONEncoder().encode($0) }
+        performancesData = try session.performances.map { try JSONEncoder().encode($0) }
+    }
+    func performances() throws -> [[SetPerformance]]? {
+        guard let performancesData else { return nil }
+        let values = try JSONDecoder().decode([[SetPerformance]].self, from: performancesData)
+        let counts = try completed()
+        guard values.count == counts.count, zip(values, counts).allSatisfy({ $0.0.count == $0.1 }) else { throw TrainingError.invalidSession }
+        for exercise in values { for set in exercise { try set.validate() } }
+        return values
     }
     func exercises() throws -> [ExerciseSpec] { try JSONDecoder().decode([ExerciseSpec].self, from: exerciseData) }
     func completed() throws -> [Int] { try JSONDecoder().decode([Int].self, from: completedData) }

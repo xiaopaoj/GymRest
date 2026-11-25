@@ -31,7 +31,14 @@ private struct RestSummary: View {
 }
 
 @main
-struct GymRestWidgets: Widget {
+struct GymRestWidgets: WidgetBundle {
+    var body: some Widget {
+        TrainingLiveActivityWidget()
+        RestLiveActivityWidget()
+    }
+}
+
+struct RestLiveActivityWidget: Widget {
     private let returnURL = URL(string: "gymrest://training")!
     var body: some WidgetConfiguration {
         ActivityConfiguration(for: AlarmAttributes<RestMetadata>.self) { context in

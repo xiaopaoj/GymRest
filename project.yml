@@ -9,15 +9,17 @@ settings:
     SWIFT_VERSION: "6.0"
     TARGETED_DEVICE_FAMILY: "1"
     CODE_SIGNING_ALLOWED: NO
-    MARKETING_VERSION: "0.4.0"
-    CURRENT_PROJECT_VERSION: "4"
+    MARKETING_VERSION: "0.5.0"
+    CURRENT_PROJECT_VERSION: "5"
 targets:
   GymRest:
     type: application
     platform: iOS
     sources:
       - path: GymRest
-        excludes: [Resources/Artwork]
+        excludes: [Resources/Artwork, Resources/ExerciseCatalog.json]
+      - path: GymRest/Resources/ExerciseCatalog.json
+        buildPhase: resources
       - path: Shared
       - path: build/Assets.xcassets
     info:
@@ -34,6 +36,7 @@ targets:
     settings:
       base:
         PRODUCT_BUNDLE_IDENTIFIER: dev.gymrest.personal
+        SWIFT_ACTIVE_COMPILATION_CONDITIONS: "$(inherited) GYMREST_APP"
         ASSETCATALOG_COMPILER_APPICON_NAME: AppIcon
     dependencies:
       - target: GymRestWidgets

@@ -2,15 +2,25 @@ import SwiftUI
 import SwiftData
 
 @MainActor struct AppRuntime {
+    private static var cached: AppRuntime?
+    static func open() throws -> AppRuntime {
+        if let cached { return cached }
+        let runtime = try AppRuntime()
+        cached = runtime
+        return runtime
+    }
     let container: ModelContainer
     let store: TrainingStore
     let controller: TrainingController
-    init() throws {
+    private init() throws {
         // Retain SwiftData's default store location, creating only its missing parent directory.
         _ = try FileManager.default.url(for: .applicationSupportDirectory, in: .userDomainMask, appropriateFor: nil, create: true)
         container = try ModelContainer(for: TrainingProgram.self, TrainingPlan.self, LibraryPreferences.self, ActiveTraining.self, TrainingRecord.self)
         store = try TrainingStore(container: container)
-        controller = try TrainingController(store: store, prepare: {
+        let liveActivity = TrainingLiveActivity()
+        controller = try TrainingController(store: store, activitySync: { session, issue, blocked in
+            await liveActivity.synchronize(session, issue: issue, blocked: blocked)
+        }, prepare: {
             // Transfer reminder ownership from the technical probe to training.
             let probe = ProbeModel()
             await probe.cancel()
@@ -32,6 +42,7 @@ struct RootView: View {
                     .task(id: scenePhase) {
                         // System reminders keep running; only foreground state inspection needs this task.
                         guard scenePhase == .active else { return }
+                        await runtime.controller.refreshLiveActivity()
                         while !Task.isCancelled {
                             await runtime.controller.reconcile()
                             do { try await Task.sleep(for: .seconds(1)) } catch { break }
@@ -54,7 +65,7 @@ struct RootView: View {
         }
     }
     private func openStorage() {
-        do { runtime = try AppRuntime(); error = nil }
+        do { runtime = try AppRuntime.open(); error = nil }
         catch { self.error = error.localizedDescription }
     }
 }

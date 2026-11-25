@@ -9,6 +9,7 @@ struct LibraryView: View {
         TabView(selection: $tab) {
             NavigationStack { ProgramListView(controller: controller, showingTraining: $showingTraining) }
                 .tabItem { Label("计划", systemImage: "square.grid.2x2") }.tag(0)
+            NavigationStack { ExerciseCatalogView() }.tabItem { Label("动作", systemImage: "figure.strengthtraining.traditional") }.tag(3)
             NavigationStack { HistoryView() }.tabItem { Label("记录", systemImage: "clock.arrow.circlepath") }.tag(1)
             NavigationStack { SettingsView(controller: controller) }.tabItem { Label("设置", systemImage: "gearshape") }.tag(2)
         }
@@ -54,6 +55,11 @@ struct ProgramListView: View {
                             Spacer(); Image(systemName: "arrow.up.right")
                         }.padding(.vertical, 8)
                     }.buttonStyle(.plain).foregroundStyle(.orange)
+                }
+            }
+            Section {
+                NavigationLink { TrainingTemplateView() } label: {
+                    Label("从三分化／五分化模板建立计划", systemImage: "sparkles.rectangle.stack")
                 }
             }
             Section {
@@ -111,6 +117,7 @@ struct ProgramListView: View {
             ToolbarItem(placement: .topBarTrailing) {
                 Menu {
                     Button("新建计划", systemImage: "folder.badge.plus") { organizing = true }
+                    NavigationLink("训练模板") { TrainingTemplateView() }
                     NavigationLink("导入计划") { PlanTransferView() }
                 } label: { Image(systemName: "plus") }.accessibilityLabel("添加或导入计划")
             }
@@ -135,6 +142,7 @@ private struct ProgramCard: View {
                 .background(.orange.opacity(0.12), in: RoundedRectangle(cornerRadius: 16))
             VStack(alignment: .leading, spacing: 8) {
                 Text(program.name).font(.title3.bold()).foregroundStyle(.primary)
+                if let target = program.weeklySessions { Text("每周目标 \(target) 次").font(.caption).foregroundStyle(.orange) }
                 Text("\(days.count) 个训练日 · \(days.reduce(0) { $0 + ($1.exerciseCount ?? 0) }) 个动作")
                     .font(.subheadline).foregroundStyle(.secondary)
                 if days.contains(where: { $0.exerciseCount == nil }) {

@@ -6,4 +6,5 @@ struct RestContext: Codable, Hashable, Sendable {
     let completedSet: Int
     let totalSets: Int
     let nextStep: String
+    var kind: String? = nil
 }

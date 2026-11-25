@@ -1,0 +1,684 @@
+{
+  "checkedOn": "2026-11-25",
+  "source": "https://wger.de/api/v2/exerciseinfo/?limit=1000",
+  "catalogCount": 51,
+  "candidateCount": 37,
+  "exercisesWithCandidates": 21,
+  "review": "已抽查杠铃卧推和哑铃侧平举候选的画面；虽同作者，但服装、构图、分辨率和背景不同。未作为统一风格演示收入App，实际素材清单仍pending。候选许可ID须按wger许可接口核对，且不可把动作数据许可自动当作媒体许可。",
+  "entries": [
+    {
+      "catalogID": "barbell-bench",
+      "name": "杠铃卧推",
+      "reference": "https://wger.de/api/v2/exerciseinfo/73/",
+      "videoCandidates": [
+        {
+          "url": "https://wger.de/media/exercise-video/73/2bdb390c-312c-4497-a722-5eed2c823e5a.MOV",
+          "author": "Goulart",
+          "licenseID": 2,
+          "sizeBytes": 1108545,
+          "width": 640,
+          "height": 352
+        },
+        {
+          "url": "https://wger.de/media/exercise-video/73/255b3509-e454-48a6-bf66-c7ca482be21a.MOV",
+          "author": "Goulart",
+          "licenseID": 2,
+          "sizeBytes": 1422312,
+          "width": 640,
+          "height": 352
+        },
+        {
+          "url": "https://wger.de/media/exercise-video/73/cfb72002-898f-443a-a124-a0bce8a2e6ad.MP4",
+          "author": "Goulart",
+          "licenseID": 2,
+          "sizeBytes": 7222857,
+          "width": 1920,
+          "height": 1080
+        }
+      ],
+      "status": "pending_manual_review"
+    },
+    {
+      "catalogID": "dumbbell-bench",
+      "name": "哑铃卧推",
+      "reference": "https://wger.de/api/v2/exerciseinfo/75/",
+      "videoCandidates": [
+        {
+          "url": "https://wger.de/media/exercise-video/75/080c799b-8afd-4130-8d72-9cef0cd79f54.MOV",
+          "author": "Goulart",
+          "licenseID": 2,
+          "sizeBytes": 4543158,
+          "width": 1920,
+          "height": 1080
+        },
+        {
+          "url": "https://wger.de/media/exercise-video/75/a8263fe5-3015-41e3-9781-2d255adcea63.MOV",
+          "author": "Goulart",
+          "licenseID": 2,
+          "sizeBytes": 9894638,
+          "width": 1920,
+          "height": 1080
+        },
+        {
+          "url": "https://wger.de/media/exercise-video/75/9d803f97-0a48-4483-8f1c-ee5b19d6021e.MOV",
+          "author": "Goulart",
+          "licenseID": 2,
+          "sizeBytes": 9938046,
+          "width": 1920,
+          "height": 1080
+        },
+        {
+          "url": "https://wger.de/media/exercise-video/75/c9cbd391-1e22-4014-8794-04630c80665f.MOV",
+          "author": "Goulart",
+          "licenseID": 2,
+          "sizeBytes": 4576193,
+          "width": 1920,
+          "height": 1080
+        }
+      ],
+      "status": "pending_manual_review"
+    },
+    {
+      "catalogID": "incline-barbell",
+      "name": "上斜杠铃卧推",
+      "reference": "https://wger.de/api/v2/exerciseinfo/538/",
+      "videoCandidates": [
+        {
+          "url": "https://wger.de/media/exercise-video/538/4349a6f6-4cee-4c09-828b-c5e7fc2c1ff1.MOV",
+          "author": "Goulart",
+          "licenseID": 2,
+          "sizeBytes": 6205424,
+          "width": 1920,
+          "height": 1080
+        }
+      ],
+      "status": "pending_manual_review"
+    },
+    {
+      "catalogID": "incline-dumbbell",
+      "name": "上斜哑铃卧推",
+      "reference": "https://wger.de/api/v2/exerciseinfo/537/",
+      "videoCandidates": [
+        {
+          "url": "https://wger.de/media/exercise-video/537/b9c937e9-daeb-42a9-be8e-7a77e368478c.MOV",
+          "author": "Goulart",
+          "licenseID": 2,
+          "sizeBytes": 10602354,
+          "width": 1920,
+          "height": 1080
+        }
+      ],
+      "status": "pending_manual_review"
+    },
+    {
+      "catalogID": "machine-chest",
+      "name": "器械推胸",
+      "reference": "https://wger.de/api/v2/exerciseinfo/1094/",
+      "videoCandidates": [],
+      "status": "pending_manual_review"
+    },
+    {
+      "catalogID": "push-up",
+      "name": "俯卧撑",
+      "reference": "https://wger.de/api/v2/exerciseinfo/1551/",
+      "videoCandidates": [],
+      "status": "pending_manual_review"
+    },
+    {
+      "catalogID": "cable-fly",
+      "name": "绳索夹胸",
+      "reference": "https://wger.de/api/v2/exerciseinfo/237/",
+      "videoCandidates": [],
+      "status": "pending_manual_review"
+    },
+    {
+      "catalogID": "dumbbell-fly",
+      "name": "哑铃飞鸟",
+      "reference": "https://wger.de/api/v2/exerciseinfo/238/",
+      "videoCandidates": [],
+      "status": "pending_manual_review"
+    },
+    {
+      "catalogID": "pec-deck",
+      "name": "蝴蝶机夹胸",
+      "reference": "https://wger.de/api/v2/exerciseinfo/135/",
+      "videoCandidates": [],
+      "status": "pending_manual_review"
+    },
+    {
+      "catalogID": "barbell-press",
+      "name": "杠铃肩推",
+      "reference": "https://wger.de/api/v2/exerciseinfo/566/",
+      "videoCandidates": [],
+      "status": "pending_manual_review"
+    },
+    {
+      "catalogID": "dumbbell-press",
+      "name": "哑铃肩推",
+      "reference": "https://wger.de/api/v2/exerciseinfo/567/",
+      "videoCandidates": [
+        {
+          "url": "https://wger.de/media/exercise-video/567/64f33c19-1d96-4b7c-af17-6c6a4941c614.MOV",
+          "author": "Goulart",
+          "licenseID": 2,
+          "sizeBytes": 62860017,
+          "width": 1920,
+          "height": 1080
+        }
+      ],
+      "status": "pending_manual_review"
+    },
+    {
+      "catalogID": "machine-press",
+      "name": "器械肩推",
+      "reference": "https://wger.de/api/v2/exerciseinfo/543/",
+      "videoCandidates": [
+        {
+          "url": "https://wger.de/media/exercise-video/543/dbfd396b-1aab-4a64-a50b-2c31ff0a2cf7.MOV",
+          "author": "Goulart",
+          "licenseID": 2,
+          "sizeBytes": 23511495,
+          "width": 1920,
+          "height": 1080
+        }
+      ],
+      "status": "pending_manual_review"
+    },
+    {
+      "catalogID": "pike-push-up",
+      "name": "折刀俯卧撑",
+      "reference": "https://wger.de/api/v2/exerciseinfo/454/",
+      "videoCandidates": [],
+      "status": "pending_manual_review"
+    },
+    {
+      "catalogID": "dumbbell-lateral",
+      "name": "哑铃侧平举",
+      "reference": "https://wger.de/api/v2/exerciseinfo/348/",
+      "videoCandidates": [
+        {
+          "url": "https://wger.de/media/exercise-video/348/de69928a-8a35-4096-821c-1f46de5e0e03.MOV",
+          "author": "Goulart",
+          "licenseID": 2,
+          "sizeBytes": 43874331,
+          "width": 1920,
+          "height": 1080
+        }
+      ],
+      "status": "pending_manual_review"
+    },
+    {
+      "catalogID": "cable-lateral",
+      "name": "单臂绳索侧平举",
+      "reference": "https://wger.de/api/v2/exerciseinfo/1378/",
+      "videoCandidates": [],
+      "status": "pending_manual_review"
+    },
+    {
+      "catalogID": "machine-lateral",
+      "name": "器械侧平举",
+      "reference": "https://wger.de/api/v2/exerciseinfo/1654/",
+      "videoCandidates": [],
+      "status": "pending_manual_review"
+    },
+    {
+      "catalogID": "dumbbell-rear",
+      "name": "俯身哑铃反向飞鸟",
+      "reference": "https://wger.de/api/v2/exerciseinfo/82/",
+      "videoCandidates": [
+        {
+          "url": "https://wger.de/media/exercise-video/82/28b53647-27e7-47cf-8852-2ee666c8b628.MOV",
+          "author": "Goulart",
+          "licenseID": 2,
+          "sizeBytes": 13386307,
+          "width": 1920,
+          "height": 1080
+        },
+        {
+          "url": "https://wger.de/media/exercise-video/82/ebf1e6d2-df48-44b8-a791-97f77e801bf3.MOV",
+          "author": "Goulart",
+          "licenseID": 2,
+          "sizeBytes": 17879929,
+          "width": 1920,
+          "height": 1080
+        },
+        {
+          "url": "https://wger.de/media/exercise-video/82/437d79db-ac8f-49e2-8780-0365f94ee01c.MOV",
+          "author": "Goulart",
+          "licenseID": 2,
+          "sizeBytes": 15973150,
+          "width": 1920,
+          "height": 1080
+        },
+        {
+          "url": "https://wger.de/media/exercise-video/82/7cfe6d04-5e59-4d0b-937b-b8f4ee10602d.MOV",
+          "author": "Goulart",
+          "licenseID": 2,
+          "sizeBytes": 22994584,
+          "width": 1920,
+          "height": 1080
+        }
+      ],
+      "status": "pending_manual_review"
+    },
+    {
+      "catalogID": "cable-rear",
+      "name": "绳索反向飞鸟",
+      "reference": "https://wger.de/api/v2/exerciseinfo/822/",
+      "videoCandidates": [],
+      "status": "pending_manual_review"
+    },
+    {
+      "catalogID": "machine-rear",
+      "name": "反向蝴蝶机",
+      "reference": "https://wger.de/api/v2/exerciseinfo/139/",
+      "videoCandidates": [],
+      "status": "pending_manual_review"
+    },
+    {
+      "catalogID": "barbell-row",
+      "name": "杠铃俯身划船",
+      "reference": "https://wger.de/api/v2/exerciseinfo/83/",
+      "videoCandidates": [],
+      "status": "pending_manual_review"
+    },
+    {
+      "catalogID": "dumbbell-row",
+      "name": "单臂哑铃划船",
+      "reference": "https://wger.de/api/v2/exerciseinfo/81/",
+      "videoCandidates": [],
+      "status": "pending_manual_review"
+    },
+    {
+      "catalogID": "cable-row",
+      "name": "坐姿绳索划船",
+      "reference": "https://wger.de/api/v2/exerciseinfo/1117/",
+      "videoCandidates": [],
+      "status": "pending_manual_review"
+    },
+    {
+      "catalogID": "machine-row",
+      "name": "器械坐姿划船",
+      "reference": "https://wger.de/api/v2/exerciseinfo/1725/",
+      "videoCandidates": [],
+      "status": "pending_manual_review"
+    },
+    {
+      "catalogID": "lat-pulldown",
+      "name": "高位下拉",
+      "reference": "https://wger.de/api/v2/exerciseinfo/723/",
+      "videoCandidates": [],
+      "status": "pending_manual_review"
+    },
+    {
+      "catalogID": "neutral-pulldown",
+      "name": "对握高位下拉",
+      "reference": "https://wger.de/api/v2/exerciseinfo/1510/",
+      "videoCandidates": [],
+      "status": "pending_manual_review"
+    },
+    {
+      "catalogID": "pull-up",
+      "name": "引体向上",
+      "reference": "https://wger.de/api/v2/exerciseinfo/475/",
+      "videoCandidates": [
+        {
+          "url": "https://wger.de/media/exercise-video/475/83067ffe-ccb9-4e22-8507-5131b211ce74.MOV",
+          "author": "Goulart",
+          "licenseID": 2,
+          "sizeBytes": 57098527,
+          "width": 1920,
+          "height": 1080
+        }
+      ],
+      "status": "pending_manual_review"
+    },
+    {
+      "catalogID": "assisted-pull-up",
+      "name": "辅助引体向上",
+      "reference": "https://wger.de/api/v2/exerciseinfo/1929/",
+      "videoCandidates": [],
+      "status": "pending_manual_review"
+    },
+    {
+      "catalogID": "barbell-curl",
+      "name": "杠铃弯举",
+      "reference": "https://wger.de/api/v2/exerciseinfo/91/",
+      "videoCandidates": [
+        {
+          "url": "https://wger.de/media/exercise-video/91/483f4bff-e108-41f1-8e7b-0caf24952552.MOV",
+          "author": "Goulart",
+          "licenseID": 2,
+          "sizeBytes": 22680665,
+          "width": 1920,
+          "height": 1080
+        }
+      ],
+      "status": "pending_manual_review"
+    },
+    {
+      "catalogID": "dumbbell-curl",
+      "name": "哑铃弯举",
+      "reference": "https://wger.de/api/v2/exerciseinfo/92/",
+      "videoCandidates": [
+        {
+          "url": "https://wger.de/media/exercise-video/92/8bfb917c-3d0d-49b9-8073-5d7e01c1b894.MOV",
+          "author": "Goulart",
+          "licenseID": 2,
+          "sizeBytes": 31753930,
+          "width": 1920,
+          "height": 1080
+        }
+      ],
+      "status": "pending_manual_review"
+    },
+    {
+      "catalogID": "cable-curl",
+      "name": "绳索弯举",
+      "reference": "https://wger.de/api/v2/exerciseinfo/95/",
+      "videoCandidates": [
+        {
+          "url": "https://wger.de/media/exercise-video/95/ab770931-47d3-44fd-aef0-ac7a64c3b794.MOV",
+          "author": "Goulart",
+          "licenseID": 2,
+          "sizeBytes": 34233084,
+          "width": 1920,
+          "height": 1080
+        }
+      ],
+      "status": "pending_manual_review"
+    },
+    {
+      "catalogID": "hammer-curl",
+      "name": "哑铃锤式弯举",
+      "reference": "https://wger.de/api/v2/exerciseinfo/272/",
+      "videoCandidates": [
+        {
+          "url": "https://wger.de/media/exercise-video/272/df069052-2173-4f24-855f-a0eebe729f24.MOV",
+          "author": "Goulart",
+          "licenseID": 2,
+          "sizeBytes": 30154182,
+          "width": 1920,
+          "height": 1080
+        }
+      ],
+      "status": "pending_manual_review"
+    },
+    {
+      "catalogID": "triceps-pushdown",
+      "name": "绳索下压",
+      "reference": "https://wger.de/api/v2/exerciseinfo/1185/",
+      "videoCandidates": [],
+      "status": "pending_manual_review"
+    },
+    {
+      "catalogID": "dumbbell-triceps",
+      "name": "哑铃臂屈伸",
+      "reference": "https://wger.de/api/v2/exerciseinfo/211/",
+      "videoCandidates": [
+        {
+          "url": "https://wger.de/media/exercise-video/211/85f6eb25-a76c-409e-9af9-497794ac0dfb.MOV",
+          "author": "Goulart",
+          "licenseID": 2,
+          "sizeBytes": 11837332,
+          "width": 1920,
+          "height": 1080
+        }
+      ],
+      "status": "pending_manual_review"
+    },
+    {
+      "catalogID": "barbell-triceps",
+      "name": "杠铃臂屈伸",
+      "reference": "https://wger.de/api/v2/exerciseinfo/50/",
+      "videoCandidates": [],
+      "status": "pending_manual_review"
+    },
+    {
+      "catalogID": "back-squat",
+      "name": "杠铃深蹲",
+      "reference": "https://wger.de/api/v2/exerciseinfo/615/",
+      "videoCandidates": [],
+      "status": "pending_manual_review"
+    },
+    {
+      "catalogID": "goblet-squat",
+      "name": "高脚杯深蹲",
+      "reference": "https://wger.de/api/v2/exerciseinfo/203/",
+      "videoCandidates": [],
+      "status": "pending_manual_review"
+    },
+    {
+      "catalogID": "leg-press",
+      "name": "腿举",
+      "reference": "https://wger.de/api/v2/exerciseinfo/371/",
+      "videoCandidates": [
+        {
+          "url": "https://wger.de/media/exercise-video/371/6aae16b4-01b9-4eb4-935c-3250f84d2c59.MOV",
+          "author": "Goulart",
+          "licenseID": 2,
+          "sizeBytes": 57665329,
+          "width": 1920,
+          "height": 1080
+        },
+        {
+          "url": "https://wger.de/media/exercise-video/371/32601896-b84a-49bf-ae8a-b27a8f57ab21.MOV",
+          "author": "Goulart",
+          "licenseID": 2,
+          "sizeBytes": 349345994,
+          "width": 3840,
+          "height": 2160
+        },
+        {
+          "url": "https://wger.de/media/exercise-video/371/db382bd9-f633-47cd-8b02-c52db835e41d.MOV",
+          "author": "Goulart",
+          "licenseID": 2,
+          "sizeBytes": 121381974,
+          "width": 3840,
+          "height": 2160
+        }
+      ],
+      "status": "pending_manual_review"
+    },
+    {
+      "catalogID": "bodyweight-squat",
+      "name": "徒手深蹲",
+      "reference": "https://wger.de/api/v2/exerciseinfo/1312/",
+      "videoCandidates": [],
+      "status": "pending_manual_review"
+    },
+    {
+      "catalogID": "barbell-rdl",
+      "name": "杠铃罗马尼亚硬拉",
+      "reference": "https://wger.de/api/v2/exerciseinfo/507/",
+      "videoCandidates": [
+        {
+          "url": "https://wger.de/media/exercise-video/507/307e7276-a14d-4ea0-b579-f5b0dbc6f5af.MOV",
+          "author": "Goulart",
+          "licenseID": 2,
+          "sizeBytes": 38136083,
+          "width": 1920,
+          "height": 1080
+        },
+        {
+          "url": "https://wger.de/media/exercise-video/507/6b6054b5-9236-4a63-8392-6ea7a9010ca6.MOV",
+          "author": "Goulart",
+          "licenseID": 2,
+          "sizeBytes": 52134396,
+          "width": 1920,
+          "height": 1080
+        },
+        {
+          "url": "https://wger.de/media/exercise-video/507/e96295da-58b8-4b6f-921e-4cb1af3c6cfc.MOV",
+          "author": "Goulart",
+          "licenseID": 2,
+          "sizeBytes": 390563423,
+          "width": 3840,
+          "height": 2160
+        }
+      ],
+      "status": "pending_manual_review"
+    },
+    {
+      "catalogID": "dumbbell-rdl",
+      "name": "哑铃罗马尼亚硬拉",
+      "reference": "https://wger.de/api/v2/exerciseinfo/1652/",
+      "videoCandidates": [],
+      "status": "pending_manual_review"
+    },
+    {
+      "catalogID": "barbell-hip-thrust",
+      "name": "杠铃臀推",
+      "reference": "https://wger.de/api/v2/exerciseinfo/294/",
+      "videoCandidates": [
+        {
+          "url": "https://wger.de/media/exercise-video/294/45bacf4b-1bb6-4d47-8bd1-9f00eddd4019.MOV",
+          "author": "Goulart",
+          "licenseID": 2,
+          "sizeBytes": 87548125,
+          "width": 1920,
+          "height": 1080
+        },
+        {
+          "url": "https://wger.de/media/exercise-video/294/7d6862eb-8848-4f5d-a288-764b0d113108.MOV",
+          "author": "Goulart",
+          "licenseID": 2,
+          "sizeBytes": 157313324,
+          "width": 3840,
+          "height": 2160
+        }
+      ],
+      "status": "pending_manual_review"
+    },
+    {
+      "catalogID": "dumbbell-hip-thrust",
+      "name": "哑铃臀推",
+      "reference": "https://wger.de/api/v2/exerciseinfo/1642/",
+      "videoCandidates": [],
+      "status": "pending_manual_review"
+    },
+    {
+      "catalogID": "seated-leg-curl",
+      "name": "坐姿腿弯举",
+      "reference": "https://wger.de/api/v2/exerciseinfo/366/",
+      "videoCandidates": [
+        {
+          "url": "https://wger.de/media/exercise-video/366/43df4b79-d4c3-4fbf-bcb5-e0d825b84120.MOV",
+          "author": "Goulart",
+          "licenseID": 2,
+          "sizeBytes": 72266814,
+          "width": 1920,
+          "height": 1080
+        }
+      ],
+      "status": "pending_manual_review"
+    },
+    {
+      "catalogID": "lying-leg-curl",
+      "name": "俯卧腿弯举",
+      "reference": "https://wger.de/api/v2/exerciseinfo/365/",
+      "videoCandidates": [
+        {
+          "url": "https://wger.de/media/exercise-video/365/becaf013-5044-40d0-bae9-7ed60c973737.MOV",
+          "author": "Goulart",
+          "licenseID": 2,
+          "sizeBytes": 31825446,
+          "width": 1920,
+          "height": 1080
+        },
+        {
+          "url": "https://wger.de/media/exercise-video/365/1106bd7a-72cd-45b5-853f-5c9912b936ef.MOV",
+          "author": "Goulart",
+          "licenseID": 2,
+          "sizeBytes": 68628304,
+          "width": 1920,
+          "height": 1080
+        }
+      ],
+      "status": "pending_manual_review"
+    },
+    {
+      "catalogID": "leg-extension",
+      "name": "腿屈伸",
+      "reference": "https://wger.de/api/v2/exerciseinfo/369/",
+      "videoCandidates": [],
+      "status": "pending_manual_review"
+    },
+    {
+      "catalogID": "dumbbell-lunge",
+      "name": "哑铃箭步蹲",
+      "reference": "https://wger.de/api/v2/exerciseinfo/205/",
+      "videoCandidates": [
+        {
+          "url": "https://wger.de/media/exercise-video/205/c167ac34-ddbc-4e1b-8edf-1192e9d00e22.MOV",
+          "author": "Goulart",
+          "licenseID": 2,
+          "sizeBytes": 49889363,
+          "width": 1920,
+          "height": 1080
+        },
+        {
+          "url": "https://wger.de/media/exercise-video/205/4cd5dc48-897f-4e0c-8c5a-639a4098ceb1.MOV",
+          "author": "Goulart",
+          "licenseID": 2,
+          "sizeBytes": 52460393,
+          "width": 1920,
+          "height": 1080
+        }
+      ],
+      "status": "pending_manual_review"
+    },
+    {
+      "catalogID": "bodyweight-lunge",
+      "name": "徒手箭步蹲",
+      "reference": "https://wger.de/api/v2/exerciseinfo/1324/",
+      "videoCandidates": [],
+      "status": "pending_manual_review"
+    },
+    {
+      "catalogID": "standing-calf",
+      "name": "站姿提踵",
+      "reference": "https://wger.de/api/v2/exerciseinfo/622/",
+      "videoCandidates": [
+        {
+          "url": "https://wger.de/media/exercise-video/622/35b7b625-77fd-4c09-8c57-3ad0f2f23175.MOV",
+          "author": "Goulart",
+          "licenseID": 2,
+          "sizeBytes": 30336315,
+          "width": 1920,
+          "height": 1080
+        },
+        {
+          "url": "https://wger.de/media/exercise-video/622/461171e5-2b16-407d-bf27-27aeef43f105.MOV",
+          "author": "Goulart",
+          "licenseID": 2,
+          "sizeBytes": 27311167,
+          "width": 1920,
+          "height": 1080
+        }
+      ],
+      "status": "pending_manual_review"
+    },
+    {
+      "catalogID": "dumbbell-calf",
+      "name": "坐姿哑铃提踵",
+      "reference": "https://wger.de/api/v2/exerciseinfo/1620/",
+      "videoCandidates": [],
+      "status": "pending_manual_review"
+    },
+    {
+      "catalogID": "crunch",
+      "name": "卷腹",
+      "reference": "https://wger.de/api/v2/exerciseinfo/167/",
+      "videoCandidates": [],
+      "status": "pending_manual_review"
+    },
+    {
+      "catalogID": "cable-crunch",
+      "name": "绳索卷腹",
+      "reference": "https://wger.de/api/v2/exerciseinfo/173/",
+      "videoCandidates": [],
+      "status": "pending_manual_review"
+    }
+  ]
+}

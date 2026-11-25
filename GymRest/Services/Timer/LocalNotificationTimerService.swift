@@ -5,6 +5,12 @@ import UserNotifications
 final class LocalNotificationTimerService: TimerService {
     let name = "本地通知（降级）"
     private let center = UNUserNotificationCenter.current()
+    var canScheduleInBackground: Bool {
+        get async {
+            let status = await center.notificationSettings().authorizationStatus
+            return status == .authorized || status == .provisional
+        }
+    }
     var authorization: String {
         get async {
             switch await center.notificationSettings().authorizationStatus {
@@ -26,7 +32,7 @@ final class LocalNotificationTimerService: TimerService {
         guard settings.authorizationStatus == .authorized || settings.authorizationStatus == .provisional else { throw TimerFailure.denied }
         center.removeAllPendingNotificationRequests()
         let content = UNMutableNotificationContent()
-        content.title = "休息结束"
+        content.title = context?.kind == "transition" ? "动作间休息结束" : "休息结束"
         content.body = context?.nextStep ?? "可以开始下一组训练。"
         content.sound = .default
         try await center.add(UNNotificationRequest(identifier: id.uuidString, content: content,

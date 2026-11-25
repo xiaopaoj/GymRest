@@ -43,6 +43,7 @@ struct RecordDetailView: View {
     @State private var busy = false
     @State private var message: String?
     var body: some View {
+        let performances = try? record.performances()
         let performedNames = record.performedNamesData.flatMap { try? JSONDecoder().decode([[String]].self, from: $0) }
         List {
             Section("训练概览") {
@@ -59,14 +60,25 @@ struct RecordDetailView: View {
                     ForEach(Array(exercises.enumerated()), id: \.element.id) { index, exercise in
                         VStack(alignment: .leading, spacing: 5) {
                             LabeledContent(exercise.name, value: "\(counts[index])/\(exercise.sets) 组")
-                            if let names = performedNames, names.indices.contains(index) {
+                            if let performances, performances.indices.contains(index) {
+                                ForEach(Array(performances[index].enumerated()), id: \.offset) { set, performance in
+                                    VStack(alignment: .leading, spacing: 3) {
+                                        Text("第 \(set + 1) 组 · " + performance.exerciseName).font(.subheadline)
+                                        Text(performance.values?.summary ?? "重量与次数未记录").font(.caption).foregroundStyle(.secondary)
+                                        if let note = performance.values?.equipmentNote, !note.isEmpty { Text(note).font(.caption).foregroundStyle(.secondary) }
+                                    }
+                                }
+                            } else if let names = performedNames, names.indices.contains(index) {
                                 ForEach(Array(names[index].enumerated()), id: \.offset) { set, name in
-                                    Text("第 \(set + 1) 组 · " + name).font(.caption).foregroundStyle(.secondary)
+                                    Text("第 \(set + 1) 组 · " + name + " · 重量与次数未记录").font(.caption).foregroundStyle(.secondary)
                                 }
                             }
                         }
                     }
                 } else { Text("动作记录无法读取，请保留数据。").foregroundStyle(.red) }
+            }
+            if record.performancesData != nil && performances == nil {
+                Section { Text("逐组重量记录暂时无法读取，请保留数据。").foregroundStyle(.red) }
             }
             Section("匹配 Apple Watch / 健康运动") {
                 Text("仅在你点击查询并授权后，读取健康App中已同步的运动。按时间重合排序，需手动确认；来源可能是手表或其他App，不会自动认定为Apple Watch。")

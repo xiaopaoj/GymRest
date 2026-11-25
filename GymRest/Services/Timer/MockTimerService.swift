@@ -3,6 +3,7 @@ import Foundation
 @MainActor
 final class MockTimerService: TimerService {
     let name = "Mock"
+    var canScheduleInBackground = true
     var onAuthorization: (@MainActor () async -> Void)?
     var authorization: String { get async { await onAuthorization?(); return "mock" } }
     var ids: Set<UUID> = []

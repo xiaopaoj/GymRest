@@ -5,6 +5,9 @@ import SwiftUI
 @MainActor
 final class AlarmKitTimerService: TimerService {
     let name = "AlarmKit"
+    var canScheduleInBackground: Bool {
+        get async { AlarmManager.shared.authorizationState == .authorized }
+    }
     var authorization: String {
         get async {
             switch AlarmManager.shared.authorizationState {
@@ -23,11 +26,14 @@ final class AlarmKitTimerService: TimerService {
         guard AlarmManager.shared.authorizationState == .authorized else { throw TimerFailure.denied }
         // Remove all alarms belonging to this application before replacement.
         for alarm in try AlarmManager.shared.alarms { try AlarmManager.shared.cancel(id: alarm.id) }
+        let isTransition = context?.kind == "transition"
         let presentation = AlarmPresentation(
-            alert: .init(title: "休息结束", stopButton: .init(text: "停止", textColor: .white, systemImageName: "stop.fill")),
-            countdown: .init(title: "组间休息"))
+            alert: .init(title: isTransition ? "动作间休息结束" : "休息结束", stopButton: .init(text: context == nil ? "停止" : "结束休息", textColor: .white, systemImageName: "stop.fill")),
+            countdown: .init(title: isTransition ? "动作间休息" : "组间休息"))
         let attributes = AlarmAttributes(presentation: presentation, metadata: RestMetadata(context: context), tintColor: .orange)
-        _ = try await AlarmManager.shared.schedule(id: id, configuration: .timer(duration: TimeInterval(seconds), attributes: attributes))
+        _ = try await AlarmManager.shared.schedule(id: id, configuration: .timer(
+            duration: TimeInterval(seconds), attributes: attributes,
+            stopIntent: context == nil ? nil : RestFinishedIntent(timerID: id.uuidString)))
     }
     func cancel(id: UUID) async throws {
         if try AlarmManager.shared.alarms.contains(where: { $0.id == id }) {

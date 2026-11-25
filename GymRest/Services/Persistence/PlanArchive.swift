@@ -10,6 +10,7 @@ struct PlanArchive: Codable {
     struct ProgramEntry: Codable {
         var id: UUID
         var name: String
+        var weeklySessions: Int? = nil
     }
     struct Entry: Codable {
         var id: UUID
@@ -18,11 +19,12 @@ struct PlanArchive: Codable {
         var programID: UUID? = nil
     }
     func validate() throws {
-        guard version == 1 || version == 2 else { throw ArchiveFailure.invalid("不支持的文件版本。") }
+        guard version == 1 || version == 2 || version == 3 else { throw ArchiveFailure.invalid("不支持的文件版本。") }
         guard Set(plans.map(\.id)).count == plans.count else { throw ArchiveFailure.invalid("计划ID重复。") }
         let parents = programs ?? []
         guard Set(parents.map(\.id)).count == parents.count else { throw ArchiveFailure.invalid("上层计划ID重复。") }
         for parent in parents {
+            if let sessions = parent.weeklySessions, !(1...7).contains(sessions) { throw ArchiveFailure.invalid("每周目标须为1–7次。") }
             guard !parent.name.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty, parent.name.count <= 100 else { throw ArchiveFailure.invalid("上层计划名称须为1–100字。") }
         }
         for plan in plans {
@@ -40,15 +42,20 @@ struct PlanArchive: Codable {
         try archive.validate(); return archive
     }
     @MainActor static func export(plans: [TrainingPlan], programs: [TrainingProgram] = []) throws -> Data {
-        let parents = programs.map { ProgramEntry(id: $0.id, name: $0.name) }
-        let archive = PlanArchive(version: parents.isEmpty ? 1 : 2, plans: try plans.map { day in
+        let parents = programs.map { ProgramEntry(id: $0.id, name: $0.name, weeklySessions: $0.weeklySessions) }
+        let entries = try plans.map { day in
             Entry(id: day.id, name: day.name, exercises: try day.exercises(), programID: parents.contains(where: { $0.id == day.programID }) ? day.programID : nil)
-        }, programs: parents.isEmpty ? nil : parents)
+        }
+        let extended = parents.contains { $0.weeklySessions != nil } || entries.contains { entry in
+            entry.exercises.contains { $0.catalogID != nil || $0.prescription != nil || $0.alternatives.contains { $0.catalogID != nil || $0.prescription != nil } }
+        }
+        let archive = PlanArchive(version: extended ? 3 : parents.isEmpty ? 1 : 2, plans: entries, programs: parents.isEmpty ? nil : parents)
         try archive.validate()
         let encoder = JSONEncoder(); encoder.outputFormatting = [.prettyPrinted, .sortedKeys]
         return try encoder.encode(archive)
     }
-    @MainActor func append(to context: ModelContext, targetProgram: TrainingProgram? = nil, newProgramName: String? = nil) throws {
+    @MainActor func append(to context: ModelContext, targetProgram: TrainingProgram? = nil, newProgramName: String? = nil,
+                           beforeCommit: () throws -> Void = {}) throws {
         try validate()
         if plans.isEmpty && (programs ?? []).isEmpty { return }
         // Build every new value before insertion: invalid input never imports a partial library.
@@ -58,7 +65,7 @@ struct PlanArchive: Codable {
         var defaultParentID = targetProgram?.id
         if targetProgram == nil {
             for entry in programs ?? [] {
-                let parent = TrainingProgram(name: entry.name, position: parentPosition + newParents.count)
+                let parent = TrainingProgram(name: entry.name, position: parentPosition + newParents.count, weeklySessions: entry.weeklySessions)
                 parentMap[entry.id] = parent.id; newParents.append(parent)
             }
             if let newProgramName, plans.contains(where: { $0.programID == nil }) || (programs ?? []).isEmpty {
@@ -82,6 +89,7 @@ struct PlanArchive: Codable {
         do {
             for parent in newParents { context.insert(parent) }
             for plan in additions { context.insert(plan) }
+            try beforeCommit()
             try context.save()
         } catch { context.discardPendingChanges(); throw error }
     }
