@@ -112,3 +112,12 @@ Linux 无 Swift/Xcode，不能本地完成 iOS 编译。GitHub CLI 认证检查�
 ## 2026-11-25 续接验证
 
 云环境已恢复；Actions列表与完整失败日志直接读取均为HTTP 200，日志访问阻塞已解除。远程最新运行仍为eb4329b，45项测试中1项回滚断言失败。当前工作区64项XCTest尚未在Xcode执行；6项Python回归及本地脚本/配置/空白检查重新通过。未提交、推送或触发远程构建，详见docs/BUILD_FAILURE_2026-11-25.md。
+
+
+## 2026-11-25：Actions验证通过（1965214）
+
+用户已明确授权提交、推送并触发Actions。代码提交 `1965214a985290aa2de5825b7b93802ef06ac308` 已推送main；[运行45581759118](https://github.com/xiaopaoj/GymRest/actions/runs/45581759118)最终结论success。
+
+直接下载完整日志确认：64项XCTest执行、0失败，`TEST SUCCEEDED`；原失败的 `testFailedExerciseCommitRollsBackAndRetainsDraftValue` 和磁盘重开保护测试 `testFailedEditLeavesDiskPlanAndHistoryUnchangedAfterReopen` 均通过。iPhoneOS Release构建 `BUILD SUCCEEDED`。已上传 `GymRest-healthkit-unsigned` 与 `GymRest-diagnostics` 两个附件。
+
+这次验证覆盖模拟器测试、未签名设备构建和IPA打包；真机交互、系统提醒及实际签名/HealthKit授权仍以真机验收为准。此前“64项尚未执行”是本次运行前的历史状态。

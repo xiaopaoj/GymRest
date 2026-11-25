@@ -32,3 +32,12 @@
 - 复核工作区保留了原失败断言、失败后重试及磁盘重开测试；共64项XCTest，当前Linux环境没有Xcode，未执行iOS复验。
 - 重新运行6项Python回归、shell/Python语法、HealthKit项目配置检查及Git空白检查，均通过。
 - 未提交、推送或触发Actions。下一步须在授权推送后，让macOS Actions验证这批工作区修复；远程旧运行不能证明当前修复有效。
+
+
+## 2026-11-25：Actions验证通过（1965214）
+
+用户已明确授权提交、推送并触发Actions。代码提交 `1965214a985290aa2de5825b7b93802ef06ac308` 已推送main；[运行45581759118](https://github.com/xiaopaoj/GymRest/actions/runs/45581759118)最终结论success。
+
+直接下载完整日志确认：64项XCTest执行、0失败，`TEST SUCCEEDED`；原失败的 `testFailedExerciseCommitRollsBackAndRetainsDraftValue` 和磁盘重开保护测试 `testFailedEditLeavesDiskPlanAndHistoryUnchangedAfterReopen` 均通过。iPhoneOS Release构建 `BUILD SUCCEEDED`。已上传 `GymRest-healthkit-unsigned` 与 `GymRest-diagnostics` 两个附件。
+
+这次验证覆盖模拟器测试、未签名设备构建和IPA打包；真机交互、系统提醒及实际签名/HealthKit授权仍以真机验收为准。此前“64项尚未执行”是本次运行前的历史状态。
