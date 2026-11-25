@@ -49,11 +49,15 @@ if ! simulator_info=$(find_simulator); then
   fi
 fi
 read -r simulator simulator_state <<< "$simulator_info"
+# Compile first so source errors fail without waiting for simulator boot.
+xcodebuild -project GymRest.xcodeproj -scheme GymRest -configuration Debug \
+  -destination "platform=iOS Simulator,id=$simulator" -derivedDataPath DerivedData \
+  CODE_SIGNING_ALLOWED=NO build-for-testing
 if [[ "$simulator_state" != "Booted" ]]; then xcrun simctl boot "$simulator"; fi
 xcrun simctl bootstatus "$simulator" -b
 xcodebuild -project GymRest.xcodeproj -scheme GymRest -configuration Debug \
   -destination "platform=iOS Simulator,id=$simulator" -derivedDataPath DerivedData \
-  -resultBundlePath "build/Tests-$(date +%s).xcresult" CODE_SIGNING_ALLOWED=NO test
+  -resultBundlePath "build/Tests-$(date +%s).xcresult" CODE_SIGNING_ALLOWED=NO test-without-building
 xcodebuild -project GymRest.xcodeproj -scheme GymRest -configuration Release \
   -sdk iphoneos -destination 'generic/platform=iOS' -derivedDataPath DerivedData \
   CODE_SIGNING_ALLOWED=NO CODE_SIGNING_REQUIRED=NO CODE_SIGN_IDENTITY='' build
