@@ -24,6 +24,8 @@ targets:
       path: build/plists/GymRest-Info.plist
       properties:
         CFBundleDisplayName: GymRest
+        CFBundleShortVersionString: "$(MARKETING_VERSION)"
+        CFBundleVersion: "$(CURRENT_PROJECT_VERSION)"
         CFBundleDevelopmentRegion: zh-Hans
         NSAlarmKitUsageDescription: 用于在训练组间休息结束时发出系统提醒。
         NSSupportsLiveActivities: true
@@ -47,6 +49,8 @@ targets:
       path: build/plists/GymRestWidgets-Info.plist
       properties:
         CFBundleDisplayName: GymRest Timer
+        CFBundleShortVersionString: "$(MARKETING_VERSION)"
+        CFBundleVersion: "$(CURRENT_PROJECT_VERSION)"
         NSExtension:
           NSExtensionPointIdentifier: com.apple.widgetkit-extension
     settings:
