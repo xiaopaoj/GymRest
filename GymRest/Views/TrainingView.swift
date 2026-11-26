@@ -113,11 +113,13 @@ struct TrainingView: View {
         Text("已完成 \(session.completedSets)/\(session.totalSets) 组 · 动作 \(session.index + 1)/\(session.exercises.count)")
             .font(.subheadline).foregroundStyle(.secondary)
         Text(session.current.name).font(.largeTitle.bold())
-        if let catalog, let item = catalog.item(session.current.catalogID) {
+        if let catalog, let item = catalog.resolve(session.current) {
+            ExerciseArtwork(item: item).id(item.id)
             NavigationLink { CatalogExerciseDetail(item: item, catalog: catalog) } label: {
                 Label("动作要点、器材与演示", systemImage: "play.rectangle")
             }
         } else if let catalogIssue { Text(catalogIssue).font(.caption).foregroundStyle(.secondary) }
+        else if catalog != nil { Text("尚未按名称匹配到动作图片，可从动作库选择具体动作。").font(.caption).foregroundStyle(.secondary) }
     }
 
     @ViewBuilder

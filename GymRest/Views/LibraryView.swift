@@ -94,12 +94,7 @@ struct ProgramListView: View {
                         Label("将已有训练归入计划 · \(ungrouped.count) 项", systemImage: "folder.badge.plus")
                     }
                     DisclosureGroup("未归类训练") {
-                        ForEach(ungrouped.filter { (try? $0.exercises().isEmpty) != true }) { day in
-                            NavigationLink { DayDetailView(day: day, controller: controller, showingTraining: $showingTraining) } label: { DayRow(day: day, index: nil) }
-                        }
-                    }
-                    DisclosureGroup("旧版空白项目") {
-                        ForEach(ungrouped.filter { (try? $0.exercises().isEmpty) == true }) { day in
+                        ForEach(ungrouped) { day in
                             NavigationLink { DayDetailView(day: day, controller: controller, showingTraining: $showingTraining) } label: { DayRow(day: day, index: nil) }
                         }
                     }

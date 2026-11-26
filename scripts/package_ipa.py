@@ -1,6 +1,8 @@
 """Package only the unsigned iPhoneOS release product, preserving symlinks."""
 from pathlib import Path
 import plistlib
+import json
+import re
 import shutil
 import subprocess
 import zipfile
@@ -8,16 +10,30 @@ import zipfile
 root = Path(__file__).resolve().parents[1]
 app = root / "DerivedData/Build/Products/Release-iphoneos/GymRest.app"
 extension = app / "PlugIns/GymRestWidgets.appex"
+spec = (root / "project.yml").read_text()
+version = re.search(r'MARKETING_VERSION: "([^\"]+)"', spec).group(1)
+build = re.search(r'CURRENT_PROJECT_VERSION: "([^\"]+)"', spec).group(1)
 for bundle, expected in [(app, "dev.gymrest.personal"), (extension, "dev.gymrest.personal.widgets")]:
     with (bundle / "Info.plist").open("rb") as f:
         info = plistlib.load(f)
     assert info["CFBundleIdentifier"] == expected
+    assert info["CFBundleShortVersionString"] == version
+    assert info["CFBundleVersion"] == build
     assert (bundle / info["CFBundleExecutable"]).is_file()
     assert info["MinimumOSVersion"].startswith("26.")
 with (app / "Info.plist").open("rb") as f:
     assert plistlib.load(f)["NSAlarmKitUsageDescription"]
 with (extension / "Info.plist").open("rb") as f:
     assert plistlib.load(f)["NSExtension"]["NSExtensionPointIdentifier"] == "com.apple.widgetkit-extension"
+# Check the actual Release product, not only the source tree or simulator bundle.
+catalog = json.loads((app / "ExerciseCatalog.json").read_text())
+frames = {filename for item in catalog["exercises"] for filename in item["media"].get("frameAssets", [])}
+assert len(frames) == 906, "Release bundle must contain all imported exercise frames"
+for filename in frames:
+    assert (app / filename).is_file() or (app / "ExerciseFrames" / filename).is_file(), filename
+for filename in ["WorkoutGuideSources.json", "WorkoutGuide-LICENSE.txt", "WorkoutGuide-LICENSE-ASSETS.txt", "WorkoutGuide-LICENSES.txt", "WorkoutGuide-ATTRIBUTION.txt"]:
+    assert (app / filename).is_file(), filename
+print(f"Validated {version} ({build}), {len(catalog['exercises'])} exercises, {len(frames)} frame resources, and source/license notices")
 staging = root / "build/ipa-staging"
 if staging.exists(): shutil.rmtree(staging)
 (staging / "Payload").mkdir(parents=True)

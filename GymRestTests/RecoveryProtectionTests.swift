@@ -7,6 +7,7 @@ import SwiftData
         let container = try ModelContainer(for: TrainingProgram.self, TrainingPlan.self, LibraryPreferences.self, ActiveTraining.self, TrainingRecord.self,
             configurations: ModelConfiguration(isStoredInMemoryOnly: true))
         let store = try TrainingStore(container: container)
+        store.context.insert(try TrainingPlan(name: "已有训练", position: 0, exercises: [ExerciseSpec(name: "卧推")]))
         let invalid = ActiveTraining(payload: Data("invalid state".utf8))
         store.context.insert(invalid); try store.context.save()
         return (store, invalid, MockTimerService())
@@ -17,7 +18,7 @@ import SwiftData
         XCTAssertNotNil(controller.recoveryIssue)
         XCTAssertNotNil(controller.error)
         XCTAssertNil(controller.session)
-        XCTAssertEqual(try store.context.fetch(FetchDescriptor<TrainingPlan>()).count, 5)
+        XCTAssertEqual(try store.context.fetch(FetchDescriptor<TrainingPlan>()).count, 1)
         XCTAssertEqual(invalid.payload, Data("invalid state".utf8))
     }
     func testStartAndEndCannotOverwriteUnreadableProgress() async throws {

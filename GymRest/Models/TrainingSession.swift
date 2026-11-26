@@ -28,6 +28,7 @@ struct TrainingSession: Codable, Equatable, Sendable {
     init(planID: UUID, planName: String, exercises: [ExerciseSpec], fallback: Bool) throws {
         guard !exercises.isEmpty else { throw TrainingError.emptyPlan }
         for exercise in exercises { try exercise.validate() }
+        let exercises = ExerciseNames.standardize(exercises)
         self.planID = planID; self.planName = planName; self.exercises = exercises; self.fallback = fallback
         completed = Array(repeating: 0, count: exercises.count)
         originalExercises = exercises

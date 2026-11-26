@@ -25,8 +25,7 @@ import SwiftData
     }
     func testBundledCatalogAndTemplateSlotsHaveValidatedData() throws {
         let catalog = try ExerciseCatalog.bundled()
-        XCTAssertGreaterThanOrEqual(catalog.exercises.count, 40)
-        XCTAssertLessThanOrEqual(catalog.exercises.count, 60)
+        XCTAssertGreaterThanOrEqual(catalog.exercises.count, 300)
         for template in TrainingTemplate.all {
             for day in template.days { for id in day.slots { XCTAssertNotNil(catalog.item(id)) } }
             let built = try template.build(catalog: catalog, equipment: Set(ExerciseCatalog.equipmentNames.keys), selections: [:], priority: nil)

@@ -12,14 +12,53 @@ import SwiftData
         } else {
             preferences = LibraryPreferences()
             context.insert(preferences)
-            let program = TrainingProgram(name: "五分化模板", position: 0)
-            context.insert(program)
-            for (position, name) in ["胸部训练", "背部训练", "腿部训练", "肩部训练", "手臂训练"].enumerated() {
-                let day = try TrainingPlan(name: name, position: position)
-                day.programID = program.id; context.insert(day)
-            }
             try context.save()
         }
+        try Self.removeLegacyPlaceholders(in: context, preferences: preferences)
+        try Self.standardizeStoredExerciseNames(in: context)
+    }
+    static func standardizeStoredExerciseNames(in context: ModelContext, beforeCommit: () throws -> Void = {}) throws {
+        guard !context.hasChanges else { throw ArchiveFailure.invalid("请先保存已有编辑，再统一动作名称。") }
+        var updates: [(TrainingPlan, [ExerciseSpec])] = []
+        for day in try context.fetch(FetchDescriptor<TrainingPlan>()) {
+            guard let original = try? day.exercises() else { continue }
+            let revised = ExerciseNames.standardize(original)
+            guard revised != original else { continue }
+            // Invalid legacy plans remain readable as errors, never rewritten by cleanup.
+            do { for exercise in revised { try exercise.validate() } } catch { continue }
+            updates.append((day, revised))
+        }
+        guard !updates.isEmpty else { return }
+        do {
+            for (day, exercises) in updates { try day.setExercises(exercises) }
+            try beforeCommit()
+            try context.save()
+        } catch { context.discardPendingChanges(); throw error }
+    }
+    /// One-time removal of known legacy seed rows, never a general empty-day sweep.
+    static func removeLegacyPlaceholders(in context: ModelContext, preferences: LibraryPreferences,
+                                         beforeCommit: () throws -> Void = {}) throws {
+        guard preferences.legacyPlaceholdersRemoved != true else { return }
+        guard !context.hasChanges else { throw ArchiveFailure.invalid("请先保存已有编辑，再清理旧版空白项目。") }
+        let names: Set<String> = ["胸部训练", "背部训练", "腿部训练", "肩部训练", "手臂训练"]
+        let programs = try context.fetch(FetchDescriptor<TrainingProgram>())
+        let seedParents = programs.filter { $0.name == "五分化模板" }
+        let seedIDs = Set(seedParents.map(\.id))
+        let days = try context.fetch(FetchDescriptor<TrainingPlan>())
+        let removed = days.filter { day in
+            names.contains(day.name) && (day.programID == nil || day.programID.map { seedIDs.contains($0) } == true)
+                && (try? day.exercises().isEmpty) == true
+        }
+        let removedIDs = Set(removed.map(\.id))
+        do {
+            for day in removed { context.delete(day) }
+            for parent in seedParents where !days.contains(where: { $0.programID == parent.id && !removedIDs.contains($0.id) }) {
+                context.delete(parent)
+            }
+            preferences.legacyPlaceholdersRemoved = true
+            try beforeCommit()
+            try context.save()
+        } catch { context.discardPendingChanges(); throw error }
     }
     func load() throws -> TrainingSession? {
         guard let record = try context.fetch(FetchDescriptor<ActiveTraining>()).first else { return nil }
@@ -36,7 +75,7 @@ import SwiftData
             // Legacy records have no measured loads. A corrupt record remains visible in
             // history; it must not prevent starting another training session.
             guard let sets = try? record.performances() else { continue }
-            for set in sets.flatMap({ $0 }).reversed() where set.profileKey == key {
+            for set in sets.flatMap({ $0 }).reversed() where set.profileKey.map({ ExerciseNames.canonicalProfileKey($0) }) == key {
                 if let values = set.values, (try? values.validate()) != nil { return values }
             }
         }

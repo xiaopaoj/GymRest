@@ -66,7 +66,7 @@ struct ExerciseSpec: Codable, Identifiable, Equatable, Sendable {
     func rest(afterSet set: Int) -> Int { restOverrides[set] ?? restSeconds }
     func profileKey(for values: SetValues) -> String {
         // Encoding an array avoids delimiter collisions in user-entered equipment names.
-        let parts = [catalogID ?? ("custom:" + name), values.kind.rawValue, values.unit.rawValue, values.equipmentNote]
+        let parts = [catalogID ?? ("custom:" + ExerciseNames.canonical(name, catalogID: nil)), values.kind.rawValue, values.unit.rawValue, values.equipmentNote]
         return (try? JSONEncoder().encode(parts).base64EncodedString()) ?? ""
     }
 
@@ -93,12 +93,12 @@ struct ExerciseSpec: Codable, Identifiable, Equatable, Sendable {
     var exerciseData: Data
     init(name: String, position: Int, exercises: [ExerciseSpec] = []) throws {
         id = UUID(); self.name = name; self.position = position
-        exerciseData = try JSONEncoder().encode(exercises)
+        exerciseData = try JSONEncoder().encode(ExerciseNames.standardize(exercises))
     }
     func exercises() throws -> [ExerciseSpec] { try JSONDecoder().decode([ExerciseSpec].self, from: exerciseData) }
     func setExercises(_ values: [ExerciseSpec]) throws {
         for value in values { try value.validate() }
-        exerciseData = try JSONEncoder().encode(values)
+        exerciseData = try JSONEncoder().encode(ExerciseNames.standardize(values))
     }
 }
 
@@ -108,9 +108,12 @@ struct ExerciseSpec: Codable, Identifiable, Equatable, Sendable {
     var defaultRest: Int
     var notificationFallback: Bool
     var keepScreenOn: Bool
+    // nil on pre-cleanup stores; new libraries never seed empty placeholders.
+    var legacyPlaceholdersRemoved: Bool?
     init() {
         key = "preferences"; defaultSets = 4; defaultRest = 90
         notificationFallback = false; keepScreenOn = false
+        legacyPlaceholdersRemoved = true
     }
 }
 

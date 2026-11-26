@@ -20,8 +20,9 @@ import SwiftData
     }
     private func writeHistory(_ url: URL) throws -> SavedIDs {
         let store = try open(url); let context = store.context
-        let parent = try XCTUnwrap(context.fetch(FetchDescriptor<TrainingProgram>()).first)
-        let day = try XCTUnwrap(context.fetch(FetchDescriptor<TrainingPlan>()).first)
+        let parent = TrainingProgram(name: "我的计划", position: 0)
+        let day = try TrainingPlan(name: "周一", position: 0)
+        day.programID = parent.id; context.insert(parent); context.insert(day)
         try day.setExercises([ExerciseSpec(name: "卧推", sets: 2, restSeconds: 47)])
         store.preferences.defaultRest = 47; try context.save()
         var session = try TrainingSession(planID: day.id, planName: day.name, exercises: day.exercises(), fallback: false)
@@ -46,7 +47,7 @@ import SwiftData
         XCTAssertEqual(records[0].workoutSource, "测试运动来源")
         XCTAssertEqual(reopened.preferences.defaultRest, 47)
         XCTAssertEqual(try context.fetch(FetchDescriptor<TrainingProgram>()).count, 1)
-        XCTAssertEqual(try context.fetch(FetchDescriptor<TrainingPlan>()).count, 5)
+        XCTAssertEqual(try context.fetch(FetchDescriptor<TrainingPlan>()).count, 1)
         let day = try XCTUnwrap(context.fetch(FetchDescriptor<TrainingPlan>()).first { $0.id == ids.day })
         XCTAssertEqual(day.programID, ids.parent)
         XCTAssertEqual(try day.exercises().first?.restSeconds, 47)

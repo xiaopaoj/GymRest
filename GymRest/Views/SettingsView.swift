@@ -7,6 +7,11 @@ struct SettingsView: View {
     @Bindable var controller: TrainingController
     @State private var error: String?
     @State private var restDraft = ""
+    private var versionDescription: String {
+        let version = Bundle.main.infoDictionary?["CFBundleShortVersionString"] as? String ?? "—"
+        let build = Bundle.main.infoDictionary?["CFBundleVersion"] as? String ?? "—"
+        return "\(version) (\(build))"
+    }
     var body: some View {
         @Bindable var preferences = controller.preferences
         Form {
@@ -51,7 +56,8 @@ struct SettingsView: View {
                     .font(.footnote).foregroundStyle(.secondary)
             }
             Section("关于") {
-                LabeledContent("版本", value: "0.5.0")
+                NavigationLink("动作素材许可") { WorkoutGuideCreditsView() }
+                LabeledContent("版本", value: versionDescription)
                 Text("训练计划与记录仅存本机，无账号和后端。")
             }
             if let error = error ?? controller.error { Text(error).foregroundStyle(.red) }

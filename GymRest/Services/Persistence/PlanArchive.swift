@@ -44,8 +44,10 @@ struct PlanArchive: Codable {
     }
     static func decode(_ data: Data) throws -> PlanArchive {
         guard data.count <= 10 * 1024 * 1024 else { throw ArchiveFailure.invalid("单次导入文件不能超过10MB。") }
-        let archive = try JSONDecoder().decode(Self.self, from: data)
-        try archive.validate(); return archive
+        var archive = try JSONDecoder().decode(Self.self, from: data)
+        try archive.validate()
+        for index in archive.plans.indices { archive.plans[index].exercises = ExerciseNames.standardize(archive.plans[index].exercises) }
+        return archive
     }
     @MainActor static func export(plans: [TrainingPlan], programs: [TrainingProgram] = []) throws -> Data {
         let parents = programs.map { ProgramEntry(id: $0.id, name: $0.name, weeklySessions: $0.weeklySessions) }

@@ -8,12 +8,11 @@ import SwiftData
             configurations: ModelConfiguration(isStoredInMemoryOnly: true))
         return try TrainingStore(container: container)
     }
-    func testDefaultsAreFiveDaysInsideOneProgram() throws {
+    func testFreshLibraryDoesNotCreateEmptyProgramOrDays() throws {
         let store = try store()
         let programs = try store.context.fetch(FetchDescriptor<TrainingProgram>())
         let days = try store.context.fetch(FetchDescriptor<TrainingPlan>())
-        XCTAssertEqual(programs.count, 1); XCTAssertEqual(days.count, 5)
-        XCTAssertTrue(days.allSatisfy { $0.programID == programs[0].id })
+        XCTAssertTrue(programs.isEmpty); XCTAssertTrue(days.isEmpty)
     }
     func testConvertBlankContainerAndGroupWithoutChangingExercises() throws {
         let store = try store(); let context = store.context
@@ -50,7 +49,8 @@ import SwiftData
     }
     func testLegacyImportTargetsSelectedProgramAndDoesNotDuplicateIt() throws {
         let store = try store(); let context = store.context
-        let parent = try XCTUnwrap(context.fetch(FetchDescriptor<TrainingProgram>()).first)
+        let parent = TrainingProgram(name: "测试计划", position: 0)
+        context.insert(parent); try context.save()
         let archive = PlanArchive(plans: [.init(id: UUID(), name: "导入周一", exercises: [])])
         try archive.append(to: context, targetProgram: parent)
         XCTAssertEqual(try context.fetch(FetchDescriptor<TrainingProgram>()).count, 1)
@@ -58,7 +58,13 @@ import SwiftData
     }
     func testRemovingProgramPreservesDays() throws {
         let store = try store(); let context = store.context
-        let parent = try XCTUnwrap(context.fetch(FetchDescriptor<TrainingProgram>()).first)
+        let parent = TrainingProgram(name: "测试计划", position: 0)
+        context.insert(parent); try context.save()
+        for i in 0..<5 {
+            let day = try TrainingPlan(name: "训练日\(i)", position: i)
+            day.programID = parent.id; context.insert(day)
+        }
+        try context.save()
         try ProgramLibrary.detachAndDelete(parent, context: context)
         let days = try context.fetch(FetchDescriptor<TrainingPlan>())
         XCTAssertEqual(days.count, 5); XCTAssertTrue(days.allSatisfy { $0.programID == nil })

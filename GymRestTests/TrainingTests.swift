@@ -25,10 +25,10 @@ final class TrainingTests: XCTestCase {
         let plan = try TrainingPlan(name: "测试", position: 10, exercises: exercises)
         return Fixture(store: store, controller: controller, timer: timer, clock: clock, plan: plan)
     }
-    func testSeedsOnlyOnceAndAllowsDeletingAllPlans() throws {
+    func testFreshLibraryStaysEmptyAcrossReopen() throws {
         let f = try fixture([])
         let context = f.store.context
-        XCTAssertEqual(try context.fetch(FetchDescriptor<TrainingPlan>()).count, 5)
+        XCTAssertTrue(try context.fetch(FetchDescriptor<TrainingPlan>()).isEmpty)
         for plan in try context.fetch(FetchDescriptor<TrainingPlan>()) { context.delete(plan) }
         try context.save()
         _ = try TrainingStore(container: context.container)
