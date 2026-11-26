@@ -28,6 +28,8 @@ struct TrainingActivityAttributes: ActivityAttributes, Sendable {
         var blocked: Bool
         var restTitle: String? = nil
         var setDetails: String? = nil
+        var progressSummary: String? = nil
+        var synchronizedAt: Date? = nil
     }
 }
 

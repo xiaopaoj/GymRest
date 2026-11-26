@@ -18,6 +18,7 @@ struct TrainingView: View {
     }
     @State private var editingValues: ValuesRequest?
     @State private var ordering: OrderRequest?
+    @State private var showingArtwork = true
     @State private var catalog: ExerciseCatalog?
     @State private var catalogIssue: String?
     var body: some View {
@@ -30,6 +31,7 @@ struct TrainingView: View {
                         VStack(alignment: .leading, spacing: 24) {
                             sessionHeader(session)
                             measurementContent(session)
+                            artworkContent(session)
                             exerciseProgress(session)
                             restControls(session)
                             navigationControls(session)
@@ -37,6 +39,9 @@ struct TrainingView: View {
                     }
                 }
                 if let error = controller.error { Text(error).foregroundStyle(.red).textSelection(.enabled).padding() }
+            }
+            .safeAreaInset(edge: .bottom) {
+                if let session = controller.session, session.phase != .completed { trainingActionBar(session) }
             }
             .sheet(item: $editingValues) { request in
                 SetValuesEditor(values: request.values) { values in
@@ -114,7 +119,6 @@ struct TrainingView: View {
             .font(.subheadline).foregroundStyle(.secondary)
         Text(session.current.name).font(.largeTitle.bold())
         if let catalog, let item = catalog.resolve(session.current) {
-            ExerciseArtwork(item: item).id(item.id)
             NavigationLink { CatalogExerciseDetail(item: item, catalog: catalog) } label: {
                 Label("动作要点、器材与演示", systemImage: "play.rectangle")
             }
@@ -123,12 +127,50 @@ struct TrainingView: View {
     }
 
     @ViewBuilder
+    private func artworkContent(_ session: TrainingSession) -> some View {
+        if let catalog, let item = catalog.resolve(session.current) {
+            DisclosureGroup("动作图片 · " + item.name, isExpanded: $showingArtwork) {
+                ExerciseArtwork(item: item).id(item.id)
+            }
+        }
+    }
+    private func trainingActionBar(_ session: TrainingSession) -> some View {
+        VStack(alignment: .leading, spacing: 8) {
+            Text(session.phase == .training ? "正在训练 · 做完本组后确认" : session.phase == .paused ? "休息已暂停" : session.isTransitionRest ? "动作间休息" : "组间休息")
+                .font(.headline)
+            Text("本次累计完成 \(session.completedSets)/\(session.totalSets) 组 · 下一动作：\(session.nextName)")
+                .font(.caption).foregroundStyle(.secondary)
+            if session.index + 1 < session.exercises.count, let drafts = session.setDrafts, drafts.indices.contains(session.index + 1) {
+                Text("下一动作预设：" + drafts[session.index + 1].summary).font(.caption).foregroundStyle(.secondary)
+            }
+            if session.phase == .training {
+                Button { Task { await controller.completeSet() } } label: {
+                    Text("完成本组 · \(session.currentSetValues.summary)")
+                        .font(.headline).frame(maxWidth: .infinity).padding(.vertical, 8)
+                }.buttonStyle(.borderedProminent)
+            } else {
+                HStack {
+                    Button(session.phase == .paused ? "继续休息" : "暂停休息") {
+                        Task { if session.phase == .paused { await controller.resume() } else { await controller.pause() } }
+                    }
+                    Spacer()
+                    Button("结束休息") { Task { await controller.skipRest() } }
+                }.buttonStyle(.bordered)
+            }
+        }.padding().background(.regularMaterial).disabled(controller.busy)
+    }
+
+    @ViewBuilder
     private func measurementContent(_ session: TrainingSession) -> some View {
         if session.completed[session.index] < session.current.sets {
             VStack(alignment: .leading, spacing: 10) {
                 Text(session.phase == .training ? "本组重量与次数" : "下一组重量与次数").font(.headline)
                 Text(session.currentSetValues.summary).font(.title3.monospacedDigit())
+                if let origins = session.setValueOrigins, origins.indices.contains(session.index) { Text(origins[session.index]).font(.caption).foregroundStyle(.secondary) }
                 if !session.currentSetValues.equipmentNote.isEmpty { Text(session.currentSetValues.equipmentNote).font(.caption) }
+                if controller.previousSetValues != nil {
+                    Button("沿用本动作上一组") { Task { await controller.reusePreviousSet(interactionID: session.interactionID) } }
+                }
                 Button("调整本组设置") { editingValues = ValuesRequest(values: session.currentSetValues, interactionID: session.interactionID) }
                 Text("预填值在完成本组时记录；未填写的值保持未记录。锁屏完成沿用这里的设置。")
                     .font(.caption).foregroundStyle(.secondary)
@@ -202,9 +244,7 @@ struct TrainingView: View {
         } else {
             Label("准备好后完成一组，再开始休息", systemImage: "dumbbell.fill")
                 .foregroundStyle(.secondary).padding(.vertical, 24)
-            Button { Task { await controller.completeSet() } } label: {
-                Text("完成本组").font(.title2.bold()).frame(maxWidth: .infinity).padding(.vertical, 20)
-            }.buttonStyle(.borderedProminent)
+
         }
     }
 

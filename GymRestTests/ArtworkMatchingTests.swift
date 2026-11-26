@@ -34,27 +34,29 @@ import SwiftData
     func testAllImportedFrameFilesAreBundledAndReadable() throws {
         let catalog = try ExerciseCatalog.bundled()
         let illustrated = catalog.exercises.filter { !($0.media.frameAssets ?? []).isEmpty }
-        XCTAssertEqual(illustrated.count, 302)
+        XCTAssertEqual(illustrated.count, 280)
         var filenames: Set<String> = []
         for item in illustrated {
             let frames = try XCTUnwrap(item.media.frameAssets)
-            XCTAssertEqual(frames.count, 3)
+            XCTAssertTrue((1...3).contains(frames.count))
             for filename in frames {
                 let url = try XCTUnwrap(ExerciseArtwork.assetURL(filename), filename)
                 let image = try XCTUnwrap(UIImage(contentsOfFile: url.path), filename)
-                XCTAssertEqual(image.size.width, 512); XCTAssertEqual(image.size.height, 512)
+                if filename.hasPrefix("wg-") { XCTAssertEqual(image.size.width, 512); XCTAssertEqual(image.size.height, 512) }
+                else { XCTAssertGreaterThan(image.size.width, 0); XCTAssertGreaterThan(image.size.height, 0) }
                 filenames.insert(filename)
             }
         }
-        XCTAssertEqual(filenames.count, 906)
+        XCTAssertEqual(filenames.count, 822)
         XCTAssertNotNil(Bundle.main.url(forResource: "WorkoutGuideSources", withExtension: "json"))
         XCTAssertNotNil(Bundle.main.url(forResource: "WorkoutGuide-LICENSE-ASSETS", withExtension: "txt"))
     }
-    func testVariantsWithoutEquivalentFramesStayUnillustrated() throws {
+    func testSupplementaryArtIsAvailableAndUnverifiedVariantsStayHidden() throws {
         let catalog = try ExerciseCatalog.bundled()
         for id in ["barbell-curl", "dumbbell-lunge", "dumbbell-calf"] {
             let item = try XCTUnwrap(catalog.item(id))
-            XCTAssertFalse(item.media.approved); XCTAssertNil(item.media.frameAssets)
+            XCTAssertTrue(item.media.approved); XCTAssertEqual(item.media.frameAssets?.count, 2)
+            XCTAssertEqual(item.media.allowsPlayback, false)
         }
         let plank = try XCTUnwrap(catalog.matching(name: "Plank"))
         XCTAssertNil(plank.repetitions); XCTAssertNil(plank.spec().prescription?.repetitions)

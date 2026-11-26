@@ -13,6 +13,7 @@ struct TrainingSession: Codable, Equatable, Sendable {
     var originalExercises: [ExerciseSpec]?
     var performedNames: [[String]]?
     var performances: [[SetPerformance]]?
+    var setValueOrigins: [String]?
     var setDrafts: [SetValues]?
     let fallback: Bool
     var index = 0

@@ -56,11 +56,11 @@ private struct TrainingActivityDetails: View {
         VStack(alignment: .leading, spacing: 6) {
             HStack {
                 Label(state.exerciseName, systemImage: "dumbbell.fill")
-                    .font(.headline).lineLimit(1).privacySensitive()
+                    .font(.headline).lineLimit(2).privacySensitive()
                 Spacer(minLength: 8)
                 TrainingActivityTime(state: state).foregroundStyle(.orange).font(.headline)
             }
-            Text("\(state.planName) · 已完成 \(state.completedSet)/\(state.totalSets) 组")
+            Text(state.progressSummary ?? "\(state.planName) · 已完成 \(state.completedSet)/\(state.totalSets) 组")
                 .font(.caption).foregroundStyle(.secondary).lineLimit(1).privacySensitive()
             if let issue = state.issue {
                 Text(issue).font(.caption).foregroundStyle(.orange).lineLimit(2)
@@ -70,6 +70,9 @@ private struct TrainingActivityDetails: View {
             }
             if state.phase == "training", let details = state.setDetails {
                 Text(details).font(.caption).lineLimit(1).privacySensitive()
+            }
+            if let date = state.synchronizedAt {
+                HStack(spacing: 4) { Text("状态同步"); Text(date, format: .dateTime.hour().minute().second()) }.font(.caption2).foregroundStyle(.secondary)
             }
             TrainingActivityControls(state: state)
         }

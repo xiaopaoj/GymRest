@@ -27,13 +27,17 @@ with (extension / "Info.plist").open("rb") as f:
     assert plistlib.load(f)["NSExtension"]["NSExtensionPointIdentifier"] == "com.apple.widgetkit-extension"
 # Check the actual Release product, not only the source tree or simulator bundle.
 catalog = json.loads((app / "ExerciseCatalog.json").read_text())
-frames = {filename for item in catalog["exercises"] for filename in item["media"].get("frameAssets", [])}
-assert len(frames) == 906, "Release bundle must contain all imported exercise frames"
+guide_sources = json.loads((app / "WorkoutGuideSources.json").read_text())
+extra_sources = json.loads((app / "EverkineticSources.json").read_text())
+frames = {frame["file"] for item in guide_sources["exercises"] + extra_sources["exercises"] for frame in item["frames"]}
+assert len(frames) == 912, "Release bundle must include all 906 source and 6 supplementary original frames"
 for filename in frames:
     assert (app / filename).is_file() or (app / "ExerciseFrames" / filename).is_file(), filename
-for filename in ["WorkoutGuideSources.json", "WorkoutGuide-LICENSE.txt", "WorkoutGuide-LICENSE-ASSETS.txt", "WorkoutGuide-LICENSES.txt", "WorkoutGuide-ATTRIBUTION.txt"]:
+shown = {filename for item in catalog["exercises"] for filename in item["media"].get("frameAssets", [])}
+assert shown.issubset(frames)
+for filename in ["ExerciseGuides.json", "WorkoutGuideMediaReview.json", "WorkoutGuideSources.json", "EverkineticSources.json", "Everkinetic-LICENSE.txt", "WorkoutGuide-LICENSE.txt", "WorkoutGuide-LICENSE-ASSETS.txt", "WorkoutGuide-LICENSES.txt", "WorkoutGuide-ATTRIBUTION.txt"]:
     assert (app / filename).is_file(), filename
-print(f"Validated {version} ({build}), {len(catalog['exercises'])} exercises, {len(frames)} frame resources, and source/license notices")
+print(f"Validated {version} ({build}), {len(catalog['exercises'])} exercises, {len(frames)} source images / {len(shown)} displayed frames, guides and source/license notices")
 staging = root / "build/ipa-staging"
 if staging.exists(): shutil.rmtree(staging)
 (staging / "Payload").mkdir(parents=True)

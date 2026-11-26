@@ -1,5 +1,7 @@
 # Apple Watch / 健康运动记录匹配
 
+> 2026-11-26工作区增加可注入健康查询、时间窗/数量诊断和Watch/锁屏人工验收页；目前仍无真实设备通过结论。当前已发布基线与新代码的验证状态应分开，见[P1处理记录](P1_QUALITY_AND_DEVICE_REVIEW.md)。
+
 ## 可以读取什么
 
 GymRest 通过 iPhone 的 HealthKit 读取已同步到“健康”App 的 workout 运动记录，不直接连接手表，也不需要开发 watchOS App。Apple Watch 或其他手环的数据只有在对应来源写入健康App、用户授权且 GymRest 签名支持 HealthKit 时才可能被查询到。不能读取任意手环的私有数据库。

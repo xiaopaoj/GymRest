@@ -80,14 +80,16 @@ class CatalogDataTests(unittest.TestCase):
                 recorded.add(frame['file'])
         self.assertEqual(len(recorded), 906)
         referenced = {f for x in DATA['exercises'] for f in x['media'].get('frameAssets', [])}
-        self.assertEqual(recorded, referenced)
+        self.assertTrue({f for f in referenced if f.startswith("wg-")}.issubset(recorded))
         for name in ['WorkoutGuide-LICENSE.txt', 'WorkoutGuide-LICENSE-ASSETS.txt', 'WorkoutGuide-LICENSES.txt', 'WorkoutGuide-ATTRIBUTION.txt']:
             self.assertTrue((root / 'WorkoutGuide' / name).is_file())
 
-    def test_original_variants_without_exact_artwork_stay_unmatched(self):
+    def test_exact_supplementary_art_and_review_boundaries(self):
         pending = {x['id'] for x in DATA['exercises'] if x['media']['status'] == 'pending'}
-        self.assertEqual(pending, {'barbell-curl', 'dumbbell-lunge', 'dumbbell-calf'})
-        self.assertEqual(sum(x['id'].startswith('guide-') for x in DATA['exercises']), 254)
+        self.assertEqual(len(pending), 26)
+        self.assertIn('cable-lateral', pending)
+        self.assertTrue({'barbell-curl', 'dumbbell-lunge', 'dumbbell-calf'}.isdisjoint(pending))
+        self.assertEqual(sum(x['id'].startswith('guide-') for x in DATA['exercises']), 255)
         self.assertTrue(all(x['media']['equipmentAsset'] is None for x in DATA['exercises']))
 
         items = {x['id']: x for x in DATA['exercises']}
@@ -97,3 +99,54 @@ class CatalogDataTests(unittest.TestCase):
         self.assertEqual(items['guide-ez-bar-curl']['name'], '站姿 EZ 曲杆弯举')
         self.assertEqual(items['guide-walking-lunge']['name'], '哑铃行进箭步蹲')
         self.assertEqual(items['guide-seated-calf-raise']['name'], '坐姿器械提踵')
+
+    def test_all_catalog_entries_have_chinese_names_and_keep_english_lookup(self):
+        for item in DATA['exercises']:
+            self.assertTrue(any('\u4e00' <= c <= '\u9fff' for c in item['name']), item['id'])
+            self.assertTrue(item['englishName'])
+        translations = dict(line.split('\t', 1) for line in (ROOT / 'scripts/workout_guide_zh.tsv').read_text().splitlines() if line)
+        imported = [x for x in DATA['exercises'] if x['id'].startswith('guide-')]
+        self.assertEqual(len(imported), len(translations))
+        for item in imported:
+            self.assertEqual(item['name'], translations[item['id'][6:]])
+
+    def test_all_original_frames_have_explicit_visual_review(self):
+        review = json.loads((ROOT / 'scripts/workout_guide_media_review.json').read_text())
+        provenance = json.loads((ROOT / 'GymRest/Resources/WorkoutGuide/WorkoutGuideSources.json').read_text())
+        self.assertEqual({x['slug'] for x in review['items']}, {x['slug'] for x in provenance['exercises']})
+        self.assertEqual(len(review['items']), 302)
+        self.assertEqual(sum(x['result'] == 'withheld' for x in review['items']), 25)
+        for entry in review['items']:
+            self.assertEqual(entry['reviewedFrames'], [1, 2, 3])
+            self.assertTrue(set(entry['displayFrames']).issubset({1, 2, 3}))
+            self.assertFalse(entry['allowsPlayback'])
+            self.assertTrue(entry['note'])
+        self.assertTrue(all(not x['media'].get('allowsPlayback', False) for x in DATA['exercises']))
+
+    def test_supplementary_originals_are_unchanged_and_credited(self):
+        root = ROOT / 'GymRest/Resources'
+        source = json.loads((root / 'WorkoutGuide/EverkineticSources.json').read_text())
+        self.assertEqual(source['revision'], '446bb9a3d0c3beb6b84f7c9d77dfc8af707a2ab6')
+        self.assertEqual({x['catalogID'] for x in source['exercises']}, {'barbell-curl', 'dumbbell-lunge', 'dumbbell-calf'})
+        for item in source['exercises']:
+            self.assertEqual(len(item['frames']), 2)
+            for frame in item['frames']:
+                data = (root / 'ExerciseFrames' / frame['file']).read_bytes()
+                self.assertEqual(hashlib.sha256(data).hexdigest(), frame['sha256'])
+                self.assertEqual(list(struct.unpack('>II', data[16:24])), frame['size'])
+        self.assertTrue((root / 'WorkoutGuide/Everkinetic-LICENSE.txt').exists())
+
+    def test_every_exercise_has_steps_mistakes_and_variant_setup(self):
+        guide = json.loads((ROOT / 'GymRest/Resources/ExerciseGuides.json').read_text())
+        self.assertEqual({x['catalogID'] for x in guide['items']}, {x['id'] for x in DATA['exercises']})
+        self.assertEqual(len(guide['items']), len(DATA['exercises']))
+        for item in guide['items']:
+            self.assertGreaterEqual(len(item['steps']), 4)
+            self.assertGreaterEqual(len(item['mistakes']), 3)
+            self.assertIn(item['name'], item['setup'])
+            self.assertTrue(item['references'])
+            self.assertFalse(any('查看三帧' in step for step in item['steps']))
+        items = {x['catalogID']: x for x in guide['items']}
+        self.assertIn('脚跟小步', ''.join(items['guide-lying-hamstring-walkout']['steps']))
+        self.assertIn('肘保持基本伸直', ''.join(items['guide-scapular-push-up']['steps']))
+        self.assertIn('两侧分别完成', ''.join(items['dumbbell-calf']['steps'] + items['dumbbell-calf']['notes']))

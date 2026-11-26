@@ -1,0 +1,115 @@
+{
+  "revision": "446bb9a3d0c3beb6b84f7c9d77dfc8af707a2ab6",
+  "author": "Greg Priday / Everkinetic",
+  "licenseURL": "https://creativecommons.org/licenses/by-sa/4.0/",
+  "changes": "PNG original bytes unchanged; only bundling filename prefixed.",
+  "exercises": [
+    {
+      "catalogID": "barbell-curl",
+      "sourceName": "Biceps Curls with Barbell",
+      "frames": [
+        {
+          "file": "ek-0211-relaxation.png",
+          "sourceURL": "https://github.com/everkinetic/data/blob/446bb9a3d0c3beb6b84f7c9d77dfc8af707a2ab6/dist/png/0211-relaxation.png",
+          "sha256": "cc936060795260e249f0092fbd737d26dc117c758e129dc101a5a35c6012cfa1",
+          "size": [
+            1050,
+            968
+          ],
+          "review": "逐张核对器材和动作；原图裁切范围已在UI说明。"
+        },
+        {
+          "file": "ek-0211-tension.png",
+          "sourceURL": "https://github.com/everkinetic/data/blob/446bb9a3d0c3beb6b84f7c9d77dfc8af707a2ab6/dist/png/0211-tension.png",
+          "sha256": "c5b0a5a515735e4d0dbeecc31fbb21dc6565eddc61165bee47c5aeadaf2a703d",
+          "size": [
+            1039,
+            968
+          ],
+          "review": "逐张核对器材和动作；原图裁切范围已在UI说明。"
+        }
+      ],
+      "sourceSteps": [
+        "This is a basic exercise for the biceps (arms).",
+        "Stand with your feet shoulder width apart, your knees slightly bent and your abs drawn in.",
+        "Grasp a barbell with palms facing up, approximately shoulder width apart.",
+        "Lower your arms fully to above your thighs and bending only your elbows, raise the bar to your upper chest.",
+        "Pause for a moment and then return to the starting position.",
+        "Note: Do not swing your hips or back during this exercise."
+      ],
+      "author": "Greg Priday / Everkinetic",
+      "licenseURL": "https://creativecommons.org/licenses/by-sa/4.0/"
+    },
+    {
+      "catalogID": "dumbbell-lunge",
+      "sourceName": "Dumbbell Lunges",
+      "frames": [
+        {
+          "file": "ek-0115-relaxation.png",
+          "sourceURL": "https://github.com/everkinetic/data/blob/446bb9a3d0c3beb6b84f7c9d77dfc8af707a2ab6/dist/png/0115-relaxation.png",
+          "sha256": "bc288cd3fbee313efa8c7ddcc71315355d44b4dcf2aa9e64b1efd7b275f3201f",
+          "size": [
+            530,
+            1027
+          ],
+          "review": "逐张核对器材和动作；原图裁切范围已在UI说明。"
+        },
+        {
+          "file": "ek-0115-tension.png",
+          "sourceURL": "https://github.com/everkinetic/data/blob/446bb9a3d0c3beb6b84f7c9d77dfc8af707a2ab6/dist/png/0115-tension.png",
+          "sha256": "dc7d9f2093139882ac84098d90131c5f59658b1f9837fb75e50907771476086c",
+          "size": [
+            616,
+            708
+          ],
+          "review": "逐张核对器材和动作；原图裁切范围已在UI说明。"
+        }
+      ],
+      "sourceSteps": [
+        "Grasp a dumbbell in each hand.",
+        "Stand with your feet about 8 inches apart, toes facing forward.",
+        "Take a step forward (2-3 feet) keeping your abs drawn in and your upper body straight.",
+        "Slowly lower one knee down as if kneeling while keeping your other knee bent at a 90 degree angle, do not let your knee touch the ground.",
+        "Lower your body so that the rear knee is just above the floor and hold for a moment before returning to the starting position.",
+        "Repeat on opposite side."
+      ],
+      "author": "Greg Priday / Everkinetic",
+      "licenseURL": "https://creativecommons.org/licenses/by-sa/4.0/"
+    },
+    {
+      "catalogID": "dumbbell-calf",
+      "sourceName": "Seated One Leg Calf Raise with Dumbbell",
+      "frames": [
+        {
+          "file": "ek-0276-relaxation.png",
+          "sourceURL": "https://github.com/everkinetic/data/blob/446bb9a3d0c3beb6b84f7c9d77dfc8af707a2ab6/dist/png/0276-relaxation.png",
+          "sha256": "635cbb44fa83ae36a3334e8cc1ce291af6043236a3493be60a8fee54879dfdc5",
+          "size": [
+            733,
+            954
+          ],
+          "review": "逐张核对器材和动作；原图裁切范围已在UI说明。"
+        },
+        {
+          "file": "ek-0276-tension.png",
+          "sourceURL": "https://github.com/everkinetic/data/blob/446bb9a3d0c3beb6b84f7c9d77dfc8af707a2ab6/dist/png/0276-tension.png",
+          "sha256": "a4e60d36a3ef33f3dbe5c8e170b5296b2324deb2cdd11e05615e0bdb546bbfeb",
+          "size": [
+            731,
+            954
+          ],
+          "review": "逐张核对器材和动作；原图裁切范围已在UI说明。"
+        }
+      ],
+      "sourceSteps": [
+        "This version of a calf raise allows you to exercise each leg individually. This exercise is helpful to people who are rehabilitating from injury as it allows you flexibility with the weight.",
+        "Place a block on the floor about one foot in front of a bench.",
+        "Sit on the bench with a dumbbell across your upper thigh and the balls of one foot on the block.",
+        "Slowly raise and lower your toe up as high as possible without lifting your foot off the block.",
+        "Switch feet and repeat."
+      ],
+      "author": "Greg Priday / Everkinetic",
+      "licenseURL": "https://creativecommons.org/licenses/by-sa/4.0/"
+    }
+  ]
+}

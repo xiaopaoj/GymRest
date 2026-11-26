@@ -28,7 +28,6 @@ dumbbell-press=seated-dumbbell-press
 machine-press=machine-shoulder-press
 pike-push-up=pike-push-up
 dumbbell-lateral=lateral-raise
-cable-lateral=cable-lateral-raise
 machine-lateral=machine-lateral-raise
 dumbbell-rear=bent-over-rear-delt-raise
 cable-rear=cable-rear-delt-fly
@@ -79,8 +78,13 @@ def main(source):
     actual = subprocess.check_output(['git', '-C', str(source), 'rev-parse', 'HEAD'], text=True).strip()
     if actual != REVISION:
         raise ValueError('Source revision differs from reviewed revision: ' + actual)
+    translations = dict(line.split('\t', 1) for line in (ROOT / 'scripts/workout_guide_zh.tsv').read_text().splitlines() if line)
     manifest = json.loads((source / 'packages/workout-guide/manifest.json').read_text())
     by_slug = {x['slug']: x for x in manifest}
+    review_document = json.loads((ROOT / 'scripts/workout_guide_media_review.json').read_text())
+    assert review_document['revision'] == REVISION
+    reviews = {x['slug']: x for x in review_document['items']}
+    assert set(reviews) == set(by_slug)
     assert len(by_slug) == 302
     path = ROOT / 'GymRest/Resources/ExerciseCatalog.json'
     catalog = json.loads(path.read_text())
@@ -101,13 +105,19 @@ def main(source):
             shutil.copyfile(original, assets / filename)
             files.append(filename)
         assert len(files) == 3
-        media[slug] = {'status':'approved', 'animationAsset':None, 'equipmentAsset':None, 'frameAssets': files,
+        review = reviews[slug]
+        display_files = [files[i-1] for i in review['displayFrames']]
+        media[slug] = {'status':'approved' if display_files else 'pending', 'animationAsset':None, 'equipmentAsset':None, 'frameAssets': display_files, 'reviewNote':review['note'], 'allowsPlayback':False, 'lightBackground':False,
                        'author':'Bryl Lim；Everkinetic（部分原始姿势）', 'licenseURL':LICENSE,
                        'sourceURL': f'{REPO}/tree/{REVISION}/packages/workout-guide/assets/{slug}'}
-        provenance['exercises'].append({'slug':slug,'name':item['name'],'attribution':item['attribution'],
+        provenance['exercises'].append({'slug':slug,'name':item['name'],'visualReview':review,'attribution':item['attribution'],
             'frames':[{'file':filename,'sha256':hashlib.sha256((assets / filename).read_bytes()).hexdigest(),
                        'attribution':frame['attribution']} for filename, frame in zip(files, item['frames'])]})
     for item in existing:
+        if item['id'] == 'cable-lateral':
+            item['aliases'] = sorted((set(item.get('aliases', [])) - {'Cable Lateral Raise','cable-lateral-raise'}) | {'绳索侧平举'})
+            item['name'] = '单臂绳索侧平举'
+            item['media'] = {'status':'pending','animationAsset':None,'equipmentAsset':None,'frameAssets':[], 'author':None,'sourceURL':None,'licenseURL':None, 'reviewNote':'现有素材是双臂版本，原参考为单臂；请查看单臂步骤，暂不配错变式图片。','allowsPlayback':False}
         if slug := MATCHES.get(item['id']):
             item['media'] = media[slug]
             item['aliases'] = sorted(set(item.get('aliases', []) + [item['name'], by_slug[slug]['name'], slug] + {'barbell-bench':['卧推'], 'dumbbell-bench':['哑铃推胸'], 'cable-row':['坐姿划船'], 'barbell-row':['杠铃俯身划船'], 'back-squat':['杠铃蹲'], 'barbell-rdl':['杠铃罗马尼亚硬举'], 'neutral-pulldown':['窄握高位下拉']}.get(item['id'], [])))
@@ -122,7 +132,7 @@ def main(source):
         timed = item['exerciseType'] in ['duration', 'distance_duration'] or item['isStretch']
         bodyweight = item['equipment'] in ['Bodyweight','Wall','Chair','Doorway','Pull-up Bar','Towel','Box','Stability Ball']
         kind = 'added' if slug.startswith('weighted-') else 'assistance' if item['exerciseType'] == 'assisted_bodyweight' else 'bodyweight' if bodyweight else 'perHand' if item['equipment']=='Dumbbell' else 'machine' if item['equipment'] in ['Machine','Cable','Cardio','Resistance Band'] else 'total'
-        additions.append({'id':'guide-'+slug, 'name':LOCALIZED_NAMES.get(slug, item['name']), 'englishName':item['name'], 'aliases':[slug] + {'ez-bar-curl':['站姿EZ曲杆弯举','EZ杆弯举','EZ曲杆弯举','曲杆弯举'], 'walking-lunge':['哑铃行走箭步蹲'], 'seated-calf-raise':['器械坐姿提踵']}.get(slug, []),
+        additions.append({'id':'guide-'+slug, 'name':translations.get(slug, LOCALIZED_NAMES.get(slug, item['name'])), 'englishName':item['name'], 'aliases':[slug] + {'cable-lateral-raise':['绳索侧平举'], 'ez-bar-curl':['站姿EZ曲杆弯举','EZ杆弯举','EZ曲杆弯举','曲杆弯举'], 'walking-lunge':['哑铃行走箭步蹲'], 'seated-calf-raise':['器械坐姿提踵']}.get(slug, []),
           'primary':[MUSCLES[item['primaryMuscle']]], 'secondary':list(dict.fromkeys(MUSCLES[m] for m in item['secondaryMuscles'] if m != item['primaryMuscle'])),
           # No invented precise movement classification or ordering advice for new source-only entries.
           'pattern':'guide:'+slug, 'supportsOrderAdvice':False,
@@ -134,10 +144,11 @@ def main(source):
           'sourceURL':f'{REPO}/blob/{REVISION}/packages/workout-guide/manifest.json',
           'sourceAuthor':'Bryl Lim', 'licenseURL':LICENSE, 'media':media[slug]})
     catalog['exercises'] = existing + additions
-    catalog['attribution'] = '原动作数据来源wger（各条目保留作者及许可）；新增动作元数据与分帧素材来自Workout Guide / Bryl Lim，部分姿势源自Everkinetic。素材CC BY-SA 4.0；完整来源见App内素材许可。新增动作保留源英文名称与粗粒度肌群，不推测肩束分类。'
+    catalog['attribution'] = '原动作数据来源wger（各条目保留作者及许可）；新增动作元数据与分帧素材来自Workout Guide / Bryl Lim，部分姿势源自Everkinetic。素材CC BY-SA 4.0；完整来源见App内素材许可。新增动作提供中文名称并保留源英文检索与粗粒度肌群，不推测肩束分类。'
     path.write_text(json.dumps(catalog, ensure_ascii=False, indent=2)+'\n')
     credits = ROOT / 'GymRest/Resources/WorkoutGuide'
     credits.mkdir(exist_ok=True)
+    (credits / 'WorkoutGuideMediaReview.json').write_text(json.dumps(review_document, ensure_ascii=False, indent=2)+'\n')
     (credits / 'WorkoutGuideSources.json').write_text(json.dumps(provenance, ensure_ascii=False, indent=2)+'\n')
     for name in ['LICENSE','LICENSE-ASSETS','LICENSES.md','ATTRIBUTION.md']:
         shutil.copyfile(source / name, credits / ('WorkoutGuide-'+name.replace('.md','.txt')+'.txt' if not name.endswith('.md') else 'WorkoutGuide-'+name.replace('.md','.txt')))

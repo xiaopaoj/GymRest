@@ -16,6 +16,10 @@ import SwiftData
     var workoutStart: Date?
     var workoutEnd: Date?
 
+    init(id: UUID, planName: String, startedAt: Date?, endedAt: Date, finished: Bool, exerciseData: Data, completedData: Data) {
+        self.id = id; self.planName = planName; self.startedAt = startedAt; self.endedAt = endedAt; self.finished = finished
+        self.exerciseData = exerciseData; self.completedData = completedData
+    }
     init(session: TrainingSession, end: Date) throws {
         id = session.sessionID ?? session.planID; planName = session.planName
         startedAt = session.startedAt; endedAt = end; finished = session.phase == .completed

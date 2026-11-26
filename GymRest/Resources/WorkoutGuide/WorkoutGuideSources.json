@@ -7,6 +7,23 @@
     {
       "slug": "bench-press",
       "name": "Bench Press",
+      "visualReview": {
+        "slug": "bench-press",
+        "reviewedFrames": [
+          1,
+          2,
+          3
+        ],
+        "displayFrames": [
+          1,
+          2,
+          3
+        ],
+        "allowsPlayback": false,
+        "result": "static-only",
+        "note": "已核对三帧的器材与主要姿势；构图/比例存在变化，仅作独立静态示意。",
+        "reviewPage": 1
+      },
       "attribution": {
         "creator": "Bryl Lim",
         "creatorUrl": "https://bryllim.com",
@@ -63,6 +80,23 @@
     {
       "slug": "incline-bench-press",
       "name": "Incline Bench Press",
+      "visualReview": {
+        "slug": "incline-bench-press",
+        "reviewedFrames": [
+          1,
+          2,
+          3
+        ],
+        "displayFrames": [
+          1,
+          2,
+          3
+        ],
+        "allowsPlayback": false,
+        "result": "static-only",
+        "note": "已核对三帧的器材与主要姿势；构图/比例存在变化，仅作独立静态示意。",
+        "reviewPage": 1
+      },
       "attribution": {
         "creator": "Bryl Lim",
         "creatorUrl": "https://bryllim.com",
@@ -119,6 +153,23 @@
     {
       "slug": "incline-dumbbell-press",
       "name": "Incline Dumbbell Press",
+      "visualReview": {
+        "slug": "incline-dumbbell-press",
+        "reviewedFrames": [
+          1,
+          2,
+          3
+        ],
+        "displayFrames": [
+          1,
+          2,
+          3
+        ],
+        "allowsPlayback": false,
+        "result": "static-only",
+        "note": "已核对三帧的器材与主要姿势；构图/比例存在变化，仅作独立静态示意。",
+        "reviewPage": 1
+      },
       "attribution": {
         "creator": "Bryl Lim",
         "creatorUrl": "https://bryllim.com",
@@ -175,6 +226,23 @@
     {
       "slug": "dumbbell-bench-press",
       "name": "Dumbbell Bench Press",
+      "visualReview": {
+        "slug": "dumbbell-bench-press",
+        "reviewedFrames": [
+          1,
+          2,
+          3
+        ],
+        "displayFrames": [
+          1,
+          2,
+          3
+        ],
+        "allowsPlayback": false,
+        "result": "static-only",
+        "note": "已核对三帧的器材与主要姿势；构图/比例存在变化，仅作独立静态示意。",
+        "reviewPage": 1
+      },
       "attribution": {
         "creator": "Bryl Lim",
         "creatorUrl": "https://bryllim.com",
@@ -231,6 +299,23 @@
     {
       "slug": "decline-bench-press",
       "name": "Decline Bench Press",
+      "visualReview": {
+        "slug": "decline-bench-press",
+        "reviewedFrames": [
+          1,
+          2,
+          3
+        ],
+        "displayFrames": [
+          1,
+          2,
+          3
+        ],
+        "allowsPlayback": false,
+        "result": "static-only",
+        "note": "已核对三帧的器材与主要姿势；构图/比例存在变化，仅作独立静态示意。",
+        "reviewPage": 1
+      },
       "attribution": {
         "creator": "Bryl Lim",
         "creatorUrl": "https://bryllim.com",
@@ -287,6 +372,23 @@
     {
       "slug": "machine-chest-press",
       "name": "Machine Chest Press",
+      "visualReview": {
+        "slug": "machine-chest-press",
+        "reviewedFrames": [
+          1,
+          2,
+          3
+        ],
+        "displayFrames": [
+          1,
+          2,
+          3
+        ],
+        "allowsPlayback": false,
+        "result": "static-only",
+        "note": "已核对三帧的器材与主要姿势；构图/比例存在变化，仅作独立静态示意。",
+        "reviewPage": 1
+      },
       "attribution": {
         "creator": "Bryl Lim",
         "creatorUrl": "https://bryllim.com",
@@ -343,6 +445,23 @@
     {
       "slug": "pec-deck",
       "name": "Pec Deck",
+      "visualReview": {
+        "slug": "pec-deck",
+        "reviewedFrames": [
+          1,
+          2,
+          3
+        ],
+        "displayFrames": [
+          1,
+          2,
+          3
+        ],
+        "allowsPlayback": false,
+        "result": "static-only",
+        "note": "已核对三帧的器材与主要姿势；构图/比例存在变化，仅作独立静态示意。",
+        "reviewPage": 1
+      },
       "attribution": {
         "creator": "Bryl Lim",
         "creatorUrl": "https://bryllim.com",
@@ -385,6 +504,23 @@
     {
       "slug": "cable-fly",
       "name": "Cable Fly",
+      "visualReview": {
+        "slug": "cable-fly",
+        "reviewedFrames": [
+          1,
+          2,
+          3
+        ],
+        "displayFrames": [
+          1,
+          2,
+          3
+        ],
+        "allowsPlayback": false,
+        "result": "static-only",
+        "note": "已核对三帧的器材与主要姿势；构图/比例存在变化，仅作独立静态示意。",
+        "reviewPage": 1
+      },
       "attribution": {
         "creator": "Bryl Lim",
         "creatorUrl": "https://bryllim.com",
@@ -441,6 +577,23 @@
     {
       "slug": "push-up",
       "name": "Push-up",
+      "visualReview": {
+        "slug": "push-up",
+        "reviewedFrames": [
+          1,
+          2,
+          3
+        ],
+        "displayFrames": [
+          1,
+          2,
+          3
+        ],
+        "allowsPlayback": false,
+        "result": "static-only",
+        "note": "已核对三帧的器材与主要姿势；构图/比例存在变化，仅作独立静态示意。",
+        "reviewPage": 1
+      },
       "attribution": {
         "creator": "Bryl Lim",
         "creatorUrl": "https://bryllim.com",
@@ -497,6 +650,23 @@
     {
       "slug": "weighted-push-up",
       "name": "Weighted Push-up",
+      "visualReview": {
+        "slug": "weighted-push-up",
+        "reviewedFrames": [
+          1,
+          2,
+          3
+        ],
+        "displayFrames": [
+          1,
+          2,
+          3
+        ],
+        "allowsPlayback": false,
+        "result": "static-only",
+        "note": "已核对三帧的器材与主要姿势；构图/比例存在变化，仅作独立静态示意。",
+        "reviewPage": 1
+      },
       "attribution": {
         "creator": "Bryl Lim",
         "creatorUrl": "https://bryllim.com",
@@ -539,6 +709,23 @@
     {
       "slug": "overhead-press",
       "name": "Overhead Press",
+      "visualReview": {
+        "slug": "overhead-press",
+        "reviewedFrames": [
+          1,
+          2,
+          3
+        ],
+        "displayFrames": [
+          1,
+          2,
+          3
+        ],
+        "allowsPlayback": false,
+        "result": "static-only",
+        "note": "已核对三帧的器材与主要姿势；构图/比例存在变化，仅作独立静态示意。",
+        "reviewPage": 1
+      },
       "attribution": {
         "creator": "Bryl Lim",
         "creatorUrl": "https://bryllim.com",
@@ -581,6 +768,23 @@
     {
       "slug": "seated-dumbbell-press",
       "name": "Dumbbell Seated Shoulder Press",
+      "visualReview": {
+        "slug": "seated-dumbbell-press",
+        "reviewedFrames": [
+          1,
+          2,
+          3
+        ],
+        "displayFrames": [
+          1,
+          2,
+          3
+        ],
+        "allowsPlayback": false,
+        "result": "static-only",
+        "note": "已核对三帧的器材与主要姿势；构图/比例存在变化，仅作独立静态示意。",
+        "reviewPage": 1
+      },
       "attribution": {
         "creator": "Bryl Lim",
         "creatorUrl": "https://bryllim.com",
@@ -623,6 +827,23 @@
     {
       "slug": "arnold-press",
       "name": "Arnold Press",
+      "visualReview": {
+        "slug": "arnold-press",
+        "reviewedFrames": [
+          1,
+          2,
+          3
+        ],
+        "displayFrames": [
+          1,
+          2,
+          3
+        ],
+        "allowsPlayback": false,
+        "result": "static-only",
+        "note": "旋转握法细节未完整展示，需结合步骤核对，不从分帧推断旋转角度。",
+        "reviewPage": 2
+      },
       "attribution": {
         "creator": "Bryl Lim",
         "creatorUrl": "https://bryllim.com",
@@ -665,6 +886,23 @@
     {
       "slug": "lateral-raise",
       "name": "Lateral Raise",
+      "visualReview": {
+        "slug": "lateral-raise",
+        "reviewedFrames": [
+          1,
+          2,
+          3
+        ],
+        "displayFrames": [
+          1,
+          2,
+          3
+        ],
+        "allowsPlayback": false,
+        "result": "static-only",
+        "note": "已核对三帧的器材与主要姿势；构图/比例存在变化，仅作独立静态示意。",
+        "reviewPage": 2
+      },
       "attribution": {
         "creator": "Bryl Lim",
         "creatorUrl": "https://bryllim.com",
@@ -721,6 +959,23 @@
     {
       "slug": "cable-lateral-raise",
       "name": "Cable Lateral Raise",
+      "visualReview": {
+        "slug": "cable-lateral-raise",
+        "reviewedFrames": [
+          1,
+          2,
+          3
+        ],
+        "displayFrames": [
+          1,
+          2,
+          3
+        ],
+        "allowsPlayback": false,
+        "result": "static-only",
+        "note": "图片为双臂同步侧平举，作为独立双臂版本，不再匹配原单臂参考动作。",
+        "reviewPage": 2
+      },
       "attribution": {
         "creator": "Bryl Lim",
         "creatorUrl": "https://bryllim.com",
@@ -763,6 +1018,23 @@
     {
       "slug": "front-raise",
       "name": "Front Raise",
+      "visualReview": {
+        "slug": "front-raise",
+        "reviewedFrames": [
+          1,
+          2,
+          3
+        ],
+        "displayFrames": [
+          1,
+          2,
+          3
+        ],
+        "allowsPlayback": false,
+        "result": "static-only",
+        "note": "已核对三帧的器材与主要姿势；构图/比例存在变化，仅作独立静态示意。",
+        "reviewPage": 2
+      },
       "attribution": {
         "creator": "Bryl Lim",
         "creatorUrl": "https://bryllim.com",
@@ -819,6 +1091,23 @@
     {
       "slug": "rear-delt-fly",
       "name": "Rear Delt Fly",
+      "visualReview": {
+        "slug": "rear-delt-fly",
+        "reviewedFrames": [
+          1,
+          2,
+          3
+        ],
+        "displayFrames": [
+          1,
+          2,
+          3
+        ],
+        "allowsPlayback": false,
+        "result": "static-only",
+        "note": "已核对三帧的器材与主要姿势；构图/比例存在变化，仅作独立静态示意。",
+        "reviewPage": 2
+      },
       "attribution": {
         "creator": "Bryl Lim",
         "creatorUrl": "https://bryllim.com",
@@ -861,6 +1150,23 @@
     {
       "slug": "reverse-pec-deck",
       "name": "Reverse Pec Deck",
+      "visualReview": {
+        "slug": "reverse-pec-deck",
+        "reviewedFrames": [
+          1,
+          2,
+          3
+        ],
+        "displayFrames": [
+          1,
+          2,
+          3
+        ],
+        "allowsPlayback": false,
+        "result": "static-only",
+        "note": "已核对三帧的器材与主要姿势；构图/比例存在变化，仅作独立静态示意。",
+        "reviewPage": 2
+      },
       "attribution": {
         "creator": "Bryl Lim",
         "creatorUrl": "https://bryllim.com",
@@ -903,6 +1209,23 @@
     {
       "slug": "face-pull",
       "name": "Face Pull",
+      "visualReview": {
+        "slug": "face-pull",
+        "reviewedFrames": [
+          1,
+          2,
+          3
+        ],
+        "displayFrames": [
+          1,
+          2,
+          3
+        ],
+        "allowsPlayback": false,
+        "result": "static-only",
+        "note": "已核对三帧的器材与主要姿势；构图/比例存在变化，仅作独立静态示意。",
+        "reviewPage": 2
+      },
       "attribution": {
         "creator": "Bryl Lim",
         "creatorUrl": "https://bryllim.com",
@@ -945,6 +1268,23 @@
     {
       "slug": "upright-row",
       "name": "Upright Row",
+      "visualReview": {
+        "slug": "upright-row",
+        "reviewedFrames": [
+          1,
+          2,
+          3
+        ],
+        "displayFrames": [
+          1,
+          2,
+          3
+        ],
+        "allowsPlayback": false,
+        "result": "static-only",
+        "note": "已核对三帧的器材与主要姿势；构图/比例存在变化，仅作独立静态示意。",
+        "reviewPage": 2
+      },
       "attribution": {
         "creator": "Bryl Lim",
         "creatorUrl": "https://bryllim.com",
@@ -1001,6 +1341,23 @@
     {
       "slug": "deadlift",
       "name": "Deadlift",
+      "visualReview": {
+        "slug": "deadlift",
+        "reviewedFrames": [
+          1,
+          2,
+          3
+        ],
+        "displayFrames": [
+          1,
+          2,
+          3
+        ],
+        "allowsPlayback": false,
+        "result": "static-only",
+        "note": "已核对三帧的器材与主要姿势；构图/比例存在变化，仅作独立静态示意。",
+        "reviewPage": 2
+      },
       "attribution": {
         "creator": "Bryl Lim",
         "creatorUrl": "https://bryllim.com",
@@ -1057,6 +1414,23 @@
     {
       "slug": "romanian-deadlift",
       "name": "Romanian Deadlift",
+      "visualReview": {
+        "slug": "romanian-deadlift",
+        "reviewedFrames": [
+          1,
+          2,
+          3
+        ],
+        "displayFrames": [
+          1,
+          2,
+          3
+        ],
+        "allowsPlayback": false,
+        "result": "static-only",
+        "note": "已核对三帧的器材与主要姿势；构图/比例存在变化，仅作独立静态示意。",
+        "reviewPage": 2
+      },
       "attribution": {
         "creator": "Bryl Lim",
         "creatorUrl": "https://bryllim.com",
@@ -1113,6 +1487,23 @@
     {
       "slug": "barbell-row",
       "name": "Barbell Row",
+      "visualReview": {
+        "slug": "barbell-row",
+        "reviewedFrames": [
+          1,
+          2,
+          3
+        ],
+        "displayFrames": [
+          1,
+          2,
+          3
+        ],
+        "allowsPlayback": false,
+        "result": "static-only",
+        "note": "已核对三帧的器材与主要姿势；构图/比例存在变化，仅作独立静态示意。",
+        "reviewPage": 2
+      },
       "attribution": {
         "creator": "Bryl Lim",
         "creatorUrl": "https://bryllim.com",
@@ -1169,6 +1560,23 @@
     {
       "slug": "t-bar-row",
       "name": "T-Bar Row",
+      "visualReview": {
+        "slug": "t-bar-row",
+        "reviewedFrames": [
+          1,
+          2,
+          3
+        ],
+        "displayFrames": [
+          1,
+          2,
+          3
+        ],
+        "allowsPlayback": false,
+        "result": "static-only",
+        "note": "已核对三帧的器材与主要姿势；构图/比例存在变化，仅作独立静态示意。",
+        "reviewPage": 2
+      },
       "attribution": {
         "creator": "Bryl Lim",
         "creatorUrl": "https://bryllim.com",
@@ -1225,6 +1633,23 @@
     {
       "slug": "dumbbell-bent-over-row",
       "name": "Dumbbell Bent Over Row",
+      "visualReview": {
+        "slug": "dumbbell-bent-over-row",
+        "reviewedFrames": [
+          1,
+          2,
+          3
+        ],
+        "displayFrames": [
+          1,
+          2,
+          3
+        ],
+        "allowsPlayback": false,
+        "result": "static-only",
+        "note": "已核对三帧的器材与主要姿势；构图/比例存在变化，仅作独立静态示意。",
+        "reviewPage": 3
+      },
       "attribution": {
         "creator": "Bryl Lim",
         "creatorUrl": "https://bryllim.com",
@@ -1267,6 +1692,23 @@
     {
       "slug": "one-arm-dumbbell-row",
       "name": "One-Arm Dumbbell Row",
+      "visualReview": {
+        "slug": "one-arm-dumbbell-row",
+        "reviewedFrames": [
+          1,
+          2,
+          3
+        ],
+        "displayFrames": [
+          1,
+          2,
+          3
+        ],
+        "allowsPlayback": false,
+        "result": "static-only",
+        "note": "已核对三帧的器材与主要姿势；构图/比例存在变化，仅作独立静态示意。",
+        "reviewPage": 3
+      },
       "attribution": {
         "creator": "Bryl Lim",
         "creatorUrl": "https://bryllim.com",
@@ -1309,6 +1751,23 @@
     {
       "slug": "chest-supported-row",
       "name": "Chest Supported Row",
+      "visualReview": {
+        "slug": "chest-supported-row",
+        "reviewedFrames": [
+          1,
+          2,
+          3
+        ],
+        "displayFrames": [
+          1,
+          2,
+          3
+        ],
+        "allowsPlayback": false,
+        "result": "static-only",
+        "note": "已核对三帧的器材与主要姿势；构图/比例存在变化，仅作独立静态示意。",
+        "reviewPage": 3
+      },
       "attribution": {
         "creator": "Bryl Lim",
         "creatorUrl": "https://bryllim.com",
@@ -1351,6 +1810,23 @@
     {
       "slug": "seated-row",
       "name": "Seated Cable Row",
+      "visualReview": {
+        "slug": "seated-row",
+        "reviewedFrames": [
+          1,
+          2,
+          3
+        ],
+        "displayFrames": [
+          1,
+          2,
+          3
+        ],
+        "allowsPlayback": false,
+        "result": "static-only",
+        "note": "已核对三帧的器材与主要姿势；构图/比例存在变化，仅作独立静态示意。",
+        "reviewPage": 3
+      },
       "attribution": {
         "creator": "Bryl Lim",
         "creatorUrl": "https://bryllim.com",
@@ -1407,6 +1883,23 @@
     {
       "slug": "machine-row",
       "name": "Machine Row",
+      "visualReview": {
+        "slug": "machine-row",
+        "reviewedFrames": [
+          1,
+          2,
+          3
+        ],
+        "displayFrames": [
+          1,
+          2,
+          3
+        ],
+        "allowsPlayback": false,
+        "result": "static-only",
+        "note": "已核对三帧的器材与主要姿势；构图/比例存在变化，仅作独立静态示意。",
+        "reviewPage": 3
+      },
       "attribution": {
         "creator": "Bryl Lim",
         "creatorUrl": "https://bryllim.com",
@@ -1449,6 +1942,23 @@
     {
       "slug": "lat-pulldown",
       "name": "Lat Pulldown",
+      "visualReview": {
+        "slug": "lat-pulldown",
+        "reviewedFrames": [
+          1,
+          2,
+          3
+        ],
+        "displayFrames": [
+          1,
+          2,
+          3
+        ],
+        "allowsPlayback": false,
+        "result": "static-only",
+        "note": "已核对三帧的器材与主要姿势；构图/比例存在变化，仅作独立静态示意。",
+        "reviewPage": 3
+      },
       "attribution": {
         "creator": "Bryl Lim",
         "creatorUrl": "https://bryllim.com",
@@ -1505,6 +2015,23 @@
     {
       "slug": "close-grip-lat-pulldown",
       "name": "Close-Grip Lat Pulldown",
+      "visualReview": {
+        "slug": "close-grip-lat-pulldown",
+        "reviewedFrames": [
+          1,
+          2,
+          3
+        ],
+        "displayFrames": [
+          1,
+          2,
+          3
+        ],
+        "allowsPlayback": false,
+        "result": "static-only",
+        "note": "已核对三帧的器材与主要姿势；构图/比例存在变化，仅作独立静态示意。",
+        "reviewPage": 3
+      },
       "attribution": {
         "creator": "Bryl Lim",
         "creatorUrl": "https://bryllim.com",
@@ -1561,6 +2088,23 @@
     {
       "slug": "straight-arm-pulldown",
       "name": "Straight-Arm Pulldown",
+      "visualReview": {
+        "slug": "straight-arm-pulldown",
+        "reviewedFrames": [
+          1,
+          2,
+          3
+        ],
+        "displayFrames": [
+          1,
+          2,
+          3
+        ],
+        "allowsPlayback": false,
+        "result": "static-only",
+        "note": "已核对三帧的器材与主要姿势；构图/比例存在变化，仅作独立静态示意。",
+        "reviewPage": 3
+      },
       "attribution": {
         "creator": "Bryl Lim",
         "creatorUrl": "https://bryllim.com",
@@ -1617,6 +2161,23 @@
     {
       "slug": "pull-up",
       "name": "Pull-up",
+      "visualReview": {
+        "slug": "pull-up",
+        "reviewedFrames": [
+          1,
+          2,
+          3
+        ],
+        "displayFrames": [
+          1,
+          2,
+          3
+        ],
+        "allowsPlayback": false,
+        "result": "static-only",
+        "note": "已核对三帧的器材与主要姿势；构图/比例存在变化，仅作独立静态示意。",
+        "reviewPage": 3
+      },
       "attribution": {
         "creator": "Bryl Lim",
         "creatorUrl": "https://bryllim.com",
@@ -1673,6 +2234,23 @@
     {
       "slug": "assisted-pull-up",
       "name": "Assisted Pull-up",
+      "visualReview": {
+        "slug": "assisted-pull-up",
+        "reviewedFrames": [
+          1,
+          2,
+          3
+        ],
+        "displayFrames": [
+          1,
+          2,
+          3
+        ],
+        "allowsPlayback": false,
+        "result": "static-only",
+        "note": "已核对三帧的器材与主要姿势；构图/比例存在变化，仅作独立静态示意。",
+        "reviewPage": 3
+      },
       "attribution": {
         "creator": "Bryl Lim",
         "creatorUrl": "https://bryllim.com",
@@ -1715,6 +2293,23 @@
     {
       "slug": "weighted-pull-up",
       "name": "Weighted Pull-up",
+      "visualReview": {
+        "slug": "weighted-pull-up",
+        "reviewedFrames": [
+          1,
+          2,
+          3
+        ],
+        "displayFrames": [
+          1,
+          2,
+          3
+        ],
+        "allowsPlayback": false,
+        "result": "static-only",
+        "note": "已核对三帧的器材与主要姿势；构图/比例存在变化，仅作独立静态示意。",
+        "reviewPage": 3
+      },
       "attribution": {
         "creator": "Bryl Lim",
         "creatorUrl": "https://bryllim.com",
@@ -1757,6 +2352,23 @@
     {
       "slug": "chin-up",
       "name": "Chin-up",
+      "visualReview": {
+        "slug": "chin-up",
+        "reviewedFrames": [
+          1,
+          2,
+          3
+        ],
+        "displayFrames": [
+          1,
+          2,
+          3
+        ],
+        "allowsPlayback": false,
+        "result": "static-only",
+        "note": "已核对三帧的器材与主要姿势；构图/比例存在变化，仅作独立静态示意。",
+        "reviewPage": 3
+      },
       "attribution": {
         "creator": "Bryl Lim",
         "creatorUrl": "https://bryllim.com",
@@ -1813,6 +2425,23 @@
     {
       "slug": "shrug",
       "name": "Barbell Shrug",
+      "visualReview": {
+        "slug": "shrug",
+        "reviewedFrames": [
+          1,
+          2,
+          3
+        ],
+        "displayFrames": [
+          1,
+          2,
+          3
+        ],
+        "allowsPlayback": false,
+        "result": "static-only",
+        "note": "已核对三帧的器材与主要姿势；构图/比例存在变化，仅作独立静态示意。",
+        "reviewPage": 4
+      },
       "attribution": {
         "creator": "Bryl Lim",
         "creatorUrl": "https://bryllim.com",
@@ -1855,6 +2484,23 @@
     {
       "slug": "squat",
       "name": "Squat",
+      "visualReview": {
+        "slug": "squat",
+        "reviewedFrames": [
+          1,
+          2,
+          3
+        ],
+        "displayFrames": [
+          1,
+          2,
+          3
+        ],
+        "allowsPlayback": false,
+        "result": "static-only",
+        "note": "已核对三帧的器材与主要姿势；构图/比例存在变化，仅作独立静态示意。",
+        "reviewPage": 4
+      },
       "attribution": {
         "creator": "Bryl Lim",
         "creatorUrl": "https://bryllim.com",
@@ -1911,6 +2557,23 @@
     {
       "slug": "front-squat",
       "name": "Front Squat",
+      "visualReview": {
+        "slug": "front-squat",
+        "reviewedFrames": [
+          1,
+          2,
+          3
+        ],
+        "displayFrames": [
+          1,
+          2,
+          3
+        ],
+        "allowsPlayback": false,
+        "result": "static-only",
+        "note": "已核对三帧的器材与主要姿势；构图/比例存在变化，仅作独立静态示意。",
+        "reviewPage": 4
+      },
       "attribution": {
         "creator": "Bryl Lim",
         "creatorUrl": "https://bryllim.com",
@@ -1967,6 +2630,23 @@
     {
       "slug": "hack-squat",
       "name": "Hack Squat",
+      "visualReview": {
+        "slug": "hack-squat",
+        "reviewedFrames": [
+          1,
+          2,
+          3
+        ],
+        "displayFrames": [
+          1,
+          2,
+          3
+        ],
+        "allowsPlayback": false,
+        "result": "static-only",
+        "note": "已核对三帧的器材与主要姿势；构图/比例存在变化，仅作独立静态示意。",
+        "reviewPage": 4
+      },
       "attribution": {
         "creator": "Bryl Lim",
         "creatorUrl": "https://bryllim.com",
@@ -2023,6 +2703,23 @@
     {
       "slug": "leg-press",
       "name": "Leg Press",
+      "visualReview": {
+        "slug": "leg-press",
+        "reviewedFrames": [
+          1,
+          2,
+          3
+        ],
+        "displayFrames": [
+          1,
+          2,
+          3
+        ],
+        "allowsPlayback": false,
+        "result": "static-only",
+        "note": "已核对三帧的器材与主要姿势；构图/比例存在变化，仅作独立静态示意。",
+        "reviewPage": 4
+      },
       "attribution": {
         "creator": "Bryl Lim",
         "creatorUrl": "https://bryllim.com",
@@ -2079,6 +2776,23 @@
     {
       "slug": "bulgarian-split-squat",
       "name": "Bulgarian Split Squat",
+      "visualReview": {
+        "slug": "bulgarian-split-squat",
+        "reviewedFrames": [
+          1,
+          2,
+          3
+        ],
+        "displayFrames": [
+          1,
+          2,
+          3
+        ],
+        "allowsPlayback": false,
+        "result": "static-only",
+        "note": "已核对三帧的器材与主要姿势；构图/比例存在变化，仅作独立静态示意。",
+        "reviewPage": 4
+      },
       "attribution": {
         "creator": "Bryl Lim",
         "creatorUrl": "https://bryllim.com",
@@ -2121,6 +2835,23 @@
     {
       "slug": "walking-lunge",
       "name": "Walking Lunge",
+      "visualReview": {
+        "slug": "walking-lunge",
+        "reviewedFrames": [
+          1,
+          2,
+          3
+        ],
+        "displayFrames": [
+          1,
+          2,
+          3
+        ],
+        "allowsPlayback": false,
+        "result": "static-only",
+        "note": "已核对三帧的器材与主要姿势；构图/比例存在变化，仅作独立静态示意。",
+        "reviewPage": 4
+      },
       "attribution": {
         "creator": "Bryl Lim",
         "creatorUrl": "https://bryllim.com",
@@ -2177,6 +2908,23 @@
     {
       "slug": "step-up",
       "name": "Step-Up",
+      "visualReview": {
+        "slug": "step-up",
+        "reviewedFrames": [
+          1,
+          2,
+          3
+        ],
+        "displayFrames": [
+          1,
+          2,
+          3
+        ],
+        "allowsPlayback": false,
+        "result": "static-only",
+        "note": "已核对三帧的器材与主要姿势；构图/比例存在变化，仅作独立静态示意。",
+        "reviewPage": 4
+      },
       "attribution": {
         "creator": "Bryl Lim",
         "creatorUrl": "https://bryllim.com",
@@ -2233,6 +2981,23 @@
     {
       "slug": "leg-extension",
       "name": "Leg Extension",
+      "visualReview": {
+        "slug": "leg-extension",
+        "reviewedFrames": [
+          1,
+          2,
+          3
+        ],
+        "displayFrames": [
+          1,
+          2,
+          3
+        ],
+        "allowsPlayback": false,
+        "result": "static-only",
+        "note": "已核对三帧的器材与主要姿势；构图/比例存在变化，仅作独立静态示意。",
+        "reviewPage": 4
+      },
       "attribution": {
         "creator": "Bryl Lim",
         "creatorUrl": "https://bryllim.com",
@@ -2289,6 +3054,23 @@
     {
       "slug": "leg-curl",
       "name": "Leg Curl",
+      "visualReview": {
+        "slug": "leg-curl",
+        "reviewedFrames": [
+          1,
+          2,
+          3
+        ],
+        "displayFrames": [
+          1,
+          2,
+          3
+        ],
+        "allowsPlayback": false,
+        "result": "static-only",
+        "note": "已核对三帧的器材与主要姿势；构图/比例存在变化，仅作独立静态示意。",
+        "reviewPage": 4
+      },
       "attribution": {
         "creator": "Bryl Lim",
         "creatorUrl": "https://bryllim.com",
@@ -2345,6 +3127,23 @@
     {
       "slug": "seated-leg-curl",
       "name": "Seated Leg Curl",
+      "visualReview": {
+        "slug": "seated-leg-curl",
+        "reviewedFrames": [
+          1,
+          2,
+          3
+        ],
+        "displayFrames": [
+          1,
+          2,
+          3
+        ],
+        "allowsPlayback": false,
+        "result": "static-only",
+        "note": "已核对三帧的器材与主要姿势；构图/比例存在变化，仅作独立静态示意。",
+        "reviewPage": 4
+      },
       "attribution": {
         "creator": "Bryl Lim",
         "creatorUrl": "https://bryllim.com",
@@ -2401,6 +3200,23 @@
     {
       "slug": "hip-thrust",
       "name": "Hip Thrust",
+      "visualReview": {
+        "slug": "hip-thrust",
+        "reviewedFrames": [
+          1,
+          2,
+          3
+        ],
+        "displayFrames": [
+          1,
+          2,
+          3
+        ],
+        "allowsPlayback": false,
+        "result": "static-only",
+        "note": "已核对三帧的器材与主要姿势；构图/比例存在变化，仅作独立静态示意。",
+        "reviewPage": 4
+      },
       "attribution": {
         "creator": "Bryl Lim",
         "creatorUrl": "https://bryllim.com",
@@ -2443,6 +3259,23 @@
     {
       "slug": "glute-bridge",
       "name": "Glute Bridge",
+      "visualReview": {
+        "slug": "glute-bridge",
+        "reviewedFrames": [
+          1,
+          2,
+          3
+        ],
+        "displayFrames": [
+          1,
+          2,
+          3
+        ],
+        "allowsPlayback": false,
+        "result": "static-only",
+        "note": "已核对三帧的器材与主要姿势；构图/比例存在变化，仅作独立静态示意。",
+        "reviewPage": 5
+      },
       "attribution": {
         "creator": "Bryl Lim",
         "creatorUrl": "https://bryllim.com",
@@ -2499,6 +3332,23 @@
     {
       "slug": "good-morning",
       "name": "Good Morning",
+      "visualReview": {
+        "slug": "good-morning",
+        "reviewedFrames": [
+          1,
+          2,
+          3
+        ],
+        "displayFrames": [
+          1,
+          2,
+          3
+        ],
+        "allowsPlayback": false,
+        "result": "static-only",
+        "note": "已核对三帧的器材与主要姿势；构图/比例存在变化，仅作独立静态示意。",
+        "reviewPage": 5
+      },
       "attribution": {
         "creator": "Bryl Lim",
         "creatorUrl": "https://bryllim.com",
@@ -2555,6 +3405,23 @@
     {
       "slug": "standing-calf-raise",
       "name": "Standing Calf Raise",
+      "visualReview": {
+        "slug": "standing-calf-raise",
+        "reviewedFrames": [
+          1,
+          2,
+          3
+        ],
+        "displayFrames": [
+          1,
+          2,
+          3
+        ],
+        "allowsPlayback": false,
+        "result": "static-only",
+        "note": "已核对三帧的器材与主要姿势；构图/比例存在变化，仅作独立静态示意。",
+        "reviewPage": 5
+      },
       "attribution": {
         "creator": "Bryl Lim",
         "creatorUrl": "https://bryllim.com",
@@ -2611,6 +3478,23 @@
     {
       "slug": "seated-calf-raise",
       "name": "Seated Calf Raise",
+      "visualReview": {
+        "slug": "seated-calf-raise",
+        "reviewedFrames": [
+          1,
+          2,
+          3
+        ],
+        "displayFrames": [
+          1,
+          2,
+          3
+        ],
+        "allowsPlayback": false,
+        "result": "static-only",
+        "note": "已核对三帧的器材与主要姿势；构图/比例存在变化，仅作独立静态示意。",
+        "reviewPage": 5
+      },
       "attribution": {
         "creator": "Bryl Lim",
         "creatorUrl": "https://bryllim.com",
@@ -2667,6 +3551,23 @@
     {
       "slug": "bicep-curl",
       "name": "Bicep Curl",
+      "visualReview": {
+        "slug": "bicep-curl",
+        "reviewedFrames": [
+          1,
+          2,
+          3
+        ],
+        "displayFrames": [
+          1,
+          2,
+          3
+        ],
+        "allowsPlayback": false,
+        "result": "static-only",
+        "note": "已核对三帧的器材与主要姿势；构图/比例存在变化，仅作独立静态示意。",
+        "reviewPage": 5
+      },
       "attribution": {
         "creator": "Bryl Lim",
         "creatorUrl": "https://bryllim.com",
@@ -2723,6 +3624,23 @@
     {
       "slug": "hammer-curl",
       "name": "Hammer Curl",
+      "visualReview": {
+        "slug": "hammer-curl",
+        "reviewedFrames": [
+          1,
+          2,
+          3
+        ],
+        "displayFrames": [
+          1,
+          2,
+          3
+        ],
+        "allowsPlayback": false,
+        "result": "static-only",
+        "note": "已核对三帧的器材与主要姿势；构图/比例存在变化，仅作独立静态示意。",
+        "reviewPage": 5
+      },
       "attribution": {
         "creator": "Bryl Lim",
         "creatorUrl": "https://bryllim.com",
@@ -2779,6 +3697,23 @@
     {
       "slug": "preacher-curl",
       "name": "Preacher Curl",
+      "visualReview": {
+        "slug": "preacher-curl",
+        "reviewedFrames": [
+          1,
+          2,
+          3
+        ],
+        "displayFrames": [
+          1,
+          2,
+          3
+        ],
+        "allowsPlayback": false,
+        "result": "static-only",
+        "note": "已核对三帧的器材与主要姿势；构图/比例存在变化，仅作独立静态示意。",
+        "reviewPage": 5
+      },
       "attribution": {
         "creator": "Bryl Lim",
         "creatorUrl": "https://bryllim.com",
@@ -2835,6 +3770,23 @@
     {
       "slug": "cable-curl",
       "name": "Cable Curl",
+      "visualReview": {
+        "slug": "cable-curl",
+        "reviewedFrames": [
+          1,
+          2,
+          3
+        ],
+        "displayFrames": [
+          1,
+          2,
+          3
+        ],
+        "allowsPlayback": false,
+        "result": "static-only",
+        "note": "已核对三帧的器材与主要姿势；构图/比例存在变化，仅作独立静态示意。",
+        "reviewPage": 5
+      },
       "attribution": {
         "creator": "Bryl Lim",
         "creatorUrl": "https://bryllim.com",
@@ -2891,6 +3843,23 @@
     {
       "slug": "reverse-curl",
       "name": "Reverse Curl",
+      "visualReview": {
+        "slug": "reverse-curl",
+        "reviewedFrames": [
+          1,
+          2,
+          3
+        ],
+        "displayFrames": [
+          1,
+          2,
+          3
+        ],
+        "allowsPlayback": false,
+        "result": "static-only",
+        "note": "已核对三帧的器材与主要姿势；构图/比例存在变化，仅作独立静态示意。",
+        "reviewPage": 5
+      },
       "attribution": {
         "creator": "Bryl Lim",
         "creatorUrl": "https://bryllim.com",
@@ -2933,6 +3902,19 @@
     {
       "slug": "wrist-curl",
       "name": "Wrist Curl",
+      "visualReview": {
+        "slug": "wrist-curl",
+        "reviewedFrames": [
+          1,
+          2,
+          3
+        ],
+        "displayFrames": [],
+        "allowsPlayback": false,
+        "result": "withheld",
+        "note": "各帧前臂位置变化过大，无法确认只由腕关节完成。",
+        "reviewPage": 5
+      },
       "attribution": {
         "creator": "Bryl Lim",
         "creatorUrl": "https://bryllim.com",
@@ -2975,6 +3957,23 @@
     {
       "slug": "tricep-pushdown",
       "name": "Tricep Pushdown",
+      "visualReview": {
+        "slug": "tricep-pushdown",
+        "reviewedFrames": [
+          1,
+          2,
+          3
+        ],
+        "displayFrames": [
+          1,
+          2,
+          3
+        ],
+        "allowsPlayback": false,
+        "result": "static-only",
+        "note": "已核对三帧的器材与主要姿势；构图/比例存在变化，仅作独立静态示意。",
+        "reviewPage": 5
+      },
       "attribution": {
         "creator": "Bryl Lim",
         "creatorUrl": "https://bryllim.com",
@@ -3031,6 +4030,23 @@
     {
       "slug": "overhead-tricep-extension",
       "name": "Overhead Tricep Extension",
+      "visualReview": {
+        "slug": "overhead-tricep-extension",
+        "reviewedFrames": [
+          1,
+          2,
+          3
+        ],
+        "displayFrames": [
+          1,
+          2,
+          3
+        ],
+        "allowsPlayback": false,
+        "result": "static-only",
+        "note": "已核对三帧的器材与主要姿势；构图/比例存在变化，仅作独立静态示意。",
+        "reviewPage": 5
+      },
       "attribution": {
         "creator": "Bryl Lim",
         "creatorUrl": "https://bryllim.com",
@@ -3073,6 +4089,23 @@
     {
       "slug": "skull-crusher",
       "name": "Skull Crusher",
+      "visualReview": {
+        "slug": "skull-crusher",
+        "reviewedFrames": [
+          1,
+          2,
+          3
+        ],
+        "displayFrames": [
+          1,
+          2,
+          3
+        ],
+        "allowsPlayback": false,
+        "result": "static-only",
+        "note": "已核对三帧的器材与主要姿势；构图/比例存在变化，仅作独立静态示意。",
+        "reviewPage": 6
+      },
       "attribution": {
         "creator": "Bryl Lim",
         "creatorUrl": "https://bryllim.com",
@@ -3129,6 +4162,23 @@
     {
       "slug": "close-grip-bench-press",
       "name": "Close-Grip Bench Press",
+      "visualReview": {
+        "slug": "close-grip-bench-press",
+        "reviewedFrames": [
+          1,
+          2,
+          3
+        ],
+        "displayFrames": [
+          1,
+          2,
+          3
+        ],
+        "allowsPlayback": false,
+        "result": "static-only",
+        "note": "已核对三帧的器材与主要姿势；构图/比例存在变化，仅作独立静态示意。",
+        "reviewPage": 6
+      },
       "attribution": {
         "creator": "Bryl Lim",
         "creatorUrl": "https://bryllim.com",
@@ -3185,6 +4235,23 @@
     {
       "slug": "dip",
       "name": "Dip",
+      "visualReview": {
+        "slug": "dip",
+        "reviewedFrames": [
+          1,
+          2,
+          3
+        ],
+        "displayFrames": [
+          1,
+          2,
+          3
+        ],
+        "allowsPlayback": false,
+        "result": "static-only",
+        "note": "已核对三帧的器材与主要姿势；构图/比例存在变化，仅作独立静态示意。",
+        "reviewPage": 6
+      },
       "attribution": {
         "creator": "Bryl Lim",
         "creatorUrl": "https://bryllim.com",
@@ -3241,6 +4308,19 @@
     {
       "slug": "assisted-dip",
       "name": "Assisted Dip",
+      "visualReview": {
+        "slug": "assisted-dip",
+        "reviewedFrames": [
+          1,
+          2,
+          3
+        ],
+        "displayFrames": [],
+        "allowsPlayback": false,
+        "result": "withheld",
+        "note": "图片更接近平凳臂屈伸，未清楚呈现辅助双杠器械的支撑方式。",
+        "reviewPage": 6
+      },
       "attribution": {
         "creator": "Bryl Lim",
         "creatorUrl": "https://bryllim.com",
@@ -3297,6 +4377,22 @@
     {
       "slug": "plank",
       "name": "Plank",
+      "visualReview": {
+        "slug": "plank",
+        "reviewedFrames": [
+          1,
+          2,
+          3
+        ],
+        "displayFrames": [
+          1,
+          2
+        ],
+        "allowsPlayback": false,
+        "result": "static-only",
+        "note": "第3帧为跪姿变式，已隐藏；保留直腿支撑示意。",
+        "reviewPage": 6
+      },
       "attribution": {
         "creator": "Bryl Lim",
         "creatorUrl": "https://bryllim.com",
@@ -3339,6 +4435,23 @@
     {
       "slug": "side-plank",
       "name": "Side Plank",
+      "visualReview": {
+        "slug": "side-plank",
+        "reviewedFrames": [
+          1,
+          2,
+          3
+        ],
+        "displayFrames": [
+          1,
+          2,
+          3
+        ],
+        "allowsPlayback": false,
+        "result": "static-only",
+        "note": "已核对三帧的器材与主要姿势；构图/比例存在变化，仅作独立静态示意。",
+        "reviewPage": 6
+      },
       "attribution": {
         "creator": "Bryl Lim",
         "creatorUrl": "https://bryllim.com",
@@ -3395,6 +4508,23 @@
     {
       "slug": "hanging-leg-raise",
       "name": "Hanging Leg Raise",
+      "visualReview": {
+        "slug": "hanging-leg-raise",
+        "reviewedFrames": [
+          1,
+          2,
+          3
+        ],
+        "displayFrames": [
+          1,
+          2,
+          3
+        ],
+        "allowsPlayback": false,
+        "result": "static-only",
+        "note": "已核对三帧的器材与主要姿势；构图/比例存在变化，仅作独立静态示意。",
+        "reviewPage": 6
+      },
       "attribution": {
         "creator": "Bryl Lim",
         "creatorUrl": "https://bryllim.com",
@@ -3437,6 +4567,21 @@
     {
       "slug": "cable-crunch",
       "name": "Cable Crunch",
+      "visualReview": {
+        "slug": "cable-crunch",
+        "reviewedFrames": [
+          1,
+          2,
+          3
+        ],
+        "displayFrames": [
+          3
+        ],
+        "allowsPlayback": false,
+        "result": "static-only",
+        "note": "各帧支撑方式不一致，仅保留跪姿起点示意。",
+        "reviewPage": 6
+      },
       "attribution": {
         "creator": "Bryl Lim",
         "creatorUrl": "https://bryllim.com",
@@ -3493,6 +4638,21 @@
     {
       "slug": "ab-wheel",
       "name": "Ab Wheel Rollout",
+      "visualReview": {
+        "slug": "ab-wheel",
+        "reviewedFrames": [
+          1,
+          2,
+          3
+        ],
+        "displayFrames": [
+          2
+        ],
+        "allowsPlayback": false,
+        "result": "static-only",
+        "note": "原组混有站姿与跪姿变式，仅展示跪姿图片；不表示完整前滚路径。",
+        "reviewPage": 6
+      },
       "attribution": {
         "creator": "Bryl Lim",
         "creatorUrl": "https://bryllim.com",
@@ -3549,6 +4709,23 @@
     {
       "slug": "running",
       "name": "Running",
+      "visualReview": {
+        "slug": "running",
+        "reviewedFrames": [
+          1,
+          2,
+          3
+        ],
+        "displayFrames": [
+          1,
+          2,
+          3
+        ],
+        "allowsPlayback": false,
+        "result": "static-only",
+        "note": "已核对三帧的器材与主要姿势；构图/比例存在变化，仅作独立静态示意。",
+        "reviewPage": 6
+      },
       "attribution": {
         "creator": "Bryl Lim",
         "creatorUrl": "https://bryllim.com",
@@ -3591,6 +4768,23 @@
     {
       "slug": "walking",
       "name": "Walking",
+      "visualReview": {
+        "slug": "walking",
+        "reviewedFrames": [
+          1,
+          2,
+          3
+        ],
+        "displayFrames": [
+          1,
+          2,
+          3
+        ],
+        "allowsPlayback": false,
+        "result": "static-only",
+        "note": "已核对三帧的器材与主要姿势；构图/比例存在变化，仅作独立静态示意。",
+        "reviewPage": 6
+      },
       "attribution": {
         "creator": "Bryl Lim",
         "creatorUrl": "https://bryllim.com",
@@ -3633,6 +4827,23 @@
     {
       "slug": "cycling",
       "name": "Cycling",
+      "visualReview": {
+        "slug": "cycling",
+        "reviewedFrames": [
+          1,
+          2,
+          3
+        ],
+        "displayFrames": [
+          1,
+          2,
+          3
+        ],
+        "allowsPlayback": false,
+        "result": "static-only",
+        "note": "已核对三帧的器材与主要姿势；构图/比例存在变化，仅作独立静态示意。",
+        "reviewPage": 6
+      },
       "attribution": {
         "creator": "Bryl Lim",
         "creatorUrl": "https://bryllim.com",
@@ -3675,6 +4886,23 @@
     {
       "slug": "rowing",
       "name": "Rowing",
+      "visualReview": {
+        "slug": "rowing",
+        "reviewedFrames": [
+          1,
+          2,
+          3
+        ],
+        "displayFrames": [
+          1,
+          2,
+          3
+        ],
+        "allowsPlayback": false,
+        "result": "static-only",
+        "note": "已核对三帧的器材与主要姿势；构图/比例存在变化，仅作独立静态示意。",
+        "reviewPage": 7
+      },
       "attribution": {
         "creator": "Bryl Lim",
         "creatorUrl": "https://bryllim.com",
@@ -3717,6 +4945,23 @@
     {
       "slug": "stair-climber",
       "name": "Stair Climber",
+      "visualReview": {
+        "slug": "stair-climber",
+        "reviewedFrames": [
+          1,
+          2,
+          3
+        ],
+        "displayFrames": [
+          1,
+          2,
+          3
+        ],
+        "allowsPlayback": false,
+        "result": "static-only",
+        "note": "已核对三帧的器材与主要姿势；构图/比例存在变化，仅作独立静态示意。",
+        "reviewPage": 7
+      },
       "attribution": {
         "creator": "Bryl Lim",
         "creatorUrl": "https://bryllim.com",
@@ -3759,6 +5004,23 @@
     {
       "slug": "dumbbell-fly",
       "name": "Dumbbell Fly",
+      "visualReview": {
+        "slug": "dumbbell-fly",
+        "reviewedFrames": [
+          1,
+          2,
+          3
+        ],
+        "displayFrames": [
+          1,
+          2,
+          3
+        ],
+        "allowsPlayback": false,
+        "result": "static-only",
+        "note": "已核对三帧的器材与主要姿势；构图/比例存在变化，仅作独立静态示意。",
+        "reviewPage": 7
+      },
       "attribution": {
         "creator": "Bryl Lim",
         "creatorUrl": "https://bryllim.com",
@@ -3815,6 +5077,23 @@
     {
       "slug": "incline-cable-fly",
       "name": "Incline Cable Fly",
+      "visualReview": {
+        "slug": "incline-cable-fly",
+        "reviewedFrames": [
+          1,
+          2,
+          3
+        ],
+        "displayFrames": [
+          1,
+          2,
+          3
+        ],
+        "allowsPlayback": false,
+        "result": "static-only",
+        "note": "已核对三帧的器材与主要姿势；构图/比例存在变化，仅作独立静态示意。",
+        "reviewPage": 7
+      },
       "attribution": {
         "creator": "Bryl Lim",
         "creatorUrl": "https://bryllim.com",
@@ -3871,6 +5150,23 @@
     {
       "slug": "decline-dumbbell-press",
       "name": "Decline Dumbbell Press",
+      "visualReview": {
+        "slug": "decline-dumbbell-press",
+        "reviewedFrames": [
+          1,
+          2,
+          3
+        ],
+        "displayFrames": [
+          1,
+          2,
+          3
+        ],
+        "allowsPlayback": false,
+        "result": "static-only",
+        "note": "已核对三帧的器材与主要姿势；构图/比例存在变化，仅作独立静态示意。",
+        "reviewPage": 7
+      },
       "attribution": {
         "creator": "Bryl Lim",
         "creatorUrl": "https://bryllim.com",
@@ -3927,6 +5223,23 @@
     {
       "slug": "smith-machine-bench-press",
       "name": "Smith Machine Bench Press",
+      "visualReview": {
+        "slug": "smith-machine-bench-press",
+        "reviewedFrames": [
+          1,
+          2,
+          3
+        ],
+        "displayFrames": [
+          1,
+          2,
+          3
+        ],
+        "allowsPlayback": false,
+        "result": "static-only",
+        "note": "已核对三帧的器材与主要姿势；构图/比例存在变化，仅作独立静态示意。",
+        "reviewPage": 7
+      },
       "attribution": {
         "creator": "Bryl Lim",
         "creatorUrl": "https://bryllim.com",
@@ -3983,6 +5296,23 @@
     {
       "slug": "landmine-press",
       "name": "Landmine Press",
+      "visualReview": {
+        "slug": "landmine-press",
+        "reviewedFrames": [
+          1,
+          2,
+          3
+        ],
+        "displayFrames": [
+          1,
+          2,
+          3
+        ],
+        "allowsPlayback": false,
+        "result": "static-only",
+        "note": "已核对三帧的器材与主要姿势；构图/比例存在变化，仅作独立静态示意。",
+        "reviewPage": 7
+      },
       "attribution": {
         "creator": "Bryl Lim",
         "creatorUrl": "https://bryllim.com",
@@ -4025,6 +5355,23 @@
     {
       "slug": "chest-dip",
       "name": "Chest Dip",
+      "visualReview": {
+        "slug": "chest-dip",
+        "reviewedFrames": [
+          1,
+          2,
+          3
+        ],
+        "displayFrames": [
+          1,
+          2,
+          3
+        ],
+        "allowsPlayback": false,
+        "result": "static-only",
+        "note": "已核对三帧的器材与主要姿势；构图/比例存在变化，仅作独立静态示意。",
+        "reviewPage": 7
+      },
       "attribution": {
         "creator": "Bryl Lim",
         "creatorUrl": "https://bryllim.com",
@@ -4081,6 +5428,23 @@
     {
       "slug": "weighted-dip",
       "name": "Weighted Dip",
+      "visualReview": {
+        "slug": "weighted-dip",
+        "reviewedFrames": [
+          1,
+          2,
+          3
+        ],
+        "displayFrames": [
+          1,
+          2,
+          3
+        ],
+        "allowsPlayback": false,
+        "result": "static-only",
+        "note": "已核对三帧的器材与主要姿势；构图/比例存在变化，仅作独立静态示意。",
+        "reviewPage": 7
+      },
       "attribution": {
         "creator": "Bryl Lim",
         "creatorUrl": "https://bryllim.com",
@@ -4123,6 +5487,23 @@
     {
       "slug": "machine-shoulder-press",
       "name": "Machine Shoulder Press",
+      "visualReview": {
+        "slug": "machine-shoulder-press",
+        "reviewedFrames": [
+          1,
+          2,
+          3
+        ],
+        "displayFrames": [
+          1,
+          2,
+          3
+        ],
+        "allowsPlayback": false,
+        "result": "static-only",
+        "note": "已核对三帧的器材与主要姿势；构图/比例存在变化，仅作独立静态示意。",
+        "reviewPage": 7
+      },
       "attribution": {
         "creator": "Bryl Lim",
         "creatorUrl": "https://bryllim.com",
@@ -4165,6 +5546,23 @@
     {
       "slug": "standing-dumbbell-press",
       "name": "Standing Dumbbell Press",
+      "visualReview": {
+        "slug": "standing-dumbbell-press",
+        "reviewedFrames": [
+          1,
+          2,
+          3
+        ],
+        "displayFrames": [
+          1,
+          2,
+          3
+        ],
+        "allowsPlayback": false,
+        "result": "static-only",
+        "note": "已核对三帧的器材与主要姿势；构图/比例存在变化，仅作独立静态示意。",
+        "reviewPage": 7
+      },
       "attribution": {
         "creator": "Bryl Lim",
         "creatorUrl": "https://bryllim.com",
@@ -4207,6 +5605,23 @@
     {
       "slug": "push-press",
       "name": "Push Press",
+      "visualReview": {
+        "slug": "push-press",
+        "reviewedFrames": [
+          1,
+          2,
+          3
+        ],
+        "displayFrames": [
+          1,
+          2,
+          3
+        ],
+        "allowsPlayback": false,
+        "result": "static-only",
+        "note": "图片仅显示上肢位置，未完整呈现屈膝蹬地借力阶段。",
+        "reviewPage": 7
+      },
       "attribution": {
         "creator": "Bryl Lim",
         "creatorUrl": "https://bryllim.com",
@@ -4249,6 +5664,23 @@
     {
       "slug": "machine-lateral-raise",
       "name": "Machine Lateral Raise",
+      "visualReview": {
+        "slug": "machine-lateral-raise",
+        "reviewedFrames": [
+          1,
+          2,
+          3
+        ],
+        "displayFrames": [
+          1,
+          2,
+          3
+        ],
+        "allowsPlayback": false,
+        "result": "static-only",
+        "note": "已核对三帧的器材与主要姿势；构图/比例存在变化，仅作独立静态示意。",
+        "reviewPage": 8
+      },
       "attribution": {
         "creator": "Bryl Lim",
         "creatorUrl": "https://bryllim.com",
@@ -4291,6 +5723,23 @@
     {
       "slug": "cable-front-raise",
       "name": "Cable Front Raise",
+      "visualReview": {
+        "slug": "cable-front-raise",
+        "reviewedFrames": [
+          1,
+          2,
+          3
+        ],
+        "displayFrames": [
+          1,
+          2,
+          3
+        ],
+        "allowsPlayback": false,
+        "result": "static-only",
+        "note": "已核对三帧的器材与主要姿势；构图/比例存在变化，仅作独立静态示意。",
+        "reviewPage": 8
+      },
       "attribution": {
         "creator": "Bryl Lim",
         "creatorUrl": "https://bryllim.com",
@@ -4347,6 +5796,23 @@
     {
       "slug": "plate-front-raise",
       "name": "Plate Front Raise",
+      "visualReview": {
+        "slug": "plate-front-raise",
+        "reviewedFrames": [
+          1,
+          2,
+          3
+        ],
+        "displayFrames": [
+          1,
+          2,
+          3
+        ],
+        "allowsPlayback": false,
+        "result": "static-only",
+        "note": "已核对三帧的器材与主要姿势；构图/比例存在变化，仅作独立静态示意。",
+        "reviewPage": 8
+      },
       "attribution": {
         "creator": "Bryl Lim",
         "creatorUrl": "https://bryllim.com",
@@ -4389,6 +5855,23 @@
     {
       "slug": "bent-over-rear-delt-raise",
       "name": "Bent-Over Rear Delt Raise",
+      "visualReview": {
+        "slug": "bent-over-rear-delt-raise",
+        "reviewedFrames": [
+          1,
+          2,
+          3
+        ],
+        "displayFrames": [
+          1,
+          2,
+          3
+        ],
+        "allowsPlayback": false,
+        "result": "static-only",
+        "note": "已核对三帧的器材与主要姿势；构图/比例存在变化，仅作独立静态示意。",
+        "reviewPage": 8
+      },
       "attribution": {
         "creator": "Bryl Lim",
         "creatorUrl": "https://bryllim.com",
@@ -4431,6 +5914,23 @@
     {
       "slug": "cable-rear-delt-fly",
       "name": "Cable Rear Delt Fly",
+      "visualReview": {
+        "slug": "cable-rear-delt-fly",
+        "reviewedFrames": [
+          1,
+          2,
+          3
+        ],
+        "displayFrames": [
+          1,
+          2,
+          3
+        ],
+        "allowsPlayback": false,
+        "result": "static-only",
+        "note": "已核对三帧的器材与主要姿势；构图/比例存在变化，仅作独立静态示意。",
+        "reviewPage": 8
+      },
       "attribution": {
         "creator": "Bryl Lim",
         "creatorUrl": "https://bryllim.com",
@@ -4473,6 +5973,23 @@
     {
       "slug": "pendlay-row",
       "name": "Pendlay Row",
+      "visualReview": {
+        "slug": "pendlay-row",
+        "reviewedFrames": [
+          1,
+          2,
+          3
+        ],
+        "displayFrames": [
+          1,
+          2,
+          3
+        ],
+        "allowsPlayback": false,
+        "result": "static-only",
+        "note": "已核对三帧的器材与主要姿势；构图/比例存在变化，仅作独立静态示意。",
+        "reviewPage": 8
+      },
       "attribution": {
         "creator": "Bryl Lim",
         "creatorUrl": "https://bryllim.com",
@@ -4515,6 +6032,19 @@
     {
       "slug": "inverted-row",
       "name": "Inverted Row",
+      "visualReview": {
+        "slug": "inverted-row",
+        "reviewedFrames": [
+          1,
+          2,
+          3
+        ],
+        "displayFrames": [],
+        "allowsPlayback": false,
+        "result": "withheld",
+        "note": "未清楚呈现双脚着地的低杠反向划船，暂停用作此动作示意。",
+        "reviewPage": 8
+      },
       "attribution": {
         "creator": "Bryl Lim",
         "creatorUrl": "https://bryllim.com",
@@ -4571,6 +6101,23 @@
     {
       "slug": "meadows-row",
       "name": "Meadows Row",
+      "visualReview": {
+        "slug": "meadows-row",
+        "reviewedFrames": [
+          1,
+          2,
+          3
+        ],
+        "displayFrames": [
+          1,
+          2,
+          3
+        ],
+        "allowsPlayback": false,
+        "result": "static-only",
+        "note": "已核对三帧的器材与主要姿势；构图/比例存在变化，仅作独立静态示意。",
+        "reviewPage": 8
+      },
       "attribution": {
         "creator": "Bryl Lim",
         "creatorUrl": "https://bryllim.com",
@@ -4613,6 +6160,23 @@
     {
       "slug": "single-arm-cable-row",
       "name": "Single-Arm Cable Row",
+      "visualReview": {
+        "slug": "single-arm-cable-row",
+        "reviewedFrames": [
+          1,
+          2,
+          3
+        ],
+        "displayFrames": [
+          1,
+          2,
+          3
+        ],
+        "allowsPlayback": false,
+        "result": "static-only",
+        "note": "已核对三帧的器材与主要姿势；构图/比例存在变化，仅作独立静态示意。",
+        "reviewPage": 8
+      },
       "attribution": {
         "creator": "Bryl Lim",
         "creatorUrl": "https://bryllim.com",
@@ -4655,6 +6219,23 @@
     {
       "slug": "wide-grip-lat-pulldown",
       "name": "Wide-Grip Lat Pulldown",
+      "visualReview": {
+        "slug": "wide-grip-lat-pulldown",
+        "reviewedFrames": [
+          1,
+          2,
+          3
+        ],
+        "displayFrames": [
+          1,
+          2,
+          3
+        ],
+        "allowsPlayback": false,
+        "result": "static-only",
+        "note": "已核对三帧的器材与主要姿势；构图/比例存在变化，仅作独立静态示意。",
+        "reviewPage": 8
+      },
       "attribution": {
         "creator": "Bryl Lim",
         "creatorUrl": "https://bryllim.com",
@@ -4697,6 +6278,19 @@
     {
       "slug": "neutral-grip-pull-up",
       "name": "Neutral-Grip Pull-up",
+      "visualReview": {
+        "slug": "neutral-grip-pull-up",
+        "reviewedFrames": [
+          1,
+          2,
+          3
+        ],
+        "displayFrames": [],
+        "allowsPlayback": false,
+        "result": "withheld",
+        "note": "直杠画面无法确认对握把手和握法。",
+        "reviewPage": 8
+      },
       "attribution": {
         "creator": "Bryl Lim",
         "creatorUrl": "https://bryllim.com",
@@ -4753,6 +6347,23 @@
     {
       "slug": "assisted-chin-up",
       "name": "Assisted Chin-up",
+      "visualReview": {
+        "slug": "assisted-chin-up",
+        "reviewedFrames": [
+          1,
+          2,
+          3
+        ],
+        "displayFrames": [
+          1,
+          2,
+          3
+        ],
+        "allowsPlayback": false,
+        "result": "static-only",
+        "note": "已核对三帧的器材与主要姿势；构图/比例存在变化，仅作独立静态示意。",
+        "reviewPage": 8
+      },
       "attribution": {
         "creator": "Bryl Lim",
         "creatorUrl": "https://bryllim.com",
@@ -4795,6 +6406,23 @@
     {
       "slug": "weighted-chin-up",
       "name": "Weighted Chin-up",
+      "visualReview": {
+        "slug": "weighted-chin-up",
+        "reviewedFrames": [
+          1,
+          2,
+          3
+        ],
+        "displayFrames": [
+          1,
+          2,
+          3
+        ],
+        "allowsPlayback": false,
+        "result": "static-only",
+        "note": "已核对三帧的器材与主要姿势；构图/比例存在变化，仅作独立静态示意。",
+        "reviewPage": 9
+      },
       "attribution": {
         "creator": "Bryl Lim",
         "creatorUrl": "https://bryllim.com",
@@ -4837,6 +6465,23 @@
     {
       "slug": "rack-pull",
       "name": "Rack Pull",
+      "visualReview": {
+        "slug": "rack-pull",
+        "reviewedFrames": [
+          1,
+          2,
+          3
+        ],
+        "displayFrames": [
+          1,
+          2,
+          3
+        ],
+        "allowsPlayback": false,
+        "result": "static-only",
+        "note": "图片未画出支架，仅用于抬起后的姿势定位；起始高度与安全杆按步骤设置。",
+        "reviewPage": 9
+      },
       "attribution": {
         "creator": "Bryl Lim",
         "creatorUrl": "https://bryllim.com",
@@ -4879,6 +6524,23 @@
     {
       "slug": "back-extension",
       "name": "Back Extension",
+      "visualReview": {
+        "slug": "back-extension",
+        "reviewedFrames": [
+          1,
+          2,
+          3
+        ],
+        "displayFrames": [
+          1,
+          2,
+          3
+        ],
+        "allowsPlayback": false,
+        "result": "static-only",
+        "note": "已核对三帧的器材与主要姿势；构图/比例存在变化，仅作独立静态示意。",
+        "reviewPage": 9
+      },
       "attribution": {
         "creator": "Bryl Lim",
         "creatorUrl": "https://bryllim.com",
@@ -4935,6 +6597,23 @@
     {
       "slug": "dumbbell-shrug",
       "name": "Dumbbell Shrug",
+      "visualReview": {
+        "slug": "dumbbell-shrug",
+        "reviewedFrames": [
+          1,
+          2,
+          3
+        ],
+        "displayFrames": [
+          1,
+          2,
+          3
+        ],
+        "allowsPlayback": false,
+        "result": "static-only",
+        "note": "已核对三帧的器材与主要姿势；构图/比例存在变化，仅作独立静态示意。",
+        "reviewPage": 9
+      },
       "attribution": {
         "creator": "Bryl Lim",
         "creatorUrl": "https://bryllim.com",
@@ -4991,6 +6670,23 @@
     {
       "slug": "goblet-squat",
       "name": "Goblet Squat",
+      "visualReview": {
+        "slug": "goblet-squat",
+        "reviewedFrames": [
+          1,
+          2,
+          3
+        ],
+        "displayFrames": [
+          1,
+          2,
+          3
+        ],
+        "allowsPlayback": false,
+        "result": "static-only",
+        "note": "已核对三帧的器材与主要姿势；构图/比例存在变化，仅作独立静态示意。",
+        "reviewPage": 9
+      },
       "attribution": {
         "creator": "Bryl Lim",
         "creatorUrl": "https://bryllim.com",
@@ -5033,6 +6729,23 @@
     {
       "slug": "smith-machine-squat",
       "name": "Smith Machine Squat",
+      "visualReview": {
+        "slug": "smith-machine-squat",
+        "reviewedFrames": [
+          1,
+          2,
+          3
+        ],
+        "displayFrames": [
+          1,
+          2,
+          3
+        ],
+        "allowsPlayback": false,
+        "result": "static-only",
+        "note": "已核对三帧的器材与主要姿势；构图/比例存在变化，仅作独立静态示意。",
+        "reviewPage": 9
+      },
       "attribution": {
         "creator": "Bryl Lim",
         "creatorUrl": "https://bryllim.com",
@@ -5089,6 +6802,19 @@
     {
       "slug": "belt-squat",
       "name": "Belt Squat",
+      "visualReview": {
+        "slug": "belt-squat",
+        "reviewedFrames": [
+          1,
+          2,
+          3
+        ],
+        "displayFrames": [],
+        "allowsPlayback": false,
+        "result": "withheld",
+        "note": "画面未清楚呈现腰带与负重连接，暂停作为腰带深蹲教学图。",
+        "reviewPage": 9
+      },
       "attribution": {
         "creator": "Bryl Lim",
         "creatorUrl": "https://bryllim.com",
@@ -5131,6 +6857,23 @@
     {
       "slug": "sumo-deadlift",
       "name": "Sumo Deadlift",
+      "visualReview": {
+        "slug": "sumo-deadlift",
+        "reviewedFrames": [
+          1,
+          2,
+          3
+        ],
+        "displayFrames": [
+          1,
+          2,
+          3
+        ],
+        "allowsPlayback": false,
+        "result": "static-only",
+        "note": "已核对三帧的器材与主要姿势；构图/比例存在变化，仅作独立静态示意。",
+        "reviewPage": 9
+      },
       "attribution": {
         "creator": "Bryl Lim",
         "creatorUrl": "https://bryllim.com",
@@ -5173,6 +6916,23 @@
     {
       "slug": "trap-bar-deadlift",
       "name": "Trap Bar Deadlift",
+      "visualReview": {
+        "slug": "trap-bar-deadlift",
+        "reviewedFrames": [
+          1,
+          2,
+          3
+        ],
+        "displayFrames": [
+          1,
+          2,
+          3
+        ],
+        "allowsPlayback": false,
+        "result": "static-only",
+        "note": "已核对三帧的器材与主要姿势；构图/比例存在变化，仅作独立静态示意。",
+        "reviewPage": 9
+      },
       "attribution": {
         "creator": "Bryl Lim",
         "creatorUrl": "https://bryllim.com",
@@ -5215,6 +6975,23 @@
     {
       "slug": "lying-leg-curl",
       "name": "Lying Leg Curl",
+      "visualReview": {
+        "slug": "lying-leg-curl",
+        "reviewedFrames": [
+          1,
+          2,
+          3
+        ],
+        "displayFrames": [
+          1,
+          2,
+          3
+        ],
+        "allowsPlayback": false,
+        "result": "static-only",
+        "note": "已核对三帧的器材与主要姿势；构图/比例存在变化，仅作独立静态示意。",
+        "reviewPage": 9
+      },
       "attribution": {
         "creator": "Bryl Lim",
         "creatorUrl": "https://bryllim.com",
@@ -5271,6 +7048,23 @@
     {
       "slug": "nordic-hamstring-curl",
       "name": "Nordic Hamstring Curl",
+      "visualReview": {
+        "slug": "nordic-hamstring-curl",
+        "reviewedFrames": [
+          1,
+          2,
+          3
+        ],
+        "displayFrames": [
+          1,
+          2,
+          3
+        ],
+        "allowsPlayback": false,
+        "result": "static-only",
+        "note": "已核对三帧的器材与主要姿势；构图/比例存在变化，仅作独立静态示意。",
+        "reviewPage": 9
+      },
       "attribution": {
         "creator": "Bryl Lim",
         "creatorUrl": "https://bryllim.com",
@@ -5313,6 +7107,23 @@
     {
       "slug": "single-leg-romanian-deadlift",
       "name": "Single-Leg Romanian Deadlift",
+      "visualReview": {
+        "slug": "single-leg-romanian-deadlift",
+        "reviewedFrames": [
+          1,
+          2,
+          3
+        ],
+        "displayFrames": [
+          1,
+          2,
+          3
+        ],
+        "allowsPlayback": false,
+        "result": "static-only",
+        "note": "已核对三帧的器材与主要姿势；构图/比例存在变化，仅作独立静态示意。",
+        "reviewPage": 9
+      },
       "attribution": {
         "creator": "Bryl Lim",
         "creatorUrl": "https://bryllim.com",
@@ -5355,6 +7166,23 @@
     {
       "slug": "reverse-lunge",
       "name": "Reverse Lunge",
+      "visualReview": {
+        "slug": "reverse-lunge",
+        "reviewedFrames": [
+          1,
+          2,
+          3
+        ],
+        "displayFrames": [
+          1,
+          2,
+          3
+        ],
+        "allowsPlayback": false,
+        "result": "static-only",
+        "note": "已核对三帧的器材与主要姿势；构图/比例存在变化，仅作独立静态示意。",
+        "reviewPage": 10
+      },
       "attribution": {
         "creator": "Bryl Lim",
         "creatorUrl": "https://bryllim.com",
@@ -5411,6 +7239,23 @@
     {
       "slug": "split-squat",
       "name": "Split Squat",
+      "visualReview": {
+        "slug": "split-squat",
+        "reviewedFrames": [
+          1,
+          2,
+          3
+        ],
+        "displayFrames": [
+          1,
+          2,
+          3
+        ],
+        "allowsPlayback": false,
+        "result": "static-only",
+        "note": "已核对三帧的器材与主要姿势；构图/比例存在变化，仅作独立静态示意。",
+        "reviewPage": 10
+      },
       "attribution": {
         "creator": "Bryl Lim",
         "creatorUrl": "https://bryllim.com",
@@ -5453,6 +7298,23 @@
     {
       "slug": "cable-kickback",
       "name": "Cable Kickback",
+      "visualReview": {
+        "slug": "cable-kickback",
+        "reviewedFrames": [
+          1,
+          2,
+          3
+        ],
+        "displayFrames": [
+          1,
+          2,
+          3
+        ],
+        "allowsPlayback": false,
+        "result": "static-only",
+        "note": "已核对三帧的器材与主要姿势；构图/比例存在变化，仅作独立静态示意。",
+        "reviewPage": 10
+      },
       "attribution": {
         "creator": "Bryl Lim",
         "creatorUrl": "https://bryllim.com",
@@ -5509,6 +7371,23 @@
     {
       "slug": "hip-abduction-machine",
       "name": "Hip Abduction Machine",
+      "visualReview": {
+        "slug": "hip-abduction-machine",
+        "reviewedFrames": [
+          1,
+          2,
+          3
+        ],
+        "displayFrames": [
+          1,
+          2,
+          3
+        ],
+        "allowsPlayback": false,
+        "result": "static-only",
+        "note": "已核对三帧的器材与主要姿势；构图/比例存在变化，仅作独立静态示意。",
+        "reviewPage": 10
+      },
       "attribution": {
         "creator": "Bryl Lim",
         "creatorUrl": "https://bryllim.com",
@@ -5551,6 +7430,23 @@
     {
       "slug": "single-leg-glute-bridge",
       "name": "Single-Leg Glute Bridge",
+      "visualReview": {
+        "slug": "single-leg-glute-bridge",
+        "reviewedFrames": [
+          1,
+          2,
+          3
+        ],
+        "displayFrames": [
+          1,
+          2,
+          3
+        ],
+        "allowsPlayback": false,
+        "result": "static-only",
+        "note": "已核对三帧的器材与主要姿势；构图/比例存在变化，仅作独立静态示意。",
+        "reviewPage": 10
+      },
       "attribution": {
         "creator": "Bryl Lim",
         "creatorUrl": "https://bryllim.com",
@@ -5593,6 +7489,23 @@
     {
       "slug": "barbell-glute-bridge",
       "name": "Barbell Glute Bridge",
+      "visualReview": {
+        "slug": "barbell-glute-bridge",
+        "reviewedFrames": [
+          1,
+          2,
+          3
+        ],
+        "displayFrames": [
+          1,
+          2,
+          3
+        ],
+        "allowsPlayback": false,
+        "result": "static-only",
+        "note": "支撑地面未清楚画出；本条为肩背着地的臀桥，勿混同上背支凳臀推。",
+        "reviewPage": 10
+      },
       "attribution": {
         "creator": "Bryl Lim",
         "creatorUrl": "https://bryllim.com",
@@ -5635,6 +7548,23 @@
     {
       "slug": "dumbbell-glute-bridge",
       "name": "Dumbbell Glute Bridge",
+      "visualReview": {
+        "slug": "dumbbell-glute-bridge",
+        "reviewedFrames": [
+          1,
+          2,
+          3
+        ],
+        "displayFrames": [
+          1,
+          2,
+          3
+        ],
+        "allowsPlayback": false,
+        "result": "static-only",
+        "note": "已核对三帧的器材与主要姿势；构图/比例存在变化，仅作独立静态示意。",
+        "reviewPage": 10
+      },
       "attribution": {
         "creator": "Bryl Lim",
         "creatorUrl": "https://bryllim.com",
@@ -5677,6 +7607,23 @@
     {
       "slug": "dumbbell-hip-thrust",
       "name": "Dumbbell Hip Thrust",
+      "visualReview": {
+        "slug": "dumbbell-hip-thrust",
+        "reviewedFrames": [
+          1,
+          2,
+          3
+        ],
+        "displayFrames": [
+          1,
+          2,
+          3
+        ],
+        "allowsPlayback": false,
+        "result": "static-only",
+        "note": "已核对三帧的器材与主要姿势；构图/比例存在变化，仅作独立静态示意。",
+        "reviewPage": 10
+      },
       "attribution": {
         "creator": "Bryl Lim",
         "creatorUrl": "https://bryllim.com",
@@ -5719,6 +7666,23 @@
     {
       "slug": "smith-machine-hip-thrust",
       "name": "Smith Machine Hip Thrust",
+      "visualReview": {
+        "slug": "smith-machine-hip-thrust",
+        "reviewedFrames": [
+          1,
+          2,
+          3
+        ],
+        "displayFrames": [
+          1,
+          2,
+          3
+        ],
+        "allowsPlayback": false,
+        "result": "static-only",
+        "note": "已核对三帧的器材与主要姿势；构图/比例存在变化，仅作独立静态示意。",
+        "reviewPage": 10
+      },
       "attribution": {
         "creator": "Bryl Lim",
         "creatorUrl": "https://bryllim.com",
@@ -5761,6 +7725,23 @@
     {
       "slug": "smith-machine-romanian-deadlift",
       "name": "Smith Machine Romanian Deadlift",
+      "visualReview": {
+        "slug": "smith-machine-romanian-deadlift",
+        "reviewedFrames": [
+          1,
+          2,
+          3
+        ],
+        "displayFrames": [
+          1,
+          2,
+          3
+        ],
+        "allowsPlayback": false,
+        "result": "static-only",
+        "note": "已核对三帧的器材与主要姿势；构图/比例存在变化，仅作独立静态示意。",
+        "reviewPage": 10
+      },
       "attribution": {
         "creator": "Bryl Lim",
         "creatorUrl": "https://bryllim.com",
@@ -5803,6 +7784,23 @@
     {
       "slug": "dumbbell-romanian-deadlift",
       "name": "Dumbbell Romanian Deadlift",
+      "visualReview": {
+        "slug": "dumbbell-romanian-deadlift",
+        "reviewedFrames": [
+          1,
+          2,
+          3
+        ],
+        "displayFrames": [
+          1,
+          2,
+          3
+        ],
+        "allowsPlayback": false,
+        "result": "static-only",
+        "note": "已核对三帧的器材与主要姿势；构图/比例存在变化，仅作独立静态示意。",
+        "reviewPage": 10
+      },
       "attribution": {
         "creator": "Bryl Lim",
         "creatorUrl": "https://bryllim.com",
@@ -5845,6 +7843,23 @@
     {
       "slug": "kettlebell-romanian-deadlift",
       "name": "Kettlebell Romanian Deadlift",
+      "visualReview": {
+        "slug": "kettlebell-romanian-deadlift",
+        "reviewedFrames": [
+          1,
+          2,
+          3
+        ],
+        "displayFrames": [
+          1,
+          2,
+          3
+        ],
+        "allowsPlayback": false,
+        "result": "static-only",
+        "note": "已核对三帧的器材与主要姿势；构图/比例存在变化，仅作独立静态示意。",
+        "reviewPage": 10
+      },
       "attribution": {
         "creator": "Bryl Lim",
         "creatorUrl": "https://bryllim.com",
@@ -5887,6 +7902,23 @@
     {
       "slug": "cable-pull-through",
       "name": "Cable Pull-Through",
+      "visualReview": {
+        "slug": "cable-pull-through",
+        "reviewedFrames": [
+          1,
+          2,
+          3
+        ],
+        "displayFrames": [
+          1,
+          2,
+          3
+        ],
+        "allowsPlayback": false,
+        "result": "static-only",
+        "note": "已核对三帧的器材与主要姿势；构图/比例存在变化，仅作独立静态示意。",
+        "reviewPage": 11
+      },
       "attribution": {
         "creator": "Bryl Lim",
         "creatorUrl": "https://bryllim.com",
@@ -5929,6 +7961,23 @@
     {
       "slug": "machine-glute-kickback",
       "name": "Machine Glute Kickback",
+      "visualReview": {
+        "slug": "machine-glute-kickback",
+        "reviewedFrames": [
+          1,
+          2,
+          3
+        ],
+        "displayFrames": [
+          1,
+          2,
+          3
+        ],
+        "allowsPlayback": false,
+        "result": "static-only",
+        "note": "已核对三帧的器材与主要姿势；构图/比例存在变化，仅作独立静态示意。",
+        "reviewPage": 11
+      },
       "attribution": {
         "creator": "Bryl Lim",
         "creatorUrl": "https://bryllim.com",
@@ -5971,6 +8020,23 @@
     {
       "slug": "cable-standing-hip-abduction",
       "name": "Cable Standing Hip Abduction",
+      "visualReview": {
+        "slug": "cable-standing-hip-abduction",
+        "reviewedFrames": [
+          1,
+          2,
+          3
+        ],
+        "displayFrames": [
+          1,
+          2,
+          3
+        ],
+        "allowsPlayback": false,
+        "result": "static-only",
+        "note": "已核对三帧的器材与主要姿势；构图/比例存在变化，仅作独立静态示意。",
+        "reviewPage": 11
+      },
       "attribution": {
         "creator": "Bryl Lim",
         "creatorUrl": "https://bryllim.com",
@@ -6013,6 +8079,23 @@
     {
       "slug": "cable-standing-hip-adduction",
       "name": "Cable Standing Hip Adduction",
+      "visualReview": {
+        "slug": "cable-standing-hip-adduction",
+        "reviewedFrames": [
+          1,
+          2,
+          3
+        ],
+        "displayFrames": [
+          1,
+          2,
+          3
+        ],
+        "allowsPlayback": false,
+        "result": "static-only",
+        "note": "已核对三帧的器材与主要姿势；构图/比例存在变化，仅作独立静态示意。",
+        "reviewPage": 11
+      },
       "attribution": {
         "creator": "Bryl Lim",
         "creatorUrl": "https://bryllim.com",
@@ -6055,6 +8138,23 @@
     {
       "slug": "hip-adduction-machine",
       "name": "Hip Adduction Machine",
+      "visualReview": {
+        "slug": "hip-adduction-machine",
+        "reviewedFrames": [
+          1,
+          2,
+          3
+        ],
+        "displayFrames": [
+          1,
+          2,
+          3
+        ],
+        "allowsPlayback": false,
+        "result": "static-only",
+        "note": "已核对三帧的器材与主要姿势；构图/比例存在变化，仅作独立静态示意。",
+        "reviewPage": 11
+      },
       "attribution": {
         "creator": "Bryl Lim",
         "creatorUrl": "https://bryllim.com",
@@ -6097,6 +8197,19 @@
     {
       "slug": "smith-machine-bulgarian-split-squat",
       "name": "Smith Machine Bulgarian Split Squat",
+      "visualReview": {
+        "slug": "smith-machine-bulgarian-split-squat",
+        "reviewedFrames": [
+          1,
+          2,
+          3
+        ],
+        "displayFrames": [],
+        "allowsPlayback": false,
+        "result": "withheld",
+        "note": "画面缺少后脚抬高的支撑面，不能确认保加利亚分腿蹲。",
+        "reviewPage": 11
+      },
       "attribution": {
         "creator": "Bryl Lim",
         "creatorUrl": "https://bryllim.com",
@@ -6139,6 +8252,23 @@
     {
       "slug": "smith-machine-reverse-lunge",
       "name": "Smith Machine Reverse Lunge",
+      "visualReview": {
+        "slug": "smith-machine-reverse-lunge",
+        "reviewedFrames": [
+          1,
+          2,
+          3
+        ],
+        "displayFrames": [
+          1,
+          2,
+          3
+        ],
+        "allowsPlayback": false,
+        "result": "static-only",
+        "note": "已核对三帧的器材与主要姿势；构图/比例存在变化，仅作独立静态示意。",
+        "reviewPage": 11
+      },
       "attribution": {
         "creator": "Bryl Lim",
         "creatorUrl": "https://bryllim.com",
@@ -6181,6 +8311,23 @@
     {
       "slug": "smith-machine-split-squat",
       "name": "Smith Machine Split Squat",
+      "visualReview": {
+        "slug": "smith-machine-split-squat",
+        "reviewedFrames": [
+          1,
+          2,
+          3
+        ],
+        "displayFrames": [
+          1,
+          2,
+          3
+        ],
+        "allowsPlayback": false,
+        "result": "static-only",
+        "note": "已核对三帧的器材与主要姿势；构图/比例存在变化，仅作独立静态示意。",
+        "reviewPage": 11
+      },
       "attribution": {
         "creator": "Bryl Lim",
         "creatorUrl": "https://bryllim.com",
@@ -6223,6 +8370,23 @@
     {
       "slug": "heel-elevated-goblet-squat",
       "name": "Heel-Elevated Goblet Squat",
+      "visualReview": {
+        "slug": "heel-elevated-goblet-squat",
+        "reviewedFrames": [
+          1,
+          2,
+          3
+        ],
+        "displayFrames": [
+          1,
+          2,
+          3
+        ],
+        "allowsPlayback": false,
+        "result": "static-only",
+        "note": "已核对三帧的器材与主要姿势；构图/比例存在变化，仅作独立静态示意。",
+        "reviewPage": 11
+      },
       "attribution": {
         "creator": "Bryl Lim",
         "creatorUrl": "https://bryllim.com",
@@ -6265,6 +8429,23 @@
     {
       "slug": "dumbbell-sumo-squat",
       "name": "Dumbbell Sumo Squat",
+      "visualReview": {
+        "slug": "dumbbell-sumo-squat",
+        "reviewedFrames": [
+          1,
+          2,
+          3
+        ],
+        "displayFrames": [
+          1,
+          2,
+          3
+        ],
+        "allowsPlayback": false,
+        "result": "static-only",
+        "note": "已核对三帧的器材与主要姿势；构图/比例存在变化，仅作独立静态示意。",
+        "reviewPage": 11
+      },
       "attribution": {
         "creator": "Bryl Lim",
         "creatorUrl": "https://bryllim.com",
@@ -6307,6 +8488,23 @@
     {
       "slug": "dumbbell-sumo-deadlift",
       "name": "Dumbbell Sumo Deadlift",
+      "visualReview": {
+        "slug": "dumbbell-sumo-deadlift",
+        "reviewedFrames": [
+          1,
+          2,
+          3
+        ],
+        "displayFrames": [
+          1,
+          2,
+          3
+        ],
+        "allowsPlayback": false,
+        "result": "static-only",
+        "note": "已核对三帧的器材与主要姿势；构图/比例存在变化，仅作独立静态示意。",
+        "reviewPage": 11
+      },
       "attribution": {
         "creator": "Bryl Lim",
         "creatorUrl": "https://bryllim.com",
@@ -6349,6 +8547,23 @@
     {
       "slug": "front-foot-elevated-split-squat",
       "name": "Front-Foot Elevated Split Squat",
+      "visualReview": {
+        "slug": "front-foot-elevated-split-squat",
+        "reviewedFrames": [
+          1,
+          2,
+          3
+        ],
+        "displayFrames": [
+          1,
+          2,
+          3
+        ],
+        "allowsPlayback": false,
+        "result": "static-only",
+        "note": "已核对三帧的器材与主要姿势；构图/比例存在变化，仅作独立静态示意。",
+        "reviewPage": 11
+      },
       "attribution": {
         "creator": "Bryl Lim",
         "creatorUrl": "https://bryllim.com",
@@ -6391,6 +8606,22 @@
     {
       "slug": "deficit-reverse-lunge",
       "name": "Deficit Reverse Lunge",
+      "visualReview": {
+        "slug": "deficit-reverse-lunge",
+        "reviewedFrames": [
+          1,
+          2,
+          3
+        ],
+        "displayFrames": [
+          2,
+          3
+        ],
+        "allowsPlayback": false,
+        "result": "static-only",
+        "note": "第1帧支撑脚位不一致，已隐藏。",
+        "reviewPage": 12
+      },
       "attribution": {
         "creator": "Bryl Lim",
         "creatorUrl": "https://bryllim.com",
@@ -6433,6 +8664,23 @@
     {
       "slug": "dumbbell-lateral-lunge",
       "name": "Dumbbell Lateral Lunge",
+      "visualReview": {
+        "slug": "dumbbell-lateral-lunge",
+        "reviewedFrames": [
+          1,
+          2,
+          3
+        ],
+        "displayFrames": [
+          1,
+          2,
+          3
+        ],
+        "allowsPlayback": false,
+        "result": "static-only",
+        "note": "已核对三帧的器材与主要姿势；构图/比例存在变化，仅作独立静态示意。",
+        "reviewPage": 12
+      },
       "attribution": {
         "creator": "Bryl Lim",
         "creatorUrl": "https://bryllim.com",
@@ -6475,6 +8723,23 @@
     {
       "slug": "dumbbell-curtsy-lunge",
       "name": "Dumbbell Curtsy Lunge",
+      "visualReview": {
+        "slug": "dumbbell-curtsy-lunge",
+        "reviewedFrames": [
+          1,
+          2,
+          3
+        ],
+        "displayFrames": [
+          1,
+          2,
+          3
+        ],
+        "allowsPlayback": false,
+        "result": "static-only",
+        "note": "已核对三帧的器材与主要姿势；构图/比例存在变化，仅作独立静态示意。",
+        "reviewPage": 12
+      },
       "attribution": {
         "creator": "Bryl Lim",
         "creatorUrl": "https://bryllim.com",
@@ -6517,6 +8782,23 @@
     {
       "slug": "landmine-squat",
       "name": "Landmine Squat",
+      "visualReview": {
+        "slug": "landmine-squat",
+        "reviewedFrames": [
+          1,
+          2,
+          3
+        ],
+        "displayFrames": [
+          1,
+          2,
+          3
+        ],
+        "allowsPlayback": false,
+        "result": "static-only",
+        "note": "已核对三帧的器材与主要姿势；构图/比例存在变化，仅作独立静态示意。",
+        "reviewPage": 12
+      },
       "attribution": {
         "creator": "Bryl Lim",
         "creatorUrl": "https://bryllim.com",
@@ -6559,6 +8841,23 @@
     {
       "slug": "landmine-romanian-deadlift",
       "name": "Landmine Romanian Deadlift",
+      "visualReview": {
+        "slug": "landmine-romanian-deadlift",
+        "reviewedFrames": [
+          1,
+          2,
+          3
+        ],
+        "displayFrames": [
+          1,
+          2,
+          3
+        ],
+        "allowsPlayback": false,
+        "result": "static-only",
+        "note": "已核对三帧的器材与主要姿势；构图/比例存在变化，仅作独立静态示意。",
+        "reviewPage": 12
+      },
       "attribution": {
         "creator": "Bryl Lim",
         "creatorUrl": "https://bryllim.com",
@@ -6601,6 +8900,23 @@
     {
       "slug": "kettlebell-swing",
       "name": "Kettlebell Swing",
+      "visualReview": {
+        "slug": "kettlebell-swing",
+        "reviewedFrames": [
+          1,
+          2,
+          3
+        ],
+        "displayFrames": [
+          1,
+          2,
+          3
+        ],
+        "allowsPlayback": false,
+        "result": "static-only",
+        "note": "已核对三帧的器材与主要姿势；构图/比例存在变化，仅作独立静态示意。",
+        "reviewPage": 12
+      },
       "attribution": {
         "creator": "Bryl Lim",
         "creatorUrl": "https://bryllim.com",
@@ -6643,6 +8959,23 @@
     {
       "slug": "glute-focused-back-extension",
       "name": "Glute-Focused Back Extension",
+      "visualReview": {
+        "slug": "glute-focused-back-extension",
+        "reviewedFrames": [
+          1,
+          2,
+          3
+        ],
+        "displayFrames": [
+          1,
+          2,
+          3
+        ],
+        "allowsPlayback": false,
+        "result": "static-only",
+        "note": "已核对三帧的器材与主要姿势；构图/比例存在变化，仅作独立静态示意。",
+        "reviewPage": 12
+      },
       "attribution": {
         "creator": "Bryl Lim",
         "creatorUrl": "https://bryllim.com",
@@ -6685,6 +9018,23 @@
     {
       "slug": "reverse-hyperextension",
       "name": "Reverse Hyperextension",
+      "visualReview": {
+        "slug": "reverse-hyperextension",
+        "reviewedFrames": [
+          1,
+          2,
+          3
+        ],
+        "displayFrames": [
+          1,
+          2,
+          3
+        ],
+        "allowsPlayback": false,
+        "result": "static-only",
+        "note": "已核对三帧的器材与主要姿势；构图/比例存在变化，仅作独立静态示意。",
+        "reviewPage": 12
+      },
       "attribution": {
         "creator": "Bryl Lim",
         "creatorUrl": "https://bryllim.com",
@@ -6727,6 +9077,19 @@
     {
       "slug": "donkey-calf-raise",
       "name": "Donkey Calf Raise",
+      "visualReview": {
+        "slug": "donkey-calf-raise",
+        "reviewedFrames": [
+          1,
+          2,
+          3
+        ],
+        "displayFrames": [],
+        "allowsPlayback": false,
+        "result": "withheld",
+        "note": "画面搭载他人且躯干接近直立，支撑与负重点不清楚，不作为训练示范。",
+        "reviewPage": 12
+      },
       "attribution": {
         "creator": "Bryl Lim",
         "creatorUrl": "https://bryllim.com",
@@ -6783,6 +9146,19 @@
     {
       "slug": "leg-press-calf-raise",
       "name": "Leg Press Calf Raise",
+      "visualReview": {
+        "slug": "leg-press-calf-raise",
+        "reviewedFrames": [
+          1,
+          2,
+          3
+        ],
+        "displayFrames": [],
+        "allowsPlayback": false,
+        "result": "withheld",
+        "note": "各帧膝关节屈伸变化较大，无法确认仅以踝关节提踵。",
+        "reviewPage": 12
+      },
       "attribution": {
         "creator": "Bryl Lim",
         "creatorUrl": "https://bryllim.com",
@@ -6839,6 +9215,23 @@
     {
       "slug": "wall-sit",
       "name": "Wall Sit",
+      "visualReview": {
+        "slug": "wall-sit",
+        "reviewedFrames": [
+          1,
+          2,
+          3
+        ],
+        "displayFrames": [
+          1,
+          2,
+          3
+        ],
+        "allowsPlayback": false,
+        "result": "static-only",
+        "note": "已核对三帧的器材与主要姿势；构图/比例存在变化，仅作独立静态示意。",
+        "reviewPage": 12
+      },
       "attribution": {
         "creator": "Bryl Lim",
         "creatorUrl": "https://bryllim.com",
@@ -6881,6 +9274,23 @@
     {
       "slug": "jump-squat",
       "name": "Jump Squat",
+      "visualReview": {
+        "slug": "jump-squat",
+        "reviewedFrames": [
+          1,
+          2,
+          3
+        ],
+        "displayFrames": [
+          1,
+          2,
+          3
+        ],
+        "allowsPlayback": false,
+        "result": "static-only",
+        "note": "已核对三帧的器材与主要姿势；构图/比例存在变化，仅作独立静态示意。",
+        "reviewPage": 12
+      },
       "attribution": {
         "creator": "Bryl Lim",
         "creatorUrl": "https://bryllim.com",
@@ -6923,6 +9333,23 @@
     {
       "slug": "incline-dumbbell-curl",
       "name": "Incline Dumbbell Curl",
+      "visualReview": {
+        "slug": "incline-dumbbell-curl",
+        "reviewedFrames": [
+          1,
+          2,
+          3
+        ],
+        "displayFrames": [
+          1,
+          2,
+          3
+        ],
+        "allowsPlayback": false,
+        "result": "static-only",
+        "note": "已核对三帧的器材与主要姿势；构图/比例存在变化，仅作独立静态示意。",
+        "reviewPage": 13
+      },
       "attribution": {
         "creator": "Bryl Lim",
         "creatorUrl": "https://bryllim.com",
@@ -6979,6 +9406,23 @@
     {
       "slug": "concentration-curl",
       "name": "Concentration Curl",
+      "visualReview": {
+        "slug": "concentration-curl",
+        "reviewedFrames": [
+          1,
+          2,
+          3
+        ],
+        "displayFrames": [
+          1,
+          2,
+          3
+        ],
+        "allowsPlayback": false,
+        "result": "static-only",
+        "note": "已核对三帧的器材与主要姿势；构图/比例存在变化，仅作独立静态示意。",
+        "reviewPage": 13
+      },
       "attribution": {
         "creator": "Bryl Lim",
         "creatorUrl": "https://bryllim.com",
@@ -7035,6 +9479,23 @@
     {
       "slug": "ez-bar-curl",
       "name": "EZ-Bar Curl",
+      "visualReview": {
+        "slug": "ez-bar-curl",
+        "reviewedFrames": [
+          1,
+          2,
+          3
+        ],
+        "displayFrames": [
+          1,
+          2,
+          3
+        ],
+        "allowsPlayback": false,
+        "result": "static-only",
+        "note": "已核对三帧的器材与主要姿势；构图/比例存在变化，仅作独立静态示意。",
+        "reviewPage": 13
+      },
       "attribution": {
         "creator": "Bryl Lim",
         "creatorUrl": "https://bryllim.com",
@@ -7091,6 +9552,19 @@
     {
       "slug": "spider-curl",
       "name": "Spider Curl",
+      "visualReview": {
+        "slug": "spider-curl",
+        "reviewedFrames": [
+          1,
+          2,
+          3
+        ],
+        "displayFrames": [],
+        "allowsPlayback": false,
+        "result": "withheld",
+        "note": "图中器材与姿势更接近杠铃牧师凳弯举，非俯卧哑铃蜘蛛弯举。",
+        "reviewPage": 13
+      },
       "attribution": {
         "creator": "Bryl Lim",
         "creatorUrl": "https://bryllim.com",
@@ -7147,6 +9621,23 @@
     {
       "slug": "rope-hammer-curl",
       "name": "Rope Hammer Curl",
+      "visualReview": {
+        "slug": "rope-hammer-curl",
+        "reviewedFrames": [
+          1,
+          2,
+          3
+        ],
+        "displayFrames": [
+          1,
+          2,
+          3
+        ],
+        "allowsPlayback": false,
+        "result": "static-only",
+        "note": "已核对三帧的器材与主要姿势；构图/比例存在变化，仅作独立静态示意。",
+        "reviewPage": 13
+      },
       "attribution": {
         "creator": "Bryl Lim",
         "creatorUrl": "https://bryllim.com",
@@ -7203,6 +9694,23 @@
     {
       "slug": "drag-curl",
       "name": "Drag Curl",
+      "visualReview": {
+        "slug": "drag-curl",
+        "reviewedFrames": [
+          1,
+          2,
+          3
+        ],
+        "displayFrames": [
+          1,
+          2,
+          3
+        ],
+        "allowsPlayback": false,
+        "result": "static-only",
+        "note": "已核对三帧的器材与主要姿势；构图/比例存在变化，仅作独立静态示意。",
+        "reviewPage": 13
+      },
       "attribution": {
         "creator": "Bryl Lim",
         "creatorUrl": "https://bryllim.com",
@@ -7259,6 +9767,23 @@
     {
       "slug": "rope-tricep-pushdown",
       "name": "Rope Tricep Pushdown",
+      "visualReview": {
+        "slug": "rope-tricep-pushdown",
+        "reviewedFrames": [
+          1,
+          2,
+          3
+        ],
+        "displayFrames": [
+          1,
+          2,
+          3
+        ],
+        "allowsPlayback": false,
+        "result": "static-only",
+        "note": "已核对三帧的器材与主要姿势；构图/比例存在变化，仅作独立静态示意。",
+        "reviewPage": 13
+      },
       "attribution": {
         "creator": "Bryl Lim",
         "creatorUrl": "https://bryllim.com",
@@ -7315,6 +9840,23 @@
     {
       "slug": "dumbbell-skull-crusher",
       "name": "Two Dumbbell Skullcrusher",
+      "visualReview": {
+        "slug": "dumbbell-skull-crusher",
+        "reviewedFrames": [
+          1,
+          2,
+          3
+        ],
+        "displayFrames": [
+          1,
+          2,
+          3
+        ],
+        "allowsPlayback": false,
+        "result": "static-only",
+        "note": "已核对三帧的器材与主要姿势；构图/比例存在变化，仅作独立静态示意。",
+        "reviewPage": 13
+      },
       "attribution": {
         "creator": "Bryl Lim",
         "creatorUrl": "https://bryllim.com",
@@ -7371,6 +9913,23 @@
     {
       "slug": "single-dumbbell-skullcrusher",
       "name": "Single Dumbbell Skullcrusher",
+      "visualReview": {
+        "slug": "single-dumbbell-skullcrusher",
+        "reviewedFrames": [
+          1,
+          2,
+          3
+        ],
+        "displayFrames": [
+          1,
+          2,
+          3
+        ],
+        "allowsPlayback": false,
+        "result": "static-only",
+        "note": "已核对三帧的器材与主要姿势；构图/比例存在变化，仅作独立静态示意。",
+        "reviewPage": 13
+      },
       "attribution": {
         "creator": "Bryl Lim",
         "creatorUrl": "https://bryllim.com",
@@ -7413,6 +9972,23 @@
     {
       "slug": "dumbbell-overhead-tricep-extension",
       "name": "Dumbbell Overhead Tricep Extension",
+      "visualReview": {
+        "slug": "dumbbell-overhead-tricep-extension",
+        "reviewedFrames": [
+          1,
+          2,
+          3
+        ],
+        "displayFrames": [
+          1,
+          2,
+          3
+        ],
+        "allowsPlayback": false,
+        "result": "static-only",
+        "note": "已核对三帧的器材与主要姿势；构图/比例存在变化，仅作独立静态示意。",
+        "reviewPage": 13
+      },
       "attribution": {
         "creator": "Bryl Lim",
         "creatorUrl": "https://bryllim.com",
@@ -7469,6 +10045,23 @@
     {
       "slug": "single-arm-dumbbell-tricep-extension",
       "name": "Single Arm Dumbbell Tricep Extension",
+      "visualReview": {
+        "slug": "single-arm-dumbbell-tricep-extension",
+        "reviewedFrames": [
+          1,
+          2,
+          3
+        ],
+        "displayFrames": [
+          1,
+          2,
+          3
+        ],
+        "allowsPlayback": false,
+        "result": "static-only",
+        "note": "已核对三帧的器材与主要姿势；构图/比例存在变化，仅作独立静态示意。",
+        "reviewPage": 13
+      },
       "attribution": {
         "creator": "Bryl Lim",
         "creatorUrl": "https://bryllim.com",
@@ -7511,6 +10104,23 @@
     {
       "slug": "bench-dip",
       "name": "Bench Dip",
+      "visualReview": {
+        "slug": "bench-dip",
+        "reviewedFrames": [
+          1,
+          2,
+          3
+        ],
+        "displayFrames": [
+          1,
+          2,
+          3
+        ],
+        "allowsPlayback": false,
+        "result": "static-only",
+        "note": "已核对三帧的器材与主要姿势；构图/比例存在变化，仅作独立静态示意。",
+        "reviewPage": 13
+      },
       "attribution": {
         "creator": "Bryl Lim",
         "creatorUrl": "https://bryllim.com",
@@ -7567,6 +10177,23 @@
     {
       "slug": "tricep-kickback",
       "name": "Tricep Kickback",
+      "visualReview": {
+        "slug": "tricep-kickback",
+        "reviewedFrames": [
+          1,
+          2,
+          3
+        ],
+        "displayFrames": [
+          1,
+          2,
+          3
+        ],
+        "allowsPlayback": false,
+        "result": "static-only",
+        "note": "已核对三帧的器材与主要姿势；构图/比例存在变化，仅作独立静态示意。",
+        "reviewPage": 14
+      },
       "attribution": {
         "creator": "Bryl Lim",
         "creatorUrl": "https://bryllim.com",
@@ -7623,6 +10250,23 @@
     {
       "slug": "wrist-extension",
       "name": "Wrist Extension",
+      "visualReview": {
+        "slug": "wrist-extension",
+        "reviewedFrames": [
+          1,
+          2,
+          3
+        ],
+        "displayFrames": [
+          1,
+          2,
+          3
+        ],
+        "allowsPlayback": false,
+        "result": "static-only",
+        "note": "已核对三帧的器材与主要姿势；构图/比例存在变化，仅作独立静态示意。",
+        "reviewPage": 14
+      },
       "attribution": {
         "creator": "Bryl Lim",
         "creatorUrl": "https://bryllim.com",
@@ -7665,6 +10309,23 @@
     {
       "slug": "farmer-carry",
       "name": "Farmer Carry",
+      "visualReview": {
+        "slug": "farmer-carry",
+        "reviewedFrames": [
+          1,
+          2,
+          3
+        ],
+        "displayFrames": [
+          1,
+          2,
+          3
+        ],
+        "allowsPlayback": false,
+        "result": "static-only",
+        "note": "已核对三帧的器材与主要姿势；构图/比例存在变化，仅作独立静态示意。",
+        "reviewPage": 14
+      },
       "attribution": {
         "creator": "Bryl Lim",
         "creatorUrl": "https://bryllim.com",
@@ -7707,6 +10368,23 @@
     {
       "slug": "crunch",
       "name": "Crunch",
+      "visualReview": {
+        "slug": "crunch",
+        "reviewedFrames": [
+          1,
+          2,
+          3
+        ],
+        "displayFrames": [
+          1,
+          2,
+          3
+        ],
+        "allowsPlayback": false,
+        "result": "static-only",
+        "note": "已核对三帧的器材与主要姿势；构图/比例存在变化，仅作独立静态示意。",
+        "reviewPage": 14
+      },
       "attribution": {
         "creator": "Bryl Lim",
         "creatorUrl": "https://bryllim.com",
@@ -7763,6 +10441,23 @@
     {
       "slug": "reverse-crunch",
       "name": "Reverse Crunch",
+      "visualReview": {
+        "slug": "reverse-crunch",
+        "reviewedFrames": [
+          1,
+          2,
+          3
+        ],
+        "displayFrames": [
+          1,
+          2,
+          3
+        ],
+        "allowsPlayback": false,
+        "result": "static-only",
+        "note": "已核对三帧的器材与主要姿势；构图/比例存在变化，仅作独立静态示意。",
+        "reviewPage": 14
+      },
       "attribution": {
         "creator": "Bryl Lim",
         "creatorUrl": "https://bryllim.com",
@@ -7819,6 +10514,23 @@
     {
       "slug": "russian-twist",
       "name": "Russian Twist",
+      "visualReview": {
+        "slug": "russian-twist",
+        "reviewedFrames": [
+          1,
+          2,
+          3
+        ],
+        "displayFrames": [
+          1,
+          2,
+          3
+        ],
+        "allowsPlayback": false,
+        "result": "static-only",
+        "note": "已核对三帧的器材与主要姿势；构图/比例存在变化，仅作独立静态示意。",
+        "reviewPage": 14
+      },
       "attribution": {
         "creator": "Bryl Lim",
         "creatorUrl": "https://bryllim.com",
@@ -7861,6 +10573,23 @@
     {
       "slug": "bicycle-crunch",
       "name": "Bicycle Crunch",
+      "visualReview": {
+        "slug": "bicycle-crunch",
+        "reviewedFrames": [
+          1,
+          2,
+          3
+        ],
+        "displayFrames": [
+          1,
+          2,
+          3
+        ],
+        "allowsPlayback": false,
+        "result": "static-only",
+        "note": "已核对三帧的器材与主要姿势；构图/比例存在变化，仅作独立静态示意。",
+        "reviewPage": 14
+      },
       "attribution": {
         "creator": "Bryl Lim",
         "creatorUrl": "https://bryllim.com",
@@ -7917,6 +10646,23 @@
     {
       "slug": "mountain-climber",
       "name": "Mountain Climber",
+      "visualReview": {
+        "slug": "mountain-climber",
+        "reviewedFrames": [
+          1,
+          2,
+          3
+        ],
+        "displayFrames": [
+          1,
+          2,
+          3
+        ],
+        "allowsPlayback": false,
+        "result": "static-only",
+        "note": "已核对三帧的器材与主要姿势；构图/比例存在变化，仅作独立静态示意。",
+        "reviewPage": 14
+      },
       "attribution": {
         "creator": "Bryl Lim",
         "creatorUrl": "https://bryllim.com",
@@ -7959,6 +10705,22 @@
     {
       "slug": "dead-bug",
       "name": "Dead Bug",
+      "visualReview": {
+        "slug": "dead-bug",
+        "reviewedFrames": [
+          1,
+          2,
+          3
+        ],
+        "displayFrames": [
+          1,
+          3
+        ],
+        "allowsPlayback": false,
+        "result": "static-only",
+        "note": "第2帧为双臂双腿同时伸展的不同变式，已隐藏。",
+        "reviewPage": 14
+      },
       "attribution": {
         "creator": "Bryl Lim",
         "creatorUrl": "https://bryllim.com",
@@ -8001,6 +10763,23 @@
     {
       "slug": "bird-dog",
       "name": "Bird Dog",
+      "visualReview": {
+        "slug": "bird-dog",
+        "reviewedFrames": [
+          1,
+          2,
+          3
+        ],
+        "displayFrames": [
+          1,
+          2,
+          3
+        ],
+        "allowsPlayback": false,
+        "result": "static-only",
+        "note": "已核对三帧的器材与主要姿势；构图/比例存在变化，仅作独立静态示意。",
+        "reviewPage": 14
+      },
       "attribution": {
         "creator": "Bryl Lim",
         "creatorUrl": "https://bryllim.com",
@@ -8043,6 +10822,23 @@
     {
       "slug": "pallof-press",
       "name": "Pallof Press",
+      "visualReview": {
+        "slug": "pallof-press",
+        "reviewedFrames": [
+          1,
+          2,
+          3
+        ],
+        "displayFrames": [
+          1,
+          2,
+          3
+        ],
+        "allowsPlayback": false,
+        "result": "static-only",
+        "note": "已核对三帧的器材与主要姿势；构图/比例存在变化，仅作独立静态示意。",
+        "reviewPage": 14
+      },
       "attribution": {
         "creator": "Bryl Lim",
         "creatorUrl": "https://bryllim.com",
@@ -8085,6 +10881,23 @@
     {
       "slug": "cable-woodchop",
       "name": "Cable Woodchop",
+      "visualReview": {
+        "slug": "cable-woodchop",
+        "reviewedFrames": [
+          1,
+          2,
+          3
+        ],
+        "displayFrames": [
+          1,
+          2,
+          3
+        ],
+        "allowsPlayback": false,
+        "result": "static-only",
+        "note": "已核对三帧的器材与主要姿势；构图/比例存在变化，仅作独立静态示意。",
+        "reviewPage": 14
+      },
       "attribution": {
         "creator": "Bryl Lim",
         "creatorUrl": "https://bryllim.com",
@@ -8127,6 +10940,23 @@
     {
       "slug": "half-kneeling-pallof-press",
       "name": "Half-Kneeling Pallof Press",
+      "visualReview": {
+        "slug": "half-kneeling-pallof-press",
+        "reviewedFrames": [
+          1,
+          2,
+          3
+        ],
+        "displayFrames": [
+          1,
+          2,
+          3
+        ],
+        "allowsPlayback": false,
+        "result": "static-only",
+        "note": "已核对三帧的器材与主要姿势；构图/比例存在变化，仅作独立静态示意。",
+        "reviewPage": 15
+      },
       "attribution": {
         "creator": "Bryl Lim",
         "creatorUrl": "https://bryllim.com",
@@ -8169,6 +10999,23 @@
     {
       "slug": "cable-pallof-hold",
       "name": "Cable Pallof Hold",
+      "visualReview": {
+        "slug": "cable-pallof-hold",
+        "reviewedFrames": [
+          1,
+          2,
+          3
+        ],
+        "displayFrames": [
+          1,
+          2,
+          3
+        ],
+        "allowsPlayback": false,
+        "result": "static-only",
+        "note": "已核对三帧的器材与主要姿势；构图/比例存在变化，仅作独立静态示意。",
+        "reviewPage": 15
+      },
       "attribution": {
         "creator": "Bryl Lim",
         "creatorUrl": "https://bryllim.com",
@@ -8211,6 +11058,23 @@
     {
       "slug": "hanging-knee-raise",
       "name": "Hanging Knee Raise",
+      "visualReview": {
+        "slug": "hanging-knee-raise",
+        "reviewedFrames": [
+          1,
+          2,
+          3
+        ],
+        "displayFrames": [
+          1,
+          2,
+          3
+        ],
+        "allowsPlayback": false,
+        "result": "static-only",
+        "note": "已核对三帧的器材与主要姿势；构图/比例存在变化，仅作独立静态示意。",
+        "reviewPage": 15
+      },
       "attribution": {
         "creator": "Bryl Lim",
         "creatorUrl": "https://bryllim.com",
@@ -8253,6 +11117,23 @@
     {
       "slug": "captains-chair-knee-raise",
       "name": "Captain's Chair Knee Raise",
+      "visualReview": {
+        "slug": "captains-chair-knee-raise",
+        "reviewedFrames": [
+          1,
+          2,
+          3
+        ],
+        "displayFrames": [
+          1,
+          2,
+          3
+        ],
+        "allowsPlayback": false,
+        "result": "static-only",
+        "note": "已核对三帧的器材与主要姿势；构图/比例存在变化，仅作独立静态示意。",
+        "reviewPage": 15
+      },
       "attribution": {
         "creator": "Bryl Lim",
         "creatorUrl": "https://bryllim.com",
@@ -8295,6 +11176,23 @@
     {
       "slug": "decline-sit-up",
       "name": "Decline Sit-Up",
+      "visualReview": {
+        "slug": "decline-sit-up",
+        "reviewedFrames": [
+          1,
+          2,
+          3
+        ],
+        "displayFrames": [
+          1,
+          2,
+          3
+        ],
+        "allowsPlayback": false,
+        "result": "static-only",
+        "note": "已核对三帧的器材与主要姿势；构图/比例存在变化，仅作独立静态示意。",
+        "reviewPage": 15
+      },
       "attribution": {
         "creator": "Bryl Lim",
         "creatorUrl": "https://bryllim.com",
@@ -8337,6 +11235,19 @@
     {
       "slug": "weighted-crunch",
       "name": "Weighted Crunch",
+      "visualReview": {
+        "slug": "weighted-crunch",
+        "reviewedFrames": [
+          1,
+          2,
+          3
+        ],
+        "displayFrames": [],
+        "allowsPlayback": false,
+        "result": "withheld",
+        "note": "画面躯干抬起幅度较大，无法确认是卷腹而非仰卧起坐。",
+        "reviewPage": 15
+      },
       "attribution": {
         "creator": "Bryl Lim",
         "creatorUrl": "https://bryllim.com",
@@ -8379,6 +11290,23 @@
     {
       "slug": "weighted-russian-twist",
       "name": "Weighted Russian Twist",
+      "visualReview": {
+        "slug": "weighted-russian-twist",
+        "reviewedFrames": [
+          1,
+          2,
+          3
+        ],
+        "displayFrames": [
+          1,
+          2,
+          3
+        ],
+        "allowsPlayback": false,
+        "result": "static-only",
+        "note": "已核对三帧的器材与主要姿势；构图/比例存在变化，仅作独立静态示意。",
+        "reviewPage": 15
+      },
       "attribution": {
         "creator": "Bryl Lim",
         "creatorUrl": "https://bryllim.com",
@@ -8421,6 +11349,23 @@
     {
       "slug": "dumbbell-side-bend",
       "name": "Dumbbell Side Bend",
+      "visualReview": {
+        "slug": "dumbbell-side-bend",
+        "reviewedFrames": [
+          1,
+          2,
+          3
+        ],
+        "displayFrames": [
+          1,
+          2,
+          3
+        ],
+        "allowsPlayback": false,
+        "result": "static-only",
+        "note": "已核对三帧的器材与主要姿势；构图/比例存在变化，仅作独立静态示意。",
+        "reviewPage": 15
+      },
       "attribution": {
         "creator": "Bryl Lim",
         "creatorUrl": "https://bryllim.com",
@@ -8463,6 +11408,23 @@
     {
       "slug": "elliptical",
       "name": "Elliptical",
+      "visualReview": {
+        "slug": "elliptical",
+        "reviewedFrames": [
+          1,
+          2,
+          3
+        ],
+        "displayFrames": [
+          1,
+          2,
+          3
+        ],
+        "allowsPlayback": false,
+        "result": "static-only",
+        "note": "已核对三帧的器材与主要姿势；构图/比例存在变化，仅作独立静态示意。",
+        "reviewPage": 15
+      },
       "attribution": {
         "creator": "Bryl Lim",
         "creatorUrl": "https://bryllim.com",
@@ -8505,6 +11467,19 @@
     {
       "slug": "swimming",
       "name": "Swimming",
+      "visualReview": {
+        "slug": "swimming",
+        "reviewedFrames": [
+          1,
+          2,
+          3
+        ],
+        "displayFrames": [],
+        "allowsPlayback": false,
+        "result": "withheld",
+        "note": "画面为俯卧器械练习，不能代表水中游泳。",
+        "reviewPage": 15
+      },
       "attribution": {
         "creator": "Bryl Lim",
         "creatorUrl": "https://bryllim.com",
@@ -8547,6 +11522,23 @@
     {
       "slug": "jump-rope",
       "name": "Jump Rope",
+      "visualReview": {
+        "slug": "jump-rope",
+        "reviewedFrames": [
+          1,
+          2,
+          3
+        ],
+        "displayFrames": [
+          1,
+          2,
+          3
+        ],
+        "allowsPlayback": false,
+        "result": "static-only",
+        "note": "已核对三帧的器材与主要姿势；构图/比例存在变化，仅作独立静态示意。",
+        "reviewPage": 15
+      },
       "attribution": {
         "creator": "Bryl Lim",
         "creatorUrl": "https://bryllim.com",
@@ -8589,6 +11581,23 @@
     {
       "slug": "assault-bike",
       "name": "Assault Bike",
+      "visualReview": {
+        "slug": "assault-bike",
+        "reviewedFrames": [
+          1,
+          2,
+          3
+        ],
+        "displayFrames": [
+          1,
+          2,
+          3
+        ],
+        "allowsPlayback": false,
+        "result": "static-only",
+        "note": "已核对三帧的器材与主要姿势；构图/比例存在变化，仅作独立静态示意。",
+        "reviewPage": 15
+      },
       "attribution": {
         "creator": "Bryl Lim",
         "creatorUrl": "https://bryllim.com",
@@ -8631,6 +11640,23 @@
     {
       "slug": "skierg",
       "name": "SkiErg",
+      "visualReview": {
+        "slug": "skierg",
+        "reviewedFrames": [
+          1,
+          2,
+          3
+        ],
+        "displayFrames": [
+          1,
+          2,
+          3
+        ],
+        "allowsPlayback": false,
+        "result": "static-only",
+        "note": "已核对三帧的器材与主要姿势；构图/比例存在变化，仅作独立静态示意。",
+        "reviewPage": 16
+      },
       "attribution": {
         "creator": "Bryl Lim",
         "creatorUrl": "https://bryllim.com",
@@ -8673,6 +11699,19 @@
     {
       "slug": "hiking",
       "name": "Hiking",
+      "visualReview": {
+        "slug": "hiking",
+        "reviewedFrames": [
+          1,
+          2,
+          3
+        ],
+        "displayFrames": [],
+        "allowsPlayback": false,
+        "result": "withheld",
+        "note": "画面为室内踏步器械，不能代表户外徒步。",
+        "reviewPage": 16
+      },
       "attribution": {
         "creator": "Bryl Lim",
         "creatorUrl": "https://bryllim.com",
@@ -8715,6 +11754,23 @@
     {
       "slug": "treadmill-incline-walk",
       "name": "Treadmill Incline Walk",
+      "visualReview": {
+        "slug": "treadmill-incline-walk",
+        "reviewedFrames": [
+          1,
+          2,
+          3
+        ],
+        "displayFrames": [
+          1,
+          2,
+          3
+        ],
+        "allowsPlayback": false,
+        "result": "static-only",
+        "note": "已核对三帧的器材与主要姿势；构图/比例存在变化，仅作独立静态示意。",
+        "reviewPage": 16
+      },
       "attribution": {
         "creator": "Bryl Lim",
         "creatorUrl": "https://bryllim.com",
@@ -8757,6 +11813,23 @@
     {
       "slug": "battle-ropes",
       "name": "Battle Ropes",
+      "visualReview": {
+        "slug": "battle-ropes",
+        "reviewedFrames": [
+          1,
+          2,
+          3
+        ],
+        "displayFrames": [
+          1,
+          2,
+          3
+        ],
+        "allowsPlayback": false,
+        "result": "static-only",
+        "note": "已核对三帧的器材与主要姿势；构图/比例存在变化，仅作独立静态示意。",
+        "reviewPage": 16
+      },
       "attribution": {
         "creator": "Bryl Lim",
         "creatorUrl": "https://bryllim.com",
@@ -8799,6 +11872,23 @@
     {
       "slug": "incline-push-up",
       "name": "Incline Push-up",
+      "visualReview": {
+        "slug": "incline-push-up",
+        "reviewedFrames": [
+          1,
+          2,
+          3
+        ],
+        "displayFrames": [
+          1,
+          2,
+          3
+        ],
+        "allowsPlayback": false,
+        "result": "static-only",
+        "note": "已核对三帧的器材与主要姿势；构图/比例存在变化，仅作独立静态示意。",
+        "reviewPage": 16
+      },
       "attribution": {
         "creator": "Bryl Lim",
         "creatorUrl": "https://bryllim.com",
@@ -8841,6 +11931,23 @@
     {
       "slug": "knee-push-up",
       "name": "Knee Push-up",
+      "visualReview": {
+        "slug": "knee-push-up",
+        "reviewedFrames": [
+          1,
+          2,
+          3
+        ],
+        "displayFrames": [
+          1,
+          2,
+          3
+        ],
+        "allowsPlayback": false,
+        "result": "static-only",
+        "note": "已核对三帧的器材与主要姿势；构图/比例存在变化，仅作独立静态示意。",
+        "reviewPage": 16
+      },
       "attribution": {
         "creator": "Bryl Lim",
         "creatorUrl": "https://bryllim.com",
@@ -8883,6 +11990,23 @@
     {
       "slug": "wide-push-up",
       "name": "Wide Push-up",
+      "visualReview": {
+        "slug": "wide-push-up",
+        "reviewedFrames": [
+          1,
+          2,
+          3
+        ],
+        "displayFrames": [
+          1,
+          2,
+          3
+        ],
+        "allowsPlayback": false,
+        "result": "static-only",
+        "note": "已核对三帧的器材与主要姿势；构图/比例存在变化，仅作独立静态示意。",
+        "reviewPage": 16
+      },
       "attribution": {
         "creator": "Bryl Lim",
         "creatorUrl": "https://bryllim.com",
@@ -8925,6 +12049,23 @@
     {
       "slug": "diamond-push-up",
       "name": "Diamond Push-up",
+      "visualReview": {
+        "slug": "diamond-push-up",
+        "reviewedFrames": [
+          1,
+          2,
+          3
+        ],
+        "displayFrames": [
+          1,
+          2,
+          3
+        ],
+        "allowsPlayback": false,
+        "result": "static-only",
+        "note": "已核对三帧的器材与主要姿势；构图/比例存在变化，仅作独立静态示意。",
+        "reviewPage": 16
+      },
       "attribution": {
         "creator": "Bryl Lim",
         "creatorUrl": "https://bryllim.com",
@@ -8967,6 +12108,23 @@
     {
       "slug": "decline-push-up",
       "name": "Decline Push-up",
+      "visualReview": {
+        "slug": "decline-push-up",
+        "reviewedFrames": [
+          1,
+          2,
+          3
+        ],
+        "displayFrames": [
+          1,
+          2,
+          3
+        ],
+        "allowsPlayback": false,
+        "result": "static-only",
+        "note": "已核对三帧的器材与主要姿势；构图/比例存在变化，仅作独立静态示意。",
+        "reviewPage": 16
+      },
       "attribution": {
         "creator": "Bryl Lim",
         "creatorUrl": "https://bryllim.com",
@@ -9009,6 +12167,23 @@
     {
       "slug": "pike-push-up",
       "name": "Pike Push-up",
+      "visualReview": {
+        "slug": "pike-push-up",
+        "reviewedFrames": [
+          1,
+          2,
+          3
+        ],
+        "displayFrames": [
+          1,
+          2,
+          3
+        ],
+        "allowsPlayback": false,
+        "result": "static-only",
+        "note": "已核对三帧的器材与主要姿势；构图/比例存在变化，仅作独立静态示意。",
+        "reviewPage": 16
+      },
       "attribution": {
         "creator": "Bryl Lim",
         "creatorUrl": "https://bryllim.com",
@@ -9051,6 +12226,23 @@
     {
       "slug": "feet-elevated-pike-push-up",
       "name": "Feet-Elevated Pike Push-up",
+      "visualReview": {
+        "slug": "feet-elevated-pike-push-up",
+        "reviewedFrames": [
+          1,
+          2,
+          3
+        ],
+        "displayFrames": [
+          1,
+          2,
+          3
+        ],
+        "allowsPlayback": false,
+        "result": "static-only",
+        "note": "已核对三帧的器材与主要姿势；构图/比例存在变化，仅作独立静态示意。",
+        "reviewPage": 16
+      },
       "attribution": {
         "creator": "Bryl Lim",
         "creatorUrl": "https://bryllim.com",
@@ -9093,6 +12285,23 @@
     {
       "slug": "archer-push-up",
       "name": "Archer Push-up",
+      "visualReview": {
+        "slug": "archer-push-up",
+        "reviewedFrames": [
+          1,
+          2,
+          3
+        ],
+        "displayFrames": [
+          1,
+          2,
+          3
+        ],
+        "allowsPlayback": false,
+        "result": "static-only",
+        "note": "已核对三帧的器材与主要姿势；构图/比例存在变化，仅作独立静态示意。",
+        "reviewPage": 16
+      },
       "attribution": {
         "creator": "Bryl Lim",
         "creatorUrl": "https://bryllim.com",
@@ -9135,6 +12344,23 @@
     {
       "slug": "typewriter-push-up",
       "name": "Typewriter Push-up",
+      "visualReview": {
+        "slug": "typewriter-push-up",
+        "reviewedFrames": [
+          1,
+          2,
+          3
+        ],
+        "displayFrames": [
+          1,
+          2,
+          3
+        ],
+        "allowsPlayback": false,
+        "result": "static-only",
+        "note": "已核对三帧的器材与主要姿势；构图/比例存在变化，仅作独立静态示意。",
+        "reviewPage": 17
+      },
       "attribution": {
         "creator": "Bryl Lim",
         "creatorUrl": "https://bryllim.com",
@@ -9177,6 +12403,23 @@
     {
       "slug": "explosive-push-up",
       "name": "Explosive Push-up",
+      "visualReview": {
+        "slug": "explosive-push-up",
+        "reviewedFrames": [
+          1,
+          2,
+          3
+        ],
+        "displayFrames": [
+          1,
+          2,
+          3
+        ],
+        "allowsPlayback": false,
+        "result": "static-only",
+        "note": "已核对三帧的器材与主要姿势；构图/比例存在变化，仅作独立静态示意。",
+        "reviewPage": 17
+      },
       "attribution": {
         "creator": "Bryl Lim",
         "creatorUrl": "https://bryllim.com",
@@ -9219,6 +12462,23 @@
     {
       "slug": "hindu-push-up",
       "name": "Hindu Push-up",
+      "visualReview": {
+        "slug": "hindu-push-up",
+        "reviewedFrames": [
+          1,
+          2,
+          3
+        ],
+        "displayFrames": [
+          1,
+          2,
+          3
+        ],
+        "allowsPlayback": false,
+        "result": "static-only",
+        "note": "已核对三帧的器材与主要姿势；构图/比例存在变化，仅作独立静态示意。",
+        "reviewPage": 17
+      },
       "attribution": {
         "creator": "Bryl Lim",
         "creatorUrl": "https://bryllim.com",
@@ -9261,6 +12521,23 @@
     {
       "slug": "scapular-push-up",
       "name": "Scapular Push-up",
+      "visualReview": {
+        "slug": "scapular-push-up",
+        "reviewedFrames": [
+          1,
+          2,
+          3
+        ],
+        "displayFrames": [
+          1,
+          2,
+          3
+        ],
+        "allowsPlayback": false,
+        "result": "static-only",
+        "note": "已核对三帧的器材与主要姿势；构图/比例存在变化，仅作独立静态示意。",
+        "reviewPage": 17
+      },
       "attribution": {
         "creator": "Bryl Lim",
         "creatorUrl": "https://bryllim.com",
@@ -9303,6 +12580,23 @@
     {
       "slug": "push-up-shoulder-tap",
       "name": "Push-up Shoulder Tap",
+      "visualReview": {
+        "slug": "push-up-shoulder-tap",
+        "reviewedFrames": [
+          1,
+          2,
+          3
+        ],
+        "displayFrames": [
+          1,
+          2,
+          3
+        ],
+        "allowsPlayback": false,
+        "result": "static-only",
+        "note": "已核对三帧的器材与主要姿势；构图/比例存在变化，仅作独立静态示意。",
+        "reviewPage": 17
+      },
       "attribution": {
         "creator": "Bryl Lim",
         "creatorUrl": "https://bryllim.com",
@@ -9345,6 +12639,23 @@
     {
       "slug": "wall-push-up",
       "name": "Wall Push-up",
+      "visualReview": {
+        "slug": "wall-push-up",
+        "reviewedFrames": [
+          1,
+          2,
+          3
+        ],
+        "displayFrames": [
+          1,
+          2,
+          3
+        ],
+        "allowsPlayback": false,
+        "result": "static-only",
+        "note": "已核对三帧的器材与主要姿势；构图/比例存在变化，仅作独立静态示意。",
+        "reviewPage": 17
+      },
       "attribution": {
         "creator": "Bryl Lim",
         "creatorUrl": "https://bryllim.com",
@@ -9387,6 +12698,23 @@
     {
       "slug": "wall-walk",
       "name": "Wall Walk",
+      "visualReview": {
+        "slug": "wall-walk",
+        "reviewedFrames": [
+          1,
+          2,
+          3
+        ],
+        "displayFrames": [
+          1,
+          2,
+          3
+        ],
+        "allowsPlayback": false,
+        "result": "static-only",
+        "note": "已核对三帧的器材与主要姿势；构图/比例存在变化，仅作独立静态示意。",
+        "reviewPage": 17
+      },
       "attribution": {
         "creator": "Bryl Lim",
         "creatorUrl": "https://bryllim.com",
@@ -9429,6 +12757,23 @@
     {
       "slug": "wall-handstand-push-up",
       "name": "Wall Handstand Push-up",
+      "visualReview": {
+        "slug": "wall-handstand-push-up",
+        "reviewedFrames": [
+          1,
+          2,
+          3
+        ],
+        "displayFrames": [
+          1,
+          2,
+          3
+        ],
+        "allowsPlayback": false,
+        "result": "static-only",
+        "note": "墙面细节未画出，实际练习须具备可靠靠墙支撑与退出能力。",
+        "reviewPage": 17
+      },
       "attribution": {
         "creator": "Bryl Lim",
         "creatorUrl": "https://bryllim.com",
@@ -9471,6 +12816,23 @@
     {
       "slug": "handstand-push-up",
       "name": "Handstand Push-up",
+      "visualReview": {
+        "slug": "handstand-push-up",
+        "reviewedFrames": [
+          1,
+          2,
+          3
+        ],
+        "displayFrames": [
+          1,
+          2,
+          3
+        ],
+        "allowsPlayback": false,
+        "result": "static-only",
+        "note": "图为握支架版本，仅用于姿势定位，不表示徒手地面版本的器材条件。",
+        "reviewPage": 17
+      },
       "attribution": {
         "creator": "Bryl Lim",
         "creatorUrl": "https://bryllim.com",
@@ -9513,6 +12875,23 @@
     {
       "slug": "chair-dip",
       "name": "Chair Dip",
+      "visualReview": {
+        "slug": "chair-dip",
+        "reviewedFrames": [
+          1,
+          2,
+          3
+        ],
+        "displayFrames": [
+          1,
+          2,
+          3
+        ],
+        "allowsPlayback": false,
+        "result": "static-only",
+        "note": "已核对三帧的器材与主要姿势；构图/比例存在变化，仅作独立静态示意。",
+        "reviewPage": 17
+      },
       "attribution": {
         "creator": "Bryl Lim",
         "creatorUrl": "https://bryllim.com",
@@ -9555,6 +12934,23 @@
     {
       "slug": "doorway-row",
       "name": "Doorway Row",
+      "visualReview": {
+        "slug": "doorway-row",
+        "reviewedFrames": [
+          1,
+          2,
+          3
+        ],
+        "displayFrames": [
+          1,
+          2,
+          3
+        ],
+        "allowsPlayback": false,
+        "result": "static-only",
+        "note": "已核对三帧的器材与主要姿势；构图/比例存在变化，仅作独立静态示意。",
+        "reviewPage": 17
+      },
       "attribution": {
         "creator": "Bryl Lim",
         "creatorUrl": "https://bryllim.com",
@@ -9597,6 +12993,19 @@
     {
       "slug": "towel-row",
       "name": "Towel Row",
+      "visualReview": {
+        "slug": "towel-row",
+        "reviewedFrames": [
+          1,
+          2,
+          3
+        ],
+        "displayFrames": [],
+        "allowsPlayback": false,
+        "result": "withheld",
+        "note": "画面未清楚呈现毛巾的固定端或足部锚点，无法确认有效阻力来源。",
+        "reviewPage": 17
+      },
       "attribution": {
         "creator": "Bryl Lim",
         "creatorUrl": "https://bryllim.com",
@@ -9639,6 +13048,23 @@
     {
       "slug": "prone-y-raise",
       "name": "Prone Y Raise",
+      "visualReview": {
+        "slug": "prone-y-raise",
+        "reviewedFrames": [
+          1,
+          2,
+          3
+        ],
+        "displayFrames": [
+          1,
+          2,
+          3
+        ],
+        "allowsPlayback": false,
+        "result": "static-only",
+        "note": "已核对三帧的器材与主要姿势；构图/比例存在变化，仅作独立静态示意。",
+        "reviewPage": 18
+      },
       "attribution": {
         "creator": "Bryl Lim",
         "creatorUrl": "https://bryllim.com",
@@ -9681,6 +13107,19 @@
     {
       "slug": "prone-t-raise",
       "name": "Prone T Raise",
+      "visualReview": {
+        "slug": "prone-t-raise",
+        "reviewedFrames": [
+          1,
+          2,
+          3
+        ],
+        "displayFrames": [],
+        "allowsPlayback": false,
+        "result": "withheld",
+        "note": "图中有哑铃和胸托凳，与当前徒手俯卧T字抬臂的器材资料不一致。",
+        "reviewPage": 18
+      },
       "attribution": {
         "creator": "Bryl Lim",
         "creatorUrl": "https://bryllim.com",
@@ -9723,6 +13162,23 @@
     {
       "slug": "superman",
       "name": "Superman",
+      "visualReview": {
+        "slug": "superman",
+        "reviewedFrames": [
+          1,
+          2,
+          3
+        ],
+        "displayFrames": [
+          1,
+          2,
+          3
+        ],
+        "allowsPlayback": false,
+        "result": "static-only",
+        "note": "已核对三帧的器材与主要姿势；构图/比例存在变化，仅作独立静态示意。",
+        "reviewPage": 18
+      },
       "attribution": {
         "creator": "Bryl Lim",
         "creatorUrl": "https://bryllim.com",
@@ -9765,6 +13221,23 @@
     {
       "slug": "superman-hold",
       "name": "Superman Hold",
+      "visualReview": {
+        "slug": "superman-hold",
+        "reviewedFrames": [
+          1,
+          2,
+          3
+        ],
+        "displayFrames": [
+          1,
+          2,
+          3
+        ],
+        "allowsPlayback": false,
+        "result": "static-only",
+        "note": "已核对三帧的器材与主要姿势；构图/比例存在变化，仅作独立静态示意。",
+        "reviewPage": 18
+      },
       "attribution": {
         "creator": "Bryl Lim",
         "creatorUrl": "https://bryllim.com",
@@ -9807,6 +13280,23 @@
     {
       "slug": "reverse-snow-angel",
       "name": "Reverse Snow Angel",
+      "visualReview": {
+        "slug": "reverse-snow-angel",
+        "reviewedFrames": [
+          1,
+          2,
+          3
+        ],
+        "displayFrames": [
+          1,
+          2,
+          3
+        ],
+        "allowsPlayback": false,
+        "result": "static-only",
+        "note": "已核对三帧的器材与主要姿势；构图/比例存在变化，仅作独立静态示意。",
+        "reviewPage": 18
+      },
       "attribution": {
         "creator": "Bryl Lim",
         "creatorUrl": "https://bryllim.com",
@@ -9849,6 +13339,23 @@
     {
       "slug": "dead-hang",
       "name": "Dead Hang",
+      "visualReview": {
+        "slug": "dead-hang",
+        "reviewedFrames": [
+          1,
+          2,
+          3
+        ],
+        "displayFrames": [
+          1,
+          2,
+          3
+        ],
+        "allowsPlayback": false,
+        "result": "static-only",
+        "note": "已核对三帧的器材与主要姿势；构图/比例存在变化，仅作独立静态示意。",
+        "reviewPage": 18
+      },
       "attribution": {
         "creator": "Bryl Lim",
         "creatorUrl": "https://bryllim.com",
@@ -9891,6 +13398,23 @@
     {
       "slug": "active-hang",
       "name": "Active Hang",
+      "visualReview": {
+        "slug": "active-hang",
+        "reviewedFrames": [
+          1,
+          2,
+          3
+        ],
+        "displayFrames": [
+          1,
+          2,
+          3
+        ],
+        "allowsPlayback": false,
+        "result": "static-only",
+        "note": "肩胛参与细节不够清晰，图片只用于悬垂位置定位。",
+        "reviewPage": 18
+      },
       "attribution": {
         "creator": "Bryl Lim",
         "creatorUrl": "https://bryllim.com",
@@ -9933,6 +13457,23 @@
     {
       "slug": "scapular-pull-up",
       "name": "Scapular Pull-up",
+      "visualReview": {
+        "slug": "scapular-pull-up",
+        "reviewedFrames": [
+          1,
+          2,
+          3
+        ],
+        "displayFrames": [
+          1,
+          2,
+          3
+        ],
+        "allowsPlayback": false,
+        "result": "static-only",
+        "note": "幅度细节不够清晰，图片不作为动作幅度或速度标准。",
+        "reviewPage": 18
+      },
       "attribution": {
         "creator": "Bryl Lim",
         "creatorUrl": "https://bryllim.com",
@@ -9975,6 +13516,23 @@
     {
       "slug": "negative-pull-up",
       "name": "Negative Pull-up",
+      "visualReview": {
+        "slug": "negative-pull-up",
+        "reviewedFrames": [
+          1,
+          2,
+          3
+        ],
+        "displayFrames": [
+          1,
+          2,
+          3
+        ],
+        "allowsPlayback": false,
+        "result": "static-only",
+        "note": "已核对三帧的器材与主要姿势；构图/比例存在变化，仅作独立静态示意。",
+        "reviewPage": 18
+      },
       "attribution": {
         "creator": "Bryl Lim",
         "creatorUrl": "https://bryllim.com",
@@ -10017,6 +13575,19 @@
     {
       "slug": "commando-pull-up",
       "name": "Commando Pull-up",
+      "visualReview": {
+        "slug": "commando-pull-up",
+        "reviewedFrames": [
+          1,
+          2,
+          3
+        ],
+        "displayFrames": [],
+        "allowsPlayback": false,
+        "result": "withheld",
+        "note": "未呈现纵向对握和头部交替过杠的动作要求。",
+        "reviewPage": 18
+      },
       "attribution": {
         "creator": "Bryl Lim",
         "creatorUrl": "https://bryllim.com",
@@ -10059,6 +13630,23 @@
     {
       "slug": "l-sit-pull-up",
       "name": "L-Sit Pull-up",
+      "visualReview": {
+        "slug": "l-sit-pull-up",
+        "reviewedFrames": [
+          1,
+          2,
+          3
+        ],
+        "displayFrames": [
+          1,
+          2,
+          3
+        ],
+        "allowsPlayback": false,
+        "result": "static-only",
+        "note": "已核对三帧的器材与主要姿势；构图/比例存在变化，仅作独立静态示意。",
+        "reviewPage": 18
+      },
       "attribution": {
         "creator": "Bryl Lim",
         "creatorUrl": "https://bryllim.com",
@@ -10101,6 +13689,23 @@
     {
       "slug": "towel-pull-up",
       "name": "Towel Pull-up",
+      "visualReview": {
+        "slug": "towel-pull-up",
+        "reviewedFrames": [
+          1,
+          2,
+          3
+        ],
+        "displayFrames": [
+          1,
+          2,
+          3
+        ],
+        "allowsPlayback": false,
+        "result": "static-only",
+        "note": "已核对三帧的器材与主要姿势；构图/比例存在变化，仅作独立静态示意。",
+        "reviewPage": 18
+      },
       "attribution": {
         "creator": "Bryl Lim",
         "creatorUrl": "https://bryllim.com",
@@ -10143,6 +13748,23 @@
     {
       "slug": "bodyweight-squat",
       "name": "Bodyweight Squat",
+      "visualReview": {
+        "slug": "bodyweight-squat",
+        "reviewedFrames": [
+          1,
+          2,
+          3
+        ],
+        "displayFrames": [
+          1,
+          2,
+          3
+        ],
+        "allowsPlayback": false,
+        "result": "static-only",
+        "note": "已核对三帧的器材与主要姿势；构图/比例存在变化，仅作独立静态示意。",
+        "reviewPage": 19
+      },
       "attribution": {
         "creator": "Bryl Lim",
         "creatorUrl": "https://bryllim.com",
@@ -10185,6 +13807,23 @@
     {
       "slug": "pistol-squat",
       "name": "Pistol Squat",
+      "visualReview": {
+        "slug": "pistol-squat",
+        "reviewedFrames": [
+          1,
+          2,
+          3
+        ],
+        "displayFrames": [
+          1,
+          2,
+          3
+        ],
+        "allowsPlayback": false,
+        "result": "static-only",
+        "note": "已核对三帧的器材与主要姿势；构图/比例存在变化，仅作独立静态示意。",
+        "reviewPage": 19
+      },
       "attribution": {
         "creator": "Bryl Lim",
         "creatorUrl": "https://bryllim.com",
@@ -10227,6 +13866,23 @@
     {
       "slug": "assisted-pistol-squat",
       "name": "Assisted Pistol Squat",
+      "visualReview": {
+        "slug": "assisted-pistol-squat",
+        "reviewedFrames": [
+          1,
+          2,
+          3
+        ],
+        "displayFrames": [
+          1,
+          2,
+          3
+        ],
+        "allowsPlayback": false,
+        "result": "static-only",
+        "note": "已核对三帧的器材与主要姿势；构图/比例存在变化，仅作独立静态示意。",
+        "reviewPage": 19
+      },
       "attribution": {
         "creator": "Bryl Lim",
         "creatorUrl": "https://bryllim.com",
@@ -10269,6 +13925,22 @@
     {
       "slug": "shrimp-squat",
       "name": "Shrimp Squat",
+      "visualReview": {
+        "slug": "shrimp-squat",
+        "reviewedFrames": [
+          1,
+          2,
+          3
+        ],
+        "displayFrames": [
+          2,
+          3
+        ],
+        "allowsPlayback": false,
+        "result": "static-only",
+        "note": "第1帧自由腿前伸接近手枪蹲，已隐藏；保留后屈腿的辅助变式。",
+        "reviewPage": 19
+      },
       "attribution": {
         "creator": "Bryl Lim",
         "creatorUrl": "https://bryllim.com",
@@ -10311,6 +13983,23 @@
     {
       "slug": "cossack-squat",
       "name": "Cossack Squat",
+      "visualReview": {
+        "slug": "cossack-squat",
+        "reviewedFrames": [
+          1,
+          2,
+          3
+        ],
+        "displayFrames": [
+          1,
+          2,
+          3
+        ],
+        "allowsPlayback": false,
+        "result": "static-only",
+        "note": "已核对三帧的器材与主要姿势；构图/比例存在变化，仅作独立静态示意。",
+        "reviewPage": 19
+      },
       "attribution": {
         "creator": "Bryl Lim",
         "creatorUrl": "https://bryllim.com",
@@ -10353,6 +14042,23 @@
     {
       "slug": "sissy-squat",
       "name": "Sissy Squat",
+      "visualReview": {
+        "slug": "sissy-squat",
+        "reviewedFrames": [
+          1,
+          2,
+          3
+        ],
+        "displayFrames": [
+          1,
+          2,
+          3
+        ],
+        "allowsPlayback": false,
+        "result": "static-only",
+        "note": "图示使用固定支撑，勿直接照搬为无支撑的大幅后倾。",
+        "reviewPage": 19
+      },
       "attribution": {
         "creator": "Bryl Lim",
         "creatorUrl": "https://bryllim.com",
@@ -10395,6 +14101,23 @@
     {
       "slug": "forward-lunge",
       "name": "Forward Lunge",
+      "visualReview": {
+        "slug": "forward-lunge",
+        "reviewedFrames": [
+          1,
+          2,
+          3
+        ],
+        "displayFrames": [
+          1,
+          2,
+          3
+        ],
+        "allowsPlayback": false,
+        "result": "static-only",
+        "note": "已核对三帧的器材与主要姿势；构图/比例存在变化，仅作独立静态示意。",
+        "reviewPage": 19
+      },
       "attribution": {
         "creator": "Bryl Lim",
         "creatorUrl": "https://bryllim.com",
@@ -10437,6 +14160,23 @@
     {
       "slug": "lateral-lunge",
       "name": "Lateral Lunge",
+      "visualReview": {
+        "slug": "lateral-lunge",
+        "reviewedFrames": [
+          1,
+          2,
+          3
+        ],
+        "displayFrames": [
+          1,
+          2,
+          3
+        ],
+        "allowsPlayback": false,
+        "result": "static-only",
+        "note": "已核对三帧的器材与主要姿势；构图/比例存在变化，仅作独立静态示意。",
+        "reviewPage": 19
+      },
       "attribution": {
         "creator": "Bryl Lim",
         "creatorUrl": "https://bryllim.com",
@@ -10479,6 +14219,23 @@
     {
       "slug": "curtsy-lunge",
       "name": "Curtsy Lunge",
+      "visualReview": {
+        "slug": "curtsy-lunge",
+        "reviewedFrames": [
+          1,
+          2,
+          3
+        ],
+        "displayFrames": [
+          1,
+          2,
+          3
+        ],
+        "allowsPlayback": false,
+        "result": "static-only",
+        "note": "已核对三帧的器材与主要姿势；构图/比例存在变化，仅作独立静态示意。",
+        "reviewPage": 19
+      },
       "attribution": {
         "creator": "Bryl Lim",
         "creatorUrl": "https://bryllim.com",
@@ -10521,6 +14278,21 @@
     {
       "slug": "skater-squat",
       "name": "Skater Squat",
+      "visualReview": {
+        "slug": "skater-squat",
+        "reviewedFrames": [
+          1,
+          2,
+          3
+        ],
+        "displayFrames": [
+          1
+        ],
+        "allowsPlayback": false,
+        "result": "static-only",
+        "note": "后续帧混入双腿深蹲或侧弓步，仅保留单腿后屈示意。",
+        "reviewPage": 19
+      },
       "attribution": {
         "creator": "Bryl Lim",
         "creatorUrl": "https://bryllim.com",
@@ -10563,6 +14335,23 @@
     {
       "slug": "single-leg-box-squat",
       "name": "Single-Leg Box Squat",
+      "visualReview": {
+        "slug": "single-leg-box-squat",
+        "reviewedFrames": [
+          1,
+          2,
+          3
+        ],
+        "displayFrames": [
+          1,
+          2,
+          3
+        ],
+        "allowsPlayback": false,
+        "result": "static-only",
+        "note": "已核对三帧的器材与主要姿势；构图/比例存在变化，仅作独立静态示意。",
+        "reviewPage": 19
+      },
       "attribution": {
         "creator": "Bryl Lim",
         "creatorUrl": "https://bryllim.com",
@@ -10605,6 +14394,23 @@
     {
       "slug": "step-down",
       "name": "Step-Down",
+      "visualReview": {
+        "slug": "step-down",
+        "reviewedFrames": [
+          1,
+          2,
+          3
+        ],
+        "displayFrames": [
+          1,
+          2,
+          3
+        ],
+        "allowsPlayback": false,
+        "result": "static-only",
+        "note": "已核对三帧的器材与主要姿势；构图/比例存在变化，仅作独立静态示意。",
+        "reviewPage": 19
+      },
       "attribution": {
         "creator": "Bryl Lim",
         "creatorUrl": "https://bryllim.com",
@@ -10647,6 +14453,23 @@
     {
       "slug": "calf-raise",
       "name": "Calf Raise",
+      "visualReview": {
+        "slug": "calf-raise",
+        "reviewedFrames": [
+          1,
+          2,
+          3
+        ],
+        "displayFrames": [
+          1,
+          2,
+          3
+        ],
+        "allowsPlayback": false,
+        "result": "static-only",
+        "note": "已核对三帧的器材与主要姿势；构图/比例存在变化，仅作独立静态示意。",
+        "reviewPage": 20
+      },
       "attribution": {
         "creator": "Bryl Lim",
         "creatorUrl": "https://bryllim.com",
@@ -10689,6 +14512,23 @@
     {
       "slug": "single-leg-calf-raise",
       "name": "Single-Leg Calf Raise",
+      "visualReview": {
+        "slug": "single-leg-calf-raise",
+        "reviewedFrames": [
+          1,
+          2,
+          3
+        ],
+        "displayFrames": [
+          1,
+          2,
+          3
+        ],
+        "allowsPlayback": false,
+        "result": "static-only",
+        "note": "已核对三帧的器材与主要姿势；构图/比例存在变化，仅作独立静态示意。",
+        "reviewPage": 20
+      },
       "attribution": {
         "creator": "Bryl Lim",
         "creatorUrl": "https://bryllim.com",
@@ -10731,6 +14571,23 @@
     {
       "slug": "glute-bridge-march",
       "name": "Glute Bridge March",
+      "visualReview": {
+        "slug": "glute-bridge-march",
+        "reviewedFrames": [
+          1,
+          2,
+          3
+        ],
+        "displayFrames": [
+          1,
+          2,
+          3
+        ],
+        "allowsPlayback": false,
+        "result": "static-only",
+        "note": "已核对三帧的器材与主要姿势；构图/比例存在变化，仅作独立静态示意。",
+        "reviewPage": 20
+      },
       "attribution": {
         "creator": "Bryl Lim",
         "creatorUrl": "https://bryllim.com",
@@ -10773,6 +14630,23 @@
     {
       "slug": "frog-pump",
       "name": "Frog Pump",
+      "visualReview": {
+        "slug": "frog-pump",
+        "reviewedFrames": [
+          1,
+          2,
+          3
+        ],
+        "displayFrames": [
+          1,
+          2,
+          3
+        ],
+        "allowsPlayback": false,
+        "result": "static-only",
+        "note": "已核对三帧的器材与主要姿势；构图/比例存在变化，仅作独立静态示意。",
+        "reviewPage": 20
+      },
       "attribution": {
         "creator": "Bryl Lim",
         "creatorUrl": "https://bryllim.com",
@@ -10815,6 +14689,23 @@
     {
       "slug": "donkey-kick",
       "name": "Donkey Kick",
+      "visualReview": {
+        "slug": "donkey-kick",
+        "reviewedFrames": [
+          1,
+          2,
+          3
+        ],
+        "displayFrames": [
+          1,
+          2,
+          3
+        ],
+        "allowsPlayback": false,
+        "result": "static-only",
+        "note": "已核对三帧的器材与主要姿势；构图/比例存在变化，仅作独立静态示意。",
+        "reviewPage": 20
+      },
       "attribution": {
         "creator": "Bryl Lim",
         "creatorUrl": "https://bryllim.com",
@@ -10857,6 +14748,23 @@
     {
       "slug": "fire-hydrant",
       "name": "Fire Hydrant",
+      "visualReview": {
+        "slug": "fire-hydrant",
+        "reviewedFrames": [
+          1,
+          2,
+          3
+        ],
+        "displayFrames": [
+          1,
+          2,
+          3
+        ],
+        "allowsPlayback": false,
+        "result": "static-only",
+        "note": "已核对三帧的器材与主要姿势；构图/比例存在变化，仅作独立静态示意。",
+        "reviewPage": 20
+      },
       "attribution": {
         "creator": "Bryl Lim",
         "creatorUrl": "https://bryllim.com",
@@ -10899,6 +14807,23 @@
     {
       "slug": "clamshell",
       "name": "Clamshell",
+      "visualReview": {
+        "slug": "clamshell",
+        "reviewedFrames": [
+          1,
+          2,
+          3
+        ],
+        "displayFrames": [
+          1,
+          2,
+          3
+        ],
+        "allowsPlayback": false,
+        "result": "static-only",
+        "note": "已核对三帧的器材与主要姿势；构图/比例存在变化，仅作独立静态示意。",
+        "reviewPage": 20
+      },
       "attribution": {
         "creator": "Bryl Lim",
         "creatorUrl": "https://bryllim.com",
@@ -10941,6 +14866,23 @@
     {
       "slug": "hip-airplane",
       "name": "Hip Airplane",
+      "visualReview": {
+        "slug": "hip-airplane",
+        "reviewedFrames": [
+          1,
+          2,
+          3
+        ],
+        "displayFrames": [
+          1,
+          2,
+          3
+        ],
+        "allowsPlayback": false,
+        "result": "static-only",
+        "note": "已核对三帧的器材与主要姿势；构图/比例存在变化，仅作独立静态示意。",
+        "reviewPage": 20
+      },
       "attribution": {
         "creator": "Bryl Lim",
         "creatorUrl": "https://bryllim.com",
@@ -10983,6 +14925,23 @@
     {
       "slug": "side-lying-hip-abduction",
       "name": "Side-Lying Hip Abduction",
+      "visualReview": {
+        "slug": "side-lying-hip-abduction",
+        "reviewedFrames": [
+          1,
+          2,
+          3
+        ],
+        "displayFrames": [
+          1,
+          2,
+          3
+        ],
+        "allowsPlayback": false,
+        "result": "static-only",
+        "note": "已核对三帧的器材与主要姿势；构图/比例存在变化，仅作独立静态示意。",
+        "reviewPage": 20
+      },
       "attribution": {
         "creator": "Bryl Lim",
         "creatorUrl": "https://bryllim.com",
@@ -11025,6 +14984,23 @@
     {
       "slug": "side-lying-leg-raise",
       "name": "Side-Lying Leg Raise",
+      "visualReview": {
+        "slug": "side-lying-leg-raise",
+        "reviewedFrames": [
+          1,
+          2,
+          3
+        ],
+        "displayFrames": [
+          1,
+          2,
+          3
+        ],
+        "allowsPlayback": false,
+        "result": "static-only",
+        "note": "已核对三帧的器材与主要姿势；构图/比例存在变化，仅作独立静态示意。",
+        "reviewPage": 20
+      },
       "attribution": {
         "creator": "Bryl Lim",
         "creatorUrl": "https://bryllim.com",
@@ -11067,6 +15043,19 @@
     {
       "slug": "lying-hamstring-walkout",
       "name": "Lying Hamstring Walkout",
+      "visualReview": {
+        "slug": "lying-hamstring-walkout",
+        "reviewedFrames": [
+          1,
+          2,
+          3
+        ],
+        "displayFrames": [],
+        "allowsPlayback": false,
+        "result": "withheld",
+        "note": "画面出现悬吊足部支撑，非脚跟在地面小步行走的版本。",
+        "reviewPage": 20
+      },
       "attribution": {
         "creator": "Bryl Lim",
         "creatorUrl": "https://bryllim.com",
@@ -11109,6 +15098,19 @@
     {
       "slug": "towel-hamstring-curl",
       "name": "Towel Hamstring Curl",
+      "visualReview": {
+        "slug": "towel-hamstring-curl",
+        "reviewedFrames": [
+          1,
+          2,
+          3
+        ],
+        "displayFrames": [],
+        "allowsPlayback": false,
+        "result": "withheld",
+        "note": "画面接近毛巾辅助抬腿拉伸，非脚跟滑动腿弯举。",
+        "reviewPage": 20
+      },
       "attribution": {
         "creator": "Bryl Lim",
         "creatorUrl": "https://bryllim.com",
@@ -11151,6 +15153,19 @@
     {
       "slug": "stability-ball-hamstring-curl",
       "name": "Stability Ball Hamstring Curl",
+      "visualReview": {
+        "slug": "stability-ball-hamstring-curl",
+        "reviewedFrames": [
+          1,
+          2,
+          3
+        ],
+        "displayFrames": [],
+        "allowsPlayback": false,
+        "result": "withheld",
+        "note": "画面为俯撑脚踩球，非仰卧屈膝收球的腿弯举。",
+        "reviewPage": 21
+      },
       "attribution": {
         "creator": "Bryl Lim",
         "creatorUrl": "https://bryllim.com",
@@ -11193,6 +15208,23 @@
     {
       "slug": "banded-glute-bridge",
       "name": "Banded Glute Bridge",
+      "visualReview": {
+        "slug": "banded-glute-bridge",
+        "reviewedFrames": [
+          1,
+          2,
+          3
+        ],
+        "displayFrames": [
+          1,
+          2,
+          3
+        ],
+        "allowsPlayback": false,
+        "result": "static-only",
+        "note": "阻力带位置细节不清，结合步骤确认阻力带在膝上，勿压膝关节。",
+        "reviewPage": 21
+      },
       "attribution": {
         "creator": "Bryl Lim",
         "creatorUrl": "https://bryllim.com",
@@ -11235,6 +15267,23 @@
     {
       "slug": "banded-hip-thrust",
       "name": "Banded Hip Thrust",
+      "visualReview": {
+        "slug": "banded-hip-thrust",
+        "reviewedFrames": [
+          1,
+          2,
+          3
+        ],
+        "displayFrames": [
+          1,
+          2,
+          3
+        ],
+        "allowsPlayback": false,
+        "result": "static-only",
+        "note": "已核对三帧的器材与主要姿势；构图/比例存在变化，仅作独立静态示意。",
+        "reviewPage": 21
+      },
       "attribution": {
         "creator": "Bryl Lim",
         "creatorUrl": "https://bryllim.com",
@@ -11277,6 +15326,19 @@
     {
       "slug": "banded-frog-pump",
       "name": "Banded Frog Pump",
+      "visualReview": {
+        "slug": "banded-frog-pump",
+        "reviewedFrames": [
+          1,
+          2,
+          3
+        ],
+        "displayFrames": [],
+        "allowsPlayback": false,
+        "result": "withheld",
+        "note": "画面为坐姿后撑，未呈现仰卧脚掌相对的蛙式臀桥。",
+        "reviewPage": 21
+      },
       "attribution": {
         "creator": "Bryl Lim",
         "creatorUrl": "https://bryllim.com",
@@ -11319,6 +15381,22 @@
     {
       "slug": "banded-clamshell",
       "name": "Banded Clamshell",
+      "visualReview": {
+        "slug": "banded-clamshell",
+        "reviewedFrames": [
+          1,
+          2,
+          3
+        ],
+        "displayFrames": [
+          2,
+          3
+        ],
+        "allowsPlayback": false,
+        "result": "static-only",
+        "note": "第1帧上侧腿伸直，非屈膝蚌式开合，已隐藏。",
+        "reviewPage": 21
+      },
       "attribution": {
         "creator": "Bryl Lim",
         "creatorUrl": "https://bryllim.com",
@@ -11361,6 +15439,23 @@
     {
       "slug": "banded-lateral-walk",
       "name": "Banded Lateral Walk",
+      "visualReview": {
+        "slug": "banded-lateral-walk",
+        "reviewedFrames": [
+          1,
+          2,
+          3
+        ],
+        "displayFrames": [
+          1,
+          2,
+          3
+        ],
+        "allowsPlayback": false,
+        "result": "static-only",
+        "note": "已核对三帧的器材与主要姿势；构图/比例存在变化，仅作独立静态示意。",
+        "reviewPage": 21
+      },
       "attribution": {
         "creator": "Bryl Lim",
         "creatorUrl": "https://bryllim.com",
@@ -11403,6 +15498,23 @@
     {
       "slug": "banded-monster-walk",
       "name": "Banded Monster Walk",
+      "visualReview": {
+        "slug": "banded-monster-walk",
+        "reviewedFrames": [
+          1,
+          2,
+          3
+        ],
+        "displayFrames": [
+          1,
+          2,
+          3
+        ],
+        "allowsPlayback": false,
+        "result": "static-only",
+        "note": "已核对三帧的器材与主要姿势；构图/比例存在变化，仅作独立静态示意。",
+        "reviewPage": 21
+      },
       "attribution": {
         "creator": "Bryl Lim",
         "creatorUrl": "https://bryllim.com",
@@ -11445,6 +15557,23 @@
     {
       "slug": "banded-squat",
       "name": "Banded Squat",
+      "visualReview": {
+        "slug": "banded-squat",
+        "reviewedFrames": [
+          1,
+          2,
+          3
+        ],
+        "displayFrames": [
+          1,
+          2,
+          3
+        ],
+        "allowsPlayback": false,
+        "result": "static-only",
+        "note": "已核对三帧的器材与主要姿势；构图/比例存在变化，仅作独立静态示意。",
+        "reviewPage": 21
+      },
       "attribution": {
         "creator": "Bryl Lim",
         "creatorUrl": "https://bryllim.com",
@@ -11487,6 +15616,23 @@
     {
       "slug": "banded-donkey-kick",
       "name": "Banded Donkey Kick",
+      "visualReview": {
+        "slug": "banded-donkey-kick",
+        "reviewedFrames": [
+          1,
+          2,
+          3
+        ],
+        "displayFrames": [
+          1,
+          2,
+          3
+        ],
+        "allowsPlayback": false,
+        "result": "static-only",
+        "note": "已核对三帧的器材与主要姿势；构图/比例存在变化，仅作独立静态示意。",
+        "reviewPage": 21
+      },
       "attribution": {
         "creator": "Bryl Lim",
         "creatorUrl": "https://bryllim.com",
@@ -11529,6 +15675,23 @@
     {
       "slug": "banded-fire-hydrant",
       "name": "Banded Fire Hydrant",
+      "visualReview": {
+        "slug": "banded-fire-hydrant",
+        "reviewedFrames": [
+          1,
+          2,
+          3
+        ],
+        "displayFrames": [
+          1,
+          2,
+          3
+        ],
+        "allowsPlayback": false,
+        "result": "static-only",
+        "note": "已核对三帧的器材与主要姿势；构图/比例存在变化，仅作独立静态示意。",
+        "reviewPage": 21
+      },
       "attribution": {
         "creator": "Bryl Lim",
         "creatorUrl": "https://bryllim.com",
@@ -11571,6 +15734,23 @@
     {
       "slug": "banded-kickback",
       "name": "Banded Kickback",
+      "visualReview": {
+        "slug": "banded-kickback",
+        "reviewedFrames": [
+          1,
+          2,
+          3
+        ],
+        "displayFrames": [
+          1,
+          2,
+          3
+        ],
+        "allowsPlayback": false,
+        "result": "static-only",
+        "note": "已核对三帧的器材与主要姿势；构图/比例存在变化，仅作独立静态示意。",
+        "reviewPage": 21
+      },
       "attribution": {
         "creator": "Bryl Lim",
         "creatorUrl": "https://bryllim.com",
@@ -11613,6 +15793,23 @@
     {
       "slug": "banded-standing-hip-abduction",
       "name": "Banded Standing Hip Abduction",
+      "visualReview": {
+        "slug": "banded-standing-hip-abduction",
+        "reviewedFrames": [
+          1,
+          2,
+          3
+        ],
+        "displayFrames": [
+          1,
+          2,
+          3
+        ],
+        "allowsPlayback": false,
+        "result": "static-only",
+        "note": "已核对三帧的器材与主要姿势；构图/比例存在变化，仅作独立静态示意。",
+        "reviewPage": 21
+      },
       "attribution": {
         "creator": "Bryl Lim",
         "creatorUrl": "https://bryllim.com",
@@ -11655,6 +15852,23 @@
     {
       "slug": "banded-seated-hip-abduction",
       "name": "Banded Seated Hip Abduction",
+      "visualReview": {
+        "slug": "banded-seated-hip-abduction",
+        "reviewedFrames": [
+          1,
+          2,
+          3
+        ],
+        "displayFrames": [
+          1,
+          2,
+          3
+        ],
+        "allowsPlayback": false,
+        "result": "static-only",
+        "note": "已核对三帧的器材与主要姿势；构图/比例存在变化，仅作独立静态示意。",
+        "reviewPage": 22
+      },
       "attribution": {
         "creator": "Bryl Lim",
         "creatorUrl": "https://bryllim.com",
@@ -11697,6 +15911,23 @@
     {
       "slug": "band-pull-apart",
       "name": "Band Pull-Apart",
+      "visualReview": {
+        "slug": "band-pull-apart",
+        "reviewedFrames": [
+          1,
+          2,
+          3
+        ],
+        "displayFrames": [
+          1,
+          2,
+          3
+        ],
+        "allowsPlayback": false,
+        "result": "static-only",
+        "note": "已核对三帧的器材与主要姿势；构图/比例存在变化，仅作独立静态示意。",
+        "reviewPage": 22
+      },
       "attribution": {
         "creator": "Bryl Lim",
         "creatorUrl": "https://bryllim.com",
@@ -11739,6 +15970,23 @@
     {
       "slug": "banded-face-pull",
       "name": "Banded Face Pull",
+      "visualReview": {
+        "slug": "banded-face-pull",
+        "reviewedFrames": [
+          1,
+          2,
+          3
+        ],
+        "displayFrames": [
+          1,
+          2,
+          3
+        ],
+        "allowsPlayback": false,
+        "result": "static-only",
+        "note": "已核对三帧的器材与主要姿势；构图/比例存在变化，仅作独立静态示意。",
+        "reviewPage": 22
+      },
       "attribution": {
         "creator": "Bryl Lim",
         "creatorUrl": "https://bryllim.com",
@@ -11781,6 +16029,23 @@
     {
       "slug": "banded-row",
       "name": "Banded Row",
+      "visualReview": {
+        "slug": "banded-row",
+        "reviewedFrames": [
+          1,
+          2,
+          3
+        ],
+        "displayFrames": [
+          1,
+          2,
+          3
+        ],
+        "allowsPlayback": false,
+        "result": "static-only",
+        "note": "已核对三帧的器材与主要姿势；构图/比例存在变化，仅作独立静态示意。",
+        "reviewPage": 22
+      },
       "attribution": {
         "creator": "Bryl Lim",
         "creatorUrl": "https://bryllim.com",
@@ -11823,6 +16088,23 @@
     {
       "slug": "banded-lat-pulldown",
       "name": "Banded Lat Pulldown",
+      "visualReview": {
+        "slug": "banded-lat-pulldown",
+        "reviewedFrames": [
+          1,
+          2,
+          3
+        ],
+        "displayFrames": [
+          1,
+          2,
+          3
+        ],
+        "allowsPlayback": false,
+        "result": "static-only",
+        "note": "已核对三帧的器材与主要姿势；构图/比例存在变化，仅作独立静态示意。",
+        "reviewPage": 22
+      },
       "attribution": {
         "creator": "Bryl Lim",
         "creatorUrl": "https://bryllim.com",
@@ -11865,6 +16147,23 @@
     {
       "slug": "banded-pallof-press",
       "name": "Banded Pallof Press",
+      "visualReview": {
+        "slug": "banded-pallof-press",
+        "reviewedFrames": [
+          1,
+          2,
+          3
+        ],
+        "displayFrames": [
+          1,
+          2,
+          3
+        ],
+        "allowsPlayback": false,
+        "result": "static-only",
+        "note": "已核对三帧的器材与主要姿势；构图/比例存在变化，仅作独立静态示意。",
+        "reviewPage": 22
+      },
       "attribution": {
         "creator": "Bryl Lim",
         "creatorUrl": "https://bryllim.com",
@@ -11907,6 +16206,23 @@
     {
       "slug": "banded-woodchop",
       "name": "Banded Woodchop",
+      "visualReview": {
+        "slug": "banded-woodchop",
+        "reviewedFrames": [
+          1,
+          2,
+          3
+        ],
+        "displayFrames": [
+          1,
+          2,
+          3
+        ],
+        "allowsPlayback": false,
+        "result": "static-only",
+        "note": "已核对三帧的器材与主要姿势；构图/比例存在变化，仅作独立静态示意。",
+        "reviewPage": 22
+      },
       "attribution": {
         "creator": "Bryl Lim",
         "creatorUrl": "https://bryllim.com",
@@ -11949,6 +16265,23 @@
     {
       "slug": "banded-dead-bug",
       "name": "Banded Dead Bug",
+      "visualReview": {
+        "slug": "banded-dead-bug",
+        "reviewedFrames": [
+          1,
+          2,
+          3
+        ],
+        "displayFrames": [
+          1,
+          2,
+          3
+        ],
+        "allowsPlayback": false,
+        "result": "static-only",
+        "note": "已核对三帧的器材与主要姿势；构图/比例存在变化，仅作独立静态示意。",
+        "reviewPage": 22
+      },
       "attribution": {
         "creator": "Bryl Lim",
         "creatorUrl": "https://bryllim.com",
@@ -11991,6 +16324,21 @@
     {
       "slug": "hollow-body-hold",
       "name": "Hollow Body Hold",
+      "visualReview": {
+        "slug": "hollow-body-hold",
+        "reviewedFrames": [
+          1,
+          2,
+          3
+        ],
+        "displayFrames": [
+          1
+        ],
+        "allowsPlayback": false,
+        "result": "static-only",
+        "note": "后续帧为屈膝或不同躯干角度的变式，仅保留直腿中空体式。",
+        "reviewPage": 22
+      },
       "attribution": {
         "creator": "Bryl Lim",
         "creatorUrl": "https://bryllim.com",
@@ -12033,6 +16381,23 @@
     {
       "slug": "hollow-rock",
       "name": "Hollow Rock",
+      "visualReview": {
+        "slug": "hollow-rock",
+        "reviewedFrames": [
+          1,
+          2,
+          3
+        ],
+        "displayFrames": [
+          1,
+          2,
+          3
+        ],
+        "allowsPlayback": false,
+        "result": "static-only",
+        "note": "已核对三帧的器材与主要姿势；构图/比例存在变化，仅作独立静态示意。",
+        "reviewPage": 22
+      },
       "attribution": {
         "creator": "Bryl Lim",
         "creatorUrl": "https://bryllim.com",
@@ -12075,6 +16440,23 @@
     {
       "slug": "v-up",
       "name": "V-Up",
+      "visualReview": {
+        "slug": "v-up",
+        "reviewedFrames": [
+          1,
+          2,
+          3
+        ],
+        "displayFrames": [
+          1,
+          2,
+          3
+        ],
+        "allowsPlayback": false,
+        "result": "static-only",
+        "note": "已核对三帧的器材与主要姿势；构图/比例存在变化，仅作独立静态示意。",
+        "reviewPage": 22
+      },
       "attribution": {
         "creator": "Bryl Lim",
         "creatorUrl": "https://bryllim.com",
@@ -12117,6 +16499,23 @@
     {
       "slug": "flutter-kick",
       "name": "Flutter Kick",
+      "visualReview": {
+        "slug": "flutter-kick",
+        "reviewedFrames": [
+          1,
+          2,
+          3
+        ],
+        "displayFrames": [
+          1,
+          2,
+          3
+        ],
+        "allowsPlayback": false,
+        "result": "static-only",
+        "note": "已核对三帧的器材与主要姿势；构图/比例存在变化，仅作独立静态示意。",
+        "reviewPage": 22
+      },
       "attribution": {
         "creator": "Bryl Lim",
         "creatorUrl": "https://bryllim.com",
@@ -12159,6 +16558,23 @@
     {
       "slug": "lying-leg-raise",
       "name": "Lying Leg Raise",
+      "visualReview": {
+        "slug": "lying-leg-raise",
+        "reviewedFrames": [
+          1,
+          2,
+          3
+        ],
+        "displayFrames": [
+          1,
+          2,
+          3
+        ],
+        "allowsPlayback": false,
+        "result": "static-only",
+        "note": "已核对三帧的器材与主要姿势；构图/比例存在变化，仅作独立静态示意。",
+        "reviewPage": 23
+      },
       "attribution": {
         "creator": "Bryl Lim",
         "creatorUrl": "https://bryllim.com",
@@ -12201,6 +16617,19 @@
     {
       "slug": "toe-touch",
       "name": "Toe Touch",
+      "visualReview": {
+        "slug": "toe-touch",
+        "reviewedFrames": [
+          1,
+          2,
+          3
+        ],
+        "displayFrames": [],
+        "allowsPlayback": false,
+        "result": "withheld",
+        "note": "画面为站姿前屈，非当前名称所指仰卧触脚尖。",
+        "reviewPage": 23
+      },
       "attribution": {
         "creator": "Bryl Lim",
         "creatorUrl": "https://bryllim.com",
@@ -12243,6 +16672,23 @@
     {
       "slug": "heel-tap",
       "name": "Heel Tap",
+      "visualReview": {
+        "slug": "heel-tap",
+        "reviewedFrames": [
+          1,
+          2,
+          3
+        ],
+        "displayFrames": [
+          1,
+          2,
+          3
+        ],
+        "allowsPlayback": false,
+        "result": "static-only",
+        "note": "已核对三帧的器材与主要姿势；构图/比例存在变化，仅作独立静态示意。",
+        "reviewPage": 23
+      },
       "attribution": {
         "creator": "Bryl Lim",
         "creatorUrl": "https://bryllim.com",
@@ -12285,6 +16731,23 @@
     {
       "slug": "plank-shoulder-tap",
       "name": "Plank Shoulder Tap",
+      "visualReview": {
+        "slug": "plank-shoulder-tap",
+        "reviewedFrames": [
+          1,
+          2,
+          3
+        ],
+        "displayFrames": [
+          1,
+          2,
+          3
+        ],
+        "allowsPlayback": false,
+        "result": "static-only",
+        "note": "已核对三帧的器材与主要姿势；构图/比例存在变化，仅作独立静态示意。",
+        "reviewPage": 23
+      },
       "attribution": {
         "creator": "Bryl Lim",
         "creatorUrl": "https://bryllim.com",
@@ -12327,6 +16790,19 @@
     {
       "slug": "plank-jack",
       "name": "Plank Jack",
+      "visualReview": {
+        "slug": "plank-jack",
+        "reviewedFrames": [
+          1,
+          2,
+          3
+        ],
+        "displayFrames": [],
+        "allowsPlayback": false,
+        "result": "withheld",
+        "note": "分帧未清楚呈现双脚开合，并混有单腿屈膝。",
+        "reviewPage": 23
+      },
       "attribution": {
         "creator": "Bryl Lim",
         "creatorUrl": "https://bryllim.com",
@@ -12369,6 +16845,21 @@
     {
       "slug": "bear-plank",
       "name": "Bear Plank",
+      "visualReview": {
+        "slug": "bear-plank",
+        "reviewedFrames": [
+          1,
+          2,
+          3
+        ],
+        "displayFrames": [
+          3
+        ],
+        "allowsPlayback": false,
+        "result": "static-only",
+        "note": "仅保留双膝屈曲接近肩髋正下方的静态支撑图。",
+        "reviewPage": 23
+      },
       "attribution": {
         "creator": "Bryl Lim",
         "creatorUrl": "https://bryllim.com",
@@ -12411,6 +16902,23 @@
     {
       "slug": "bear-crawl",
       "name": "Bear Crawl",
+      "visualReview": {
+        "slug": "bear-crawl",
+        "reviewedFrames": [
+          1,
+          2,
+          3
+        ],
+        "displayFrames": [
+          1,
+          2,
+          3
+        ],
+        "allowsPlayback": false,
+        "result": "static-only",
+        "note": "已核对三帧的器材与主要姿势；构图/比例存在变化，仅作独立静态示意。",
+        "reviewPage": 23
+      },
       "attribution": {
         "creator": "Bryl Lim",
         "creatorUrl": "https://bryllim.com",
@@ -12453,6 +16961,23 @@
     {
       "slug": "crab-walk",
       "name": "Crab Walk",
+      "visualReview": {
+        "slug": "crab-walk",
+        "reviewedFrames": [
+          1,
+          2,
+          3
+        ],
+        "displayFrames": [
+          1,
+          2,
+          3
+        ],
+        "allowsPlayback": false,
+        "result": "static-only",
+        "note": "已核对三帧的器材与主要姿势；构图/比例存在变化，仅作独立静态示意。",
+        "reviewPage": 23
+      },
       "attribution": {
         "creator": "Bryl Lim",
         "creatorUrl": "https://bryllim.com",
@@ -12495,6 +17020,23 @@
     {
       "slug": "inchworm",
       "name": "Inchworm",
+      "visualReview": {
+        "slug": "inchworm",
+        "reviewedFrames": [
+          1,
+          2,
+          3
+        ],
+        "displayFrames": [
+          1,
+          2,
+          3
+        ],
+        "allowsPlayback": false,
+        "result": "static-only",
+        "note": "已核对三帧的器材与主要姿势；构图/比例存在变化，仅作独立静态示意。",
+        "reviewPage": 23
+      },
       "attribution": {
         "creator": "Bryl Lim",
         "creatorUrl": "https://bryllim.com",
@@ -12537,6 +17079,23 @@
     {
       "slug": "l-sit-hold",
       "name": "L-Sit Hold",
+      "visualReview": {
+        "slug": "l-sit-hold",
+        "reviewedFrames": [
+          1,
+          2,
+          3
+        ],
+        "displayFrames": [
+          1,
+          2,
+          3
+        ],
+        "allowsPlayback": false,
+        "result": "static-only",
+        "note": "图为双杠支撑版本，实际练习须使用稳固支撑。",
+        "reviewPage": 23
+      },
       "attribution": {
         "creator": "Bryl Lim",
         "creatorUrl": "https://bryllim.com",
@@ -12579,6 +17138,19 @@
     {
       "slug": "seated-knee-tuck",
       "name": "Seated Knee Tuck",
+      "visualReview": {
+        "slug": "seated-knee-tuck",
+        "reviewedFrames": [
+          1,
+          2,
+          3
+        ],
+        "displayFrames": [],
+        "allowsPlayback": false,
+        "result": "withheld",
+        "note": "画面为支撑架悬空收膝，非坐姿收膝。",
+        "reviewPage": 23
+      },
       "attribution": {
         "creator": "Bryl Lim",
         "creatorUrl": "https://bryllim.com",
@@ -12621,6 +17193,23 @@
     {
       "slug": "side-plank-hip-dip",
       "name": "Side Plank Hip Dip",
+      "visualReview": {
+        "slug": "side-plank-hip-dip",
+        "reviewedFrames": [
+          1,
+          2,
+          3
+        ],
+        "displayFrames": [
+          1,
+          2,
+          3
+        ],
+        "allowsPlayback": false,
+        "result": "static-only",
+        "note": "已核对三帧的器材与主要姿势；构图/比例存在变化，仅作独立静态示意。",
+        "reviewPage": 23
+      },
       "attribution": {
         "creator": "Bryl Lim",
         "creatorUrl": "https://bryllim.com",
@@ -12663,6 +17252,23 @@
     {
       "slug": "copenhagen-plank",
       "name": "Copenhagen Plank",
+      "visualReview": {
+        "slug": "copenhagen-plank",
+        "reviewedFrames": [
+          1,
+          2,
+          3
+        ],
+        "displayFrames": [
+          1,
+          2,
+          3
+        ],
+        "allowsPlayback": false,
+        "result": "static-only",
+        "note": "已核对三帧的器材与主要姿势；构图/比例存在变化，仅作独立静态示意。",
+        "reviewPage": 24
+      },
       "attribution": {
         "creator": "Bryl Lim",
         "creatorUrl": "https://bryllim.com",
@@ -12705,6 +17311,19 @@
     {
       "slug": "dragon-flag",
       "name": "Dragon Flag",
+      "visualReview": {
+        "slug": "dragon-flag",
+        "reviewedFrames": [
+          1,
+          2,
+          3
+        ],
+        "displayFrames": [],
+        "allowsPlayback": false,
+        "result": "withheld",
+        "note": "画面更接近杠上前水平，未呈现龙旗所需肩背在凳上的支撑。",
+        "reviewPage": 24
+      },
       "attribution": {
         "creator": "Bryl Lim",
         "creatorUrl": "https://bryllim.com",
@@ -12747,6 +17366,23 @@
     {
       "slug": "burpee",
       "name": "Burpee",
+      "visualReview": {
+        "slug": "burpee",
+        "reviewedFrames": [
+          1,
+          2,
+          3
+        ],
+        "displayFrames": [
+          1,
+          2,
+          3
+        ],
+        "allowsPlayback": false,
+        "result": "static-only",
+        "note": "已核对三帧的器材与主要姿势；构图/比例存在变化，仅作独立静态示意。",
+        "reviewPage": 24
+      },
       "attribution": {
         "creator": "Bryl Lim",
         "creatorUrl": "https://bryllim.com",
@@ -12789,6 +17425,23 @@
     {
       "slug": "half-burpee",
       "name": "Half Burpee",
+      "visualReview": {
+        "slug": "half-burpee",
+        "reviewedFrames": [
+          1,
+          2,
+          3
+        ],
+        "displayFrames": [
+          1,
+          2,
+          3
+        ],
+        "allowsPlayback": false,
+        "result": "static-only",
+        "note": "已核对三帧的器材与主要姿势；构图/比例存在变化，仅作独立静态示意。",
+        "reviewPage": 24
+      },
       "attribution": {
         "creator": "Bryl Lim",
         "creatorUrl": "https://bryllim.com",
@@ -12831,6 +17484,23 @@
     {
       "slug": "squat-thrust",
       "name": "Squat Thrust",
+      "visualReview": {
+        "slug": "squat-thrust",
+        "reviewedFrames": [
+          1,
+          2,
+          3
+        ],
+        "displayFrames": [
+          1,
+          2,
+          3
+        ],
+        "allowsPlayback": false,
+        "result": "static-only",
+        "note": "已核对三帧的器材与主要姿势；构图/比例存在变化，仅作独立静态示意。",
+        "reviewPage": 24
+      },
       "attribution": {
         "creator": "Bryl Lim",
         "creatorUrl": "https://bryllim.com",
@@ -12873,6 +17543,23 @@
     {
       "slug": "high-knees",
       "name": "High Knees",
+      "visualReview": {
+        "slug": "high-knees",
+        "reviewedFrames": [
+          1,
+          2,
+          3
+        ],
+        "displayFrames": [
+          1,
+          2,
+          3
+        ],
+        "allowsPlayback": false,
+        "result": "static-only",
+        "note": "已核对三帧的器材与主要姿势；构图/比例存在变化，仅作独立静态示意。",
+        "reviewPage": 24
+      },
       "attribution": {
         "creator": "Bryl Lim",
         "creatorUrl": "https://bryllim.com",
@@ -12915,6 +17602,23 @@
     {
       "slug": "jumping-jack",
       "name": "Jumping Jack",
+      "visualReview": {
+        "slug": "jumping-jack",
+        "reviewedFrames": [
+          1,
+          2,
+          3
+        ],
+        "displayFrames": [
+          1,
+          2,
+          3
+        ],
+        "allowsPlayback": false,
+        "result": "static-only",
+        "note": "已核对三帧的器材与主要姿势；构图/比例存在变化，仅作独立静态示意。",
+        "reviewPage": 24
+      },
       "attribution": {
         "creator": "Bryl Lim",
         "creatorUrl": "https://bryllim.com",
@@ -12957,6 +17661,23 @@
     {
       "slug": "skater-hop",
       "name": "Skater Hop",
+      "visualReview": {
+        "slug": "skater-hop",
+        "reviewedFrames": [
+          1,
+          2,
+          3
+        ],
+        "displayFrames": [
+          1,
+          2,
+          3
+        ],
+        "allowsPlayback": false,
+        "result": "static-only",
+        "note": "已核对三帧的器材与主要姿势；构图/比例存在变化，仅作独立静态示意。",
+        "reviewPage": 24
+      },
       "attribution": {
         "creator": "Bryl Lim",
         "creatorUrl": "https://bryllim.com",
@@ -12999,6 +17720,23 @@
     {
       "slug": "lateral-shuffle",
       "name": "Lateral Shuffle",
+      "visualReview": {
+        "slug": "lateral-shuffle",
+        "reviewedFrames": [
+          1,
+          2,
+          3
+        ],
+        "displayFrames": [
+          1,
+          2,
+          3
+        ],
+        "allowsPlayback": false,
+        "result": "static-only",
+        "note": "已核对三帧的器材与主要姿势；构图/比例存在变化，仅作独立静态示意。",
+        "reviewPage": 24
+      },
       "attribution": {
         "creator": "Bryl Lim",
         "creatorUrl": "https://bryllim.com",
@@ -13041,6 +17779,23 @@
     {
       "slug": "fast-feet",
       "name": "Fast Feet",
+      "visualReview": {
+        "slug": "fast-feet",
+        "reviewedFrames": [
+          1,
+          2,
+          3
+        ],
+        "displayFrames": [
+          1,
+          2,
+          3
+        ],
+        "allowsPlayback": false,
+        "result": "static-only",
+        "note": "图示绳梯步法；无绳梯时应先明确平整地面的落脚标记。",
+        "reviewPage": 24
+      },
       "attribution": {
         "creator": "Bryl Lim",
         "creatorUrl": "https://bryllim.com",
@@ -13083,6 +17838,23 @@
     {
       "slug": "sprawl",
       "name": "Sprawl",
+      "visualReview": {
+        "slug": "sprawl",
+        "reviewedFrames": [
+          1,
+          2,
+          3
+        ],
+        "displayFrames": [
+          1,
+          2,
+          3
+        ],
+        "allowsPlayback": false,
+        "result": "static-only",
+        "note": "已核对三帧的器材与主要姿势；构图/比例存在变化，仅作独立静态示意。",
+        "reviewPage": 24
+      },
       "attribution": {
         "creator": "Bryl Lim",
         "creatorUrl": "https://bryllim.com",
@@ -13125,6 +17897,19 @@
     {
       "slug": "seal-jack",
       "name": "Seal Jack",
+      "visualReview": {
+        "slug": "seal-jack",
+        "reviewedFrames": [
+          1,
+          2,
+          3
+        ],
+        "displayFrames": [],
+        "allowsPlayback": false,
+        "result": "withheld",
+        "note": "画面为双杠支撑开合腿，非站姿开合跳。",
+        "reviewPage": 24
+      },
       "attribution": {
         "creator": "Bryl Lim",
         "creatorUrl": "https://bryllim.com",
@@ -13167,6 +17952,23 @@
     {
       "slug": "cat-cow-stretch",
       "name": "Cat-Cow Stretch",
+      "visualReview": {
+        "slug": "cat-cow-stretch",
+        "reviewedFrames": [
+          1,
+          2,
+          3
+        ],
+        "displayFrames": [
+          1,
+          2,
+          3
+        ],
+        "allowsPlayback": false,
+        "result": "static-only",
+        "note": "已核对三帧的器材与主要姿势；构图/比例存在变化，仅作独立静态示意。",
+        "reviewPage": 25
+      },
       "attribution": {
         "creator": "Bryl Lim",
         "creatorUrl": "https://bryllim.com",
@@ -13209,6 +18011,23 @@
     {
       "slug": "arm-circles",
       "name": "Arm Circles",
+      "visualReview": {
+        "slug": "arm-circles",
+        "reviewedFrames": [
+          1,
+          2,
+          3
+        ],
+        "displayFrames": [
+          1,
+          2,
+          3
+        ],
+        "allowsPlayback": false,
+        "result": "static-only",
+        "note": "已核对三帧的器材与主要姿势；构图/比例存在变化，仅作独立静态示意。",
+        "reviewPage": 25
+      },
       "attribution": {
         "creator": "Bryl Lim",
         "creatorUrl": "https://bryllim.com",
@@ -13251,6 +18070,23 @@
     {
       "slug": "worlds-greatest-stretch",
       "name": "World's Greatest Stretch",
+      "visualReview": {
+        "slug": "worlds-greatest-stretch",
+        "reviewedFrames": [
+          1,
+          2,
+          3
+        ],
+        "displayFrames": [
+          1,
+          2,
+          3
+        ],
+        "allowsPlayback": false,
+        "result": "static-only",
+        "note": "已核对三帧的器材与主要姿势；构图/比例存在变化，仅作独立静态示意。",
+        "reviewPage": 25
+      },
       "attribution": {
         "creator": "Bryl Lim",
         "creatorUrl": "https://bryllim.com",
@@ -13293,6 +18129,23 @@
     {
       "slug": "leg-swings-stretch",
       "name": "Leg Swings",
+      "visualReview": {
+        "slug": "leg-swings-stretch",
+        "reviewedFrames": [
+          1,
+          2,
+          3
+        ],
+        "displayFrames": [
+          1,
+          2,
+          3
+        ],
+        "allowsPlayback": false,
+        "result": "static-only",
+        "note": "已核对三帧的器材与主要姿势；构图/比例存在变化，仅作独立静态示意。",
+        "reviewPage": 25
+      },
       "attribution": {
         "creator": "Bryl Lim",
         "creatorUrl": "https://bryllim.com",
@@ -13335,6 +18188,19 @@
     {
       "slug": "torso-twist-stretch",
       "name": "Torso Twists",
+      "visualReview": {
+        "slug": "torso-twist-stretch",
+        "reviewedFrames": [
+          1,
+          2,
+          3
+        ],
+        "displayFrames": [],
+        "allowsPlayback": false,
+        "result": "withheld",
+        "note": "画面为坐姿负重转体，非徒手躯干活动。",
+        "reviewPage": 25
+      },
       "attribution": {
         "creator": "Bryl Lim",
         "creatorUrl": "https://bryllim.com",
@@ -13377,6 +18243,23 @@
     {
       "slug": "doorway-chest-stretch",
       "name": "Doorway Chest Stretch",
+      "visualReview": {
+        "slug": "doorway-chest-stretch",
+        "reviewedFrames": [
+          1,
+          2,
+          3
+        ],
+        "displayFrames": [
+          1,
+          2,
+          3
+        ],
+        "allowsPlayback": false,
+        "result": "static-only",
+        "note": "已核对三帧的器材与主要姿势；构图/比例存在变化，仅作独立静态示意。",
+        "reviewPage": 25
+      },
       "attribution": {
         "creator": "Bryl Lim",
         "creatorUrl": "https://bryllim.com",
@@ -13419,6 +18302,23 @@
     {
       "slug": "childs-pose",
       "name": "Child's Pose",
+      "visualReview": {
+        "slug": "childs-pose",
+        "reviewedFrames": [
+          1,
+          2,
+          3
+        ],
+        "displayFrames": [
+          1,
+          2,
+          3
+        ],
+        "allowsPlayback": false,
+        "result": "static-only",
+        "note": "已核对三帧的器材与主要姿势；构图/比例存在变化，仅作独立静态示意。",
+        "reviewPage": 25
+      },
       "attribution": {
         "creator": "Bryl Lim",
         "creatorUrl": "https://bryllim.com",
@@ -13461,6 +18361,23 @@
     {
       "slug": "kneeling-hip-flexor-stretch",
       "name": "Kneeling Hip Flexor Stretch",
+      "visualReview": {
+        "slug": "kneeling-hip-flexor-stretch",
+        "reviewedFrames": [
+          1,
+          2,
+          3
+        ],
+        "displayFrames": [
+          1,
+          2,
+          3
+        ],
+        "allowsPlayback": false,
+        "result": "static-only",
+        "note": "已核对三帧的器材与主要姿势；构图/比例存在变化，仅作独立静态示意。",
+        "reviewPage": 25
+      },
       "attribution": {
         "creator": "Bryl Lim",
         "creatorUrl": "https://bryllim.com",
@@ -13503,6 +18420,23 @@
     {
       "slug": "hamstring-stretch",
       "name": "Hamstring Stretch",
+      "visualReview": {
+        "slug": "hamstring-stretch",
+        "reviewedFrames": [
+          1,
+          2,
+          3
+        ],
+        "displayFrames": [
+          1,
+          2,
+          3
+        ],
+        "allowsPlayback": false,
+        "result": "static-only",
+        "note": "已核对三帧的器材与主要姿势；构图/比例存在变化，仅作独立静态示意。",
+        "reviewPage": 25
+      },
       "attribution": {
         "creator": "Bryl Lim",
         "creatorUrl": "https://bryllim.com",
@@ -13545,6 +18479,23 @@
     {
       "slug": "standing-quad-stretch",
       "name": "Standing Quad Stretch",
+      "visualReview": {
+        "slug": "standing-quad-stretch",
+        "reviewedFrames": [
+          1,
+          2,
+          3
+        ],
+        "displayFrames": [
+          1,
+          2,
+          3
+        ],
+        "allowsPlayback": false,
+        "result": "static-only",
+        "note": "已核对三帧的器材与主要姿势；构图/比例存在变化，仅作独立静态示意。",
+        "reviewPage": 25
+      },
       "attribution": {
         "creator": "Bryl Lim",
         "creatorUrl": "https://bryllim.com",
@@ -13587,6 +18538,23 @@
     {
       "slug": "seated-forward-fold-stretch",
       "name": "Seated Forward Fold",
+      "visualReview": {
+        "slug": "seated-forward-fold-stretch",
+        "reviewedFrames": [
+          1,
+          2,
+          3
+        ],
+        "displayFrames": [
+          1,
+          2,
+          3
+        ],
+        "allowsPlayback": false,
+        "result": "static-only",
+        "note": "已核对三帧的器材与主要姿势；构图/比例存在变化，仅作独立静态示意。",
+        "reviewPage": 25
+      },
       "attribution": {
         "creator": "Bryl Lim",
         "creatorUrl": "https://bryllim.com",
@@ -13629,6 +18597,23 @@
     {
       "slug": "cross-body-shoulder-stretch",
       "name": "Cross-Body Shoulder Stretch",
+      "visualReview": {
+        "slug": "cross-body-shoulder-stretch",
+        "reviewedFrames": [
+          1,
+          2,
+          3
+        ],
+        "displayFrames": [
+          1,
+          2,
+          3
+        ],
+        "allowsPlayback": false,
+        "result": "static-only",
+        "note": "已核对三帧的器材与主要姿势；构图/比例存在变化，仅作独立静态示意。",
+        "reviewPage": 25
+      },
       "attribution": {
         "creator": "Bryl Lim",
         "creatorUrl": "https://bryllim.com",
@@ -13671,6 +18656,23 @@
     {
       "slug": "wall-calf-stretch",
       "name": "Wall Calf Stretch",
+      "visualReview": {
+        "slug": "wall-calf-stretch",
+        "reviewedFrames": [
+          1,
+          2,
+          3
+        ],
+        "displayFrames": [
+          1,
+          2,
+          3
+        ],
+        "allowsPlayback": false,
+        "result": "static-only",
+        "note": "已核对三帧的器材与主要姿势；构图/比例存在变化，仅作独立静态示意。",
+        "reviewPage": 26
+      },
       "attribution": {
         "creator": "Bryl Lim",
         "creatorUrl": "https://bryllim.com",
@@ -13713,6 +18715,23 @@
     {
       "slug": "butterfly-stretch",
       "name": "Butterfly Stretch",
+      "visualReview": {
+        "slug": "butterfly-stretch",
+        "reviewedFrames": [
+          1,
+          2,
+          3
+        ],
+        "displayFrames": [
+          1,
+          2,
+          3
+        ],
+        "allowsPlayback": false,
+        "result": "static-only",
+        "note": "已核对三帧的器材与主要姿势；构图/比例存在变化，仅作独立静态示意。",
+        "reviewPage": 26
+      },
       "attribution": {
         "creator": "Bryl Lim",
         "creatorUrl": "https://bryllim.com",

@@ -72,6 +72,8 @@ struct CatalogExerciseDetail: View {
     let item: CatalogExercise
     let catalog: ExerciseCatalog
     var choose: ((CatalogExercise, ExerciseCatalog) -> Void)? = nil
+    @State private var guide: ExerciseGuide?
+    @State private var guideIssue: String?
     var body: some View {
         List {
             Section {
@@ -89,7 +91,16 @@ struct CatalogExerciseDetail: View {
                 Text("建议不含起始重量；根据动作完成质量选择负荷。单侧动作需完成两侧，次数按每侧记录。")
                     .font(.footnote).foregroundStyle(.secondary)
             }
-            Section("动作要点") { ForEach(item.cues, id: \.self) { Text($0) } }
+            if let guide {
+                Section("准备与变式") { Text(guide.setup); ForEach(guide.notes, id: \.self) { Text($0) } }
+                Section("动作步骤") {
+                    ForEach(Array(guide.steps.enumerated()), id: \.offset) { index, step in Text("\(index + 1). " + step) }
+                }
+                Section("常见错误") { ForEach(guide.mistakes, id: \.self) { Text($0) } }
+                Section { Text(guide.author + " · " + guide.scope).font(.caption).foregroundStyle(.secondary) }
+            } else {
+                Section("基础要点") { ForEach(item.cues, id: \.self) { Text($0) }; if let guideIssue { Text(guideIssue).font(.caption) } }
+            }
             Section("替代选择 · 动作模式与主要部位相近") {
                 if catalog.alternatives(to: item).isEmpty {
                     Text("当前目录暂无同模式替代项，可在动作库中查看该部位的其他动作。")
@@ -115,6 +126,10 @@ struct CatalogExerciseDetail: View {
                     if let license = item.media.licenseURL, let url = URL(string: license) { Link("素材许可", destination: url) }
                 }
             }
+        }
+        .task(id: item.id) {
+            do { guide = try ExerciseGuides.bundled().items.first { $0.catalogID == item.id }; guideIssue = nil }
+            catch { guideIssue = "详细步骤暂时无法读取，显示基础要点。" }
         }
         .navigationTitle(item.name).navigationBarTitleDisplayMode(.inline)
         .safeAreaInset(edge: .bottom) {

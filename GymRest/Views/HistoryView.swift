@@ -9,6 +9,7 @@ struct HistoryView: View {
         List {
             Section { Text("记录保存在本机。运动匹配只关联你确认的健康记录，不会替你完成训练组。")
                     .font(.footnote).foregroundStyle(.secondary) }
+            Section { NavigationLink("按动作查看重量与次数变化") { TrainingComparisonView() } }
             ForEach(records) { record in
                 NavigationLink { RecordDetailView(record: record) } label: {
                     VStack(alignment: .leading, spacing: 6) {
@@ -42,6 +43,9 @@ struct RecordDetailView: View {
     @State private var selected: WorkoutCandidate?
     @State private var busy = false
     @State private var message: String?
+    @State private var queryWindow: DateInterval?
+    @State private var queryAt: Date?
+    @State private var queryCount: Int?
     var body: some View {
         let performances = try? record.performances()
         let performedNames = record.performedNamesData.flatMap { try? JSONDecoder().decode([[String]].self, from: $0) }
@@ -109,6 +113,11 @@ struct RecordDetailView: View {
                         }.font(.caption)
                     }
                 }
+                if let queryWindow, let queryAt {
+                    Text("最近查询：" + queryAt.formatted(date: .omitted, time: .standard)).font(.caption)
+                    Text("时间窗口：" + queryWindow.start.formatted(date: .abbreviated, time: .shortened) + " – " + queryWindow.end.formatted(date: .abbreviated, time: .shortened)).font(.caption)
+                    if let queryCount { Text("返回 \(queryCount) 条候选；来源/设备按健康记录原值展示，不自动判定为Apple Watch。").font(.caption) }
+                }
                 if let message { Text(message).font(.footnote).textSelection(.enabled) }
             }
         }
@@ -125,7 +134,9 @@ struct RecordDetailView: View {
         guard let start = record.startedAt else { return }
         busy = true; defer { busy = false }
         do {
+            queryWindow = try WorkoutMatching.window(start: start, end: record.endedAt); queryAt = Date(); queryCount = nil
             candidates = try await WorkoutReader().candidates(start: start, end: record.endedAt)
+            queryCount = candidates.count
             message = candidates.isEmpty ? "没有可读取的运动记录，也可能未授权、尚未同步或不在时间窗口内。" : nil
         } catch { message = error.localizedDescription }
     }

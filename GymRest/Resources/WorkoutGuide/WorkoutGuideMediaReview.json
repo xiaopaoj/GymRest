@@ -1,0 +1,5026 @@
+{
+  "revision": "aac599224bb9780305239607ef98540b7e0ce389",
+  "reviewedAt": "2026-11-26",
+  "scope": "逐帧一般视觉核对：器材、握法、支撑、变式、裁切和连续性；非专业动作认证",
+  "items": [
+    {
+      "slug": "bench-press",
+      "reviewedFrames": [
+        1,
+        2,
+        3
+      ],
+      "displayFrames": [
+        1,
+        2,
+        3
+      ],
+      "allowsPlayback": false,
+      "result": "static-only",
+      "note": "已核对三帧的器材与主要姿势；构图/比例存在变化，仅作独立静态示意。",
+      "reviewPage": 1
+    },
+    {
+      "slug": "incline-bench-press",
+      "reviewedFrames": [
+        1,
+        2,
+        3
+      ],
+      "displayFrames": [
+        1,
+        2,
+        3
+      ],
+      "allowsPlayback": false,
+      "result": "static-only",
+      "note": "已核对三帧的器材与主要姿势；构图/比例存在变化，仅作独立静态示意。",
+      "reviewPage": 1
+    },
+    {
+      "slug": "incline-dumbbell-press",
+      "reviewedFrames": [
+        1,
+        2,
+        3
+      ],
+      "displayFrames": [
+        1,
+        2,
+        3
+      ],
+      "allowsPlayback": false,
+      "result": "static-only",
+      "note": "已核对三帧的器材与主要姿势；构图/比例存在变化，仅作独立静态示意。",
+      "reviewPage": 1
+    },
+    {
+      "slug": "dumbbell-bench-press",
+      "reviewedFrames": [
+        1,
+        2,
+        3
+      ],
+      "displayFrames": [
+        1,
+        2,
+        3
+      ],
+      "allowsPlayback": false,
+      "result": "static-only",
+      "note": "已核对三帧的器材与主要姿势；构图/比例存在变化，仅作独立静态示意。",
+      "reviewPage": 1
+    },
+    {
+      "slug": "decline-bench-press",
+      "reviewedFrames": [
+        1,
+        2,
+        3
+      ],
+      "displayFrames": [
+        1,
+        2,
+        3
+      ],
+      "allowsPlayback": false,
+      "result": "static-only",
+      "note": "已核对三帧的器材与主要姿势；构图/比例存在变化，仅作独立静态示意。",
+      "reviewPage": 1
+    },
+    {
+      "slug": "machine-chest-press",
+      "reviewedFrames": [
+        1,
+        2,
+        3
+      ],
+      "displayFrames": [
+        1,
+        2,
+        3
+      ],
+      "allowsPlayback": false,
+      "result": "static-only",
+      "note": "已核对三帧的器材与主要姿势；构图/比例存在变化，仅作独立静态示意。",
+      "reviewPage": 1
+    },
+    {
+      "slug": "pec-deck",
+      "reviewedFrames": [
+        1,
+        2,
+        3
+      ],
+      "displayFrames": [
+        1,
+        2,
+        3
+      ],
+      "allowsPlayback": false,
+      "result": "static-only",
+      "note": "已核对三帧的器材与主要姿势；构图/比例存在变化，仅作独立静态示意。",
+      "reviewPage": 1
+    },
+    {
+      "slug": "cable-fly",
+      "reviewedFrames": [
+        1,
+        2,
+        3
+      ],
+      "displayFrames": [
+        1,
+        2,
+        3
+      ],
+      "allowsPlayback": false,
+      "result": "static-only",
+      "note": "已核对三帧的器材与主要姿势；构图/比例存在变化，仅作独立静态示意。",
+      "reviewPage": 1
+    },
+    {
+      "slug": "push-up",
+      "reviewedFrames": [
+        1,
+        2,
+        3
+      ],
+      "displayFrames": [
+        1,
+        2,
+        3
+      ],
+      "allowsPlayback": false,
+      "result": "static-only",
+      "note": "已核对三帧的器材与主要姿势；构图/比例存在变化，仅作独立静态示意。",
+      "reviewPage": 1
+    },
+    {
+      "slug": "weighted-push-up",
+      "reviewedFrames": [
+        1,
+        2,
+        3
+      ],
+      "displayFrames": [
+        1,
+        2,
+        3
+      ],
+      "allowsPlayback": false,
+      "result": "static-only",
+      "note": "已核对三帧的器材与主要姿势；构图/比例存在变化，仅作独立静态示意。",
+      "reviewPage": 1
+    },
+    {
+      "slug": "overhead-press",
+      "reviewedFrames": [
+        1,
+        2,
+        3
+      ],
+      "displayFrames": [
+        1,
+        2,
+        3
+      ],
+      "allowsPlayback": false,
+      "result": "static-only",
+      "note": "已核对三帧的器材与主要姿势；构图/比例存在变化，仅作独立静态示意。",
+      "reviewPage": 1
+    },
+    {
+      "slug": "seated-dumbbell-press",
+      "reviewedFrames": [
+        1,
+        2,
+        3
+      ],
+      "displayFrames": [
+        1,
+        2,
+        3
+      ],
+      "allowsPlayback": false,
+      "result": "static-only",
+      "note": "已核对三帧的器材与主要姿势；构图/比例存在变化，仅作独立静态示意。",
+      "reviewPage": 1
+    },
+    {
+      "slug": "arnold-press",
+      "reviewedFrames": [
+        1,
+        2,
+        3
+      ],
+      "displayFrames": [
+        1,
+        2,
+        3
+      ],
+      "allowsPlayback": false,
+      "result": "static-only",
+      "note": "旋转握法细节未完整展示，需结合步骤核对，不从分帧推断旋转角度。",
+      "reviewPage": 2
+    },
+    {
+      "slug": "lateral-raise",
+      "reviewedFrames": [
+        1,
+        2,
+        3
+      ],
+      "displayFrames": [
+        1,
+        2,
+        3
+      ],
+      "allowsPlayback": false,
+      "result": "static-only",
+      "note": "已核对三帧的器材与主要姿势；构图/比例存在变化，仅作独立静态示意。",
+      "reviewPage": 2
+    },
+    {
+      "slug": "cable-lateral-raise",
+      "reviewedFrames": [
+        1,
+        2,
+        3
+      ],
+      "displayFrames": [
+        1,
+        2,
+        3
+      ],
+      "allowsPlayback": false,
+      "result": "static-only",
+      "note": "图片为双臂同步侧平举，作为独立双臂版本，不再匹配原单臂参考动作。",
+      "reviewPage": 2
+    },
+    {
+      "slug": "front-raise",
+      "reviewedFrames": [
+        1,
+        2,
+        3
+      ],
+      "displayFrames": [
+        1,
+        2,
+        3
+      ],
+      "allowsPlayback": false,
+      "result": "static-only",
+      "note": "已核对三帧的器材与主要姿势；构图/比例存在变化，仅作独立静态示意。",
+      "reviewPage": 2
+    },
+    {
+      "slug": "rear-delt-fly",
+      "reviewedFrames": [
+        1,
+        2,
+        3
+      ],
+      "displayFrames": [
+        1,
+        2,
+        3
+      ],
+      "allowsPlayback": false,
+      "result": "static-only",
+      "note": "已核对三帧的器材与主要姿势；构图/比例存在变化，仅作独立静态示意。",
+      "reviewPage": 2
+    },
+    {
+      "slug": "reverse-pec-deck",
+      "reviewedFrames": [
+        1,
+        2,
+        3
+      ],
+      "displayFrames": [
+        1,
+        2,
+        3
+      ],
+      "allowsPlayback": false,
+      "result": "static-only",
+      "note": "已核对三帧的器材与主要姿势；构图/比例存在变化，仅作独立静态示意。",
+      "reviewPage": 2
+    },
+    {
+      "slug": "face-pull",
+      "reviewedFrames": [
+        1,
+        2,
+        3
+      ],
+      "displayFrames": [
+        1,
+        2,
+        3
+      ],
+      "allowsPlayback": false,
+      "result": "static-only",
+      "note": "已核对三帧的器材与主要姿势；构图/比例存在变化，仅作独立静态示意。",
+      "reviewPage": 2
+    },
+    {
+      "slug": "upright-row",
+      "reviewedFrames": [
+        1,
+        2,
+        3
+      ],
+      "displayFrames": [
+        1,
+        2,
+        3
+      ],
+      "allowsPlayback": false,
+      "result": "static-only",
+      "note": "已核对三帧的器材与主要姿势；构图/比例存在变化，仅作独立静态示意。",
+      "reviewPage": 2
+    },
+    {
+      "slug": "deadlift",
+      "reviewedFrames": [
+        1,
+        2,
+        3
+      ],
+      "displayFrames": [
+        1,
+        2,
+        3
+      ],
+      "allowsPlayback": false,
+      "result": "static-only",
+      "note": "已核对三帧的器材与主要姿势；构图/比例存在变化，仅作独立静态示意。",
+      "reviewPage": 2
+    },
+    {
+      "slug": "romanian-deadlift",
+      "reviewedFrames": [
+        1,
+        2,
+        3
+      ],
+      "displayFrames": [
+        1,
+        2,
+        3
+      ],
+      "allowsPlayback": false,
+      "result": "static-only",
+      "note": "已核对三帧的器材与主要姿势；构图/比例存在变化，仅作独立静态示意。",
+      "reviewPage": 2
+    },
+    {
+      "slug": "barbell-row",
+      "reviewedFrames": [
+        1,
+        2,
+        3
+      ],
+      "displayFrames": [
+        1,
+        2,
+        3
+      ],
+      "allowsPlayback": false,
+      "result": "static-only",
+      "note": "已核对三帧的器材与主要姿势；构图/比例存在变化，仅作独立静态示意。",
+      "reviewPage": 2
+    },
+    {
+      "slug": "t-bar-row",
+      "reviewedFrames": [
+        1,
+        2,
+        3
+      ],
+      "displayFrames": [
+        1,
+        2,
+        3
+      ],
+      "allowsPlayback": false,
+      "result": "static-only",
+      "note": "已核对三帧的器材与主要姿势；构图/比例存在变化，仅作独立静态示意。",
+      "reviewPage": 2
+    },
+    {
+      "slug": "dumbbell-bent-over-row",
+      "reviewedFrames": [
+        1,
+        2,
+        3
+      ],
+      "displayFrames": [
+        1,
+        2,
+        3
+      ],
+      "allowsPlayback": false,
+      "result": "static-only",
+      "note": "已核对三帧的器材与主要姿势；构图/比例存在变化，仅作独立静态示意。",
+      "reviewPage": 3
+    },
+    {
+      "slug": "one-arm-dumbbell-row",
+      "reviewedFrames": [
+        1,
+        2,
+        3
+      ],
+      "displayFrames": [
+        1,
+        2,
+        3
+      ],
+      "allowsPlayback": false,
+      "result": "static-only",
+      "note": "已核对三帧的器材与主要姿势；构图/比例存在变化，仅作独立静态示意。",
+      "reviewPage": 3
+    },
+    {
+      "slug": "chest-supported-row",
+      "reviewedFrames": [
+        1,
+        2,
+        3
+      ],
+      "displayFrames": [
+        1,
+        2,
+        3
+      ],
+      "allowsPlayback": false,
+      "result": "static-only",
+      "note": "已核对三帧的器材与主要姿势；构图/比例存在变化，仅作独立静态示意。",
+      "reviewPage": 3
+    },
+    {
+      "slug": "seated-row",
+      "reviewedFrames": [
+        1,
+        2,
+        3
+      ],
+      "displayFrames": [
+        1,
+        2,
+        3
+      ],
+      "allowsPlayback": false,
+      "result": "static-only",
+      "note": "已核对三帧的器材与主要姿势；构图/比例存在变化，仅作独立静态示意。",
+      "reviewPage": 3
+    },
+    {
+      "slug": "machine-row",
+      "reviewedFrames": [
+        1,
+        2,
+        3
+      ],
+      "displayFrames": [
+        1,
+        2,
+        3
+      ],
+      "allowsPlayback": false,
+      "result": "static-only",
+      "note": "已核对三帧的器材与主要姿势；构图/比例存在变化，仅作独立静态示意。",
+      "reviewPage": 3
+    },
+    {
+      "slug": "lat-pulldown",
+      "reviewedFrames": [
+        1,
+        2,
+        3
+      ],
+      "displayFrames": [
+        1,
+        2,
+        3
+      ],
+      "allowsPlayback": false,
+      "result": "static-only",
+      "note": "已核对三帧的器材与主要姿势；构图/比例存在变化，仅作独立静态示意。",
+      "reviewPage": 3
+    },
+    {
+      "slug": "close-grip-lat-pulldown",
+      "reviewedFrames": [
+        1,
+        2,
+        3
+      ],
+      "displayFrames": [
+        1,
+        2,
+        3
+      ],
+      "allowsPlayback": false,
+      "result": "static-only",
+      "note": "已核对三帧的器材与主要姿势；构图/比例存在变化，仅作独立静态示意。",
+      "reviewPage": 3
+    },
+    {
+      "slug": "straight-arm-pulldown",
+      "reviewedFrames": [
+        1,
+        2,
+        3
+      ],
+      "displayFrames": [
+        1,
+        2,
+        3
+      ],
+      "allowsPlayback": false,
+      "result": "static-only",
+      "note": "已核对三帧的器材与主要姿势；构图/比例存在变化，仅作独立静态示意。",
+      "reviewPage": 3
+    },
+    {
+      "slug": "pull-up",
+      "reviewedFrames": [
+        1,
+        2,
+        3
+      ],
+      "displayFrames": [
+        1,
+        2,
+        3
+      ],
+      "allowsPlayback": false,
+      "result": "static-only",
+      "note": "已核对三帧的器材与主要姿势；构图/比例存在变化，仅作独立静态示意。",
+      "reviewPage": 3
+    },
+    {
+      "slug": "assisted-pull-up",
+      "reviewedFrames": [
+        1,
+        2,
+        3
+      ],
+      "displayFrames": [
+        1,
+        2,
+        3
+      ],
+      "allowsPlayback": false,
+      "result": "static-only",
+      "note": "已核对三帧的器材与主要姿势；构图/比例存在变化，仅作独立静态示意。",
+      "reviewPage": 3
+    },
+    {
+      "slug": "weighted-pull-up",
+      "reviewedFrames": [
+        1,
+        2,
+        3
+      ],
+      "displayFrames": [
+        1,
+        2,
+        3
+      ],
+      "allowsPlayback": false,
+      "result": "static-only",
+      "note": "已核对三帧的器材与主要姿势；构图/比例存在变化，仅作独立静态示意。",
+      "reviewPage": 3
+    },
+    {
+      "slug": "chin-up",
+      "reviewedFrames": [
+        1,
+        2,
+        3
+      ],
+      "displayFrames": [
+        1,
+        2,
+        3
+      ],
+      "allowsPlayback": false,
+      "result": "static-only",
+      "note": "已核对三帧的器材与主要姿势；构图/比例存在变化，仅作独立静态示意。",
+      "reviewPage": 3
+    },
+    {
+      "slug": "shrug",
+      "reviewedFrames": [
+        1,
+        2,
+        3
+      ],
+      "displayFrames": [
+        1,
+        2,
+        3
+      ],
+      "allowsPlayback": false,
+      "result": "static-only",
+      "note": "已核对三帧的器材与主要姿势；构图/比例存在变化，仅作独立静态示意。",
+      "reviewPage": 4
+    },
+    {
+      "slug": "squat",
+      "reviewedFrames": [
+        1,
+        2,
+        3
+      ],
+      "displayFrames": [
+        1,
+        2,
+        3
+      ],
+      "allowsPlayback": false,
+      "result": "static-only",
+      "note": "已核对三帧的器材与主要姿势；构图/比例存在变化，仅作独立静态示意。",
+      "reviewPage": 4
+    },
+    {
+      "slug": "front-squat",
+      "reviewedFrames": [
+        1,
+        2,
+        3
+      ],
+      "displayFrames": [
+        1,
+        2,
+        3
+      ],
+      "allowsPlayback": false,
+      "result": "static-only",
+      "note": "已核对三帧的器材与主要姿势；构图/比例存在变化，仅作独立静态示意。",
+      "reviewPage": 4
+    },
+    {
+      "slug": "hack-squat",
+      "reviewedFrames": [
+        1,
+        2,
+        3
+      ],
+      "displayFrames": [
+        1,
+        2,
+        3
+      ],
+      "allowsPlayback": false,
+      "result": "static-only",
+      "note": "已核对三帧的器材与主要姿势；构图/比例存在变化，仅作独立静态示意。",
+      "reviewPage": 4
+    },
+    {
+      "slug": "leg-press",
+      "reviewedFrames": [
+        1,
+        2,
+        3
+      ],
+      "displayFrames": [
+        1,
+        2,
+        3
+      ],
+      "allowsPlayback": false,
+      "result": "static-only",
+      "note": "已核对三帧的器材与主要姿势；构图/比例存在变化，仅作独立静态示意。",
+      "reviewPage": 4
+    },
+    {
+      "slug": "bulgarian-split-squat",
+      "reviewedFrames": [
+        1,
+        2,
+        3
+      ],
+      "displayFrames": [
+        1,
+        2,
+        3
+      ],
+      "allowsPlayback": false,
+      "result": "static-only",
+      "note": "已核对三帧的器材与主要姿势；构图/比例存在变化，仅作独立静态示意。",
+      "reviewPage": 4
+    },
+    {
+      "slug": "walking-lunge",
+      "reviewedFrames": [
+        1,
+        2,
+        3
+      ],
+      "displayFrames": [
+        1,
+        2,
+        3
+      ],
+      "allowsPlayback": false,
+      "result": "static-only",
+      "note": "已核对三帧的器材与主要姿势；构图/比例存在变化，仅作独立静态示意。",
+      "reviewPage": 4
+    },
+    {
+      "slug": "step-up",
+      "reviewedFrames": [
+        1,
+        2,
+        3
+      ],
+      "displayFrames": [
+        1,
+        2,
+        3
+      ],
+      "allowsPlayback": false,
+      "result": "static-only",
+      "note": "已核对三帧的器材与主要姿势；构图/比例存在变化，仅作独立静态示意。",
+      "reviewPage": 4
+    },
+    {
+      "slug": "leg-extension",
+      "reviewedFrames": [
+        1,
+        2,
+        3
+      ],
+      "displayFrames": [
+        1,
+        2,
+        3
+      ],
+      "allowsPlayback": false,
+      "result": "static-only",
+      "note": "已核对三帧的器材与主要姿势；构图/比例存在变化，仅作独立静态示意。",
+      "reviewPage": 4
+    },
+    {
+      "slug": "leg-curl",
+      "reviewedFrames": [
+        1,
+        2,
+        3
+      ],
+      "displayFrames": [
+        1,
+        2,
+        3
+      ],
+      "allowsPlayback": false,
+      "result": "static-only",
+      "note": "已核对三帧的器材与主要姿势；构图/比例存在变化，仅作独立静态示意。",
+      "reviewPage": 4
+    },
+    {
+      "slug": "seated-leg-curl",
+      "reviewedFrames": [
+        1,
+        2,
+        3
+      ],
+      "displayFrames": [
+        1,
+        2,
+        3
+      ],
+      "allowsPlayback": false,
+      "result": "static-only",
+      "note": "已核对三帧的器材与主要姿势；构图/比例存在变化，仅作独立静态示意。",
+      "reviewPage": 4
+    },
+    {
+      "slug": "hip-thrust",
+      "reviewedFrames": [
+        1,
+        2,
+        3
+      ],
+      "displayFrames": [
+        1,
+        2,
+        3
+      ],
+      "allowsPlayback": false,
+      "result": "static-only",
+      "note": "已核对三帧的器材与主要姿势；构图/比例存在变化，仅作独立静态示意。",
+      "reviewPage": 4
+    },
+    {
+      "slug": "glute-bridge",
+      "reviewedFrames": [
+        1,
+        2,
+        3
+      ],
+      "displayFrames": [
+        1,
+        2,
+        3
+      ],
+      "allowsPlayback": false,
+      "result": "static-only",
+      "note": "已核对三帧的器材与主要姿势；构图/比例存在变化，仅作独立静态示意。",
+      "reviewPage": 5
+    },
+    {
+      "slug": "good-morning",
+      "reviewedFrames": [
+        1,
+        2,
+        3
+      ],
+      "displayFrames": [
+        1,
+        2,
+        3
+      ],
+      "allowsPlayback": false,
+      "result": "static-only",
+      "note": "已核对三帧的器材与主要姿势；构图/比例存在变化，仅作独立静态示意。",
+      "reviewPage": 5
+    },
+    {
+      "slug": "standing-calf-raise",
+      "reviewedFrames": [
+        1,
+        2,
+        3
+      ],
+      "displayFrames": [
+        1,
+        2,
+        3
+      ],
+      "allowsPlayback": false,
+      "result": "static-only",
+      "note": "已核对三帧的器材与主要姿势；构图/比例存在变化，仅作独立静态示意。",
+      "reviewPage": 5
+    },
+    {
+      "slug": "seated-calf-raise",
+      "reviewedFrames": [
+        1,
+        2,
+        3
+      ],
+      "displayFrames": [
+        1,
+        2,
+        3
+      ],
+      "allowsPlayback": false,
+      "result": "static-only",
+      "note": "已核对三帧的器材与主要姿势；构图/比例存在变化，仅作独立静态示意。",
+      "reviewPage": 5
+    },
+    {
+      "slug": "bicep-curl",
+      "reviewedFrames": [
+        1,
+        2,
+        3
+      ],
+      "displayFrames": [
+        1,
+        2,
+        3
+      ],
+      "allowsPlayback": false,
+      "result": "static-only",
+      "note": "已核对三帧的器材与主要姿势；构图/比例存在变化，仅作独立静态示意。",
+      "reviewPage": 5
+    },
+    {
+      "slug": "hammer-curl",
+      "reviewedFrames": [
+        1,
+        2,
+        3
+      ],
+      "displayFrames": [
+        1,
+        2,
+        3
+      ],
+      "allowsPlayback": false,
+      "result": "static-only",
+      "note": "已核对三帧的器材与主要姿势；构图/比例存在变化，仅作独立静态示意。",
+      "reviewPage": 5
+    },
+    {
+      "slug": "preacher-curl",
+      "reviewedFrames": [
+        1,
+        2,
+        3
+      ],
+      "displayFrames": [
+        1,
+        2,
+        3
+      ],
+      "allowsPlayback": false,
+      "result": "static-only",
+      "note": "已核对三帧的器材与主要姿势；构图/比例存在变化，仅作独立静态示意。",
+      "reviewPage": 5
+    },
+    {
+      "slug": "cable-curl",
+      "reviewedFrames": [
+        1,
+        2,
+        3
+      ],
+      "displayFrames": [
+        1,
+        2,
+        3
+      ],
+      "allowsPlayback": false,
+      "result": "static-only",
+      "note": "已核对三帧的器材与主要姿势；构图/比例存在变化，仅作独立静态示意。",
+      "reviewPage": 5
+    },
+    {
+      "slug": "reverse-curl",
+      "reviewedFrames": [
+        1,
+        2,
+        3
+      ],
+      "displayFrames": [
+        1,
+        2,
+        3
+      ],
+      "allowsPlayback": false,
+      "result": "static-only",
+      "note": "已核对三帧的器材与主要姿势；构图/比例存在变化，仅作独立静态示意。",
+      "reviewPage": 5
+    },
+    {
+      "slug": "wrist-curl",
+      "reviewedFrames": [
+        1,
+        2,
+        3
+      ],
+      "displayFrames": [],
+      "allowsPlayback": false,
+      "result": "withheld",
+      "note": "各帧前臂位置变化过大，无法确认只由腕关节完成。",
+      "reviewPage": 5
+    },
+    {
+      "slug": "tricep-pushdown",
+      "reviewedFrames": [
+        1,
+        2,
+        3
+      ],
+      "displayFrames": [
+        1,
+        2,
+        3
+      ],
+      "allowsPlayback": false,
+      "result": "static-only",
+      "note": "已核对三帧的器材与主要姿势；构图/比例存在变化，仅作独立静态示意。",
+      "reviewPage": 5
+    },
+    {
+      "slug": "overhead-tricep-extension",
+      "reviewedFrames": [
+        1,
+        2,
+        3
+      ],
+      "displayFrames": [
+        1,
+        2,
+        3
+      ],
+      "allowsPlayback": false,
+      "result": "static-only",
+      "note": "已核对三帧的器材与主要姿势；构图/比例存在变化，仅作独立静态示意。",
+      "reviewPage": 5
+    },
+    {
+      "slug": "skull-crusher",
+      "reviewedFrames": [
+        1,
+        2,
+        3
+      ],
+      "displayFrames": [
+        1,
+        2,
+        3
+      ],
+      "allowsPlayback": false,
+      "result": "static-only",
+      "note": "已核对三帧的器材与主要姿势；构图/比例存在变化，仅作独立静态示意。",
+      "reviewPage": 6
+    },
+    {
+      "slug": "close-grip-bench-press",
+      "reviewedFrames": [
+        1,
+        2,
+        3
+      ],
+      "displayFrames": [
+        1,
+        2,
+        3
+      ],
+      "allowsPlayback": false,
+      "result": "static-only",
+      "note": "已核对三帧的器材与主要姿势；构图/比例存在变化，仅作独立静态示意。",
+      "reviewPage": 6
+    },
+    {
+      "slug": "dip",
+      "reviewedFrames": [
+        1,
+        2,
+        3
+      ],
+      "displayFrames": [
+        1,
+        2,
+        3
+      ],
+      "allowsPlayback": false,
+      "result": "static-only",
+      "note": "已核对三帧的器材与主要姿势；构图/比例存在变化，仅作独立静态示意。",
+      "reviewPage": 6
+    },
+    {
+      "slug": "assisted-dip",
+      "reviewedFrames": [
+        1,
+        2,
+        3
+      ],
+      "displayFrames": [],
+      "allowsPlayback": false,
+      "result": "withheld",
+      "note": "图片更接近平凳臂屈伸，未清楚呈现辅助双杠器械的支撑方式。",
+      "reviewPage": 6
+    },
+    {
+      "slug": "plank",
+      "reviewedFrames": [
+        1,
+        2,
+        3
+      ],
+      "displayFrames": [
+        1,
+        2
+      ],
+      "allowsPlayback": false,
+      "result": "static-only",
+      "note": "第3帧为跪姿变式，已隐藏；保留直腿支撑示意。",
+      "reviewPage": 6
+    },
+    {
+      "slug": "side-plank",
+      "reviewedFrames": [
+        1,
+        2,
+        3
+      ],
+      "displayFrames": [
+        1,
+        2,
+        3
+      ],
+      "allowsPlayback": false,
+      "result": "static-only",
+      "note": "已核对三帧的器材与主要姿势；构图/比例存在变化，仅作独立静态示意。",
+      "reviewPage": 6
+    },
+    {
+      "slug": "hanging-leg-raise",
+      "reviewedFrames": [
+        1,
+        2,
+        3
+      ],
+      "displayFrames": [
+        1,
+        2,
+        3
+      ],
+      "allowsPlayback": false,
+      "result": "static-only",
+      "note": "已核对三帧的器材与主要姿势；构图/比例存在变化，仅作独立静态示意。",
+      "reviewPage": 6
+    },
+    {
+      "slug": "cable-crunch",
+      "reviewedFrames": [
+        1,
+        2,
+        3
+      ],
+      "displayFrames": [
+        3
+      ],
+      "allowsPlayback": false,
+      "result": "static-only",
+      "note": "各帧支撑方式不一致，仅保留跪姿起点示意。",
+      "reviewPage": 6
+    },
+    {
+      "slug": "ab-wheel",
+      "reviewedFrames": [
+        1,
+        2,
+        3
+      ],
+      "displayFrames": [
+        2
+      ],
+      "allowsPlayback": false,
+      "result": "static-only",
+      "note": "原组混有站姿与跪姿变式，仅展示跪姿图片；不表示完整前滚路径。",
+      "reviewPage": 6
+    },
+    {
+      "slug": "running",
+      "reviewedFrames": [
+        1,
+        2,
+        3
+      ],
+      "displayFrames": [
+        1,
+        2,
+        3
+      ],
+      "allowsPlayback": false,
+      "result": "static-only",
+      "note": "已核对三帧的器材与主要姿势；构图/比例存在变化，仅作独立静态示意。",
+      "reviewPage": 6
+    },
+    {
+      "slug": "walking",
+      "reviewedFrames": [
+        1,
+        2,
+        3
+      ],
+      "displayFrames": [
+        1,
+        2,
+        3
+      ],
+      "allowsPlayback": false,
+      "result": "static-only",
+      "note": "已核对三帧的器材与主要姿势；构图/比例存在变化，仅作独立静态示意。",
+      "reviewPage": 6
+    },
+    {
+      "slug": "cycling",
+      "reviewedFrames": [
+        1,
+        2,
+        3
+      ],
+      "displayFrames": [
+        1,
+        2,
+        3
+      ],
+      "allowsPlayback": false,
+      "result": "static-only",
+      "note": "已核对三帧的器材与主要姿势；构图/比例存在变化，仅作独立静态示意。",
+      "reviewPage": 6
+    },
+    {
+      "slug": "rowing",
+      "reviewedFrames": [
+        1,
+        2,
+        3
+      ],
+      "displayFrames": [
+        1,
+        2,
+        3
+      ],
+      "allowsPlayback": false,
+      "result": "static-only",
+      "note": "已核对三帧的器材与主要姿势；构图/比例存在变化，仅作独立静态示意。",
+      "reviewPage": 7
+    },
+    {
+      "slug": "stair-climber",
+      "reviewedFrames": [
+        1,
+        2,
+        3
+      ],
+      "displayFrames": [
+        1,
+        2,
+        3
+      ],
+      "allowsPlayback": false,
+      "result": "static-only",
+      "note": "已核对三帧的器材与主要姿势；构图/比例存在变化，仅作独立静态示意。",
+      "reviewPage": 7
+    },
+    {
+      "slug": "dumbbell-fly",
+      "reviewedFrames": [
+        1,
+        2,
+        3
+      ],
+      "displayFrames": [
+        1,
+        2,
+        3
+      ],
+      "allowsPlayback": false,
+      "result": "static-only",
+      "note": "已核对三帧的器材与主要姿势；构图/比例存在变化，仅作独立静态示意。",
+      "reviewPage": 7
+    },
+    {
+      "slug": "incline-cable-fly",
+      "reviewedFrames": [
+        1,
+        2,
+        3
+      ],
+      "displayFrames": [
+        1,
+        2,
+        3
+      ],
+      "allowsPlayback": false,
+      "result": "static-only",
+      "note": "已核对三帧的器材与主要姿势；构图/比例存在变化，仅作独立静态示意。",
+      "reviewPage": 7
+    },
+    {
+      "slug": "decline-dumbbell-press",
+      "reviewedFrames": [
+        1,
+        2,
+        3
+      ],
+      "displayFrames": [
+        1,
+        2,
+        3
+      ],
+      "allowsPlayback": false,
+      "result": "static-only",
+      "note": "已核对三帧的器材与主要姿势；构图/比例存在变化，仅作独立静态示意。",
+      "reviewPage": 7
+    },
+    {
+      "slug": "smith-machine-bench-press",
+      "reviewedFrames": [
+        1,
+        2,
+        3
+      ],
+      "displayFrames": [
+        1,
+        2,
+        3
+      ],
+      "allowsPlayback": false,
+      "result": "static-only",
+      "note": "已核对三帧的器材与主要姿势；构图/比例存在变化，仅作独立静态示意。",
+      "reviewPage": 7
+    },
+    {
+      "slug": "landmine-press",
+      "reviewedFrames": [
+        1,
+        2,
+        3
+      ],
+      "displayFrames": [
+        1,
+        2,
+        3
+      ],
+      "allowsPlayback": false,
+      "result": "static-only",
+      "note": "已核对三帧的器材与主要姿势；构图/比例存在变化，仅作独立静态示意。",
+      "reviewPage": 7
+    },
+    {
+      "slug": "chest-dip",
+      "reviewedFrames": [
+        1,
+        2,
+        3
+      ],
+      "displayFrames": [
+        1,
+        2,
+        3
+      ],
+      "allowsPlayback": false,
+      "result": "static-only",
+      "note": "已核对三帧的器材与主要姿势；构图/比例存在变化，仅作独立静态示意。",
+      "reviewPage": 7
+    },
+    {
+      "slug": "weighted-dip",
+      "reviewedFrames": [
+        1,
+        2,
+        3
+      ],
+      "displayFrames": [
+        1,
+        2,
+        3
+      ],
+      "allowsPlayback": false,
+      "result": "static-only",
+      "note": "已核对三帧的器材与主要姿势；构图/比例存在变化，仅作独立静态示意。",
+      "reviewPage": 7
+    },
+    {
+      "slug": "machine-shoulder-press",
+      "reviewedFrames": [
+        1,
+        2,
+        3
+      ],
+      "displayFrames": [
+        1,
+        2,
+        3
+      ],
+      "allowsPlayback": false,
+      "result": "static-only",
+      "note": "已核对三帧的器材与主要姿势；构图/比例存在变化，仅作独立静态示意。",
+      "reviewPage": 7
+    },
+    {
+      "slug": "standing-dumbbell-press",
+      "reviewedFrames": [
+        1,
+        2,
+        3
+      ],
+      "displayFrames": [
+        1,
+        2,
+        3
+      ],
+      "allowsPlayback": false,
+      "result": "static-only",
+      "note": "已核对三帧的器材与主要姿势；构图/比例存在变化，仅作独立静态示意。",
+      "reviewPage": 7
+    },
+    {
+      "slug": "push-press",
+      "reviewedFrames": [
+        1,
+        2,
+        3
+      ],
+      "displayFrames": [
+        1,
+        2,
+        3
+      ],
+      "allowsPlayback": false,
+      "result": "static-only",
+      "note": "图片仅显示上肢位置，未完整呈现屈膝蹬地借力阶段。",
+      "reviewPage": 7
+    },
+    {
+      "slug": "machine-lateral-raise",
+      "reviewedFrames": [
+        1,
+        2,
+        3
+      ],
+      "displayFrames": [
+        1,
+        2,
+        3
+      ],
+      "allowsPlayback": false,
+      "result": "static-only",
+      "note": "已核对三帧的器材与主要姿势；构图/比例存在变化，仅作独立静态示意。",
+      "reviewPage": 8
+    },
+    {
+      "slug": "cable-front-raise",
+      "reviewedFrames": [
+        1,
+        2,
+        3
+      ],
+      "displayFrames": [
+        1,
+        2,
+        3
+      ],
+      "allowsPlayback": false,
+      "result": "static-only",
+      "note": "已核对三帧的器材与主要姿势；构图/比例存在变化，仅作独立静态示意。",
+      "reviewPage": 8
+    },
+    {
+      "slug": "plate-front-raise",
+      "reviewedFrames": [
+        1,
+        2,
+        3
+      ],
+      "displayFrames": [
+        1,
+        2,
+        3
+      ],
+      "allowsPlayback": false,
+      "result": "static-only",
+      "note": "已核对三帧的器材与主要姿势；构图/比例存在变化，仅作独立静态示意。",
+      "reviewPage": 8
+    },
+    {
+      "slug": "bent-over-rear-delt-raise",
+      "reviewedFrames": [
+        1,
+        2,
+        3
+      ],
+      "displayFrames": [
+        1,
+        2,
+        3
+      ],
+      "allowsPlayback": false,
+      "result": "static-only",
+      "note": "已核对三帧的器材与主要姿势；构图/比例存在变化，仅作独立静态示意。",
+      "reviewPage": 8
+    },
+    {
+      "slug": "cable-rear-delt-fly",
+      "reviewedFrames": [
+        1,
+        2,
+        3
+      ],
+      "displayFrames": [
+        1,
+        2,
+        3
+      ],
+      "allowsPlayback": false,
+      "result": "static-only",
+      "note": "已核对三帧的器材与主要姿势；构图/比例存在变化，仅作独立静态示意。",
+      "reviewPage": 8
+    },
+    {
+      "slug": "pendlay-row",
+      "reviewedFrames": [
+        1,
+        2,
+        3
+      ],
+      "displayFrames": [
+        1,
+        2,
+        3
+      ],
+      "allowsPlayback": false,
+      "result": "static-only",
+      "note": "已核对三帧的器材与主要姿势；构图/比例存在变化，仅作独立静态示意。",
+      "reviewPage": 8
+    },
+    {
+      "slug": "inverted-row",
+      "reviewedFrames": [
+        1,
+        2,
+        3
+      ],
+      "displayFrames": [],
+      "allowsPlayback": false,
+      "result": "withheld",
+      "note": "未清楚呈现双脚着地的低杠反向划船，暂停用作此动作示意。",
+      "reviewPage": 8
+    },
+    {
+      "slug": "meadows-row",
+      "reviewedFrames": [
+        1,
+        2,
+        3
+      ],
+      "displayFrames": [
+        1,
+        2,
+        3
+      ],
+      "allowsPlayback": false,
+      "result": "static-only",
+      "note": "已核对三帧的器材与主要姿势；构图/比例存在变化，仅作独立静态示意。",
+      "reviewPage": 8
+    },
+    {
+      "slug": "single-arm-cable-row",
+      "reviewedFrames": [
+        1,
+        2,
+        3
+      ],
+      "displayFrames": [
+        1,
+        2,
+        3
+      ],
+      "allowsPlayback": false,
+      "result": "static-only",
+      "note": "已核对三帧的器材与主要姿势；构图/比例存在变化，仅作独立静态示意。",
+      "reviewPage": 8
+    },
+    {
+      "slug": "wide-grip-lat-pulldown",
+      "reviewedFrames": [
+        1,
+        2,
+        3
+      ],
+      "displayFrames": [
+        1,
+        2,
+        3
+      ],
+      "allowsPlayback": false,
+      "result": "static-only",
+      "note": "已核对三帧的器材与主要姿势；构图/比例存在变化，仅作独立静态示意。",
+      "reviewPage": 8
+    },
+    {
+      "slug": "neutral-grip-pull-up",
+      "reviewedFrames": [
+        1,
+        2,
+        3
+      ],
+      "displayFrames": [],
+      "allowsPlayback": false,
+      "result": "withheld",
+      "note": "直杠画面无法确认对握把手和握法。",
+      "reviewPage": 8
+    },
+    {
+      "slug": "assisted-chin-up",
+      "reviewedFrames": [
+        1,
+        2,
+        3
+      ],
+      "displayFrames": [
+        1,
+        2,
+        3
+      ],
+      "allowsPlayback": false,
+      "result": "static-only",
+      "note": "已核对三帧的器材与主要姿势；构图/比例存在变化，仅作独立静态示意。",
+      "reviewPage": 8
+    },
+    {
+      "slug": "weighted-chin-up",
+      "reviewedFrames": [
+        1,
+        2,
+        3
+      ],
+      "displayFrames": [
+        1,
+        2,
+        3
+      ],
+      "allowsPlayback": false,
+      "result": "static-only",
+      "note": "已核对三帧的器材与主要姿势；构图/比例存在变化，仅作独立静态示意。",
+      "reviewPage": 9
+    },
+    {
+      "slug": "rack-pull",
+      "reviewedFrames": [
+        1,
+        2,
+        3
+      ],
+      "displayFrames": [
+        1,
+        2,
+        3
+      ],
+      "allowsPlayback": false,
+      "result": "static-only",
+      "note": "图片未画出支架，仅用于抬起后的姿势定位；起始高度与安全杆按步骤设置。",
+      "reviewPage": 9
+    },
+    {
+      "slug": "back-extension",
+      "reviewedFrames": [
+        1,
+        2,
+        3
+      ],
+      "displayFrames": [
+        1,
+        2,
+        3
+      ],
+      "allowsPlayback": false,
+      "result": "static-only",
+      "note": "已核对三帧的器材与主要姿势；构图/比例存在变化，仅作独立静态示意。",
+      "reviewPage": 9
+    },
+    {
+      "slug": "dumbbell-shrug",
+      "reviewedFrames": [
+        1,
+        2,
+        3
+      ],
+      "displayFrames": [
+        1,
+        2,
+        3
+      ],
+      "allowsPlayback": false,
+      "result": "static-only",
+      "note": "已核对三帧的器材与主要姿势；构图/比例存在变化，仅作独立静态示意。",
+      "reviewPage": 9
+    },
+    {
+      "slug": "goblet-squat",
+      "reviewedFrames": [
+        1,
+        2,
+        3
+      ],
+      "displayFrames": [
+        1,
+        2,
+        3
+      ],
+      "allowsPlayback": false,
+      "result": "static-only",
+      "note": "已核对三帧的器材与主要姿势；构图/比例存在变化，仅作独立静态示意。",
+      "reviewPage": 9
+    },
+    {
+      "slug": "smith-machine-squat",
+      "reviewedFrames": [
+        1,
+        2,
+        3
+      ],
+      "displayFrames": [
+        1,
+        2,
+        3
+      ],
+      "allowsPlayback": false,
+      "result": "static-only",
+      "note": "已核对三帧的器材与主要姿势；构图/比例存在变化，仅作独立静态示意。",
+      "reviewPage": 9
+    },
+    {
+      "slug": "belt-squat",
+      "reviewedFrames": [
+        1,
+        2,
+        3
+      ],
+      "displayFrames": [],
+      "allowsPlayback": false,
+      "result": "withheld",
+      "note": "画面未清楚呈现腰带与负重连接，暂停作为腰带深蹲教学图。",
+      "reviewPage": 9
+    },
+    {
+      "slug": "sumo-deadlift",
+      "reviewedFrames": [
+        1,
+        2,
+        3
+      ],
+      "displayFrames": [
+        1,
+        2,
+        3
+      ],
+      "allowsPlayback": false,
+      "result": "static-only",
+      "note": "已核对三帧的器材与主要姿势；构图/比例存在变化，仅作独立静态示意。",
+      "reviewPage": 9
+    },
+    {
+      "slug": "trap-bar-deadlift",
+      "reviewedFrames": [
+        1,
+        2,
+        3
+      ],
+      "displayFrames": [
+        1,
+        2,
+        3
+      ],
+      "allowsPlayback": false,
+      "result": "static-only",
+      "note": "已核对三帧的器材与主要姿势；构图/比例存在变化，仅作独立静态示意。",
+      "reviewPage": 9
+    },
+    {
+      "slug": "lying-leg-curl",
+      "reviewedFrames": [
+        1,
+        2,
+        3
+      ],
+      "displayFrames": [
+        1,
+        2,
+        3
+      ],
+      "allowsPlayback": false,
+      "result": "static-only",
+      "note": "已核对三帧的器材与主要姿势；构图/比例存在变化，仅作独立静态示意。",
+      "reviewPage": 9
+    },
+    {
+      "slug": "nordic-hamstring-curl",
+      "reviewedFrames": [
+        1,
+        2,
+        3
+      ],
+      "displayFrames": [
+        1,
+        2,
+        3
+      ],
+      "allowsPlayback": false,
+      "result": "static-only",
+      "note": "已核对三帧的器材与主要姿势；构图/比例存在变化，仅作独立静态示意。",
+      "reviewPage": 9
+    },
+    {
+      "slug": "single-leg-romanian-deadlift",
+      "reviewedFrames": [
+        1,
+        2,
+        3
+      ],
+      "displayFrames": [
+        1,
+        2,
+        3
+      ],
+      "allowsPlayback": false,
+      "result": "static-only",
+      "note": "已核对三帧的器材与主要姿势；构图/比例存在变化，仅作独立静态示意。",
+      "reviewPage": 9
+    },
+    {
+      "slug": "reverse-lunge",
+      "reviewedFrames": [
+        1,
+        2,
+        3
+      ],
+      "displayFrames": [
+        1,
+        2,
+        3
+      ],
+      "allowsPlayback": false,
+      "result": "static-only",
+      "note": "已核对三帧的器材与主要姿势；构图/比例存在变化，仅作独立静态示意。",
+      "reviewPage": 10
+    },
+    {
+      "slug": "split-squat",
+      "reviewedFrames": [
+        1,
+        2,
+        3
+      ],
+      "displayFrames": [
+        1,
+        2,
+        3
+      ],
+      "allowsPlayback": false,
+      "result": "static-only",
+      "note": "已核对三帧的器材与主要姿势；构图/比例存在变化，仅作独立静态示意。",
+      "reviewPage": 10
+    },
+    {
+      "slug": "cable-kickback",
+      "reviewedFrames": [
+        1,
+        2,
+        3
+      ],
+      "displayFrames": [
+        1,
+        2,
+        3
+      ],
+      "allowsPlayback": false,
+      "result": "static-only",
+      "note": "已核对三帧的器材与主要姿势；构图/比例存在变化，仅作独立静态示意。",
+      "reviewPage": 10
+    },
+    {
+      "slug": "hip-abduction-machine",
+      "reviewedFrames": [
+        1,
+        2,
+        3
+      ],
+      "displayFrames": [
+        1,
+        2,
+        3
+      ],
+      "allowsPlayback": false,
+      "result": "static-only",
+      "note": "已核对三帧的器材与主要姿势；构图/比例存在变化，仅作独立静态示意。",
+      "reviewPage": 10
+    },
+    {
+      "slug": "single-leg-glute-bridge",
+      "reviewedFrames": [
+        1,
+        2,
+        3
+      ],
+      "displayFrames": [
+        1,
+        2,
+        3
+      ],
+      "allowsPlayback": false,
+      "result": "static-only",
+      "note": "已核对三帧的器材与主要姿势；构图/比例存在变化，仅作独立静态示意。",
+      "reviewPage": 10
+    },
+    {
+      "slug": "barbell-glute-bridge",
+      "reviewedFrames": [
+        1,
+        2,
+        3
+      ],
+      "displayFrames": [
+        1,
+        2,
+        3
+      ],
+      "allowsPlayback": false,
+      "result": "static-only",
+      "note": "支撑地面未清楚画出；本条为肩背着地的臀桥，勿混同上背支凳臀推。",
+      "reviewPage": 10
+    },
+    {
+      "slug": "dumbbell-glute-bridge",
+      "reviewedFrames": [
+        1,
+        2,
+        3
+      ],
+      "displayFrames": [
+        1,
+        2,
+        3
+      ],
+      "allowsPlayback": false,
+      "result": "static-only",
+      "note": "已核对三帧的器材与主要姿势；构图/比例存在变化，仅作独立静态示意。",
+      "reviewPage": 10
+    },
+    {
+      "slug": "dumbbell-hip-thrust",
+      "reviewedFrames": [
+        1,
+        2,
+        3
+      ],
+      "displayFrames": [
+        1,
+        2,
+        3
+      ],
+      "allowsPlayback": false,
+      "result": "static-only",
+      "note": "已核对三帧的器材与主要姿势；构图/比例存在变化，仅作独立静态示意。",
+      "reviewPage": 10
+    },
+    {
+      "slug": "smith-machine-hip-thrust",
+      "reviewedFrames": [
+        1,
+        2,
+        3
+      ],
+      "displayFrames": [
+        1,
+        2,
+        3
+      ],
+      "allowsPlayback": false,
+      "result": "static-only",
+      "note": "已核对三帧的器材与主要姿势；构图/比例存在变化，仅作独立静态示意。",
+      "reviewPage": 10
+    },
+    {
+      "slug": "smith-machine-romanian-deadlift",
+      "reviewedFrames": [
+        1,
+        2,
+        3
+      ],
+      "displayFrames": [
+        1,
+        2,
+        3
+      ],
+      "allowsPlayback": false,
+      "result": "static-only",
+      "note": "已核对三帧的器材与主要姿势；构图/比例存在变化，仅作独立静态示意。",
+      "reviewPage": 10
+    },
+    {
+      "slug": "dumbbell-romanian-deadlift",
+      "reviewedFrames": [
+        1,
+        2,
+        3
+      ],
+      "displayFrames": [
+        1,
+        2,
+        3
+      ],
+      "allowsPlayback": false,
+      "result": "static-only",
+      "note": "已核对三帧的器材与主要姿势；构图/比例存在变化，仅作独立静态示意。",
+      "reviewPage": 10
+    },
+    {
+      "slug": "kettlebell-romanian-deadlift",
+      "reviewedFrames": [
+        1,
+        2,
+        3
+      ],
+      "displayFrames": [
+        1,
+        2,
+        3
+      ],
+      "allowsPlayback": false,
+      "result": "static-only",
+      "note": "已核对三帧的器材与主要姿势；构图/比例存在变化，仅作独立静态示意。",
+      "reviewPage": 10
+    },
+    {
+      "slug": "cable-pull-through",
+      "reviewedFrames": [
+        1,
+        2,
+        3
+      ],
+      "displayFrames": [
+        1,
+        2,
+        3
+      ],
+      "allowsPlayback": false,
+      "result": "static-only",
+      "note": "已核对三帧的器材与主要姿势；构图/比例存在变化，仅作独立静态示意。",
+      "reviewPage": 11
+    },
+    {
+      "slug": "machine-glute-kickback",
+      "reviewedFrames": [
+        1,
+        2,
+        3
+      ],
+      "displayFrames": [
+        1,
+        2,
+        3
+      ],
+      "allowsPlayback": false,
+      "result": "static-only",
+      "note": "已核对三帧的器材与主要姿势；构图/比例存在变化，仅作独立静态示意。",
+      "reviewPage": 11
+    },
+    {
+      "slug": "cable-standing-hip-abduction",
+      "reviewedFrames": [
+        1,
+        2,
+        3
+      ],
+      "displayFrames": [
+        1,
+        2,
+        3
+      ],
+      "allowsPlayback": false,
+      "result": "static-only",
+      "note": "已核对三帧的器材与主要姿势；构图/比例存在变化，仅作独立静态示意。",
+      "reviewPage": 11
+    },
+    {
+      "slug": "cable-standing-hip-adduction",
+      "reviewedFrames": [
+        1,
+        2,
+        3
+      ],
+      "displayFrames": [
+        1,
+        2,
+        3
+      ],
+      "allowsPlayback": false,
+      "result": "static-only",
+      "note": "已核对三帧的器材与主要姿势；构图/比例存在变化，仅作独立静态示意。",
+      "reviewPage": 11
+    },
+    {
+      "slug": "hip-adduction-machine",
+      "reviewedFrames": [
+        1,
+        2,
+        3
+      ],
+      "displayFrames": [
+        1,
+        2,
+        3
+      ],
+      "allowsPlayback": false,
+      "result": "static-only",
+      "note": "已核对三帧的器材与主要姿势；构图/比例存在变化，仅作独立静态示意。",
+      "reviewPage": 11
+    },
+    {
+      "slug": "smith-machine-bulgarian-split-squat",
+      "reviewedFrames": [
+        1,
+        2,
+        3
+      ],
+      "displayFrames": [],
+      "allowsPlayback": false,
+      "result": "withheld",
+      "note": "画面缺少后脚抬高的支撑面，不能确认保加利亚分腿蹲。",
+      "reviewPage": 11
+    },
+    {
+      "slug": "smith-machine-reverse-lunge",
+      "reviewedFrames": [
+        1,
+        2,
+        3
+      ],
+      "displayFrames": [
+        1,
+        2,
+        3
+      ],
+      "allowsPlayback": false,
+      "result": "static-only",
+      "note": "已核对三帧的器材与主要姿势；构图/比例存在变化，仅作独立静态示意。",
+      "reviewPage": 11
+    },
+    {
+      "slug": "smith-machine-split-squat",
+      "reviewedFrames": [
+        1,
+        2,
+        3
+      ],
+      "displayFrames": [
+        1,
+        2,
+        3
+      ],
+      "allowsPlayback": false,
+      "result": "static-only",
+      "note": "已核对三帧的器材与主要姿势；构图/比例存在变化，仅作独立静态示意。",
+      "reviewPage": 11
+    },
+    {
+      "slug": "heel-elevated-goblet-squat",
+      "reviewedFrames": [
+        1,
+        2,
+        3
+      ],
+      "displayFrames": [
+        1,
+        2,
+        3
+      ],
+      "allowsPlayback": false,
+      "result": "static-only",
+      "note": "已核对三帧的器材与主要姿势；构图/比例存在变化，仅作独立静态示意。",
+      "reviewPage": 11
+    },
+    {
+      "slug": "dumbbell-sumo-squat",
+      "reviewedFrames": [
+        1,
+        2,
+        3
+      ],
+      "displayFrames": [
+        1,
+        2,
+        3
+      ],
+      "allowsPlayback": false,
+      "result": "static-only",
+      "note": "已核对三帧的器材与主要姿势；构图/比例存在变化，仅作独立静态示意。",
+      "reviewPage": 11
+    },
+    {
+      "slug": "dumbbell-sumo-deadlift",
+      "reviewedFrames": [
+        1,
+        2,
+        3
+      ],
+      "displayFrames": [
+        1,
+        2,
+        3
+      ],
+      "allowsPlayback": false,
+      "result": "static-only",
+      "note": "已核对三帧的器材与主要姿势；构图/比例存在变化，仅作独立静态示意。",
+      "reviewPage": 11
+    },
+    {
+      "slug": "front-foot-elevated-split-squat",
+      "reviewedFrames": [
+        1,
+        2,
+        3
+      ],
+      "displayFrames": [
+        1,
+        2,
+        3
+      ],
+      "allowsPlayback": false,
+      "result": "static-only",
+      "note": "已核对三帧的器材与主要姿势；构图/比例存在变化，仅作独立静态示意。",
+      "reviewPage": 11
+    },
+    {
+      "slug": "deficit-reverse-lunge",
+      "reviewedFrames": [
+        1,
+        2,
+        3
+      ],
+      "displayFrames": [
+        2,
+        3
+      ],
+      "allowsPlayback": false,
+      "result": "static-only",
+      "note": "第1帧支撑脚位不一致，已隐藏。",
+      "reviewPage": 12
+    },
+    {
+      "slug": "dumbbell-lateral-lunge",
+      "reviewedFrames": [
+        1,
+        2,
+        3
+      ],
+      "displayFrames": [
+        1,
+        2,
+        3
+      ],
+      "allowsPlayback": false,
+      "result": "static-only",
+      "note": "已核对三帧的器材与主要姿势；构图/比例存在变化，仅作独立静态示意。",
+      "reviewPage": 12
+    },
+    {
+      "slug": "dumbbell-curtsy-lunge",
+      "reviewedFrames": [
+        1,
+        2,
+        3
+      ],
+      "displayFrames": [
+        1,
+        2,
+        3
+      ],
+      "allowsPlayback": false,
+      "result": "static-only",
+      "note": "已核对三帧的器材与主要姿势；构图/比例存在变化，仅作独立静态示意。",
+      "reviewPage": 12
+    },
+    {
+      "slug": "landmine-squat",
+      "reviewedFrames": [
+        1,
+        2,
+        3
+      ],
+      "displayFrames": [
+        1,
+        2,
+        3
+      ],
+      "allowsPlayback": false,
+      "result": "static-only",
+      "note": "已核对三帧的器材与主要姿势；构图/比例存在变化，仅作独立静态示意。",
+      "reviewPage": 12
+    },
+    {
+      "slug": "landmine-romanian-deadlift",
+      "reviewedFrames": [
+        1,
+        2,
+        3
+      ],
+      "displayFrames": [
+        1,
+        2,
+        3
+      ],
+      "allowsPlayback": false,
+      "result": "static-only",
+      "note": "已核对三帧的器材与主要姿势；构图/比例存在变化，仅作独立静态示意。",
+      "reviewPage": 12
+    },
+    {
+      "slug": "kettlebell-swing",
+      "reviewedFrames": [
+        1,
+        2,
+        3
+      ],
+      "displayFrames": [
+        1,
+        2,
+        3
+      ],
+      "allowsPlayback": false,
+      "result": "static-only",
+      "note": "已核对三帧的器材与主要姿势；构图/比例存在变化，仅作独立静态示意。",
+      "reviewPage": 12
+    },
+    {
+      "slug": "glute-focused-back-extension",
+      "reviewedFrames": [
+        1,
+        2,
+        3
+      ],
+      "displayFrames": [
+        1,
+        2,
+        3
+      ],
+      "allowsPlayback": false,
+      "result": "static-only",
+      "note": "已核对三帧的器材与主要姿势；构图/比例存在变化，仅作独立静态示意。",
+      "reviewPage": 12
+    },
+    {
+      "slug": "reverse-hyperextension",
+      "reviewedFrames": [
+        1,
+        2,
+        3
+      ],
+      "displayFrames": [
+        1,
+        2,
+        3
+      ],
+      "allowsPlayback": false,
+      "result": "static-only",
+      "note": "已核对三帧的器材与主要姿势；构图/比例存在变化，仅作独立静态示意。",
+      "reviewPage": 12
+    },
+    {
+      "slug": "donkey-calf-raise",
+      "reviewedFrames": [
+        1,
+        2,
+        3
+      ],
+      "displayFrames": [],
+      "allowsPlayback": false,
+      "result": "withheld",
+      "note": "画面搭载他人且躯干接近直立，支撑与负重点不清楚，不作为训练示范。",
+      "reviewPage": 12
+    },
+    {
+      "slug": "leg-press-calf-raise",
+      "reviewedFrames": [
+        1,
+        2,
+        3
+      ],
+      "displayFrames": [],
+      "allowsPlayback": false,
+      "result": "withheld",
+      "note": "各帧膝关节屈伸变化较大，无法确认仅以踝关节提踵。",
+      "reviewPage": 12
+    },
+    {
+      "slug": "wall-sit",
+      "reviewedFrames": [
+        1,
+        2,
+        3
+      ],
+      "displayFrames": [
+        1,
+        2,
+        3
+      ],
+      "allowsPlayback": false,
+      "result": "static-only",
+      "note": "已核对三帧的器材与主要姿势；构图/比例存在变化，仅作独立静态示意。",
+      "reviewPage": 12
+    },
+    {
+      "slug": "jump-squat",
+      "reviewedFrames": [
+        1,
+        2,
+        3
+      ],
+      "displayFrames": [
+        1,
+        2,
+        3
+      ],
+      "allowsPlayback": false,
+      "result": "static-only",
+      "note": "已核对三帧的器材与主要姿势；构图/比例存在变化，仅作独立静态示意。",
+      "reviewPage": 12
+    },
+    {
+      "slug": "incline-dumbbell-curl",
+      "reviewedFrames": [
+        1,
+        2,
+        3
+      ],
+      "displayFrames": [
+        1,
+        2,
+        3
+      ],
+      "allowsPlayback": false,
+      "result": "static-only",
+      "note": "已核对三帧的器材与主要姿势；构图/比例存在变化，仅作独立静态示意。",
+      "reviewPage": 13
+    },
+    {
+      "slug": "concentration-curl",
+      "reviewedFrames": [
+        1,
+        2,
+        3
+      ],
+      "displayFrames": [
+        1,
+        2,
+        3
+      ],
+      "allowsPlayback": false,
+      "result": "static-only",
+      "note": "已核对三帧的器材与主要姿势；构图/比例存在变化，仅作独立静态示意。",
+      "reviewPage": 13
+    },
+    {
+      "slug": "ez-bar-curl",
+      "reviewedFrames": [
+        1,
+        2,
+        3
+      ],
+      "displayFrames": [
+        1,
+        2,
+        3
+      ],
+      "allowsPlayback": false,
+      "result": "static-only",
+      "note": "已核对三帧的器材与主要姿势；构图/比例存在变化，仅作独立静态示意。",
+      "reviewPage": 13
+    },
+    {
+      "slug": "spider-curl",
+      "reviewedFrames": [
+        1,
+        2,
+        3
+      ],
+      "displayFrames": [],
+      "allowsPlayback": false,
+      "result": "withheld",
+      "note": "图中器材与姿势更接近杠铃牧师凳弯举，非俯卧哑铃蜘蛛弯举。",
+      "reviewPage": 13
+    },
+    {
+      "slug": "rope-hammer-curl",
+      "reviewedFrames": [
+        1,
+        2,
+        3
+      ],
+      "displayFrames": [
+        1,
+        2,
+        3
+      ],
+      "allowsPlayback": false,
+      "result": "static-only",
+      "note": "已核对三帧的器材与主要姿势；构图/比例存在变化，仅作独立静态示意。",
+      "reviewPage": 13
+    },
+    {
+      "slug": "drag-curl",
+      "reviewedFrames": [
+        1,
+        2,
+        3
+      ],
+      "displayFrames": [
+        1,
+        2,
+        3
+      ],
+      "allowsPlayback": false,
+      "result": "static-only",
+      "note": "已核对三帧的器材与主要姿势；构图/比例存在变化，仅作独立静态示意。",
+      "reviewPage": 13
+    },
+    {
+      "slug": "rope-tricep-pushdown",
+      "reviewedFrames": [
+        1,
+        2,
+        3
+      ],
+      "displayFrames": [
+        1,
+        2,
+        3
+      ],
+      "allowsPlayback": false,
+      "result": "static-only",
+      "note": "已核对三帧的器材与主要姿势；构图/比例存在变化，仅作独立静态示意。",
+      "reviewPage": 13
+    },
+    {
+      "slug": "dumbbell-skull-crusher",
+      "reviewedFrames": [
+        1,
+        2,
+        3
+      ],
+      "displayFrames": [
+        1,
+        2,
+        3
+      ],
+      "allowsPlayback": false,
+      "result": "static-only",
+      "note": "已核对三帧的器材与主要姿势；构图/比例存在变化，仅作独立静态示意。",
+      "reviewPage": 13
+    },
+    {
+      "slug": "single-dumbbell-skullcrusher",
+      "reviewedFrames": [
+        1,
+        2,
+        3
+      ],
+      "displayFrames": [
+        1,
+        2,
+        3
+      ],
+      "allowsPlayback": false,
+      "result": "static-only",
+      "note": "已核对三帧的器材与主要姿势；构图/比例存在变化，仅作独立静态示意。",
+      "reviewPage": 13
+    },
+    {
+      "slug": "dumbbell-overhead-tricep-extension",
+      "reviewedFrames": [
+        1,
+        2,
+        3
+      ],
+      "displayFrames": [
+        1,
+        2,
+        3
+      ],
+      "allowsPlayback": false,
+      "result": "static-only",
+      "note": "已核对三帧的器材与主要姿势；构图/比例存在变化，仅作独立静态示意。",
+      "reviewPage": 13
+    },
+    {
+      "slug": "single-arm-dumbbell-tricep-extension",
+      "reviewedFrames": [
+        1,
+        2,
+        3
+      ],
+      "displayFrames": [
+        1,
+        2,
+        3
+      ],
+      "allowsPlayback": false,
+      "result": "static-only",
+      "note": "已核对三帧的器材与主要姿势；构图/比例存在变化，仅作独立静态示意。",
+      "reviewPage": 13
+    },
+    {
+      "slug": "bench-dip",
+      "reviewedFrames": [
+        1,
+        2,
+        3
+      ],
+      "displayFrames": [
+        1,
+        2,
+        3
+      ],
+      "allowsPlayback": false,
+      "result": "static-only",
+      "note": "已核对三帧的器材与主要姿势；构图/比例存在变化，仅作独立静态示意。",
+      "reviewPage": 13
+    },
+    {
+      "slug": "tricep-kickback",
+      "reviewedFrames": [
+        1,
+        2,
+        3
+      ],
+      "displayFrames": [
+        1,
+        2,
+        3
+      ],
+      "allowsPlayback": false,
+      "result": "static-only",
+      "note": "已核对三帧的器材与主要姿势；构图/比例存在变化，仅作独立静态示意。",
+      "reviewPage": 14
+    },
+    {
+      "slug": "wrist-extension",
+      "reviewedFrames": [
+        1,
+        2,
+        3
+      ],
+      "displayFrames": [
+        1,
+        2,
+        3
+      ],
+      "allowsPlayback": false,
+      "result": "static-only",
+      "note": "已核对三帧的器材与主要姿势；构图/比例存在变化，仅作独立静态示意。",
+      "reviewPage": 14
+    },
+    {
+      "slug": "farmer-carry",
+      "reviewedFrames": [
+        1,
+        2,
+        3
+      ],
+      "displayFrames": [
+        1,
+        2,
+        3
+      ],
+      "allowsPlayback": false,
+      "result": "static-only",
+      "note": "已核对三帧的器材与主要姿势；构图/比例存在变化，仅作独立静态示意。",
+      "reviewPage": 14
+    },
+    {
+      "slug": "crunch",
+      "reviewedFrames": [
+        1,
+        2,
+        3
+      ],
+      "displayFrames": [
+        1,
+        2,
+        3
+      ],
+      "allowsPlayback": false,
+      "result": "static-only",
+      "note": "已核对三帧的器材与主要姿势；构图/比例存在变化，仅作独立静态示意。",
+      "reviewPage": 14
+    },
+    {
+      "slug": "reverse-crunch",
+      "reviewedFrames": [
+        1,
+        2,
+        3
+      ],
+      "displayFrames": [
+        1,
+        2,
+        3
+      ],
+      "allowsPlayback": false,
+      "result": "static-only",
+      "note": "已核对三帧的器材与主要姿势；构图/比例存在变化，仅作独立静态示意。",
+      "reviewPage": 14
+    },
+    {
+      "slug": "russian-twist",
+      "reviewedFrames": [
+        1,
+        2,
+        3
+      ],
+      "displayFrames": [
+        1,
+        2,
+        3
+      ],
+      "allowsPlayback": false,
+      "result": "static-only",
+      "note": "已核对三帧的器材与主要姿势；构图/比例存在变化，仅作独立静态示意。",
+      "reviewPage": 14
+    },
+    {
+      "slug": "bicycle-crunch",
+      "reviewedFrames": [
+        1,
+        2,
+        3
+      ],
+      "displayFrames": [
+        1,
+        2,
+        3
+      ],
+      "allowsPlayback": false,
+      "result": "static-only",
+      "note": "已核对三帧的器材与主要姿势；构图/比例存在变化，仅作独立静态示意。",
+      "reviewPage": 14
+    },
+    {
+      "slug": "mountain-climber",
+      "reviewedFrames": [
+        1,
+        2,
+        3
+      ],
+      "displayFrames": [
+        1,
+        2,
+        3
+      ],
+      "allowsPlayback": false,
+      "result": "static-only",
+      "note": "已核对三帧的器材与主要姿势；构图/比例存在变化，仅作独立静态示意。",
+      "reviewPage": 14
+    },
+    {
+      "slug": "dead-bug",
+      "reviewedFrames": [
+        1,
+        2,
+        3
+      ],
+      "displayFrames": [
+        1,
+        3
+      ],
+      "allowsPlayback": false,
+      "result": "static-only",
+      "note": "第2帧为双臂双腿同时伸展的不同变式，已隐藏。",
+      "reviewPage": 14
+    },
+    {
+      "slug": "bird-dog",
+      "reviewedFrames": [
+        1,
+        2,
+        3
+      ],
+      "displayFrames": [
+        1,
+        2,
+        3
+      ],
+      "allowsPlayback": false,
+      "result": "static-only",
+      "note": "已核对三帧的器材与主要姿势；构图/比例存在变化，仅作独立静态示意。",
+      "reviewPage": 14
+    },
+    {
+      "slug": "pallof-press",
+      "reviewedFrames": [
+        1,
+        2,
+        3
+      ],
+      "displayFrames": [
+        1,
+        2,
+        3
+      ],
+      "allowsPlayback": false,
+      "result": "static-only",
+      "note": "已核对三帧的器材与主要姿势；构图/比例存在变化，仅作独立静态示意。",
+      "reviewPage": 14
+    },
+    {
+      "slug": "cable-woodchop",
+      "reviewedFrames": [
+        1,
+        2,
+        3
+      ],
+      "displayFrames": [
+        1,
+        2,
+        3
+      ],
+      "allowsPlayback": false,
+      "result": "static-only",
+      "note": "已核对三帧的器材与主要姿势；构图/比例存在变化，仅作独立静态示意。",
+      "reviewPage": 14
+    },
+    {
+      "slug": "half-kneeling-pallof-press",
+      "reviewedFrames": [
+        1,
+        2,
+        3
+      ],
+      "displayFrames": [
+        1,
+        2,
+        3
+      ],
+      "allowsPlayback": false,
+      "result": "static-only",
+      "note": "已核对三帧的器材与主要姿势；构图/比例存在变化，仅作独立静态示意。",
+      "reviewPage": 15
+    },
+    {
+      "slug": "cable-pallof-hold",
+      "reviewedFrames": [
+        1,
+        2,
+        3
+      ],
+      "displayFrames": [
+        1,
+        2,
+        3
+      ],
+      "allowsPlayback": false,
+      "result": "static-only",
+      "note": "已核对三帧的器材与主要姿势；构图/比例存在变化，仅作独立静态示意。",
+      "reviewPage": 15
+    },
+    {
+      "slug": "hanging-knee-raise",
+      "reviewedFrames": [
+        1,
+        2,
+        3
+      ],
+      "displayFrames": [
+        1,
+        2,
+        3
+      ],
+      "allowsPlayback": false,
+      "result": "static-only",
+      "note": "已核对三帧的器材与主要姿势；构图/比例存在变化，仅作独立静态示意。",
+      "reviewPage": 15
+    },
+    {
+      "slug": "captains-chair-knee-raise",
+      "reviewedFrames": [
+        1,
+        2,
+        3
+      ],
+      "displayFrames": [
+        1,
+        2,
+        3
+      ],
+      "allowsPlayback": false,
+      "result": "static-only",
+      "note": "已核对三帧的器材与主要姿势；构图/比例存在变化，仅作独立静态示意。",
+      "reviewPage": 15
+    },
+    {
+      "slug": "decline-sit-up",
+      "reviewedFrames": [
+        1,
+        2,
+        3
+      ],
+      "displayFrames": [
+        1,
+        2,
+        3
+      ],
+      "allowsPlayback": false,
+      "result": "static-only",
+      "note": "已核对三帧的器材与主要姿势；构图/比例存在变化，仅作独立静态示意。",
+      "reviewPage": 15
+    },
+    {
+      "slug": "weighted-crunch",
+      "reviewedFrames": [
+        1,
+        2,
+        3
+      ],
+      "displayFrames": [],
+      "allowsPlayback": false,
+      "result": "withheld",
+      "note": "画面躯干抬起幅度较大，无法确认是卷腹而非仰卧起坐。",
+      "reviewPage": 15
+    },
+    {
+      "slug": "weighted-russian-twist",
+      "reviewedFrames": [
+        1,
+        2,
+        3
+      ],
+      "displayFrames": [
+        1,
+        2,
+        3
+      ],
+      "allowsPlayback": false,
+      "result": "static-only",
+      "note": "已核对三帧的器材与主要姿势；构图/比例存在变化，仅作独立静态示意。",
+      "reviewPage": 15
+    },
+    {
+      "slug": "dumbbell-side-bend",
+      "reviewedFrames": [
+        1,
+        2,
+        3
+      ],
+      "displayFrames": [
+        1,
+        2,
+        3
+      ],
+      "allowsPlayback": false,
+      "result": "static-only",
+      "note": "已核对三帧的器材与主要姿势；构图/比例存在变化，仅作独立静态示意。",
+      "reviewPage": 15
+    },
+    {
+      "slug": "elliptical",
+      "reviewedFrames": [
+        1,
+        2,
+        3
+      ],
+      "displayFrames": [
+        1,
+        2,
+        3
+      ],
+      "allowsPlayback": false,
+      "result": "static-only",
+      "note": "已核对三帧的器材与主要姿势；构图/比例存在变化，仅作独立静态示意。",
+      "reviewPage": 15
+    },
+    {
+      "slug": "swimming",
+      "reviewedFrames": [
+        1,
+        2,
+        3
+      ],
+      "displayFrames": [],
+      "allowsPlayback": false,
+      "result": "withheld",
+      "note": "画面为俯卧器械练习，不能代表水中游泳。",
+      "reviewPage": 15
+    },
+    {
+      "slug": "jump-rope",
+      "reviewedFrames": [
+        1,
+        2,
+        3
+      ],
+      "displayFrames": [
+        1,
+        2,
+        3
+      ],
+      "allowsPlayback": false,
+      "result": "static-only",
+      "note": "已核对三帧的器材与主要姿势；构图/比例存在变化，仅作独立静态示意。",
+      "reviewPage": 15
+    },
+    {
+      "slug": "assault-bike",
+      "reviewedFrames": [
+        1,
+        2,
+        3
+      ],
+      "displayFrames": [
+        1,
+        2,
+        3
+      ],
+      "allowsPlayback": false,
+      "result": "static-only",
+      "note": "已核对三帧的器材与主要姿势；构图/比例存在变化，仅作独立静态示意。",
+      "reviewPage": 15
+    },
+    {
+      "slug": "skierg",
+      "reviewedFrames": [
+        1,
+        2,
+        3
+      ],
+      "displayFrames": [
+        1,
+        2,
+        3
+      ],
+      "allowsPlayback": false,
+      "result": "static-only",
+      "note": "已核对三帧的器材与主要姿势；构图/比例存在变化，仅作独立静态示意。",
+      "reviewPage": 16
+    },
+    {
+      "slug": "hiking",
+      "reviewedFrames": [
+        1,
+        2,
+        3
+      ],
+      "displayFrames": [],
+      "allowsPlayback": false,
+      "result": "withheld",
+      "note": "画面为室内踏步器械，不能代表户外徒步。",
+      "reviewPage": 16
+    },
+    {
+      "slug": "treadmill-incline-walk",
+      "reviewedFrames": [
+        1,
+        2,
+        3
+      ],
+      "displayFrames": [
+        1,
+        2,
+        3
+      ],
+      "allowsPlayback": false,
+      "result": "static-only",
+      "note": "已核对三帧的器材与主要姿势；构图/比例存在变化，仅作独立静态示意。",
+      "reviewPage": 16
+    },
+    {
+      "slug": "battle-ropes",
+      "reviewedFrames": [
+        1,
+        2,
+        3
+      ],
+      "displayFrames": [
+        1,
+        2,
+        3
+      ],
+      "allowsPlayback": false,
+      "result": "static-only",
+      "note": "已核对三帧的器材与主要姿势；构图/比例存在变化，仅作独立静态示意。",
+      "reviewPage": 16
+    },
+    {
+      "slug": "incline-push-up",
+      "reviewedFrames": [
+        1,
+        2,
+        3
+      ],
+      "displayFrames": [
+        1,
+        2,
+        3
+      ],
+      "allowsPlayback": false,
+      "result": "static-only",
+      "note": "已核对三帧的器材与主要姿势；构图/比例存在变化，仅作独立静态示意。",
+      "reviewPage": 16
+    },
+    {
+      "slug": "knee-push-up",
+      "reviewedFrames": [
+        1,
+        2,
+        3
+      ],
+      "displayFrames": [
+        1,
+        2,
+        3
+      ],
+      "allowsPlayback": false,
+      "result": "static-only",
+      "note": "已核对三帧的器材与主要姿势；构图/比例存在变化，仅作独立静态示意。",
+      "reviewPage": 16
+    },
+    {
+      "slug": "wide-push-up",
+      "reviewedFrames": [
+        1,
+        2,
+        3
+      ],
+      "displayFrames": [
+        1,
+        2,
+        3
+      ],
+      "allowsPlayback": false,
+      "result": "static-only",
+      "note": "已核对三帧的器材与主要姿势；构图/比例存在变化，仅作独立静态示意。",
+      "reviewPage": 16
+    },
+    {
+      "slug": "diamond-push-up",
+      "reviewedFrames": [
+        1,
+        2,
+        3
+      ],
+      "displayFrames": [
+        1,
+        2,
+        3
+      ],
+      "allowsPlayback": false,
+      "result": "static-only",
+      "note": "已核对三帧的器材与主要姿势；构图/比例存在变化，仅作独立静态示意。",
+      "reviewPage": 16
+    },
+    {
+      "slug": "decline-push-up",
+      "reviewedFrames": [
+        1,
+        2,
+        3
+      ],
+      "displayFrames": [
+        1,
+        2,
+        3
+      ],
+      "allowsPlayback": false,
+      "result": "static-only",
+      "note": "已核对三帧的器材与主要姿势；构图/比例存在变化，仅作独立静态示意。",
+      "reviewPage": 16
+    },
+    {
+      "slug": "pike-push-up",
+      "reviewedFrames": [
+        1,
+        2,
+        3
+      ],
+      "displayFrames": [
+        1,
+        2,
+        3
+      ],
+      "allowsPlayback": false,
+      "result": "static-only",
+      "note": "已核对三帧的器材与主要姿势；构图/比例存在变化，仅作独立静态示意。",
+      "reviewPage": 16
+    },
+    {
+      "slug": "feet-elevated-pike-push-up",
+      "reviewedFrames": [
+        1,
+        2,
+        3
+      ],
+      "displayFrames": [
+        1,
+        2,
+        3
+      ],
+      "allowsPlayback": false,
+      "result": "static-only",
+      "note": "已核对三帧的器材与主要姿势；构图/比例存在变化，仅作独立静态示意。",
+      "reviewPage": 16
+    },
+    {
+      "slug": "archer-push-up",
+      "reviewedFrames": [
+        1,
+        2,
+        3
+      ],
+      "displayFrames": [
+        1,
+        2,
+        3
+      ],
+      "allowsPlayback": false,
+      "result": "static-only",
+      "note": "已核对三帧的器材与主要姿势；构图/比例存在变化，仅作独立静态示意。",
+      "reviewPage": 16
+    },
+    {
+      "slug": "typewriter-push-up",
+      "reviewedFrames": [
+        1,
+        2,
+        3
+      ],
+      "displayFrames": [
+        1,
+        2,
+        3
+      ],
+      "allowsPlayback": false,
+      "result": "static-only",
+      "note": "已核对三帧的器材与主要姿势；构图/比例存在变化，仅作独立静态示意。",
+      "reviewPage": 17
+    },
+    {
+      "slug": "explosive-push-up",
+      "reviewedFrames": [
+        1,
+        2,
+        3
+      ],
+      "displayFrames": [
+        1,
+        2,
+        3
+      ],
+      "allowsPlayback": false,
+      "result": "static-only",
+      "note": "已核对三帧的器材与主要姿势；构图/比例存在变化，仅作独立静态示意。",
+      "reviewPage": 17
+    },
+    {
+      "slug": "hindu-push-up",
+      "reviewedFrames": [
+        1,
+        2,
+        3
+      ],
+      "displayFrames": [
+        1,
+        2,
+        3
+      ],
+      "allowsPlayback": false,
+      "result": "static-only",
+      "note": "已核对三帧的器材与主要姿势；构图/比例存在变化，仅作独立静态示意。",
+      "reviewPage": 17
+    },
+    {
+      "slug": "scapular-push-up",
+      "reviewedFrames": [
+        1,
+        2,
+        3
+      ],
+      "displayFrames": [
+        1,
+        2,
+        3
+      ],
+      "allowsPlayback": false,
+      "result": "static-only",
+      "note": "已核对三帧的器材与主要姿势；构图/比例存在变化，仅作独立静态示意。",
+      "reviewPage": 17
+    },
+    {
+      "slug": "push-up-shoulder-tap",
+      "reviewedFrames": [
+        1,
+        2,
+        3
+      ],
+      "displayFrames": [
+        1,
+        2,
+        3
+      ],
+      "allowsPlayback": false,
+      "result": "static-only",
+      "note": "已核对三帧的器材与主要姿势；构图/比例存在变化，仅作独立静态示意。",
+      "reviewPage": 17
+    },
+    {
+      "slug": "wall-push-up",
+      "reviewedFrames": [
+        1,
+        2,
+        3
+      ],
+      "displayFrames": [
+        1,
+        2,
+        3
+      ],
+      "allowsPlayback": false,
+      "result": "static-only",
+      "note": "已核对三帧的器材与主要姿势；构图/比例存在变化，仅作独立静态示意。",
+      "reviewPage": 17
+    },
+    {
+      "slug": "wall-walk",
+      "reviewedFrames": [
+        1,
+        2,
+        3
+      ],
+      "displayFrames": [
+        1,
+        2,
+        3
+      ],
+      "allowsPlayback": false,
+      "result": "static-only",
+      "note": "已核对三帧的器材与主要姿势；构图/比例存在变化，仅作独立静态示意。",
+      "reviewPage": 17
+    },
+    {
+      "slug": "wall-handstand-push-up",
+      "reviewedFrames": [
+        1,
+        2,
+        3
+      ],
+      "displayFrames": [
+        1,
+        2,
+        3
+      ],
+      "allowsPlayback": false,
+      "result": "static-only",
+      "note": "墙面细节未画出，实际练习须具备可靠靠墙支撑与退出能力。",
+      "reviewPage": 17
+    },
+    {
+      "slug": "handstand-push-up",
+      "reviewedFrames": [
+        1,
+        2,
+        3
+      ],
+      "displayFrames": [
+        1,
+        2,
+        3
+      ],
+      "allowsPlayback": false,
+      "result": "static-only",
+      "note": "图为握支架版本，仅用于姿势定位，不表示徒手地面版本的器材条件。",
+      "reviewPage": 17
+    },
+    {
+      "slug": "chair-dip",
+      "reviewedFrames": [
+        1,
+        2,
+        3
+      ],
+      "displayFrames": [
+        1,
+        2,
+        3
+      ],
+      "allowsPlayback": false,
+      "result": "static-only",
+      "note": "已核对三帧的器材与主要姿势；构图/比例存在变化，仅作独立静态示意。",
+      "reviewPage": 17
+    },
+    {
+      "slug": "doorway-row",
+      "reviewedFrames": [
+        1,
+        2,
+        3
+      ],
+      "displayFrames": [
+        1,
+        2,
+        3
+      ],
+      "allowsPlayback": false,
+      "result": "static-only",
+      "note": "已核对三帧的器材与主要姿势；构图/比例存在变化，仅作独立静态示意。",
+      "reviewPage": 17
+    },
+    {
+      "slug": "towel-row",
+      "reviewedFrames": [
+        1,
+        2,
+        3
+      ],
+      "displayFrames": [],
+      "allowsPlayback": false,
+      "result": "withheld",
+      "note": "画面未清楚呈现毛巾的固定端或足部锚点，无法确认有效阻力来源。",
+      "reviewPage": 17
+    },
+    {
+      "slug": "prone-y-raise",
+      "reviewedFrames": [
+        1,
+        2,
+        3
+      ],
+      "displayFrames": [
+        1,
+        2,
+        3
+      ],
+      "allowsPlayback": false,
+      "result": "static-only",
+      "note": "已核对三帧的器材与主要姿势；构图/比例存在变化，仅作独立静态示意。",
+      "reviewPage": 18
+    },
+    {
+      "slug": "prone-t-raise",
+      "reviewedFrames": [
+        1,
+        2,
+        3
+      ],
+      "displayFrames": [],
+      "allowsPlayback": false,
+      "result": "withheld",
+      "note": "图中有哑铃和胸托凳，与当前徒手俯卧T字抬臂的器材资料不一致。",
+      "reviewPage": 18
+    },
+    {
+      "slug": "superman",
+      "reviewedFrames": [
+        1,
+        2,
+        3
+      ],
+      "displayFrames": [
+        1,
+        2,
+        3
+      ],
+      "allowsPlayback": false,
+      "result": "static-only",
+      "note": "已核对三帧的器材与主要姿势；构图/比例存在变化，仅作独立静态示意。",
+      "reviewPage": 18
+    },
+    {
+      "slug": "superman-hold",
+      "reviewedFrames": [
+        1,
+        2,
+        3
+      ],
+      "displayFrames": [
+        1,
+        2,
+        3
+      ],
+      "allowsPlayback": false,
+      "result": "static-only",
+      "note": "已核对三帧的器材与主要姿势；构图/比例存在变化，仅作独立静态示意。",
+      "reviewPage": 18
+    },
+    {
+      "slug": "reverse-snow-angel",
+      "reviewedFrames": [
+        1,
+        2,
+        3
+      ],
+      "displayFrames": [
+        1,
+        2,
+        3
+      ],
+      "allowsPlayback": false,
+      "result": "static-only",
+      "note": "已核对三帧的器材与主要姿势；构图/比例存在变化，仅作独立静态示意。",
+      "reviewPage": 18
+    },
+    {
+      "slug": "dead-hang",
+      "reviewedFrames": [
+        1,
+        2,
+        3
+      ],
+      "displayFrames": [
+        1,
+        2,
+        3
+      ],
+      "allowsPlayback": false,
+      "result": "static-only",
+      "note": "已核对三帧的器材与主要姿势；构图/比例存在变化，仅作独立静态示意。",
+      "reviewPage": 18
+    },
+    {
+      "slug": "active-hang",
+      "reviewedFrames": [
+        1,
+        2,
+        3
+      ],
+      "displayFrames": [
+        1,
+        2,
+        3
+      ],
+      "allowsPlayback": false,
+      "result": "static-only",
+      "note": "肩胛参与细节不够清晰，图片只用于悬垂位置定位。",
+      "reviewPage": 18
+    },
+    {
+      "slug": "scapular-pull-up",
+      "reviewedFrames": [
+        1,
+        2,
+        3
+      ],
+      "displayFrames": [
+        1,
+        2,
+        3
+      ],
+      "allowsPlayback": false,
+      "result": "static-only",
+      "note": "幅度细节不够清晰，图片不作为动作幅度或速度标准。",
+      "reviewPage": 18
+    },
+    {
+      "slug": "negative-pull-up",
+      "reviewedFrames": [
+        1,
+        2,
+        3
+      ],
+      "displayFrames": [
+        1,
+        2,
+        3
+      ],
+      "allowsPlayback": false,
+      "result": "static-only",
+      "note": "已核对三帧的器材与主要姿势；构图/比例存在变化，仅作独立静态示意。",
+      "reviewPage": 18
+    },
+    {
+      "slug": "commando-pull-up",
+      "reviewedFrames": [
+        1,
+        2,
+        3
+      ],
+      "displayFrames": [],
+      "allowsPlayback": false,
+      "result": "withheld",
+      "note": "未呈现纵向对握和头部交替过杠的动作要求。",
+      "reviewPage": 18
+    },
+    {
+      "slug": "l-sit-pull-up",
+      "reviewedFrames": [
+        1,
+        2,
+        3
+      ],
+      "displayFrames": [
+        1,
+        2,
+        3
+      ],
+      "allowsPlayback": false,
+      "result": "static-only",
+      "note": "已核对三帧的器材与主要姿势；构图/比例存在变化，仅作独立静态示意。",
+      "reviewPage": 18
+    },
+    {
+      "slug": "towel-pull-up",
+      "reviewedFrames": [
+        1,
+        2,
+        3
+      ],
+      "displayFrames": [
+        1,
+        2,
+        3
+      ],
+      "allowsPlayback": false,
+      "result": "static-only",
+      "note": "已核对三帧的器材与主要姿势；构图/比例存在变化，仅作独立静态示意。",
+      "reviewPage": 18
+    },
+    {
+      "slug": "bodyweight-squat",
+      "reviewedFrames": [
+        1,
+        2,
+        3
+      ],
+      "displayFrames": [
+        1,
+        2,
+        3
+      ],
+      "allowsPlayback": false,
+      "result": "static-only",
+      "note": "已核对三帧的器材与主要姿势；构图/比例存在变化，仅作独立静态示意。",
+      "reviewPage": 19
+    },
+    {
+      "slug": "pistol-squat",
+      "reviewedFrames": [
+        1,
+        2,
+        3
+      ],
+      "displayFrames": [
+        1,
+        2,
+        3
+      ],
+      "allowsPlayback": false,
+      "result": "static-only",
+      "note": "已核对三帧的器材与主要姿势；构图/比例存在变化，仅作独立静态示意。",
+      "reviewPage": 19
+    },
+    {
+      "slug": "assisted-pistol-squat",
+      "reviewedFrames": [
+        1,
+        2,
+        3
+      ],
+      "displayFrames": [
+        1,
+        2,
+        3
+      ],
+      "allowsPlayback": false,
+      "result": "static-only",
+      "note": "已核对三帧的器材与主要姿势；构图/比例存在变化，仅作独立静态示意。",
+      "reviewPage": 19
+    },
+    {
+      "slug": "shrimp-squat",
+      "reviewedFrames": [
+        1,
+        2,
+        3
+      ],
+      "displayFrames": [
+        2,
+        3
+      ],
+      "allowsPlayback": false,
+      "result": "static-only",
+      "note": "第1帧自由腿前伸接近手枪蹲，已隐藏；保留后屈腿的辅助变式。",
+      "reviewPage": 19
+    },
+    {
+      "slug": "cossack-squat",
+      "reviewedFrames": [
+        1,
+        2,
+        3
+      ],
+      "displayFrames": [
+        1,
+        2,
+        3
+      ],
+      "allowsPlayback": false,
+      "result": "static-only",
+      "note": "已核对三帧的器材与主要姿势；构图/比例存在变化，仅作独立静态示意。",
+      "reviewPage": 19
+    },
+    {
+      "slug": "sissy-squat",
+      "reviewedFrames": [
+        1,
+        2,
+        3
+      ],
+      "displayFrames": [
+        1,
+        2,
+        3
+      ],
+      "allowsPlayback": false,
+      "result": "static-only",
+      "note": "图示使用固定支撑，勿直接照搬为无支撑的大幅后倾。",
+      "reviewPage": 19
+    },
+    {
+      "slug": "forward-lunge",
+      "reviewedFrames": [
+        1,
+        2,
+        3
+      ],
+      "displayFrames": [
+        1,
+        2,
+        3
+      ],
+      "allowsPlayback": false,
+      "result": "static-only",
+      "note": "已核对三帧的器材与主要姿势；构图/比例存在变化，仅作独立静态示意。",
+      "reviewPage": 19
+    },
+    {
+      "slug": "lateral-lunge",
+      "reviewedFrames": [
+        1,
+        2,
+        3
+      ],
+      "displayFrames": [
+        1,
+        2,
+        3
+      ],
+      "allowsPlayback": false,
+      "result": "static-only",
+      "note": "已核对三帧的器材与主要姿势；构图/比例存在变化，仅作独立静态示意。",
+      "reviewPage": 19
+    },
+    {
+      "slug": "curtsy-lunge",
+      "reviewedFrames": [
+        1,
+        2,
+        3
+      ],
+      "displayFrames": [
+        1,
+        2,
+        3
+      ],
+      "allowsPlayback": false,
+      "result": "static-only",
+      "note": "已核对三帧的器材与主要姿势；构图/比例存在变化，仅作独立静态示意。",
+      "reviewPage": 19
+    },
+    {
+      "slug": "skater-squat",
+      "reviewedFrames": [
+        1,
+        2,
+        3
+      ],
+      "displayFrames": [
+        1
+      ],
+      "allowsPlayback": false,
+      "result": "static-only",
+      "note": "后续帧混入双腿深蹲或侧弓步，仅保留单腿后屈示意。",
+      "reviewPage": 19
+    },
+    {
+      "slug": "single-leg-box-squat",
+      "reviewedFrames": [
+        1,
+        2,
+        3
+      ],
+      "displayFrames": [
+        1,
+        2,
+        3
+      ],
+      "allowsPlayback": false,
+      "result": "static-only",
+      "note": "已核对三帧的器材与主要姿势；构图/比例存在变化，仅作独立静态示意。",
+      "reviewPage": 19
+    },
+    {
+      "slug": "step-down",
+      "reviewedFrames": [
+        1,
+        2,
+        3
+      ],
+      "displayFrames": [
+        1,
+        2,
+        3
+      ],
+      "allowsPlayback": false,
+      "result": "static-only",
+      "note": "已核对三帧的器材与主要姿势；构图/比例存在变化，仅作独立静态示意。",
+      "reviewPage": 19
+    },
+    {
+      "slug": "calf-raise",
+      "reviewedFrames": [
+        1,
+        2,
+        3
+      ],
+      "displayFrames": [
+        1,
+        2,
+        3
+      ],
+      "allowsPlayback": false,
+      "result": "static-only",
+      "note": "已核对三帧的器材与主要姿势；构图/比例存在变化，仅作独立静态示意。",
+      "reviewPage": 20
+    },
+    {
+      "slug": "single-leg-calf-raise",
+      "reviewedFrames": [
+        1,
+        2,
+        3
+      ],
+      "displayFrames": [
+        1,
+        2,
+        3
+      ],
+      "allowsPlayback": false,
+      "result": "static-only",
+      "note": "已核对三帧的器材与主要姿势；构图/比例存在变化，仅作独立静态示意。",
+      "reviewPage": 20
+    },
+    {
+      "slug": "glute-bridge-march",
+      "reviewedFrames": [
+        1,
+        2,
+        3
+      ],
+      "displayFrames": [
+        1,
+        2,
+        3
+      ],
+      "allowsPlayback": false,
+      "result": "static-only",
+      "note": "已核对三帧的器材与主要姿势；构图/比例存在变化，仅作独立静态示意。",
+      "reviewPage": 20
+    },
+    {
+      "slug": "frog-pump",
+      "reviewedFrames": [
+        1,
+        2,
+        3
+      ],
+      "displayFrames": [
+        1,
+        2,
+        3
+      ],
+      "allowsPlayback": false,
+      "result": "static-only",
+      "note": "已核对三帧的器材与主要姿势；构图/比例存在变化，仅作独立静态示意。",
+      "reviewPage": 20
+    },
+    {
+      "slug": "donkey-kick",
+      "reviewedFrames": [
+        1,
+        2,
+        3
+      ],
+      "displayFrames": [
+        1,
+        2,
+        3
+      ],
+      "allowsPlayback": false,
+      "result": "static-only",
+      "note": "已核对三帧的器材与主要姿势；构图/比例存在变化，仅作独立静态示意。",
+      "reviewPage": 20
+    },
+    {
+      "slug": "fire-hydrant",
+      "reviewedFrames": [
+        1,
+        2,
+        3
+      ],
+      "displayFrames": [
+        1,
+        2,
+        3
+      ],
+      "allowsPlayback": false,
+      "result": "static-only",
+      "note": "已核对三帧的器材与主要姿势；构图/比例存在变化，仅作独立静态示意。",
+      "reviewPage": 20
+    },
+    {
+      "slug": "clamshell",
+      "reviewedFrames": [
+        1,
+        2,
+        3
+      ],
+      "displayFrames": [
+        1,
+        2,
+        3
+      ],
+      "allowsPlayback": false,
+      "result": "static-only",
+      "note": "已核对三帧的器材与主要姿势；构图/比例存在变化，仅作独立静态示意。",
+      "reviewPage": 20
+    },
+    {
+      "slug": "hip-airplane",
+      "reviewedFrames": [
+        1,
+        2,
+        3
+      ],
+      "displayFrames": [
+        1,
+        2,
+        3
+      ],
+      "allowsPlayback": false,
+      "result": "static-only",
+      "note": "已核对三帧的器材与主要姿势；构图/比例存在变化，仅作独立静态示意。",
+      "reviewPage": 20
+    },
+    {
+      "slug": "side-lying-hip-abduction",
+      "reviewedFrames": [
+        1,
+        2,
+        3
+      ],
+      "displayFrames": [
+        1,
+        2,
+        3
+      ],
+      "allowsPlayback": false,
+      "result": "static-only",
+      "note": "已核对三帧的器材与主要姿势；构图/比例存在变化，仅作独立静态示意。",
+      "reviewPage": 20
+    },
+    {
+      "slug": "side-lying-leg-raise",
+      "reviewedFrames": [
+        1,
+        2,
+        3
+      ],
+      "displayFrames": [
+        1,
+        2,
+        3
+      ],
+      "allowsPlayback": false,
+      "result": "static-only",
+      "note": "已核对三帧的器材与主要姿势；构图/比例存在变化，仅作独立静态示意。",
+      "reviewPage": 20
+    },
+    {
+      "slug": "lying-hamstring-walkout",
+      "reviewedFrames": [
+        1,
+        2,
+        3
+      ],
+      "displayFrames": [],
+      "allowsPlayback": false,
+      "result": "withheld",
+      "note": "画面出现悬吊足部支撑，非脚跟在地面小步行走的版本。",
+      "reviewPage": 20
+    },
+    {
+      "slug": "towel-hamstring-curl",
+      "reviewedFrames": [
+        1,
+        2,
+        3
+      ],
+      "displayFrames": [],
+      "allowsPlayback": false,
+      "result": "withheld",
+      "note": "画面接近毛巾辅助抬腿拉伸，非脚跟滑动腿弯举。",
+      "reviewPage": 20
+    },
+    {
+      "slug": "stability-ball-hamstring-curl",
+      "reviewedFrames": [
+        1,
+        2,
+        3
+      ],
+      "displayFrames": [],
+      "allowsPlayback": false,
+      "result": "withheld",
+      "note": "画面为俯撑脚踩球，非仰卧屈膝收球的腿弯举。",
+      "reviewPage": 21
+    },
+    {
+      "slug": "banded-glute-bridge",
+      "reviewedFrames": [
+        1,
+        2,
+        3
+      ],
+      "displayFrames": [
+        1,
+        2,
+        3
+      ],
+      "allowsPlayback": false,
+      "result": "static-only",
+      "note": "阻力带位置细节不清，结合步骤确认阻力带在膝上，勿压膝关节。",
+      "reviewPage": 21
+    },
+    {
+      "slug": "banded-hip-thrust",
+      "reviewedFrames": [
+        1,
+        2,
+        3
+      ],
+      "displayFrames": [
+        1,
+        2,
+        3
+      ],
+      "allowsPlayback": false,
+      "result": "static-only",
+      "note": "已核对三帧的器材与主要姿势；构图/比例存在变化，仅作独立静态示意。",
+      "reviewPage": 21
+    },
+    {
+      "slug": "banded-frog-pump",
+      "reviewedFrames": [
+        1,
+        2,
+        3
+      ],
+      "displayFrames": [],
+      "allowsPlayback": false,
+      "result": "withheld",
+      "note": "画面为坐姿后撑，未呈现仰卧脚掌相对的蛙式臀桥。",
+      "reviewPage": 21
+    },
+    {
+      "slug": "banded-clamshell",
+      "reviewedFrames": [
+        1,
+        2,
+        3
+      ],
+      "displayFrames": [
+        2,
+        3
+      ],
+      "allowsPlayback": false,
+      "result": "static-only",
+      "note": "第1帧上侧腿伸直，非屈膝蚌式开合，已隐藏。",
+      "reviewPage": 21
+    },
+    {
+      "slug": "banded-lateral-walk",
+      "reviewedFrames": [
+        1,
+        2,
+        3
+      ],
+      "displayFrames": [
+        1,
+        2,
+        3
+      ],
+      "allowsPlayback": false,
+      "result": "static-only",
+      "note": "已核对三帧的器材与主要姿势；构图/比例存在变化，仅作独立静态示意。",
+      "reviewPage": 21
+    },
+    {
+      "slug": "banded-monster-walk",
+      "reviewedFrames": [
+        1,
+        2,
+        3
+      ],
+      "displayFrames": [
+        1,
+        2,
+        3
+      ],
+      "allowsPlayback": false,
+      "result": "static-only",
+      "note": "已核对三帧的器材与主要姿势；构图/比例存在变化，仅作独立静态示意。",
+      "reviewPage": 21
+    },
+    {
+      "slug": "banded-squat",
+      "reviewedFrames": [
+        1,
+        2,
+        3
+      ],
+      "displayFrames": [
+        1,
+        2,
+        3
+      ],
+      "allowsPlayback": false,
+      "result": "static-only",
+      "note": "已核对三帧的器材与主要姿势；构图/比例存在变化，仅作独立静态示意。",
+      "reviewPage": 21
+    },
+    {
+      "slug": "banded-donkey-kick",
+      "reviewedFrames": [
+        1,
+        2,
+        3
+      ],
+      "displayFrames": [
+        1,
+        2,
+        3
+      ],
+      "allowsPlayback": false,
+      "result": "static-only",
+      "note": "已核对三帧的器材与主要姿势；构图/比例存在变化，仅作独立静态示意。",
+      "reviewPage": 21
+    },
+    {
+      "slug": "banded-fire-hydrant",
+      "reviewedFrames": [
+        1,
+        2,
+        3
+      ],
+      "displayFrames": [
+        1,
+        2,
+        3
+      ],
+      "allowsPlayback": false,
+      "result": "static-only",
+      "note": "已核对三帧的器材与主要姿势；构图/比例存在变化，仅作独立静态示意。",
+      "reviewPage": 21
+    },
+    {
+      "slug": "banded-kickback",
+      "reviewedFrames": [
+        1,
+        2,
+        3
+      ],
+      "displayFrames": [
+        1,
+        2,
+        3
+      ],
+      "allowsPlayback": false,
+      "result": "static-only",
+      "note": "已核对三帧的器材与主要姿势；构图/比例存在变化，仅作独立静态示意。",
+      "reviewPage": 21
+    },
+    {
+      "slug": "banded-standing-hip-abduction",
+      "reviewedFrames": [
+        1,
+        2,
+        3
+      ],
+      "displayFrames": [
+        1,
+        2,
+        3
+      ],
+      "allowsPlayback": false,
+      "result": "static-only",
+      "note": "已核对三帧的器材与主要姿势；构图/比例存在变化，仅作独立静态示意。",
+      "reviewPage": 21
+    },
+    {
+      "slug": "banded-seated-hip-abduction",
+      "reviewedFrames": [
+        1,
+        2,
+        3
+      ],
+      "displayFrames": [
+        1,
+        2,
+        3
+      ],
+      "allowsPlayback": false,
+      "result": "static-only",
+      "note": "已核对三帧的器材与主要姿势；构图/比例存在变化，仅作独立静态示意。",
+      "reviewPage": 22
+    },
+    {
+      "slug": "band-pull-apart",
+      "reviewedFrames": [
+        1,
+        2,
+        3
+      ],
+      "displayFrames": [
+        1,
+        2,
+        3
+      ],
+      "allowsPlayback": false,
+      "result": "static-only",
+      "note": "已核对三帧的器材与主要姿势；构图/比例存在变化，仅作独立静态示意。",
+      "reviewPage": 22
+    },
+    {
+      "slug": "banded-face-pull",
+      "reviewedFrames": [
+        1,
+        2,
+        3
+      ],
+      "displayFrames": [
+        1,
+        2,
+        3
+      ],
+      "allowsPlayback": false,
+      "result": "static-only",
+      "note": "已核对三帧的器材与主要姿势；构图/比例存在变化，仅作独立静态示意。",
+      "reviewPage": 22
+    },
+    {
+      "slug": "banded-row",
+      "reviewedFrames": [
+        1,
+        2,
+        3
+      ],
+      "displayFrames": [
+        1,
+        2,
+        3
+      ],
+      "allowsPlayback": false,
+      "result": "static-only",
+      "note": "已核对三帧的器材与主要姿势；构图/比例存在变化，仅作独立静态示意。",
+      "reviewPage": 22
+    },
+    {
+      "slug": "banded-lat-pulldown",
+      "reviewedFrames": [
+        1,
+        2,
+        3
+      ],
+      "displayFrames": [
+        1,
+        2,
+        3
+      ],
+      "allowsPlayback": false,
+      "result": "static-only",
+      "note": "已核对三帧的器材与主要姿势；构图/比例存在变化，仅作独立静态示意。",
+      "reviewPage": 22
+    },
+    {
+      "slug": "banded-pallof-press",
+      "reviewedFrames": [
+        1,
+        2,
+        3
+      ],
+      "displayFrames": [
+        1,
+        2,
+        3
+      ],
+      "allowsPlayback": false,
+      "result": "static-only",
+      "note": "已核对三帧的器材与主要姿势；构图/比例存在变化，仅作独立静态示意。",
+      "reviewPage": 22
+    },
+    {
+      "slug": "banded-woodchop",
+      "reviewedFrames": [
+        1,
+        2,
+        3
+      ],
+      "displayFrames": [
+        1,
+        2,
+        3
+      ],
+      "allowsPlayback": false,
+      "result": "static-only",
+      "note": "已核对三帧的器材与主要姿势；构图/比例存在变化，仅作独立静态示意。",
+      "reviewPage": 22
+    },
+    {
+      "slug": "banded-dead-bug",
+      "reviewedFrames": [
+        1,
+        2,
+        3
+      ],
+      "displayFrames": [
+        1,
+        2,
+        3
+      ],
+      "allowsPlayback": false,
+      "result": "static-only",
+      "note": "已核对三帧的器材与主要姿势；构图/比例存在变化，仅作独立静态示意。",
+      "reviewPage": 22
+    },
+    {
+      "slug": "hollow-body-hold",
+      "reviewedFrames": [
+        1,
+        2,
+        3
+      ],
+      "displayFrames": [
+        1
+      ],
+      "allowsPlayback": false,
+      "result": "static-only",
+      "note": "后续帧为屈膝或不同躯干角度的变式，仅保留直腿中空体式。",
+      "reviewPage": 22
+    },
+    {
+      "slug": "hollow-rock",
+      "reviewedFrames": [
+        1,
+        2,
+        3
+      ],
+      "displayFrames": [
+        1,
+        2,
+        3
+      ],
+      "allowsPlayback": false,
+      "result": "static-only",
+      "note": "已核对三帧的器材与主要姿势；构图/比例存在变化，仅作独立静态示意。",
+      "reviewPage": 22
+    },
+    {
+      "slug": "v-up",
+      "reviewedFrames": [
+        1,
+        2,
+        3
+      ],
+      "displayFrames": [
+        1,
+        2,
+        3
+      ],
+      "allowsPlayback": false,
+      "result": "static-only",
+      "note": "已核对三帧的器材与主要姿势；构图/比例存在变化，仅作独立静态示意。",
+      "reviewPage": 22
+    },
+    {
+      "slug": "flutter-kick",
+      "reviewedFrames": [
+        1,
+        2,
+        3
+      ],
+      "displayFrames": [
+        1,
+        2,
+        3
+      ],
+      "allowsPlayback": false,
+      "result": "static-only",
+      "note": "已核对三帧的器材与主要姿势；构图/比例存在变化，仅作独立静态示意。",
+      "reviewPage": 22
+    },
+    {
+      "slug": "lying-leg-raise",
+      "reviewedFrames": [
+        1,
+        2,
+        3
+      ],
+      "displayFrames": [
+        1,
+        2,
+        3
+      ],
+      "allowsPlayback": false,
+      "result": "static-only",
+      "note": "已核对三帧的器材与主要姿势；构图/比例存在变化，仅作独立静态示意。",
+      "reviewPage": 23
+    },
+    {
+      "slug": "toe-touch",
+      "reviewedFrames": [
+        1,
+        2,
+        3
+      ],
+      "displayFrames": [],
+      "allowsPlayback": false,
+      "result": "withheld",
+      "note": "画面为站姿前屈，非当前名称所指仰卧触脚尖。",
+      "reviewPage": 23
+    },
+    {
+      "slug": "heel-tap",
+      "reviewedFrames": [
+        1,
+        2,
+        3
+      ],
+      "displayFrames": [
+        1,
+        2,
+        3
+      ],
+      "allowsPlayback": false,
+      "result": "static-only",
+      "note": "已核对三帧的器材与主要姿势；构图/比例存在变化，仅作独立静态示意。",
+      "reviewPage": 23
+    },
+    {
+      "slug": "plank-shoulder-tap",
+      "reviewedFrames": [
+        1,
+        2,
+        3
+      ],
+      "displayFrames": [
+        1,
+        2,
+        3
+      ],
+      "allowsPlayback": false,
+      "result": "static-only",
+      "note": "已核对三帧的器材与主要姿势；构图/比例存在变化，仅作独立静态示意。",
+      "reviewPage": 23
+    },
+    {
+      "slug": "plank-jack",
+      "reviewedFrames": [
+        1,
+        2,
+        3
+      ],
+      "displayFrames": [],
+      "allowsPlayback": false,
+      "result": "withheld",
+      "note": "分帧未清楚呈现双脚开合，并混有单腿屈膝。",
+      "reviewPage": 23
+    },
+    {
+      "slug": "bear-plank",
+      "reviewedFrames": [
+        1,
+        2,
+        3
+      ],
+      "displayFrames": [
+        3
+      ],
+      "allowsPlayback": false,
+      "result": "static-only",
+      "note": "仅保留双膝屈曲接近肩髋正下方的静态支撑图。",
+      "reviewPage": 23
+    },
+    {
+      "slug": "bear-crawl",
+      "reviewedFrames": [
+        1,
+        2,
+        3
+      ],
+      "displayFrames": [
+        1,
+        2,
+        3
+      ],
+      "allowsPlayback": false,
+      "result": "static-only",
+      "note": "已核对三帧的器材与主要姿势；构图/比例存在变化，仅作独立静态示意。",
+      "reviewPage": 23
+    },
+    {
+      "slug": "crab-walk",
+      "reviewedFrames": [
+        1,
+        2,
+        3
+      ],
+      "displayFrames": [
+        1,
+        2,
+        3
+      ],
+      "allowsPlayback": false,
+      "result": "static-only",
+      "note": "已核对三帧的器材与主要姿势；构图/比例存在变化，仅作独立静态示意。",
+      "reviewPage": 23
+    },
+    {
+      "slug": "inchworm",
+      "reviewedFrames": [
+        1,
+        2,
+        3
+      ],
+      "displayFrames": [
+        1,
+        2,
+        3
+      ],
+      "allowsPlayback": false,
+      "result": "static-only",
+      "note": "已核对三帧的器材与主要姿势；构图/比例存在变化，仅作独立静态示意。",
+      "reviewPage": 23
+    },
+    {
+      "slug": "l-sit-hold",
+      "reviewedFrames": [
+        1,
+        2,
+        3
+      ],
+      "displayFrames": [
+        1,
+        2,
+        3
+      ],
+      "allowsPlayback": false,
+      "result": "static-only",
+      "note": "图为双杠支撑版本，实际练习须使用稳固支撑。",
+      "reviewPage": 23
+    },
+    {
+      "slug": "seated-knee-tuck",
+      "reviewedFrames": [
+        1,
+        2,
+        3
+      ],
+      "displayFrames": [],
+      "allowsPlayback": false,
+      "result": "withheld",
+      "note": "画面为支撑架悬空收膝，非坐姿收膝。",
+      "reviewPage": 23
+    },
+    {
+      "slug": "side-plank-hip-dip",
+      "reviewedFrames": [
+        1,
+        2,
+        3
+      ],
+      "displayFrames": [
+        1,
+        2,
+        3
+      ],
+      "allowsPlayback": false,
+      "result": "static-only",
+      "note": "已核对三帧的器材与主要姿势；构图/比例存在变化，仅作独立静态示意。",
+      "reviewPage": 23
+    },
+    {
+      "slug": "copenhagen-plank",
+      "reviewedFrames": [
+        1,
+        2,
+        3
+      ],
+      "displayFrames": [
+        1,
+        2,
+        3
+      ],
+      "allowsPlayback": false,
+      "result": "static-only",
+      "note": "已核对三帧的器材与主要姿势；构图/比例存在变化，仅作独立静态示意。",
+      "reviewPage": 24
+    },
+    {
+      "slug": "dragon-flag",
+      "reviewedFrames": [
+        1,
+        2,
+        3
+      ],
+      "displayFrames": [],
+      "allowsPlayback": false,
+      "result": "withheld",
+      "note": "画面更接近杠上前水平，未呈现龙旗所需肩背在凳上的支撑。",
+      "reviewPage": 24
+    },
+    {
+      "slug": "burpee",
+      "reviewedFrames": [
+        1,
+        2,
+        3
+      ],
+      "displayFrames": [
+        1,
+        2,
+        3
+      ],
+      "allowsPlayback": false,
+      "result": "static-only",
+      "note": "已核对三帧的器材与主要姿势；构图/比例存在变化，仅作独立静态示意。",
+      "reviewPage": 24
+    },
+    {
+      "slug": "half-burpee",
+      "reviewedFrames": [
+        1,
+        2,
+        3
+      ],
+      "displayFrames": [
+        1,
+        2,
+        3
+      ],
+      "allowsPlayback": false,
+      "result": "static-only",
+      "note": "已核对三帧的器材与主要姿势；构图/比例存在变化，仅作独立静态示意。",
+      "reviewPage": 24
+    },
+    {
+      "slug": "squat-thrust",
+      "reviewedFrames": [
+        1,
+        2,
+        3
+      ],
+      "displayFrames": [
+        1,
+        2,
+        3
+      ],
+      "allowsPlayback": false,
+      "result": "static-only",
+      "note": "已核对三帧的器材与主要姿势；构图/比例存在变化，仅作独立静态示意。",
+      "reviewPage": 24
+    },
+    {
+      "slug": "high-knees",
+      "reviewedFrames": [
+        1,
+        2,
+        3
+      ],
+      "displayFrames": [
+        1,
+        2,
+        3
+      ],
+      "allowsPlayback": false,
+      "result": "static-only",
+      "note": "已核对三帧的器材与主要姿势；构图/比例存在变化，仅作独立静态示意。",
+      "reviewPage": 24
+    },
+    {
+      "slug": "jumping-jack",
+      "reviewedFrames": [
+        1,
+        2,
+        3
+      ],
+      "displayFrames": [
+        1,
+        2,
+        3
+      ],
+      "allowsPlayback": false,
+      "result": "static-only",
+      "note": "已核对三帧的器材与主要姿势；构图/比例存在变化，仅作独立静态示意。",
+      "reviewPage": 24
+    },
+    {
+      "slug": "skater-hop",
+      "reviewedFrames": [
+        1,
+        2,
+        3
+      ],
+      "displayFrames": [
+        1,
+        2,
+        3
+      ],
+      "allowsPlayback": false,
+      "result": "static-only",
+      "note": "已核对三帧的器材与主要姿势；构图/比例存在变化，仅作独立静态示意。",
+      "reviewPage": 24
+    },
+    {
+      "slug": "lateral-shuffle",
+      "reviewedFrames": [
+        1,
+        2,
+        3
+      ],
+      "displayFrames": [
+        1,
+        2,
+        3
+      ],
+      "allowsPlayback": false,
+      "result": "static-only",
+      "note": "已核对三帧的器材与主要姿势；构图/比例存在变化，仅作独立静态示意。",
+      "reviewPage": 24
+    },
+    {
+      "slug": "fast-feet",
+      "reviewedFrames": [
+        1,
+        2,
+        3
+      ],
+      "displayFrames": [
+        1,
+        2,
+        3
+      ],
+      "allowsPlayback": false,
+      "result": "static-only",
+      "note": "图示绳梯步法；无绳梯时应先明确平整地面的落脚标记。",
+      "reviewPage": 24
+    },
+    {
+      "slug": "sprawl",
+      "reviewedFrames": [
+        1,
+        2,
+        3
+      ],
+      "displayFrames": [
+        1,
+        2,
+        3
+      ],
+      "allowsPlayback": false,
+      "result": "static-only",
+      "note": "已核对三帧的器材与主要姿势；构图/比例存在变化，仅作独立静态示意。",
+      "reviewPage": 24
+    },
+    {
+      "slug": "seal-jack",
+      "reviewedFrames": [
+        1,
+        2,
+        3
+      ],
+      "displayFrames": [],
+      "allowsPlayback": false,
+      "result": "withheld",
+      "note": "画面为双杠支撑开合腿，非站姿开合跳。",
+      "reviewPage": 24
+    },
+    {
+      "slug": "cat-cow-stretch",
+      "reviewedFrames": [
+        1,
+        2,
+        3
+      ],
+      "displayFrames": [
+        1,
+        2,
+        3
+      ],
+      "allowsPlayback": false,
+      "result": "static-only",
+      "note": "已核对三帧的器材与主要姿势；构图/比例存在变化，仅作独立静态示意。",
+      "reviewPage": 25
+    },
+    {
+      "slug": "arm-circles",
+      "reviewedFrames": [
+        1,
+        2,
+        3
+      ],
+      "displayFrames": [
+        1,
+        2,
+        3
+      ],
+      "allowsPlayback": false,
+      "result": "static-only",
+      "note": "已核对三帧的器材与主要姿势；构图/比例存在变化，仅作独立静态示意。",
+      "reviewPage": 25
+    },
+    {
+      "slug": "worlds-greatest-stretch",
+      "reviewedFrames": [
+        1,
+        2,
+        3
+      ],
+      "displayFrames": [
+        1,
+        2,
+        3
+      ],
+      "allowsPlayback": false,
+      "result": "static-only",
+      "note": "已核对三帧的器材与主要姿势；构图/比例存在变化，仅作独立静态示意。",
+      "reviewPage": 25
+    },
+    {
+      "slug": "leg-swings-stretch",
+      "reviewedFrames": [
+        1,
+        2,
+        3
+      ],
+      "displayFrames": [
+        1,
+        2,
+        3
+      ],
+      "allowsPlayback": false,
+      "result": "static-only",
+      "note": "已核对三帧的器材与主要姿势；构图/比例存在变化，仅作独立静态示意。",
+      "reviewPage": 25
+    },
+    {
+      "slug": "torso-twist-stretch",
+      "reviewedFrames": [
+        1,
+        2,
+        3
+      ],
+      "displayFrames": [],
+      "allowsPlayback": false,
+      "result": "withheld",
+      "note": "画面为坐姿负重转体，非徒手躯干活动。",
+      "reviewPage": 25
+    },
+    {
+      "slug": "doorway-chest-stretch",
+      "reviewedFrames": [
+        1,
+        2,
+        3
+      ],
+      "displayFrames": [
+        1,
+        2,
+        3
+      ],
+      "allowsPlayback": false,
+      "result": "static-only",
+      "note": "已核对三帧的器材与主要姿势；构图/比例存在变化，仅作独立静态示意。",
+      "reviewPage": 25
+    },
+    {
+      "slug": "childs-pose",
+      "reviewedFrames": [
+        1,
+        2,
+        3
+      ],
+      "displayFrames": [
+        1,
+        2,
+        3
+      ],
+      "allowsPlayback": false,
+      "result": "static-only",
+      "note": "已核对三帧的器材与主要姿势；构图/比例存在变化，仅作独立静态示意。",
+      "reviewPage": 25
+    },
+    {
+      "slug": "kneeling-hip-flexor-stretch",
+      "reviewedFrames": [
+        1,
+        2,
+        3
+      ],
+      "displayFrames": [
+        1,
+        2,
+        3
+      ],
+      "allowsPlayback": false,
+      "result": "static-only",
+      "note": "已核对三帧的器材与主要姿势；构图/比例存在变化，仅作独立静态示意。",
+      "reviewPage": 25
+    },
+    {
+      "slug": "hamstring-stretch",
+      "reviewedFrames": [
+        1,
+        2,
+        3
+      ],
+      "displayFrames": [
+        1,
+        2,
+        3
+      ],
+      "allowsPlayback": false,
+      "result": "static-only",
+      "note": "已核对三帧的器材与主要姿势；构图/比例存在变化，仅作独立静态示意。",
+      "reviewPage": 25
+    },
+    {
+      "slug": "standing-quad-stretch",
+      "reviewedFrames": [
+        1,
+        2,
+        3
+      ],
+      "displayFrames": [
+        1,
+        2,
+        3
+      ],
+      "allowsPlayback": false,
+      "result": "static-only",
+      "note": "已核对三帧的器材与主要姿势；构图/比例存在变化，仅作独立静态示意。",
+      "reviewPage": 25
+    },
+    {
+      "slug": "seated-forward-fold-stretch",
+      "reviewedFrames": [
+        1,
+        2,
+        3
+      ],
+      "displayFrames": [
+        1,
+        2,
+        3
+      ],
+      "allowsPlayback": false,
+      "result": "static-only",
+      "note": "已核对三帧的器材与主要姿势；构图/比例存在变化，仅作独立静态示意。",
+      "reviewPage": 25
+    },
+    {
+      "slug": "cross-body-shoulder-stretch",
+      "reviewedFrames": [
+        1,
+        2,
+        3
+      ],
+      "displayFrames": [
+        1,
+        2,
+        3
+      ],
+      "allowsPlayback": false,
+      "result": "static-only",
+      "note": "已核对三帧的器材与主要姿势；构图/比例存在变化，仅作独立静态示意。",
+      "reviewPage": 25
+    },
+    {
+      "slug": "wall-calf-stretch",
+      "reviewedFrames": [
+        1,
+        2,
+        3
+      ],
+      "displayFrames": [
+        1,
+        2,
+        3
+      ],
+      "allowsPlayback": false,
+      "result": "static-only",
+      "note": "已核对三帧的器材与主要姿势；构图/比例存在变化，仅作独立静态示意。",
+      "reviewPage": 26
+    },
+    {
+      "slug": "butterfly-stretch",
+      "reviewedFrames": [
+        1,
+        2,
+        3
+      ],
+      "displayFrames": [
+        1,
+        2,
+        3
+      ],
+      "allowsPlayback": false,
+      "result": "static-only",
+      "note": "已核对三帧的器材与主要姿势；构图/比例存在变化，仅作独立静态示意。",
+      "reviewPage": 26
+    }
+  ]
+}

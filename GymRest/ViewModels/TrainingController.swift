@@ -152,10 +152,15 @@ import Observation
             let oldLastCompletion = lastCompletion
             session = try TrainingSession(planID: plan.id, planName: plan.name, exercises: exercises, fallback: preferences.notificationFallback)
             do {
+                var origins: [String] = []
                 session?.setDrafts = try exercises.map { exercise in
                     // Explicit plan fields win; fill only missing fields from matching history.
-                    try store.suggestedValues(for: exercise)
+                    let suggested = try store.suggestedValues(for: exercise)
+                    let planned = exercise.prescription ?? SetValues()
+                    origins.append(suggested != planned ? "包含最近匹配训练的预填" : (planned.weight != nil || planned.repetitions != nil) ? "来自计划预设" : "尚未设置重量与次数")
+                    return suggested
                 }
+                session?.setValueOrigins = origins
             } catch { session = oldSession; throw error }
             completionSaved = false
             lastCompletion = nil
@@ -277,17 +282,29 @@ import Observation
             let inSession = value.performances?[value.index].last(where: { $0.profileKey == key })?.values
             if let inSession { value.setDrafts?[value.index] = inSession }
             else { value.setDrafts?[value.index] = try store.suggestedValues(for: replacement) }
+            if value.setValueOrigins?.count == value.exercises.count { value.setValueOrigins?[value.index] = inSession == nil ? "所选动作的预设或匹配历史" : "所选动作本次已完成组" }
             session = value; try persist()
         }
     }
-    func setValues(_ values: SetValues, interactionID: UUID?) async {
+    func setValues(_ values: SetValues, interactionID: UUID?, origin: String = "本次手动调整") async {
         await perform {
             guard var value = session, value.interactionID == interactionID,
                   value.phase != .completed, value.completed[value.index] < value.current.sets else { throw PerformanceError.staleOrder }
             try values.validate()
             value.preparePerformanceStorage(); value.setDrafts?[value.index] = values
+            if value.setValueOrigins?.count != value.exercises.count { value.setValueOrigins = Array(repeating: "已有训练设置", count: value.exercises.count) }
+            value.setValueOrigins?[value.index] = origin
             session = value; try persist()
         }
+    }
+    var previousSetValues: SetValues? {
+        guard let value = session else { return nil }
+        let key = value.current.profileKey(for: value.currentSetValues)
+        return value.performances?[value.index].last(where: { $0.profileKey.map(ExerciseNames.canonicalProfileKey) == key })?.values
+    }
+    func reusePreviousSet(interactionID: UUID?) async {
+        guard let values = previousSetValues else { return }
+        await setValues(values, interactionID: interactionID, origin: "沿用本动作上一组")
     }
     var reorderableExercises: [ExerciseSpec] {
         guard let session, session.phase == .training else { return [] }
@@ -307,6 +324,7 @@ import Observation
                 if let names = old.performedNames { value.performedNames?[destination] = names[source] }
                 if let performances = old.performances { value.performances?[destination] = performances[source] }
                 if let drafts = old.setDrafts { value.setDrafts?[destination] = drafts[source] }
+                if let origins = old.setValueOrigins, origins.count == old.exercises.count { value.setValueOrigins?[destination] = origins[source] }
             }
             session = value; try persist()
         }

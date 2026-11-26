@@ -5,7 +5,9 @@ import UIKit
 /// not a claim of interpolated video or a timing source for the training session.
 struct ExerciseArtwork: View {
     let item: CatalogExercise
+    var large = false
     @Environment(\.accessibilityReduceMotion) private var reduceMotion
+    @State private var showingLarge = false
     @State private var images: [UIImage] = []
     @State private var selected = 0
     @State private var playing = false
@@ -14,12 +16,12 @@ struct ExerciseArtwork: View {
         VStack(alignment: .leading, spacing: 10) {
             if !images.isEmpty {
                 TimelineView(.periodic(from: .now, by: 0.8)) { timeline in
-                    let sequence = [0, 1, 2, 1]
+                    let sequence = images.count == 3 ? [0, 1, 2, 1] : Array(images.indices)
                     let step = Int(timeline.date.timeIntervalSinceReferenceDate / 0.8) % sequence.count
-                    let index = playing && !reduceMotion ? sequence[step] : selected
+                    let index = playing && !reduceMotion && item.media.allowsPlayback == true ? sequence[step] : selected
                     Image(uiImage: images[min(index, images.count - 1)])
-                        .resizable().scaledToFit().frame(maxWidth: .infinity).frame(height: 220)
-                        .background(Color(red: 0.10, green: 0.14, blue: 0.18), in: RoundedRectangle(cornerRadius: 16))
+                        .resizable().scaledToFit().frame(maxWidth: .infinity).frame(height: large ? 420 : 220)
+                        .background(item.media.lightBackground == true ? Color.white : Color(red: 0.10, green: 0.14, blue: 0.18), in: RoundedRectangle(cornerRadius: 16))
                         .accessibilityLabel("\(item.name)，姿势示意第 \(min(index, images.count - 1) + 1) 帧")
                 }
                 HStack {
@@ -28,20 +30,29 @@ struct ExerciseArtwork: View {
                             .buttonStyle(.bordered)
                             .accessibilityAddTraits(selected == index && !playing ? .isSelected : [])
                     }
-                    if !reduceMotion {
+                    if !reduceMotion && item.media.allowsPlayback == true && images.count > 1 {
                         Button { playing.toggle() } label: {
                             Image(systemName: playing ? "pause.fill" : "play.fill")
                         }.buttonStyle(.bordered)
                             .accessibilityLabel(playing ? "暂停分帧播放" : "播放分帧示意")
                     }
                 }
-                Text("分帧姿势示意 · 可点选查看，动作范围与负荷请按自身能力调整。")
+                if !large { Button("放大查看图片") { showingLarge = true } }
+                Text("静态姿势示意 · 编号不代表时间顺序；动作范围与负荷按自身能力调整。")
                     .font(.caption).foregroundStyle(.secondary)
             } else if item.media.approved, let asset = item.media.animationAsset, let url = Self.assetURL(asset) {
                 LoopingExerciseDemo(url: url).frame(height: 220)
             } else {
                 Text("当前动作暂无准确匹配的图片，可在动作库查看其他动作。")
                     .font(.footnote).foregroundStyle(.secondary)
+            }
+            if let note = item.media.reviewNote { Text(note).font(.caption).foregroundStyle(.secondary) }
+        }
+        .sheet(isPresented: $showingLarge) {
+            NavigationStack {
+                ScrollView { ExerciseArtwork(item: item, large: true).padding() }
+                    .navigationTitle(item.name).navigationBarTitleDisplayMode(.inline)
+                    .toolbar { Button("关闭") { showingLarge = false } }
             }
         }
         .task(id: item.id) {
@@ -77,16 +88,18 @@ struct WorkoutGuideCreditsView: View {
             }
             Section("逐帧作者、来源和校验值") {
                 if let url = Bundle.main.url(forResource: "WorkoutGuideSources", withExtension: "json") {
-                    ShareLink("导出完整素材来源记录", item: url)
+                    ShareLink("导出Workout Guide逐帧来源", item: url)
                 }
             }
+            if let url = Bundle.main.url(forResource: "EverkineticSources", withExtension: "json") { Section { ShareLink("导出Everkinetic补充素材来源", item: url) } }
+            if let url = Bundle.main.url(forResource: "WorkoutGuideMediaReview", withExtension: "json") { Section { ShareLink("导出分帧核对记录", item: url) } }
             Section("随包许可与署名原文") {
                 Text(notices).font(.caption).textSelection(.enabled)
             }
         }
         .navigationTitle("素材许可")
         .task {
-            notices = ["WorkoutGuide-LICENSE", "WorkoutGuide-LICENSE-ASSETS", "WorkoutGuide-LICENSES", "WorkoutGuide-ATTRIBUTION"].compactMap { name in
+            notices = ["WorkoutGuide-LICENSE", "WorkoutGuide-LICENSE-ASSETS", "WorkoutGuide-LICENSES", "WorkoutGuide-ATTRIBUTION", "Everkinetic-LICENSE"].compactMap { name in
                 Bundle.main.url(forResource: name, withExtension: "txt").flatMap { try? String(contentsOf: $0, encoding: .utf8) }
             }.joined(separator: "\n\n")
         }

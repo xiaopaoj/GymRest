@@ -15,7 +15,7 @@ struct PlanTransferView: View {
         }
     }
     private struct ImportReview: Identifiable {
-        let id = UUID()
+        var id = UUID()
         let archive: PlanArchive
         let mode: ImportMode
         let targetID: UUID?
@@ -103,7 +103,7 @@ struct PlanTransferView: View {
                         do {
                             stagedReview = try prepareReview(PlanArchive.decode(Data(pastedText.utf8)))
                             pasting = false
-                        } catch { pasteError = error.localizedDescription }
+                        } catch { pasteError = PlanImportSupport.message(error) }
                     }.disabled(pastedText.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty) }
                 }
             }
@@ -115,6 +115,17 @@ struct PlanTransferView: View {
                         LabeledContent("方式", value: value.mode.title)
                         LabeledContent("目标", value: value.targetName)
                         LabeledContent("导入训练日", value: "\(value.archive.plans.count) 个")
+                    }
+                    Section("动作关联") {
+                        NavigationLink("检查动作匹配与图片关联") {
+                            ImportMatchingView(archive: value.archive) { updated in
+                                var refreshed = try prepareReview(updated)
+                                refreshed.id = value.id
+                                review = refreshed; reviewError = nil
+                            }
+                        }
+                        Text("标识不一致不会阻止导入。可按名称匹配，或手动选择动作；组数、休息和负重保持文件设置。")
+                            .font(.footnote).foregroundStyle(.secondary)
                     }
                     Section("将导入的内容") {
                         if value.mode != .replaceProgram {
@@ -158,7 +169,7 @@ struct PlanTransferView: View {
                 }
             }
         }
-        .fileImporter(isPresented: $importing, allowedContentTypes: [.json]) { result in
+        .fileImporter(isPresented: $importing, allowedContentTypes: [.json, .plainText, .data]) { result in
             do {
                 let url = try result.get()
                 let access = url.startAccessingSecurityScopedResource()
@@ -166,7 +177,7 @@ struct PlanTransferView: View {
                 let size = try url.resourceValues(forKeys: [.fileSizeKey]).fileSize ?? 0
                 guard size <= 10 * 1024 * 1024 else { throw ArchiveFailure.invalid("文件超过10MB。") }
                 reviewError = nil; review = try prepareReview(PlanArchive.decode(Data(contentsOf: url)))
-            } catch { message = "未导入：" + error.localizedDescription }
+            } catch { message = "未导入：" + PlanImportSupport.message(error) }
         }
         .fileExporter(isPresented: $exporting, document: document, contentType: .json, defaultFilename: "GymRest-plans") { result in
             switch result {

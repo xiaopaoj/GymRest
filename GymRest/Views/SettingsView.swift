@@ -51,11 +51,13 @@ struct SettingsView: View {
             Section("训练显示") { Toggle("训练页面保持屏幕常亮", isOn: $preferences.keepScreenOn) }
             Section("计划与记录") {
                 NavigationLink("计划 JSON 导入与导出") { PlanTransferView() }
+                NavigationLink("完整备份与恢复") { LibraryBackupView(controller: controller) }
                 NavigationLink("训练记录") { HistoryView() }
                 Text(WorkoutReader.buildEnabled ? "已启用可选健康运动读取；在记录详情中主动授权查询。" : "当前为普通构建，不请求健康数据权限。HealthKit版本需要支持的签名能力。")
                     .font(.footnote).foregroundStyle(.secondary)
             }
             Section("关于") {
+                NavigationLink("Watch与锁屏真机验收") { DeviceVerificationView(controller: controller) }
                 NavigationLink("动作素材许可") { WorkoutGuideCreditsView() }
                 LabeledContent("版本", value: versionDescription)
                 Text("训练计划与记录仅存本机，无账号和后端。")

@@ -37,6 +37,9 @@ enum MuscleGroup: String, Codable, CaseIterable, Identifiable, Sendable {
 }
 struct CatalogMedia: Codable, Sendable {
     let status: String
+    let reviewNote: String?
+    let allowsPlayback: Bool?
+    let lightBackground: Bool?
     let frameAssets: [String]?
     let animationAsset: String?
     let equipmentAsset: String?
@@ -78,6 +81,9 @@ struct ExerciseCatalog: Codable, Sendable {
     let attribution: String
     let exercises: [CatalogExercise]
     static var equipmentNames: [String: String] { [
+        "abWheel":"健腹轮", "jumpRope":"跳绳", "pool":"泳池", "parallettes":"稳固双杠或支架",
+        "rowingErg":"划船机", "elliptical":"椭圆机", "stationaryBike":"单车", "assaultBike":"风阻单车",
+        "stairClimber":"爬楼机", "skiErg":"滑雪机", "treadmill":"跑步机", "battleRope":"战绳及可靠固定端",
         "box":"训练箱", "chair":"椅子", "doorway":"门框", "kettlebell":"壶铃", "genericMachine":"固定器械",
         "plate":"杠铃片", "band":"弹力带", "stabilityBall":"健身球", "towel":"毛巾", "wall":"墙面", "cardio":"有氧器械",
         "bodyweight":"徒手", "barbell":"杠铃", "dumbbell":"哑铃", "bench":"平凳", "inclineBench":"可调训练凳", "rack":"深蹲架",
@@ -104,7 +110,7 @@ struct ExerciseCatalog: Codable, Sendable {
                     guard filename == (filename as NSString).lastPathComponent, !filename.contains("..") else { throw CatalogError.invalid }
                 }
                 if let frames = item.media.frameAssets {
-                    guard frames.count == 3, Set(frames).count == 3, frames.allSatisfy({ ($0 as NSString).pathExtension.lowercased() == "png" }) else { throw CatalogError.invalid }
+                    guard (1...3).contains(frames.count), Set(frames).count == frames.count, frames.allSatisfy({ ($0 as NSString).pathExtension.lowercased() == "png" }) else { throw CatalogError.invalid }
                 }
                 if let filename = item.media.animationAsset, !["mp4", "mov"].contains((filename as NSString).pathExtension.lowercased()) { throw CatalogError.invalid }
                 if let filename = item.media.equipmentAsset, !["png", "jpg", "jpeg", "webp"].contains((filename as NSString).pathExtension.lowercased()) { throw CatalogError.invalid }

@@ -27,24 +27,31 @@ struct PlanArchive: Codable {
             if let sessions = parent.weeklySessions, !(1...7).contains(sessions) { throw ArchiveFailure.invalid("每周目标须为1–7次。") }
             guard !parent.name.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty, parent.name.count <= 100 else { throw ArchiveFailure.invalid("上层计划名称须为1–100字。") }
         }
-        for plan in plans {
-            if let parent = plan.programID, !parents.contains(where: { $0.id == parent }) { throw ArchiveFailure.invalid("训练日引用了不存在的上层计划。") }
+        for (dayIndex, plan) in plans.enumerated() {
+            if let parent = plan.programID, !parents.contains(where: { $0.id == parent }) { throw ArchiveFailure.invalid("plans[\(dayIndex)].programID：训练日「\(plan.name)」引用了不存在的上层计划。") }
             guard !plan.name.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty, plan.name.count <= 100 else {
                 throw ArchiveFailure.invalid("计划名称不合法或动作ID重复。")
             }
             var identifiers = Set<UUID>()
-            for exercise in plan.exercises {
-                guard identifiers.insert(exercise.id).inserted else { throw ArchiveFailure.invalid("计划名称不合法或动作ID重复。") }
-                for alternative in exercise.alternatives {
-                    guard identifiers.insert(alternative.id).inserted else { throw ArchiveFailure.invalid("计划名称不合法或动作ID重复。") }
+            for (exerciseIndex, exercise) in plan.exercises.enumerated() {
+                guard identifiers.insert(exercise.id).inserted else { throw ArchiveFailure.invalid("plans[\(dayIndex)].exercises[\(exerciseIndex)].id：动作ID重复。") }
+                for (alternativeIndex, alternative) in exercise.alternatives.enumerated() {
+                    guard identifiers.insert(alternative.id).inserted else { throw ArchiveFailure.invalid("plans[\(dayIndex)].exercises[\(exerciseIndex)].alternatives[\(alternativeIndex)].id：动作ID重复。") }
                 }
-                try exercise.validate()
+                do { try PlanImportValidation.exercise(exercise, path: "plans[\(dayIndex)].exercises[\(exerciseIndex)]") }
+                catch { throw ArchiveFailure.invalid("第 \(dayIndex + 1) 个训练日「\(plan.name)」第 \(exerciseIndex + 1) 个动作「\(exercise.name)」：" + error.localizedDescription) }
             }
         }
     }
     static func decode(_ data: Data) throws -> PlanArchive {
         guard data.count <= 10 * 1024 * 1024 else { throw ArchiveFailure.invalid("单次导入文件不能超过10MB。") }
-        var archive = try JSONDecoder().decode(Self.self, from: data)
+        let cleaned = PlanImportSupport.cleaned(data)
+        if let root = try? JSONSerialization.jsonObject(with: cleaned) as? [String: Any], root["format"] as? String == "GymRestBackup" {
+            throw ArchiveFailure.invalid("这是完整备份，请到设置的「完整备份与恢复」页面打开。")
+        }
+        var archive: Self
+        do { archive = try JSONDecoder().decode(Self.self, from: cleaned) }
+        catch { throw ArchiveFailure.invalid(PlanImportSupport.message(error)) }
         try archive.validate()
         for index in archive.plans.indices { archive.plans[index].exercises = ExerciseNames.standardize(archive.plans[index].exercises) }
         return archive

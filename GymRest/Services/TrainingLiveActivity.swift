@@ -31,7 +31,9 @@ import Foundation
             remaining: Int(ceil(session.remaining)), reminderRegistered: session.reminderRegistered,
             issue: issue.map { String($0.prefix(160)) }, blocked: blocked,
             restTitle: session.isTransitionRest ? "动作间休息" : "组间休息",
-            setDetails: session.currentSetValues.summary)
+            setDetails: session.currentSetValues.summary,
+            progressSummary: "已确认完成 \(session.completedSets)/\(session.totalSets) 组 · " + (session.phase == .training ? "准备第 \(session.completed[session.index] + 1) 组" : session.phase == .paused ? "休息暂停" : "休息中"),
+            synchronizedAt: Date())
         let content = ActivityContent(state: state, staleDate: session.restEnd)
         var current: Activity<TrainingActivityAttributes>?
         for activity in activities {
