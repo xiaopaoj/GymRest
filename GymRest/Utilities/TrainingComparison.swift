@@ -19,7 +19,7 @@ struct TrainingComparison {
         for record in records.sorted(by: { $0.endedAt > $1.endedAt }) {
             guard let sets = try? record.performances() else { continue }
             for set in sets.flatMap({ $0 }) {
-                guard let values = set.values, values.weight != nil || values.repetitions != nil else { continue }
+                guard let values = set.values, values.weight != nil || values.repetitions != nil || values.durationSeconds != nil else { continue }
                 let exercise = ExerciseSpec(name: set.exerciseName, catalogID: set.catalogID)
                 let key = exercise.profileKey(for: values)
                 if groups[key] == nil {

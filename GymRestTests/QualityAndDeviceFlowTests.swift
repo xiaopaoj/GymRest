@@ -41,7 +41,7 @@ import SwiftData
         }
         XCTAssertEqual(filenames.count, 912)
         for filename in filenames {
-            let url = try XCTUnwrap(ExerciseArtwork.assetURL(filename), filename)
+            let url = try XCTUnwrap(TestMediaResources.assetURL(filename), filename)
             XCTAssertNotNil(UIImage(contentsOfFile: url.path), filename)
         }
         XCTAssertNotNil(Bundle.main.url(forResource: "WorkoutGuideMediaReview", withExtension: "json"))

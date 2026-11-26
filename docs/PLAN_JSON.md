@@ -1,5 +1,7 @@
 # 训练计划 JSON 格式
 
+> 0.8.0 (8)：新增version4，用于计时或双侧完成方式；旧version1–3继续导入。主动作及替代项的prescription可添加durationSeconds和sideCount，详见下方。完整备份是另一种格式，当前导出GymRestBackup v2，继续读取v1；不要与计划JSON或素材包混用。
+
 > 0.7.0工作区：计划内容格式不变，导入增加字段错误定位和动作关联预览，支持普通文本文件标识及单个JSON代码块。完整备份另有独立入口和格式，不能当计划导入。见[优化说明](OPTIMIZATION_0_7_0.md)。
 
 设置 → 计划 JSON 导入与导出。支持选择JSON文件或直接粘贴完整文本。导出为 UTF-8 JSON，版本 `1`。计划及动作的数组顺序决定排序，不导出训练记录或健康数据。
@@ -80,3 +82,11 @@ version3沿用version2分组结构，兼容读取version1/2。上层programs条�
 prescription为可选对象，字段weight（可空有限0–10000）、repetitions（可空或1–1000）、unit（kg/lb/level）、kind（total/perHand/machine/bodyweight/added/assistance）、equipmentNote（至多80字）。bodyweight不填weight，level仅配machine。例：`"prescription":{"weight":20,"repetitions":10,"unit":"kg","kind":"perHand","equipmentNote":"健身房A哑铃"}`。该值是计划预设，训练可逐组调整；实际完成记录保存在训练历史，不在计划JSON中。
 
 有这些字段时导出标为version3，使不支持的新旧客户端边界明确。没有新字段仍可导出version1/2。缺少新字段的旧记录显示未记录，不回填猜测值。媒体资源不嵌入此JSON，目录素材与许可另见docs/TEMPLATES_AND_LOADS.md。
+
+## version 4：计时与双侧
+
+`prescription.durationSeconds`是每组（sideCount=1）或每侧（sideCount=2）的目标秒数，整数1–86400；计时模式下repetitions须省略或null。`sideCount`为1或2，缺省1；durationSeconds缺省时保留手动次数模式。主动作、替代项均支持。两侧均完成才增加一个整组，第一侧不启动组间休息；到时提醒不自动确认侧或组。
+
+含上述计时或双侧字段的计划导出为version4；旧版App不支持该版本，请使用0.8.0 (8)及以上。未用这些能力的计划继续按内容导出version1/2/3。普通计划不包含图片，独立素材包不改计划格式。
+
+完整示例：[timed-bilateral-v4.json](../examples/timed-bilateral-v4.json)。旧计划不会自动改写已设置的次数与完成方式；可在编辑动作的预设值或训练中的本组设置启用计时及两侧模式。新从动作库添加的平板/侧平板等采用目录中的可编辑默认值。

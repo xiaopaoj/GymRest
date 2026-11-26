@@ -159,7 +159,7 @@ import SwiftData
         XCTAssertEqual(f.controller.session?.currentSetValues.weight, 25)
         XCTAssertNotNil(f.controller.error)
     }
-    func testVersionThreeRoundTripPreservesCatalogPrescriptionsAndFrequency() throws {
+    func testTemplateRoundTripPreservesCatalogPrescriptionsAndFrequency() throws {
         let partial = try JSONDecoder().decode(SetValues.self, from: Data(#"{"weight":12.5}"#.utf8))
         XCTAssertEqual(partial.unit, .kg); XCTAssertEqual(partial.kind, .total)
         XCTAssertNil(partial.repetitions)
@@ -169,7 +169,7 @@ import SwiftData
         let programs = try store.context.fetch(FetchDescriptor<TrainingProgram>())
         let days = try store.context.fetch(FetchDescriptor<TrainingPlan>())
         let archive = try PlanArchive.decode(PlanArchive.export(plans: days, programs: programs))
-        XCTAssertEqual(archive.version, 3)
+        XCTAssertEqual(archive.version, 4)
         XCTAssertTrue(archive.programs?.contains { $0.weeklySessions == 4 } ?? false)
         let entry = try XCTUnwrap(archive.plans.first { $0.exercises.contains { $0.catalogID != nil } })
         XCTAssertNotNil(entry.exercises.first?.prescription?.repetitions)

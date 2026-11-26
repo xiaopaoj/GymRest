@@ -15,6 +15,9 @@ struct TrainingSession: Codable, Equatable, Sendable {
     var performances: [[SetPerformance]]?
     var setValueOrigins: [String]?
     var setDrafts: [SetValues]?
+    // Progress within a set is durable, but never contributes fractional completed sets.
+    var completedSides: Int?
+    var effortTimer: EffortTimer?
     let fallback: Bool
     var index = 0
     var completed: [Int]
@@ -57,6 +60,7 @@ struct TrainingSession: Codable, Equatable, Sendable {
             guard setDrafts.count == exercises.count else { throw TrainingError.invalidSession }
             for values in setDrafts { try values.validate() }
         }
+        try validateEffort()
         if let performances {
             guard performances.count == exercises.count, zip(performances, completed).allSatisfy({ $0.0.count == $0.1 }) else { throw TrainingError.invalidSession }
             for values in performances { for set in values { try set.validate() } }
@@ -106,9 +110,49 @@ struct TrainingSession: Codable, Equatable, Sendable {
     }
     mutating func advanceAfterSet() {
         timerID = nil; restEnd = nil; remaining = 0; reminderRegistered = false
+        completedSides = nil; effortTimer = nil
         if completed[index] >= current.sets {
             if index + 1 < exercises.count { index += 1; phase = .training }
             else { phase = .completed }
         } else { phase = .training }
+    }
+}
+
+struct EffortTimer: Codable, Equatable, Sendable {
+    enum Status: String, Codable, Sendable { case running, paused, ready }
+    var status: Status
+    var id: UUID?
+    var end: Date?
+    var remaining: TimeInterval
+    var registered = false
+    func secondsLeft(at now: Date) -> TimeInterval {
+        status == .running ? max(0, end?.timeIntervalSince(now) ?? remaining) : max(0, remaining)
+    }
+}
+
+extension TrainingSession {
+    var sideProgress: Int { completedSides ?? 0 }
+    var partTitle: String { currentSetValues.sideCount == 2 ? "第 \(sideProgress + 1) 侧（共2侧）" : "本组" }
+    var completionTitle: String {
+        currentSetValues.sideCount == 2 ? (sideProgress == 0 ? "完成第1侧 · 换侧" : "完成第2侧 · 计为一组") : "完成本组"
+    }
+    var effortContext: RestContext {
+        RestContext(planName: planName, exerciseName: current.name, completedSet: completed[index], totalSets: current.sets,
+                    nextStep: current.name + " · " + partTitle + " · 到时后请确认完成；不会自动计组。", kind: "effort")
+    }
+    func validateEffort() throws {
+        try currentSetValues.validate()
+        guard (0..<currentSetValues.sideCount).contains(sideProgress),
+              phase == .training || (sideProgress == 0 && effortTimer == nil) else { throw TrainingError.invalidSession }
+        if let timer = effortTimer {
+            guard phase == .training, currentSetValues.durationSeconds != nil,
+                  timer.remaining.isFinite, (0...86400).contains(timer.remaining),
+                  timer.end.map({ $0.timeIntervalSince1970.isFinite }) ?? true else { throw TrainingError.invalidSession }
+            switch timer.status {
+            case .running: guard timer.id != nil, timer.end != nil else { throw TrainingError.invalidSession }
+            case .paused: guard timer.end == nil, !timer.registered else { throw TrainingError.invalidSession }
+            case .ready: guard timer.end == nil, timer.remaining == 0, (timer.id != nil) == timer.registered else { throw TrainingError.invalidSession }
+            }
+        }
     }
 }

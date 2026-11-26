@@ -132,7 +132,7 @@ struct ExerciseEditor: View {
                     TextField("动作名称", text: $exercise.name)
                     Stepper("\(exercise.sets) 组", value: $exercise.sets, in: 1...100)
                 }
-                Section("预设重量与次数") {
+                Section("预设重量、次数与计时") {
                     Text((exercise.prescription ?? SetValues()).summary).font(.subheadline)
                     Button("设置预设值") { editingPrescription = true }
                     Text("预设值供下一次训练使用。训练中可逐组调整，完成时记录实际值。")
@@ -214,7 +214,7 @@ struct ExerciseEditor: View {
                 Button("继续编辑") { error = nil }
             } message: { Text(error ?? "") }
             .sheet(isPresented: $editingPrescription) {
-                SetValuesEditor(values: exercise.prescription ?? SetValues(), title: "动作预设") { exercise.prescription = $0 }
+                SetValuesEditor(values: exercise.prescription ?? SetValues(), title: "动作预设 · 计时与两侧") { exercise.prescription = $0 }
             }
             .sheet(item: $editingAlternative) { alternative in
                 AlternativeEditor(alternative: alternative, sets: exercise.sets) { result in

@@ -26,11 +26,12 @@ final class AlarmKitTimerService: TimerService {
         guard AlarmManager.shared.authorizationState == .authorized else { throw TimerFailure.denied }
         // Remove all alarms belonging to this application before replacement.
         for alarm in try AlarmManager.shared.alarms { try AlarmManager.shared.cancel(id: alarm.id) }
+        let isEffort = context?.kind == "effort"
         let isTransition = context?.kind == "transition"
         let presentation = AlarmPresentation(
-            alert: .init(title: isTransition ? "动作间休息结束" : "休息结束", stopButton: .init(text: context == nil ? "停止" : "结束休息", textColor: .white, systemImageName: "stop.fill")),
-            countdown: .init(title: isTransition ? "动作间休息" : "组间休息"))
-        let attributes = AlarmAttributes(presentation: presentation, metadata: RestMetadata(context: context), tintColor: .orange)
+            alert: .init(title: isEffort ? "动作计时结束" : isTransition ? "动作间休息结束" : "休息结束", stopButton: .init(text: context == nil ? "停止" : isEffort ? "知道了" : "结束休息", textColor: .white, systemImageName: "stop.fill")),
+            countdown: .init(title: isEffort ? "动作计时" : isTransition ? "动作间休息" : "组间休息"))
+        let attributes = AlarmAttributes(presentation: presentation, metadata: RestMetadata(label: isEffort ? "动作计时" : isTransition ? "动作间休息" : "组间休息", context: context), tintColor: .orange)
         _ = try await AlarmManager.shared.schedule(id: id, configuration: .timer(
             duration: TimeInterval(seconds), attributes: attributes,
             stopIntent: context == nil ? nil : RestFinishedIntent(timerID: id.uuidString)))

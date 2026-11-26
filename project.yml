@@ -9,16 +9,20 @@ settings:
     SWIFT_VERSION: "6.0"
     TARGETED_DEVICE_FAMILY: "1"
     CODE_SIGNING_ALLOWED: NO
-    MARKETING_VERSION: "0.7.0"
-    CURRENT_PROJECT_VERSION: "7"
+    MARKETING_VERSION: "0.9.0"
+    CURRENT_PROJECT_VERSION: "9"
 targets:
   GymRest:
     type: application
     platform: iOS
     sources:
       - path: GymRest
-        excludes: [Resources/Artwork]
+        excludes: [Resources/Artwork, Resources/ExerciseFrames]
       - path: Shared
+      - path: CompanionShared
+      - path: build/MediaResources
+        type: folder
+        buildPhase: resources
       - path: build/Assets.xcassets
     info:
       path: build/plists/GymRest-Info.plist
@@ -27,7 +31,16 @@ targets:
         CFBundleShortVersionString: "$(MARKETING_VERSION)"
         CFBundleVersion: "$(CURRENT_PROJECT_VERSION)"
         CFBundleDevelopmentRegion: zh-Hans
-        NSAlarmKitUsageDescription: 用于在训练组间休息结束时发出系统提醒。
+        GymRestWatchEnabled: false
+        GymRestMediaMode: external
+        GymRestMediaSeedPolicy: preserve
+        UTExportedTypeDeclarations:
+          - UTTypeIdentifier: dev.gymrest.media
+            UTTypeDescription: GymRest 动作素材包
+            UTTypeConformsTo: [public.data]
+            UTTypeTagSpecification:
+              public.filename-extension: [gymrestmedia]
+        NSAlarmKitUsageDescription: 用于在动作计时或训练休息结束时发出系统提醒。
         NSSupportsLiveActivities: true
         CFBundleURLTypes:
           - CFBundleURLName: dev.gymrest.training
@@ -61,7 +74,13 @@ targets:
   GymRestTests:
     type: bundle.unit-test
     platform: iOS
-    sources: [GymRestTests]
+    sources:
+      - path: GymRestTests
+      - path: build/TestMediaFrames
+        type: folder
+        buildPhase: resources
+      - path: build/GymRest-Official.gymrestmedia
+        buildPhase: resources
     settings:
       base:
         GENERATE_INFOPLIST_FILE: YES

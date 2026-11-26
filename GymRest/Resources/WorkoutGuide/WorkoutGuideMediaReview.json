@@ -1,7 +1,7 @@
 {
   "revision": "aac599224bb9780305239607ef98540b7e0ce389",
   "reviewedAt": "2026-11-26",
-  "scope": "逐帧一般视觉核对：器材、握法、支撑、变式、裁切和连续性；非专业动作认证",
+  "scope": "逐帧一般视觉核对：器材、握法、支撑、变式、裁切和连续性；非专业动作认证；补充高相似候选的清晰度、重影和冗余姿势复核（不表示全库无模糊图）",
   "items": [
     {
       "slug": "bench-press",
@@ -114,13 +114,20 @@
       ],
       "displayFrames": [
         1,
-        2,
         3
       ],
       "allowsPlayback": false,
       "result": "static-only",
-      "note": "已核对三帧的器材与主要姿势；构图/比例存在变化，仅作独立静态示意。",
-      "reviewPage": 1
+      "note": "第2帧与保留帧的主要姿势近似，存在缩放、线条粗化或重影，未增加必要的动作信息；保留第1、3帧静态对照。",
+      "reviewPage": 1,
+      "qualityReview": {
+        "reviewedAt": "2026-11-26",
+        "excludedFrames": [
+          2
+        ],
+        "reason": "第2帧与保留帧的主要姿势近似，存在缩放、线条粗化或重影，未增加必要的动作信息；保留第1、3帧静态对照。",
+        "method": "相似度筛查后人工对照原分帧；非自动阈值剔除"
+      }
     },
     {
       "slug": "cable-fly",
@@ -301,13 +308,20 @@
       ],
       "displayFrames": [
         1,
-        2,
         3
       ],
       "allowsPlayback": false,
       "result": "static-only",
-      "note": "已核对三帧的器材与主要姿势；构图/比例存在变化，仅作独立静态示意。",
-      "reviewPage": 2
+      "note": "第2帧与保留帧的主要姿势近似，存在缩放、线条粗化或重影，未增加必要的动作信息；保留第1、3帧静态对照。",
+      "reviewPage": 2,
+      "qualityReview": {
+        "reviewedAt": "2026-11-26",
+        "excludedFrames": [
+          2
+        ],
+        "reason": "第2帧与保留帧的主要姿势近似，存在缩放、线条粗化或重影，未增加必要的动作信息；保留第1、3帧静态对照。",
+        "method": "相似度筛查后人工对照原分帧；非自动阈值剔除"
+      }
     },
     {
       "slug": "face-pull",
@@ -437,13 +451,20 @@
       ],
       "displayFrames": [
         1,
-        2,
         3
       ],
       "allowsPlayback": false,
       "result": "static-only",
-      "note": "已核对三帧的器材与主要姿势；构图/比例存在变化，仅作独立静态示意。",
-      "reviewPage": 3
+      "note": "第2帧与保留帧的主要姿势近似，存在缩放、线条粗化或重影，未增加必要的动作信息；保留第1、3帧静态对照。",
+      "reviewPage": 3,
+      "qualityReview": {
+        "reviewedAt": "2026-11-26",
+        "excludedFrames": [
+          2
+        ],
+        "reason": "第2帧与保留帧的主要姿势近似，存在缩放、线条粗化或重影，未增加必要的动作信息；保留第1、3帧静态对照。",
+        "method": "相似度筛查后人工对照原分帧；非自动阈值剔除"
+      }
     },
     {
       "slug": "chest-supported-row",
@@ -556,13 +577,20 @@
       ],
       "displayFrames": [
         1,
-        2,
         3
       ],
       "allowsPlayback": false,
       "result": "static-only",
-      "note": "已核对三帧的器材与主要姿势；构图/比例存在变化，仅作独立静态示意。",
-      "reviewPage": 3
+      "note": "第2帧与保留帧的主要姿势近似，存在缩放、线条粗化或重影，未增加必要的动作信息；保留第1、3帧静态对照。",
+      "reviewPage": 3,
+      "qualityReview": {
+        "reviewedAt": "2026-11-26",
+        "excludedFrames": [
+          2
+        ],
+        "reason": "第2帧与保留帧的主要姿势近似，存在缩放、线条粗化或重影，未增加必要的动作信息；保留第1、3帧静态对照。",
+        "method": "相似度筛查后人工对照原分帧；非自动阈值剔除"
+      }
     },
     {
       "slug": "assisted-pull-up",
@@ -590,13 +618,20 @@
       ],
       "displayFrames": [
         1,
-        2,
         3
       ],
       "allowsPlayback": false,
       "result": "static-only",
-      "note": "已核对三帧的器材与主要姿势；构图/比例存在变化，仅作独立静态示意。",
-      "reviewPage": 3
+      "note": "第2帧与保留帧的主要姿势近似，存在缩放、线条粗化或重影，未增加必要的动作信息；保留第1、3帧静态对照。",
+      "reviewPage": 3,
+      "qualityReview": {
+        "reviewedAt": "2026-11-26",
+        "excludedFrames": [
+          2
+        ],
+        "reason": "第2帧与保留帧的主要姿势近似，存在缩放、线条粗化或重影，未增加必要的动作信息；保留第1、3帧静态对照。",
+        "method": "相似度筛查后人工对照原分帧；非自动阈值剔除"
+      }
     },
     {
       "slug": "chin-up",
@@ -828,13 +863,20 @@
       ],
       "displayFrames": [
         1,
-        2,
         3
       ],
       "allowsPlayback": false,
       "result": "static-only",
-      "note": "已核对三帧的器材与主要姿势；构图/比例存在变化，仅作独立静态示意。",
-      "reviewPage": 5
+      "note": "第2帧与保留帧的主要姿势近似，存在缩放、线条粗化或重影，未增加必要的动作信息；保留第1、3帧静态对照。",
+      "reviewPage": 5,
+      "qualityReview": {
+        "reviewedAt": "2026-11-26",
+        "excludedFrames": [
+          2
+        ],
+        "reason": "第2帧与保留帧的主要姿势近似，存在缩放、线条粗化或重影，未增加必要的动作信息；保留第1、3帧静态对照。",
+        "method": "相似度筛查后人工对照原分帧；非自动阈值剔除"
+      }
     },
     {
       "slug": "good-morning",
@@ -1011,13 +1053,20 @@
       ],
       "displayFrames": [
         1,
-        2,
         3
       ],
       "allowsPlayback": false,
       "result": "static-only",
-      "note": "已核对三帧的器材与主要姿势；构图/比例存在变化，仅作独立静态示意。",
-      "reviewPage": 5
+      "note": "第2帧与保留帧的主要姿势近似，存在缩放、线条粗化或重影，未增加必要的动作信息；保留第1、3帧静态对照。",
+      "reviewPage": 5,
+      "qualityReview": {
+        "reviewedAt": "2026-11-26",
+        "excludedFrames": [
+          2
+        ],
+        "reason": "第2帧与保留帧的主要姿势近似，存在缩放、线条粗化或重影，未增加必要的动作信息；保留第1、3帧静态对照。",
+        "method": "相似度筛查后人工对照原分帧；非自动阈值剔除"
+      }
     },
     {
       "slug": "skull-crusher",
@@ -1045,13 +1094,20 @@
       ],
       "displayFrames": [
         1,
-        2,
         3
       ],
       "allowsPlayback": false,
       "result": "static-only",
-      "note": "已核对三帧的器材与主要姿势；构图/比例存在变化，仅作独立静态示意。",
-      "reviewPage": 6
+      "note": "第2帧与第1帧同为伸臂位置，线条明显粗糊；保留伸臂与下放两个姿势。",
+      "reviewPage": 6,
+      "qualityReview": {
+        "reviewedAt": "2026-11-26",
+        "excludedFrames": [
+          2
+        ],
+        "reason": "第2帧与第1帧同为伸臂位置，线条明显粗糊；保留伸臂与下放两个姿势。",
+        "method": "相似度筛查后人工对照原分帧；非自动阈值剔除"
+      }
     },
     {
       "slug": "dip",
@@ -1172,13 +1228,20 @@
       ],
       "displayFrames": [
         1,
-        2,
-        3
+        2
       ],
       "allowsPlayback": false,
       "result": "static-only",
-      "note": "已核对三帧的器材与主要姿势；构图/比例存在变化，仅作独立静态示意。",
-      "reviewPage": 6
+      "note": "第3帧与保留帧的主要姿势近似，存在比例变化、线条粗化或重影；保留第1、2帧静态对照。",
+      "reviewPage": 6,
+      "qualityReview": {
+        "reviewedAt": "2026-11-26",
+        "excludedFrames": [
+          3
+        ],
+        "reason": "第3帧与保留帧的主要姿势近似，存在比例变化、线条粗化或重影；保留第1、2帧静态对照。",
+        "method": "相似度筛查后人工对照原分帧；非自动阈值剔除"
+      }
     },
     {
       "slug": "walking",
@@ -1189,13 +1252,20 @@
       ],
       "displayFrames": [
         1,
-        2,
         3
       ],
       "allowsPlayback": false,
       "result": "static-only",
-      "note": "已核对三帧的器材与主要姿势；构图/比例存在变化，仅作独立静态示意。",
-      "reviewPage": 6
+      "note": "第2帧与保留帧的主要姿势近似，存在缩放、线条粗化或重影，未增加必要的动作信息；保留第1、3帧静态对照。",
+      "reviewPage": 6,
+      "qualityReview": {
+        "reviewedAt": "2026-11-26",
+        "excludedFrames": [
+          2
+        ],
+        "reason": "第2帧与保留帧的主要姿势近似，存在缩放、线条粗化或重影，未增加必要的动作信息；保留第1、3帧静态对照。",
+        "method": "相似度筛查后人工对照原分帧；非自动阈值剔除"
+      }
     },
     {
       "slug": "cycling",
@@ -1205,14 +1275,21 @@
         3
       ],
       "displayFrames": [
-        1,
-        2,
-        3
+        1
       ],
       "allowsPlayback": false,
       "result": "static-only",
-      "note": "已核对三帧的器材与主要姿势；构图/比例存在变化，仅作独立静态示意。",
-      "reviewPage": 6
+      "note": "三帧骑行位置基本重复，第2、3帧线条粗化或重影；保留清晰代表图，不代表完整踩踏周期。",
+      "reviewPage": 6,
+      "qualityReview": {
+        "reviewedAt": "2026-11-26",
+        "excludedFrames": [
+          2,
+          3
+        ],
+        "reason": "三帧骑行位置基本重复，第2、3帧线条粗化或重影；保留清晰代表图，不代表完整踩踏周期。",
+        "method": "相似度筛查后人工对照原分帧；非自动阈值剔除"
+      }
     },
     {
       "slug": "rowing",
@@ -1239,14 +1316,21 @@
         3
       ],
       "displayFrames": [
-        1,
-        2,
-        3
+        1
       ],
       "allowsPlayback": false,
       "result": "static-only",
-      "note": "已核对三帧的器材与主要姿势；构图/比例存在变化，仅作独立静态示意。",
-      "reviewPage": 7
+      "note": "三帧踏步姿势基本重复；第2帧线条粗化、第3帧近似第1帧，仅保留清晰代表图，不代表完整步态。",
+      "reviewPage": 7,
+      "qualityReview": {
+        "reviewedAt": "2026-11-26",
+        "excludedFrames": [
+          2,
+          3
+        ],
+        "reason": "三帧踏步姿势基本重复；第2帧线条粗化、第3帧近似第1帧，仅保留清晰代表图，不代表完整步态。",
+        "method": "相似度筛查后人工对照原分帧；非自动阈值剔除"
+      }
     },
     {
       "slug": "dumbbell-fly",
@@ -1308,13 +1392,20 @@
       ],
       "displayFrames": [
         1,
-        2,
         3
       ],
       "allowsPlayback": false,
       "result": "static-only",
-      "note": "已核对三帧的器材与主要姿势；构图/比例存在变化，仅作独立静态示意。",
-      "reviewPage": 7
+      "note": "第2帧与保留帧的主要姿势近似，存在缩放、线条粗化或重影，未增加必要的动作信息；保留第1、3帧静态对照。",
+      "reviewPage": 7,
+      "qualityReview": {
+        "reviewedAt": "2026-11-26",
+        "excludedFrames": [
+          2
+        ],
+        "reason": "第2帧与保留帧的主要姿势近似，存在缩放、线条粗化或重影，未增加必要的动作信息；保留第1、3帧静态对照。",
+        "method": "相似度筛查后人工对照原分帧；非自动阈值剔除"
+      }
     },
     {
       "slug": "landmine-press",
@@ -1376,13 +1467,20 @@
       ],
       "displayFrames": [
         1,
-        2,
         3
       ],
       "allowsPlayback": false,
       "result": "static-only",
-      "note": "已核对三帧的器材与主要姿势；构图/比例存在变化，仅作独立静态示意。",
-      "reviewPage": 7
+      "note": "第2帧与保留帧的主要姿势近似，存在缩放、线条粗化或重影，未增加必要的动作信息；保留第1、3帧静态对照。",
+      "reviewPage": 7,
+      "qualityReview": {
+        "reviewedAt": "2026-11-26",
+        "excludedFrames": [
+          2
+        ],
+        "reason": "第2帧与保留帧的主要姿势近似，存在缩放、线条粗化或重影，未增加必要的动作信息；保留第1、3帧静态对照。",
+        "method": "相似度筛查后人工对照原分帧；非自动阈值剔除"
+      }
     },
     {
       "slug": "standing-dumbbell-press",
@@ -1393,13 +1491,20 @@
       ],
       "displayFrames": [
         1,
-        2,
         3
       ],
       "allowsPlayback": false,
       "result": "static-only",
-      "note": "已核对三帧的器材与主要姿势；构图/比例存在变化，仅作独立静态示意。",
-      "reviewPage": 7
+      "note": "第2帧与保留帧的主要姿势近似，存在缩放、线条粗化或重影，未增加必要的动作信息；保留第1、3帧静态对照。",
+      "reviewPage": 7,
+      "qualityReview": {
+        "reviewedAt": "2026-11-26",
+        "excludedFrames": [
+          2
+        ],
+        "reason": "第2帧与保留帧的主要姿势近似，存在缩放、线条粗化或重影，未增加必要的动作信息；保留第1、3帧静态对照。",
+        "method": "相似度筛查后人工对照原分帧；非自动阈值剔除"
+      }
     },
     {
       "slug": "push-press",
@@ -1427,13 +1532,20 @@
       ],
       "displayFrames": [
         1,
-        2,
         3
       ],
       "allowsPlayback": false,
       "result": "static-only",
-      "note": "已核对三帧的器材与主要姿势；构图/比例存在变化，仅作独立静态示意。",
-      "reviewPage": 8
+      "note": "第2帧与保留帧的主要姿势近似，存在缩放、线条粗化或重影，未增加必要的动作信息；保留第1、3帧静态对照。",
+      "reviewPage": 8,
+      "qualityReview": {
+        "reviewedAt": "2026-11-26",
+        "excludedFrames": [
+          2
+        ],
+        "reason": "第2帧与保留帧的主要姿势近似，存在缩放、线条粗化或重影，未增加必要的动作信息；保留第1、3帧静态对照。",
+        "method": "相似度筛查后人工对照原分帧；非自动阈值剔除"
+      }
     },
     {
       "slug": "cable-front-raise",
@@ -1495,13 +1607,20 @@
       ],
       "displayFrames": [
         1,
-        2,
-        3
+        2
       ],
       "allowsPlayback": false,
       "result": "static-only",
-      "note": "已核对三帧的器材与主要姿势；构图/比例存在变化，仅作独立静态示意。",
-      "reviewPage": 8
+      "note": "第3帧与保留帧的主要姿势近似，存在比例变化、线条粗化或重影；保留第1、2帧静态对照。",
+      "reviewPage": 8,
+      "qualityReview": {
+        "reviewedAt": "2026-11-26",
+        "excludedFrames": [
+          3
+        ],
+        "reason": "第3帧与保留帧的主要姿势近似，存在比例变化、线条粗化或重影；保留第1、2帧静态对照。",
+        "method": "相似度筛查后人工对照原分帧；非自动阈值剔除"
+      }
     },
     {
       "slug": "pendlay-row",
@@ -1559,13 +1678,20 @@
       ],
       "displayFrames": [
         1,
-        2,
-        3
+        2
       ],
       "allowsPlayback": false,
       "result": "static-only",
-      "note": "已核对三帧的器材与主要姿势；构图/比例存在变化，仅作独立静态示意。",
-      "reviewPage": 8
+      "note": "第3帧与保留帧的主要姿势近似，存在比例变化、线条粗化或重影；保留第1、2帧静态对照。",
+      "reviewPage": 8,
+      "qualityReview": {
+        "reviewedAt": "2026-11-26",
+        "excludedFrames": [
+          3
+        ],
+        "reason": "第3帧与保留帧的主要姿势近似，存在比例变化、线条粗化或重影；保留第1、2帧静态对照。",
+        "method": "相似度筛查后人工对照原分帧；非自动阈值剔除"
+      }
     },
     {
       "slug": "wide-grip-lat-pulldown",
@@ -1576,13 +1702,20 @@
       ],
       "displayFrames": [
         1,
-        2,
         3
       ],
       "allowsPlayback": false,
       "result": "static-only",
-      "note": "已核对三帧的器材与主要姿势；构图/比例存在变化，仅作独立静态示意。",
-      "reviewPage": 8
+      "note": "第2帧与保留帧的主要姿势近似，存在缩放、线条粗化或重影，未增加必要的动作信息；保留第1、3帧静态对照。",
+      "reviewPage": 8,
+      "qualityReview": {
+        "reviewedAt": "2026-11-26",
+        "excludedFrames": [
+          2
+        ],
+        "reason": "第2帧与保留帧的主要姿势近似，存在缩放、线条粗化或重影，未增加必要的动作信息；保留第1、3帧静态对照。",
+        "method": "相似度筛查后人工对照原分帧；非自动阈值剔除"
+      }
     },
     {
       "slug": "neutral-grip-pull-up",
@@ -1657,13 +1790,20 @@
       ],
       "displayFrames": [
         1,
-        2,
         3
       ],
       "allowsPlayback": false,
       "result": "static-only",
-      "note": "已核对三帧的器材与主要姿势；构图/比例存在变化，仅作独立静态示意。",
-      "reviewPage": 9
+      "note": "第2帧与保留帧的主要姿势近似，存在缩放、线条粗化或重影，未增加必要的动作信息；保留第1、3帧静态对照。",
+      "reviewPage": 9,
+      "qualityReview": {
+        "reviewedAt": "2026-11-26",
+        "excludedFrames": [
+          2
+        ],
+        "reason": "第2帧与保留帧的主要姿势近似，存在缩放、线条粗化或重影，未增加必要的动作信息；保留第1、3帧静态对照。",
+        "method": "相似度筛查后人工对照原分帧；非自动阈值剔除"
+      }
     },
     {
       "slug": "dumbbell-shrug",
@@ -2044,13 +2184,20 @@
       ],
       "displayFrames": [
         1,
-        2,
         3
       ],
       "allowsPlayback": false,
       "result": "static-only",
-      "note": "已核对三帧的器材与主要姿势；构图/比例存在变化，仅作独立静态示意。",
-      "reviewPage": 11
+      "note": "第2帧与第1帧后踢位置重复且线条较虚，保留后踢和回收姿势。",
+      "reviewPage": 11,
+      "qualityReview": {
+        "reviewedAt": "2026-11-26",
+        "excludedFrames": [
+          2
+        ],
+        "reason": "第2帧与第1帧后踢位置重复且线条较虚，保留后踢和回收姿势。",
+        "method": "相似度筛查后人工对照原分帧；非自动阈值剔除"
+      }
     },
     {
       "slug": "cable-standing-hip-abduction",
@@ -2078,13 +2225,20 @@
       ],
       "displayFrames": [
         1,
-        2,
         3
       ],
       "allowsPlayback": false,
       "result": "static-only",
-      "note": "已核对三帧的器材与主要姿势；构图/比例存在变化，仅作独立静态示意。",
-      "reviewPage": 11
+      "note": "第2帧与保留帧的主要姿势近似，存在缩放、线条粗化或重影，未增加必要的动作信息；保留第1、3帧静态对照。",
+      "reviewPage": 11,
+      "qualityReview": {
+        "reviewedAt": "2026-11-26",
+        "excludedFrames": [
+          2
+        ],
+        "reason": "第2帧与保留帧的主要姿势近似，存在缩放、线条粗化或重影，未增加必要的动作信息；保留第1、3帧静态对照。",
+        "method": "相似度筛查后人工对照原分帧；非自动阈值剔除"
+      }
     },
     {
       "slug": "hip-adduction-machine",
@@ -2345,13 +2499,20 @@
       ],
       "displayFrames": [
         1,
-        2,
-        3
+        2
       ],
       "allowsPlayback": false,
       "result": "static-only",
-      "note": "已核对三帧的器材与主要姿势；构图/比例存在变化，仅作独立静态示意。",
-      "reviewPage": 12
+      "note": "第3帧与保留帧的主要姿势近似，存在比例变化、线条粗化或重影；保留第1、2帧静态对照。",
+      "reviewPage": 12,
+      "qualityReview": {
+        "reviewedAt": "2026-11-26",
+        "excludedFrames": [
+          3
+        ],
+        "reason": "第3帧与保留帧的主要姿势近似，存在比例变化、线条粗化或重影；保留第1、2帧静态对照。",
+        "method": "相似度筛查后人工对照原分帧；非自动阈值剔除"
+      }
     },
     {
       "slug": "donkey-calf-raise",
@@ -2503,13 +2664,20 @@
       ],
       "displayFrames": [
         1,
-        2,
         3
       ],
       "allowsPlayback": false,
       "result": "static-only",
-      "note": "已核对三帧的器材与主要姿势；构图/比例存在变化，仅作独立静态示意。",
-      "reviewPage": 13
+      "note": "第2帧与保留帧的主要姿势近似，存在缩放、线条粗化或重影，未增加必要的动作信息；保留第1、3帧静态对照。",
+      "reviewPage": 13,
+      "qualityReview": {
+        "reviewedAt": "2026-11-26",
+        "excludedFrames": [
+          2
+        ],
+        "reason": "第2帧与保留帧的主要姿势近似，存在缩放、线条粗化或重影，未增加必要的动作信息；保留第1、3帧静态对照。",
+        "method": "相似度筛查后人工对照原分帧；非自动阈值剔除"
+      }
     },
     {
       "slug": "rope-tricep-pushdown",
@@ -2622,13 +2790,20 @@
       ],
       "displayFrames": [
         1,
-        2,
         3
       ],
       "allowsPlayback": false,
       "result": "static-only",
-      "note": "已核对三帧的器材与主要姿势；构图/比例存在变化，仅作独立静态示意。",
-      "reviewPage": 14
+      "note": "第2帧与保留帧的主要姿势近似，存在缩放、线条粗化或重影，未增加必要的动作信息；保留第1、3帧静态对照。",
+      "reviewPage": 14,
+      "qualityReview": {
+        "reviewedAt": "2026-11-26",
+        "excludedFrames": [
+          2
+        ],
+        "reason": "第2帧与保留帧的主要姿势近似，存在缩放、线条粗化或重影，未增加必要的动作信息；保留第1、3帧静态对照。",
+        "method": "相似度筛查后人工对照原分帧；非自动阈值剔除"
+      }
     },
     {
       "slug": "wrist-extension",
@@ -2639,13 +2814,20 @@
       ],
       "displayFrames": [
         1,
-        2,
         3
       ],
       "allowsPlayback": false,
       "result": "static-only",
-      "note": "已核对三帧的器材与主要姿势；构图/比例存在变化，仅作独立静态示意。",
-      "reviewPage": 14
+      "note": "第2帧与保留帧的主要姿势近似，存在缩放、线条粗化或重影，未增加必要的动作信息；保留第1、3帧静态对照。",
+      "reviewPage": 14,
+      "qualityReview": {
+        "reviewedAt": "2026-11-26",
+        "excludedFrames": [
+          2
+        ],
+        "reason": "第2帧与保留帧的主要姿势近似，存在缩放、线条粗化或重影，未增加必要的动作信息；保留第1、3帧静态对照。",
+        "method": "相似度筛查后人工对照原分帧；非自动阈值剔除"
+      }
     },
     {
       "slug": "farmer-carry",
@@ -2791,13 +2973,20 @@
       ],
       "displayFrames": [
         1,
-        2,
         3
       ],
       "allowsPlayback": false,
       "result": "static-only",
-      "note": "已核对三帧的器材与主要姿势；构图/比例存在变化，仅作独立静态示意。",
-      "reviewPage": 14
+      "note": "第2帧与保留帧的主要姿势近似，存在缩放、线条粗化或重影，未增加必要的动作信息；保留第1、3帧静态对照。",
+      "reviewPage": 14,
+      "qualityReview": {
+        "reviewedAt": "2026-11-26",
+        "excludedFrames": [
+          2
+        ],
+        "reason": "第2帧与保留帧的主要姿势近似，存在缩放、线条粗化或重影，未增加必要的动作信息；保留第1、3帧静态对照。",
+        "method": "相似度筛查后人工对照原分帧；非自动阈值剔除"
+      }
     },
     {
       "slug": "cable-woodchop",
@@ -2824,14 +3013,21 @@
         3
       ],
       "displayFrames": [
-        1,
-        2,
-        3
+        1
       ],
       "allowsPlayback": false,
       "result": "static-only",
-      "note": "已核对三帧的器材与主要姿势；构图/比例存在变化，仅作独立静态示意。",
-      "reviewPage": 15
+      "note": "三帧均为近似伸臂位置，第2、3帧线条重影、对比度较低；仅保留清晰代表图，不代表完整推压过程。",
+      "reviewPage": 15,
+      "qualityReview": {
+        "reviewedAt": "2026-11-26",
+        "excludedFrames": [
+          2,
+          3
+        ],
+        "reason": "三帧均为近似伸臂位置，第2、3帧线条重影、对比度较低；仅保留清晰代表图，不代表完整推压过程。",
+        "method": "相似度筛查后人工对照原分帧；非自动阈值剔除"
+      }
     },
     {
       "slug": "cable-pallof-hold",
@@ -2841,14 +3037,21 @@
         3
       ],
       "displayFrames": [
-        1,
-        2,
-        3
+        1
       ],
       "allowsPlayback": false,
       "result": "static-only",
-      "note": "已核对三帧的器材与主要姿势；构图/比例存在变化，仅作独立静态示意。",
-      "reviewPage": 15
+      "note": "静态抗旋保持姿势重复，第2、3帧对比度较低、线条重影；保留第1帧。",
+      "reviewPage": 15,
+      "qualityReview": {
+        "reviewedAt": "2026-11-26",
+        "excludedFrames": [
+          2,
+          3
+        ],
+        "reason": "静态抗旋保持姿势重复，第2、3帧对比度较低、线条重影；保留第1帧。",
+        "method": "相似度筛查后人工对照原分帧；非自动阈值剔除"
+      }
     },
     {
       "slug": "hanging-knee-raise",
@@ -2876,13 +3079,20 @@
       ],
       "displayFrames": [
         1,
-        2,
         3
       ],
       "allowsPlayback": false,
       "result": "static-only",
-      "note": "已核对三帧的器材与主要姿势；构图/比例存在变化，仅作独立静态示意。",
-      "reviewPage": 15
+      "note": "第2帧与保留帧的主要姿势近似，存在缩放、线条粗化或重影，未增加必要的动作信息；保留第1、3帧静态对照。",
+      "reviewPage": 15,
+      "qualityReview": {
+        "reviewedAt": "2026-11-26",
+        "excludedFrames": [
+          2
+        ],
+        "reason": "第2帧与保留帧的主要姿势近似，存在缩放、线条粗化或重影，未增加必要的动作信息；保留第1、3帧静态对照。",
+        "method": "相似度筛查后人工对照原分帧；非自动阈值剔除"
+      }
     },
     {
       "slug": "decline-sit-up",
@@ -2957,13 +3167,20 @@
       ],
       "displayFrames": [
         1,
-        2,
-        3
+        2
       ],
       "allowsPlayback": false,
       "result": "static-only",
-      "note": "已核对三帧的器材与主要姿势；构图/比例存在变化，仅作独立静态示意。",
-      "reviewPage": 15
+      "note": "第3帧与保留帧的主要姿势近似，存在比例变化、线条粗化或重影；保留第1、2帧静态对照。",
+      "reviewPage": 15,
+      "qualityReview": {
+        "reviewedAt": "2026-11-26",
+        "excludedFrames": [
+          3
+        ],
+        "reason": "第3帧与保留帧的主要姿势近似，存在比例变化、线条粗化或重影；保留第1、2帧静态对照。",
+        "method": "相似度筛查后人工对照原分帧；非自动阈值剔除"
+      }
     },
     {
       "slug": "swimming",
@@ -3003,14 +3220,21 @@
         3
       ],
       "displayFrames": [
-        1,
-        2,
-        3
+        1
       ],
       "allowsPlayback": false,
       "result": "static-only",
-      "note": "已核对三帧的器材与主要姿势；构图/比例存在变化，仅作独立静态示意。",
-      "reviewPage": 15
+      "note": "三帧主要为同一骑行姿势的比例变化，保留清晰代表图，不代表完整踩踏周期。",
+      "reviewPage": 15,
+      "qualityReview": {
+        "reviewedAt": "2026-11-26",
+        "excludedFrames": [
+          2,
+          3
+        ],
+        "reason": "三帧主要为同一骑行姿势的比例变化，保留清晰代表图，不代表完整踩踏周期。",
+        "method": "相似度筛查后人工对照原分帧；非自动阈值剔除"
+      }
     },
     {
       "slug": "skierg",
@@ -3051,13 +3275,20 @@
       ],
       "displayFrames": [
         1,
-        2,
-        3
+        2
       ],
       "allowsPlayback": false,
       "result": "static-only",
-      "note": "已核对三帧的器材与主要姿势；构图/比例存在变化，仅作独立静态示意。",
-      "reviewPage": 16
+      "note": "第3帧与保留帧的主要姿势近似，存在比例变化、线条粗化或重影；保留第1、2帧静态对照。",
+      "reviewPage": 16,
+      "qualityReview": {
+        "reviewedAt": "2026-11-26",
+        "excludedFrames": [
+          3
+        ],
+        "reason": "第3帧与保留帧的主要姿势近似，存在比例变化、线条粗化或重影；保留第1、2帧静态对照。",
+        "method": "相似度筛查后人工对照原分帧；非自动阈值剔除"
+      }
     },
     {
       "slug": "battle-ropes",
@@ -3518,14 +3749,21 @@
         3
       ],
       "displayFrames": [
-        1,
-        2,
-        3
+        1
       ],
       "allowsPlayback": false,
       "result": "static-only",
-      "note": "肩胛参与细节不够清晰，图片只用于悬垂位置定位。",
-      "reviewPage": 18
+      "note": "三帧悬垂位置基本重复，第2帧对比度较低；仅保留清晰静态姿势，不用重复图表示肩胛运动。",
+      "reviewPage": 18,
+      "qualityReview": {
+        "reviewedAt": "2026-11-26",
+        "excludedFrames": [
+          2,
+          3
+        ],
+        "reason": "三帧悬垂位置基本重复，第2帧对比度较低；仅保留清晰静态姿势，不用重复图表示肩胛运动。",
+        "method": "相似度筛查后人工对照原分帧；非自动阈值剔除"
+      }
     },
     {
       "slug": "scapular-pull-up",
@@ -3818,13 +4056,20 @@
       ],
       "displayFrames": [
         1,
-        2,
         3
       ],
       "allowsPlayback": false,
       "result": "static-only",
-      "note": "已核对三帧的器材与主要姿势；构图/比例存在变化，仅作独立静态示意。",
-      "reviewPage": 20
+      "note": "第2帧与保留帧的主要姿势近似，存在缩放、线条粗化或重影，未增加必要的动作信息；保留第1、3帧静态对照。",
+      "reviewPage": 20,
+      "qualityReview": {
+        "reviewedAt": "2026-11-26",
+        "excludedFrames": [
+          2
+        ],
+        "reason": "第2帧与保留帧的主要姿势近似，存在缩放、线条粗化或重影，未增加必要的动作信息；保留第1、3帧静态对照。",
+        "method": "相似度筛查后人工对照原分帧；非自动阈值剔除"
+      }
     },
     {
       "slug": "single-leg-calf-raise",
@@ -3835,13 +4080,20 @@
       ],
       "displayFrames": [
         1,
-        2,
         3
       ],
       "allowsPlayback": false,
       "result": "static-only",
-      "note": "已核对三帧的器材与主要姿势；构图/比例存在变化，仅作独立静态示意。",
-      "reviewPage": 20
+      "note": "第2帧与保留帧的主要姿势近似，存在缩放、线条粗化或重影，未增加必要的动作信息；保留第1、3帧静态对照。",
+      "reviewPage": 20,
+      "qualityReview": {
+        "reviewedAt": "2026-11-26",
+        "excludedFrames": [
+          2
+        ],
+        "reason": "第2帧与保留帧的主要姿势近似，存在缩放、线条粗化或重影，未增加必要的动作信息；保留第1、3帧静态对照。",
+        "method": "相似度筛查后人工对照原分帧；非自动阈值剔除"
+      }
     },
     {
       "slug": "glute-bridge-march",
@@ -4293,14 +4545,21 @@
         3
       ],
       "displayFrames": [
-        1,
-        2,
-        3
+        1
       ],
       "allowsPlayback": false,
       "result": "static-only",
-      "note": "已核对三帧的器材与主要姿势；构图/比例存在变化，仅作独立静态示意。",
-      "reviewPage": 22
+      "note": "三帧均为近似伸臂抗旋位置，第2、3帧线条较虚；仅保留清晰代表图，不代表完整推压过程。",
+      "reviewPage": 22,
+      "qualityReview": {
+        "reviewedAt": "2026-11-26",
+        "excludedFrames": [
+          2,
+          3
+        ],
+        "reason": "三帧均为近似伸臂抗旋位置，第2、3帧线条较虚；仅保留清晰代表图，不代表完整推压过程。",
+        "method": "相似度筛查后人工对照原分帧；非自动阈值剔除"
+      }
     },
     {
       "slug": "banded-woodchop",
@@ -4584,13 +4843,20 @@
       ],
       "displayFrames": [
         1,
-        2,
         3
       ],
       "allowsPlayback": false,
       "result": "static-only",
-      "note": "已核对三帧的器材与主要姿势；构图/比例存在变化，仅作独立静态示意。",
-      "reviewPage": 23
+      "note": "第2帧与保留帧的主要姿势近似，存在缩放、线条粗化或重影，未增加必要的动作信息；保留第1、3帧静态对照。",
+      "reviewPage": 23,
+      "qualityReview": {
+        "reviewedAt": "2026-11-26",
+        "excludedFrames": [
+          2
+        ],
+        "reason": "第2帧与保留帧的主要姿势近似，存在缩放、线条粗化或重影，未增加必要的动作信息；保留第1、3帧静态对照。",
+        "method": "相似度筛查后人工对照原分帧；非自动阈值剔除"
+      }
     },
     {
       "slug": "copenhagen-plank",
@@ -4996,14 +5262,21 @@
         3
       ],
       "displayFrames": [
-        1,
-        2,
-        3
+        1
       ],
       "allowsPlayback": false,
       "result": "static-only",
-      "note": "已核对三帧的器材与主要姿势；构图/比例存在变化，仅作独立静态示意。",
-      "reviewPage": 26
+      "note": "三帧靠墙拉伸姿势基本重复，保留第1帧静态示意。",
+      "reviewPage": 26,
+      "qualityReview": {
+        "reviewedAt": "2026-11-26",
+        "excludedFrames": [
+          2,
+          3
+        ],
+        "reason": "三帧靠墙拉伸姿势基本重复，保留第1帧静态示意。",
+        "method": "相似度筛查后人工对照原分帧；非自动阈值剔除"
+      }
     },
     {
       "slug": "butterfly-stretch",

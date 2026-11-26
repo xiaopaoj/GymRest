@@ -107,6 +107,9 @@ enum PlanImportValidation {
         var field: String?
         if let weight = item.weight, !weight.isFinite || !(0...10000).contains(weight) { field = "weight（0–10000有限数值）" }
         else if let repetitions = item.repetitions, !(1...1000).contains(repetitions) { field = "repetitions（1–1000整数或null）" }
+        else if let duration = item.durationSeconds, !(1...86400).contains(duration) { field = "durationSeconds（1–86400整数或null）" }
+        else if !(1...2).contains(item.sideCount) { field = "sideCount（1或2）" }
+        else if item.durationSeconds != nil && item.repetitions != nil { field = "durationSeconds（计时与次数不能同时设置）" }
         else if item.equipmentNote.count > 80 { field = "equipmentNote（至多80字）" }
         else if item.kind == .bodyweight && item.weight != nil { field = "weight（自重动作须留空）" }
         else if item.unit == .level && item.kind != .machine { field = "unit（档位只可用于machine器械口径）" }

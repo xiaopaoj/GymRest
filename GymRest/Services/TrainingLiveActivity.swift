@@ -32,9 +32,13 @@ import Foundation
             issue: issue.map { String($0.prefix(160)) }, blocked: blocked,
             restTitle: session.isTransitionRest ? "动作间休息" : "组间休息",
             setDetails: session.currentSetValues.summary,
-            progressSummary: "已确认完成 \(session.completedSets)/\(session.totalSets) 组 · " + (session.phase == .training ? "准备第 \(session.completed[session.index] + 1) 组" : session.phase == .paused ? "休息暂停" : "休息中"),
-            synchronizedAt: Date())
-        let content = ActivityContent(state: state, staleDate: session.restEnd)
+            progressSummary: "已确认完成 \(session.completedSets)/\(session.totalSets) 组 · " + (session.phase == .training ? "第 \(session.completed[session.index] + 1) 组 · " + session.partTitle : session.phase == .paused ? "休息暂停" : "休息中"),
+            synchronizedAt: Date(), durationSeconds: session.currentSetValues.durationSeconds,
+            effortStatus: session.effortTimer?.status.rawValue, effortEnd: session.effortTimer?.end,
+            effortRemaining: session.effortTimer.map { Int(ceil($0.remaining)) },
+            effortRegistered: session.effortTimer?.registered, partTitle: session.partTitle,
+            completionTitle: session.completionTitle)
+        let content = ActivityContent(state: state, staleDate: session.effortTimer?.end ?? session.restEnd)
         var current: Activity<TrainingActivityAttributes>?
         for activity in activities {
             if activity.attributes.sessionID == id.uuidString,

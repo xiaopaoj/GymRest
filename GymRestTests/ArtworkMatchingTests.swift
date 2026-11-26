@@ -40,14 +40,16 @@ import SwiftData
             let frames = try XCTUnwrap(item.media.frameAssets)
             XCTAssertTrue((1...3).contains(frames.count))
             for filename in frames {
-                let url = try XCTUnwrap(ExerciseArtwork.assetURL(filename), filename)
+                let url = try XCTUnwrap(TestMediaResources.assetURL(filename), filename)
                 let image = try XCTUnwrap(UIImage(contentsOfFile: url.path), filename)
                 if filename.hasPrefix("wg-") { XCTAssertEqual(image.size.width, 512); XCTAssertEqual(image.size.height, 512) }
                 else { XCTAssertGreaterThan(image.size.width, 0); XCTAssertGreaterThan(image.size.height, 0) }
                 filenames.insert(filename)
             }
         }
-        XCTAssertEqual(filenames.count, 822)
+        XCTAssertEqual(filenames.count, 775)
+        let closeGrip = try XCTUnwrap(catalog.item("guide-close-grip-bench-press"))
+        XCTAssertEqual(closeGrip.media.frameAssets, ["wg-close-grip-bench-press-1.png", "wg-close-grip-bench-press-3.png"])
         XCTAssertNotNil(Bundle.main.url(forResource: "WorkoutGuideSources", withExtension: "json"))
         XCTAssertNotNil(Bundle.main.url(forResource: "WorkoutGuide-LICENSE-ASSETS", withExtension: "txt"))
     }

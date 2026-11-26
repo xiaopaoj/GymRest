@@ -48,16 +48,23 @@ struct SettingsView: View {
                     NavigationLink("系统提醒测试") { ProbeView() }
                 } else { Text("当前训练结束或恢复正常后可进入独立提醒测试，避免互相取消计时。") }
             }
+            Section("Watch开训提醒") {
+                NavigationLink("Watch连接与记录") { WatchCompanionView() }
+                Toggle("开始训练前提醒开启Watch训练", isOn: Binding(get: { preferences.watchStartReminder == true }, set: { preferences.watchStartReminder = $0 }))
+                Text("每场新训练开始前手动确认一次；GymRest无法自动检测系统体能训练是否已开启。继续或恢复训练不重复提醒。")
+                    .font(.footnote).foregroundStyle(.secondary)
+            }
             Section("训练显示") { Toggle("训练页面保持屏幕常亮", isOn: $preferences.keepScreenOn) }
             Section("计划与记录") {
                 NavigationLink("计划 JSON 导入与导出") { PlanTransferView() }
                 NavigationLink("完整备份与恢复") { LibraryBackupView(controller: controller) }
                 NavigationLink("训练记录") { HistoryView() }
-                Text(WorkoutReader.buildEnabled ? "已启用可选健康运动读取；在记录详情中主动授权查询。" : "当前为普通构建，不请求健康数据权限。HealthKit版本需要支持的签名能力。")
+                Text(WorkoutReader.buildEnabled ? "已启用可选健康运动读取；GymRest Watch可单独授权记录，手机不重复写入训练。" : "当前为普通构建，不请求健康数据权限。HealthKit版本需要支持的签名能力。")
                     .font(.footnote).foregroundStyle(.secondary)
             }
             Section("关于") {
                 NavigationLink("Watch与锁屏真机验收") { DeviceVerificationView(controller: controller) }
+                NavigationLink("动作素材管理") { MediaLibraryView(controller: controller) }
                 NavigationLink("动作素材许可") { WorkoutGuideCreditsView() }
                 LabeledContent("版本", value: versionDescription)
                 Text("训练计划与记录仅存本机，无账号和后端。")
@@ -72,6 +79,7 @@ struct SettingsView: View {
         .onChange(of: preferences.defaultSets) { _, _ in save() }
         .onChange(of: preferences.defaultRest) { _, _ in save() }
         .onChange(of: preferences.notificationFallback) { _, _ in save(); Task { await controller.reconcile() } }
+        .onChange(of: preferences.watchStartReminder) { _, _ in save() }
         .onChange(of: preferences.keepScreenOn) { _, _ in save() }
         .task { await controller.reconcile() }
     }

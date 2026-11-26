@@ -10,6 +10,10 @@ final class ForegroundNotifications: NSObject, UNUserNotificationCenterDelegate,
 @main
 struct GymRestApp: App {
     private let delegate = ForegroundNotifications()
-    init() { UNUserNotificationCenter.current().delegate = delegate }
+    @MainActor init() {
+        UNUserNotificationCenter.current().delegate = delegate
+        PhoneWatchLink.shared.ensureRuntime = { _ = try AppRuntime.open() }
+        PhoneWatchLink.shared.activate()
+    }
     var body: some Scene { WindowGroup { RootView() } }
 }

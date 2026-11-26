@@ -45,7 +45,13 @@ import Observation
     }
     private func persist() throws {
         session?.interactionID = UUID()
-        try store.save(session, at: now())
+        do { try store.save(session, at: now()) }
+        catch {
+            let failure = error
+            do { session = try store.load() }
+            catch { recoveryIssue = "训练进度保存失败且暂时无法重读，请保留数据并重试恢复。" }
+            throw failure
+        }
         if session?.phase == .completed { completionSaved = true }
     }
     private func perform(clearErrorOnSuccess: Bool = true, allowRecovery: Bool = false, _ action: () async throws -> Void) async {
@@ -72,6 +78,9 @@ import Observation
     }
     func finishRestFromAlarm(timerID: String) async {
         guard !busy else { return }
+        if let value = session, !value.fallback, value.effortTimer?.id?.uuidString == timerID {
+            await acknowledgeEffortAlarm(timerID: timerID); return
+        }
         guard recoveryIssue == nil, let id = UUID(uuidString: timerID),
               let value = session, !value.fallback, value.timerID == id,
               value.phase == .resting || value.phase == .paused else {
@@ -90,7 +99,7 @@ import Observation
               Self.allows(action, in: value.phase) else {
             await refreshLiveActivity(); return
         }
-        if action != .finishRest {
+        if action != .finishRest && !(action == .completeSet && value.currentSetValues.durationSeconds != nil) {
             await reconcile()
             guard !busy, session?.interactionID?.uuidString == interactionID else {
                 await refreshLiveActivity(); return
@@ -99,11 +108,12 @@ import Observation
         let needsReminder: Bool
         switch action {
         case .completeSet:
-            needsReminder = value.restDuration(afterSet: value.completed[value.index] + 1) != nil
+            needsReminder = value.sideProgress + 1 == value.currentSetValues.sideCount && value.restDuration(afterSet: value.completed[value.index] + 1) != nil
         case .resumeRest: needsReminder = value.remaining > 0
         case .retryRest: needsReminder = true
         case .addRest: needsReminder = value.phase == .resting
-        case .pauseRest, .finishRest: needsReminder = false
+        case .startEffort, .resumeEffort: needsReminder = true
+        case .pauseRest, .finishRest, .pauseEffort: needsReminder = false
         }
         if needsReminder {
             let allowed = await service.canScheduleInBackground
@@ -116,6 +126,9 @@ import Observation
             }
         }
         switch action {
+        case .startEffort: await startEffort()
+        case .pauseEffort: await pauseEffort()
+        case .resumeEffort: await resumeEffort()
         case .completeSet: await completeSet()
         case .pauseRest: await pause()
         case .resumeRest: await resume()
@@ -126,7 +139,7 @@ import Observation
     }
     private static func allows(_ action: TrainingQuickAction, in phase: TrainingPhase) -> Bool {
         switch action {
-        case .completeSet: phase == .training
+        case .completeSet, .startEffort, .pauseEffort, .resumeEffort: phase == .training
         case .pauseRest: phase == .resting
         case .resumeRest: phase == .paused
         case .retryRest, .addRest, .finishRest: phase == .resting || phase == .paused
@@ -173,6 +186,7 @@ import Observation
     }
     private func cancelReminder() async throws {
         if let id = session?.timerID { try await service.cancel(id: id) }
+        if let id = session?.effortTimer?.id { try await service.cancel(id: id) }
     }
     private func schedule(seconds: TimeInterval) async throws {
         try await cancelReminder()
@@ -192,8 +206,21 @@ import Observation
         await perform {
             guard var value = session, value.phase == .training else { return }
             if let lastCompletion, (0..<0.5).contains(now().timeIntervalSince(lastCompletion)) { return }
-            lastCompletion = now()
             guard value.completed[value.index] < value.current.sets else { return }
+            if value.currentSetValues.durationSeconds != nil {
+                guard let timer = value.effortTimer,
+                      timer.status == .ready || (timer.status == .running && timer.registered && timer.secondsLeft(at: now()) <= 0) else {
+                    throw ArchiveFailure.invalid("请先完成本侧计时，再确认完成；到时提醒不会自动计组。")
+                }
+                try await cancelReminder()
+            }
+            lastCompletion = now()
+            value.effortTimer = nil
+            if value.sideProgress + 1 < value.currentSetValues.sideCount {
+                value.completedSides = value.sideProgress + 1
+                session = value; try persist(); return
+            }
+            value.completedSides = nil
             value.preparePerformanceStorage()
             if value.performedNames == nil {
                 value.performedNames = value.exercises.enumerated().map { i, exercise in Array(repeating: exercise.name, count: value.completed[i]) }
@@ -262,7 +289,9 @@ import Observation
     }
     func selectAlternative(_ id: UUID?) async {
         await perform {
-            guard var value = session, value.phase == .training else { return }
+            guard var value = session, value.phase == .training, value.sideProgress == 0, value.effortTimer == nil else {
+                throw ArchiveFailure.invalid("请先完成当前双侧组或跳过动作，再切换替代动作。")
+            }
             if value.originalExercises == nil { value.originalExercises = value.exercises }
             let original = value.originalExercises![value.index]
             var replacement = original
@@ -289,7 +318,7 @@ import Observation
     func setValues(_ values: SetValues, interactionID: UUID?, origin: String = "本次手动调整") async {
         await perform {
             guard var value = session, value.interactionID == interactionID,
-                  value.phase != .completed, value.completed[value.index] < value.current.sets else { throw PerformanceError.staleOrder }
+                  value.phase != .completed, value.sideProgress == 0, value.effortTimer == nil, value.completed[value.index] < value.current.sets else { throw PerformanceError.staleOrder }
             try values.validate()
             value.preparePerformanceStorage(); value.setDrafts?[value.index] = values
             if value.setValueOrigins?.count != value.exercises.count { value.setValueOrigins = Array(repeating: "已有训练设置", count: value.exercises.count) }
@@ -307,12 +336,12 @@ import Observation
         await setValues(values, interactionID: interactionID, origin: "沿用本动作上一组")
     }
     var reorderableExercises: [ExerciseSpec] {
-        guard let session, session.phase == .training else { return [] }
+        guard let session, session.phase == .training, session.sideProgress == 0, session.effortTimer == nil else { return [] }
         return session.exercises.enumerated().filter { $0.offset >= session.index && session.completed[$0.offset] == 0 }.map(\.element)
     }
     func reorderRemaining(_ ids: [UUID], interactionID: UUID?) async {
         await perform {
-            guard var value = session, value.phase == .training, value.interactionID == interactionID else { throw PerformanceError.staleOrder }
+            guard var value = session, value.phase == .training, value.sideProgress == 0, value.effortTimer == nil, value.interactionID == interactionID else { throw PerformanceError.staleOrder }
             let positions = value.exercises.indices.filter { $0 >= value.index && value.completed[$0] == 0 }
             guard ids.count == positions.count, Set(ids).count == ids.count,
                   Set(ids) == Set(positions.map { value.exercises[$0].id }) else { throw PerformanceError.staleOrder }
@@ -334,6 +363,7 @@ import Observation
             guard var value = session, value.phase != .completed else { return }
             try await cancelReminder()
             value.timerID = nil; value.restEnd = nil; value.remaining = 0; value.reminderRegistered = false
+            value.completedSides = nil; value.effortTimer = nil
             if previous {
                 value.index = max(0, value.index - 1)
                 value.completed[value.index] = 0
@@ -363,6 +393,12 @@ import Observation
             let authorization = await service.authorization
             guard !Task.isCancelled, !busy, observedRevision == revision else { return }
             permission = authorization
+            if let value = session, let timer = value.effortTimer, let id = timer.id {
+                let inspection = try await service.inspect(id: id)
+                guard !Task.isCancelled, !busy, observedRevision == revision, session?.effortTimer?.id == id else { return }
+                await reconcileEffort(inspection, value: value)
+                return
+            }
             guard let value = session, value.phase == .resting || value.phase == .paused, let id = value.timerID else { return }
             let inspection = try await service.inspect(id: id)
             guard !Task.isCancelled, !busy, observedRevision == revision, session?.timerID == id else { return }
@@ -392,6 +428,92 @@ import Observation
                 lastSyncError = error.localizedDescription; self.error = error.localizedDescription
                 await refreshLiveActivity()
             }
+        }
+    }
+}
+
+extension TrainingController {
+    private func scheduleEffort(seconds: TimeInterval) async throws {
+        try await cancelReminder()
+        guard var value = session, value.phase == .training else { return }
+        let duration = max(1, min(86400, Int(ceil(seconds))))
+        let id = UUID()
+        value.effortTimer = EffortTimer(status: .running, id: id, end: now().addingTimeInterval(Double(duration)), remaining: Double(duration))
+        session = value
+        try persist() // Journal registration ID before calling the system, including permission suspension.
+        try await service.start(id: id, seconds: duration, context: value.effortContext)
+        session?.effortTimer?.end = now().addingTimeInterval(Double(duration))
+        session?.effortTimer?.registered = true
+        try persist()
+    }
+    func startEffort() async {
+        await perform {
+            guard let value = session, value.phase == .training, let seconds = value.currentSetValues.durationSeconds,
+                  value.effortTimer == nil || (value.effortTimer?.status == .running && value.effortTimer?.registered == false) else { return }
+            try await scheduleEffort(seconds: Double(seconds))
+        }
+    }
+    func pauseEffort() async {
+        await perform {
+            guard let timer = session?.effortTimer, timer.status == .running else { return }
+            let remaining = timer.secondsLeft(at: now())
+            try await cancelReminder()
+            session?.effortTimer = remaining <= 0 && timer.registered
+                ? EffortTimer(status: .ready, remaining: 0)
+                : EffortTimer(status: .paused, remaining: remaining)
+            try persist()
+        }
+    }
+    func resumeEffort() async {
+        await perform {
+            guard let timer = session?.effortTimer, timer.status == .paused else { return }
+            guard timer.remaining > 0 else { throw ArchiveFailure.invalid("本侧计时没有剩余时间，请重置后开始。") }
+            try await scheduleEffort(seconds: timer.remaining)
+        }
+    }
+    func resetEffort() async {
+        await perform {
+            guard session?.phase == .training else { return }
+            try await cancelReminder()
+            session?.effortTimer = nil
+            try persist() // Keep an already confirmed first side; reset only the current side.
+        }
+    }
+    private func acknowledgeEffortAlarm(timerID: String) async {
+        await perform {
+            guard recoveryIssue == nil, let timer = session?.effortTimer,
+                  timer.id?.uuidString == timerID, (timer.status == .running || timer.status == .ready), timer.registered,
+                  timer.secondsLeft(at: now()) <= 0 else { return }
+            try await cancelReminder()
+            session?.effortTimer = EffortTimer(status: .ready, remaining: 0)
+            try persist() // Alarm dismissal never confirms a side or a full set.
+        }
+    }
+    private func reconcileEffort(_ inspection: TimerInspection, value: TrainingSession) async {
+        await perform(clearErrorOnSuccess: false) {
+            guard var timer = value.effortTimer else { return }
+            switch inspection {
+            case .running(let end):
+                if timer.status == .paused && end == nil { throw TrainingError.uncalibratedTimer }
+                timer.status = .running; timer.registered = true
+                if let end { timer.end = end }
+                if timer.secondsLeft(at: now()) <= 0 {
+                    // Keep ownership of the system alert until the user acknowledges it.
+                    // Foreground polling must not cancel the reminder before it can sound.
+                    timer.status = .ready; timer.end = nil; timer.remaining = 0
+                }
+            case .paused(let remaining):
+                timer.remaining = remaining ?? timer.secondsLeft(at: now())
+                timer.status = .paused; timer.end = nil; timer.registered = false
+            case .alerting:
+                timer.status = .ready; timer.registered = true; timer.end = nil; timer.remaining = 0
+            case .missing:
+                if (timer.status == .running || timer.status == .ready) && timer.registered && timer.secondsLeft(at: now()) <= 0 {
+                    timer = EffortTimer(status: .ready, remaining: 0)
+                } else { throw ArchiveFailure.invalid("动作计时提醒缺失，请重置本侧计时后重新开始；进度尚未计入整组。") }
+            }
+            session?.effortTimer = timer
+            if session != value { try persist() }
         }
     }
 }

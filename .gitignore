@@ -6,3 +6,7 @@ build/
 __pycache__/
 *.pyc
 .gymrest-health.yml
+
+.gymrest-media.yml
+
+.gymrest-watch.yml

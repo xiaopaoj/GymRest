@@ -6,6 +6,8 @@ import re
 import shutil
 import subprocess
 import zipfile
+import hashlib
+import os
 
 root = Path(__file__).resolve().parents[1]
 app = root / "DerivedData/Build/Products/Release-iphoneos/GymRest.app"
@@ -22,7 +24,8 @@ for bundle, expected in [(app, "dev.gymrest.personal"), (extension, "dev.gymrest
     assert (bundle / info["CFBundleExecutable"]).is_file()
     assert info["MinimumOSVersion"].startswith("26.")
 with (app / "Info.plist").open("rb") as f:
-    assert plistlib.load(f)["NSAlarmKitUsageDescription"]
+    app_info = plistlib.load(f)
+    assert app_info["NSAlarmKitUsageDescription"]
 with (extension / "Info.plist").open("rb") as f:
     assert plistlib.load(f)["NSExtension"]["NSExtensionPointIdentifier"] == "com.apple.widgetkit-extension"
 # Check the actual Release product, not only the source tree or simulator bundle.
@@ -30,14 +33,41 @@ catalog = json.loads((app / "ExerciseCatalog.json").read_text())
 guide_sources = json.loads((app / "WorkoutGuideSources.json").read_text())
 extra_sources = json.loads((app / "EverkineticSources.json").read_text())
 frames = {frame["file"] for item in guide_sources["exercises"] + extra_sources["exercises"] for frame in item["frames"]}
-assert len(frames) == 912, "Release bundle must include all 906 source and 6 supplementary original frames"
-for filename in frames:
-    assert (app / filename).is_file() or (app / "ExerciseFrames" / filename).is_file(), filename
+assert len(frames) == 912, "Release source manifest must reference all 906 source and 6 supplementary original frames"
+mode = os.environ.get("MEDIA_MODE", "external")
+assert mode in ["external", "bundled"]
+assert app_info["GymRestMediaMode"] == mode
+assert app_info["GymRestMediaSeedPolicy"] == os.environ.get("MEDIA_SEED_POLICY", "preserve")
+assert not list(app.rglob("wg-*.png")) and not list(app.rglob("ek-*.png")), "Loose source images must not enter the production IPA"
+pack = app / "MediaResources/Official.gymrestmedia"
+if mode == "external":
+    assert not pack.exists(), "External build must not embed the media pack"
+else:
+    assert pack.is_file()
+    with zipfile.ZipFile(pack) as archive:
+        manifest = json.loads(archive.read("manifest.json"))
+        for file in manifest["files"]:
+            assert hashlib.sha256(archive.read(file["path"])).hexdigest() == file["sha256"]
 shown = {filename for item in catalog["exercises"] for filename in item["media"].get("frameAssets", [])}
 assert shown.issubset(frames)
 for filename in ["ExerciseGuides.json", "WorkoutGuideMediaReview.json", "WorkoutGuideSources.json", "EverkineticSources.json", "Everkinetic-LICENSE.txt", "WorkoutGuide-LICENSE.txt", "WorkoutGuide-LICENSE-ASSETS.txt", "WorkoutGuide-LICENSES.txt", "WorkoutGuide-ATTRIBUTION.txt"]:
     assert (app / filename).is_file(), filename
-print(f"Validated {version} ({build}), {len(catalog['exercises'])} exercises, {len(frames)} source images / {len(shown)} displayed frames, guides and source/license notices")
+print(f"Validated {version} ({build}), {len(catalog['exercises'])} exercises, {len(frames)} source image references / {len(shown)} display references; media={mode}, guides and source/license notices")
+watch = app / "Watch/GymRestWatch.app"
+watch_enabled = os.environ.get("GYMREST_WATCH", "false") == "true"
+assert bool(app_info.get("GymRestWatchEnabled")) == watch_enabled
+if watch_enabled:
+    with (watch / "Info.plist").open("rb") as f: watch_info = plistlib.load(f)
+    assert watch_info["CFBundleIdentifier"] == "dev.gymrest.personal.watchkitapp"
+    assert watch_info["WKCompanionAppBundleIdentifier"] == app_info["CFBundleIdentifier"]
+    assert watch_info["WKApplication"] is True and watch_info["WKWatchOnly"] is False
+    assert watch_info["CFBundleShortVersionString"] == version and watch_info["CFBundleVersion"] == build
+    assert watch_info["MinimumOSVersion"].startswith("10.")
+    assert "workout-processing" in watch_info["WKBackgroundModes"]
+    assert watch_info["NSHealthShareUsageDescription"] and watch_info["NSHealthUpdateUsageDescription"]
+    assert (watch / watch_info["CFBundleExecutable"]).is_file()
+else:
+    assert not watch.exists(), "Phone-only build must not silently include Watch"
 staging = root / "build/ipa-staging"
 if staging.exists(): shutil.rmtree(staging)
 (staging / "Payload").mkdir(parents=True)
@@ -47,4 +77,5 @@ out.unlink(missing_ok=True)
 subprocess.run(["zip", "-qry", "-y", str(out), "Payload"], cwd=staging, check=True)
 with zipfile.ZipFile(out) as archive:
     assert "Payload/GymRest.app/Info.plist" in archive.namelist()
+    if watch_enabled: assert "Payload/GymRest.app/Watch/GymRestWatch.app/Info.plist" in archive.namelist()
 print(out)

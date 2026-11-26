@@ -5,7 +5,13 @@ import WidgetKit
 private struct TrainingActivityTime: View {
     let state: TrainingActivityAttributes.ContentState
     var body: some View {
-        if state.phase == "resting", !state.reminderRegistered {
+        if state.phase == "training", state.durationSeconds != nil {
+            if state.effortStatus == "running", state.effortRegistered == true, let end = state.effortEnd {
+                Text(timerInterval: min(Date.now, end)...end, countsDown: true).monospacedDigit().frame(width: 90)
+            } else if state.effortStatus == "ready" { Text("请确认完成").font(.caption) }
+            else if state.effortStatus == "paused" { Text("暂停 \(state.effortRemaining ?? 0)秒").font(.caption) }
+            else { Text(state.effortStatus == nil ? "待开始" : "提醒未注册").font(.caption) }
+        } else if state.phase == "resting", !state.reminderRegistered {
             Text("提醒未注册").font(.caption)
         } else if state.phase == "resting", let end = state.restEnd {
             Text(timerInterval: min(Date.now, end)...end, countsDown: true)
@@ -33,7 +39,18 @@ private struct TrainingActivityControls: View {
         if state.blocked {
             Link("打开 GymRest 恢复进度", destination: URL(string: "gymrest://training")!)
         } else if state.phase == "training" {
-            action(.completeSet, title: "完成本组", icon: "checkmark")
+            if state.durationSeconds != nil {
+                if state.effortStatus == nil || (state.effortStatus == "running" && state.effortRegistered != true) {
+                    action(.startEffort, title: "开始计时 · " + (state.partTitle ?? "本组"), icon: "timer")
+                } else if state.effortStatus == "paused" {
+                    action(.resumeEffort, title: "继续动作计时", icon: "play.fill")
+                } else {
+                    HStack(spacing: 6) {
+                        if state.effortStatus == "running" { action(.pauseEffort, title: "暂停计时", icon: "pause.fill") }
+                        action(.completeSet, title: state.completionTitle ?? "到时确认完成", icon: "checkmark")
+                    }
+                }
+            } else { action(.completeSet, title: state.completionTitle ?? "完成本组", icon: "checkmark") }
         } else if state.phase == "resting" || state.phase == "paused" {
             HStack(spacing: 6) {
                 if state.phase == "resting" && !state.reminderRegistered {
@@ -65,7 +82,7 @@ private struct TrainingActivityDetails: View {
             if let issue = state.issue {
                 Text(issue).font(.caption).foregroundStyle(.orange).lineLimit(2)
             } else {
-                Text(state.phase == "training" ? "做完一组后点击下方按钮" : (state.restTitle ?? "休息") + " · " + state.nextStep)
+                Text(state.phase == "training" ? (state.durationSeconds == nil ? "做完当前侧后确认 · " + (state.partTitle ?? "本组") : "到时提醒后确认完成 · " + (state.partTitle ?? "本组")) : (state.restTitle ?? "休息") + " · " + state.nextStep)
                     .font(.caption).foregroundStyle(.secondary).lineLimit(1)
             }
             if state.phase == "training", let details = state.setDetails {

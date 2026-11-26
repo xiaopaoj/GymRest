@@ -214,7 +214,8 @@ def build(item):
  if slug=='toe-touch':notes.append('本条为仰卧触脚尖：双腿向上伸，肩胛小幅抬起，双手向脚部靠近；不是站姿前屈。')
  if slug=='banded-squat':notes.append('图为长带脚踩版；若使用膝上短圈带，应按对应变式重新设置。')
  if slug in ['banded-lateral-walk','banded-monster-walk']:notes.append('保持半蹲和阻力带张力，用小步侧行或斜向前进，不拖动落脚。')
- if key in ['cardio','jump'] or item['repetitions'] is None:notes.append('当前App只手动记录完成组数，不自动计动作时长、距离或次数。')
+ if item.get('durationSeconds'):notes.append('可按目标时长计时并到时提醒；需手动确认完成，不自动计组，也不测量实际动作质量、距离或次数。')
+ if item.get('sideCount')==2:notes.append('按每侧目标分别完成，两侧确认后才计为一组，左右先后可自行决定。')
  # Every entry gets a concrete setup tied to the current named variant and required equipment.
  equipment_text = dict(re.findall(r'\"([^\"]+)\":\"([^\"]+)\"', (ROOT/'GymRest/Services/Catalog/ExerciseCatalog.swift').read_text()))
  setup='本动作：'+item['name']+'。使用'+ '、'.join(equipment_text.get(x,x) for x in item['equipment'])+'；具体变式以本条步骤与备注为准。'
@@ -224,8 +225,11 @@ def build(item):
 def main():
  catalog=json.loads((ROOT/'GymRest/Resources/ExerciseCatalog.json').read_text());items=[]
  overrides=json.loads((ROOT/'scripts/catalog_quality_overrides.json').read_text())
+ execution=json.loads((ROOT/'scripts/exercise_execution_defaults.json').read_text())
  for item in catalog['exercises']:
   item.update(overrides.get(item['id'],{}))
+  for field in ['durationSeconds','sideCount']:item.pop(field,None)
+  item.update(execution.get(item['id'],{}))
   guide=build(item);items.append(guide);item['cues']=guide['steps'][:2]
  (ROOT/'GymRest/Resources/ExerciseCatalog.json').write_text(json.dumps(catalog,ensure_ascii=False,indent=2)+'\n')
  output={'version':1,'items':items}

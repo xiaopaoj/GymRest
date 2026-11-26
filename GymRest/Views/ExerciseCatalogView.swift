@@ -86,7 +86,7 @@ struct CatalogExerciseDetail: View {
                 LabeledContent("辅助肌群", value: item.secondary.map(\.title).joined(separator: "、"))
             }
             Section("建议起点 · 可自行调整") {
-                LabeledContent("组数 / 次数", value: item.repetitions.map { "\(item.sets) 组 × \($0) 次" } ?? "\(item.sets) 组 · 次数不预设")
+                LabeledContent("每组建议", value: item.prescription.summary)
                 LabeledContent("组间 / 动作间", value: "\(item.restSeconds) / \(item.transitionRestSeconds) 秒")
                 Text("建议不含起始重量；根据动作完成质量选择负荷。单侧动作需完成两侧，次数按每侧记录。")
                     .font(.footnote).foregroundStyle(.secondary)

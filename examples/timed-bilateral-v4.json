@@ -1,0 +1,41 @@
+{
+  "version": 4,
+  "plans": [
+    {
+      "id": "96B701FA-A733-454D-A463-14D43AD72E8B",
+      "name": "计时核心训练",
+      "exercises": [
+        {
+          "id": "79656B2A-FDEC-4AA6-9C8C-B3F26CFA448C",
+          "name": "平板支撑",
+          "catalogID": "guide-plank",
+          "sets": 3,
+          "restSeconds": 60,
+          "restAfterLastSet": false,
+          "transitionRestSeconds": 60,
+          "prescription": {
+            "kind": "bodyweight",
+            "unit": "kg",
+            "durationSeconds": 40,
+            "sideCount": 1
+          }
+        },
+        {
+          "id": "8CF49AC5-2D15-4887-AE8D-D0F20BB324B9",
+          "name": "侧平板支撑",
+          "catalogID": "guide-side-plank",
+          "sets": 3,
+          "restSeconds": 60,
+          "restAfterLastSet": false,
+          "transitionRestSeconds": 0,
+          "prescription": {
+            "kind": "bodyweight",
+            "unit": "kg",
+            "durationSeconds": 40,
+            "sideCount": 2
+          }
+        }
+      ]
+    }
+  ]
+}

@@ -66,7 +66,10 @@ struct ExerciseSpec: Codable, Identifiable, Equatable, Sendable {
     func rest(afterSet set: Int) -> Int { restOverrides[set] ?? restSeconds }
     func profileKey(for values: SetValues) -> String {
         // Encoding an array avoids delimiter collisions in user-entered equipment names.
-        let parts = [catalogID ?? ("custom:" + ExerciseNames.canonical(name, catalogID: nil)), values.kind.rawValue, values.unit.rawValue, values.equipmentNote]
+        var parts = [catalogID ?? ("custom:" + ExerciseNames.canonical(name, catalogID: nil)), values.kind.rawValue, values.unit.rawValue, values.equipmentNote]
+        if values.sideCount != 1 || values.durationSeconds != nil {
+            parts += [values.durationSeconds == nil ? "repetitions" : "timed", String(values.sideCount)]
+        }
         return (try? JSONEncoder().encode(parts).base64EncodedString()) ?? ""
     }
 
@@ -108,6 +111,7 @@ struct ExerciseSpec: Codable, Identifiable, Equatable, Sendable {
     var defaultRest: Int
     var notificationFallback: Bool
     var keepScreenOn: Bool
+    var watchStartReminder: Bool?
     // nil on pre-cleanup stores; new libraries never seed empty placeholders.
     var legacyPlaceholdersRemoved: Bool?
     init() {

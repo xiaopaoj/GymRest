@@ -33,7 +33,7 @@ enum ExerciseNames {
     // the profile key. Normalize for comparison without modifying saved history.
     static func canonicalProfileKey(_ key: String) -> String {
         guard let data = Data(base64Encoded: key),
-              var parts = try? JSONDecoder().decode([String].self, from: data), parts.count == 4,
+              var parts = try? JSONDecoder().decode([String].self, from: data), [4, 6].contains(parts.count),
               parts[0].hasPrefix("custom:") else { return key }
         let old = String(parts[0].dropFirst("custom:".count))
         let name = canonical(old, catalogID: nil)

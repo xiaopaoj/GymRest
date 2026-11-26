@@ -62,6 +62,8 @@ struct CatalogExercise: Codable, Identifiable, Sendable {
     let compound: Bool
     let sets: Int
     let repetitions: Int?
+    let durationSeconds: Int?
+    let sideCount: Int?
     let restSeconds: Int
     let transitionRestSeconds: Int
     let cues: [String]
@@ -69,7 +71,7 @@ struct CatalogExercise: Codable, Identifiable, Sendable {
     let sourceAuthor: String
     let licenseURL: String
     let media: CatalogMedia
-    var prescription: SetValues { SetValues(repetitions: repetitions, kind: loadKind) }
+    var prescription: SetValues { SetValues(repetitions: durationSeconds == nil ? repetitions : nil, kind: loadKind, durationSeconds: durationSeconds, sideCount: sideCount ?? 1) }
     func spec(alternatives: [CatalogExercise] = []) -> ExerciseSpec {
         ExerciseSpec(name: name, sets: sets, restSeconds: restSeconds,
             alternatives: alternatives.map { ExerciseAlternative(name: $0.name, restSeconds: $0.restSeconds, catalogID: $0.id, prescription: $0.prescription) },

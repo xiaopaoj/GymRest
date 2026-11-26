@@ -8,7 +8,7 @@ struct TrainingComparisonView: View {
         let profiles = TrainingComparison.profiles(records).filter { search.isEmpty || $0.name.localizedCaseInsensitiveContains(search) }
         List {
             Section {
-                Text("按实际动作、单位、总重/单只/辅助重量口径及器械备注分别查看，不做跨器械换算或自动加重建议。仅展示有重量或次数的实际完成组，旧版未记录数据不推测。")
+                Text("按实际动作、单位、总重/单只/辅助重量口径及器械备注分别查看，不做跨器械换算或自动加重建议。计时/次数及单侧/双侧也分开查看；仅展示有重量、次数或目标计时的已确认完成组，旧版未记录数据不推测。")
                     .font(.footnote).foregroundStyle(.secondary)
             }
             ForEach(profiles) { profile in
@@ -33,7 +33,7 @@ struct TrainingComparisonView: View {
                     }
                 }
             }
-            if profiles.isEmpty { ContentUnavailableView("暂无可对比的数据", systemImage: "chart.xyaxis.line", description: Text("训练时记录重量或次数，完成后可在这里逐次查看。")) }
+            if profiles.isEmpty { ContentUnavailableView("暂无可对比的数据", systemImage: "chart.xyaxis.line", description: Text("训练时记录重量、次数或目标计时，完成后可在这里逐次查看。")) }
         }
         .navigationTitle("动作训练对比")
         .searchable(text: $search, prompt: "搜索实际动作")

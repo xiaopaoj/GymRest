@@ -6,6 +6,20 @@ on:
         description: Enable optional read-only HealthKit capability (requires supported signing)
         type: boolean
         default: true
+      watch_app:
+        description: Embed GymRest Watch companion (requires HealthKit)
+        type: boolean
+        default: true
+      media_mode:
+        description: Include media in IPA or install a separate pack
+        type: choice
+        options: [external, bundled]
+        default: external
+      media_seed_policy:
+        description: Preserve local media or update a newer bundled official pack
+        type: choice
+        options: [preserve, updateOfficial]
+        default: preserve
   push:
     branches: [main]
   pull_request:
@@ -19,6 +33,9 @@ jobs:
     runs-on: macos-15-intel
     timeout-minutes: 60
     env:
+      GYMREST_WATCH: ${{ (github.event_name != 'workflow_dispatch' || inputs.watch_app) && (github.event_name != 'workflow_dispatch' || inputs.healthkit) && 'true' || 'false' }}
+      MEDIA_MODE: ${{ inputs.media_mode || 'external' }}
+      MEDIA_SEED_POLICY: ${{ inputs.media_seed_policy || 'preserve' }}
       GYMREST_HEALTHKIT: ${{ (github.event_name != 'workflow_dispatch' || inputs.healthkit) && 'true' || 'false' }}
     steps:
       - uses: actions/checkout@v4
@@ -32,6 +49,14 @@ jobs:
           name: ${{ (github.event_name != 'workflow_dispatch' || inputs.healthkit) && 'GymRest-healthkit-unsigned' || 'GymRest-unsigned' }}
           path: build/GymRest-unsigned.ipa
           if-no-files-found: error
+      - name: Upload independent media pack and source originals
+        uses: actions/upload-artifact@v4
+        with:
+          name: GymRest-media-pack
+          path: |
+            build/GymRest-Official.gymrestmedia
+            build/GymRest-Media-Sources.zip
+          if-no-files-found: error
       - name: Upload logs and test results
         if: always()
         uses: actions/upload-artifact@v4
@@ -43,6 +68,7 @@ jobs:
             build/runtimes.json
             build/devices.json
             build/HealthKit.entitlements
+            build/GymRestWatch.entitlements
             build/destinations.log
             build/xcode-candidates.txt
             GymRest.xcodeproj/project.pbxproj

@@ -123,6 +123,26 @@ class CatalogDataTests(unittest.TestCase):
             self.assertTrue(entry['note'])
         self.assertTrue(all(not x['media'].get('allowsPlayback', False) for x in DATA['exercises']))
 
+    def test_quality_exclusions_are_reproduced_in_catalog_and_bundle(self):
+        review = json.loads((ROOT / 'scripts/workout_guide_media_review.json').read_text())
+        bundled = json.loads((ROOT / 'GymRest/Resources/WorkoutGuide/WorkoutGuideMediaReview.json').read_text())
+        self.assertEqual(review, bundled)
+        entries = {x['slug']: x for x in review['items']}
+        self.assertEqual(entries['close-grip-bench-press']['displayFrames'], [1, 3])
+        self.assertEqual(entries['active-hang']['displayFrames'], [1])
+        selected = set()
+        for entry in review['items']:
+            expected = [f"wg-{entry['slug']}-{n}.png" for n in entry['displayFrames']]
+            matches = [x for x in DATA['exercises'] if (x['media'].get('sourceURL') or '').rstrip('/').endswith('/' + entry['slug'])]
+            self.assertTrue(matches, entry['slug'])
+            for item in matches:
+                self.assertEqual(item['media']['frameAssets'], expected, item['id'])
+                selected.update(expected)
+            if quality := entry.get('qualityReview'):
+                self.assertTrue(quality['reason'])
+                self.assertEqual(set(quality['excludedFrames']), {1, 2, 3} - set(entry['displayFrames']))
+        self.assertEqual(len(selected), 769)
+
     def test_supplementary_originals_are_unchanged_and_credited(self):
         root = ROOT / 'GymRest/Resources'
         source = json.loads((root / 'WorkoutGuide/EverkineticSources.json').read_text())

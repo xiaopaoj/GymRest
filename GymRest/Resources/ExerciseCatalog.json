@@ -441,10 +441,9 @@
         "equipmentAsset": null,
         "frameAssets": [
           "wg-pec-deck-1.png",
-          "wg-pec-deck-2.png",
           "wg-pec-deck-3.png"
         ],
-        "reviewNote": "已核对三帧的器材与主要姿势；构图/比例存在变化，仅作独立静态示意。",
+        "reviewNote": "第2帧与保留帧的主要姿势近似，存在缩放、线条粗化或重影，未增加必要的动作信息；保留第1、3帧静态对照。",
         "allowsPlayback": false,
         "lightBackground": false,
         "author": "Bryl Lim；Everkinetic（部分原始姿势）",
@@ -592,10 +591,9 @@
         "equipmentAsset": null,
         "frameAssets": [
           "wg-machine-shoulder-press-1.png",
-          "wg-machine-shoulder-press-2.png",
           "wg-machine-shoulder-press-3.png"
         ],
-        "reviewNote": "已核对三帧的器材与主要姿势；构图/比例存在变化，仅作独立静态示意。",
+        "reviewNote": "第2帧与保留帧的主要姿势近似，存在缩放、线条粗化或重影，未增加必要的动作信息；保留第1、3帧静态对照。",
         "allowsPlayback": false,
         "lightBackground": false,
         "author": "Bryl Lim；Everkinetic（部分原始姿势）",
@@ -748,7 +746,8 @@
       "aliases": [
         "单臂绳索侧平举",
         "绳索侧平举"
-      ]
+      ],
+      "sideCount": 2
     },
     {
       "id": "machine-lateral",
@@ -783,10 +782,9 @@
         "equipmentAsset": null,
         "frameAssets": [
           "wg-machine-lateral-raise-1.png",
-          "wg-machine-lateral-raise-2.png",
           "wg-machine-lateral-raise-3.png"
         ],
-        "reviewNote": "已核对三帧的器材与主要姿势；构图/比例存在变化，仅作独立静态示意。",
+        "reviewNote": "第2帧与保留帧的主要姿势近似，存在缩放、线条粗化或重影，未增加必要的动作信息；保留第1、3帧静态对照。",
         "allowsPlayback": false,
         "lightBackground": false,
         "author": "Bryl Lim；Everkinetic（部分原始姿势）",
@@ -881,10 +879,9 @@
         "equipmentAsset": null,
         "frameAssets": [
           "wg-cable-rear-delt-fly-1.png",
-          "wg-cable-rear-delt-fly-2.png",
-          "wg-cable-rear-delt-fly-3.png"
+          "wg-cable-rear-delt-fly-2.png"
         ],
-        "reviewNote": "已核对三帧的器材与主要姿势；构图/比例存在变化，仅作独立静态示意。",
+        "reviewNote": "第3帧与保留帧的主要姿势近似，存在比例变化、线条粗化或重影；保留第1、2帧静态对照。",
         "allowsPlayback": false,
         "lightBackground": false,
         "author": "Bryl Lim；Everkinetic（部分原始姿势）",
@@ -930,10 +927,9 @@
         "equipmentAsset": null,
         "frameAssets": [
           "wg-reverse-pec-deck-1.png",
-          "wg-reverse-pec-deck-2.png",
           "wg-reverse-pec-deck-3.png"
         ],
-        "reviewNote": "已核对三帧的器材与主要姿势；构图/比例存在变化，仅作独立静态示意。",
+        "reviewNote": "第2帧与保留帧的主要姿势近似，存在缩放、线条粗化或重影，未增加必要的动作信息；保留第1、3帧静态对照。",
         "allowsPlayback": false,
         "lightBackground": false,
         "author": "Bryl Lim；Everkinetic（部分原始姿势）",
@@ -1034,10 +1030,9 @@
         "equipmentAsset": null,
         "frameAssets": [
           "wg-one-arm-dumbbell-row-1.png",
-          "wg-one-arm-dumbbell-row-2.png",
           "wg-one-arm-dumbbell-row-3.png"
         ],
-        "reviewNote": "已核对三帧的器材与主要姿势；构图/比例存在变化，仅作独立静态示意。",
+        "reviewNote": "第2帧与保留帧的主要姿势近似，存在缩放、线条粗化或重影，未增加必要的动作信息；保留第1、3帧静态对照。",
         "allowsPlayback": false,
         "lightBackground": false,
         "author": "Bryl Lim；Everkinetic（部分原始姿势）",
@@ -1048,7 +1043,8 @@
         "One-Arm Dumbbell Row",
         "one-arm-dumbbell-row",
         "单臂哑铃划船"
-      ]
+      ],
+      "sideCount": 2
     },
     {
       "id": "cable-row",
@@ -1187,10 +1183,9 @@
         "equipmentAsset": null,
         "frameAssets": [
           "wg-wide-grip-lat-pulldown-1.png",
-          "wg-wide-grip-lat-pulldown-2.png",
           "wg-wide-grip-lat-pulldown-3.png"
         ],
-        "reviewNote": "已核对三帧的器材与主要姿势；构图/比例存在变化，仅作独立静态示意。",
+        "reviewNote": "第2帧与保留帧的主要姿势近似，存在缩放、线条粗化或重影，未增加必要的动作信息；保留第1、3帧静态对照。",
         "allowsPlayback": false,
         "lightBackground": false,
         "author": "Bryl Lim；Everkinetic（部分原始姿势）",
@@ -1290,10 +1285,9 @@
         "equipmentAsset": null,
         "frameAssets": [
           "wg-pull-up-1.png",
-          "wg-pull-up-2.png",
           "wg-pull-up-3.png"
         ],
-        "reviewNote": "已核对三帧的器材与主要姿势；构图/比例存在变化，仅作独立静态示意。",
+        "reviewNote": "第2帧与保留帧的主要姿势近似，存在缩放、线条粗化或重影，未增加必要的动作信息；保留第1、3帧静态对照。",
         "allowsPlayback": false,
         "lightBackground": false,
         "author": "Bryl Lim；Everkinetic（部分原始姿势）",
@@ -2360,10 +2354,9 @@
         "equipmentAsset": null,
         "frameAssets": [
           "wg-calf-raise-1.png",
-          "wg-calf-raise-2.png",
           "wg-calf-raise-3.png"
         ],
-        "reviewNote": "已核对三帧的器材与主要姿势；构图/比例存在变化，仅作独立静态示意。",
+        "reviewNote": "第2帧与保留帧的主要姿势近似，存在缩放、线条粗化或重影，未增加必要的动作信息；保留第1、3帧静态对照。",
         "allowsPlayback": false,
         "lightBackground": false,
         "author": "Bryl Lim；Everkinetic（部分原始姿势）",
@@ -2416,7 +2409,8 @@
         "allowsPlayback": false,
         "lightBackground": true,
         "reviewNote": "图为坐姿单腿哑铃提踵，两侧分别完成；不表示器械或双腿同时版本。"
-      }
+      },
+      "sideCount": 2
     },
     {
       "id": "crunch",
@@ -3228,10 +3222,9 @@
         "equipmentAsset": null,
         "frameAssets": [
           "wg-weighted-pull-up-1.png",
-          "wg-weighted-pull-up-2.png",
           "wg-weighted-pull-up-3.png"
         ],
-        "reviewNote": "已核对三帧的器材与主要姿势；构图/比例存在变化，仅作独立静态示意。",
+        "reviewNote": "第2帧与保留帧的主要姿势近似，存在缩放、线条粗化或重影，未增加必要的动作信息；保留第1、3帧静态对照。",
         "allowsPlayback": false,
         "lightBackground": false,
         "author": "Bryl Lim；Everkinetic（部分原始姿势）",
@@ -3480,7 +3473,8 @@
         "author": "Bryl Lim；Everkinetic（部分原始姿势）",
         "licenseURL": "https://creativecommons.org/licenses/by-sa/4.0/",
         "sourceURL": "https://github.com/bryllim/workout-guide/tree/aac599224bb9780305239607ef98540b7e0ce389/packages/workout-guide/assets/bulgarian-split-squat"
-      }
+      },
+      "sideCount": 2
     },
     {
       "id": "guide-walking-lunge",
@@ -3666,10 +3660,9 @@
         "equipmentAsset": null,
         "frameAssets": [
           "wg-glute-bridge-1.png",
-          "wg-glute-bridge-2.png",
           "wg-glute-bridge-3.png"
         ],
-        "reviewNote": "已核对三帧的器材与主要姿势；构图/比例存在变化，仅作独立静态示意。",
+        "reviewNote": "第2帧与保留帧的主要姿势近似，存在缩放、线条粗化或重影，未增加必要的动作信息；保留第1、3帧静态对照。",
         "allowsPlayback": false,
         "lightBackground": false,
         "author": "Bryl Lim；Everkinetic（部分原始姿势）",
@@ -3994,10 +3987,9 @@
         "equipmentAsset": null,
         "frameAssets": [
           "wg-overhead-tricep-extension-1.png",
-          "wg-overhead-tricep-extension-2.png",
           "wg-overhead-tricep-extension-3.png"
         ],
-        "reviewNote": "已核对三帧的器材与主要姿势；构图/比例存在变化，仅作独立静态示意。",
+        "reviewNote": "第2帧与保留帧的主要姿势近似，存在缩放、线条粗化或重影，未增加必要的动作信息；保留第1、3帧静态对照。",
         "allowsPlayback": false,
         "lightBackground": false,
         "author": "Bryl Lim；Everkinetic（部分原始姿势）",
@@ -4043,10 +4035,9 @@
         "equipmentAsset": null,
         "frameAssets": [
           "wg-close-grip-bench-press-1.png",
-          "wg-close-grip-bench-press-2.png",
           "wg-close-grip-bench-press-3.png"
         ],
-        "reviewNote": "已核对三帧的器材与主要姿势；构图/比例存在变化，仅作独立静态示意。",
+        "reviewNote": "第2帧与第1帧同为伸臂位置，线条明显粗糊；保留伸臂与下放两个姿势。",
         "allowsPlayback": false,
         "lightBackground": false,
         "author": "Bryl Lim；Everkinetic（部分原始姿势）",
@@ -4192,7 +4183,8 @@
         "author": "Bryl Lim；Everkinetic（部分原始姿势）",
         "licenseURL": "https://creativecommons.org/licenses/by-sa/4.0/",
         "sourceURL": "https://github.com/bryllim/workout-guide/tree/aac599224bb9780305239607ef98540b7e0ce389/packages/workout-guide/assets/plank"
-      }
+      },
+      "durationSeconds": 40
     },
     {
       "id": "guide-side-plank",
@@ -4240,7 +4232,9 @@
         "author": "Bryl Lim；Everkinetic（部分原始姿势）",
         "licenseURL": "https://creativecommons.org/licenses/by-sa/4.0/",
         "sourceURL": "https://github.com/bryllim/workout-guide/tree/aac599224bb9780305239607ef98540b7e0ce389/packages/workout-guide/assets/side-plank"
-      }
+      },
+      "durationSeconds": 40,
+      "sideCount": 2
     },
     {
       "id": "guide-hanging-leg-raise",
@@ -4374,16 +4368,16 @@
         "equipmentAsset": null,
         "frameAssets": [
           "wg-running-1.png",
-          "wg-running-2.png",
-          "wg-running-3.png"
+          "wg-running-2.png"
         ],
-        "reviewNote": "已核对三帧的器材与主要姿势；构图/比例存在变化，仅作独立静态示意。",
+        "reviewNote": "第3帧与保留帧的主要姿势近似，存在比例变化、线条粗化或重影；保留第1、2帧静态对照。",
         "allowsPlayback": false,
         "lightBackground": false,
         "author": "Bryl Lim；Everkinetic（部分原始姿势）",
         "licenseURL": "https://creativecommons.org/licenses/by-sa/4.0/",
         "sourceURL": "https://github.com/bryllim/workout-guide/tree/aac599224bb9780305239607ef98540b7e0ce389/packages/workout-guide/assets/running"
-      }
+      },
+      "durationSeconds": 40
     },
     {
       "id": "guide-walking",
@@ -4422,16 +4416,16 @@
         "equipmentAsset": null,
         "frameAssets": [
           "wg-walking-1.png",
-          "wg-walking-2.png",
           "wg-walking-3.png"
         ],
-        "reviewNote": "已核对三帧的器材与主要姿势；构图/比例存在变化，仅作独立静态示意。",
+        "reviewNote": "第2帧与保留帧的主要姿势近似，存在缩放、线条粗化或重影，未增加必要的动作信息；保留第1、3帧静态对照。",
         "allowsPlayback": false,
         "lightBackground": false,
         "author": "Bryl Lim；Everkinetic（部分原始姿势）",
         "licenseURL": "https://creativecommons.org/licenses/by-sa/4.0/",
         "sourceURL": "https://github.com/bryllim/workout-guide/tree/aac599224bb9780305239607ef98540b7e0ce389/packages/workout-guide/assets/walking"
-      }
+      },
+      "durationSeconds": 40
     },
     {
       "id": "guide-cycling",
@@ -4469,17 +4463,16 @@
         "animationAsset": null,
         "equipmentAsset": null,
         "frameAssets": [
-          "wg-cycling-1.png",
-          "wg-cycling-2.png",
-          "wg-cycling-3.png"
+          "wg-cycling-1.png"
         ],
-        "reviewNote": "已核对三帧的器材与主要姿势；构图/比例存在变化，仅作独立静态示意。",
+        "reviewNote": "三帧骑行位置基本重复，第2、3帧线条粗化或重影；保留清晰代表图，不代表完整踩踏周期。",
         "allowsPlayback": false,
         "lightBackground": false,
         "author": "Bryl Lim；Everkinetic（部分原始姿势）",
         "licenseURL": "https://creativecommons.org/licenses/by-sa/4.0/",
         "sourceURL": "https://github.com/bryllim/workout-guide/tree/aac599224bb9780305239607ef98540b7e0ce389/packages/workout-guide/assets/cycling"
-      }
+      },
+      "durationSeconds": 40
     },
     {
       "id": "guide-rowing",
@@ -4528,7 +4521,8 @@
         "author": "Bryl Lim；Everkinetic（部分原始姿势）",
         "licenseURL": "https://creativecommons.org/licenses/by-sa/4.0/",
         "sourceURL": "https://github.com/bryllim/workout-guide/tree/aac599224bb9780305239607ef98540b7e0ce389/packages/workout-guide/assets/rowing"
-      }
+      },
+      "durationSeconds": 40
     },
     {
       "id": "guide-stair-climber",
@@ -4566,17 +4560,16 @@
         "animationAsset": null,
         "equipmentAsset": null,
         "frameAssets": [
-          "wg-stair-climber-1.png",
-          "wg-stair-climber-2.png",
-          "wg-stair-climber-3.png"
+          "wg-stair-climber-1.png"
         ],
-        "reviewNote": "已核对三帧的器材与主要姿势；构图/比例存在变化，仅作独立静态示意。",
+        "reviewNote": "三帧踏步姿势基本重复；第2帧线条粗化、第3帧近似第1帧，仅保留清晰代表图，不代表完整步态。",
         "allowsPlayback": false,
         "lightBackground": false,
         "author": "Bryl Lim；Everkinetic（部分原始姿势）",
         "licenseURL": "https://creativecommons.org/licenses/by-sa/4.0/",
         "sourceURL": "https://github.com/bryllim/workout-guide/tree/aac599224bb9780305239607ef98540b7e0ce389/packages/workout-guide/assets/stair-climber"
-      }
+      },
+      "durationSeconds": 40
     },
     {
       "id": "guide-incline-cable-fly",
@@ -4713,10 +4706,9 @@
         "equipmentAsset": null,
         "frameAssets": [
           "wg-smith-machine-bench-press-1.png",
-          "wg-smith-machine-bench-press-2.png",
           "wg-smith-machine-bench-press-3.png"
         ],
-        "reviewNote": "已核对三帧的器材与主要姿势；构图/比例存在变化，仅作独立静态示意。",
+        "reviewNote": "第2帧与保留帧的主要姿势近似，存在缩放、线条粗化或重影，未增加必要的动作信息；保留第1、3帧静态对照。",
         "allowsPlayback": false,
         "lightBackground": false,
         "author": "Bryl Lim；Everkinetic（部分原始姿势）",
@@ -4909,10 +4901,9 @@
         "equipmentAsset": null,
         "frameAssets": [
           "wg-standing-dumbbell-press-1.png",
-          "wg-standing-dumbbell-press-2.png",
           "wg-standing-dumbbell-press-3.png"
         ],
-        "reviewNote": "已核对三帧的器材与主要姿势；构图/比例存在变化，仅作独立静态示意。",
+        "reviewNote": "第2帧与保留帧的主要姿势近似，存在缩放、线条粗化或重影，未增加必要的动作信息；保留第1、3帧静态对照。",
         "allowsPlayback": false,
         "lightBackground": false,
         "author": "Bryl Lim；Everkinetic（部分原始姿势）",
@@ -5246,16 +5237,16 @@
         "equipmentAsset": null,
         "frameAssets": [
           "wg-single-arm-cable-row-1.png",
-          "wg-single-arm-cable-row-2.png",
-          "wg-single-arm-cable-row-3.png"
+          "wg-single-arm-cable-row-2.png"
         ],
-        "reviewNote": "已核对三帧的器材与主要姿势；构图/比例存在变化，仅作独立静态示意。",
+        "reviewNote": "第3帧与保留帧的主要姿势近似，存在比例变化、线条粗化或重影；保留第1、2帧静态对照。",
         "allowsPlayback": false,
         "lightBackground": false,
         "author": "Bryl Lim；Everkinetic（部分原始姿势）",
         "licenseURL": "https://creativecommons.org/licenses/by-sa/4.0/",
         "sourceURL": "https://github.com/bryllim/workout-guide/tree/aac599224bb9780305239607ef98540b7e0ce389/packages/workout-guide/assets/single-arm-cable-row"
-      }
+      },
+      "sideCount": 2
     },
     {
       "id": "guide-neutral-grip-pull-up",
@@ -5485,10 +5476,9 @@
         "equipmentAsset": null,
         "frameAssets": [
           "wg-back-extension-1.png",
-          "wg-back-extension-2.png",
           "wg-back-extension-3.png"
         ],
-        "reviewNote": "已核对三帧的器材与主要姿势；构图/比例存在变化，仅作独立静态示意。",
+        "reviewNote": "第2帧与保留帧的主要姿势近似，存在缩放、线条粗化或重影，未增加必要的动作信息；保留第1、3帧静态对照。",
         "allowsPlayback": false,
         "lightBackground": false,
         "author": "Bryl Lim；Everkinetic（部分原始姿势）",
@@ -5831,7 +5821,8 @@
         "author": "Bryl Lim；Everkinetic（部分原始姿势）",
         "licenseURL": "https://creativecommons.org/licenses/by-sa/4.0/",
         "sourceURL": "https://github.com/bryllim/workout-guide/tree/aac599224bb9780305239607ef98540b7e0ce389/packages/workout-guide/assets/single-leg-romanian-deadlift"
-      }
+      },
+      "sideCount": 2
     },
     {
       "id": "guide-reverse-lunge",
@@ -5977,7 +5968,8 @@
         "author": "Bryl Lim；Everkinetic（部分原始姿势）",
         "licenseURL": "https://creativecommons.org/licenses/by-sa/4.0/",
         "sourceURL": "https://github.com/bryllim/workout-guide/tree/aac599224bb9780305239607ef98540b7e0ce389/packages/workout-guide/assets/cable-kickback"
-      }
+      },
+      "sideCount": 2
     },
     {
       "id": "guide-hip-abduction-machine",
@@ -6073,7 +6065,8 @@
         "author": "Bryl Lim；Everkinetic（部分原始姿势）",
         "licenseURL": "https://creativecommons.org/licenses/by-sa/4.0/",
         "sourceURL": "https://github.com/bryllim/workout-guide/tree/aac599224bb9780305239607ef98540b7e0ce389/packages/workout-guide/assets/single-leg-glute-bridge"
-      }
+      },
+      "sideCount": 2
     },
     {
       "id": "guide-barbell-glute-bridge",
@@ -6406,16 +6399,16 @@
         "equipmentAsset": null,
         "frameAssets": [
           "wg-machine-glute-kickback-1.png",
-          "wg-machine-glute-kickback-2.png",
           "wg-machine-glute-kickback-3.png"
         ],
-        "reviewNote": "已核对三帧的器材与主要姿势；构图/比例存在变化，仅作独立静态示意。",
+        "reviewNote": "第2帧与第1帧后踢位置重复且线条较虚，保留后踢和回收姿势。",
         "allowsPlayback": false,
         "lightBackground": false,
         "author": "Bryl Lim；Everkinetic（部分原始姿势）",
         "licenseURL": "https://creativecommons.org/licenses/by-sa/4.0/",
         "sourceURL": "https://github.com/bryllim/workout-guide/tree/aac599224bb9780305239607ef98540b7e0ce389/packages/workout-guide/assets/machine-glute-kickback"
-      }
+      },
+      "sideCount": 2
     },
     {
       "id": "guide-cable-standing-hip-abduction",
@@ -6503,10 +6496,9 @@
         "equipmentAsset": null,
         "frameAssets": [
           "wg-cable-standing-hip-adduction-1.png",
-          "wg-cable-standing-hip-adduction-2.png",
           "wg-cable-standing-hip-adduction-3.png"
         ],
-        "reviewNote": "已核对三帧的器材与主要姿势；构图/比例存在变化，仅作独立静态示意。",
+        "reviewNote": "第2帧与保留帧的主要姿势近似，存在缩放、线条粗化或重影，未增加必要的动作信息；保留第1、3帧静态对照。",
         "allowsPlayback": false,
         "lightBackground": false,
         "author": "Bryl Lim；Everkinetic（部分原始姿势）",
@@ -6606,7 +6598,8 @@
         "author": "Bryl Lim；Everkinetic（部分原始姿势）",
         "licenseURL": "https://creativecommons.org/licenses/by-sa/4.0/",
         "sourceURL": "https://github.com/bryllim/workout-guide/tree/aac599224bb9780305239607ef98540b7e0ce389/packages/workout-guide/assets/smith-machine-bulgarian-split-squat"
-      }
+      },
+      "sideCount": 2
     },
     {
       "id": "guide-smith-machine-reverse-lunge",
@@ -7291,10 +7284,9 @@
         "equipmentAsset": null,
         "frameAssets": [
           "wg-reverse-hyperextension-1.png",
-          "wg-reverse-hyperextension-2.png",
-          "wg-reverse-hyperextension-3.png"
+          "wg-reverse-hyperextension-2.png"
         ],
-        "reviewNote": "已核对三帧的器材与主要姿势；构图/比例存在变化，仅作独立静态示意。",
+        "reviewNote": "第3帧与保留帧的主要姿势近似，存在比例变化、线条粗化或重影；保留第1、2帧静态对照。",
         "allowsPlayback": false,
         "lightBackground": false,
         "author": "Bryl Lim；Everkinetic（部分原始姿势）",
@@ -7434,7 +7426,8 @@
         "author": "Bryl Lim；Everkinetic（部分原始姿势）",
         "licenseURL": "https://creativecommons.org/licenses/by-sa/4.0/",
         "sourceURL": "https://github.com/bryllim/workout-guide/tree/aac599224bb9780305239607ef98540b7e0ce389/packages/workout-guide/assets/wall-sit"
-      }
+      },
+      "durationSeconds": 40
     },
     {
       "id": "guide-jump-squat",
@@ -7764,10 +7757,9 @@
         "equipmentAsset": null,
         "frameAssets": [
           "wg-drag-curl-1.png",
-          "wg-drag-curl-2.png",
           "wg-drag-curl-3.png"
         ],
-        "reviewNote": "已核对三帧的器材与主要姿势；构图/比例存在变化，仅作独立静态示意。",
+        "reviewNote": "第2帧与保留帧的主要姿势近似，存在缩放、线条粗化或重影，未增加必要的动作信息；保留第1、3帧静态对照。",
         "allowsPlayback": false,
         "lightBackground": false,
         "author": "Bryl Lim；Everkinetic（部分原始姿势）",
@@ -7967,7 +7959,8 @@
         "author": "Bryl Lim；Everkinetic（部分原始姿势）",
         "licenseURL": "https://creativecommons.org/licenses/by-sa/4.0/",
         "sourceURL": "https://github.com/bryllim/workout-guide/tree/aac599224bb9780305239607ef98540b7e0ce389/packages/workout-guide/assets/single-arm-dumbbell-tricep-extension"
-      }
+      },
+      "sideCount": 2
     },
     {
       "id": "guide-bench-dip",
@@ -8056,10 +8049,9 @@
         "equipmentAsset": null,
         "frameAssets": [
           "wg-tricep-kickback-1.png",
-          "wg-tricep-kickback-2.png",
           "wg-tricep-kickback-3.png"
         ],
-        "reviewNote": "已核对三帧的器材与主要姿势；构图/比例存在变化，仅作独立静态示意。",
+        "reviewNote": "第2帧与保留帧的主要姿势近似，存在缩放、线条粗化或重影，未增加必要的动作信息；保留第1、3帧静态对照。",
         "allowsPlayback": false,
         "lightBackground": false,
         "author": "Bryl Lim；Everkinetic（部分原始姿势）",
@@ -8102,10 +8094,9 @@
         "equipmentAsset": null,
         "frameAssets": [
           "wg-wrist-extension-1.png",
-          "wg-wrist-extension-2.png",
           "wg-wrist-extension-3.png"
         ],
-        "reviewNote": "已核对三帧的器材与主要姿势；构图/比例存在变化，仅作独立静态示意。",
+        "reviewNote": "第2帧与保留帧的主要姿势近似，存在缩放、线条粗化或重影，未增加必要的动作信息；保留第1、3帧静态对照。",
         "allowsPlayback": false,
         "lightBackground": false,
         "author": "Bryl Lim；Everkinetic（部分原始姿势）",
@@ -8160,7 +8151,8 @@
         "author": "Bryl Lim；Everkinetic（部分原始姿势）",
         "licenseURL": "https://creativecommons.org/licenses/by-sa/4.0/",
         "sourceURL": "https://github.com/bryllim/workout-guide/tree/aac599224bb9780305239607ef98540b7e0ce389/packages/workout-guide/assets/farmer-carry"
-      }
+      },
+      "durationSeconds": 40
     },
     {
       "id": "guide-reverse-crunch",
@@ -8351,7 +8343,8 @@
         "author": "Bryl Lim；Everkinetic（部分原始姿势）",
         "licenseURL": "https://creativecommons.org/licenses/by-sa/4.0/",
         "sourceURL": "https://github.com/bryllim/workout-guide/tree/aac599224bb9780305239607ef98540b7e0ce389/packages/workout-guide/assets/mountain-climber"
-      }
+      },
+      "durationSeconds": 40
     },
     {
       "id": "guide-dead-bug",
@@ -8486,16 +8479,16 @@
         "equipmentAsset": null,
         "frameAssets": [
           "wg-pallof-press-1.png",
-          "wg-pallof-press-2.png",
           "wg-pallof-press-3.png"
         ],
-        "reviewNote": "已核对三帧的器材与主要姿势；构图/比例存在变化，仅作独立静态示意。",
+        "reviewNote": "第2帧与保留帧的主要姿势近似，存在缩放、线条粗化或重影，未增加必要的动作信息；保留第1、3帧静态对照。",
         "allowsPlayback": false,
         "lightBackground": false,
         "author": "Bryl Lim；Everkinetic（部分原始姿势）",
         "licenseURL": "https://creativecommons.org/licenses/by-sa/4.0/",
         "sourceURL": "https://github.com/bryllim/workout-guide/tree/aac599224bb9780305239607ef98540b7e0ce389/packages/workout-guide/assets/pallof-press"
-      }
+      },
+      "sideCount": 2
     },
     {
       "id": "guide-cable-woodchop",
@@ -8582,17 +8575,16 @@
         "animationAsset": null,
         "equipmentAsset": null,
         "frameAssets": [
-          "wg-half-kneeling-pallof-press-1.png",
-          "wg-half-kneeling-pallof-press-2.png",
-          "wg-half-kneeling-pallof-press-3.png"
+          "wg-half-kneeling-pallof-press-1.png"
         ],
-        "reviewNote": "已核对三帧的器材与主要姿势；构图/比例存在变化，仅作独立静态示意。",
+        "reviewNote": "三帧均为近似伸臂位置，第2、3帧线条重影、对比度较低；仅保留清晰代表图，不代表完整推压过程。",
         "allowsPlayback": false,
         "lightBackground": false,
         "author": "Bryl Lim；Everkinetic（部分原始姿势）",
         "licenseURL": "https://creativecommons.org/licenses/by-sa/4.0/",
         "sourceURL": "https://github.com/bryllim/workout-guide/tree/aac599224bb9780305239607ef98540b7e0ce389/packages/workout-guide/assets/half-kneeling-pallof-press"
-      }
+      },
+      "sideCount": 2
     },
     {
       "id": "guide-cable-pallof-hold",
@@ -8631,17 +8623,17 @@
         "animationAsset": null,
         "equipmentAsset": null,
         "frameAssets": [
-          "wg-cable-pallof-hold-1.png",
-          "wg-cable-pallof-hold-2.png",
-          "wg-cable-pallof-hold-3.png"
+          "wg-cable-pallof-hold-1.png"
         ],
-        "reviewNote": "已核对三帧的器材与主要姿势；构图/比例存在变化，仅作独立静态示意。",
+        "reviewNote": "静态抗旋保持姿势重复，第2、3帧对比度较低、线条重影；保留第1帧。",
         "allowsPlayback": false,
         "lightBackground": false,
         "author": "Bryl Lim；Everkinetic（部分原始姿势）",
         "licenseURL": "https://creativecommons.org/licenses/by-sa/4.0/",
         "sourceURL": "https://github.com/bryllim/workout-guide/tree/aac599224bb9780305239607ef98540b7e0ce389/packages/workout-guide/assets/cable-pallof-hold"
-      }
+      },
+      "durationSeconds": 40,
+      "sideCount": 2
     },
     {
       "id": "guide-hanging-knee-raise",
@@ -8728,10 +8720,9 @@
         "equipmentAsset": null,
         "frameAssets": [
           "wg-captains-chair-knee-raise-1.png",
-          "wg-captains-chair-knee-raise-2.png",
           "wg-captains-chair-knee-raise-3.png"
         ],
-        "reviewNote": "已核对三帧的器材与主要姿势；构图/比例存在变化，仅作独立静态示意。",
+        "reviewNote": "第2帧与保留帧的主要姿势近似，存在缩放、线条粗化或重影，未增加必要的动作信息；保留第1、3帧静态对照。",
         "allowsPlayback": false,
         "lightBackground": false,
         "author": "Bryl Lim；Everkinetic（部分原始姿势）",
@@ -8962,16 +8953,16 @@
         "equipmentAsset": null,
         "frameAssets": [
           "wg-elliptical-1.png",
-          "wg-elliptical-2.png",
-          "wg-elliptical-3.png"
+          "wg-elliptical-2.png"
         ],
-        "reviewNote": "已核对三帧的器材与主要姿势；构图/比例存在变化，仅作独立静态示意。",
+        "reviewNote": "第3帧与保留帧的主要姿势近似，存在比例变化、线条粗化或重影；保留第1、2帧静态对照。",
         "allowsPlayback": false,
         "lightBackground": false,
         "author": "Bryl Lim；Everkinetic（部分原始姿势）",
         "licenseURL": "https://creativecommons.org/licenses/by-sa/4.0/",
         "sourceURL": "https://github.com/bryllim/workout-guide/tree/aac599224bb9780305239607ef98540b7e0ce389/packages/workout-guide/assets/elliptical"
-      }
+      },
+      "durationSeconds": 40
     },
     {
       "id": "guide-swimming",
@@ -9016,7 +9007,8 @@
         "author": "Bryl Lim；Everkinetic（部分原始姿势）",
         "licenseURL": "https://creativecommons.org/licenses/by-sa/4.0/",
         "sourceURL": "https://github.com/bryllim/workout-guide/tree/aac599224bb9780305239607ef98540b7e0ce389/packages/workout-guide/assets/swimming"
-      }
+      },
+      "durationSeconds": 40
     },
     {
       "id": "guide-jump-rope",
@@ -9065,7 +9057,8 @@
         "author": "Bryl Lim；Everkinetic（部分原始姿势）",
         "licenseURL": "https://creativecommons.org/licenses/by-sa/4.0/",
         "sourceURL": "https://github.com/bryllim/workout-guide/tree/aac599224bb9780305239607ef98540b7e0ce389/packages/workout-guide/assets/jump-rope"
-      }
+      },
+      "durationSeconds": 40
     },
     {
       "id": "guide-assault-bike",
@@ -9104,17 +9097,16 @@
         "animationAsset": null,
         "equipmentAsset": null,
         "frameAssets": [
-          "wg-assault-bike-1.png",
-          "wg-assault-bike-2.png",
-          "wg-assault-bike-3.png"
+          "wg-assault-bike-1.png"
         ],
-        "reviewNote": "已核对三帧的器材与主要姿势；构图/比例存在变化，仅作独立静态示意。",
+        "reviewNote": "三帧主要为同一骑行姿势的比例变化，保留清晰代表图，不代表完整踩踏周期。",
         "allowsPlayback": false,
         "lightBackground": false,
         "author": "Bryl Lim；Everkinetic（部分原始姿势）",
         "licenseURL": "https://creativecommons.org/licenses/by-sa/4.0/",
         "sourceURL": "https://github.com/bryllim/workout-guide/tree/aac599224bb9780305239607ef98540b7e0ce389/packages/workout-guide/assets/assault-bike"
-      }
+      },
+      "durationSeconds": 40
     },
     {
       "id": "guide-skierg",
@@ -9164,7 +9156,8 @@
         "author": "Bryl Lim；Everkinetic（部分原始姿势）",
         "licenseURL": "https://creativecommons.org/licenses/by-sa/4.0/",
         "sourceURL": "https://github.com/bryllim/workout-guide/tree/aac599224bb9780305239607ef98540b7e0ce389/packages/workout-guide/assets/skierg"
-      }
+      },
+      "durationSeconds": 40
     },
     {
       "id": "guide-hiking",
@@ -9209,7 +9202,8 @@
         "author": "Bryl Lim；Everkinetic（部分原始姿势）",
         "licenseURL": "https://creativecommons.org/licenses/by-sa/4.0/",
         "sourceURL": "https://github.com/bryllim/workout-guide/tree/aac599224bb9780305239607ef98540b7e0ce389/packages/workout-guide/assets/hiking"
-      }
+      },
+      "durationSeconds": 40
     },
     {
       "id": "guide-treadmill-incline-walk",
@@ -9249,16 +9243,16 @@
         "equipmentAsset": null,
         "frameAssets": [
           "wg-treadmill-incline-walk-1.png",
-          "wg-treadmill-incline-walk-2.png",
-          "wg-treadmill-incline-walk-3.png"
+          "wg-treadmill-incline-walk-2.png"
         ],
-        "reviewNote": "已核对三帧的器材与主要姿势；构图/比例存在变化，仅作独立静态示意。",
+        "reviewNote": "第3帧与保留帧的主要姿势近似，存在比例变化、线条粗化或重影；保留第1、2帧静态对照。",
         "allowsPlayback": false,
         "lightBackground": false,
         "author": "Bryl Lim；Everkinetic（部分原始姿势）",
         "licenseURL": "https://creativecommons.org/licenses/by-sa/4.0/",
         "sourceURL": "https://github.com/bryllim/workout-guide/tree/aac599224bb9780305239607ef98540b7e0ce389/packages/workout-guide/assets/treadmill-incline-walk"
-      }
+      },
+      "durationSeconds": 40
     },
     {
       "id": "guide-battle-ropes",
@@ -9307,7 +9301,8 @@
         "author": "Bryl Lim；Everkinetic（部分原始姿势）",
         "licenseURL": "https://creativecommons.org/licenses/by-sa/4.0/",
         "sourceURL": "https://github.com/bryllim/workout-guide/tree/aac599224bb9780305239607ef98540b7e0ce389/packages/workout-guide/assets/battle-ropes"
-      }
+      },
+      "durationSeconds": 40
     },
     {
       "id": "guide-incline-push-up",
@@ -10449,7 +10444,8 @@
         "author": "Bryl Lim；Everkinetic（部分原始姿势）",
         "licenseURL": "https://creativecommons.org/licenses/by-sa/4.0/",
         "sourceURL": "https://github.com/bryllim/workout-guide/tree/aac599224bb9780305239607ef98540b7e0ce389/packages/workout-guide/assets/superman-hold"
-      }
+      },
+      "durationSeconds": 40
     },
     {
       "id": "guide-reverse-snow-angel",
@@ -10549,7 +10545,8 @@
         "author": "Bryl Lim；Everkinetic（部分原始姿势）",
         "licenseURL": "https://creativecommons.org/licenses/by-sa/4.0/",
         "sourceURL": "https://github.com/bryllim/workout-guide/tree/aac599224bb9780305239607ef98540b7e0ce389/packages/workout-guide/assets/dead-hang"
-      }
+      },
+      "durationSeconds": 40
     },
     {
       "id": "guide-active-hang",
@@ -10589,17 +10586,16 @@
         "animationAsset": null,
         "equipmentAsset": null,
         "frameAssets": [
-          "wg-active-hang-1.png",
-          "wg-active-hang-2.png",
-          "wg-active-hang-3.png"
+          "wg-active-hang-1.png"
         ],
-        "reviewNote": "肩胛参与细节不够清晰，图片只用于悬垂位置定位。",
+        "reviewNote": "三帧悬垂位置基本重复，第2帧对比度较低；仅保留清晰静态姿势，不用重复图表示肩胛运动。",
         "allowsPlayback": false,
         "lightBackground": false,
         "author": "Bryl Lim；Everkinetic（部分原始姿势）",
         "licenseURL": "https://creativecommons.org/licenses/by-sa/4.0/",
         "sourceURL": "https://github.com/bryllim/workout-guide/tree/aac599224bb9780305239607ef98540b7e0ce389/packages/workout-guide/assets/active-hang"
-      }
+      },
+      "durationSeconds": 40
     },
     {
       "id": "guide-scapular-pull-up",
@@ -10895,7 +10891,8 @@
         "author": "Bryl Lim；Everkinetic（部分原始姿势）",
         "licenseURL": "https://creativecommons.org/licenses/by-sa/4.0/",
         "sourceURL": "https://github.com/bryllim/workout-guide/tree/aac599224bb9780305239607ef98540b7e0ce389/packages/workout-guide/assets/pistol-squat"
-      }
+      },
+      "sideCount": 2
     },
     {
       "id": "guide-assisted-pistol-squat",
@@ -10945,7 +10942,8 @@
         "author": "Bryl Lim；Everkinetic（部分原始姿势）",
         "licenseURL": "https://creativecommons.org/licenses/by-sa/4.0/",
         "sourceURL": "https://github.com/bryllim/workout-guide/tree/aac599224bb9780305239607ef98540b7e0ce389/packages/workout-guide/assets/assisted-pistol-squat"
-      }
+      },
+      "sideCount": 2
     },
     {
       "id": "guide-shrimp-squat",
@@ -10994,7 +10992,8 @@
         "author": "Bryl Lim；Everkinetic（部分原始姿势）",
         "licenseURL": "https://creativecommons.org/licenses/by-sa/4.0/",
         "sourceURL": "https://github.com/bryllim/workout-guide/tree/aac599224bb9780305239607ef98540b7e0ce389/packages/workout-guide/assets/shrimp-squat"
-      }
+      },
+      "sideCount": 2
     },
     {
       "id": "guide-cossack-squat",
@@ -11241,7 +11240,8 @@
         "author": "Bryl Lim；Everkinetic（部分原始姿势）",
         "licenseURL": "https://creativecommons.org/licenses/by-sa/4.0/",
         "sourceURL": "https://github.com/bryllim/workout-guide/tree/aac599224bb9780305239607ef98540b7e0ce389/packages/workout-guide/assets/skater-squat"
-      }
+      },
+      "sideCount": 2
     },
     {
       "id": "guide-single-leg-box-squat",
@@ -11291,7 +11291,8 @@
         "author": "Bryl Lim；Everkinetic（部分原始姿势）",
         "licenseURL": "https://creativecommons.org/licenses/by-sa/4.0/",
         "sourceURL": "https://github.com/bryllim/workout-guide/tree/aac599224bb9780305239607ef98540b7e0ce389/packages/workout-guide/assets/single-leg-box-squat"
-      }
+      },
+      "sideCount": 2
     },
     {
       "id": "guide-step-down",
@@ -11380,16 +11381,16 @@
         "equipmentAsset": null,
         "frameAssets": [
           "wg-single-leg-calf-raise-1.png",
-          "wg-single-leg-calf-raise-2.png",
           "wg-single-leg-calf-raise-3.png"
         ],
-        "reviewNote": "已核对三帧的器材与主要姿势；构图/比例存在变化，仅作独立静态示意。",
+        "reviewNote": "第2帧与保留帧的主要姿势近似，存在缩放、线条粗化或重影，未增加必要的动作信息；保留第1、3帧静态对照。",
         "allowsPlayback": false,
         "lightBackground": false,
         "author": "Bryl Lim；Everkinetic（部分原始姿势）",
         "licenseURL": "https://creativecommons.org/licenses/by-sa/4.0/",
         "sourceURL": "https://github.com/bryllim/workout-guide/tree/aac599224bb9780305239607ef98540b7e0ce389/packages/workout-guide/assets/single-leg-calf-raise"
-      }
+      },
+      "sideCount": 2
     },
     {
       "id": "guide-glute-bridge-march",
@@ -11583,7 +11584,8 @@
         "author": "Bryl Lim；Everkinetic（部分原始姿势）",
         "licenseURL": "https://creativecommons.org/licenses/by-sa/4.0/",
         "sourceURL": "https://github.com/bryllim/workout-guide/tree/aac599224bb9780305239607ef98540b7e0ce389/packages/workout-guide/assets/fire-hydrant"
-      }
+      },
+      "sideCount": 2
     },
     {
       "id": "guide-clamshell",
@@ -11631,7 +11633,8 @@
         "author": "Bryl Lim；Everkinetic（部分原始姿势）",
         "licenseURL": "https://creativecommons.org/licenses/by-sa/4.0/",
         "sourceURL": "https://github.com/bryllim/workout-guide/tree/aac599224bb9780305239607ef98540b7e0ce389/packages/workout-guide/assets/clamshell"
-      }
+      },
+      "sideCount": 2
     },
     {
       "id": "guide-hip-airplane",
@@ -12100,7 +12103,8 @@
         "author": "Bryl Lim；Everkinetic（部分原始姿势）",
         "licenseURL": "https://creativecommons.org/licenses/by-sa/4.0/",
         "sourceURL": "https://github.com/bryllim/workout-guide/tree/aac599224bb9780305239607ef98540b7e0ce389/packages/workout-guide/assets/banded-clamshell"
-      }
+      },
+      "sideCount": 2
     },
     {
       "id": "guide-banded-lateral-walk",
@@ -12346,7 +12350,8 @@
         "author": "Bryl Lim；Everkinetic（部分原始姿势）",
         "licenseURL": "https://creativecommons.org/licenses/by-sa/4.0/",
         "sourceURL": "https://github.com/bryllim/workout-guide/tree/aac599224bb9780305239607ef98540b7e0ce389/packages/workout-guide/assets/banded-fire-hydrant"
-      }
+      },
+      "sideCount": 2
     },
     {
       "id": "guide-banded-kickback",
@@ -12395,7 +12400,8 @@
         "author": "Bryl Lim；Everkinetic（部分原始姿势）",
         "licenseURL": "https://creativecommons.org/licenses/by-sa/4.0/",
         "sourceURL": "https://github.com/bryllim/workout-guide/tree/aac599224bb9780305239607ef98540b7e0ce389/packages/workout-guide/assets/banded-kickback"
-      }
+      },
+      "sideCount": 2
     },
     {
       "id": "guide-banded-standing-hip-abduction",
@@ -12726,17 +12732,16 @@
         "animationAsset": null,
         "equipmentAsset": null,
         "frameAssets": [
-          "wg-banded-pallof-press-1.png",
-          "wg-banded-pallof-press-2.png",
-          "wg-banded-pallof-press-3.png"
+          "wg-banded-pallof-press-1.png"
         ],
-        "reviewNote": "已核对三帧的器材与主要姿势；构图/比例存在变化，仅作独立静态示意。",
+        "reviewNote": "三帧均为近似伸臂抗旋位置，第2、3帧线条较虚；仅保留清晰代表图，不代表完整推压过程。",
         "allowsPlayback": false,
         "lightBackground": false,
         "author": "Bryl Lim；Everkinetic（部分原始姿势）",
         "licenseURL": "https://creativecommons.org/licenses/by-sa/4.0/",
         "sourceURL": "https://github.com/bryllim/workout-guide/tree/aac599224bb9780305239607ef98540b7e0ce389/packages/workout-guide/assets/banded-pallof-press"
-      }
+      },
+      "sideCount": 2
     },
     {
       "id": "guide-banded-woodchop",
@@ -12880,7 +12885,8 @@
         "author": "Bryl Lim；Everkinetic（部分原始姿势）",
         "licenseURL": "https://creativecommons.org/licenses/by-sa/4.0/",
         "sourceURL": "https://github.com/bryllim/workout-guide/tree/aac599224bb9780305239607ef98540b7e0ce389/packages/workout-guide/assets/hollow-body-hold"
-      }
+      },
+      "durationSeconds": 40
     },
     {
       "id": "guide-hollow-rock",
@@ -13024,7 +13030,8 @@
         "author": "Bryl Lim；Everkinetic（部分原始姿势）",
         "licenseURL": "https://creativecommons.org/licenses/by-sa/4.0/",
         "sourceURL": "https://github.com/bryllim/workout-guide/tree/aac599224bb9780305239607ef98540b7e0ce389/packages/workout-guide/assets/flutter-kick"
-      }
+      },
+      "durationSeconds": 40
     },
     {
       "id": "guide-lying-leg-raise",
@@ -13254,7 +13261,8 @@
         "author": "Bryl Lim；Everkinetic（部分原始姿势）",
         "licenseURL": "https://creativecommons.org/licenses/by-sa/4.0/",
         "sourceURL": "https://github.com/bryllim/workout-guide/tree/aac599224bb9780305239607ef98540b7e0ce389/packages/workout-guide/assets/plank-jack"
-      }
+      },
+      "durationSeconds": 40
     },
     {
       "id": "guide-bear-plank",
@@ -13301,7 +13309,8 @@
         "author": "Bryl Lim；Everkinetic（部分原始姿势）",
         "licenseURL": "https://creativecommons.org/licenses/by-sa/4.0/",
         "sourceURL": "https://github.com/bryllim/workout-guide/tree/aac599224bb9780305239607ef98540b7e0ce389/packages/workout-guide/assets/bear-plank"
-      }
+      },
+      "durationSeconds": 40
     },
     {
       "id": "guide-bear-crawl",
@@ -13351,7 +13360,8 @@
         "author": "Bryl Lim；Everkinetic（部分原始姿势）",
         "licenseURL": "https://creativecommons.org/licenses/by-sa/4.0/",
         "sourceURL": "https://github.com/bryllim/workout-guide/tree/aac599224bb9780305239607ef98540b7e0ce389/packages/workout-guide/assets/bear-crawl"
-      }
+      },
+      "durationSeconds": 40
     },
     {
       "id": "guide-crab-walk",
@@ -13401,7 +13411,8 @@
         "author": "Bryl Lim；Everkinetic（部分原始姿势）",
         "licenseURL": "https://creativecommons.org/licenses/by-sa/4.0/",
         "sourceURL": "https://github.com/bryllim/workout-guide/tree/aac599224bb9780305239607ef98540b7e0ce389/packages/workout-guide/assets/crab-walk"
-      }
+      },
+      "durationSeconds": 40
     },
     {
       "id": "guide-inchworm",
@@ -13502,7 +13513,8 @@
         "author": "Bryl Lim；Everkinetic（部分原始姿势）",
         "licenseURL": "https://creativecommons.org/licenses/by-sa/4.0/",
         "sourceURL": "https://github.com/bryllim/workout-guide/tree/aac599224bb9780305239607ef98540b7e0ce389/packages/workout-guide/assets/l-sit-hold"
-      }
+      },
+      "durationSeconds": 40
     },
     {
       "id": "guide-seated-knee-tuck",
@@ -13586,16 +13598,16 @@
         "equipmentAsset": null,
         "frameAssets": [
           "wg-side-plank-hip-dip-1.png",
-          "wg-side-plank-hip-dip-2.png",
           "wg-side-plank-hip-dip-3.png"
         ],
-        "reviewNote": "已核对三帧的器材与主要姿势；构图/比例存在变化，仅作独立静态示意。",
+        "reviewNote": "第2帧与保留帧的主要姿势近似，存在缩放、线条粗化或重影，未增加必要的动作信息；保留第1、3帧静态对照。",
         "allowsPlayback": false,
         "lightBackground": false,
         "author": "Bryl Lim；Everkinetic（部分原始姿势）",
         "licenseURL": "https://creativecommons.org/licenses/by-sa/4.0/",
         "sourceURL": "https://github.com/bryllim/workout-guide/tree/aac599224bb9780305239607ef98540b7e0ce389/packages/workout-guide/assets/side-plank-hip-dip"
-      }
+      },
+      "sideCount": 2
     },
     {
       "id": "guide-copenhagen-plank",
@@ -13644,7 +13656,9 @@
         "author": "Bryl Lim；Everkinetic（部分原始姿势）",
         "licenseURL": "https://creativecommons.org/licenses/by-sa/4.0/",
         "sourceURL": "https://github.com/bryllim/workout-guide/tree/aac599224bb9780305239607ef98540b7e0ce389/packages/workout-guide/assets/copenhagen-plank"
-      }
+      },
+      "durationSeconds": 40,
+      "sideCount": 2
     },
     {
       "id": "guide-dragon-flag",
@@ -13889,7 +13903,8 @@
         "author": "Bryl Lim；Everkinetic（部分原始姿势）",
         "licenseURL": "https://creativecommons.org/licenses/by-sa/4.0/",
         "sourceURL": "https://github.com/bryllim/workout-guide/tree/aac599224bb9780305239607ef98540b7e0ce389/packages/workout-guide/assets/high-knees"
-      }
+      },
+      "durationSeconds": 40
     },
     {
       "id": "guide-jumping-jack",
@@ -13939,7 +13954,8 @@
         "author": "Bryl Lim；Everkinetic（部分原始姿势）",
         "licenseURL": "https://creativecommons.org/licenses/by-sa/4.0/",
         "sourceURL": "https://github.com/bryllim/workout-guide/tree/aac599224bb9780305239607ef98540b7e0ce389/packages/workout-guide/assets/jumping-jack"
-      }
+      },
+      "durationSeconds": 40
     },
     {
       "id": "guide-skater-hop",
@@ -14039,7 +14055,8 @@
         "author": "Bryl Lim；Everkinetic（部分原始姿势）",
         "licenseURL": "https://creativecommons.org/licenses/by-sa/4.0/",
         "sourceURL": "https://github.com/bryllim/workout-guide/tree/aac599224bb9780305239607ef98540b7e0ce389/packages/workout-guide/assets/lateral-shuffle"
-      }
+      },
+      "durationSeconds": 40
     },
     {
       "id": "guide-fast-feet",
@@ -14088,7 +14105,8 @@
         "author": "Bryl Lim；Everkinetic（部分原始姿势）",
         "licenseURL": "https://creativecommons.org/licenses/by-sa/4.0/",
         "sourceURL": "https://github.com/bryllim/workout-guide/tree/aac599224bb9780305239607ef98540b7e0ce389/packages/workout-guide/assets/fast-feet"
-      }
+      },
+      "durationSeconds": 40
     },
     {
       "id": "guide-sprawl",
@@ -14184,7 +14202,8 @@
         "author": "Bryl Lim；Everkinetic（部分原始姿势）",
         "licenseURL": "https://creativecommons.org/licenses/by-sa/4.0/",
         "sourceURL": "https://github.com/bryllim/workout-guide/tree/aac599224bb9780305239607ef98540b7e0ce389/packages/workout-guide/assets/seal-jack"
-      }
+      },
+      "durationSeconds": 40
     },
     {
       "id": "guide-cat-cow-stretch",
@@ -14233,7 +14252,8 @@
         "author": "Bryl Lim；Everkinetic（部分原始姿势）",
         "licenseURL": "https://creativecommons.org/licenses/by-sa/4.0/",
         "sourceURL": "https://github.com/bryllim/workout-guide/tree/aac599224bb9780305239607ef98540b7e0ce389/packages/workout-guide/assets/cat-cow-stretch"
-      }
+      },
+      "durationSeconds": 40
     },
     {
       "id": "guide-arm-circles",
@@ -14283,7 +14303,8 @@
         "author": "Bryl Lim；Everkinetic（部分原始姿势）",
         "licenseURL": "https://creativecommons.org/licenses/by-sa/4.0/",
         "sourceURL": "https://github.com/bryllim/workout-guide/tree/aac599224bb9780305239607ef98540b7e0ce389/packages/workout-guide/assets/arm-circles"
-      }
+      },
+      "durationSeconds": 40
     },
     {
       "id": "guide-worlds-greatest-stretch",
@@ -14333,7 +14354,8 @@
         "author": "Bryl Lim；Everkinetic（部分原始姿势）",
         "licenseURL": "https://creativecommons.org/licenses/by-sa/4.0/",
         "sourceURL": "https://github.com/bryllim/workout-guide/tree/aac599224bb9780305239607ef98540b7e0ce389/packages/workout-guide/assets/worlds-greatest-stretch"
-      }
+      },
+      "durationSeconds": 40
     },
     {
       "id": "guide-leg-swings-stretch",
@@ -14383,7 +14405,8 @@
         "author": "Bryl Lim；Everkinetic（部分原始姿势）",
         "licenseURL": "https://creativecommons.org/licenses/by-sa/4.0/",
         "sourceURL": "https://github.com/bryllim/workout-guide/tree/aac599224bb9780305239607ef98540b7e0ce389/packages/workout-guide/assets/leg-swings-stretch"
-      }
+      },
+      "durationSeconds": 40
     },
     {
       "id": "guide-torso-twist-stretch",
@@ -14428,7 +14451,8 @@
         "author": "Bryl Lim；Everkinetic（部分原始姿势）",
         "licenseURL": "https://creativecommons.org/licenses/by-sa/4.0/",
         "sourceURL": "https://github.com/bryllim/workout-guide/tree/aac599224bb9780305239607ef98540b7e0ce389/packages/workout-guide/assets/torso-twist-stretch"
-      }
+      },
+      "durationSeconds": 40
     },
     {
       "id": "guide-doorway-chest-stretch",
@@ -14477,7 +14501,8 @@
         "author": "Bryl Lim；Everkinetic（部分原始姿势）",
         "licenseURL": "https://creativecommons.org/licenses/by-sa/4.0/",
         "sourceURL": "https://github.com/bryllim/workout-guide/tree/aac599224bb9780305239607ef98540b7e0ce389/packages/workout-guide/assets/doorway-chest-stretch"
-      }
+      },
+      "durationSeconds": 40
     },
     {
       "id": "guide-childs-pose",
@@ -14527,7 +14552,8 @@
         "author": "Bryl Lim；Everkinetic（部分原始姿势）",
         "licenseURL": "https://creativecommons.org/licenses/by-sa/4.0/",
         "sourceURL": "https://github.com/bryllim/workout-guide/tree/aac599224bb9780305239607ef98540b7e0ce389/packages/workout-guide/assets/childs-pose"
-      }
+      },
+      "durationSeconds": 40
     },
     {
       "id": "guide-kneeling-hip-flexor-stretch",
@@ -14576,7 +14602,9 @@
         "author": "Bryl Lim；Everkinetic（部分原始姿势）",
         "licenseURL": "https://creativecommons.org/licenses/by-sa/4.0/",
         "sourceURL": "https://github.com/bryllim/workout-guide/tree/aac599224bb9780305239607ef98540b7e0ce389/packages/workout-guide/assets/kneeling-hip-flexor-stretch"
-      }
+      },
+      "durationSeconds": 40,
+      "sideCount": 2
     },
     {
       "id": "guide-hamstring-stretch",
@@ -14625,7 +14653,8 @@
         "author": "Bryl Lim；Everkinetic（部分原始姿势）",
         "licenseURL": "https://creativecommons.org/licenses/by-sa/4.0/",
         "sourceURL": "https://github.com/bryllim/workout-guide/tree/aac599224bb9780305239607ef98540b7e0ce389/packages/workout-guide/assets/hamstring-stretch"
-      }
+      },
+      "durationSeconds": 40
     },
     {
       "id": "guide-standing-quad-stretch",
@@ -14674,7 +14703,9 @@
         "author": "Bryl Lim；Everkinetic（部分原始姿势）",
         "licenseURL": "https://creativecommons.org/licenses/by-sa/4.0/",
         "sourceURL": "https://github.com/bryllim/workout-guide/tree/aac599224bb9780305239607ef98540b7e0ce389/packages/workout-guide/assets/standing-quad-stretch"
-      }
+      },
+      "durationSeconds": 40,
+      "sideCount": 2
     },
     {
       "id": "guide-seated-forward-fold-stretch",
@@ -14724,7 +14755,8 @@
         "author": "Bryl Lim；Everkinetic（部分原始姿势）",
         "licenseURL": "https://creativecommons.org/licenses/by-sa/4.0/",
         "sourceURL": "https://github.com/bryllim/workout-guide/tree/aac599224bb9780305239607ef98540b7e0ce389/packages/workout-guide/assets/seated-forward-fold-stretch"
-      }
+      },
+      "durationSeconds": 40
     },
     {
       "id": "guide-cross-body-shoulder-stretch",
@@ -14773,7 +14805,9 @@
         "author": "Bryl Lim；Everkinetic（部分原始姿势）",
         "licenseURL": "https://creativecommons.org/licenses/by-sa/4.0/",
         "sourceURL": "https://github.com/bryllim/workout-guide/tree/aac599224bb9780305239607ef98540b7e0ce389/packages/workout-guide/assets/cross-body-shoulder-stretch"
-      }
+      },
+      "durationSeconds": 40,
+      "sideCount": 2
     },
     {
       "id": "guide-wall-calf-stretch",
@@ -14811,17 +14845,17 @@
         "animationAsset": null,
         "equipmentAsset": null,
         "frameAssets": [
-          "wg-wall-calf-stretch-1.png",
-          "wg-wall-calf-stretch-2.png",
-          "wg-wall-calf-stretch-3.png"
+          "wg-wall-calf-stretch-1.png"
         ],
-        "reviewNote": "已核对三帧的器材与主要姿势；构图/比例存在变化，仅作独立静态示意。",
+        "reviewNote": "三帧靠墙拉伸姿势基本重复，保留第1帧静态示意。",
         "allowsPlayback": false,
         "lightBackground": false,
         "author": "Bryl Lim；Everkinetic（部分原始姿势）",
         "licenseURL": "https://creativecommons.org/licenses/by-sa/4.0/",
         "sourceURL": "https://github.com/bryllim/workout-guide/tree/aac599224bb9780305239607ef98540b7e0ce389/packages/workout-guide/assets/wall-calf-stretch"
-      }
+      },
+      "durationSeconds": 40,
+      "sideCount": 2
     },
     {
       "id": "guide-butterfly-stretch",
@@ -14870,7 +14904,8 @@
         "author": "Bryl Lim；Everkinetic（部分原始姿势）",
         "licenseURL": "https://creativecommons.org/licenses/by-sa/4.0/",
         "sourceURL": "https://github.com/bryllim/workout-guide/tree/aac599224bb9780305239607ef98540b7e0ce389/packages/workout-guide/assets/butterfly-stretch"
-      }
+      },
+      "durationSeconds": 40
     }
   ]
 }

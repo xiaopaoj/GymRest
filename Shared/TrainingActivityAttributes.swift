@@ -3,9 +3,10 @@ import AppIntents
 import Foundation
 
 enum TrainingQuickAction: String, AppEnum {
-    case completeSet, pauseRest, resumeRest, retryRest, addRest, finishRest
+    case completeSet, pauseRest, resumeRest, retryRest, addRest, finishRest, startEffort, pauseEffort, resumeEffort
     static var typeDisplayRepresentation: TypeDisplayRepresentation { "训练操作" }
     static var caseDisplayRepresentations: [Self: DisplayRepresentation] { [
+        .startEffort: "开始动作计时", .pauseEffort: "暂停动作计时", .resumeEffort: "继续动作计时",
         .completeSet: "完成本组", .pauseRest: "暂停休息", .resumeRest: "继续休息",
         .retryRest: "重试提醒", .addRest: "增加15秒", .finishRest: "结束休息"
     ] }
@@ -30,6 +31,13 @@ struct TrainingActivityAttributes: ActivityAttributes, Sendable {
         var setDetails: String? = nil
         var progressSummary: String? = nil
         var synchronizedAt: Date? = nil
+        var durationSeconds: Int? = nil
+        var effortStatus: String? = nil
+        var effortEnd: Date? = nil
+        var effortRemaining: Int? = nil
+        var effortRegistered: Bool? = nil
+        var partTitle: String? = nil
+        var completionTitle: String? = nil
     }
 }
 
@@ -62,9 +70,10 @@ struct TrainingQuickActionIntent: LiveActivityIntent {
 }
 
 // AlarmKit stops its alarm itself, then runs this additional action. Match the exact
-// registration ID so a delayed stop from an older rest cannot advance the new rest.
+// registration ID so a delayed stop cannot affect a new rest or effort timer.
+// Effort dismissal only marks the timer ready; it never completes a side or set.
 struct RestFinishedIntent: LiveActivityIntent {
-    static var title: LocalizedStringResource { "结束当前组间休息" }
+    static var title: LocalizedStringResource { "确认当前计时提醒" }
     static var openAppWhenRun: Bool { false }
     static var isDiscoverable: Bool { false }
 

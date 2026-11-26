@@ -130,6 +130,7 @@ struct DayDetailView: View {
     @Binding var showingTraining: Bool
     @State private var error: String?
     @State private var starting = false
+    @State private var confirmingWatch = false
     private var exercises: [ExerciseSpec]? { try? day.exercises() }
     var body: some View {
         List {
@@ -178,18 +179,9 @@ struct DayDetailView: View {
                 }
                 if exercises?.isEmpty == false {
                     Button {
-                        guard !starting else { return }; starting = true
-                        Task {
-                            defer { starting = false }
-                            if let session = controller.session, session.phase != .completed {
-                                if session.planID == day.id { showingTraining = true }
-                                else { error = "已有未完成训练，请从首页继续或先结束它。" }
-                                return
-                            }
-                            await controller.start(plan: day)
-                            if controller.session?.planID == day.id && controller.session?.phase == .training && controller.error == nil { showingTraining = true }
-                            else if controller.error == nil { error = "训练尚未启动，请稍后重试。" }
-                        }
+                        if WatchStartReminder.shouldPrompt(enabled: controller.preferences.watchStartReminder, session: controller.session) {
+                            confirmingWatch = true
+                        } else { beginTraining() }
                     } label: {
                         HStack { if starting { ProgressView() }; Text(starting ? "正在开始…" : "开始训练").font(.headline) }
                             .frame(maxWidth: .infinity).padding(.vertical, 12)
@@ -201,8 +193,29 @@ struct DayDetailView: View {
                 }
             }.padding().background(.regularMaterial)
         }
+        .confirmationDialog("确认Watch训练记录", isPresented: $confirmingWatch, titleVisibility: .visible) {
+            Button("已在手表开启，开始训练") { beginTraining() }
+            Button("本次不记录，继续") { beginTraining() }
+            Button("取消", role: .cancel) {}
+        } message: {
+            Text("如需Apple Watch记录，请先在手表上开启传统力量训练等合适类型。GymRest目前无法自动确认手表是否正在记录。")
+        }
         .alert("无法开始训练", isPresented: Binding(get: { error != nil }, set: { if !$0 { error = nil } })) {
             Button("知道了") { error = nil }
         } message: { Text(error ?? "") }
+    }
+    private func beginTraining() {
+        guard !starting else { return }; starting = true
+        Task {
+            defer { starting = false }
+            if let session = controller.session, session.phase != .completed {
+                if session.planID == day.id { showingTraining = true }
+                else { error = "已有未完成训练，请从首页继续或先结束它。" }
+                return
+            }
+            await controller.start(plan: day)
+            if controller.session?.planID == day.id && controller.session?.phase == .training && controller.error == nil { showingTraining = true }
+            else if controller.error == nil { error = "训练尚未启动，请稍后重试。" }
+        }
     }
 }

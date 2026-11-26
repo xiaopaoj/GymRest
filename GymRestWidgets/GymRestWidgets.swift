@@ -61,7 +61,7 @@ struct RestLiveActivityWidget: Widget {
         } dynamicIsland: { context in
             DynamicIsland {
                 DynamicIslandExpandedRegion(.leading) {
-                    Label("休息", systemImage: "timer").font(.headline).foregroundStyle(.orange)
+                    Label(context.attributes.metadata?.context?.kind == "effort" ? "动作计时" : "休息", systemImage: "timer").font(.headline).foregroundStyle(.orange)
                 }
                 DynamicIslandExpandedRegion(.trailing) {
                     CountdownLabel(state: context.state)

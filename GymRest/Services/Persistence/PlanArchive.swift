@@ -19,7 +19,7 @@ struct PlanArchive: Codable {
         var programID: UUID? = nil
     }
     func validate() throws {
-        guard version == 1 || version == 2 || version == 3 else { throw ArchiveFailure.invalid("不支持的文件版本。") }
+        guard version == 1 || version == 2 || version == 3 || version == 4 else { throw ArchiveFailure.invalid("不支持的文件版本。") }
         guard Set(plans.map(\.id)).count == plans.count else { throw ArchiveFailure.invalid("计划ID重复。") }
         let parents = programs ?? []
         guard Set(parents.map(\.id)).count == parents.count else { throw ArchiveFailure.invalid("上层计划ID重复。") }
@@ -61,16 +61,19 @@ struct PlanArchive: Codable {
         let entries = try plans.map { day in
             Entry(id: day.id, name: day.name, exercises: try day.exercises(), programID: parents.contains(where: { $0.id == day.programID }) ? day.programID : nil)
         }
+        var timedOrBilateral = false
         var extended = parents.contains { $0.weeklySessions != nil }
         for entry in entries {
             for exercise in entry.exercises {
+                if exercise.prescription?.durationSeconds != nil || exercise.prescription?.sideCount == 2 { timedOrBilateral = true }
                 if exercise.catalogID != nil || exercise.prescription != nil { extended = true }
                 for alternative in exercise.alternatives {
+                    if alternative.prescription?.durationSeconds != nil || alternative.prescription?.sideCount == 2 { timedOrBilateral = true }
                     if alternative.catalogID != nil || alternative.prescription != nil { extended = true }
                 }
             }
         }
-        let archive = PlanArchive(version: extended ? 3 : parents.isEmpty ? 1 : 2, plans: entries, programs: parents.isEmpty ? nil : parents)
+        let archive = PlanArchive(version: timedOrBilateral ? 4 : extended ? 3 : parents.isEmpty ? 1 : 2, plans: entries, programs: parents.isEmpty ? nil : parents)
         try archive.validate()
         let encoder = JSONEncoder(); encoder.outputFormatting = [.prettyPrinted, .sortedKeys]
         return try encoder.encode(archive)

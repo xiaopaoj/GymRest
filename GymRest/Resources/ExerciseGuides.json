@@ -346,7 +346,8 @@
         "屈肘幅度不断变化，变成弯举或划船。"
       ],
       "notes": [
-        "原条目为单臂参考动作；每次练一侧，另一手可扶稳支撑，双侧分别完成。"
+        "原条目为单臂参考动作；每次练一侧，另一手可扶稳支撑，双侧分别完成。",
+        "按每侧目标分别完成，两侧确认后才计为一组，左右先后可自行决定。"
       ],
       "references": [
         "https://wger.de/api/v2/exerciseinfo/1378/"
@@ -485,7 +486,9 @@
         "耸肩、用手腕勾起负重。",
         "还原时突然松手或让肩部被重量拖拽。"
       ],
-      "notes": [],
+      "notes": [
+        "按每侧目标分别完成，两侧确认后才计为一组，左右先后可自行决定。"
+      ],
       "references": [
         "https://wger.de/api/v2/exerciseinfo/81/"
       ],
@@ -1140,7 +1143,8 @@
         "负重滑动，或让脚掌边缘失去支撑。"
       ],
       "notes": [
-        "素材为单腿示意：一只哑铃扶稳在练习侧大腿靠近膝部，两侧分别完成。"
+        "素材为单腿示意：一只哑铃扶稳在练习侧大腿靠近膝部，两侧分别完成。",
+        "按每侧目标分别完成，两侧确认后才计为一组，左右先后可自行决定。"
       ],
       "references": [
         "https://wger.de/api/v2/exerciseinfo/1620/"
@@ -1662,7 +1666,8 @@
         "前脚未站稳就急着换腿或增加重量。"
       ],
       "notes": [
-        "后脚放在稳固低凳上，主要由前腿控制下降和站起；先测试凳高与站距。"
+        "后脚放在稳固低凳上，主要由前腿控制下降和站起；先测试凳高与站距。",
+        "按每侧目标分别完成，两侧确认后才计为一组，左右先后可自行决定。"
       ],
       "references": [
         "https://github.com/bryllim/workout-guide/blob/aac599224bb9780305239607ef98540b7e0ce389/packages/workout-guide/manifest.json"
@@ -2013,7 +2018,7 @@
         "交替动作时骨盆大幅旋转。"
       ],
       "notes": [
-        "当前App只手动记录完成组数，不自动计动作时长、距离或次数。"
+        "可按目标时长计时并到时提醒；需手动确认完成，不自动计组，也不测量实际动作质量、距离或次数。"
       ],
       "references": [
         "https://github.com/bryllim/workout-guide/blob/aac599224bb9780305239607ef98540b7e0ce389/packages/workout-guide/manifest.json"
@@ -2038,7 +2043,8 @@
         "交替动作时骨盆大幅旋转。"
       ],
       "notes": [
-        "当前App只手动记录完成组数，不自动计动作时长、距离或次数。"
+        "可按目标时长计时并到时提醒；需手动确认完成，不自动计组，也不测量实际动作质量、距离或次数。",
+        "按每侧目标分别完成，两侧确认后才计为一组，左右先后可自行决定。"
       ],
       "references": [
         "https://github.com/bryllim/workout-guide/blob/aac599224bb9780305239607ef98540b7e0ce389/packages/workout-guide/manifest.json"
@@ -2109,7 +2115,7 @@
         "把器械画面直接当成户外地形教学。"
       ],
       "notes": [
-        "当前App只手动记录完成组数，不自动计动作时长、距离或次数。"
+        "可按目标时长计时并到时提醒；需手动确认完成，不自动计组，也不测量实际动作质量、距离或次数。"
       ],
       "references": [
         "https://github.com/bryllim/workout-guide/blob/aac599224bb9780305239607ef98540b7e0ce389/packages/workout-guide/manifest.json"
@@ -2134,7 +2140,7 @@
         "把器械画面直接当成户外地形教学。"
       ],
       "notes": [
-        "当前App只手动记录完成组数，不自动计动作时长、距离或次数。"
+        "可按目标时长计时并到时提醒；需手动确认完成，不自动计组，也不测量实际动作质量、距离或次数。"
       ],
       "references": [
         "https://github.com/bryllim/workout-guide/blob/aac599224bb9780305239607ef98540b7e0ce389/packages/workout-guide/manifest.json"
@@ -2159,7 +2165,7 @@
         "脚未站稳就松开支撑。"
       ],
       "notes": [
-        "当前App只手动记录完成组数，不自动计动作时长、距离或次数。"
+        "可按目标时长计时并到时提醒；需手动确认完成，不自动计组，也不测量实际动作质量、距离或次数。"
       ],
       "references": [
         "https://github.com/bryllim/workout-guide/blob/aac599224bb9780305239607ef98540b7e0ce389/packages/workout-guide/manifest.json"
@@ -2184,7 +2190,7 @@
         "回座过快，撞击行程末端。"
       ],
       "notes": [
-        "当前App只手动记录完成组数，不自动计动作时长、距离或次数。"
+        "可按目标时长计时并到时提醒；需手动确认完成，不自动计组，也不测量实际动作质量、距离或次数。"
       ],
       "references": [
         "https://github.com/bryllim/workout-guide/blob/aac599224bb9780305239607ef98540b7e0ce389/packages/workout-guide/manifest.json"
@@ -2209,7 +2215,7 @@
         "脚未站稳就松开支撑。"
       ],
       "notes": [
-        "当前App只手动记录完成组数，不自动计动作时长、距离或次数。"
+        "可按目标时长计时并到时提醒；需手动确认完成，不自动计组，也不测量实际动作质量、距离或次数。"
       ],
       "references": [
         "https://github.com/bryllim/workout-guide/blob/aac599224bb9780305239607ef98540b7e0ce389/packages/workout-guide/manifest.json"
@@ -2547,7 +2553,8 @@
         "还原时突然松手或让肩部被重量拖拽。"
       ],
       "notes": [
-        "本条为单侧动作，两侧分别完成；不把单侧重量当成双侧总重。"
+        "本条为单侧动作，两侧分别完成；不把单侧重量当成双侧总重。",
+        "按每侧目标分别完成，两侧确认后才计为一组，左右先后可自行决定。"
       ],
       "references": [
         "https://github.com/bryllim/workout-guide/blob/aac599224bb9780305239607ef98540b7e0ce389/packages/workout-guide/manifest.json"
@@ -2833,7 +2840,8 @@
         "在腰背失去控制后继续追求更低幅度。"
       ],
       "notes": [
-        "本条为单侧动作，两侧分别完成；不把单侧重量当成双侧总重。"
+        "本条为单侧动作，两侧分别完成；不把单侧重量当成双侧总重。",
+        "按每侧目标分别完成，两侧确认后才计为一组，左右先后可自行决定。"
       ],
       "references": [
         "https://github.com/bryllim/workout-guide/blob/aac599224bb9780305239607ef98540b7e0ce389/packages/workout-guide/manifest.json"
@@ -2905,7 +2913,9 @@
         "骨盆向外翻转。",
         "腿摆得过高或绳索/阻力带突然弹回。"
       ],
-      "notes": [],
+      "notes": [
+        "按每侧目标分别完成，两侧确认后才计为一组，左右先后可自行决定。"
+      ],
       "references": [
         "https://github.com/bryllim/workout-guide/blob/aac599224bb9780305239607ef98540b7e0ce389/packages/workout-guide/manifest.json"
       ],
@@ -2952,7 +2962,8 @@
         "负重没有扶稳，或把它压在腹部/骨性部位。"
       ],
       "notes": [
-        "本条为单侧动作，两侧分别完成；不把单侧重量当成双侧总重。"
+        "本条为单侧动作，两侧分别完成；不把单侧重量当成双侧总重。",
+        "按每侧目标分别完成，两侧确认后才计为一组，左右先后可自行决定。"
       ],
       "references": [
         "https://github.com/bryllim/workout-guide/blob/aac599224bb9780305239607ef98540b7e0ce389/packages/workout-guide/manifest.json"
@@ -3118,7 +3129,9 @@
         "骨盆向外翻转。",
         "腿摆得过高或绳索/阻力带突然弹回。"
       ],
-      "notes": [],
+      "notes": [
+        "按每侧目标分别完成，两侧确认后才计为一组，左右先后可自行决定。"
+      ],
       "references": [
         "https://github.com/bryllim/workout-guide/blob/aac599224bb9780305239607ef98540b7e0ce389/packages/workout-guide/manifest.json"
       ],
@@ -3212,7 +3225,8 @@
       ],
       "notes": [
         "先空杆确认轨迹、安全钩和保护挡位置，再设置负重。",
-        "后脚放在稳固低凳上，主要由前腿控制下降和站起；先测试凳高与站距。"
+        "后脚放在稳固低凳上，主要由前腿控制下降和站起；先测试凳高与站距。",
+        "按每侧目标分别完成，两侧确认后才计为一组，左右先后可自行决定。"
       ],
       "references": [
         "https://github.com/bryllim/workout-guide/blob/aac599224bb9780305239607ef98540b7e0ce389/packages/workout-guide/manifest.json"
@@ -3621,7 +3635,7 @@
         "屏气维持到无法安全站起。"
       ],
       "notes": [
-        "当前App只手动记录完成组数，不自动计动作时长、距离或次数。"
+        "可按目标时长计时并到时提醒；需手动确认完成，不自动计组，也不测量实际动作质量、距离或次数。"
       ],
       "references": [
         "https://github.com/bryllim/workout-guide/blob/aac599224bb9780305239607ef98540b7e0ce389/packages/workout-guide/manifest.json"
@@ -3882,7 +3896,8 @@
         "肘部受力失控或靠甩动完成。"
       ],
       "notes": [
-        "本条为单侧动作，两侧分别完成；不把单侧重量当成双侧总重。"
+        "本条为单侧动作，两侧分别完成；不把单侧重量当成双侧总重。",
+        "按每侧目标分别完成，两侧确认后才计为一组，左右先后可自行决定。"
       ],
       "references": [
         "https://github.com/bryllim/workout-guide/blob/aac599224bb9780305239607ef98540b7e0ce389/packages/workout-guide/manifest.json"
@@ -3976,7 +3991,7 @@
         "走到力竭才匆忙放下。"
       ],
       "notes": [
-        "当前App只手动记录完成组数，不自动计动作时长、距离或次数。"
+        "可按目标时长计时并到时提醒；需手动确认完成，不自动计组，也不测量实际动作质量、距离或次数。"
       ],
       "references": [
         "https://github.com/bryllim/workout-guide/blob/aac599224bb9780305239607ef98540b7e0ce389/packages/workout-guide/manifest.json"
@@ -4072,7 +4087,7 @@
         "双手支撑不稳仍加速。"
       ],
       "notes": [
-        "当前App只手动记录完成组数，不自动计动作时长、距离或次数。"
+        "可按目标时长计时并到时提醒；需手动确认完成，不自动计组，也不测量实际动作质量、距离或次数。"
       ],
       "references": [
         "https://github.com/bryllim/workout-guide/blob/aac599224bb9780305239607ef98540b7e0ce389/packages/workout-guide/manifest.json"
@@ -4142,7 +4157,9 @@
         "耸肩或腰部后仰来抵抗阻力。",
         "固定点松动或负重过大。"
       ],
-      "notes": [],
+      "notes": [
+        "按每侧目标分别完成，两侧确认后才计为一组，左右先后可自行决定。"
+      ],
       "references": [
         "https://github.com/bryllim/workout-guide/blob/aac599224bb9780305239607ef98540b7e0ce389/packages/workout-guide/manifest.json"
       ],
@@ -4188,7 +4205,9 @@
         "耸肩或腰部后仰来抵抗阻力。",
         "固定点松动或负重过大。"
       ],
-      "notes": [],
+      "notes": [
+        "按每侧目标分别完成，两侧确认后才计为一组，左右先后可自行决定。"
+      ],
       "references": [
         "https://github.com/bryllim/workout-guide/blob/aac599224bb9780305239607ef98540b7e0ce389/packages/workout-guide/manifest.json"
       ],
@@ -4212,7 +4231,8 @@
         "固定点松动或负重过大。"
       ],
       "notes": [
-        "当前App只手动记录完成组数，不自动计动作时长、距离或次数。"
+        "可按目标时长计时并到时提醒；需手动确认完成，不自动计组，也不测量实际动作质量、距离或次数。",
+        "按每侧目标分别完成，两侧确认后才计为一组，左右先后可自行决定。"
       ],
       "references": [
         "https://github.com/bryllim/workout-guide/blob/aac599224bb9780305239607ef98540b7e0ce389/packages/workout-guide/manifest.json"
@@ -4381,7 +4401,7 @@
         "脚未站稳就松开支撑。"
       ],
       "notes": [
-        "当前App只手动记录完成组数，不自动计动作时长、距离或次数。"
+        "可按目标时长计时并到时提醒；需手动确认完成，不自动计组，也不测量实际动作质量、距离或次数。"
       ],
       "references": [
         "https://github.com/bryllim/workout-guide/blob/aac599224bb9780305239607ef98540b7e0ce389/packages/workout-guide/manifest.json"
@@ -4406,7 +4426,7 @@
         "呼吸紊乱后仍继续加速。"
       ],
       "notes": [
-        "当前App只手动记录完成组数，不自动计动作时长、距离或次数。"
+        "可按目标时长计时并到时提醒；需手动确认完成，不自动计组，也不测量实际动作质量、距离或次数。"
       ],
       "references": [
         "https://github.com/bryllim/workout-guide/blob/aac599224bb9780305239607ef98540b7e0ce389/packages/workout-guide/manifest.json"
@@ -4432,7 +4452,7 @@
       ],
       "notes": [
         "主要用手腕带绳，小幅弹跳，脚掌轻落地；预留绳索周围空间。",
-        "当前App只手动记录完成组数，不自动计动作时长、距离或次数。"
+        "可按目标时长计时并到时提醒；需手动确认完成，不自动计组，也不测量实际动作质量、距离或次数。"
       ],
       "references": [
         "https://github.com/bryllim/workout-guide/blob/aac599224bb9780305239607ef98540b7e0ce389/packages/workout-guide/manifest.json"
@@ -4457,7 +4477,7 @@
         "脚未站稳就松开支撑。"
       ],
       "notes": [
-        "当前App只手动记录完成组数，不自动计动作时长、距离或次数。"
+        "可按目标时长计时并到时提醒；需手动确认完成，不自动计组，也不测量实际动作质量、距离或次数。"
       ],
       "references": [
         "https://github.com/bryllim/workout-guide/blob/aac599224bb9780305239607ef98540b7e0ce389/packages/workout-guide/manifest.json"
@@ -4482,7 +4502,7 @@
         "回程突然松手。"
       ],
       "notes": [
-        "当前App只手动记录完成组数，不自动计动作时长、距离或次数。"
+        "可按目标时长计时并到时提醒；需手动确认完成，不自动计组，也不测量实际动作质量、距离或次数。"
       ],
       "references": [
         "https://github.com/bryllim/workout-guide/blob/aac599224bb9780305239607ef98540b7e0ce389/packages/workout-guide/manifest.json"
@@ -4507,7 +4527,7 @@
         "把器械画面直接当成户外地形教学。"
       ],
       "notes": [
-        "当前App只手动记录完成组数，不自动计动作时长、距离或次数。"
+        "可按目标时长计时并到时提醒；需手动确认完成，不自动计组，也不测量实际动作质量、距离或次数。"
       ],
       "references": [
         "https://github.com/bryllim/workout-guide/blob/aac599224bb9780305239607ef98540b7e0ce389/packages/workout-guide/manifest.json"
@@ -4533,7 +4553,7 @@
       ],
       "notes": [
         "本条使用上斜角度，先调好训练凳；不要把角度调成近乎直立后仍按卧推负重练习。",
-        "当前App只手动记录完成组数，不自动计动作时长、距离或次数。"
+        "可按目标时长计时并到时提醒；需手动确认完成，不自动计组，也不测量实际动作质量、距离或次数。"
       ],
       "references": [
         "https://github.com/bryllim/workout-guide/blob/aac599224bb9780305239607ef98540b7e0ce389/packages/workout-guide/manifest.json"
@@ -4558,7 +4578,7 @@
         "速度过快导致耸肩和憋气。"
       ],
       "notes": [
-        "当前App只手动记录完成组数，不自动计动作时长、距离或次数。"
+        "可按目标时长计时并到时提醒；需手动确认完成，不自动计组，也不测量实际动作质量、距离或次数。"
       ],
       "references": [
         "https://github.com/bryllim/workout-guide/blob/aac599224bb9780305239607ef98540b7e0ce389/packages/workout-guide/manifest.json"
@@ -5097,7 +5117,7 @@
         "屏气或摆动四肢。"
       ],
       "notes": [
-        "当前App只手动记录完成组数，不自动计动作时长、距离或次数。"
+        "可按目标时长计时并到时提醒；需手动确认完成，不自动计组，也不测量实际动作质量、距离或次数。"
       ],
       "references": [
         "https://github.com/bryllim/workout-guide/blob/aac599224bb9780305239607ef98540b7e0ce389/packages/workout-guide/manifest.json"
@@ -5145,7 +5165,7 @@
         "把主动肩胛控制等同于反复屈肘。"
       ],
       "notes": [
-        "当前App只手动记录完成组数，不自动计动作时长、距离或次数。"
+        "可按目标时长计时并到时提醒；需手动确认完成，不自动计组，也不测量实际动作质量、距离或次数。"
       ],
       "references": [
         "https://github.com/bryllim/workout-guide/blob/aac599224bb9780305239607ef98540b7e0ce389/packages/workout-guide/manifest.json"
@@ -5170,7 +5190,7 @@
         "把主动肩胛控制等同于反复屈肘。"
       ],
       "notes": [
-        "当前App只手动记录完成组数，不自动计动作时长、距离或次数。"
+        "可按目标时长计时并到时提醒；需手动确认完成，不自动计组，也不测量实际动作质量、距离或次数。"
       ],
       "references": [
         "https://github.com/bryllim/workout-guide/blob/aac599224bb9780305239607ef98540b7e0ce389/packages/workout-guide/manifest.json"
@@ -5310,7 +5330,8 @@
         "出杠、回杠或保护设置不充分。"
       ],
       "notes": [
-        "自由腿向前伸，练习腿单脚蹲起；辅助版使用可靠固定支撑，不是另一条腿着地推起。"
+        "自由腿向前伸，练习腿单脚蹲起；辅助版使用可靠固定支撑，不是另一条腿着地推起。",
+        "按每侧目标分别完成，两侧确认后才计为一组，左右先后可自行决定。"
       ],
       "references": [
         "https://github.com/bryllim/workout-guide/blob/aac599224bb9780305239607ef98540b7e0ce389/packages/workout-guide/manifest.json"
@@ -5336,7 +5357,8 @@
       ],
       "notes": [
         "辅助量与额外负重不同；辅助量增大通常代表帮助更多，不能当作力量增加。",
-        "自由腿向前伸，练习腿单脚蹲起；辅助版使用可靠固定支撑，不是另一条腿着地推起。"
+        "自由腿向前伸，练习腿单脚蹲起；辅助版使用可靠固定支撑，不是另一条腿着地推起。",
+        "按每侧目标分别完成，两侧确认后才计为一组，左右先后可自行决定。"
       ],
       "references": [
         "https://github.com/bryllim/workout-guide/blob/aac599224bb9780305239607ef98540b7e0ce389/packages/workout-guide/manifest.json"
@@ -5360,7 +5382,9 @@
         "支撑腿膝部内扣。",
         "先追求深度而失去平衡。"
       ],
-      "notes": [],
+      "notes": [
+        "按每侧目标分别完成，两侧确认后才计为一组，左右先后可自行决定。"
+      ],
       "references": [
         "https://github.com/bryllim/workout-guide/blob/aac599224bb9780305239607ef98540b7e0ce389/packages/workout-guide/manifest.json"
       ],
@@ -5481,7 +5505,9 @@
         "膝部内扣、身体突然侧倒。",
         "为了触地而弯腰失去骨盆控制。"
       ],
-      "notes": [],
+      "notes": [
+        "按每侧目标分别完成，两侧确认后才计为一组，左右先后可自行决定。"
+      ],
       "references": [
         "https://github.com/bryllim/workout-guide/blob/aac599224bb9780305239607ef98540b7e0ce389/packages/workout-guide/manifest.json"
       ],
@@ -5505,7 +5531,8 @@
         "出杠、回杠或保护设置不充分。"
       ],
       "notes": [
-        "本条为单侧动作，两侧分别完成；不把单侧重量当成双侧总重。"
+        "本条为单侧动作，两侧分别完成；不把单侧重量当成双侧总重。",
+        "按每侧目标分别完成，两侧确认后才计为一组，左右先后可自行决定。"
       ],
       "references": [
         "https://github.com/bryllim/workout-guide/blob/aac599224bb9780305239607ef98540b7e0ce389/packages/workout-guide/manifest.json"
@@ -5553,7 +5580,8 @@
         "负重滑动，或让脚掌边缘失去支撑。"
       ],
       "notes": [
-        "本条为单侧动作，两侧分别完成；不把单侧重量当成双侧总重。"
+        "本条为单侧动作，两侧分别完成；不把单侧重量当成双侧总重。",
+        "按每侧目标分别完成，两侧确认后才计为一组，左右先后可自行决定。"
       ],
       "references": [
         "https://github.com/bryllim/workout-guide/blob/aac599224bb9780305239607ef98540b7e0ce389/packages/workout-guide/manifest.json"
@@ -5646,7 +5674,9 @@
         "用摆动代替髋部主动控制。",
         "阻力带或器械压垫落在关节上。"
       ],
-      "notes": [],
+      "notes": [
+        "按每侧目标分别完成，两侧确认后才计为一组，左右先后可自行决定。"
+      ],
       "references": [
         "https://github.com/bryllim/workout-guide/blob/aac599224bb9780305239607ef98540b7e0ce389/packages/workout-guide/manifest.json"
       ],
@@ -5669,7 +5699,9 @@
         "腰或骨盆向后翻。",
         "阻力带直接压住膝关节。"
       ],
-      "notes": [],
+      "notes": [
+        "按每侧目标分别完成，两侧确认后才计为一组，左右先后可自行决定。"
+      ],
       "references": [
         "https://github.com/bryllim/workout-guide/blob/aac599224bb9780305239607ef98540b7e0ce389/packages/workout-guide/manifest.json"
       ],
@@ -5906,7 +5938,8 @@
         "阻力带直接压住膝关节。"
       ],
       "notes": [
-        "检查阻力带磨损和固定端；不要让带子对准头脸或在连接松动时发力。"
+        "检查阻力带磨损和固定端；不要让带子对准头脸或在连接松动时发力。",
+        "按每侧目标分别完成，两侧确认后才计为一组，左右先后可自行决定。"
       ],
       "references": [
         "https://github.com/bryllim/workout-guide/blob/aac599224bb9780305239607ef98540b7e0ce389/packages/workout-guide/manifest.json"
@@ -6035,7 +6068,8 @@
         "阻力带或器械压垫落在关节上。"
       ],
       "notes": [
-        "检查阻力带磨损和固定端；不要让带子对准头脸或在连接松动时发力。"
+        "检查阻力带磨损和固定端；不要让带子对准头脸或在连接松动时发力。",
+        "按每侧目标分别完成，两侧确认后才计为一组，左右先后可自行决定。"
       ],
       "references": [
         "https://github.com/bryllim/workout-guide/blob/aac599224bb9780305239607ef98540b7e0ce389/packages/workout-guide/manifest.json"
@@ -6060,7 +6094,8 @@
         "腿摆得过高或绳索/阻力带突然弹回。"
       ],
       "notes": [
-        "检查阻力带磨损和固定端；不要让带子对准头脸或在连接松动时发力。"
+        "检查阻力带磨损和固定端；不要让带子对准头脸或在连接松动时发力。",
+        "按每侧目标分别完成，两侧确认后才计为一组，左右先后可自行决定。"
       ],
       "references": [
         "https://github.com/bryllim/workout-guide/blob/aac599224bb9780305239607ef98540b7e0ce389/packages/workout-guide/manifest.json"
@@ -6236,7 +6271,8 @@
         "固定点松动或负重过大。"
       ],
       "notes": [
-        "检查阻力带磨损和固定端；不要让带子对准头脸或在连接松动时发力。"
+        "检查阻力带磨损和固定端；不要让带子对准头脸或在连接松动时发力。",
+        "按每侧目标分别完成，两侧确认后才计为一组，左右先后可自行决定。"
       ],
       "references": [
         "https://github.com/bryllim/workout-guide/blob/aac599224bb9780305239607ef98540b7e0ce389/packages/workout-guide/manifest.json"
@@ -6311,7 +6347,7 @@
         "为了伸直腿而让腰部悬空失控。"
       ],
       "notes": [
-        "当前App只手动记录完成组数，不自动计动作时长、距离或次数。"
+        "可按目标时长计时并到时提醒；需手动确认完成，不自动计组，也不测量实际动作质量、距离或次数。"
       ],
       "references": [
         "https://github.com/bryllim/workout-guide/blob/aac599224bb9780305239607ef98540b7e0ce389/packages/workout-guide/manifest.json"
@@ -6383,7 +6419,7 @@
       ],
       "notes": [
         "双腿小幅交替上下，不是双腿同时大幅抬起；腰背稳定优先。",
-        "当前App只手动记录完成组数，不自动计动作时长、距离或次数。"
+        "可按目标时长计时并到时提醒；需手动确认完成，不自动计组，也不测量实际动作质量、距离或次数。"
       ],
       "references": [
         "https://github.com/bryllim/workout-guide/blob/aac599224bb9780305239607ef98540b7e0ce389/packages/workout-guide/manifest.json"
@@ -6504,7 +6540,7 @@
         "为了速度大幅抬臀。"
       ],
       "notes": [
-        "当前App只手动记录完成组数，不自动计动作时长、距离或次数。"
+        "可按目标时长计时并到时提醒；需手动确认完成，不自动计组，也不测量实际动作质量、距离或次数。"
       ],
       "references": [
         "https://github.com/bryllim/workout-guide/blob/aac599224bb9780305239607ef98540b7e0ce389/packages/workout-guide/manifest.json"
@@ -6530,7 +6566,7 @@
       ],
       "notes": [
         "双手在肩下、双膝在髋下附近，让膝轻离地；不把腿完全伸成普通直腿平板。",
-        "当前App只手动记录完成组数，不自动计动作时长、距离或次数。"
+        "可按目标时长计时并到时提醒；需手动确认完成，不自动计组，也不测量实际动作质量、距离或次数。"
       ],
       "references": [
         "https://github.com/bryllim/workout-guide/blob/aac599224bb9780305239607ef98540b7e0ce389/packages/workout-guide/manifest.json"
@@ -6555,7 +6591,7 @@
         "前进空间不足仍继续动作。"
       ],
       "notes": [
-        "当前App只手动记录完成组数，不自动计动作时长、距离或次数。"
+        "可按目标时长计时并到时提醒；需手动确认完成，不自动计组，也不测量实际动作质量、距离或次数。"
       ],
       "references": [
         "https://github.com/bryllim/workout-guide/blob/aac599224bb9780305239607ef98540b7e0ce389/packages/workout-guide/manifest.json"
@@ -6580,7 +6616,7 @@
         "前进空间不足仍继续动作。"
       ],
       "notes": [
-        "当前App只手动记录完成组数，不自动计动作时长、距离或次数。"
+        "可按目标时长计时并到时提醒；需手动确认完成，不自动计组，也不测量实际动作质量、距离或次数。"
       ],
       "references": [
         "https://github.com/bryllim/workout-guide/blob/aac599224bb9780305239607ef98540b7e0ce389/packages/workout-guide/manifest.json"
@@ -6628,7 +6664,7 @@
         "没有掌握屈膝支撑就强行伸腿。"
       ],
       "notes": [
-        "当前App只手动记录完成组数，不自动计动作时长、距离或次数。"
+        "可按目标时长计时并到时提醒；需手动确认完成，不自动计组，也不测量实际动作质量、距离或次数。"
       ],
       "references": [
         "https://github.com/bryllim/workout-guide/blob/aac599224bb9780305239607ef98540b7e0ce389/packages/workout-guide/manifest.json"
@@ -6675,7 +6711,9 @@
         "摆腿借力或肘部突然锁死。",
         "把平凳臂屈伸和双杠臂屈伸的支撑条件混用。"
       ],
-      "notes": [],
+      "notes": [
+        "按每侧目标分别完成，两侧确认后才计为一组，左右先后可自行决定。"
+      ],
       "references": [
         "https://github.com/bryllim/workout-guide/blob/aac599224bb9780305239607ef98540b7e0ce389/packages/workout-guide/manifest.json"
       ],
@@ -6699,7 +6737,8 @@
         "交替动作时骨盆大幅旋转。"
       ],
       "notes": [
-        "当前App只手动记录完成组数，不自动计动作时长、距离或次数。"
+        "可按目标时长计时并到时提醒；需手动确认完成，不自动计组，也不测量实际动作质量、距离或次数。",
+        "按每侧目标分别完成，两侧确认后才计为一组，左右先后可自行决定。"
       ],
       "references": [
         "https://github.com/bryllim/workout-guide/blob/aac599224bb9780305239607ef98540b7e0ce389/packages/workout-guide/manifest.json"
@@ -6746,9 +6785,7 @@
         "脚收回时膝内扣。",
         "为了速度忽略手腕和肩部支撑。"
       ],
-      "notes": [
-        "当前App只手动记录完成组数，不自动计动作时长、距离或次数。"
-      ],
+      "notes": [],
       "references": [
         "https://github.com/bryllim/workout-guide/blob/aac599224bb9780305239607ef98540b7e0ce389/packages/workout-guide/manifest.json"
       ],
@@ -6771,9 +6808,7 @@
         "脚收回时膝内扣。",
         "为了速度忽略手腕和肩部支撑。"
       ],
-      "notes": [
-        "当前App只手动记录完成组数，不自动计动作时长、距离或次数。"
-      ],
+      "notes": [],
       "references": [
         "https://github.com/bryllim/workout-guide/blob/aac599224bb9780305239607ef98540b7e0ce389/packages/workout-guide/manifest.json"
       ],
@@ -6796,9 +6831,7 @@
         "脚收回时膝内扣。",
         "为了速度忽略手腕和肩部支撑。"
       ],
-      "notes": [
-        "当前App只手动记录完成组数，不自动计动作时长、距离或次数。"
-      ],
+      "notes": [],
       "references": [
         "https://github.com/bryllim/workout-guide/blob/aac599224bb9780305239607ef98540b7e0ce389/packages/workout-guide/manifest.json"
       ],
@@ -6823,7 +6856,7 @@
       ],
       "notes": [
         "左右交替抬膝与落脚，不追求高于自身可控范围；保持躯干直立。",
-        "当前App只手动记录完成组数，不自动计动作时长、距离或次数。"
+        "可按目标时长计时并到时提醒；需手动确认完成，不自动计组，也不测量实际动作质量、距离或次数。"
       ],
       "references": [
         "https://github.com/bryllim/workout-guide/blob/aac599224bb9780305239607ef98540b7e0ce389/packages/workout-guide/manifest.json"
@@ -6848,7 +6881,7 @@
         "空间不足或明显疲劳时继续冲刺。"
       ],
       "notes": [
-        "当前App只手动记录完成组数，不自动计动作时长、距离或次数。"
+        "可按目标时长计时并到时提醒；需手动确认完成，不自动计组，也不测量实际动作质量、距离或次数。"
       ],
       "references": [
         "https://github.com/bryllim/workout-guide/blob/aac599224bb9780305239607ef98540b7e0ce389/packages/workout-guide/manifest.json"
@@ -6872,9 +6905,7 @@
         "为了速度放弃躯干稳定。",
         "空间不足或明显疲劳时继续冲刺。"
       ],
-      "notes": [
-        "当前App只手动记录完成组数，不自动计动作时长、距离或次数。"
-      ],
+      "notes": [],
       "references": [
         "https://github.com/bryllim/workout-guide/blob/aac599224bb9780305239607ef98540b7e0ce389/packages/workout-guide/manifest.json"
       ],
@@ -6898,7 +6929,7 @@
         "空间不足或明显疲劳时继续冲刺。"
       ],
       "notes": [
-        "当前App只手动记录完成组数，不自动计动作时长、距离或次数。"
+        "可按目标时长计时并到时提醒；需手动确认完成，不自动计组，也不测量实际动作质量、距离或次数。"
       ],
       "references": [
         "https://github.com/bryllim/workout-guide/blob/aac599224bb9780305239607ef98540b7e0ce389/packages/workout-guide/manifest.json"
@@ -6923,7 +6954,7 @@
         "空间不足或明显疲劳时继续冲刺。"
       ],
       "notes": [
-        "当前App只手动记录完成组数，不自动计动作时长、距离或次数。"
+        "可按目标时长计时并到时提醒；需手动确认完成，不自动计组，也不测量实际动作质量、距离或次数。"
       ],
       "references": [
         "https://github.com/bryllim/workout-guide/blob/aac599224bb9780305239607ef98540b7e0ce389/packages/workout-guide/manifest.json"
@@ -6947,9 +6978,7 @@
         "脚收回时膝内扣。",
         "为了速度忽略手腕和肩部支撑。"
       ],
-      "notes": [
-        "当前App只手动记录完成组数，不自动计动作时长、距离或次数。"
-      ],
+      "notes": [],
       "references": [
         "https://github.com/bryllim/workout-guide/blob/aac599224bb9780305239607ef98540b7e0ce389/packages/workout-guide/manifest.json"
       ],
@@ -6973,7 +7002,7 @@
         "双臂过度后拉。"
       ],
       "notes": [
-        "当前App只手动记录完成组数，不自动计动作时长、距离或次数。"
+        "可按目标时长计时并到时提醒；需手动确认完成，不自动计组，也不测量实际动作质量、距离或次数。"
       ],
       "references": [
         "https://github.com/bryllim/workout-guide/blob/aac599224bb9780305239607ef98540b7e0ce389/packages/workout-guide/manifest.json"
@@ -6998,7 +7027,7 @@
         "用快速弹震代替受控移动。"
       ],
       "notes": [
-        "当前App只手动记录完成组数，不自动计动作时长、距离或次数。"
+        "可按目标时长计时并到时提醒；需手动确认完成，不自动计组，也不测量实际动作质量、距离或次数。"
       ],
       "references": [
         "https://github.com/bryllim/workout-guide/blob/aac599224bb9780305239607ef98540b7e0ce389/packages/workout-guide/manifest.json"
@@ -7023,7 +7052,7 @@
         "用快速弹震代替受控移动。"
       ],
       "notes": [
-        "当前App只手动记录完成组数，不自动计动作时长、距离或次数。"
+        "可按目标时长计时并到时提醒；需手动确认完成，不自动计组，也不测量实际动作质量、距离或次数。"
       ],
       "references": [
         "https://github.com/bryllim/workout-guide/blob/aac599224bb9780305239607ef98540b7e0ce389/packages/workout-guide/manifest.json"
@@ -7048,7 +7077,7 @@
         "用快速弹震代替受控移动。"
       ],
       "notes": [
-        "当前App只手动记录完成组数，不自动计动作时长、距离或次数。"
+        "可按目标时长计时并到时提醒；需手动确认完成，不自动计组，也不测量实际动作质量、距离或次数。"
       ],
       "references": [
         "https://github.com/bryllim/workout-guide/blob/aac599224bb9780305239607ef98540b7e0ce389/packages/workout-guide/manifest.json"
@@ -7073,7 +7102,7 @@
         "用快速弹震代替受控移动。"
       ],
       "notes": [
-        "当前App只手动记录完成组数，不自动计动作时长、距离或次数。"
+        "可按目标时长计时并到时提醒；需手动确认完成，不自动计组，也不测量实际动作质量、距离或次数。"
       ],
       "references": [
         "https://github.com/bryllim/workout-guide/blob/aac599224bb9780305239607ef98540b7e0ce389/packages/workout-guide/manifest.json"
@@ -7098,7 +7127,7 @@
         "用快速弹震代替受控移动。"
       ],
       "notes": [
-        "当前App只手动记录完成组数，不自动计动作时长、距离或次数。"
+        "可按目标时长计时并到时提醒；需手动确认完成，不自动计组，也不测量实际动作质量、距离或次数。"
       ],
       "references": [
         "https://github.com/bryllim/workout-guide/blob/aac599224bb9780305239607ef98540b7e0ce389/packages/workout-guide/manifest.json"
@@ -7123,7 +7152,7 @@
         "用快速弹震代替受控移动。"
       ],
       "notes": [
-        "当前App只手动记录完成组数，不自动计动作时长、距离或次数。"
+        "可按目标时长计时并到时提醒；需手动确认完成，不自动计组，也不测量实际动作质量、距离或次数。"
       ],
       "references": [
         "https://github.com/bryllim/workout-guide/blob/aac599224bb9780305239607ef98540b7e0ce389/packages/workout-guide/manifest.json"
@@ -7148,7 +7177,7 @@
         "用快速弹震代替受控移动。"
       ],
       "notes": [
-        "当前App只手动记录完成组数，不自动计动作时长、距离或次数。"
+        "可按目标时长计时并到时提醒；需手动确认完成，不自动计组，也不测量实际动作质量、距离或次数。"
       ],
       "references": [
         "https://github.com/bryllim/workout-guide/blob/aac599224bb9780305239607ef98540b7e0ce389/packages/workout-guide/manifest.json"
@@ -7173,7 +7202,8 @@
         "用快速弹震代替受控移动。"
       ],
       "notes": [
-        "当前App只手动记录完成组数，不自动计动作时长、距离或次数。"
+        "可按目标时长计时并到时提醒；需手动确认完成，不自动计组，也不测量实际动作质量、距离或次数。",
+        "按每侧目标分别完成，两侧确认后才计为一组，左右先后可自行决定。"
       ],
       "references": [
         "https://github.com/bryllim/workout-guide/blob/aac599224bb9780305239607ef98540b7e0ce389/packages/workout-guide/manifest.json"
@@ -7198,7 +7228,7 @@
         "用快速弹震代替受控移动。"
       ],
       "notes": [
-        "当前App只手动记录完成组数，不自动计动作时长、距离或次数。"
+        "可按目标时长计时并到时提醒；需手动确认完成，不自动计组，也不测量实际动作质量、距离或次数。"
       ],
       "references": [
         "https://github.com/bryllim/workout-guide/blob/aac599224bb9780305239607ef98540b7e0ce389/packages/workout-guide/manifest.json"
@@ -7223,7 +7253,8 @@
         "用快速弹震代替受控移动。"
       ],
       "notes": [
-        "当前App只手动记录完成组数，不自动计动作时长、距离或次数。"
+        "可按目标时长计时并到时提醒；需手动确认完成，不自动计组，也不测量实际动作质量、距离或次数。",
+        "按每侧目标分别完成，两侧确认后才计为一组，左右先后可自行决定。"
       ],
       "references": [
         "https://github.com/bryllim/workout-guide/blob/aac599224bb9780305239607ef98540b7e0ce389/packages/workout-guide/manifest.json"
@@ -7248,7 +7279,7 @@
         "用快速弹震代替受控移动。"
       ],
       "notes": [
-        "当前App只手动记录完成组数，不自动计动作时长、距离或次数。"
+        "可按目标时长计时并到时提醒；需手动确认完成，不自动计组，也不测量实际动作质量、距离或次数。"
       ],
       "references": [
         "https://github.com/bryllim/workout-guide/blob/aac599224bb9780305239607ef98540b7e0ce389/packages/workout-guide/manifest.json"
@@ -7273,7 +7304,8 @@
         "用快速弹震代替受控移动。"
       ],
       "notes": [
-        "当前App只手动记录完成组数，不自动计动作时长、距离或次数。"
+        "可按目标时长计时并到时提醒；需手动确认完成，不自动计组，也不测量实际动作质量、距离或次数。",
+        "按每侧目标分别完成，两侧确认后才计为一组，左右先后可自行决定。"
       ],
       "references": [
         "https://github.com/bryllim/workout-guide/blob/aac599224bb9780305239607ef98540b7e0ce389/packages/workout-guide/manifest.json"
@@ -7298,7 +7330,8 @@
         "用快速弹震代替受控移动。"
       ],
       "notes": [
-        "当前App只手动记录完成组数，不自动计动作时长、距离或次数。"
+        "可按目标时长计时并到时提醒；需手动确认完成，不自动计组，也不测量实际动作质量、距离或次数。",
+        "按每侧目标分别完成，两侧确认后才计为一组，左右先后可自行决定。"
       ],
       "references": [
         "https://github.com/bryllim/workout-guide/blob/aac599224bb9780305239607ef98540b7e0ce389/packages/workout-guide/manifest.json"
@@ -7323,7 +7356,7 @@
         "用快速弹震代替受控移动。"
       ],
       "notes": [
-        "当前App只手动记录完成组数，不自动计动作时长、距离或次数。"
+        "可按目标时长计时并到时提醒；需手动确认完成，不自动计组，也不测量实际动作质量、距离或次数。"
       ],
       "references": [
         "https://github.com/bryllim/workout-guide/blob/aac599224bb9780305239607ef98540b7e0ce389/packages/workout-guide/manifest.json"

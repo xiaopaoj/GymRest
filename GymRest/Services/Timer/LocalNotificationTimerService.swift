@@ -32,7 +32,7 @@ final class LocalNotificationTimerService: TimerService {
         guard settings.authorizationStatus == .authorized || settings.authorizationStatus == .provisional else { throw TimerFailure.denied }
         center.removeAllPendingNotificationRequests()
         let content = UNMutableNotificationContent()
-        content.title = context?.kind == "transition" ? "动作间休息结束" : "休息结束"
+        content.title = context?.kind == "effort" ? "动作计时结束" : context?.kind == "transition" ? "动作间休息结束" : "休息结束"
         content.body = context?.nextStep ?? "可以开始下一组训练。"
         content.sound = .default
         try await center.add(UNNotificationRequest(identifier: id.uuidString, content: content,

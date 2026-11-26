@@ -1,5 +1,9 @@
 # GymRest
 
+> 0.9.0 (9) 工作区：新增GymRest Watch伴侣App与iPhone训练联动。手表授权后独立记录并回传，手机仍负责计划、计组和系统休息提醒。保留0.8.0计时/素材包功能；尚未提交或完成Apple SDK/真机验证。见[Watch开发与安装说明](docs/WATCH_COMPANION_0_9_0.md)。
+
+> 0.8.0 (8) 工作区：新增动作计时、两侧完成计一组、独立素材包及可选Watch开训前提醒。日常IPA默认不含图片，需单独导入 `.gymrestmedia`；可选择含包构建。新计时/双侧计划导出version4，旧1–3可导入，完整备份导出v2。尚未提交、打包或完成Xcode/真机验收。见[本轮说明](docs/TIMED_MEDIA_0_8_0.md)。
+
 > 2026-11-26：用户已授权提交并打包0.7.0 (7)。本地16项检查通过；推送后由Actions执行143项iOS测试和Release打包。按用户要求不等待远程结束，当前不确认测试或IPA成功；下方“未提交/打包”为此前工作区记录。
 
 本轮P1工作区：306项步骤/错误提示、原3项补图、全912张源图一般视觉核对及Watch/锁屏验收工具已加入。审核后280项有可展示静态图片；真机实测、Xcode验证及打包尚未进行。见[P1处理记录](docs/P1_QUALITY_AND_DEVICE_REVIEW.md)。
@@ -26,7 +30,7 @@
 - 顺序建议说明原因，由用户采用；训练中只调整未开始动作。
 - 每组重量、可选次数、单位、负重口径与器械备注；实际记录与计划预设分离，锁屏完成沿用当前组设置。
 - 独立动作间休息、锁屏快捷操作及追加/覆盖导入，已通过本轮Xcode编译与自动化测试，仍待真机验收。
-- 计划JSON version3，旧版兼容；演示及器材图待补充，不宣称素材齐备。
+- 计划JSON按内容导出version1–4，旧版兼容；演示及器材图待补充，不宣称素材齐备。
 
 ## 历史 0.3.0 功能记录（不代表最新工作区状态）
 
@@ -58,7 +62,7 @@
 
 GitHub Actions `iOS 26 validation and unsigned IPA` 支持 main 推送、PR 和手动触发。使用 macos-15-intel、iOS 26 SDK 和 XcodeGen。默认成功后下载 `GymRest-healthkit-unsigned`（手动关闭healthkit时为 `GymRest-unsigned`），诊断日志和 XCTest 结果在 `GymRest-diagnostics`。
 
-macOS 开发环境可运行 `bash scripts/ci.sh`。Linux / Windows 无法直接编译 Apple SDK。先执行 `bash scripts/prepare_icon.sh`，再用 XcodeGen 生成工程。工程由 `project.yml` 生成，构建目录不入库。
+macOS 开发环境可运行 `bash scripts/ci.sh`。Linux / Windows 无法直接编译 Apple SDK。先执行 `bash scripts/prepare_icon.sh`、`python3 scripts/prepare_media_project.py`，再运行 `xcodegen generate --spec .gymrest-media.yml --project .`。工程由 `project.yml` 生成，构建目录不入库。
 
 CI 会选择同时包含 iPhoneOS / Simulator SDK 的 Xcode 26，并用 scheme 的可用目标列表验证模拟器，避免只根据 simctl 选择不兼容运行时。没有可用目标时尝试安装所选 Xcode 的 iOS 运行时并重新检查；下载失败会保留日志并失败，不跳过测试。
 

@@ -12,16 +12,17 @@ struct ExerciseArtwork: View {
     @State private var selected = 0
     @State private var playing = false
 
+    private var artwork: MediaStore.Artwork { MediaStore.shared.selection(for: item) }
     var body: some View {
         VStack(alignment: .leading, spacing: 10) {
             if !images.isEmpty {
                 TimelineView(.periodic(from: .now, by: 0.8)) { timeline in
                     let sequence = images.count == 3 ? [0, 1, 2, 1] : Array(images.indices)
                     let step = Int(timeline.date.timeIntervalSinceReferenceDate / 0.8) % sequence.count
-                    let index = playing && !reduceMotion && item.media.allowsPlayback == true ? sequence[step] : selected
+                    let index = playing && !reduceMotion && artwork.media.allowsPlayback == true ? sequence[step] : selected
                     Image(uiImage: images[min(index, images.count - 1)])
                         .resizable().scaledToFit().frame(maxWidth: .infinity).frame(height: large ? 420 : 220)
-                        .background(item.media.lightBackground == true ? Color.white : Color(red: 0.10, green: 0.14, blue: 0.18), in: RoundedRectangle(cornerRadius: 16))
+                        .background(artwork.media.lightBackground == true ? Color.white : Color(red: 0.10, green: 0.14, blue: 0.18), in: RoundedRectangle(cornerRadius: 16))
                         .accessibilityLabel("\(item.name)，姿势示意第 \(min(index, images.count - 1) + 1) 帧")
                 }
                 HStack {
@@ -30,7 +31,7 @@ struct ExerciseArtwork: View {
                             .buttonStyle(.bordered)
                             .accessibilityAddTraits(selected == index && !playing ? .isSelected : [])
                     }
-                    if !reduceMotion && item.media.allowsPlayback == true && images.count > 1 {
+                    if !reduceMotion && artwork.media.allowsPlayback == true && images.count > 1 {
                         Button { playing.toggle() } label: {
                             Image(systemName: playing ? "pause.fill" : "play.fill")
                         }.buttonStyle(.bordered)
@@ -40,13 +41,16 @@ struct ExerciseArtwork: View {
                 if !large { Button("放大查看图片") { showingLarge = true } }
                 Text("静态姿势示意 · 编号不代表时间顺序；动作范围与负荷按自身能力调整。")
                     .font(.caption).foregroundStyle(.secondary)
-            } else if item.media.approved, let asset = item.media.animationAsset, let url = Self.assetURL(asset) {
+            } else if artwork.media.approved, let asset = artwork.media.animationAsset, let url = Self.assetURL(asset) {
                 LoopingExerciseDemo(url: url).frame(height: 220)
             } else {
-                Text("当前动作暂无准确匹配的图片，可在动作库查看其他动作。")
+                Text(artwork.media.approved ? "当前未加载到图片，请到设置 → 动作素材管理检查是否已导入并启用素材包。" : "当前动作暂无准确匹配的图片，可在动作库查看其他动作。")
                     .font(.footnote).foregroundStyle(.secondary)
             }
-            if let note = item.media.reviewNote { Text(note).font(.caption).foregroundStyle(.secondary) }
+            if artwork.fromPack, let author = artwork.media.author, let license = artwork.media.licenseURL, let url = URL(string: license) {
+                Link("素材：" + author + " · 许可", destination: url).font(.caption)
+            }
+            if let note = artwork.media.reviewNote { Text(note).font(.caption).foregroundStyle(.secondary) }
         }
         .sheet(isPresented: $showingLarge) {
             NavigationStack {
@@ -55,21 +59,15 @@ struct ExerciseArtwork: View {
                     .toolbar { Button("关闭") { showingLarge = false } }
             }
         }
-        .task(id: item.id) {
+        .task(id: item.id + MediaStore.shared.generation.uuidString) {
             playing = false; selected = 0
-            images = item.media.approved ? (item.media.frameAssets ?? []).compactMap { filename in
-                Self.assetURL(filename).flatMap { UIImage(contentsOfFile: $0.path) }
-            } : []
+            images = artwork.frames.compactMap { UIImage(contentsOfFile: $0.path) }
         }
         .onChange(of: reduceMotion) { _, enabled in if enabled { playing = false } }
         .onDisappear { playing = false }
     }
     static func assetURL(_ filename: String) -> URL? {
-        guard filename == (filename as NSString).lastPathComponent, !filename.contains("..") else { return nil }
-        let name = (filename as NSString).deletingPathExtension
-        let ext = (filename as NSString).pathExtension
-        return Bundle.main.url(forResource: name, withExtension: ext)
-            ?? Bundle.main.url(forResource: name, withExtension: ext, subdirectory: "ExerciseFrames")
+        MediaStore.bundledAsset(filename)
     }
 }
 
@@ -85,6 +83,13 @@ struct WorkoutGuideCreditsView: View {
                 Link("CC BY-SA 4.0 完整许可", destination: URL(string: "https://creativecommons.org/licenses/by-sa/4.0/legalcode")!)
                 Link("固定版本与原始素材清单", destination: URL(string: base + "/blob/aac599224bb9780305239607ef98540b7e0ce389/packages/workout-guide/manifest.json")!)
                 Text("复制或改编这些素材时，应保留作者、来源及许可，标明修改；改编素材继续采用相同许可。")
+            }
+            ForEach(MediaStore.shared.selections) { pack in
+                Section("已安装包 · " + pack.id) {
+                    let directory = MediaStore.shared.root.appendingPathComponent(pack.id).appendingPathComponent(String(pack.revision)).appendingPathComponent("credits")
+                    ShareLink("导出当前包来源", item: directory.appendingPathComponent("Sources.json"))
+                    ShareLink("导出当前包许可", item: directory.appendingPathComponent("LICENSE.txt"))
+                }
             }
             Section("逐帧作者、来源和校验值") {
                 if let url = Bundle.main.url(forResource: "WorkoutGuideSources", withExtension: "json") {

@@ -30,6 +30,8 @@ struct TrainingView: View {
                     } else {
                         VStack(alignment: .leading, spacing: 24) {
                             sessionHeader(session)
+                            WatchRecordingCard(session: session)
+                            effortContent(session)
                             measurementContent(session)
                             artworkContent(session)
                             exerciseProgress(session)
@@ -136,7 +138,7 @@ struct TrainingView: View {
     }
     private func trainingActionBar(_ session: TrainingSession) -> some View {
         VStack(alignment: .leading, spacing: 8) {
-            Text(session.phase == .training ? "正在训练 · 做完本组后确认" : session.phase == .paused ? "休息已暂停" : session.isTransitionRest ? "动作间休息" : "组间休息")
+            Text(session.phase == .training ? "正在训练 · " + session.partTitle : session.phase == .paused ? "休息已暂停" : session.isTransitionRest ? "动作间休息" : "组间休息")
                 .font(.headline)
             Text("本次累计完成 \(session.completedSets)/\(session.totalSets) 组 · 下一动作：\(session.nextName)")
                 .font(.caption).foregroundStyle(.secondary)
@@ -144,10 +146,31 @@ struct TrainingView: View {
                 Text("下一动作预设：" + drafts[session.index + 1].summary).font(.caption).foregroundStyle(.secondary)
             }
             if session.phase == .training {
-                Button { Task { await controller.completeSet() } } label: {
-                    Text("完成本组 · \(session.currentSetValues.summary)")
-                        .font(.headline).frame(maxWidth: .infinity).padding(.vertical, 8)
-                }.buttonStyle(.borderedProminent)
+                if session.currentSetValues.durationSeconds != nil {
+                    if let timer = session.effortTimer, timer.registered || timer.status != .running {
+                        if timer.status == .paused {
+                            Button("继续本侧计时") { Task { await controller.resumeEffort() } }.buttonStyle(.borderedProminent)
+                        } else {
+                            TimelineView(.periodic(from: .now, by: 1)) { timeline in
+                                Button(session.completionTitle) { Task { await controller.completeSet() } }
+                                    .buttonStyle(.borderedProminent)
+                                    .disabled(timer.status != .ready && timer.secondsLeft(at: timeline.date) > 0)
+                            }
+                            if timer.status == .running {
+                                Button("暂停计时") { Task { await controller.pauseEffort() } }.buttonStyle(.bordered)
+                            }
+                        }
+                    } else {
+                        Button(session.effortTimer == nil ? "开始计时 · " + session.partTitle : "重试计时提醒") {
+                            Task { await controller.startEffort() }
+                        }.buttonStyle(.borderedProminent)
+                    }
+                } else {
+                    Button { Task { await controller.completeSet() } } label: {
+                        Text(session.completionTitle + " · " + session.currentSetValues.summary)
+                            .font(.headline).frame(maxWidth: .infinity).padding(.vertical, 8)
+                    }.buttonStyle(.borderedProminent)
+                }
             } else {
                 HStack {
                     Button(session.phase == .paused ? "继续休息" : "暂停休息") {
@@ -164,14 +187,16 @@ struct TrainingView: View {
     private func measurementContent(_ session: TrainingSession) -> some View {
         if session.completed[session.index] < session.current.sets {
             VStack(alignment: .leading, spacing: 10) {
-                Text(session.phase == .training ? "本组重量与次数" : "下一组重量与次数").font(.headline)
+                Text(session.phase == .training ? "本组训练设置" : "下一组训练设置").font(.headline)
                 Text(session.currentSetValues.summary).font(.title3.monospacedDigit())
                 if let origins = session.setValueOrigins, origins.indices.contains(session.index) { Text(origins[session.index]).font(.caption).foregroundStyle(.secondary) }
                 if !session.currentSetValues.equipmentNote.isEmpty { Text(session.currentSetValues.equipmentNote).font(.caption) }
-                if controller.previousSetValues != nil {
+                if controller.previousSetValues != nil && session.sideProgress == 0 && session.effortTimer == nil {
                     Button("沿用本动作上一组") { Task { await controller.reusePreviousSet(interactionID: session.interactionID) } }
                 }
                 Button("调整本组设置") { editingValues = ValuesRequest(values: session.currentSetValues, interactionID: session.interactionID) }
+                    .disabled(session.sideProgress > 0 || session.effortTimer != nil)
+                if session.sideProgress > 0 || session.effortTimer != nil { Text("当前组进行中，完成整组后可调整；计时可单独暂停或重置。").font(.caption).foregroundStyle(.secondary) }
                 Text("预填值在完成本组时记录；未填写的值保持未记录。锁屏完成沿用这里的设置。")
                     .font(.caption).foregroundStyle(.secondary)
             }.padding().frame(maxWidth: .infinity, alignment: .leading)
@@ -194,7 +219,7 @@ struct TrainingView: View {
     private func exerciseProgress(_ session: TrainingSession) -> some View {
         if !(session.originalExercises ?? session.exercises)[session.index].alternatives.isEmpty {
             Button { choosingAlternative = true } label: { Label("器械被占用？切换替代动作", systemImage: "arrow.triangle.swap") }
-                .disabled(session.phase != .training)
+                .disabled(session.phase != .training || session.sideProgress > 0 || session.effortTimer != nil)
             if session.phase != .training { Text("休息结束或跳过后可切换。").font(.caption).foregroundStyle(.secondary) }
         }
         Text("第 \(min(session.current.sets, session.completed[session.index] + (session.phase == .training ? 1 : 0))) / \(session.current.sets) 组")
@@ -241,8 +266,8 @@ struct TrainingView: View {
                 Spacer()
                 Button("跳过休息") { Task { await controller.skipRest() } }
             }
-        } else {
-            Label("准备好后完成一组，再开始休息", systemImage: "dumbbell.fill")
+        } else if session.currentSetValues.durationSeconds == nil {
+            Label(session.currentSetValues.sideCount == 2 ? "两侧完成后才开始组间休息" : "准备好后完成一组，再开始休息", systemImage: "dumbbell.fill")
                 .foregroundStyle(.secondary).padding(.vertical, 24)
 
         }
@@ -257,6 +282,33 @@ struct TrainingView: View {
         }.padding(.top)
         Text("组数仅由你手动确认。时间调整只作用于本次休息。")
             .font(.footnote).foregroundStyle(.secondary)
+    }
+
+    @ViewBuilder
+    private func effortContent(_ session: TrainingSession) -> some View {
+        if session.phase == .training && (session.currentSetValues.durationSeconds != nil || session.currentSetValues.sideCount == 2) {
+            VStack(alignment: .leading, spacing: 12) {
+                Text(session.partTitle).font(.title2.bold())
+                if session.currentSetValues.sideCount == 2 {
+                    Text(session.sideProgress == 0 ? "整组进度 0/2侧 · 左右先后自行决定" : "整组进度 1/2侧 · 请换到另一侧，完成后才算一组")
+                        .font(.subheadline).foregroundStyle(.orange)
+                }
+                if let duration = session.currentSetValues.durationSeconds {
+                    TimelineView(.periodic(from: .now, by: 1)) { timeline in
+                        let left = Int(ceil(session.effortTimer?.secondsLeft(at: timeline.date) ?? Double(duration)))
+                        Text(String(format: "%02d:%02d", left / 60, left % 60))
+                            .font(.system(size: 64, weight: .bold, design: .rounded)).monospacedDigit()
+                            .frame(maxWidth: .infinity)
+                    }
+                    if let timer = session.effortTimer {
+                        Text(timer.status == .ready ? "计时结束，请确认完成" : timer.status == .paused ? "计时暂停 · 暂停期间不提醒" : timer.registered ? "动作计时提醒已注册 · 到时不自动计组" : "提醒未注册成功，请重试")
+                            .font(.subheadline).foregroundStyle(timer.status == .running && !timer.registered ? Color.red : Color.secondary)
+                        Button("重置当前侧计时") { Task { await controller.resetEffort() } }
+                    } else { Text("准备好后开始计时，切换到其他App或锁屏后由系统提醒。").font(.footnote).foregroundStyle(.secondary) }
+                }
+            }.padding().frame(maxWidth: .infinity, alignment: .leading)
+                .background(.orange.opacity(0.08), in: RoundedRectangle(cornerRadius: 16))
+        }
     }
 
     private func updateScreenAwake() {

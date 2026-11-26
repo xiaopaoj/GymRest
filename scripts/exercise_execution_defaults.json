@@ -1,0 +1,234 @@
+{
+  "guide-plank": {
+    "durationSeconds": 40
+  },
+  "guide-side-plank": {
+    "durationSeconds": 40,
+    "sideCount": 2
+  },
+  "guide-running": {
+    "durationSeconds": 40
+  },
+  "guide-walking": {
+    "durationSeconds": 40
+  },
+  "guide-cycling": {
+    "durationSeconds": 40
+  },
+  "guide-rowing": {
+    "durationSeconds": 40
+  },
+  "guide-stair-climber": {
+    "durationSeconds": 40
+  },
+  "guide-wall-sit": {
+    "durationSeconds": 40
+  },
+  "guide-farmer-carry": {
+    "durationSeconds": 40
+  },
+  "guide-mountain-climber": {
+    "durationSeconds": 40
+  },
+  "guide-cable-pallof-hold": {
+    "durationSeconds": 40,
+    "sideCount": 2
+  },
+  "guide-elliptical": {
+    "durationSeconds": 40
+  },
+  "guide-swimming": {
+    "durationSeconds": 40
+  },
+  "guide-jump-rope": {
+    "durationSeconds": 40
+  },
+  "guide-assault-bike": {
+    "durationSeconds": 40
+  },
+  "guide-skierg": {
+    "durationSeconds": 40
+  },
+  "guide-hiking": {
+    "durationSeconds": 40
+  },
+  "guide-treadmill-incline-walk": {
+    "durationSeconds": 40
+  },
+  "guide-battle-ropes": {
+    "durationSeconds": 40
+  },
+  "guide-superman-hold": {
+    "durationSeconds": 40
+  },
+  "guide-dead-hang": {
+    "durationSeconds": 40
+  },
+  "guide-active-hang": {
+    "durationSeconds": 40
+  },
+  "guide-hollow-body-hold": {
+    "durationSeconds": 40
+  },
+  "guide-flutter-kick": {
+    "durationSeconds": 40
+  },
+  "guide-plank-jack": {
+    "durationSeconds": 40
+  },
+  "guide-bear-plank": {
+    "durationSeconds": 40
+  },
+  "guide-bear-crawl": {
+    "durationSeconds": 40
+  },
+  "guide-crab-walk": {
+    "durationSeconds": 40
+  },
+  "guide-l-sit-hold": {
+    "durationSeconds": 40
+  },
+  "guide-copenhagen-plank": {
+    "durationSeconds": 40,
+    "sideCount": 2
+  },
+  "guide-high-knees": {
+    "durationSeconds": 40
+  },
+  "guide-jumping-jack": {
+    "durationSeconds": 40
+  },
+  "guide-lateral-shuffle": {
+    "durationSeconds": 40
+  },
+  "guide-fast-feet": {
+    "durationSeconds": 40
+  },
+  "guide-seal-jack": {
+    "durationSeconds": 40
+  },
+  "guide-cat-cow-stretch": {
+    "durationSeconds": 40
+  },
+  "guide-arm-circles": {
+    "durationSeconds": 40
+  },
+  "guide-worlds-greatest-stretch": {
+    "durationSeconds": 40
+  },
+  "guide-leg-swings-stretch": {
+    "durationSeconds": 40
+  },
+  "guide-torso-twist-stretch": {
+    "durationSeconds": 40
+  },
+  "guide-doorway-chest-stretch": {
+    "durationSeconds": 40
+  },
+  "guide-childs-pose": {
+    "durationSeconds": 40
+  },
+  "guide-kneeling-hip-flexor-stretch": {
+    "durationSeconds": 40,
+    "sideCount": 2
+  },
+  "guide-hamstring-stretch": {
+    "durationSeconds": 40
+  },
+  "guide-standing-quad-stretch": {
+    "durationSeconds": 40,
+    "sideCount": 2
+  },
+  "guide-seated-forward-fold-stretch": {
+    "durationSeconds": 40
+  },
+  "guide-cross-body-shoulder-stretch": {
+    "durationSeconds": 40,
+    "sideCount": 2
+  },
+  "guide-wall-calf-stretch": {
+    "durationSeconds": 40,
+    "sideCount": 2
+  },
+  "guide-butterfly-stretch": {
+    "durationSeconds": 40
+  },
+  "cable-lateral": {
+    "sideCount": 2
+  },
+  "dumbbell-row": {
+    "sideCount": 2
+  },
+  "dumbbell-calf": {
+    "sideCount": 2
+  },
+  "guide-bulgarian-split-squat": {
+    "sideCount": 2
+  },
+  "guide-single-arm-cable-row": {
+    "sideCount": 2
+  },
+  "guide-single-leg-romanian-deadlift": {
+    "sideCount": 2
+  },
+  "guide-cable-kickback": {
+    "sideCount": 2
+  },
+  "guide-single-leg-glute-bridge": {
+    "sideCount": 2
+  },
+  "guide-machine-glute-kickback": {
+    "sideCount": 2
+  },
+  "guide-smith-machine-bulgarian-split-squat": {
+    "sideCount": 2
+  },
+  "guide-single-arm-dumbbell-tricep-extension": {
+    "sideCount": 2
+  },
+  "guide-pallof-press": {
+    "sideCount": 2
+  },
+  "guide-half-kneeling-pallof-press": {
+    "sideCount": 2
+  },
+  "guide-pistol-squat": {
+    "sideCount": 2
+  },
+  "guide-assisted-pistol-squat": {
+    "sideCount": 2
+  },
+  "guide-shrimp-squat": {
+    "sideCount": 2
+  },
+  "guide-skater-squat": {
+    "sideCount": 2
+  },
+  "guide-single-leg-box-squat": {
+    "sideCount": 2
+  },
+  "guide-single-leg-calf-raise": {
+    "sideCount": 2
+  },
+  "guide-fire-hydrant": {
+    "sideCount": 2
+  },
+  "guide-clamshell": {
+    "sideCount": 2
+  },
+  "guide-banded-clamshell": {
+    "sideCount": 2
+  },
+  "guide-banded-fire-hydrant": {
+    "sideCount": 2
+  },
+  "guide-banded-kickback": {
+    "sideCount": 2
+  },
+  "guide-banded-pallof-press": {
+    "sideCount": 2
+  },
+  "guide-side-plank-hip-dip": {
+    "sideCount": 2
+  }
+}

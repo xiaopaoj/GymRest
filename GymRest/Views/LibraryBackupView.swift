@@ -15,7 +15,7 @@ struct LibraryBackupView: View {
     var body: some View {
         Form {
             Section("完整备份") {
-                Text("保存全部计划、训练历史、逐组重量/次数、健康运动关联及设置。图片随App提供，无需重复备份。进行中的训练及系统提醒不在备份内。")
+                Text("保存全部计划、训练历史、逐组重量/次数/目标计时、健康运动关联及设置。图片素材包独立管理，请在动作素材页面单独导出。进行中的训练及系统提醒不在备份内。")
                     .font(.footnote)
                 Button("导出完整备份") {
                     do {

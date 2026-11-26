@@ -20,23 +20,30 @@ enum LoadKind: String, Codable, CaseIterable, Sendable {
 struct SetValues: Codable, Equatable, Sendable {
     var weight: Double?
     var repetitions: Int?
+    var durationSeconds: Int?
+    var sideCount: Int = 1
     var unit: LoadUnit = .kg
     var kind: LoadKind = .total
     var equipmentNote = ""
-    enum CodingKeys: String, CodingKey { case weight, repetitions, unit, kind, equipmentNote }
-    init(weight: Double? = nil, repetitions: Int? = nil, unit: LoadUnit = .kg, kind: LoadKind = .total, equipmentNote: String = "") {
+    enum CodingKeys: String, CodingKey { case weight, repetitions, durationSeconds, sideCount, unit, kind, equipmentNote }
+    init(weight: Double? = nil, repetitions: Int? = nil, unit: LoadUnit = .kg, kind: LoadKind = .total, equipmentNote: String = "", durationSeconds: Int? = nil, sideCount: Int = 1) {
+        self.durationSeconds = durationSeconds; self.sideCount = sideCount
         self.weight = weight; self.repetitions = repetitions; self.unit = unit; self.kind = kind; self.equipmentNote = equipmentNote
     }
     init(from decoder: Decoder) throws {
         let values = try decoder.container(keyedBy: CodingKeys.self)
         weight = try values.decodeIfPresent(Double.self, forKey: .weight)
         repetitions = try values.decodeIfPresent(Int.self, forKey: .repetitions)
+        durationSeconds = try values.decodeIfPresent(Int.self, forKey: .durationSeconds)
+        sideCount = try values.decodeIfPresent(Int.self, forKey: .sideCount) ?? 1
         unit = try values.decodeIfPresent(LoadUnit.self, forKey: .unit) ?? .kg
         kind = try values.decodeIfPresent(LoadKind.self, forKey: .kind) ?? .total
         equipmentNote = try values.decodeIfPresent(String.self, forKey: .equipmentNote) ?? ""
     }
     func validate() throws {
-        guard equipmentNote.count <= 80,
+        guard equipmentNote.count <= 80, (1...2).contains(sideCount),
+              durationSeconds.map({ (1...86400).contains($0) }) ?? true,
+              durationSeconds == nil || repetitions == nil,
               repetitions.map({ (1...1000).contains($0) }) ?? true,
               weight.map({ $0.isFinite && (0...10000).contains($0) }) ?? true,
               kind != .bodyweight || weight == nil,
@@ -47,7 +54,8 @@ struct SetValues: Codable, Equatable, Sendable {
         if kind == .bodyweight { load = "自重" }
         else if let weight { load = "\(weight.formatted(.number.precision(.fractionLength(0...2)))) \(unit.title)（\(kind.title)）" }
         else { load = "重量未记录（\(kind.title)）" }
-        return load + (repetitions.map { " · \($0) 次" } ?? " · 次数未记录")
+        let effort = durationSeconds.map { "目标 \($0) 秒" } ?? repetitions.map { "\($0) 次" } ?? "次数未记录"
+        return load + " · " + effort + (sideCount == 2 ? " /侧 · 两侧一组" : "")
     }
 }
 struct SetPerformance: Codable, Equatable, Sendable {
@@ -65,7 +73,7 @@ enum PerformanceError: LocalizedError {
     case invalid, staleOrder
     var errorDescription: String? {
         switch self {
-        case .invalid: "重量须为0–10000的有限数值，次数可留空或填写1–1000整数；档位只适用于器械，自重无需填写重量，器械备注限80字。"
+        case .invalid: "重量须为0–10000的有限数值，次数可留空或填写1–1000整数；计时时长须为1–86400秒且不同时填写次数，侧数须为1或2；档位只适用于器械，自重无需填写重量，器械备注限80字。"
         case .staleOrder: "训练进度已变化，请重新查看尚未开始动作的顺序建议。"
         }
     }
