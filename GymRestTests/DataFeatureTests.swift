@@ -44,12 +44,16 @@ import SwiftData
     }
     func testImportAppendsWithNewIdentitiesAndPreservesOverrides() throws {
         let store = try store()
+        let existing = try TrainingPlan(name: "已有训练", position: 0, exercises: [ExerciseSpec(name: "深蹲")])
+        store.context.insert(existing); try store.context.save()
+        let originalIDs = Set(try store.context.fetch(FetchDescriptor<TrainingPlan>()).map(\.id))
         let exercise = ExerciseSpec(name: "卧推", sets: 3, restOverrides: [2: 120])
         let entry = PlanArchive.Entry(id: UUID(), name: "导入计划", exercises: [exercise])
         let data = try JSONEncoder().encode(PlanArchive(plans: [entry]))
         try PlanArchive.decode(data).append(to: store.context)
         let plans = try store.context.fetch(FetchDescriptor<TrainingPlan>())
-        XCTAssertEqual(plans.count, 6)
+        XCTAssertEqual(plans.count, originalIDs.count + 1)
+        XCTAssertTrue(originalIDs.isSubset(of: Set(plans.map(\.id))))
         let imported = try XCTUnwrap(plans.first(where: { $0.name == "导入计划" }))
         XCTAssertNotEqual(imported.id, entry.id)
         let value = try XCTUnwrap(imported.exercises().first)

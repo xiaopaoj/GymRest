@@ -19,21 +19,31 @@ import SwiftData
     }
     static func standardizeStoredExerciseNames(in context: ModelContext, beforeCommit: () throws -> Void = {}) throws {
         guard !context.hasChanges else { throw ArchiveFailure.invalid("请先保存已有编辑，再统一动作名称。") }
-        var updates: [(TrainingPlan, [ExerciseSpec])] = []
+        var updates: [(plan: TrainingPlan, revised: [ExerciseSpec], original: Data)] = []
         for day in try context.fetch(FetchDescriptor<TrainingPlan>()) {
             guard let original = try? day.exercises() else { continue }
             let revised = ExerciseNames.standardize(original)
             guard revised != original else { continue }
             // Invalid legacy plans remain readable as errors, never rewritten by cleanup.
             do { for exercise in revised { try exercise.validate() } } catch { continue }
-            updates.append((day, revised))
+            updates.append((day, revised, day.exerciseData))
         }
         guard !updates.isEmpty else { return }
         do {
-            for (day, exercises) in updates { try day.setExercises(exercises) }
+            for update in updates { try update.plan.setExercises(update.revised) }
             try beforeCommit()
             try context.save()
-        } catch { context.discardPendingChanges(); throw error }
+        } catch {
+            // Restore observed values before rollback: SwiftData can otherwise leave
+            // an @Model property cache holding the failed value after rollback.
+            for update in updates { update.plan.exerciseData = update.original }
+            context.discardPendingChanges()
+            for update in updates where update.plan.exerciseData != update.original {
+                update.plan.exerciseData = update.original
+            }
+            context.discardPendingChanges()
+            throw error
+        }
     }
     /// One-time removal of known legacy seed rows, never a general empty-day sweep.
     static func removeLegacyPlaceholders(in context: ModelContext, preferences: LibraryPreferences,
@@ -50,6 +60,7 @@ import SwiftData
                 && (try? day.exercises().isEmpty) == true
         }
         let removedIDs = Set(removed.map(\.id))
+        let originalMarker = preferences.legacyPlaceholdersRemoved
         do {
             for day in removed { context.delete(day) }
             for parent in seedParents where !days.contains(where: { $0.programID == parent.id && !removedIDs.contains($0.id) }) {
@@ -58,7 +69,15 @@ import SwiftData
             preferences.legacyPlaceholdersRemoved = true
             try beforeCommit()
             try context.save()
-        } catch { context.discardPendingChanges(); throw error }
+        } catch {
+            preferences.legacyPlaceholdersRemoved = originalMarker
+            context.discardPendingChanges()
+            if preferences.legacyPlaceholdersRemoved != originalMarker {
+                preferences.legacyPlaceholdersRemoved = originalMarker
+                context.discardPendingChanges()
+            }
+            throw error
+        }
     }
     func load() throws -> TrainingSession? {
         guard let record = try context.fetch(FetchDescriptor<ActiveTraining>()).first else { return nil }
