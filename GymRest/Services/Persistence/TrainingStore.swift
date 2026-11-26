@@ -101,7 +101,10 @@ import SwiftData
         return nil
     }
     func suggestedValues(for exercise: ExerciseSpec) throws -> SetValues {
-        var planned = exercise.prescription ?? (try? ExerciseCatalog.bundled().resolve(exercise)?.prescription) ?? SetValues()
+        // Only an explicit catalog link may supply a new default prescription.
+        // A matching name can identify artwork without changing a legacy custom
+        // exercise's load kind or splitting its existing history profile.
+        var planned = exercise.prescription ?? (try? ExerciseCatalog.bundled().item(exercise.catalogID)?.prescription) ?? SetValues()
         if let last = try lastValues(for: exercise, matching: planned) {
             if planned.weight == nil { planned.weight = last.weight }
             if planned.repetitions == nil && planned.durationSeconds == nil { planned.repetitions = last.repetitions }

@@ -125,10 +125,20 @@ import SwiftData
     }
     func testEarlyEndDoesNotArchiveHalfAsAFullSet() async throws {
         let f = try await fixture(seconds: nil)
-        await f.controller.completeSet(); await f.controller.end()
+        await f.controller.completeSet()
+        XCTAssertEqual(f.controller.session?.sideProgress, 1)
+        XCTAssertEqual(f.controller.session?.completedSets, 0)
+        await f.controller.end()
         let records = try f.store.context.fetch(FetchDescriptor<TrainingRecord>())
-        XCTAssertEqual(try records.first?.completed(), [0])
-        XCTAssertEqual(try records.first?.performances()?.first?.count, 0)
+        XCTAssertEqual(records.count, 1)
+        let record = try XCTUnwrap(records.first)
+        XCTAssertEqual(try record.completed(), [0])
+        XCTAssertFalse(record.finished)
+        // Storage is created lazily on the first whole-set completion. Both a
+        // missing measurement array and an empty array represent no full sets.
+        XCTAssertTrue(try (record.performances() ?? []).flatMap { $0 }.isEmpty)
+        XCTAssertNil(try f.store.load())
+        XCTAssertTrue(f.timer.ids.isEmpty)
     }
     func testResetCurrentSideKeepsFirstSideAndRejectsStaleAlarm() async throws {
         let f = try await fixture()

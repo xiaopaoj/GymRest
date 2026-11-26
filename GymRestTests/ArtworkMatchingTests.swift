@@ -120,8 +120,24 @@ import SwiftData
         let record = try TrainingRecord(session: session, end: Date())
         store.context.insert(record); try store.context.save()
         let revised = ExerciseSpec(name: "窄距对握高位下拉", sets: 1)
-        XCTAssertEqual(try store.suggestedValues(for: revised).weight, 30)
+        let suggested = try store.suggestedValues(for: revised)
+        XCTAssertEqual(suggested.weight, 30)
+        XCTAssertEqual(suggested.repetitions, 10)
+        XCTAssertEqual(suggested.kind, .total)
         XCTAssertEqual(try record.performances()?.first?.first?.profileKey, legacyKey)
+    }
+
+    func testOnlyExplicitCatalogLinkSuppliesDefaultPrescription() throws {
+        let store = try namingStore()
+        let named = ExerciseSpec(name: "窄距对握高位下拉")
+        XCTAssertEqual(try store.suggestedValues(for: named), SetValues())
+        let linked = ExerciseSpec(name: named.name, catalogID: "neutral-pulldown")
+        let expected = try XCTUnwrap(ExerciseCatalog.bundled().item(linked.catalogID)).prescription
+        XCTAssertEqual(try store.suggestedValues(for: linked), expected)
+        XCTAssertEqual(expected.kind, .machine)
+        let explicit = SetValues(weight: 30, repetitions: 10, kind: .total)
+        let configured = ExerciseSpec(name: named.name, catalogID: linked.catalogID, prescription: explicit)
+        XCTAssertEqual(try store.suggestedValues(for: configured), explicit)
     }
 
 }
