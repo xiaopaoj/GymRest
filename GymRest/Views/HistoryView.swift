@@ -12,16 +12,7 @@ struct HistoryView: View {
             Section { NavigationLink("按动作查看重量与次数变化") { TrainingComparisonView() } }
             ForEach(records) { record in
                 NavigationLink { RecordDetailView(record: record) } label: {
-                    VStack(alignment: .leading, spacing: 6) {
-                        HStack {
-                            Text(record.planName).font(.headline)
-                            Spacer()
-                            Text(record.finished ? "已完成" : "提前结束").font(.caption).foregroundStyle(.secondary)
-                        }
-                        Text(record.endedAt, format: .dateTime.month().day().hour().minute()).font(.subheadline).foregroundStyle(.secondary)
-                        if let counts = try? record.completed() { Text("完成 \(counts.reduce(0, +)) 组").font(.subheadline) }
-                        if let source = record.workoutSource { Label("已匹配 · " + source, systemImage: "heart.text.square").font(.caption).foregroundStyle(.orange) }
-                    }.padding(.vertical, 5)
+                    TrainingRecordRow(record: record)
                 }
             }.onDelete { indices in
                 for i in indices { context.delete(records[i]) }
@@ -84,41 +75,43 @@ struct RecordDetailView: View {
             if record.performancesData != nil && performances == nil {
                 Section { Text("逐组重量记录暂时无法读取，请保留数据。").foregroundStyle(.red) }
             }
-            Section("匹配 Apple Watch / 健康运动") {
-                Text("仅在你点击查询并授权后，读取健康App中已同步的运动。按时间重合排序，需手动确认；来源可能是手表或其他App，不会自动认定为Apple Watch。")
-                    .font(.footnote).foregroundStyle(.secondary)
-                if let source = record.workoutSource {
-                    Label("已关联：" + source, systemImage: "checkmark.circle.fill")
-                    if let start = record.workoutStart, let end = record.workoutEnd {
-                        Text("\(start.formatted(date: .abbreviated, time: .shortened)) – \(end.formatted(date: .omitted, time: .shortened))")
+            Section {
+                DisclosureGroup("Apple Watch／健康运动关联") {
+                    Text("仅在你点击查询并授权后，读取健康App中已同步的运动。按时间重合排序，需手动确认；来源可能是手表或其他App，不会自动认定为Apple Watch。")
+                        .font(.footnote).foregroundStyle(.secondary)
+                    if let source = record.workoutSource {
+                        Label("已关联：" + source, systemImage: "checkmark.circle.fill")
+                        if let start = record.workoutStart, let end = record.workoutEnd {
+                            Text("\(start.formatted(date: .abbreviated, time: .shortened)) – \(end.formatted(date: .omitted, time: .shortened))")
+                        }
+                        Button("解除关联", role: .destructive) {
+                            record.workoutID = nil; record.workoutSource = nil; record.workoutStart = nil; record.workoutEnd = nil
+                            save()
+                        }
                     }
-                    Button("解除关联", role: .destructive) {
-                        record.workoutID = nil; record.workoutSource = nil; record.workoutStart = nil; record.workoutEnd = nil
-                        save()
+                    if WorkoutReader.buildEnabled {
+                        Button(busy ? "正在查询…" : "授权并查找时间相近的运动") { Task { await query() } }
+                            .disabled(busy || record.startedAt == nil)
+                    } else { Text(HealthFailure.buildDisabled.localizedDescription).font(.footnote) }
+                    ForEach(candidates) { candidate in
+                        Button { selected = candidate } label: {
+                            VStack(alignment: .leading, spacing: 5) {
+                                Text(candidate.title).font(.headline)
+                                Text(candidate.source + (candidate.device.map { " · " + $0 } ?? ""))
+                                Text("\(candidate.start.formatted(date: .abbreviated, time: .shortened)) – \(candidate.end.formatted(date: .omitted, time: .shortened))")
+                                if let start = record.startedAt {
+                                    Text("时间重合 \(Int(candidate.overlapScore(start: start, end: record.endedAt) * 100))% · 点击确认关联")
+                                }
+                            }.font(.caption)
+                        }
                     }
-                }
-                if WorkoutReader.buildEnabled {
-                    Button(busy ? "正在查询…" : "授权并查找时间相近的运动") { Task { await query() } }
-                        .disabled(busy || record.startedAt == nil)
-                } else { Text(HealthFailure.buildDisabled.localizedDescription).font(.footnote) }
-                ForEach(candidates) { candidate in
-                    Button { selected = candidate } label: {
-                        VStack(alignment: .leading, spacing: 5) {
-                            Text(candidate.title).font(.headline)
-                            Text(candidate.source + (candidate.device.map { " · " + $0 } ?? ""))
-                            Text("\(candidate.start.formatted(date: .abbreviated, time: .shortened)) – \(candidate.end.formatted(date: .omitted, time: .shortened))")
-                            if let start = record.startedAt {
-                                Text("时间重合 \(Int(candidate.overlapScore(start: start, end: record.endedAt) * 100))% · 点击确认关联")
-                            }
-                        }.font(.caption)
+                    if let queryWindow, let queryAt {
+                        Text("最近查询：" + queryAt.formatted(date: .omitted, time: .standard)).font(.caption)
+                        Text("时间窗口：" + queryWindow.start.formatted(date: .abbreviated, time: .shortened) + " – " + queryWindow.end.formatted(date: .abbreviated, time: .shortened)).font(.caption)
+                        if let queryCount { Text("返回 \(queryCount) 条候选；来源/设备按健康记录原值展示，不自动判定为Apple Watch。").font(.caption) }
                     }
+                    if let message { Text(message).font(.footnote).textSelection(.enabled) }
                 }
-                if let queryWindow, let queryAt {
-                    Text("最近查询：" + queryAt.formatted(date: .omitted, time: .standard)).font(.caption)
-                    Text("时间窗口：" + queryWindow.start.formatted(date: .abbreviated, time: .shortened) + " – " + queryWindow.end.formatted(date: .abbreviated, time: .shortened)).font(.caption)
-                    if let queryCount { Text("返回 \(queryCount) 条候选；来源/设备按健康记录原值展示，不自动判定为Apple Watch。").font(.caption) }
-                }
-                if let message { Text(message).font(.footnote).textSelection(.enabled) }
             }
         }
         .navigationTitle("训练详情")
@@ -143,5 +136,34 @@ struct RecordDetailView: View {
     private func save() {
         do { try context.save(); message = nil }
         catch { context.discardPendingChanges(); message = error.localizedDescription }
+    }
+}
+
+private struct TrainingRecordRow: View {
+    let record: TrainingRecord
+    private var summary: String? {
+        guard let counts = try? record.completed() else { return nil }
+        var result = "完成 \(counts.reduce(0, +)) 组"
+        if let start = record.startedAt {
+            let minutes = max(0, Int(record.endedAt.timeIntervalSince(start) / 60))
+            result += " · \(minutes) 分钟"
+        }
+        return result
+    }
+    var body: some View {
+        VStack(alignment: .leading, spacing: 6) {
+            HStack {
+                Text(record.planName).font(.headline)
+                Spacer()
+                Text(record.finished ? "已完成" : "提前结束").font(.caption).foregroundStyle(.secondary)
+            }
+            Text(record.endedAt, format: .dateTime.month().day().hour().minute()).font(.subheadline).foregroundStyle(.secondary)
+            if let summary { Text(summary).font(.subheadline).monospacedDigit() }
+            if let exercises = try? record.exercises() {
+                Text(exercises.map(\.name).joined(separator: " · "))
+                    .font(.caption).foregroundStyle(.secondary).lineLimit(2)
+            }
+            if let source = record.workoutSource { Label("已匹配 · " + source, systemImage: "heart.text.square").font(.caption).foregroundStyle(.orange) }
+        }.padding(.vertical, 5)
     }
 }

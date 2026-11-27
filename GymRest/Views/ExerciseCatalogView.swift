@@ -56,8 +56,7 @@ struct CatalogExerciseRow: View {
     let item: CatalogExercise
     var body: some View {
         HStack(spacing: 12) {
-            Image(systemName: "dumbbell.fill").foregroundStyle(.orange).frame(width: 42, height: 46)
-                .background(.orange.opacity(0.1), in: RoundedRectangle(cornerRadius: 12))
+            ExerciseThumbnail(item: item)
             VStack(alignment: .leading, spacing: 5) {
                 Text(item.name).font(.headline).foregroundStyle(.primary)
                 Text(item.primary.map(\.title).joined(separator: " / ")).font(.caption).foregroundStyle(.secondary)

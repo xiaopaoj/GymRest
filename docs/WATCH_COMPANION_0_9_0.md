@@ -1,5 +1,14 @@
 # GymRest Watch与iPhone联动 · 0.9.0 (9)
 
+> **已归档，非当前方案。** 用户于2026-11-27撤销独立Watch App，0.9.1工作区已移除相关实现与构建；请以[手机健康数据方案](HEALTH_ACTIVITY_0_9_1.md)为准。下方内容仅保留历史决策，不代表当前可用功能。
+
+## Watch连接闪退风险修正（2026-11-27，未提交）
+
+用户报告已安装两端，点击连接相关菜单均闪退。未获取.ips或具体按钮，不能确认最终根因。审查发现两端MainActor中的WCSession.sendMessageData回复/错误闭包未显式Sendable；Swift6可能为继承Actor的ObjC回调加入运行时隔离检查，而WCSession会在自己的队列回调。已新增CompanionRequestCallbacks，使用明确@Sendable的continuation回复/失败闭包，两端共用；手表状态发布回调及手机HealthKit镜像入口也显式Sendable，状态读写仍经Task @MainActor。没有调整配对ID、签名凭据、权限或训练数据。
+
+对照公开iPhoneOS26.0 SDK镜像WCSession.h检查回调签名及回复/错误恰有一个被调用的约定。新增2项iOS XCTest，从MainActor发起、后台DispatchQueue调用真实共享回复/错误闭包，检查continuation返回和错误传播；尚未在Xcode执行。与此前UI回归合计预计187项iOS测试。33项本地Python检查通过，本轮Swift改动语法解析通过；无真机闪退已消除的验收结果。待用户提供日志区分swift_task_checkIsolated/_dispatch_assert_queue_fail、隐私TCC/entitlement或其他异常。工作区保留此前UI/构建流程改动，未提交或触发远程打包。
+
+
 > 2026-11-27：用户已授权提交Release SDK修复并触发全量打包，配置为bundled/updateOfficial、HealthKit与Watch启用。本地30项脚本检查通过；远程构建结果待确认，不等待结束。下方“未提交”为修复时的历史记录。
 
 

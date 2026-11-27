@@ -6,10 +6,6 @@ on:
         description: Enable optional read-only HealthKit capability (requires supported signing)
         type: boolean
         default: true
-      watch_app:
-        description: Embed GymRest Watch companion (requires HealthKit)
-        type: boolean
-        default: true
       media_mode:
         description: Include media in IPA or install a separate pack
         type: choice
@@ -33,7 +29,6 @@ jobs:
     runs-on: macos-15-intel
     timeout-minutes: 60
     env:
-      GYMREST_WATCH: ${{ (github.event_name != 'workflow_dispatch' || inputs.watch_app) && (github.event_name != 'workflow_dispatch' || inputs.healthkit) && 'true' || 'false' }}
       MEDIA_MODE: ${{ inputs.media_mode || 'external' }}
       MEDIA_SEED_POLICY: ${{ inputs.media_seed_policy || 'preserve' }}
       GYMREST_HEALTHKIT: ${{ (github.event_name != 'workflow_dispatch' || inputs.healthkit) && 'true' || 'false' }}
@@ -46,7 +41,7 @@ jobs:
       - name: Upload unsigned IPA
         uses: actions/upload-artifact@v4
         with:
-          name: ${{ (github.event_name != 'workflow_dispatch' || inputs.healthkit) && 'GymRest-healthkit-unsigned' || 'GymRest-unsigned' }}
+          name: ${{ (github.event_name != 'workflow_dispatch' || inputs.healthkit) && 'GymRest-iPhone-healthkit-unsigned' || 'GymRest-iPhone-unsigned' }}
           path: build/GymRest-unsigned.ipa
           if-no-files-found: error
       - name: Upload independent media pack and source originals
@@ -69,7 +64,6 @@ jobs:
             build/runtimes.json
             build/devices.json
             build/HealthKit.entitlements
-            build/GymRestWatch.entitlements
             build/destinations.log
             build/xcode-candidates.txt
             GymRest.xcodeproj/project.pbxproj

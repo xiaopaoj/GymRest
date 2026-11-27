@@ -2,8 +2,7 @@
 set -euo pipefail
 cd "$(dirname "$0")/.."
 mkdir -p build
-# A global -sdk iphoneos / SDKROOT override also changes the embedded Watch
-# target's platform. Let the destination and each target select their own SDK.
+# Let the destination and target configuration select the device SDK.
 result_bundle="build/Release-$(date +%s)-$$.xcresult"
 xcodebuild -project GymRest.xcodeproj -scheme GymRest -configuration Release \
   -destination 'generic/platform=iOS' -derivedDataPath DerivedData \

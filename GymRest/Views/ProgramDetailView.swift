@@ -124,6 +124,7 @@ struct ProgramDetailView: View {
 }
 
 struct DayDetailView: View {
+    @AppStorage("favoriteTrainingDayID") private var favoriteTrainingDayID = ""
     @Environment(\.modelContext) private var context
     let day: TrainingPlan
     let controller: TrainingController
@@ -165,6 +166,14 @@ struct DayDetailView: View {
                 } else { Text("动作数据无法读取，不能开始训练。请保留数据并反馈。").foregroundStyle(.red) }
             }
         }
+        .toolbar {
+            ToolbarItem(placement: .topBarTrailing) {
+                Button {
+                    favoriteTrainingDayID = favoriteTrainingDayID == day.id.uuidString ? "" : day.id.uuidString
+                } label: { Image(systemName: favoriteTrainingDayID == day.id.uuidString ? "star.fill" : "star") }
+                    .accessibilityLabel(favoriteTrainingDayID == day.id.uuidString ? "取消常用训练" : "设为常用训练")
+            }
+        }
         .navigationTitle("训练日").navigationBarTitleDisplayMode(.inline)
         .toolbar {
             ToolbarItem(placement: .topBarTrailing) {
@@ -193,12 +202,12 @@ struct DayDetailView: View {
                 }
             }.padding().background(.regularMaterial)
         }
-        .confirmationDialog("确认Watch训练记录", isPresented: $confirmingWatch, titleVisibility: .visible) {
-            Button("已在手表开启，开始训练") { beginTraining() }
-            Button("本次不记录，继续") { beginTraining() }
+        .confirmationDialog("开始前确认手表运动", isPresented: $confirmingWatch, titleVisibility: .visible) {
+            Button("已确认手表运动，开始训练") { beginTraining() }
+            Button("暂不开启手表运动，继续训练") { beginTraining() }
             Button("取消", role: .cancel) {}
         } message: {
-            Text("如需Apple Watch记录，请先在手表上开启传统力量训练等合适类型。GymRest目前无法自动确认手表是否正在记录。")
+            Text("请先在手表“体能训练”中开启合适的运动。健康数据只能辅助提示近期活动，不能确认运动模式已开启；未读取到数据也可继续训练。")
         }
         .alert("无法开始训练", isPresented: Binding(get: { error != nil }, set: { if !$0 { error = nil } })) {
             Button("知道了") { error = nil }

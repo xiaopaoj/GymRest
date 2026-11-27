@@ -15,11 +15,7 @@ struct DeviceVerificationView: View {
     }
     private var storageKey: String { "GymRest.device-verification." + version }
     private let scenarios: [(id: String, title: String, detail: String)] = [
-        ("watch-install", "GymRest Watch安装与通信", "打开两端App，连接页确认已配对、已安装；刷新后手表显示当前训练。系统配对本身由Watch App完成。"),
-        ("watch-start", "手表授权与真实运行状态", "手机开始训练后请求Watch记录，在手表确认并授权。唤起成功不算通过，需看到实际运行状态及健康数据。"),
-        ("watch-actions", "手表计组与双侧计时", "从Watch开始每侧短计时并确认；两侧才加1组。重复旧按钮不多计组，休息暂停不暂停健康记录。"),
-        ("watch-end", "手机结束后保存且不重复", "手机结束训练，核对Watch实际停止、健康App只保存一份、历史按训练标识自动关联。手动取消关联后重复同步不恢复旧关联。"),
-        ("watch-offline", "断连保存与恢复", "记录中断开连接，确认Watch继续记录；手机结束后重连，核对结束请求只作用原会话、记录回传及保存失败可重试。"),
+        ("health-activity", "近期运动小提示", "分别测试有新样本、旧样本、未授权或无数据；无数据不应提示运动未开启，训练全程可继续。"),
         ("health-sync", "手表训练已同步到健康App", "先在Watch完成一次训练，再确认iPhone健康App里能看到同一时间段。"),
         ("health-query", "GymRest查询到同一条运动", "进入训练记录详情，主动授权查询；核对时间、来源与设备，手动关联。空结果不能直接判断为拒绝授权。"),
         ("foreground", "前台完成组并进入休息", "新建含至少2组的测试动作，设10秒休息；完成一组后确认累计组数只加1。"),
@@ -31,7 +27,7 @@ struct DeviceVerificationView: View {
     ]
     private var report: String {
         let results = scenarios.map { "\(checked.contains($0.id) ? "已人工核对" : "待验证")：\($0.title)" }.joined(separator: "\n")
-        return "GymRest真机验收（用户手动记录）\n版本：\(version)\niPhone系统：\(UIDevice.current.systemVersion)\nWatch：\(watch) / watchOS \(watchOS)\n手机HealthKit：\(WorkoutReader.buildEnabled ? "启用，只读" : "未启用")\nWatch联动构建：\(PhoneWatchLink.buildEnabled ? "启用，手表可单独授权写入" : "未启用")\n实时活动系统开关：\(ActivityAuthorizationInfo().areActivitiesEnabled ? "允许" : "关闭")\n\(results)\n备注：\(notes)"
+        return "GymRest真机验收（用户手动记录）\n版本：\(version)\niPhone系统：\(UIDevice.current.systemVersion)\nWatch：\(watch) / watchOS \(watchOS)\n手机HealthKit：\(WorkoutReader.buildEnabled ? "启用，只读" : "未启用")\n实时活动系统开关：\(ActivityAuthorizationInfo().areActivitiesEnabled ? "允许" : "关闭")\n\(results)\n备注：\(notes)"
     }
     var body: some View {
         Form {
@@ -39,9 +35,8 @@ struct DeviceVerificationView: View {
                 LabeledContent("GymRest", value: version)
                 LabeledContent("iPhone系统", value: UIDevice.current.systemVersion)
                 LabeledContent("HealthKit构建", value: WorkoutReader.buildEnabled ? "启用，只读" : "未启用")
-                LabeledContent("Watch联动构建", value: PhoneWatchLink.buildEnabled ? "已启用" : "未启用")
                 LabeledContent("系统实时活动", value: ActivityAuthorizationInfo().areActivitiesEnabled ? "允许" : "关闭")
-                Text("构建启用不等于签名或读取权限已验证。健康数据需在记录详情主动查询；本页不会写入运动或自动发起训练；GymRest Watch需在手表单独确认授权，记录由手表写入。")
+                Text("构建启用不等于签名或读取权限已验证。近期活动需在手机端明确请求读取权限，已保存运动需在记录详情主动查询；本页不会写入运动或自动发起训练。无需安装GymRest手表App。")
                     .font(.footnote).foregroundStyle(.secondary)
                 TextField("Watch型号", text: $watch)
                 TextField("watchOS版本", text: $watchOS)

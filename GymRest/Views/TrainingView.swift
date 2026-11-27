@@ -4,8 +4,21 @@ import UIKit
 struct TrainingView: View {
     @Bindable var controller: TrainingController
     @Environment(\.dismiss) private var dismiss
+    @Environment(\.dynamicTypeSize) private var dynamicTypeSize
+    @ScaledMetric(relativeTo: .largeTitle) private var restClockSize: CGFloat = 72
+    @ScaledMetric(relativeTo: .largeTitle) private var effortClockSize: CGFloat = 64
+    private var controlLayout: AnyLayout {
+        dynamicTypeSize.isAccessibilitySize
+            ? AnyLayout(VStackLayout(alignment: .leading, spacing: 12))
+            : AnyLayout(HStackLayout(spacing: 12))
+    }
     @State private var navigation: String?
-    @State private var choosingAlternative = false
+    private struct AlternativeRequest: Identifiable {
+        let id = UUID()
+        let exercise: ExerciseSpec
+        let interactionID: UUID?
+    }
+    @State private var choosingAlternative: AlternativeRequest?
     private struct ValuesRequest: Identifiable {
         let id = UUID()
         let values: SetValues
@@ -18,7 +31,7 @@ struct TrainingView: View {
     }
     @State private var editingValues: ValuesRequest?
     @State private var ordering: OrderRequest?
-    @State private var showingArtwork = true
+    @AppStorage("trainingArtworkExpanded") private var showingArtwork = false
     @State private var catalog: ExerciseCatalog?
     @State private var catalogIssue: String?
     var body: some View {
@@ -30,13 +43,21 @@ struct TrainingView: View {
                     } else {
                         VStack(alignment: .leading, spacing: 24) {
                             sessionHeader(session)
-                            WatchRecordingCard(session: session)
+                            HealthActivityTip()
+                            restControls(session)
                             effortContent(session)
                             measurementContent(session)
+                            if !(session.originalExercises ?? session.exercises)[session.index].alternatives.isEmpty {
+                                Button("切换替代动作", systemImage: "arrow.triangle.swap") { choosingAlternative = AlternativeRequest(exercise: (session.originalExercises ?? session.exercises)[session.index], interactionID: session.interactionID) }
+                                    .disabled(session.phase != .training || session.sideProgress > 0 || session.effortTimer != nil)
+                            }
                             artworkContent(session)
-                            exerciseProgress(session)
-                            restControls(session)
-                            navigationControls(session)
+                            DisclosureGroup("动作安排与更多操作") {
+                                VStack(alignment: .leading, spacing: 16) {
+                                    exerciseProgress(session)
+                                    navigationControls(session)
+                                }.padding(.top, 8)
+                            }
                         }.padding()
                     }
                 }
@@ -67,15 +88,13 @@ struct TrainingView: View {
                 ToolbarItem(placement: .topBarTrailing) { Button("结束", role: .destructive) { navigation = "end" } }
             }
             .disabled(controller.busy)
-            .confirmationDialog("选择本组训练动作", isPresented: $choosingAlternative) {
-                if let session = controller.session {
-                    let original = (session.originalExercises ?? session.exercises)[session.index]
-                    Button(original.name + "（原动作）") { Task { await controller.selectAlternative(nil) } }
-                    ForEach(original.alternatives) { alternative in
-                        Button(alternative.name + " · \(alternative.restSeconds)秒休息") { Task { await controller.selectAlternative(alternative.id) } }
-                    }
+            .sheet(item: $choosingAlternative) { request in
+                TrainingAlternativesView(exercise: request.exercise, catalog: catalog) { id in
+                    guard controller.session?.interactionID == request.interactionID else { return false }
+                    await controller.selectAlternative(id, interactionID: request.interactionID)
+                    return controller.error == nil
                 }
-            } message: { Text("已完成组数和实际动作记录保留；接下来的组使用所选动作及其休息时间。") }
+            }
             .confirmationDialog("确认操作", isPresented: Binding(get: { navigation != nil }, set: { if !$0 { navigation = nil } }), presenting: navigation) { action in
                 Button(action == "end" ? "提前结束训练" : action == "previous" ? "返回上一动作并重新计组" : "跳过当前动作", role: .destructive) {
                     navigation = nil
@@ -112,14 +131,13 @@ struct TrainingView: View {
         if let issue = controller.liveActivityIssue {
             Text(issue).font(.footnote).foregroundStyle(.secondary)
             Button("重试显示锁屏训练卡片") { Task { await controller.refreshLiveActivity() } }
-        } else {
-            Text("可在锁屏训练卡片或长按灵动岛后完成本组、控制休息。")
-                .font(.footnote).foregroundStyle(.secondary)
         }
         ProgressView(value: Double(session.completedSets), total: Double(session.totalSets))
         Text("已完成 \(session.completedSets)/\(session.totalSets) 组 · 动作 \(session.index + 1)/\(session.exercises.count)")
             .font(.subheadline).foregroundStyle(.secondary)
         Text(session.current.name).font(.largeTitle.bold())
+        Text(session.phase == .training ? "第 \(min(session.current.sets, session.completed[session.index] + 1)) / \(session.current.sets) 组 · " + session.partTitle : session.isTransitionRest ? "动作间休息" : "组间休息")
+            .font(.title3.bold())
         if let catalog, let item = catalog.resolve(session.current) {
             NavigationLink { CatalogExerciseDetail(item: item, catalog: catalog) } label: {
                 Label("动作要点、器材与演示", systemImage: "play.rectangle")
@@ -131,8 +149,8 @@ struct TrainingView: View {
     @ViewBuilder
     private func artworkContent(_ session: TrainingSession) -> some View {
         if let catalog, let item = catalog.resolve(session.current) {
-            DisclosureGroup("动作图片 · " + item.name, isExpanded: $showingArtwork) {
-                ExerciseArtwork(item: item).id(item.id)
+            DisclosureGroup("查看动作图片 · " + item.name, isExpanded: $showingArtwork) {
+                ExerciseArtwork(item: item, previewHeight: 150).id(item.id)
             }
         }
     }
@@ -140,20 +158,22 @@ struct TrainingView: View {
         VStack(alignment: .leading, spacing: 8) {
             Text(session.phase == .training ? "正在训练 · " + session.partTitle : session.phase == .paused ? "休息已暂停" : session.isTransitionRest ? "动作间休息" : "组间休息")
                 .font(.headline)
-            Text("本次累计完成 \(session.completedSets)/\(session.totalSets) 组 · 下一动作：\(session.nextName)")
-                .font(.caption).foregroundStyle(.secondary)
-            if session.index + 1 < session.exercises.count, let drafts = session.setDrafts, drafts.indices.contains(session.index + 1) {
-                Text("下一动作预设：" + drafts[session.index + 1].summary).font(.caption).foregroundStyle(.secondary)
+            if session.phase != .training {
+                Text(session.isTransitionRest ? "接下来：" + session.nextName : "下一组：" + session.current.name)
+                    .font(.caption).foregroundStyle(.secondary)
             }
             if session.phase == .training {
                 if session.currentSetValues.durationSeconds != nil {
                     if let timer = session.effortTimer, timer.registered || timer.status != .running {
                         if timer.status == .paused {
-                            Button("继续本侧计时") { Task { await controller.resumeEffort() } }.buttonStyle(.borderedProminent)
+                            Button { Task { await controller.resumeEffort() } } label: {
+                                Text("继续计时 · " + session.partTitle).frame(maxWidth: .infinity, minHeight: 44)
+                            }.buttonStyle(.borderedProminent)
                         } else {
                             TimelineView(.periodic(from: .now, by: 1)) { timeline in
-                                Button(session.completionTitle) { Task { await controller.completeSet() } }
-                                    .buttonStyle(.borderedProminent)
+                                Button { Task { await controller.completeSet() } } label: {
+                                    Text(session.completionTitle).frame(maxWidth: .infinity, minHeight: 44)
+                                }.buttonStyle(.borderedProminent)
                                     .disabled(timer.status != .ready && timer.secondsLeft(at: timeline.date) > 0)
                             }
                             if timer.status == .running {
@@ -161,8 +181,9 @@ struct TrainingView: View {
                             }
                         }
                     } else {
-                        Button(session.effortTimer == nil ? "开始计时 · " + session.partTitle : "重试计时提醒") {
-                            Task { await controller.startEffort() }
+                        Button { Task { await controller.startEffort() } } label: {
+                            Text(session.effortTimer == nil ? "开始计时 · " + session.partTitle : "重试计时提醒")
+                                .frame(maxWidth: .infinity, minHeight: 44)
                         }.buttonStyle(.borderedProminent)
                     }
                 } else {
@@ -172,7 +193,7 @@ struct TrainingView: View {
                     }.buttonStyle(.borderedProminent)
                 }
             } else {
-                HStack {
+                controlLayout {
                     Button(session.phase == .paused ? "继续休息" : "暂停休息") {
                         Task { if session.phase == .paused { await controller.resume() } else { await controller.pause() } }
                     }
@@ -180,7 +201,8 @@ struct TrainingView: View {
                     Button("结束休息") { Task { await controller.skipRest() } }
                 }.buttonStyle(.bordered)
             }
-        }.padding().background(.regularMaterial).disabled(controller.busy)
+        }.buttonStyle(.borderedProminent).controlSize(.large).frame(maxWidth: .infinity, alignment: .leading)
+            .padding().background(.regularMaterial).disabled(controller.busy)
     }
 
     @ViewBuilder
@@ -191,6 +213,10 @@ struct TrainingView: View {
                 Text(session.currentSetValues.summary).font(.title3.monospacedDigit())
                 if let origins = session.setValueOrigins, origins.indices.contains(session.index) { Text(origins[session.index]).font(.caption).foregroundStyle(.secondary) }
                 if !session.currentSetValues.equipmentNote.isEmpty { Text(session.currentSetValues.equipmentNote).font(.caption) }
+                if let previous = controller.previousSetValues {
+                    Text("本次上一组：" + previous.summary).font(.caption).foregroundStyle(.secondary)
+                }
+                if session.sideProgress == 0 && session.effortTimer == nil { quickValues(session) }
                 if controller.previousSetValues != nil && session.sideProgress == 0 && session.effortTimer == nil {
                     Button("沿用本动作上一组") { Task { await controller.reusePreviousSet(interactionID: session.interactionID) } }
                 }
@@ -217,11 +243,6 @@ struct TrainingView: View {
 
     @ViewBuilder
     private func exerciseProgress(_ session: TrainingSession) -> some View {
-        if !(session.originalExercises ?? session.exercises)[session.index].alternatives.isEmpty {
-            Button { choosingAlternative = true } label: { Label("器械被占用？切换替代动作", systemImage: "arrow.triangle.swap") }
-                .disabled(session.phase != .training || session.sideProgress > 0 || session.effortTimer != nil)
-            if session.phase != .training { Text("休息结束或跳过后可切换。").font(.caption).foregroundStyle(.secondary) }
-        }
         Text("第 \(min(session.current.sets, session.completed[session.index] + (session.phase == .training ? 1 : 0))) / \(session.current.sets) 组")
             .font(.title2)
         Text("组间休息 \(session.current.restSeconds) 秒 · 下一动作：\(session.nextName)")
@@ -247,35 +268,27 @@ struct TrainingView: View {
             TimelineView(.periodic(from: .now, by: 1)) { timeline in
                 let left = Int(ceil(session.secondsLeft(at: timeline.date)))
                 Text(String(format: "%02d:%02d", left / 60, left % 60))
-                    .font(.system(size: 72, weight: .bold, design: .rounded)).monospacedDigit()
+                    .font(.system(size: restClockSize, weight: .bold, design: .rounded)).monospacedDigit().lineLimit(1).minimumScaleFactor(0.5)
                     .frame(maxWidth: .infinity).padding(.vertical)
             }
             Text(session.phase == .paused ? "休息已暂停 · 暂停期间不提醒" : session.reminderRegistered ? "系统休息提醒已注册" : "提醒尚未注册成功，请重试或跳过")
                 .font(.subheadline).foregroundStyle(session.reminderRegistered || session.phase == .paused ? Color.secondary : Color.red)
-            HStack {
-                ForEach([-30, -15, 15, 30], id: \.self) { amount in
-                    Button("\(amount > 0 ? "+" : "")\(amount)s") { Task { await controller.adjust(by: amount) } }
+            controlLayout {
+                ForEach([-15, 15], id: \.self) { amount in
+                    Button("\(amount > 0 ? "+" : "")\(amount)秒") { Task { await controller.adjust(by: amount) } }
                         .buttonStyle(.bordered).frame(maxWidth: .infinity)
                 }
             }
-            Button(session.phase == .paused ? "继续休息" : "暂停休息") {
-                Task { if session.phase == .paused { await controller.resume() } else { await controller.pause() } }
-            }.buttonStyle(.borderedProminent).controlSize(.large).frame(maxWidth: .infinity)
-            HStack {
-                Button("重新开始休息") { Task { await controller.restartRest() } }
-                Spacer()
-                Button("跳过休息") { Task { await controller.skipRest() } }
+            if session.isTransitionRest, let drafts = session.setDrafts, drafts.indices.contains(session.index + 1) {
+                Text("下一动作预设：" + drafts[session.index + 1].summary).font(.subheadline)
             }
-        } else if session.currentSetValues.durationSeconds == nil {
-            Label(session.currentSetValues.sideCount == 2 ? "两侧完成后才开始组间休息" : "准备好后完成一组，再开始休息", systemImage: "dumbbell.fill")
-                .foregroundStyle(.secondary).padding(.vertical, 24)
-
+            Button("重新开始休息") { Task { await controller.restartRest() } }
         }
     }
 
     @ViewBuilder
     private func navigationControls(_ session: TrainingSession) -> some View {
-        HStack {
+        controlLayout {
             Button("上一个动作") { navigation = "previous" }.disabled(session.index == 0)
             Spacer()
             Button("跳过当前动作") { navigation = "skip" }
@@ -290,14 +303,19 @@ struct TrainingView: View {
             VStack(alignment: .leading, spacing: 12) {
                 Text(session.partTitle).font(.title2.bold())
                 if session.currentSetValues.sideCount == 2 {
-                    Text(session.sideProgress == 0 ? "整组进度 0/2侧 · 左右先后自行决定" : "整组进度 1/2侧 · 请换到另一侧，完成后才算一组")
+                    controlLayout {
+                        Label("第1侧", systemImage: session.sideProgress > 0 ? "checkmark.circle.fill" : "circle")
+                        Image(systemName: "arrow.right")
+                        Label("第2侧", systemImage: "circle")
+                    }.font(.headline).accessibilityElement(children: .combine)
+                    Text(session.sideProgress == 0 ? "整组进度 0/2侧 · 左右先后自行决定" : "已完成第1侧 · 整组尚未完成，请换侧")
                         .font(.subheadline).foregroundStyle(.orange)
                 }
                 if let duration = session.currentSetValues.durationSeconds {
                     TimelineView(.periodic(from: .now, by: 1)) { timeline in
                         let left = Int(ceil(session.effortTimer?.secondsLeft(at: timeline.date) ?? Double(duration)))
                         Text(String(format: "%02d:%02d", left / 60, left % 60))
-                            .font(.system(size: 64, weight: .bold, design: .rounded)).monospacedDigit()
+                            .font(.system(size: effortClockSize, weight: .bold, design: .rounded)).monospacedDigit().lineLimit(1).minimumScaleFactor(0.5)
                             .frame(maxWidth: .infinity)
                     }
                     if let timer = session.effortTimer {
@@ -309,6 +327,40 @@ struct TrainingView: View {
             }.padding().frame(maxWidth: .infinity, alignment: .leading)
                 .background(.orange.opacity(0.08), in: RoundedRectangle(cornerRadius: 16))
         }
+    }
+
+    @ViewBuilder
+    private func quickValues(_ session: TrainingSession) -> some View {
+        let values = session.currentSetValues
+        VStack(alignment: .leading, spacing: 8) {
+            if let weight = values.weight, values.kind != .bodyweight {
+                let step: Double = values.unit == .level ? 1 : 2.5
+                quickAdjustment(title: "重量", value: "\(weight.formatted()) \(values.unit.title)", canDecrease: weight >= step, canIncrease: weight + step <= 10000) { delta in
+                    var updated = values; updated.weight = weight + Double(delta) * step
+                    Task { await controller.setValues(updated, interactionID: session.interactionID) }
+                }
+            }
+            if let reps = values.repetitions {
+                quickAdjustment(title: values.sideCount == 2 ? "每侧次数" : "次数", value: "\(reps) 次", canDecrease: reps > 1, canIncrease: reps < 1000) { delta in
+                    var updated = values; updated.repetitions = reps + delta
+                    Task { await controller.setValues(updated, interactionID: session.interactionID) }
+                }
+            }
+        }
+    }
+    private func quickAdjustment(title: String, value: String, canDecrease: Bool, canIncrease: Bool, change: @escaping (Int) -> Void) -> some View {
+        ViewThatFits(in: .horizontal) {
+            HStack { Text(title + " · " + value).monospacedDigit(); Spacer(); adjustmentButtons(title, canDecrease, canIncrease, change) }
+            VStack(alignment: .leading) { Text(title + " · " + value).monospacedDigit(); adjustmentButtons(title, canDecrease, canIncrease, change) }
+        }
+    }
+    private func adjustmentButtons(_ title: String, _ canDecrease: Bool, _ canIncrease: Bool, _ change: @escaping (Int) -> Void) -> some View {
+        HStack {
+            Button { change(-1) } label: { Image(systemName: "minus").frame(minWidth: 44, minHeight: 44) }
+                .disabled(!canDecrease).accessibilityLabel("减少" + title)
+            Button { change(1) } label: { Image(systemName: "plus").frame(minWidth: 44, minHeight: 44) }
+                .disabled(!canIncrease).accessibilityLabel("增加" + title)
+        }.buttonStyle(.bordered).disabled(controller.busy)
     }
 
     private func updateScreenAwake() {

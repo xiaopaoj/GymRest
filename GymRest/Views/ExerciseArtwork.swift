@@ -1,11 +1,13 @@
 import SwiftUI
 import UIKit
+import ImageIO
 
 /// Original transparent PNGs on a dark canvas. Playback is an optional pose sequence,
 /// not a claim of interpolated video or a timing source for the training session.
 struct ExerciseArtwork: View {
     let item: CatalogExercise
     var large = false
+    var previewHeight: CGFloat = 220
     @Environment(\.accessibilityReduceMotion) private var reduceMotion
     @State private var showingLarge = false
     @State private var images: [UIImage] = []
@@ -21,7 +23,7 @@ struct ExerciseArtwork: View {
                     let step = Int(timeline.date.timeIntervalSinceReferenceDate / 0.8) % sequence.count
                     let index = playing && !reduceMotion && artwork.media.allowsPlayback == true ? sequence[step] : selected
                     Image(uiImage: images[min(index, images.count - 1)])
-                        .resizable().scaledToFit().frame(maxWidth: .infinity).frame(height: large ? 420 : 220)
+                        .resizable().scaledToFit().frame(maxWidth: .infinity).frame(height: large ? 420 : previewHeight)
                         .background(artwork.media.lightBackground == true ? Color.white : Color(red: 0.10, green: 0.14, blue: 0.18), in: RoundedRectangle(cornerRadius: 16))
                         .accessibilityLabel("\(item.name)，姿势示意第 \(min(index, images.count - 1) + 1) 帧")
                 }
@@ -108,5 +110,34 @@ struct WorkoutGuideCreditsView: View {
                 Bundle.main.url(forResource: name, withExtension: "txt").flatMap { try? String(contentsOf: $0, encoding: .utf8) }
             }.joined(separator: "\n\n")
         }
+    }
+}
+
+/// Load one downsampled pose per visible row to avoid decoding full sequences in lists.
+struct ExerciseThumbnail: View {
+    let item: CatalogExercise
+    @State private var thumbnail: UIImage?
+    @State private var lightBackground = false
+    var body: some View {
+        Group {
+            if let thumbnail { Image(uiImage: thumbnail).resizable().scaledToFit() }
+            else { Image(systemName: "figure.strengthtraining.traditional").foregroundStyle(.secondary) }
+        }.frame(width: 56, height: 56)
+            .background(lightBackground ? Color.white : Color(red: 0.10, green: 0.14, blue: 0.18), in: RoundedRectangle(cornerRadius: 10))
+            .accessibilityHidden(true)
+            .task(id: item.id + MediaStore.shared.generation.uuidString) {
+                thumbnail = nil
+                let selection = MediaStore.shared.selection(for: item)
+                lightBackground = selection.media.lightBackground == true
+                if let url = selection.frames.first,
+                   let source = CGImageSourceCreateWithURL(url as CFURL, nil),
+                   let image = CGImageSourceCreateThumbnailAtIndex(source, 0, [
+                    kCGImageSourceCreateThumbnailFromImageAlways: true,
+                    kCGImageSourceThumbnailMaxPixelSize: 168,
+                    kCGImageSourceCreateThumbnailWithTransform: true
+                   ] as CFDictionary) {
+                    thumbnail = UIImage(cgImage: image)
+                }
+            }
     }
 }

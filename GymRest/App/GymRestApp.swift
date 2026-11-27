@@ -12,8 +12,6 @@ struct GymRestApp: App {
     private let delegate = ForegroundNotifications()
     @MainActor init() {
         UNUserNotificationCenter.current().delegate = delegate
-        PhoneWatchLink.shared.ensureRuntime = { _ = try AppRuntime.open() }
-        PhoneWatchLink.shared.activate()
     }
     var body: some Scene { WindowGroup { RootView() } }
 }

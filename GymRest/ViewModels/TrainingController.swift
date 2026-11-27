@@ -288,10 +288,14 @@ import Observation
         }
     }
     func selectAlternative(_ id: UUID?) async {
+        await selectAlternative(id, interactionID: session?.interactionID)
+    }
+    func selectAlternative(_ id: UUID?, interactionID: UUID?) async {
         await perform {
             guard var value = session, value.phase == .training, value.sideProgress == 0, value.effortTimer == nil else {
                 throw ArchiveFailure.invalid("请先完成当前双侧组或跳过动作，再切换替代动作。")
             }
+            guard value.interactionID == interactionID else { throw PerformanceError.staleOrder }
             if value.originalExercises == nil { value.originalExercises = value.exercises }
             let original = value.originalExercises![value.index]
             var replacement = original

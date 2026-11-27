@@ -53,21 +53,7 @@ assert shown.issubset(frames)
 for filename in ["ExerciseGuides.json", "WorkoutGuideMediaReview.json", "WorkoutGuideSources.json", "EverkineticSources.json", "Everkinetic-LICENSE.txt", "WorkoutGuide-LICENSE.txt", "WorkoutGuide-LICENSE-ASSETS.txt", "WorkoutGuide-LICENSES.txt", "WorkoutGuide-ATTRIBUTION.txt"]:
     assert (app / filename).is_file(), filename
 print(f"Validated {version} ({build}), {len(catalog['exercises'])} exercises, {len(frames)} source image references / {len(shown)} display references; media={mode}, guides and source/license notices")
-watch = app / "Watch/GymRestWatch.app"
-watch_enabled = os.environ.get("GYMREST_WATCH", "false") == "true"
-assert bool(app_info.get("GymRestWatchEnabled")) == watch_enabled
-if watch_enabled:
-    with (watch / "Info.plist").open("rb") as f: watch_info = plistlib.load(f)
-    assert watch_info["CFBundleIdentifier"] == "dev.gymrest.personal.watchkitapp"
-    assert watch_info["WKCompanionAppBundleIdentifier"] == app_info["CFBundleIdentifier"]
-    assert watch_info["WKApplication"] is True and watch_info["WKWatchOnly"] is False
-    assert watch_info["CFBundleShortVersionString"] == version and watch_info["CFBundleVersion"] == build
-    assert watch_info["MinimumOSVersion"].startswith("10.")
-    assert "workout-processing" in watch_info["WKBackgroundModes"]
-    assert watch_info["NSHealthShareUsageDescription"] and watch_info["NSHealthUpdateUsageDescription"]
-    assert (watch / watch_info["CFBundleExecutable"]).is_file()
-else:
-    assert not watch.exists(), "Phone-only build must not silently include Watch"
+assert not (app / "Watch").exists(), "iPhone-only product must not contain a stale Watch bundle"
 staging = root / "build/ipa-staging"
 if staging.exists(): shutil.rmtree(staging)
 (staging / "Payload").mkdir(parents=True)
@@ -77,5 +63,5 @@ out.unlink(missing_ok=True)
 subprocess.run(["zip", "-qry", "-y", str(out), "Payload"], cwd=staging, check=True)
 with zipfile.ZipFile(out) as archive:
     assert "Payload/GymRest.app/Info.plist" in archive.namelist()
-    if watch_enabled: assert "Payload/GymRest.app/Watch/GymRestWatch.app/Info.plist" in archive.namelist()
+    assert not any(name.startswith("Payload/GymRest.app/Watch/") for name in archive.namelist())
 print(out)

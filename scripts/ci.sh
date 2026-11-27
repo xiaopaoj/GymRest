@@ -2,7 +2,6 @@
 set -euo pipefail
 cd "$(dirname "$0")/.."
 mkdir -p build
-export GYMREST_WATCH="${GYMREST_WATCH:-${GYMREST_HEALTHKIT:-true}}"
 # Keep tee in the foreground pipeline so diagnostics are fully drained before exit.
 (
 # Prefer the runner's selected Xcode, then the newest compatible installed Xcode.
@@ -20,11 +19,6 @@ while IFS= read -r candidate; do
   sdk=$(DEVELOPER_DIR="$candidate" xcrun --sdk iphoneos --show-sdk-version 2>/dev/null) || continue
   simsdk=$(DEVELOPER_DIR="$candidate" xcrun --sdk iphonesimulator --show-sdk-version 2>/dev/null) || continue
   if [[ "$sdk" == 26.* && "$simsdk" == 26.* ]]; then
-    if [[ "$GYMREST_WATCH" == "true" ]]; then
-      watch_sdk=$(DEVELOPER_DIR="$candidate" xcrun --sdk watchos --show-sdk-version 2>/dev/null) || continue
-      watch_sim_sdk=$(DEVELOPER_DIR="$candidate" xcrun --sdk watchsimulator --show-sdk-version 2>/dev/null) || continue
-      [[ "$watch_sdk" == 26.* && "$watch_sim_sdk" == 26.* ]] || continue
-    fi
     selected="$candidate"; break
   fi
 done < build/xcode-candidates.txt
@@ -43,15 +37,7 @@ if [[ "${GYMREST_HEALTHKIT:-true}" == "true" ]]; then
 else
   task_spec=.gymrest-media.yml
 fi
-if [[ "$GYMREST_WATCH" == "true" ]]; then
-  python3 scripts/watch_project.py "$task_spec"
-  task_spec=.gymrest-watch.yml
-fi
 xcodegen generate --spec "$task_spec" --project .
-if [[ "$GYMREST_WATCH" == "true" ]]; then
-  xcodebuild -project GymRest.xcodeproj -scheme GymRestWatch -configuration Debug \
-    -destination 'generic/platform=watchOS Simulator' -derivedDataPath DerivedData CODE_SIGNING_ALLOWED=NO build
-fi
 find_simulator() {
   xcrun simctl list devices available --json > build/devices.json
   xcodebuild -project GymRest.xcodeproj -scheme GymRest -showdestinations > build/destinations.log 2>&1
@@ -72,12 +58,14 @@ read -r simulator simulator_state <<< "$simulator_info"
 xcodebuild -project GymRest.xcodeproj -scheme GymRest -configuration Debug \
   -destination "platform=iOS Simulator,id=$simulator" -derivedDataPath DerivedData \
   CODE_SIGNING_ALLOWED=NO build-for-testing
+# Validate iPhone device Release before the slow simulator tests.
+# The helper preserves per-target SDK selection and its own failure diagnostics.
+bash scripts/build_release.sh
 if [[ "$simulator_state" != "Booted" ]]; then xcrun simctl boot "$simulator"; fi
 xcrun simctl bootstatus "$simulator" -b
 xcodebuild -project GymRest.xcodeproj -scheme GymRest -configuration Debug \
   -destination "platform=iOS Simulator,id=$simulator" -derivedDataPath DerivedData \
   -resultBundlePath "build/Tests-$(date +%s).xcresult" CODE_SIGNING_ALLOWED=NO test-without-building
-bash scripts/build_release.sh
 python3 scripts/package_ipa.py
 python3 scripts/build_media_pack.py --source-archive build/GymRest-Media-Sources.zip
 

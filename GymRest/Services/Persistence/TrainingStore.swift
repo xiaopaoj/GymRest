@@ -141,25 +141,4 @@ import SwiftData
             try context.save()
         } catch { context.discardPendingChanges(); throw error }
     }
-    func recordEnd(for id: UUID) throws -> Date? {
-        var query = FetchDescriptor<TrainingRecord>(predicate: #Predicate { $0.id == id }); query.fetchLimit = 1
-        return try context.fetch(query).first?.endedAt
-    }
-    func attachWatchReceipt(_ receipt: WatchWorkoutStatus) throws -> Bool {
-        try receipt.validate()
-        guard receipt.phase == .saved, let workoutID = receipt.workoutID, let start = receipt.start, let end = receipt.end else { throw CompanionFailure.invalid }
-        let id = receipt.trainingID
-        var query = FetchDescriptor<TrainingRecord>(predicate: #Predicate { $0.id == id }); query.fetchLimit = 1
-        guard let record = try context.fetch(query).first else { return false }
-        if record.watchWorkoutReceiptID == workoutID.uuidString { return true }
-        guard record.workoutID == nil || record.workoutID == workoutID.uuidString else {
-            throw ArchiveFailure.invalid("这场训练已有其他健康关联，已保留原选择；手表记录仍在健康App中。")
-        }
-        guard !context.hasChanges else { throw ArchiveFailure.invalid("请先保存当前编辑，再关联手表记录。") }
-        record.workoutID = workoutID.uuidString; record.watchWorkoutReceiptID = workoutID.uuidString; record.workoutSource = "GymRest Watch"
-        record.workoutStart = start; record.workoutEnd = end
-        do { try context.save(); return true }
-        catch { context.discardPendingChanges(); throw error }
-    }
-
 }

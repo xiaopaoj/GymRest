@@ -18,12 +18,8 @@ import SwiftData
         container = try ModelContainer(for: TrainingProgram.self, TrainingPlan.self, LibraryPreferences.self, ActiveTraining.self, TrainingRecord.self)
         let trainingStore = try TrainingStore(container: container)
         store = trainingStore
-        let watchLink = PhoneWatchLink.shared
-        watchLink.attachReceipt = { try trainingStore.attachWatchReceipt($0) }
-        watchLink.trainingEnd = { try trainingStore.recordEnd(for: $0) }
         let liveActivity = TrainingLiveActivity()
         controller = try TrainingController(store: store, activitySync: { session, issue, blocked in
-            if !blocked { watchLink.publish(session) }
             return await liveActivity.synchronize(session, issue: issue, blocked: blocked)
         }, prepare: {
             // Transfer reminder ownership from the technical probe to training.
@@ -33,19 +29,6 @@ import SwiftData
                 throw NSError(domain: "GymRest.Probe", code: 1, userInfo: [NSLocalizedDescriptionKey: error])
             }
         })
-        let trainingController = controller
-        watchLink.refreshTraining = { await trainingController.refreshLiveActivity() }
-        watchLink.canStartRecording = { id in
-            !trainingController.busy && trainingController.recoveryIssue == nil && trainingController.session?.sessionID == id && trainingController.session?.phase != .completed
-        }
-        watchLink.handleTrainingAction = { id, token, action in
-            guard trainingController.session?.sessionID == id,
-                  trainingController.session?.interactionID == token,
-                  let action = TrainingQuickAction(rawValue: action), !trainingController.busy else { return CompanionFailure.wrongSession.localizedDescription }
-            await trainingController.handleQuickAction(action, interactionID: token.uuidString)
-            return trainingController.error
-        }
-        watchLink.flushReceipts()
     }
 }
 

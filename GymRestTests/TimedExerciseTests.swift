@@ -165,7 +165,8 @@ import SwiftData
     }
     func testWatchPromptOnlyForNewSessionsAndEnabledPreference() throws {
         XCTAssertTrue(WatchStartReminder.shouldPrompt(enabled: true, session: nil))
-        XCTAssertFalse(WatchStartReminder.shouldPrompt(enabled: nil, session: nil))
+        XCTAssertTrue(WatchStartReminder.shouldPrompt(enabled: nil, session: nil))
+        XCTAssertFalse(WatchStartReminder.shouldPrompt(enabled: false, session: nil))
         var session = try TrainingSession(planID: UUID(), planName: "测试", exercises: [.init(name: "平板")], fallback: false)
         for phase in [TrainingPhase.training, .resting, .paused] {
             session.phase = phase

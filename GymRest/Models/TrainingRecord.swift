@@ -12,6 +12,7 @@ import SwiftData
     var performedNamesData: Data?
     var performancesData: Data?
     var workoutID: String?
+    // Legacy receipt marker retained for existing SwiftData stores and backups.
     var watchWorkoutReceiptID: String?
     var workoutSource: String?
     var workoutStart: Date?

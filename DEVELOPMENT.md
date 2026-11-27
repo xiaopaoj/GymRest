@@ -1,5 +1,38 @@
 # 开发进度与技术决策
 
+> 2026-11-27：用户已授权提交并打包0.9.1 (10)。本次包含此前UI优化、手机健康数据tips及Watch代码/构建移除；采用HealthKit启用、external/preserve轻量配置，保留已安装素材。30项本地脚本检查及22个修改Swift文件语法检查通过；Xcode编译、XCTest和真机效果待远程/设备验证。触发后不等待完成，下方“未提交”为开发时历史状态。
+
+
+## 0.9.1 iPhone健康数据方案（2026-11-27，未提交）
+
+用户明确移除独立Watch App及构建，采用手机只读HealthKit近期锻炼数据辅助判断。已删除Watch源代码/协议/通信菜单、启动和镜像/写入入口、手表目标生成/图标/Actions开关；版本0.9.1 (10)，IPA产物明确标记iPhone。保留旧SwiftData回执字段和备份数据兼容，不删除已有训练/健康关联/素材。
+
+新训练默认手动确认手表运动，可跳过；继续训练不重复。训练页非弹窗tips首次明确请求锻炼分钟数读取，前台每60秒查询近15分钟样本，展示最新样本时间/上次查询。3分钟内有效Watch来源样本仅为活动迹象，旧数据/空结果/异常/来源不明均不宣称运动已开启或关闭；不自动计组、启动、保存健康或结束训练。规则未经真机校准。完整说明与验收见[当前方案](docs/HEALTH_ACTIVITY_0_9_1.md)。
+
+本地30项Python检查通过；包含真实IPA打包器接受iPhone+Widget、拒绝残留Watch的回归。新增9项健康证据与授权/刷新XCTest、1项旧回执备份兼容XCTest，未在Xcode执行；本轮Swift语法与配置检查不等于Apple SDK编译。此前Watch闪退回调修复随Watch实现一并移除，不再作为待发布功能；下方Watch/187项等记录均为历史范围。未提交、推送或触发Actions。
+
+
+## Watch连接闪退风险修正（2026-11-27，未提交）
+
+用户报告已安装两端，点击连接相关菜单均闪退。未获取.ips或具体按钮，不能确认最终根因。审查发现两端MainActor中的WCSession.sendMessageData回复/错误闭包未显式Sendable；Swift6可能为继承Actor的ObjC回调加入运行时隔离检查，而WCSession会在自己的队列回调。已新增CompanionRequestCallbacks，使用明确@Sendable的continuation回复/失败闭包，两端共用；手表状态发布回调及手机HealthKit镜像入口也显式Sendable，状态读写仍经Task @MainActor。没有调整配对ID、签名凭据、权限或训练数据。
+
+对照公开iPhoneOS26.0 SDK镜像WCSession.h检查回调签名及回复/错误恰有一个被调用的约定。新增2项iOS XCTest，从MainActor发起、后台DispatchQueue调用真实共享回复/错误闭包，检查continuation返回和错误传播；尚未在Xcode执行。与此前UI回归合计预计187项iOS测试。33项本地Python检查通过，本轮Swift改动语法解析通过；无真机闪退已消除的验收结果。待用户提供日志区分swift_task_checkIsolated/_dispatch_assert_queue_fail、隐私TCC/entitlement或其他异常。工作区保留此前UI/构建流程改动，未提交或触发远程打包。
+
+
+## 界面改动构建前复核（2026-11-27，未提交）
+
+复核新增SwiftUI和ImageIO调用，对照公开镜像的iPhoneOS26.0 SDK SwiftUI/SwiftUICore接口及CGImageSource.h确认AnyLayout、ScaledMetric<CGFloat>、DynamicTypeSize.isAccessibilitySize、onChange(initial:)、ViewThatFits和缩略图API声明。镜像源为xybp888/iOS-SDKs（非本机安装SDK）。拆分全局训练条、快捷训练列表和历史行，缩小复杂ViewBuilder的类型推断范围；未发现明确语法/API声明不匹配，不能据此认定编译通过。
+
+将Release设备编译前移至build-for-testing之后、模拟器启动和XCTest之前；成功构建仍执行全部测试。新增3项真实ci.sh+假Apple工具流程回归，验证Debug失败提前退出、Release失败不启动模拟器/测试且保留双份日志、成功时编译→启动→测试→打包顺序。共33项Python检查通过。真实生成bundled/updateOfficial+HealthKit+Watch配置并检查新文件包含于GymRest源目录，官方包存在。本机无Xcode/swiftc，185项iOS测试（含新增1项）与SwiftUI类型检查仍待远程验证。未提交、推送或触发新的Actions。
+
+
+复核补充：本轮修改的10个Swift文件语法解析均通过。扩大到82个Swift文件时，tree-sitter在未改动的AlarmKitTimerService.swift产生诊断；与HEAD基线内容及诊断一致，属于本轮无法用此解析器判定的基线语法，不视为新改动通过或新增编译失败。真正的Swift编译器检查仍待Xcode。
+
+## 训练界面顺序优化（2026-11-27，未提交）
+
+按用户确认依次实现训练页层级、直接调整重量/次数、休息控制去重、双侧半组进度、首页常用/上次训练、跨标签训练返回条、带动作缩略图的替代列表及记录摘要；大字体控制适配、系统语义颜色和图片展开偏好同步调整。替代动作新增交互令牌校验及保留已完成组数据的XCTest回归。完整范围与真机验收表见[界面优化记录](docs/UI_OPTIMIZATION_0_9_0.md)。本地30项Python脚本测试通过；Swift语法解析通过不代表Xcode编译。新XCTest、模拟器布局和真机Watch/锁屏仍待验证，本轮未提交、推送或触发Actions。
+
+
 > 2026-11-27：用户已授权提交Release SDK修复并触发全量打包，配置为bundled/updateOfficial、HealthKit与Watch启用。本地30项脚本检查通过；远程构建结果待确认，不等待结束。下方“未提交”为修复时的历史记录。
 
 

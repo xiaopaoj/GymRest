@@ -76,6 +76,21 @@ import SwiftData
         XCTAssertEqual(again.skipped, 3); XCTAssertEqual(again.records, 0)
         XCTAssertEqual(try destination.context.fetch(FetchDescriptor<TrainingRecord>()).count, 1)
     }
+    func testLegacyWatchReceiptMarkerSurvivesPhoneOnlyBackupRestore() throws {
+        let source = try populated()
+        let original = try XCTUnwrap(source.context.fetch(FetchDescriptor<TrainingRecord>()).first)
+        let marker = UUID().uuidString
+        original.watchWorkoutReceiptID = marker
+        original.workoutID = marker; original.workoutSource = "GymRest Watch"
+        try source.context.save()
+        let backup = try LibraryBackup.decode(LibraryBackup.capture(source.context, preferences: source.preferences).encoded())
+        let destination = try store()
+        _ = try backup.merge(into: destination.context, preferences: destination.preferences, restorePreferences: false)
+        let restored = try XCTUnwrap(destination.context.fetch(FetchDescriptor<TrainingRecord>()).first)
+        XCTAssertEqual(restored.watchWorkoutReceiptID, marker)
+        XCTAssertEqual(restored.workoutID, marker)
+        XCTAssertEqual(restored.workoutSource, "GymRest Watch")
+    }
     func testFailedBackupMergeRestoresSettingsAndDoesNotInsertPartialRows() throws {
         let source = try populated(); let backup = try LibraryBackup.capture(source.context, preferences: source.preferences)
         let destination = try store(); let rest = destination.preferences.defaultRest
@@ -122,6 +137,30 @@ import SwiftData
         XCTAssertEqual(controller.session?.performances?.first?.first?.values, first)
         XCTAssertEqual(controller.session?.setValueOrigins?.first, "沿用本动作上一组")
         XCTAssertEqual(controller.session?.completedSets, 1)
+    }
+    func testAlternativePickerRejectsStaleStateAndKeepsCompletedSet() async throws {
+        let store = try store(); let timer = MockTimerService()
+        let controller = try TrainingController(store: store, alarm: timer, notification: timer)
+        let alternative = ExerciseAlternative(name: "自定义替代动作")
+        let day = try TrainingPlan(name: "训练", position: 0, exercises: [
+            ExerciseSpec(name: "原动作", sets: 2, alternatives: [alternative])
+        ])
+        await controller.start(plan: day)
+        let stale = try XCTUnwrap(controller.session?.interactionID)
+        let measured = SetValues(weight: 20, repetitions: 10)
+        await controller.setValues(measured, interactionID: stale)
+        let before = try XCTUnwrap(controller.session)
+        await controller.selectAlternative(alternative.id, interactionID: stale)
+        XCTAssertNotNil(controller.error)
+        XCTAssertEqual(controller.session, before)
+        await controller.completeSet()
+        await controller.skipRest()
+        await controller.selectAlternative(alternative.id, interactionID: controller.session?.interactionID)
+        XCTAssertNil(controller.error)
+        XCTAssertEqual(controller.session?.current.name, alternative.name)
+        XCTAssertEqual(controller.session?.completedSets, 1)
+        XCTAssertEqual(controller.session?.performances?.first?.first?.exerciseName, "原动作")
+        XCTAssertEqual(controller.session?.performances?.first?.first?.values, measured)
     }
     func testHistoryComparisonSeparatesUnitsLoadKindsAndEquipmentNotes() throws {
         let store = try store()

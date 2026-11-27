@@ -13,6 +13,14 @@ struct LibraryView: View {
             NavigationStack { HistoryView() }.tabItem { Label("记录", systemImage: "clock.arrow.circlepath") }.tag(1)
             NavigationStack { SettingsView(controller: controller) }.tabItem { Label("设置", systemImage: "gearshape") }.tag(2)
         }
+        .safeAreaInset(edge: .bottom, spacing: 0) {
+            if let session = controller.session {
+                CurrentTrainingBar(session: session) { showingTraining = true }
+            }
+        }
+        .onChange(of: controller.session?.planID, initial: true) { _, id in
+            if let id { UserDefaults.standard.set(id.uuidString, forKey: "lastTrainingDayID") }
+        }
         .onOpenURL { url in
             if url.scheme == "gymrest", url.host == "training", controller.session != nil { showingTraining = true }
         }
@@ -29,6 +37,8 @@ struct ProgramListView: View {
     @Query(sort: \TrainingPlan.position) private var days: [TrainingPlan]
     let controller: TrainingController
     @Binding var showingTraining: Bool
+    @AppStorage("lastTrainingDayID") private var lastTrainingDayID = ""
+    @AppStorage("favoriteTrainingDayID") private var favoriteTrainingDayID = ""
     @State private var organizing = false
     @State private var query = ""
     @State private var error: String?
@@ -57,6 +67,7 @@ struct ProgramListView: View {
                     }.buttonStyle(.plain).foregroundStyle(.orange)
                 }
             }
+            if controller.session == nil && !shortcutDays.isEmpty { shortcutSection }
             Section {
                 NavigationLink { TrainingTemplateView() } label: {
                     Label("从三分化／五分化模板建立计划", systemImage: "sparkles.rectangle.stack")
@@ -122,6 +133,29 @@ struct ProgramListView: View {
             Button("知道了") { error = nil }
         } message: { Text(error ?? "") }
     }
+    private var shortcutDays: [TrainingPlan] {
+        var result: [TrainingPlan] = []
+        for id in [favoriteTrainingDayID, lastTrainingDayID] {
+            if let day = days.first(where: { $0.id.uuidString == id }), !result.contains(where: { $0.id == day.id }) {
+                result.append(day)
+            }
+        }
+        return result
+    }
+    private var shortcutSection: some View {
+        Section("快捷训练") {
+            ForEach(shortcutDays) { day in
+                NavigationLink { DayDetailView(day: day, controller: controller, showingTraining: $showingTraining) } label: {
+                    VStack(alignment: .leading, spacing: 5) {
+                        Label(day.name, systemImage: day.id.uuidString == favoriteTrainingDayID ? "star.fill" : "arrow.counterclockwise")
+                            .font(.headline)
+                        Text(day.id.uuidString == favoriteTrainingDayID ? "常用训练 · 查看并开始" : "上次训练 · 再次训练")
+                            .font(.caption).foregroundStyle(.secondary)
+                    }.padding(.vertical, 6)
+                }
+            }
+        }
+    }
     private func save() {
         do { try context.save() } catch { context.discardPendingChanges(); self.error = error.localizedDescription }
     }
@@ -168,5 +202,34 @@ struct DayRow: View {
                 } else { Text("数据无法读取，请保留内容").font(.caption).foregroundStyle(.red) }
             }
         }.padding(.vertical, 8)
+    }
+}
+
+private struct CurrentTrainingBar: View {
+    let session: TrainingSession
+    let open: () -> Void
+    private var summary: String {
+        switch session.phase {
+        case .training: session.partTitle + " · 已完成 \(session.completedSets)/\(session.totalSets) 组"
+        case .completed: session.planName
+        case .paused: "休息已暂停"
+        case .resting: session.isTransitionRest ? "动作间休息" : "组间休息"
+        case .idle: "准备训练"
+        }
+    }
+    var body: some View {
+        Button(action: open) {
+            HStack(spacing: 12) {
+                Image(systemName: session.phase == .completed ? "checkmark.circle.fill" : "figure.strengthtraining.traditional")
+                VStack(alignment: .leading, spacing: 3) {
+                    Text(session.phase == .completed ? "查看训练结果" : session.current.name).font(.headline)
+                    Text(summary).font(.caption).foregroundStyle(.secondary)
+                }
+                Spacer(minLength: 8)
+                Image(systemName: "chevron.up")
+            }.frame(maxWidth: .infinity, minHeight: 44, alignment: .leading).padding()
+                .contentShape(Rectangle())
+        }.buttonStyle(.plain).background(.regularMaterial)
+            .accessibilityHint("返回当前训练页面")
     }
 }
