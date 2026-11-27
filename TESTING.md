@@ -1,5 +1,12 @@
 # 测试与阶段一验收
 
+> 2026-11-27：用户已授权提交Release SDK修复并触发全量打包，配置为bundled/updateOfficial、HealthKit与Watch启用。本地30项脚本检查通过；远程构建结果待确认，不等待结束。下方“未提交”为修复时的历史记录。
+
+
+## Release跨平台SDK修正（2026-11-27，未提交）
+
+[运行45856111168](https://github.com/xiaopaoj/GymRest/actions/runs/45856111168)实际执行184项XCTest，全部通过；Watch通用模拟器build及手机build-for-testing均成功。其后Release失败，diagnostics/build.log中的根因是Watch图标按iphoneos平台编译，未进入IPA打包；不是测试失败，也不是模拟器的HealthKit/未配对警告导致。已去掉Release全局SDK覆盖并加入独立日志、构建结果包。新增3项测试使用记录参数的xcodebuild替身实际执行shell，验证无SDKROOT/-sdk全局覆盖、stdout/stderr及结果包路径保留、exit65经过tee后仍失败。本地30项Python检查与shell语法/diff检查通过；替身测试不代表Apple Release编译成功。修复后Release尚待远程复验。
+
 > 2026-11-27：用户已授权提交本次两处测试修复并继续此前全量构建。将以bundled/updateOfficial、HealthKit和Watch启用的配置复验184项iOS测试并打包；本地27项检查已通过，远程结果待确认。按用户要求触发后不等待结束，后续默认仍为轻量；下方“未提交”为此前修复记录。
 
 ## 0.9.0构建测试失败修复（2026-11-27，未提交）

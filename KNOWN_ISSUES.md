@@ -1,5 +1,12 @@
 # 已知问题与待验证事项
 
+> 2026-11-27：用户已授权提交Release SDK修复并触发全量打包，配置为bundled/updateOfficial、HealthKit与Watch启用。本地30项脚本检查通过；远程构建结果待确认，不等待结束。下方“未提交”为修复时的历史记录。
+
+
+## Release跨平台SDK修正（2026-11-27，未提交）
+
+184项iOS测试及Watch模拟器编译已通过，当前阻塞为Release跨平台SDK选择：原命令全局指定iphoneos，导致WatchAssets报AppIcon没有适用内容。已修改Release入口以destination和各目标选择SDK，并保留release-build.log及Release xcresult；本地30项检查通过，未在Xcode复验，也未提交或重打包。仍无可安装的成功IPA，待授权后继续此前全量（bundled/updateOfficial + Watch）构建；签名与真机配对不因模拟器测试通过而视为完成。
+
 > 2026-11-27：用户已授权提交本次两处测试修复并继续此前全量构建。将以bundled/updateOfficial、HealthKit和Watch启用的配置复验184项iOS测试并打包；本地27项检查已通过，远程结果待确认。按用户要求触发后不等待结束，后续默认仍为轻量；下方“未提交”为此前修复记录。
 
 ## 0.9.0构建测试失败修复（2026-11-27，未提交）

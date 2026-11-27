@@ -64,6 +64,7 @@ jobs:
           name: GymRest-diagnostics
           path: |
             build/build.log
+            build/release-build.log
             build/*.xcresult
             build/runtimes.json
             build/devices.json

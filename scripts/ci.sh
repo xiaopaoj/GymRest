@@ -77,9 +77,7 @@ xcrun simctl bootstatus "$simulator" -b
 xcodebuild -project GymRest.xcodeproj -scheme GymRest -configuration Debug \
   -destination "platform=iOS Simulator,id=$simulator" -derivedDataPath DerivedData \
   -resultBundlePath "build/Tests-$(date +%s).xcresult" CODE_SIGNING_ALLOWED=NO test-without-building
-xcodebuild -project GymRest.xcodeproj -scheme GymRest -configuration Release \
-  -sdk iphoneos -destination 'generic/platform=iOS' -derivedDataPath DerivedData \
-  CODE_SIGNING_ALLOWED=NO CODE_SIGNING_REQUIRED=NO CODE_SIGN_IDENTITY='' build
+bash scripts/build_release.sh
 python3 scripts/package_ipa.py
 python3 scripts/build_media_pack.py --source-archive build/GymRest-Media-Sources.zip
 

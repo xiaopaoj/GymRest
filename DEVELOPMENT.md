@@ -1,5 +1,12 @@
 # 开发进度与技术决策
 
+> 2026-11-27：用户已授权提交Release SDK修复并触发全量打包，配置为bundled/updateOfficial、HealthKit与Watch启用。本地30项脚本检查通过；远程构建结果待确认，不等待结束。下方“未提交”为修复时的历史记录。
+
+
+## Release跨平台SDK修正（2026-11-27，未提交）
+
+已确认[全量构建45856111168](https://github.com/xiaopaoj/GymRest/actions/runs/45856111168)的184项iOS测试全部通过，Watch模拟器及手机测试构建成功。失败发生在Release：ci.sh的全局`-sdk iphoneos`覆盖了Watch目标的watchos配置，actool用`--target-device iphone --platform iphoneos`处理WatchAssets，报AppIcon无适用内容。已提取scripts/build_release.sh，移除全局SDK覆盖，由generic iOS destination及各目标配置选择iOS/watchOS SDK；另存Release日志和xcresult。新增3项脚本执行回归，本地共30项检查通过。修复未提交、推送或远程复验，尚无成功IPA；下一次获授权仍须完成带775张素材与Watch的全量迁移构建。
+
 > 2026-11-27：用户已授权提交本次两处测试修复并继续此前全量构建。将以bundled/updateOfficial、HealthKit和Watch启用的配置复验184项iOS测试并打包；本地27项检查已通过，远程结果待确认。按用户要求触发后不等待结束，后续默认仍为轻量；下方“未提交”为此前修复记录。
 
 ## 0.9.0构建测试失败修复（2026-11-27，未提交）
