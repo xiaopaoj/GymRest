@@ -21,10 +21,12 @@ enum ExerciseNames {
     static func standardize(_ exercises: [ExerciseSpec]) -> [ExerciseSpec] {
         exercises.map { original in
             var item = original
+            item.prescription = item.prescription.map(ExerciseTiming.resolve)
             item.name = canonical(item.name, catalogID: item.catalogID)
             for index in item.alternatives.indices {
                 let alternative = item.alternatives[index]
                 item.alternatives[index].name = canonical(alternative.name, catalogID: alternative.catalogID)
+                item.alternatives[index].prescription = alternative.prescription.map(ExerciseTiming.resolve)
             }
             return item
         }

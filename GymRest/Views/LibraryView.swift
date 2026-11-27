@@ -7,16 +7,11 @@ struct LibraryView: View {
     @State private var showingTraining = false
     var body: some View {
         TabView(selection: $tab) {
-            NavigationStack { ProgramListView(controller: controller, showingTraining: $showingTraining) }
+            NavigationStack { ProgramListView(controller: controller, showingTraining: $showingTraining).safeAreaInset(edge: .bottom, spacing: 0) { trainingReturnBar } }
                 .tabItem { Label("计划", systemImage: "square.grid.2x2") }.tag(0)
-            NavigationStack { ExerciseCatalogView() }.tabItem { Label("动作", systemImage: "figure.strengthtraining.traditional") }.tag(3)
-            NavigationStack { HistoryView() }.tabItem { Label("记录", systemImage: "clock.arrow.circlepath") }.tag(1)
-            NavigationStack { SettingsView(controller: controller) }.tabItem { Label("设置", systemImage: "gearshape") }.tag(2)
-        }
-        .safeAreaInset(edge: .bottom, spacing: 0) {
-            if let session = controller.session {
-                CurrentTrainingBar(session: session) { showingTraining = true }
-            }
+            NavigationStack { ExerciseCatalogView().safeAreaInset(edge: .bottom, spacing: 0) { trainingReturnBar } }.tabItem { Label("动作", systemImage: "figure.strengthtraining.traditional") }.tag(3)
+            NavigationStack { HistoryView().safeAreaInset(edge: .bottom, spacing: 0) { trainingReturnBar } }.tabItem { Label("记录", systemImage: "clock.arrow.circlepath") }.tag(1)
+            NavigationStack { SettingsView(controller: controller).safeAreaInset(edge: .bottom, spacing: 0) { trainingReturnBar } }.tabItem { Label("设置", systemImage: "gearshape") }.tag(2)
         }
         .onChange(of: controller.session?.planID, initial: true) { _, id in
             if let id { UserDefaults.standard.set(id.uuidString, forKey: "lastTrainingDayID") }
@@ -29,6 +24,12 @@ struct LibraryView: View {
             Button("知道了") { controller.error = nil }
         } message: { Text(controller.error ?? "请重试。") }
     }
+    @ViewBuilder private var trainingReturnBar: some View {
+        if let session = controller.session {
+            CurrentTrainingBar(session: session) { showingTraining = true }
+        }
+    }
+
 }
 
 struct ProgramListView: View {

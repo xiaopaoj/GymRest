@@ -71,7 +71,7 @@ struct TrainingSession: Codable, Equatable, Sendable {
         }
     }
     var current: ExerciseSpec { exercises[index] }
-    var currentSetValues: SetValues { setDrafts?[index] ?? current.prescription ?? SetValues() }
+    var currentSetValues: SetValues { ExerciseTiming.resolve(setDrafts?[index] ?? current.prescription ?? SetValues()) }
     mutating func preparePerformanceStorage() {
         if setDrafts == nil { setDrafts = exercises.map { $0.prescription ?? SetValues() } }
         if performances == nil {

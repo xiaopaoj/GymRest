@@ -101,10 +101,17 @@ import SwiftData
         return nil
     }
     func suggestedValues(for exercise: ExerciseSpec) throws -> SetValues {
-        // Only an explicit catalog link may supply a new default prescription.
-        // A matching name can identify artwork without changing a legacy custom
-        // exercise's load kind or splitting its existing history profile.
+        // Only an explicit catalog link supplies load defaults. Exact timed-name
+        // matching below may supply effort duration, keeping the legacy load
+        // kind/unit intact so custom exercise history still matches.
         var planned = exercise.prescription ?? (try? ExerciseCatalog.bundled().item(exercise.catalogID)?.prescription) ?? SetValues()
+        planned = ExerciseTiming.resolve(planned)
+        // For a name-only timed movement, add effort timing without changing the
+        // legacy load kind/unit/profile or interpreting counted variants as holds.
+        if exercise.prescription == nil, planned.durationSeconds == nil, planned.repetitions == nil,
+           let item = try? ExerciseCatalog.bundled().matching(name: exercise.name), let seconds = item.durationSeconds {
+            planned.durationSeconds = seconds; planned.sideCount = item.sideCount ?? 1
+        }
         if let last = try lastValues(for: exercise, matching: planned) {
             if planned.weight == nil { planned.weight = last.weight }
             if planned.repetitions == nil && planned.durationSeconds == nil { planned.repetitions = last.repetitions }

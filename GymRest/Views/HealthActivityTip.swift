@@ -2,10 +2,11 @@ import SwiftUI
 
 /// Foreground-only polling. No alert, no background keepalive, no workout writes.
 struct HealthActivityTip: View {
+    var pollsAutomatically = true
     @Environment(\.scenePhase) private var scenePhase
     @AppStorage("healthActivityTipsEnabled") private var enabled = true
     @State private var monitor = HealthActivityMonitor.shared
-    private var shouldPoll: Bool { enabled && scenePhase == .active && monitor.authorizationRequested && WorkoutReader.buildEnabled }
+    private var shouldPoll: Bool { pollsAutomatically && enabled && scenePhase == .active && monitor.authorizationRequested && WorkoutReader.buildEnabled }
     var body: some View {
         Group {
             if enabled {
@@ -14,7 +15,7 @@ struct HealthActivityTip: View {
                         Label("当前版本未启用健康读取 · 请手动确认手表运动", systemImage: "info.circle")
                     } else if !monitor.authorizationRequested {
                         Label("尚未读取健康数据 · 请手动确认手表运动", systemImage: "info.circle")
-                        Button("允许读取近期锻炼数据") { Task { await monitor.requestAccess() } }.disabled(monitor.busy)
+                        Button("允许读取近期锻炼数据") { Task { await monitor.requestAccess() } }.buttonStyle(.borderless).disabled(monitor.busy)
                     } else {
                         TimelineView(.periodic(from: .now, by: 30)) { timeline in
                             let evidence = monitor.evidence(at: timeline.date)
@@ -27,6 +28,8 @@ struct HealthActivityTip: View {
                             Text("上次查询：" + date.formatted(date: .omitted, time: .standard)).foregroundStyle(.secondary)
                         }
                     }
+                    if monitor.busy { ProgressView(monitor.feedback) }
+                    if let issue = monitor.issue { Text(issue).foregroundStyle(.secondary).textSelection(.enabled) }
                     Text("数据同步有延迟；运动迹象不代表已开启体能训练，无数据也不代表未开启。")
                         .foregroundStyle(.secondary)
                 }.font(.caption).frame(maxWidth: .infinity, alignment: .leading)
@@ -54,16 +57,23 @@ struct HealthActivitySettingsView: View {
                     .font(.footnote).foregroundStyle(.secondary)
             }
             Section("近期运动迹象 · 试验功能") {
-                HealthActivityTip()
+                HealthActivityTip(pollsAutomatically: false)
                 Button(monitor.busy ? "正在读取…" : "请求健康读取权限并查询") { Task { await monitor.requestAccess() } }
-                    .disabled(monitor.busy || !WorkoutReader.buildEnabled)
+                    .buttonStyle(.borderless).disabled(monitor.busy)
                 Button("刷新健康数据") { Task { await monitor.refresh() } }
-                    .disabled(monitor.busy || !monitor.authorizationRequested || !WorkoutReader.buildEnabled)
+                    .buttonStyle(.borderless).disabled(monitor.busy || !monitor.authorizationRequested)
                 Text("读取最近15分钟、来源型号标注为Watch的非手动锻炼样本；3分钟内的新样本仅作为近期运动迹象。阈值为试验规则，尚未经过真机校准。快走也会累计锻炼分钟，力量训练开启后也可能没有新样本。")
                     .font(.footnote).foregroundStyle(.secondary)
                 Text("空结果可能来自未授权、尚未同步或未产生锻炼分钟，无法区分。请在系统健康权限中检查“锻炼分钟数”；本App不会写入健康数据。")
                     .font(.footnote).foregroundStyle(.secondary)
-                if let issue = monitor.issue { Text(issue).font(.caption).foregroundStyle(.secondary).textSelection(.enabled) }
+            }
+            Section("读取状态") {
+                if monitor.busy { ProgressView(monitor.feedback) }
+                else { Text(monitor.feedback) }
+                if let date = monitor.checkedAt { LabeledContent("上次查询", value: date.formatted(date: .omitted, time: .standard)) }
+                if let issue = monitor.issue { Text(issue).font(.footnote).foregroundStyle(.secondary).textSelection(.enabled) }
+                Text("如果以前已允许或拒绝过，系统不一定再次弹出授权页。请在系统“健康”App中检查GymRest的“锻炼分钟数”读取权限；查询返回空数据无法区分拒绝授权和未同步。")
+                    .font(.footnote).foregroundStyle(.secondary)
             }
         }.navigationTitle("健康数据辅助判断")
     }

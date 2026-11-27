@@ -30,6 +30,7 @@ struct SetValuesEditor: View {
                 Section("计时与两侧") {
                     Toggle("按时长训练", isOn: Binding(get: { values.durationSeconds != nil }, set: { enabled in
                         values.durationSeconds = enabled ? 40 : nil
+                        if !enabled { values.equipmentNote = ExerciseTiming.removingLegacyHint(from: values.equipmentNote) }
                         if enabled { values.repetitions = nil; repetitions = ""; duration = "40" }
                     }))
                     if values.durationSeconds != nil {
@@ -78,6 +79,7 @@ struct SetValuesEditor: View {
                 }
             }
             .onAppear {
+                values = ExerciseTiming.resolve(values)
                 weight = values.weight.map { String($0) } ?? ""
                 repetitions = values.repetitions.map(String.init) ?? ""
                 duration = values.durationSeconds.map(String.init) ?? ""
